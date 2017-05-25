@@ -1,0 +1,240 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\newcommand{\rmd}{{\mathrm d}}
+\newcommand{\rme}{{\mathrm e}}
+
+\renewcommand{\vec}[1]{{\boldsymbol {#1}}}
+
+\begin{document}
+\title{Contribution from Stratonovich integral in Ratchet potential}
+\author{Jiří Pešek}
+\maketitle
+
+The ``mechanical'' work of a diffusing particle caused by presence of a potential $V$ is defined via Stratonovich integral as  
+\[
+{\mathcal Q} = - \int \rmd \vec{x}_t \circ \vec{\nabla} V(\vec{x}_t,t) .
+\]
+This mechanical work from the point of view of thermodynamics corresponds to the heat, as it represents the changes in energy associated with the change of internal state. 
+
+In case no additional external force is applied except for the aforementioned potential $V$ the equation of motion of such particle is given by
+\[
+\rmd \vec{x}_t = - \chi \cdot \vec{\nabla} V( \vec{x}_t, t ) \; \rmd t + \sqrt{2 D} \cdot \rmd \vec{W}_t , 
+\]
+where the mobility matrix $\chi$ and diffusion matrix $D$ are related by $ k_B T \chi = D$ and $\vec{W}_t$ is the Wiener process. 
+
+This can be used for evaluation of the heat 
+\[
+{\mathcal Q} = \int \rmd t \; \vec{\nabla} V (\vec{x}_t) \cdot \chi \cdot \vec{\nabla} V(\vec{x}_t) - \int \rmd \vec{W}_t \cdot \sqrt{2 D} \circ \vec{\nabla} V(\vec{x}_t) ,
+\]
+which can be further simplified by using It\^{o} lemma to 
+\begin{equation}
+{\mathcal Q} = \underbrace{\int \rmd t \; \vec{\nabla} V (\vec{x}_t) \cdot \chi \cdot \vec{\nabla} V(\vec{x}_t) 
+- \int \rmd \vec{W}_t \cdot \sqrt{2 D} \cdot \vec{\nabla} V(\vec{x}_t) }_{ = - \int \rmd \vec{x}_t \cdot \vec{\nabla} V(\vec{x}_t) }
+- \int \rmd t \; D : \vec{\nabla}^2 V(\vec{x}_t) ,
+\label{equ:heat}
+\end{equation}
+
+In a simple 1D case this lead to 
+\[
+\left\langle {\mathcal Q} \right\rangle = \chi \int \rmd t \; \left\langle \left[ \partial V(x_t) \right]^2 \right\rangle
+- D \int \rmd t \; \left\langle \partial^2 V(x_t) \right\rangle ,
+\]
+which for Ratchet potential can be further evaluated in a steady state:
+\begin{multline}
+\left\langle {\mathcal Q} \right\rangle = \chi \left[ \frac{ \Delta V^2 }{ \ell^2 a^2 } {\mathbb P}( x_t \in F_+ ) + \frac{ \Delta V^2 }{ \ell^2 (1-a)^2 } {\mathbb P}(x_t \in F_- ) \right] \Delta T 
+- \\
+- \frac{ D \, \Delta V }{\ell a (1-a) } \left( \rho(x_{V_\text{min}}) - \rho(x_{V_\text{max}}) \right) \Delta T,
+\label{equ:mean_heat}
+\end{multline}
+where $\ell$ is the length of the step, $\Delta V$ is the height of the potential,  $a$ is the steepness of the potentials $+$ slope ( $1-a$ is for $-$ slope), $\Delta T$ is time duration of the process, $\rho$ is the stationary probability density, here at the minimum and maximum of potential and $\mathbb P$ denotes the actual probabilities to be on a corresponding slope ( ${\mathbb P}_+ = 1 - {\mathbb P}_-$ ).
+
+Hence such quantity is extensive in time. 
+However in equilibrium the situation simplifies. 
+
+\section{Equilibrium contributions} 
+Equilibrium probability density is given by Boltzman distribution
+\[
+\rho(x) = \frac{1}{Z} \rme^{ - \beta V(x) } 
+\]
+with the partition function given by
+\begin{align*}
+Z &= \int\limits_0^{a \ell} \rmd x \; \rme^{ - \beta \Delta V \frac{ a \ell - x }{a \ell } }
++ \int\limits_{a \ell}^\ell \rmd x \; \rme^{ - \beta \Delta V \frac{ x - a \ell }{ (1-a) \ell } } \\
+&= \rme^{ - \beta \Delta V } \frac{a \ell}{\beta \Delta V} \int\limits_0^{\beta \Delta V} \rmd u \; \rme^u 
++ \frac{(1 - a) \ell}{\beta \Delta V} \int\limits_0^{\beta \Delta V} \rmd u \; \rme^{-u} \\
+&= \frac{\ell}{\beta \Delta V} \left( 1 - \rme^{-\beta \Delta V} \right).
+\end{align*}
+Consequently we can evaluate the probabilities for left and right slope 
+\begin{align*}
+{\mathbb P}(x_t \in F_+) &= a, \\
+{\mathbb P}(x_t \in F_-) &= 1 - a
+\end{align*} 
+and probability densities at minimum and maximum
+\begin{align*}
+\rho(x_{V_\text{min}}) &= \frac{\beta \Delta V}{\ell \left( 1 - \rme^{-\beta \Delta V}\right)}, \\
+\rho(x_{V_\text{max}}) &= \frac{\beta \Delta V}{\ell \left( 1 - \rme^{-\beta \Delta V}\right)} \rme^{-\beta \Delta V}. 
+\end{align*} 
+
+Hence 
+\[
+\left\langle {\mathcal Q} \right\rangle = 0.
+\]
+Notice, that if we instead of Stratonovich use It\^{o} integral, only the first term in \eqref{equ:mean_heat} remains and we get non-zero production of heat in equilibrium 
+\[
+\left\langle {\mathcal Q}_\text{It\^{o}} \right\rangle = \frac{ \chi \Delta V^2}{\ell^2 a (1-a) } \Delta T. 
+\]
+
+\section{Fluctuations} 
+In order to determine the fluctuations of the work we need to evaluate $\langle {\mathcal Q}^2 \rangle$. 
+Let us plug in \eqref{equ:heat} 
+\begin{multline*}
+\langle {\mathcal Q}^2 \rangle = \left\langle 
+\int \rmd t \; \vec{\nabla} V(\vec{x}_t) \cdot \chi \cdot \vec{\nabla} V(\vec{x}_t)
+\int \rmd s \; \vec{\nabla} V(\vec{x}_s) \cdot \chi \cdot \vec{\nabla} V(\vec{x}_s) 
+\right\rangle - \\
+- 2 \left\langle  
+\int \rmd t \; D : \vec{\nabla}^2 V(x_t) 
+\int \rmd s \; \vec{\nabla} V(\vec{x}_s) \cdot \chi \cdot \vec{\nabla} V(\vec{x}_s)  
+\right\rangle + \\ 
++ \left\langle
+\int \rmd t \; D : \vec{\nabla}^2 V(x_t) 
+\int \rmd s \; D : \vec{\nabla}^2 V(x_s) 
+\right\rangle
++ 2 \left\langle
+\int \rmd t \; \vec{\nabla} V(\vec{x}_t) \cdot D \cdot \vec{\nabla} V(\vec{x}_t)
+\right\rangle .
+\end{multline*}
+Although the evaluation of time correlations is usually nontrivial, 
+their contribution to the total variance $\langle {\mathcal Q}^2 \rangle - \langle {\mathcal Q} \rangle^2$ is non-negative, hence one can obtain a lower bound for fluctuations given by the last term 
+\[
+\langle {\mathcal Q}^2 \rangle - \langle {\mathcal Q} \rangle^2 
+\ge 
+2 \left\langle
+\int \rmd t \; \vec{\nabla} V(\vec{x}_t) \cdot D \cdot \vec{\nabla} V(\vec{x}_t)
+\right\rangle .
+\]
+
+In equilibrium this lower bound can be evaluated 
+\[
+\langle {\mathcal Q}^2 \rangle - \langle {\mathcal Q} \rangle^2 
+\ge 
+\frac{ 2 D \Delta V^2 }{\ell^2 a (1-a) } \Delta T. 
+\]
+Hence the variance is the geometric mean between $2 k_B T$ and the ``heat'' in It\^{o} sense. 
+
+\section{Full system}
+Let us assume two particles with ratchet potential interaction $V_t$ between them
+\begin{align*}
+\rmd x_M &= \frac{1}{\gamma_M} \left[ - \nabla_M V_t(x_M - x_A ) + F \right] \; \rmd t + \sqrt{ \frac{2 K_B T}{\gamma_M} } \cdot \rmd W_M, \\
+\rmd x_A &= - \frac{1}{\gamma_A} \nabla_A V_t(x_M - x_A ) \; \rmd t + \sqrt{ \frac{2 K_B T}{\gamma_A} } \cdot \rmd W_A . 
+\end{align*}
+Moreover we apply a constant force $F$ on the particle representing the motor. 
+The dependency on the internal state is hidden in the time-dependency of the ratchet potential. 
+
+The heat produced by the diffusion of the motor is given by 
+\[
+{\mathcal Q}_M = - \int \nabla_M V_t(x_M - x_A) \circ \rmd x_M , 
+\]
+which by using the same technique as in previous case we get 
+\begin{align*}
+{\mathcal Q}_M 
+=& - \int \nabla V_t(x_M - x_A) \cdot \rmd x_M - \frac{k_B T}{\gamma_M} \int \Delta V_t(x_M - x_A) \; \rmd t \\ 
+=& \frac{1}{\gamma_M} \int \nabla V_t(x_M - x_A) \cdot \left[ \nabla V_t(x_M - x_A) - F \right] \; \rmd t - \sqrt{ \frac{ 2 k_B T }{\gamma_M} } \int \nabla V_t(x_M - x_A) \cdot \rmd W_M - \\
+& - \frac{k_B T}{\gamma_M} \int \Delta V_t(x_M - x_A) \; \rmd t . 
+\end{align*}
+The mean value is then given by
+\[
+\left\langle {\mathcal Q}_M \right\rangle 
+= \frac{1}{\gamma_M} \int \left\langle \nabla V_t(x_M - x_A) \cdot \left[ \nabla V_t(x_M - x_A) - F \right] - k_B T \Delta V_t(x_M - x_A) \right\rangle \; \rmd t . 
+\]
+Similarly the heat dissipated by actin is given by 
+\[
+\left\langle {\mathcal Q}_A \right\rangle 
+= \frac{1}{\gamma_A} \int \left\langle \left[ \nabla V_t(x_M - x_A) \right]^2 - k_B T \Delta V_t(x_M - x_A) \right\rangle \; \rmd t . 
+\]
+Hence the total mean dissipated heat
+\begin{multline*}
+\left\langle {\mathcal Q} \right\rangle 
+= \left( \frac{1}{\gamma_A} + \frac{1}{\gamma_M} \right) \int \left\langle \left[ \nabla V_t(x_M - x_A) \right]^2 - k_B T \Delta V_t(x_M - x_A) \right\rangle \; \rmd t - \\
+- \frac{F}{\gamma_M} \cdot \int \left\langle \nabla V_t(x_M - x_A) \right\rangle \; \rmd t . 
+\end{multline*}
+In the steady state the mean dissipated heat correspond to 
+\begin{multline*}
+\left\langle {\mathcal Q} \right\rangle 
+= \left( \frac{1}{\gamma_A} + \frac{1}{\gamma_M} \right) \left\langle \left[ \nabla V_t(x_M - x_A) \right]^2 - k_B T \Delta V_t(x_M - x_A) \right\rangle_\text{ss} \, \Delta T - \\
+- \frac{F}{\gamma_M} \cdot \left\langle \nabla V_t(x_M - x_A) \right\rangle_\text{ss} \, \Delta T . 
+\end{multline*}
+
+The conclusion is that the dissipation in the case of no external force applied ($F=0$), the mean total heat is split between the motor and actin proportionally to $1/\gamma_M$ and $1/\gamma_A$ respectively. 
+
+
+\section{Empirical distribution}
+Related to previous calculations is the question how to determine the steady state distribution. 
+What we are doing in the simulations is basically sampling the empirical distribution $\mu$ out of the actual distribution $\rho$. 
+
+In discretized case, the probability to observe an empirical distribution $\mu$ drawn out of the actual distribution $\rho$ is given by 
+\[
+{\mathbb P}\left( \left\{ \mu_i \right\} \middle| \left\{ \rho_i \right\} \right) 
+= \binom{N}{ N \mu_1 \ldots N \mu_K } \prod\limits_{i=1}^K \rho_i^{N \mu_i} 
+\approx \exp \left[ N \sum\limits_{i=1}^K \mu_i \ln \frac{\rho_i}{\mu_i} \right] 
+\]
+By using a saddle point method, with the constraint $\sum_i \mu_i = 1$, the probability can be further approximated by 
+\[
+{\mathbb P}\left( \left\{ \mu_i \right\} \middle| \left\{ \rho_i \right\} \right) 
+\approx \exp \left[ - \frac{N}{2} \sum\limits_{i=1}^K \frac{ \left( \mu_i - \rho_i \right)^2 }{ \rho_i } \right] .
+\]
+
+Hence it is obvious that the mean observed value of some quantity $A$ over multiple samplings is given by the mean value with respect to the actual distribution, 
+\[
+\left\langle \left\langle A \right\rangle_\mu \right\rangle_{\{\mu\}} 
+= \int \rmd {\mathbb P}\left( \left\{ \mu_i \right\} \middle| \left\{ \rho_i \right\} \right) \; \sum_{i=1}^K A_i \mu_i 
+= \sum_{i=1}^K A_i \rho_i 
+= \left\langle A \right\rangle_\rho .
+\]
+Similarly the variance over various realization is given by 
+\begin{multline*}
+\left\langle \left\langle A \right\rangle_\mu^2 \right\rangle_{\{\mu\}} - \left\langle \left\langle A \right\rangle_\mu \right\rangle_{\{\mu\}}^2  
+= \int \rmd {\mathbb P}\left( \left\{ \mu_i \right\} \middle| \left\{ \rho_i \right\} \right) \; \left[ \sum_{i=1}^K A_i \mu_i \right]^2 
+- \left[ \sum_{i=1}^K A_i \rho_i \right]^2 \\  
+= \sum_{i \neq j} A_i A_j \underbrace{ \int \rmd {\mathbb P}\left( \left\{ \mu_i \right\} \middle| \left\{ \rho_i \right\} \right) \; \mu_i \mu_j }_{ = \rho_i \rho_j }  
++ \sum_{i=1}^K A_i^2 \int \rmd {\mathbb P}\left( \left\{ \mu_i \right\} \middle| \left\{ \rho_i \right\} \right) \; \mu_i^2  
+- \left[ \sum_{i=1}^K A_i \rho_i \right]^2 \\ 
+= \sum_{i=1}^K A_i^2 \int \rmd {\mathbb P}\left( \left\{ \mu_i \right\} \middle| \left\{ \rho_i \right\} \right) \; \left( \mu_i^2 - \rho_i^2 \right)
++ \underbrace{ \sum_{i, j = 1 }^K A_i A_j \rho_i \rho_j 
+- \left[ \sum_{i=1}^K A_i \rho_i \right]^2 }_{ = 0 } \\  
+= \frac{1}{N} \sum_{i=1}^K A_i^2 \rho_i 
+= \frac{1}{N} \left\langle A^2 \right\rangle_\rho . 
+\end{multline*}
+Unsurprisingly, the more we sample the distribution the smaller the variance is. 
+In the derivation we released the condition on the normalization of $\mu$ in order to have individual $\mu_i$ independent, 
+however if the there is a large number of states (as in our case where we sample the distribution by the position), 
+the constraint have very little influence as it enforces the value only on the last element. 
+Moreover as the variance for each element is proportional to $1/N$ the distribution is well localized around optimum. 
+However I don't have any exact proof nor estimate.
+
+If we use it to estimate the variance of the heat caused by the sampling we get 
+\[
+\left\langle \left\langle {\mathcal Q} \right\rangle_\mu^2 \right\rangle_{\{\mu\}} - \left\langle \left\langle {\mathcal Q} \right\rangle_\mu \right\rangle_{\{\mu\}}^2  
+= \frac{\Delta t}{\Delta T} \left\langle {\mathcal Q}^2 \right\rangle_\rho,  
+\] 
+where $\Delta t$ is the time-step and $\Delta T$ is the total time of simulation. 
+In equilibrium the mean value of the heat is zero, hence we have
+\[
+\left\langle \left\langle {\mathcal Q} \right\rangle_\mu^2 \right\rangle_{\{\mu\}} - \left\langle \left\langle {\mathcal Q} \right\rangle_\mu \right\rangle_{\{\mu\}}^2 
+\ge \frac{ D \Delta V^2 }{\ell^2 a (1-a) } \Delta t     
+\]
+in case only simple ratchet potential is considered. 
+In more general case we have 
+\[
+\left\langle \left\langle {\mathcal Q} \right\rangle_\mu^2 \right\rangle_{\{\mu\}} - \left\langle \left\langle {\mathcal Q} \right\rangle_\mu \right\rangle_{\{\mu\}}^2 
+\ge \left( \frac{1}{\gamma_M} + \frac{1}{\gamma_A} \right) k_B T \left\langle \nabla V^2 \right\rangle_\rho \Delta t .
+\]
+
+\end{document}
