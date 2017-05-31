@@ -1,6 +1,6 @@
 % \documentclass[aps,pre,twocolumn,showpacs,showkeys,a4paper]{revtex4-1}
 % \documentclass[aps,pre,onecolumn,showpacs,showkeys,a4paper]{revtex4-1}
- \documentclass[aps,pre,onecolumn,showpacs,showkeys,a4paper]{revtex4}
+\documentclass[aps,pre,onecolumn,showpacs,showkeys,a4paper]{revtex4}
  % \documentclass[aps,pre,twocolumn,showpacs,showkeys,a4paper]{revtex4}
  %  \documentclass[12pt]{article}  %  \documentclass[12pt]{iopart} %
  %\documentclass{iopart}
@@ -69,7 +69,7 @@ The part of the cytoskeleton that is mainly responsible for the motility of the 
 \section{The Ratchet model}
 We will be looking at a one dimensional system consisting of a myosin motor, interacting with an actin filament. The dynamics of the motor and filament are described by overdamped Langevin equations. 
 \begin{align}
-\rmd x_M &= \frac{1}{\gamma_M} \left[ - \nabla_M V_t(x_M(t) - x_A(t)) + F_{ext} \right] \; \rmd t + \sqrt{ \frac{2 K_B T}{\gamma_M} } \cdot \rmd W_M \label{eom_M}\\
+\rmd x_M &= \frac{1}{\gamma_M} \left[ - \nabla_M V_t(x_M(t) - x_A(t)) + F_{ext} \right] \; \rmd t + \sqrt{ \frac{2 K_B T}{\gamma_M} } \cdot \rmd W_M \label{eom_M} \\
 \rmd x_A &= - \frac{1}{\gamma_A} \nabla_A V_t(x_M(t) - x_A(t)) \; \rmd t + \sqrt{ \frac{2 K_B T}{\gamma_A} } \cdot \rmd W_A
 \label{eom_A}
 \end{align}
@@ -152,7 +152,9 @@ This for different values of $c$, the scaling factor of the amplitude of the rat
 \label{Fig: c_v}
 \end{figure}
 We see that average velocity goes to zero when $c$ approaches $1$. 
-This is to be expected since $c=1$ corresponds to the case where there is no more flashing of the potential, hence the system is in equilibrium.\par
+This is to be expected since $c=1$ corresponds to the case where there is no more flashing of the potential, hence the system is in equilibrium.
+
+
 Alternatively, the average velocity also depends on the concentration of ATP through the detach rate $k_{d}$. 
 This dependency is show in figure \ref{Fig: v_k}.
 \begin{figure}[h]
@@ -326,7 +328,8 @@ This is shown in figure \ref{Fig: chem}.
 \caption{Net input of chemical energy relative to the total input as a function of load force.}
 \label{Fig: chem}
 \end{figure}
-\par
+
+
 After each jump in the chemical state of a motor head, the potential in which the whole motor diffuses is altered and a new relaxation process takes place. 
 The relaxation times of these diffusion processes are much faster than the times between chemical jumps. 
 This is because the chemical rates of the motor heads are very small. 
@@ -354,24 +357,34 @@ In the case without an external load, $F_l=0$, the motor head is very unlikely t
 The maximum of the distribution is close to the minimum of the potential. 
 The discrepancy comes from the fact that the motor has multiple head with a fixed distance between them, which does not match with the period of the ratchet potential. 
 Also the fact that the distributions seem to exhibit multiple peaks, can be attributed to the motor having four heads. 
-Both in the attached and detached state, the head can be found predominantly on the soft slope of the ratchet, which is to be expected.\par
+Both in the attached and detached state, the head can be found predominantly on the soft slope of the ratchet, which is to be expected.
+
+
 With increasing load, we see both a shift of the maximum and a flattening of the profile. 
-The detached distributions are broader for $F_l=0$, because to potential is lower and less steep, and also seem to be more susceptible to external forces, i.e. the profile gets more. \par
+The detached distributions are broader for $F_l=0$, because to potential is lower and less steep, and also seem to be more susceptible to external forces, i.e. the profile gets more. 
+
+
 To understand the dependency of the chemical efficiency on the load, we must compare the attached and detached distribution and correlate this with the with of the energy gap along the period of the ratchet. 
 After all, the numerator in $\eta$ is proportional to $\Delta E - V(x)\left[\rho_a(x) - \rho_d(x)\right]$ integrated over a period of the ratchet. 
-This quantity is plotted in figure \ref{Fig: chem_energy_distr}.\par
+This quantity is plotted in figure \ref{Fig: chem_energy_distr}
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.6\textwidth,height=!]{chem_energy_distr_all_F}
 \caption{Density of the nett energy output by the chemical cycle for various load forces.}
 \label{Fig: chem_energy_distr}
 \end{figure}
+
+
 For example, in absence of a load, the distribution in the attached state is peak around the potential's minimum and has a higher amplitude there compared to the distribution in the detached state. 
 In this region, the energy gap is larger than around the maximum of the potential. 
-Therefore more energy goes into the system, when ATP binds to a head, than energy going out, when ATP is hydrolyzed and the head attaches again to the actin filament. \par 
+Therefore more energy goes into the system, when ATP binds to a head, than energy going out, when ATP is hydrolyzed and the head attaches again to the actin filament. 
+
+
 When the load is increased to $F_l= 25 pN$, the distributions shift to the right but distribution for the attached state remains peaked around the potential minimum, while the detached distribution flattes out and increases around the potential maximum. 
 This leads to an increase of $\eta$. 
-For a load in the opposite direction $F_l = -25 pN$ the effect on $\eta$ is similar but less pronounced, since the slope of the ratchet on the side is less steep and the distributions get more spread out. \par
+For a load in the opposite direction $F_l = -25 pN$ the effect on $\eta$ is similar but less pronounced, since the slope of the ratchet on the side is less steep and the distributions get more spread out. 
+
+
 For larger loads, the distributions shift more but since the detached one is flatter, it is more plausible the find a head in the detached state around the potential minimum. 
 This means that more energy will be dissipated when the heads bind and $\eta$ will go down and even become negative. 
 In the next section we will investigate the behavior of $\eta$ for large loads and show that it indeed has to be negative and that it will decay like $\frac{1}{F_l^2}$ as $F_l$ goes to infinity.
@@ -433,13 +446,15 @@ Now the density up to second order is given by
 \end{equation}
 Observe that in this form, the depends on the ratchet potential only through a first or second order derivative. 
 Therefore the density will appear as a piecewise constant function on $x\in[0,l]$, with different values for $x<al$ and $x>al$. 
-This trend can already be seen in the empirical density obtained from simulations for large load forces $F_L =\pm250 pN$ in figure\par
- \begin{figure}[h]
- \centering
- \includegraphics[width=0.8\textwidth,height=!]{pos_multiplot}
- \caption{Empirical density profiles in both attached and detached state for different loads.}
- \label{Fig: pos_multiplot}
- \end{figure}
+This trend can already be seen in the empirical density obtained from simulations for large load forces $F_L =\pm250 pN$ in figure %TODO
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth,height=!]{pos_multiplot}
+\caption{Empirical density profiles in both attached and detached state for different loads.}
+\label{Fig: pos_multiplot}
+\end{figure}
+
+
 With the second order correction we can now calculate the expected value of the potential energy.
 \begin{eqnarray}
 \langle V_r \rangle_{\delta\rho_2} &=& \int_0^d V_r(x)\delta\rho_2 \rmd x\nonumber\\
