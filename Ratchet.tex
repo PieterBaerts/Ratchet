@@ -28,7 +28,7 @@
 \begin{document} 
 
 \title{The interaction between Actin and Myosin-II, the flashing ratchet}
-\author{Pieter Baerts$^{(1)}$, Christian Maes$^{(1)}$, Ji\v{r}\'{i} Pe\v{s}ek$^{(2)}$, and Herman Ramon$^{(2)}$}
+\author{Pieter Baerts$^{(1)}$, Christian Maes$^{(1)}$, Jiří Pešek$^{(2)}$, and Herman Ramon$^{(2)}$}
 \affiliation{(1) KU Leuven, Instituut voor Theoretishe Fysica, Celestijnenlaan 200D, B-3001 Leuven, Belgium\\
 (2) KU Leuven, BIOSYST-MeBioS, Kasteelpark Arenberg 30, B-3001 Leuven, Belgium
 }
@@ -40,14 +40,31 @@ We present a model for the movement of a myosin-II molecular motor along a strai
 
 \section{Introduction}
 
-The cytoskeleton of a cell serves two main purposes, being the transport of large proteins and governing the cell's motility, e.g. the ability of the cell to move and change its shape. It mainly consists of long semi-flexible polymers and molecular motors. These motors contain several heads that are able to bind to a polymer filaments and walk along them. The mechanism for walking relies both on a chemical cycle in the motor's head and on the asymmetry of a periodic and electrostatic potential along the length of such a polymer.\par
-The chemical cycle is driven by ATP molecules that can attach to a motor head, causing it to change the charge of the head and consequently loosen its bond with the polymer filament. When bound to a motor head, the ATP molecule will hydrolyze to ADP and release a phosphate. It this state, the head can attach to the polymer again and ADP will be released from the motor head and the chemical cycle can start over. Hence, the chemical state of a motor head will determine how strongly it can be coupled to a cytoskeletal filament. \par
-Cytoskeletal polymers exhibit a sequence of monomers that cause a periodical structure. Furthermore, these monomers are polarised, so that when chained together in a polymer, they give rise to a symmetric, ratchet-like, electrostatic potential along the length of the filament. An example of such a potential is shown in Fig X. The heads of a motor too carry an electric charge and therefore they will feel the ratchet potential of the filaments. In the attached state, the motor will tend to be close to the minimum of the potential. However, when the chemical state of the head changes, so does its molecular structure and charge. As mentioned earlier, this causes the bond between the head and a filament to either strengthen or loosen. Therefore the head will experience a ratchet potential that is flashing in time, changing the amplitude of the potential from high to low.\par
+The cytoskeleton of a cell serves two main purposes, being the transport of large proteins and governing the cell's motility, e.g. the ability of the cell to move and change its shape. 
+It mainly consists of long semi-flexible polymers and molecular motors. 
+These motors contain several heads that are able to bind to a polymer filaments and walk along them. 
+The mechanism for walking relies both on a chemical cycle in the motor's head and on the asymmetry of a periodic and electrostatic potential along the length of such a polymer.
 
-When tightly bound, the head will most probably be very close a minimum in the ratchet potential, while in the unbound state, it is easier for the motor to diffuse over a larger distance. However, because of the asymmetry of the ratchet, the motor will be biased to explore one side one side of the ratchet rather than the other. Therefore it will be more probable for the motor to jump to an adjacent period of the ratchet potential in the preferred direction, given by the asymmetry of the potential. This will eventually lead to ballistic motion the motor on long timescales.\par
-The part of the cytoskeleton that is mainly responsible for the motility of the cell is the actin-myosin cortex.  It will serve as the exemplary system in this paper.\par
+The chemical cycle is driven by ATP molecules that can attach to a motor head, causing it to change the charge of the head and consequently loosen its bond with the polymer filament. 
+When bound to a motor head, the ATP molecule will hydrolyze to ADP and release a phosphate. 
+It this state, the head can attach to the polymer again and ADP will be released from the motor head and the chemical cycle can start over. 
+Hence, the chemical state of a motor head will determine how strongly it can be coupled to a cytoskeletal filament. 
 
+Cytoskeletal polymers exhibit a sequence of monomers that cause a periodical structure. 
+Furthermore, these monomers are polarised, so that when chained together in a polymer, they give rise to a symmetric, ratchet-like, electrostatic potential along the length of the filament. 
+An example of such a potential is shown in Fig X. %TODO 
+The heads of a motor too carry an electric charge and therefore they will feel the ratchet potential of the filaments. 
+In the attached state, the motor will tend to be close to the minimum of the potential. 
+However, when the chemical state of the head changes, so does its molecular structure and charge. 
+As mentioned earlier, this causes the bond between the head and a filament to either strengthen or loosen. 
+Therefore the head will experience a ratchet potential that is flashing in time, changing the amplitude of the potential from high to low.
 
+When tightly bound, the head will most probably be very close a minimum in the ratchet potential, while in the unbound state, it is easier for the motor to diffuse over a larger distance. 
+However, because of the asymmetry of the ratchet, the motor will be biased to explore one side one side of the ratchet rather than the other. 
+Therefore it will be more probable for the motor to jump to an adjacent period of the ratchet potential in the preferred direction, given by the asymmetry of the potential. 
+This will eventually lead to ballistic motion the motor on long timescales.
+
+The part of the cytoskeleton that is mainly responsible for the motility of the cell is the actin-myosin cortex.  It will serve as the exemplary system in this paper.
 
 \section{The Ratchet model}
 We will be looking at a one dimensional system consisting of a myosin motor, interacting with an actin filament. The dynamics of the motor and filament are described by overdamped Langevin equations. 
@@ -86,16 +103,24 @@ Depending on the internal state of the head we have
       c & s(i) = 0
    \end{cases}
 \end{equation}
-where $c\in\left[0,1\right]$ and $s(i)$ is the internal state of the $i$th head. The parameter $c$ determines the amplitude of the ratchet potential when the motor is loosely bound to the filament. The evolution of the internal state of the heads, i.e. a two-level system, is governed by the rate for going from state $0$ to $1$ is $k_{a}$ and the reverse rate is $k_{d}$.
-These rates depend on the concentrations of the relevant chemical species present in ATP hydrolysis, more specifically $k_{d}$ is proportional to $[\text{ATP}]$ while $k_{a}$ is proportional to the inverse of $[\text{ADP}]$ and $[\text{P}_\text{i}]$ [REF]. Figure \ref{Fig: ratchet setup} depicts the whole setup of motor and flashing ratchet. 
+where $c\in\left[0,1\right]$ and $s(i)$ is the internal state of the $i$th head. 
+The parameter $c$ determines the amplitude of the ratchet potential when the motor is loosely bound to the filament. 
+The evolution of the internal state of the heads, i.e. a two-level system, is governed by the rate for going from state $0$ to $1$ is $k_{a}$ and the reverse rate is $k_{d}$.
+These rates depend on the concentrations of the relevant chemical species present in ATP hydrolysis, more specifically $k_{d}$ is proportional to $[\text{ATP}]$ while $k_{a}$ is proportional to the inverse of $[\text{ADP}]$ and $[\text{P}_\text{i}]$ [REF]. 
+Figure \ref{Fig: ratchet setup} depicts the whole setup of motor and flashing ratchet. 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.6\textwidth,height=!]{ratchet_illustration}
-\caption{In the top of this illustration, the backbone of the myosin motor is shown with heads that are a distance $l$ apart. In the bottom, the potential along an actin filament is depicted. It had a period $d$ and skewness $a$. Depending on the internal state of the motor head, it will feel a ratchet potential with hight $V$ or $cV$.} 
+\caption{In the top of this illustration, the backbone of the myosin motor is shown with heads that are a distance $l$ apart. 
+In the bottom, the potential along an actin filament is depicted. 
+It had a period $d$ and skewness $a$. 
+Depending on the internal state of the motor head, it will feel a ratchet potential with hight $V$ or $cV$.} 
 \label{Fig: ratchet setup}
 \end{figure}
 
-Table \ref{Tab: Parameters} lists the values of the parameters used in this model. Some of them were took from the literature while others were fitted to give a realistic speeds and stall force for the myosin II motor. The friction coefficients were calculated with Stokes' law, using the known dimensions of the molecules \footnote{The myosin II motor and actin filament molecules were approximated in this calculation by long, thin cylinders.} and the viscosity of the extracellular medium.
+Table \ref{Tab: Parameters} lists the values of the parameters used in this model. 
+Some of them were took from the literature while others were fitted to give a realistic speeds and stall force for the myosin II motor. 
+The friction coefficients were calculated with Stokes' law, using the known dimensions of the molecules \footnote{The myosin II motor and actin filament molecules were approximated in this calculation by long, thin cylinders.} and the viscosity of the extracellular medium.
 \begin{table}[h]
 \centering
 \begin{tabular}{lcccc}
@@ -117,27 +142,45 @@ Actin friction & $\gamma_{a}$ & 0.97 & pN $\mu$m/nm & REF\\
 \label{Tab: Parameters}
 \end{table}
 
-While both the diffusion and the jump process are in equilibrium, the mechanism of the flashing ratchet brings the combined system out of equilibrium, leading to the movement of the motor in a preferred direction, given by the asymmetry of the filament. In simulations we measured the average velocity $\langle v\rangle$ of the motor with respect to the filament. This for different values of $c$, the scaling factor of the amplitude of the ratchet potential, show in figure \ref{Fig: c_v}.
+While both the diffusion and the jump process are in equilibrium, the mechanism of the flashing ratchet brings the combined system out of equilibrium, leading to the movement of the motor in a preferred direction, given by the asymmetry of the filament. 
+In simulations we measured the average velocity $\langle v\rangle$ of the motor with respect to the filament. 
+This for different values of $c$, the scaling factor of the amplitude of the ratchet potential, show in figure \ref{Fig: c_v}.
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.6\textwidth,height=!]{c_v_4heads}
 \caption{Average velocity of the motor relative to the actin filament for $c$ for $0$ to $1$.} 
 \label{Fig: c_v}
 \end{figure}
-We see that average velocity goes to zero when $c$ approaches $1$. This is to be expected since $c=1$ corresponds to the case where there is no more flashing of the potential, hence the system is in equilibrium.\par
-Alternatively, the average velocity also depends on the concentration of ATP through the detach rate $k_{d}$. This dependency is show in figure \ref{Fig: v_k}.
+We see that average velocity goes to zero when $c$ approaches $1$. 
+This is to be expected since $c=1$ corresponds to the case where there is no more flashing of the potential, hence the system is in equilibrium.\par
+Alternatively, the average velocity also depends on the concentration of ATP through the detach rate $k_{d}$. 
+This dependency is show in figure \ref{Fig: v_k}.
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.6\textwidth,height=!]{v_k}
 \caption{Average velocity of the motor relative to the actin filament for varying $k_{a}$.}
 \label{Fig: v_k} 
 \end{figure}
-The first data point corresponds to the case where $k_{d} = k_{a} = 40 s^{-1}$ and for the following points $k_{d}$ is doubled every time while $k_{a}$ stayas constant. We first observe that the velocity initially increases, then reaches a maximum around $k_{d} = 160 s^{-1}$ and finally decreases again. A high detach rate means that the motor heads will be attached only for a short time. If this time is too short, the motor might not diffuse all the way to the minimum of the ratchet and has a higher probability the move against the direction given by the asymmetry of the potential. On the other hand, when the detach rate is low the motor has a lot of time to fully equilibrate and will no longer contribute to the generated current. The simulations show that there is an optimal value of$k_{d}$ to maximize the relative velocity between the motor and the actin filament. 
+The first data point corresponds to the case where $k_{d} = k_{a} = 40 s^{-1}$ and for the following points $k_{d}$ is doubled every time while $k_{a}$ stayas constant. 
+We first observe that the velocity initially increases, then reaches a maximum around $k_{d} = 160 s^{-1}$ and finally decreases again. 
+A high detach rate means that the motor heads will be attached only for a short time. 
+If this time is too short, the motor might not diffuse all the way to the minimum of the ratchet and has a higher probability the move against the direction given by the asymmetry of the potential. 
+On the other hand, when the detach rate is low the motor has a lot of time to fully equilibrate and will no longer contribute to the generated current. 
+The simulations show that there is an optimal value of$k_{d}$ to maximize the relative velocity between the motor and the actin filament. 
 
 
 
 \section{Force-velocity relation}
-In this section, an external load force $F_load$ is applied to the motor, as in equation (\ref{eom_M}). When a force is applied against the preferred direction of the motor, it is expected to slow down. The force that is needed to fully stop the motor, relative to the actin filament, is called the stall force, i.e. $$\langle\; v ( F_{l} = -F_{stall} )\; \rangle = 0 .$$Figure \ref{Fig: F_v_zoom}  shows the results from simulations of the motor under load. The points where a curve crosses the vertical axis correspond to the average velocities in figure \ref{Fig: v_k}. We see that the average velocity decreases linearly with increasing load. The slope varies for different detach rates. This can be understood if we look at the dependency of the stall force on $k_{d}$ in figure \ref{Fig: k_Fstall}.
+In this section, an external load force $F_load$ is applied to the motor, as in equation (\ref{eom_M}). 
+When a force is applied against the preferred direction of the motor, it is expected to slow down. 
+The force that is needed to fully stop the motor, relative to the actin filament, is called the stall force, i.e. 
+\[
+\langle\; v ( F_{l} = -F_{stall} )\; \rangle = 0 .
+\]
+Figure \ref{Fig: F_v_zoom}  shows the results from simulations of the motor under load. 
+The points where a curve crosses the vertical axis correspond to the average velocities in figure \ref{Fig: v_k}. 
+We see that the average velocity decreases linearly with increasing load. 
+The slope varies for different detach rates. This can be understood if we look at the dependency of the stall force on $k_{d}$ in figure \ref{Fig: k_Fstall}.
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.6\textwidth,height=!]{F_v_zoom}
@@ -151,23 +194,31 @@ In this section, an external load force $F_load$ is applied to the motor, as in 
 \caption{Stall force for different detach rates.}
 \label{Fig: k_Fstall} 
 \end{figure}
-When the detach rate $k_{d}$ increases, so does the fraction of time in which the motor is the least bound to the actin filament. Hence it will be easier to halt a motor when it since the amplitude of its confining potential will be lower on average.
-In figure \ref{Fig: F_v} the average velocity of the motor with respect to the actin filament is plotted for a wider range of the load force. Also the speed of the motor, if it was not  interacting with an actin polymer i.e. $\langle v \rangle = \frac{1}{\gamma_M}F_l$, is shown in black as a reference.
+When the detach rate $k_{d}$ increases, so does the fraction of time in which the motor is the least bound to the actin filament. 
+Hence it will be easier to halt a motor when it since the amplitude of its confining potential will be lower on average.
+In figure \ref{Fig: F_v} the average velocity of the motor with respect to the actin filament is plotted for a wider range of the load force. 
+Also the speed of the motor, if it was not  interacting with an actin polymer i.e. $\langle v \rangle = \frac{1}{\gamma_M}F_l$, is shown in black as a reference.
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.6\textwidth,height=!]{F_v}
 \caption{Average velocity of the motor against the load force for $c=0.3$.}
 \label{Fig: F_v} 
 \end{figure}
-For small load forces, there is a regime in which the response is very low. The ratchet interaction provides a friction to counter the load force. For larger forces the system looses its resilience and the contribution from the load will dominate. The larger the load, the closer the velocity will come to  $\frac{1}{\gamma_M}F_l$.
-Curves for higher detach rates are closer to the curve for the completely unbound motor. The motor is more submissive to the external load, which can be understood through the same reasoning as for the stall force.
-It is also interesting to look at the velocities of the motor and actin filament separately, instead of their relative velocity. For equations (\ref{eom_M}) and (\ref{eom_A}) we can obtain the following.
+For small load forces, there is a regime in which the response is very low. 
+The ratchet interaction provides a friction to counter the load force. 
+For larger forces the system looses its resilience and the contribution from the load will dominate. 
+The larger the load, the closer the velocity will come to  $\frac{1}{\gamma_M}F_l$.
+Curves for higher detach rates are closer to the curve for the completely unbound motor. 
+The motor is more submissive to the external load, which can be understood through the same reasoning as for the stall force.
+It is also interesting to look at the velocities of the motor and actin filament separately, instead of their relative velocity. 
+For equations (\ref{eom_M}) and (\ref{eom_A}) we can obtain the following.
 
 \begin{align*}
 \gamma_M \langle v_M \rangle &= \langle F_r \rangle + F_l \\
 \gamma_A \langle v_A \rangle &= -\langle F_r \rangle
 \end{align*}
-Where $\langle v_{M,A} \rangle = \langle \frac{\rmd x_{M,A}}{\rmd t} \rangle$ and $\langle F_r \rangle = - \langle \nabla_M V_t(x_M - x_A ) \rangle =\langle \nabla_A V_t(x_M - x_A ) \rangle $. And since the relative velocity is $\langle v \rangle = \langle v_{M} \rangle - \langle v_{A} \rangle$ we get
+Where $\langle v_{M,A} \rangle = \langle \frac{\rmd x_{M,A}}{\rmd t} \rangle$ and $\langle F_r \rangle = - \langle \nabla_M V_t(x_M - x_A ) \rangle =\langle \nabla_A V_t(x_M - x_A ) \rangle $. 
+And since the relative velocity is $\langle v \rangle = \langle v_{M} \rangle - \langle v_{A} \rangle$ we get
 \begin{equation*}
 \langle v \rangle = \frac{\gamma_A + \gamma_M}{\gamma_A\gamma_M} \langle F_r \rangle + \frac{1}{\gamma_M}F_l
 \end{equation*}
@@ -184,16 +235,24 @@ or similarly
 \caption{Individual average velocities of the motor and actin filament. Inset: Zoomed to the linear regime around the origin.}
 \label{Fig: ind_v} 
 \end{figure}
-For figure \ref{Fig: ind_v} we can see that already for small loads, the motor and actin filament will start moving together, i.e. they are coupled by the ratchet interaction. In the inset of figure \ref{Fig: ind_v} their velocities, for small loads, go like $F_l/(\gamma_M + \gamma_A)$. This can be seen from equations (\ref{velocity_M}) and (\ref{velocity_A}) and the fact that $\langle v \rangle$ stays almost constant around the origin in figure \ref{Fig: F_v}. The relative velocity remains almost constant in this regime.
+For figure \ref{Fig: ind_v} we can see that already for small loads, the motor and actin filament will start moving together, i.e. they are coupled by the ratchet interaction. 
+In the inset of figure \ref{Fig: ind_v} their velocities, for small loads, go like $F_l/(\gamma_M + \gamma_A)$. 
+This can be seen from equations (\ref{velocity_M}) and (\ref{velocity_A}) and the fact that $\langle v \rangle$ stays almost constant around the origin in figure \ref{Fig: F_v}. 
+The relative velocity remains almost constant in this regime.
 Note that the point at which the velocity of the motor drops beneath actin's velocity is where the load is equal to the stall force.
-Since the load is only applied to the motor, for very high loads, the motor will start slipping over the ratchet potential along the actin filament. Consequently, the filament's velocity will stop increase and go to zero for larger loads. The motor will accelerate for higher loads and its velocity will approach $F_l/\gamma_M$. The relative velocity $\langle v \rangle$ will be equal to the motor's velocity $\langle v_M \rangle$ in that case.
+Since the load is only applied to the motor, for very high loads, the motor will start slipping over the ratchet potential along the actin filament. 
+Consequently, the filament's velocity will stop increase and go to zero for larger loads. 
+The motor will accelerate for higher loads and its velocity will approach $F_l/\gamma_M$. 
+The relative velocity $\langle v \rangle$ will be equal to the motor's velocity $\langle v_M \rangle$ in that case.
 
-\par
-Alternatively one could look at the nonlinear force-velocity relation by identifying an effective friction force that depends on the load. Without the ratchet interaction, the motion of the motor would satisfy following equation for the average velocity, e.g. the black curve in figure \ref{Fig: F_v}.
+Alternatively one could look at the nonlinear force-velocity relation by identifying an effective friction force that depends on the load. 
+Without the ratchet interaction, the motion of the motor would satisfy following equation for the average velocity, e.g. the black curve in figure \ref{Fig: F_v}.
 \begin{equation*}
 \gamma_{m}\langle v\rangle - F_{l} = 0
 \end{equation*}
-The violation of this relation in the presence of the ratchet interaction gives us this effective friction. It is shown in figure \ref{Fig: effective_friction}. Note that this is the same as the distance between the force-velocity curves and the ratchet-free curve in figure \ref{Fig: F_v}.
+The violation of this relation in the presence of the ratchet interaction gives us this effective friction. 
+It is shown in figure \ref{Fig: effective_friction}. 
+Note that this is the same as the distance between the force-velocity curves and the ratchet-free curve in figure \ref{Fig: F_v}.
 \begin{equation*}
 \gamma_{m}\langle v\rangle - F_{l} = \frac{\gamma_A + \gamma_M}{\gamma_A} \langle F_r \rangle = F_{eff}
 \end{equation*}
@@ -203,22 +262,29 @@ The violation of this relation in the presence of the ratchet interaction gives 
 \caption{Effective friction depending on the load force on the motor.}
 \label{Fig: effective_friction}
 \end{figure}
-The response of the system for small loads is linear and independent of the ATP concentration. The effective friction generated by the ratchet interaction will reach a maximal value and eventually decay for larger external forces. As the load goes to infinity, the friction provided by the ratchet will go to zero as 
+The response of the system for small loads is linear and independent of the ATP concentration. 
+The effective friction generated by the ratchet interaction will reach a maximal value and eventually decay for larger external forces. 
+As the load goes to infinity, the friction provided by the ratchet will go to zero as 
 \begin{equation*}
 |\langle F_{eff}\rangle_{F_l\rightarrow\infty}| \sim \frac{1}{F_l}
 \end{equation*} 
-which is shown in figure \ref{Fig: eff_frict_decay}. Later on, we will show that for a one headed motor, this is indeed the dominant contribution for large external forces.  
+which is shown in figure \ref{Fig: eff_frict_decay}. 
+Later on, we will show that for a one headed motor, this is indeed the dominant contribution for large external forces.  
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.6\textwidth,height=!]{eff_frict_decay}
-\caption{The effective friction, depending on the load, is shown in a logarithmic plot. The fitted curve decays like $\frac{1}{F_l}$, i.e. it has a slope of $-1$ in the logarithmic plot, and fits the simulation data nicely.}
+\caption{The effective friction, depending on the load, is shown in a logarithmic plot. 
+The fitted curve decays like $\frac{1}{F_l}$, i.e. it has a slope of $-1$ in the logarithmic plot, and fits the simulation data nicely.}
 \label{Fig: eff_frict_decay}
 \end{figure}
 
 
 \section{Energy input from the chemical process}
 
-The chemical cycle of the motor heads, driven by ATP, is modeled by a two-state continuous time jump process. The dynamics of the system is fully determined by the two rates $k_a$ and $k_d$. The evolution of probability density of the system $\rho_s$ is governed by the master equation, where $s = \{0,1\}$ is the chemical state of a motor head. State $s=0$ corresponds to an ATP bound head, loosely bound to the actin filament, while in the state $s=1$ the head is strongly coupled to the ratchet potential along the actin filament.
+The chemical cycle of the motor heads, driven by ATP, is modeled by a two-state continuous time jump process. 
+The dynamics of the system is fully determined by the two rates $k_a$ and $k_d$. 
+The evolution of probability density of the system $\rho_s$ is governed by the master equation, where $s = \{0,1\}$ is the chemical state of a motor head. 
+State $s=0$ corresponds to an ATP bound head, loosely bound to the actin filament, while in the state $s=1$ the head is strongly coupled to the ratchet potential along the actin filament.
 \begin{eqnarray}
 \dot{\rho}_0 &=& -k_a \rho_0 + k_d \rho_1\\
 \dot{\rho}_1 &=& k_a \rho_0 - k_d \rho_1 
@@ -230,7 +296,13 @@ This system will always relax to its equilibrium steady state $\rho^{eq}_s$.
 \end{eqnarray}
 In equilibrium, detailed balance is satisfied and the chemical cycle does not dissipate heat on its own, on average.
 Similarly, the diffusion processes of the myosin and actin own their own, without an external force, are in equilibrium.
-However, when coupled together, we observe the motor walking along the actin track. This suggests that non-equilibrium is caused be the relaxation of the diffusion processes immediately after each change in the chemical state of a motor head. The energy that is dissipated in these recurring relaxations is provided by the changes in potential energy during each chemical jump. Figure \ref{Fig: energy} shows the energy landscape in which the myosin motor diffuses, relative to the actin filament. In state $s=0$ the motor head moves in the top ratchet, at a higher energy but with a smaller amplitude, while in state $s=1$ the head's coupling is stronger and the amplitude of the ratchet is higher. To each jump there is an amount of energy that is absorbed or dissipated by the system. We can count all the contributions of jumps to state $s=1$ and to state $s=0$ separately.
+However, when coupled together, we observe the motor walking along the actin track. 
+This suggests that non-equilibrium is caused be the relaxation of the diffusion processes immediately after each change in the chemical state of a motor head. 
+The energy that is dissipated in these recurring relaxations is provided by the changes in potential energy during each chemical jump. 
+Figure \ref{Fig: energy} shows the energy landscape in which the myosin motor diffuses, relative to the actin filament. 
+In state $s=0$ the motor head moves in the top ratchet, at a higher energy but with a smaller amplitude, while in state $s=1$ the head's coupling is stronger and the amplitude of the ratchet is higher. 
+To each jump there is an amount of energy that is absorbed or dissipated by the system. 
+We can count all the contributions of jumps to state $s=1$ and to state $s=0$ separately.
 \begin{eqnarray}
 \mathcal Q_{in} &=& \sum_{t_d} \left[\Delta E + (c-1)V_r(x_{t_d})\right]\label{q_in}\\
 \mathcal Q_{out} &=& -\sum_{t_a} \left[\Delta E + (c-1)V_r(x_{t_a})\right]\label{q_out}
@@ -246,7 +318,8 @@ Where $t_a$ and $t_d$ are all jump times to state $s=1$ and $s=0$ respectively.
 \begin{equation}
 \eta = \frac{\langle\mathcal Q_{in}\rangle+\langle\mathcal Q_{out}\rangle}{\langle\mathcal Q_{in}\rangle}
 \end{equation}
-This quantifies the fraction of chemical energy, supplied by the ATP driven cycles of the heads, that remains in the system. This is shown in figure \ref{Fig: chem}.
+This quantifies the fraction of chemical energy, supplied by the ATP driven cycles of the heads, that remains in the system. 
+This is shown in figure \ref{Fig: chem}.
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.6\textwidth,height=!]{chemical_cycle}
@@ -254,50 +327,75 @@ This quantifies the fraction of chemical energy, supplied by the ATP driven cycl
 \label{Fig: chem}
 \end{figure}
 \par
-After each jump in the chemical state of a motor head, the potential in which the whole motor diffuses is altered and a new relaxation process takes place. The relaxation times of these diffusion processes are much faster than the times between chemical jumps. This is because the chemical rates of the motor heads are very small. Hence we can assume that the averages of the quantities (\ref{q_in}) and (\ref{q_out}) can be described by
+After each jump in the chemical state of a motor head, the potential in which the whole motor diffuses is altered and a new relaxation process takes place. 
+The relaxation times of these diffusion processes are much faster than the times between chemical jumps. 
+This is because the chemical rates of the motor heads are very small. 
+Hence we can assume that the averages of the quantities (\ref{q_in}) and (\ref{q_out}) can be described by
 \begin{eqnarray}
 \langle \mathcal Q_{in} \rangle =& \rho^{eq}_1 k_d \left[\Delta E - (1-c)\langle V_r(x) \rangle_{s=1} \right] &= \frac{k_a k_d}{k_a + k_d}\left[\Delta E - (1-c)\langle V_r(x) \rangle_{s=1} \right] \label{Q_in}\\
 \langle \mathcal Q_{out} \rangle =& -\rho^{eq}_0 k_a \left[\Delta E - (1-c)\langle V_r(x) \rangle_{s=0} \right] &= -\frac{k_a k_d}{k_a + k_d}\left[\Delta E - (1-c)\langle V_r(x) \rangle_{s=0} \right]\label{Q_out}
 \end{eqnarray}
-where $\langle \cdot \rangle_{s}$ stands for an average over the steady state distribution in a given state $s$. This will give us an expression for the chemical efficiency.
+where $\langle \cdot \rangle_{s}$ stands for an average over the steady state distribution in a given state $s$. 
+This will give us an expression for the chemical efficiency.
 \begin{equation}
 \eta = \frac{(1-c)\left(\langle V_r\rangle_{s=0}-\langle V_r\rangle_{s=1}\right)}{\Delta E - (1-c)\langle V_r\rangle_{s=1}}\label{eta}
 \end{equation}
-From this, we can understand the chemical energy balance, shown in figure \ref{Fig: chem}, by looking at the difference of where a motor head is typically positioned in the potential energy landscape when it is in the attached or detached state. These distributions are computed by collecting the positions of the heads over all times that the head was in the attached/detached state. They are shown in figure \ref{Fig: pos_distr} for different load forces. As argued, since the relaxation is fast, compared to the chemical rates, this approximates the steady distribution very well.
+From this, we can understand the chemical energy balance, shown in figure \ref{Fig: chem}, by looking at the difference of where a motor head is typically positioned in the potential energy landscape when it is in the attached or detached state. 
+These distributions are computed by collecting the positions of the heads over all times that the head was in the attached/detached state. 
+They are shown in figure \ref{Fig: pos_distr} for different load forces. 
+As argued, since the relaxation is fast, compared to the chemical rates, this approximates the steady distribution very well.
 \begin{figure}[h]
 \centering
 \includegraphics[width=1\textwidth,height=!]{pos_distr_all_F}
 \caption{Distributions of the motor heads in the attached and detached state, for different load forces.}
 \label{Fig: pos_distr}
 \end{figure}
-In the case without an external load, $F_l=0$, the motor head is very unlikely to cross the potential barrier in the attached state. The maximum of the distribution is close to the minimum of the potential. The discrepancy comes from the fact that the motor has multiple head with a fixed distance between them, which does not match with the period of the ratchet potential. Also the fact that the distributions seem to exhibit multiple peaks, can be attributed to the motor having four heads. Both in the attached and detached state, the head can be found predominantly on the soft slope of the ratchet, which is to be expected.\par
-With increasing load, we see both a shift of the maximum and a flattening of the profile. The detached distributions are broader for $F_l=0$, because to potential is lower and less steep, and also seem to be more susceptible to external forces, i.e. the profile gets more. \par
+In the case without an external load, $F_l=0$, the motor head is very unlikely to cross the potential barrier in the attached state. 
+The maximum of the distribution is close to the minimum of the potential. 
+The discrepancy comes from the fact that the motor has multiple head with a fixed distance between them, which does not match with the period of the ratchet potential. 
+Also the fact that the distributions seem to exhibit multiple peaks, can be attributed to the motor having four heads. 
+Both in the attached and detached state, the head can be found predominantly on the soft slope of the ratchet, which is to be expected.\par
+With increasing load, we see both a shift of the maximum and a flattening of the profile. 
+The detached distributions are broader for $F_l=0$, because to potential is lower and less steep, and also seem to be more susceptible to external forces, i.e. the profile gets more. \par
 To understand the dependency of the chemical efficiency on the load, we must compare the attached and detached distribution and correlate this with the with of the energy gap along the period of the ratchet. 
-After all, the numerator in $\eta$ is proportional to $\Delta E - V(x)\left[\rho_a(x) - \rho_d(x)\right]$ integrated over a period of the ratchet. This quantity is plotted in figure \ref{Fig: chem_energy_distr}.\par
+After all, the numerator in $\eta$ is proportional to $\Delta E - V(x)\left[\rho_a(x) - \rho_d(x)\right]$ integrated over a period of the ratchet. 
+This quantity is plotted in figure \ref{Fig: chem_energy_distr}.\par
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.6\textwidth,height=!]{chem_energy_distr_all_F}
 \caption{Density of the nett energy output by the chemical cycle for various load forces.}
 \label{Fig: chem_energy_distr}
 \end{figure}
-For example, in absence of a load, the distribution in the attached state is peak around the potential's minimum and has a higher amplitude there compared to the distribution in the detached state. In this region, the energy gap is larger than around the maximum of the potential. Therefore more energy goes into the system, when ATP binds to a head, than energy going out, when ATP is hydrolyzed and the head attaches again to the actin filament. \par 
-When the load is increased to $F_l= 25 pN$, the distributions shift to the right but distribution for the attached state remains peaked around the potential minimum, while the detached distribution flattes out and increases around the potential maximum. This leads to an increase of $\eta$. For a load in the opposite direction $F_l = -25 pN$ the effect on $\eta$ is similar but less pronounced, since the slope of the ratchet on the side is less steep and the distributions get more spread out. \par
-For larger loads, the distributions shift more but since the detached one is flatter, it is more plausible the find a head in the detached state around the potential minimum. This means that more energy will be dissipated when the heads bind and $\eta$ will go down and even become negative. In the next section we will investigate the behavior of $\eta$ for large loads and show that it indeed has to be negative and that it will decay like $\frac{1}{F_l^2}$ as $F_l$ goes to infinity.
+For example, in absence of a load, the distribution in the attached state is peak around the potential's minimum and has a higher amplitude there compared to the distribution in the detached state. 
+In this region, the energy gap is larger than around the maximum of the potential. 
+Therefore more energy goes into the system, when ATP binds to a head, than energy going out, when ATP is hydrolyzed and the head attaches again to the actin filament. \par 
+When the load is increased to $F_l= 25 pN$, the distributions shift to the right but distribution for the attached state remains peaked around the potential minimum, while the detached distribution flattes out and increases around the potential maximum. 
+This leads to an increase of $\eta$. 
+For a load in the opposite direction $F_l = -25 pN$ the effect on $\eta$ is similar but less pronounced, since the slope of the ratchet on the side is less steep and the distributions get more spread out. \par
+For larger loads, the distributions shift more but since the detached one is flatter, it is more plausible the find a head in the detached state around the potential minimum. 
+This means that more energy will be dissipated when the heads bind and $\eta$ will go down and even become negative. 
+In the next section we will investigate the behavior of $\eta$ for large loads and show that it indeed has to be negative and that it will decay like $\frac{1}{F_l^2}$ as $F_l$ goes to infinity.
 
 \section{Perturbative treatment}
-In this section we will show that the chemical cycle must extract energy from the ratchet system with one head and for large load forces, i.e. the chemical efficiency $\eta$ must be negative. We will do this by calculating the perturbative corrections to the probability density of the position of the motor with respect to the actin filament, both in the attached and detached state. For this we assume that the diffusive relaxation time is much shorter than the typical time between jumps in the chemical state of the heads. This will allow us to use steady state distributions to calculate the expected values of the potential energy in equation (\ref{eta}).
+In this section we will show that the chemical cycle must extract energy from the ratchet system with one head and for large load forces, i.e. the chemical efficiency $\eta$ must be negative. 
+We will do this by calculating the perturbative corrections to the probability density of the position of the motor with respect to the actin filament, both in the attached and detached state. 
+For this we assume that the diffusive relaxation time is much shorter than the typical time between jumps in the chemical state of the heads. 
+This will allow us to use steady state distributions to calculate the expected values of the potential energy in equation (\ref{eta}).
 We start with the Fokker-Planck equation for steady states, i.e. $\partial_t \rho = 0$.
 \begin{equation}
 \frac{1}{\gamma}\partial_x\left[\left(F-\partial_x V_r(x)\right)\rho(x) - k_B T \partial_x\rho(x)\right] = 0
 \label{FP_ss}
 \end{equation}
-where $V$ is the ratchet potential in a given state and F is the constant load force. As we want to calculate perturbations for large loads we will rewrite equation (\ref{FP_ss}) so that we can use $\epsilon = \frac{1}{F}$ as the perturbation.
+where $V$ is the ratchet potential in a given state and F is the constant load force. 
+As we want to calculate perturbations for large loads we will rewrite equation (\ref{FP_ss}) so that we can use $\epsilon = \frac{1}{F}$ as the perturbation.
 \begin{equation}
 \partial_x\left[\rho(x)-\frac{1}{F}\left(\partial_x V_r(x)\rho(x) + k_B T \partial_x\rho(x)\right)\right] = 0
 \label{FP_ss_pert}
 \end{equation}
-For infinitely large loads the steady state distribution is flat, i.e. $\rho_0 = \frac{1}{d}$, which will be the zeroth order solution. Since this will be the case in both the attached and detached state, it will yield the same expected values of $V$ and therefore $\eta$ must be equal to zero.
-The first order solution will be of the form $\rho_1 = \rho_0 + \delta\rho_1$. When inserted into (\ref{FP_ss_pert}) and only keeping terms up to first order in $\frac{1}{F}$, we get
+For infinitely large loads the steady state distribution is flat, i.e. $\rho_0 = \frac{1}{d}$, which will be the zeroth order solution. 
+Since this will be the case in both the attached and detached state, it will yield the same expected values of $V$ and therefore $\eta$ must be equal to zero.
+The first order solution will be of the form $\rho_1 = \rho_0 + \delta\rho_1$. 
+When inserted into (\ref{FP_ss_pert}) and only keeping terms up to first order in $\frac{1}{F}$, we get
 \begin{equation}
 \partial_x\left[\delta\rho_1-\frac{1}{F}\partial_x V_r(x)\rho_0\right] = 0
 \end{equation}
@@ -311,7 +409,8 @@ However, this first order correction will not contribute to calculations of $\la
 \langle V_r \rangle_{\delta\rho_1} = \int_0^d V_r(x) \delta\rho_1 \rmd x\propto \int_0^d V_r(x)\partial_x V_r(x) \rmd x = \frac{1}{2}\int_0^d \partial_x V_r^2(x) \rmd x = 0
 \end{eqnarray}
 where we used integration by parts and the fact that $V_r(x)$ is periodic.
-Consequently, we need to calculate the second order correction $\delta\rho_2$. Now by inserting $\rho_2 = \rho_1 + \delta\rho_2$ in (\ref{FP_ss_pert}) and only keeping up to second order in $\frac{1}{F}$, we find
+Consequently, we need to calculate the second order correction $\delta\rho_2$. 
+Now by inserting $\rho_2 = \rho_1 + \delta\rho_2$ in (\ref{FP_ss_pert}) and only keeping up to second order in $\frac{1}{F}$, we find
  \begin{equation}
  \partial_x\left[\delta\rho_2-\frac{1}{F}\partial_x V_r\delta\rho_1 - \frac{k_B T}{F}\partial_x \delta\rho_1\right] =  \partial_x\left[\delta\rho_2-\frac{1}{dF^2}\left(\partial_x V_r\right)^2 - \frac{k_B T}{dF^2}\partial_x^2 V_r\right] = 0
  \end{equation}
@@ -327,11 +426,14 @@ Which simplifies to
 \begin{equation}
 C^\prime = - \frac{1}{d^2F^2}\int_0^d\left(\partial_xV_r\right)^2 \rmd x\ . 
 \end{equation}
-The first order term again did not contribute and the thermal term vanished as well because of the periodicity of $V_r(x)$. Now the density up to second order is given by
+The first order term again did not contribute and the thermal term vanished as well because of the periodicity of $V_r(x)$. 
+Now the density up to second order is given by
 \begin{equation}
 \rho_2 = \rho_0 + \delta\rho_1 + \delta\rho_2 = \frac{1}{d}\left[1 + \frac{1}{F}\partial_x V_r + \frac{1}{F^2}\left(\left(\partial_xV_r\right)^2 - k_B T \partial_x^2V_r - \frac{1}{d}\int_0^d\left(\partial_xV_r\right)^2 \rmd x\right)\right] \ .
 \end{equation}
-Observe that in this form, the depends on the ratchet potential only through a first or second order derivative. Therefore the density will appear as a piecewise constant function on $x\in[0,l]$, with different values for $x<al$ and $x>al$. This trend can already be seen in the empirical density obtained from simulations for large load forces $F_L =\pm250 pN$ in figure\par
+Observe that in this form, the depends on the ratchet potential only through a first or second order derivative. 
+Therefore the density will appear as a piecewise constant function on $x\in[0,l]$, with different values for $x<al$ and $x>al$. 
+This trend can already be seen in the empirical density obtained from simulations for large load forces $F_L =\pm250 pN$ in figure\par
  \begin{figure}[h]
  \centering
  \includegraphics[width=0.8\textwidth,height=!]{pos_multiplot}
@@ -355,13 +457,19 @@ Similarly, for the zeroth order expectation value we find
 \begin{equation}
 \langle V_r \rangle_{\rho_0} = \frac{1}{d}\int_0^d V_r(x)\rmd x = \frac{V}{2}\ .
 \end{equation}
-Using this, we can calculate $\eta$ up to second order in $\frac{1}{F}$. Note that the zeroth and first order are zero.
+Using this, we can calculate $\eta$ up to second order in $\frac{1}{F}$. 
+Note that the zeroth and first order are zero.
 \begin{equation}
 \eta = -\left(\frac{V}{dF}\right)^2\frac{k_BT}{\Delta E - (1-c)\frac{V}{2}}\ \frac{\left(1-c\right)^2}{a(1-a)}
 \end{equation}
-With this we show that, at least for a ratchet system with one motor head, it is expected that $\eta$ will become negative for large external loads and eventually goes to zero as the load goes to infinity. This means the driven system looses chemical energy, while the external force is performing work on the system. The efficiency $\eta$ is symmetric in $F$ for large forces, which is also apparent from figure \ref{Fig: chem}. Also note that in the expression for the chemical efficiency, the ratio between the amplitude of the ratchet potential $V$ and the work done by the external force over a period of the potential $dF$ appears in the formula, as well as the ratio between the thermal energy $k_BT$ and the average energy gap between the attached and detached state. Indeed for large load on the motor, the efficiency will go to zero as can be seen from the zeroth order solution.
+With this we show that, at least for a ratchet system with one motor head, it is expected that $\eta$ will become negative for large external loads and eventually goes to zero as the load goes to infinity. 
+This means the driven system looses chemical energy, while the external force is performing work on the system. 
+The efficiency $\eta$ is symmetric in $F$ for large forces, which is also apparent from figure \ref{Fig: chem}. 
+Also note that in the expression for the chemical efficiency, the ratio between the amplitude of the ratchet potential $V$ and the work done by the external force over a period of the potential $dF$ appears in the formula, as well as the ratio between the thermal energy $k_BT$ and the average energy gap between the attached and detached state. 
+Indeed for large load on the motor, the efficiency will go to zero as can be seen from the zeroth order solution.
 \par
-In addition we can compute the current using the obtained densities. The current is taken from the Fokker-Planck equation (\ref{FP_ss}).
+In addition we can compute the current using the obtained densities. 
+The current is taken from the Fokker-Planck equation (\ref{FP_ss}).
 \begin{equation}
 \mathcal{J} = \frac{1}{\gamma}\left[\left(F - \partial_x V_r\right)\rho - k_BT\partial_x\rho\right] 
 \end{equation}
@@ -369,13 +477,28 @@ When inserting $\rho_2$, we find the current in leading orders of $F$.
 \begin{equation}
 \mathcal{J} = \frac{F}{\gamma d}\left(1+C^\prime\right)  +  \mathcal{O}(\frac{1}{F^2}) = \frac{F}{\gamma d} - \frac{1}{F\gamma d^2}\int^d_0\left(\partial_x V_r\right)^2 \rmd x + \mathcal{O}(\frac{1}{F^2}) 
 \end{equation}
-Important to note is that the current, integrated over the period of the ratchet, represents the average velocity of the motor. Indeed, the dominant term for large external forces is $\mathcal{J}_0 = \frac{F}{\gamma}$, which was also apparent from the simulations shown in figure \ref{Fig: F_v}. Furthermore, the force-independent term vanishes leading to an anti-symmetric form with respect to $F$. The first correction is given by $\frac{F}{\gamma}C^\prime\propto \frac{1}{F}$. This decay was clearly seen in figure \ref{Fig: eff_frict_decay}, which depicts was the average motor velocity deduced by the drag velocity due to the load force $\frac{F}{\gamma}$. This isolates the contribution from the ratchet potential. Hence this result, obtained for a one-headed motor, also seems to hold for the simulations of motors with four heads. 
+Important to note is that the current, integrated over the period of the ratchet, represents the average velocity of the motor. 
+Indeed, the dominant term for large external forces is $\mathcal{J}_0 = \frac{F}{\gamma}$, which was also apparent from the simulations shown in figure \ref{Fig: F_v}. 
+Furthermore, the force-independent term vanishes leading to an anti-symmetric form with respect to $F$. 
+The first correction is given by $\frac{F}{\gamma}C^\prime\propto \frac{1}{F}$. 
+This decay was clearly seen in figure \ref{Fig: eff_frict_decay}, which depicts was the average motor velocity deduced by the drag velocity due to the load force $\frac{F}{\gamma}$. 
+This isolates the contribution from the ratchet potential. 
+Hence this result, obtained for a one-headed motor, also seems to hold for the simulations of motors with four heads. 
 
 
 
 \section{Tug of war}
-In the previous section we saw that the motor offers resistance when pulled by an external force. Now we will look at the motor in a setup where it is subjected to different stiffnesses of the environment in which the filaments are able to move. This setup is sketched in figure \ref{Fig: tug}. One can imagine the filaments being part of a huge network that is characterized by an elastic constant $k$. The motor is now interacting with two filament that are arranged in an anti-parallel fashion. Hence it will no longer have a preferred direction to move in and $\langle v\rangle=0$. The observable of interest is now the average force that the motor applies on the filaments. This quantity is plotted in figure \ref{Fig: tug_k} for different stiffnesses $k$ of the surrounding network. \\
-The force with which the motor pulls on the filament depends strongly on the elasticity $k$ and reaches a maximal value for large $k$. This suggests that the motor is able to sense its environments mechanical properties. Similar results were obtained for different motor models \cite{stam2015isoforms,albert2014stochastic}.
+In the previous section we saw that the motor offers resistance when pulled by an external force. 
+Now we will look at the motor in a setup where it is subjected to different stiffnesses of the environment in which the filaments are able to move. 
+This setup is sketched in figure \ref{Fig: tug}. 
+One can imagine the filaments being part of a huge network that is characterized by an elastic constant $k$. 
+The motor is now interacting with two filament that are arranged in an anti-parallel fashion. 
+Hence it will no longer have a preferred direction to move in and $\langle v\rangle=0$. 
+The observable of interest is now the average force that the motor applies on the filaments. 
+This quantity is plotted in figure \ref{Fig: tug_k} for different stiffnesses $k$ of the surrounding network. \\
+The force with which the motor pulls on the filament depends strongly on the elasticity $k$ and reaches a maximal value for large $k$. 
+This suggests that the motor is able to sense its environments mechanical properties. 
+Similar results were obtained for different motor models \cite{stam2015isoforms,albert2014stochastic}.
 
 
 \begin{figure}[h]
@@ -393,7 +516,8 @@ The force with which the motor pulls on the filament depends strongly on the ela
 
 \section{Tug of war II}
 
-Filaments connected to beads with spring. Pull beads with constant velocity.
+Filaments connected to beads with spring. 
+Pull beads with constant velocity.
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.6\textwidth,height=!]{tug_v}
@@ -435,15 +559,3 @@ Movement of motor.
 
 
 \end{document}
-
-
-
-
-
-
-
-
-
-
-
-
