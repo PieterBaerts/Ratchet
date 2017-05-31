@@ -5,19 +5,21 @@
  %  \documentclass[12pt]{article}  %  \documentclass[12pt]{iopart} %
  %\documentclass{iopart}
  %\pdfoutput=1 \input epsf
-\usepackage{graphicx}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amscd}
-\usepackage{color}
-\usepackage{subfigure}
-\usepackage{natbib}
-\DeclareMathOperator{\erfc}{erfc}
-
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amscd}
 
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{subfigure}
+
+\usepackage{upgreek}
+\usepackage{natbib}
+
+\DeclareMathOperator{\erfc}{erfc}
 
 \newcommand{\rmd}{{\mathrm d}}
 \newcommand{\rme}{{\mathrm e}}
@@ -45,10 +47,12 @@ It mainly consists of long semi-flexible polymers and molecular motors.
 These motors contain several heads that are able to bind to a polymer filaments and walk along them. 
 The mechanism for walking relies both on a chemical cycle in the motor's head and on the asymmetry of a periodic and electrostatic potential along the length of such a polymer.
 
+
 The chemical cycle is driven by ATP molecules that can attach to a motor head, causing it to change the charge of the head and consequently loosen its bond with the polymer filament. 
 When bound to a motor head, the ATP molecule will hydrolyze to ADP and release a phosphate. 
 It this state, the head can attach to the polymer again and ADP will be released from the motor head and the chemical cycle can start over. 
 Hence, the chemical state of a motor head will determine how strongly it can be coupled to a cytoskeletal filament. 
+
 
 Cytoskeletal polymers exhibit a sequence of monomers that cause a periodical structure. 
 Furthermore, these monomers are polarised, so that when chained together in a polymer, they give rise to a symmetric, ratchet-like, electrostatic potential along the length of the filament. 
@@ -59,12 +63,15 @@ However, when the chemical state of the head changes, so does its molecular stru
 As mentioned earlier, this causes the bond between the head and a filament to either strengthen or loosen. 
 Therefore the head will experience a ratchet potential that is flashing in time, changing the amplitude of the potential from high to low.
 
+
 When tightly bound, the head will most probably be very close a minimum in the ratchet potential, while in the unbound state, it is easier for the motor to diffuse over a larger distance. 
 However, because of the asymmetry of the ratchet, the motor will be biased to explore one side one side of the ratchet rather than the other. 
 Therefore it will be more probable for the motor to jump to an adjacent period of the ratchet potential in the preferred direction, given by the asymmetry of the potential. 
 This will eventually lead to ballistic motion the motor on long timescales.
 
+
 The part of the cytoskeleton that is mainly responsible for the motility of the cell is the actin-myosin cortex.  It will serve as the exemplary system in this paper.
+
 
 \section{The Ratchet model}
 We will be looking at a one dimensional system consisting of a myosin motor, interacting with an actin filament. The dynamics of the motor and filament are described by overdamped Langevin equations. 
@@ -81,13 +88,10 @@ With $x_i(t) = x_{m}(t)-x_{a}(t) - i\;l$, the position of the $i$th head relativ
 The ratchet potential $V_r$ is defined here as follows.
 \begin{equation}
 V_{r}(x) =  \begin{cases}
-	V_r(x+d) & x < 0\\ 
-	\\
-      \displaystyle \frac{Vx}{ad} & 0 \leq x < a\;d \\
-      \\
-      \displaystyle \frac{V(d-x)}{(1-a)d} & a\ d \leq x < d\\
-    \\
-    V_r(x-d) & d \leq x  
+        V_r(x+d) & x < 0 \\[1ex] 
+        \displaystyle \frac{ V x }{ a d } & 0 \leq x < a d \\[2ex]
+        \displaystyle \frac{ V (d-x) }{ (1-a) d } & a d \leq x < d \\[2ex]
+        V_r(x-d) & d \leq x  
    \end{cases}
    \label{rat_pot}
 \end{equation}
@@ -135,8 +139,8 @@ Detaching rate & $k_{d}$ & $80$ & s$^{-1}$ & REF\\
 Skewness & $a$ & $0.25$ & / & /\\
 Potential amplitude & $V$ & $40$ & pN nm & /\\
 Potential scaling & $c$ & $0.3$ & / & /\\
-Motor friction & $\gamma_{m}$ & 0.66 & pN $\mu$m/nm & REF\\
-Actin friction & $\gamma_{a}$ & 0.97 & pN $\mu$m/nm & REF\\
+Motor friction & $\gamma_{m}$ & 0.66 & pN $\upmu$m/nm & REF\\
+Actin friction & $\gamma_{a}$ & 0.97 & pN $\upmu$m/nm & REF\\
 \end{tabular}
 \caption{Table of all parameter values and a reference to their source.}
 \label{Tab: Parameters}
@@ -177,7 +181,7 @@ In this section, an external load force $F_load$ is applied to the motor, as in 
 When a force is applied against the preferred direction of the motor, it is expected to slow down. 
 The force that is needed to fully stop the motor, relative to the actin filament, is called the stall force, i.e. 
 \[
-\langle\; v ( F_{l} = -F_{stall} )\; \rangle = 0 .
+\left\langle v ( F_{l} = -F_{stall} ) \right\rangle = 0 .
 \]
 Figure \ref{Fig: F_v_zoom}  shows the results from simulations of the motor under load. 
 The points where a curve crosses the vertical axis correspond to the average velocities in figure \ref{Fig: v_k}. 
@@ -219,17 +223,18 @@ For equations (\ref{eom_M}) and (\ref{eom_A}) we can obtain the following.
 \gamma_M \langle v_M \rangle &= \langle F_r \rangle + F_l \\
 \gamma_A \langle v_A \rangle &= -\langle F_r \rangle
 \end{align*}
-Where $\langle v_{M,A} \rangle = \langle \frac{\rmd x_{M,A}}{\rmd t} \rangle$ and $\langle F_r \rangle = - \langle \nabla_M V_t(x_M - x_A ) \rangle =\langle \nabla_A V_t(x_M - x_A ) \rangle $. 
+Where $\langle v_{M,A} \rangle = \langle \frac{\rmd x_{M,A}}{\rmd t} \rangle$ 
+and $\langle F_r \rangle = - \langle \nabla_M V_t(x_M - x_A ) \rangle = \langle \nabla_A V_t(x_M - x_A ) \rangle $. 
 And since the relative velocity is $\langle v \rangle = \langle v_{M} \rangle - \langle v_{A} \rangle$ we get
 \begin{equation*}
-\langle v \rangle = \frac{\gamma_A + \gamma_M}{\gamma_A\gamma_M} \langle F_r \rangle + \frac{1}{\gamma_M}F_l
+\langle v \rangle = \frac{\gamma_A + \gamma_M}{\gamma_A \gamma_M} \langle F_r \rangle + \frac{1}{\gamma_M} F_l
 \end{equation*}
 or similarly
-\begin{eqnarray*}
-\langle v_M \rangle &= \frac{1}{\gamma_A + \gamma_M}\left(\gamma_A \langle v \rangle + F_l\right) \label{velocity_M}\\
-\langle v_A \rangle &= -\frac{1}{\gamma_A + \gamma_M}\left(\gamma_M \langle v \rangle - F_l\right)
+\begin{align}
+\langle v_M \rangle &= \frac{1}{ \gamma_A + \gamma_M } \left( \gamma_A \langle v \rangle + F_l \right) \label{velocity_M} \\
+\langle v_A \rangle &= -\frac{1}{ \gamma_A + \gamma_M } \left( \gamma_M \langle v \rangle - F_l \right)
 \label{velocity_A}
-\end{eqnarray*}
+\end{align}
 
 \begin{figure}[h]
 \centering
@@ -256,7 +261,7 @@ The violation of this relation in the presence of the ratchet interaction gives 
 It is shown in figure \ref{Fig: effective_friction}. 
 Note that this is the same as the distance between the force-velocity curves and the ratchet-free curve in figure \ref{Fig: F_v}.
 \begin{equation*}
-\gamma_{m}\langle v\rangle - F_{l} = \frac{\gamma_A + \gamma_M}{\gamma_A} \langle F_r \rangle = F_{eff}
+\gamma_{m} \langle v \rangle - F_{l} = \frac{\gamma_A + \gamma_M}{\gamma_A} \langle F_r \rangle = F_{eff}
 \end{equation*}
 \begin{figure}[h]
 \centering
@@ -268,7 +273,7 @@ The response of the system for small loads is linear and independent of the ATP 
 The effective friction generated by the ratchet interaction will reach a maximal value and eventually decay for larger external forces. 
 As the load goes to infinity, the friction provided by the ratchet will go to zero as 
 \begin{equation*}
-|\langle F_{eff}\rangle_{F_l\rightarrow\infty}| \sim \frac{1}{F_l}
+\left| \langle F_{eff} \rangle_{F_l\rightarrow\infty} \right| \sim \frac{1}{F_l}
 \end{equation*} 
 which is shown in figure \ref{Fig: eff_frict_decay}. 
 Later on, we will show that for a one headed motor, this is indeed the dominant contribution for large external forces.  
@@ -287,15 +292,15 @@ The chemical cycle of the motor heads, driven by ATP, is modeled by a two-state 
 The dynamics of the system is fully determined by the two rates $k_a$ and $k_d$. 
 The evolution of probability density of the system $\rho_s$ is governed by the master equation, where $s = \{0,1\}$ is the chemical state of a motor head. 
 State $s=0$ corresponds to an ATP bound head, loosely bound to the actin filament, while in the state $s=1$ the head is strongly coupled to the ratchet potential along the actin filament.
-\begin{eqnarray}
-\dot{\rho}_0 &=& -k_a \rho_0 + k_d \rho_1\\
-\dot{\rho}_1 &=& k_a \rho_0 - k_d \rho_1 
-\end{eqnarray}
+\begin{align*}
+\dot{\rho}_0 &= -k_a \rho_0 + k_d \rho_1 \\
+\dot{\rho}_1 &= k_a \rho_0 - k_d \rho_1 
+\end{align*}
 This system will always relax to its equilibrium steady state $\rho^{eq}_s$.
-\begin{eqnarray}
-\rho^{eq}_0 &=& \frac{k_d}{k_a+k_d}\\
-\rho^{eq}_1 &=& \frac{k_a}{k_a+k_d} 
-\end{eqnarray}
+\begin{align*}
+\rho^{eq}_0 &= \frac{k_d}{k_a+k_d}\\
+\rho^{eq}_1 &= \frac{k_a}{k_a+k_d} 
+\end{align*}
 In equilibrium, detailed balance is satisfied and the chemical cycle does not dissipate heat on its own, on average.
 Similarly, the diffusion processes of the myosin and actin own their own, without an external force, are in equilibrium.
 However, when coupled together, we observe the motor walking along the actin track. 
@@ -305,10 +310,10 @@ Figure \ref{Fig: energy} shows the energy landscape in which the myosin motor di
 In state $s=0$ the motor head moves in the top ratchet, at a higher energy but with a smaller amplitude, while in state $s=1$ the head's coupling is stronger and the amplitude of the ratchet is higher. 
 To each jump there is an amount of energy that is absorbed or dissipated by the system. 
 We can count all the contributions of jumps to state $s=1$ and to state $s=0$ separately.
-\begin{eqnarray}
-\mathcal Q_{in} &=& \sum_{t_d} \left[\Delta E + (c-1)V_r(x_{t_d})\right]\label{q_in}\\
-\mathcal Q_{out} &=& -\sum_{t_a} \left[\Delta E + (c-1)V_r(x_{t_a})\right]\label{q_out}
-\end{eqnarray}
+\begin{align}
+\mathcal Q_{in} &= \sum_{t_d} \left[ \Delta E + (c-1) V_r(x_{t_d}) \right]  \label{q_in} \\
+\mathcal Q_{out} &= -\sum_{t_a} \left[ \Delta E + (c-1) V_r(x_{t_a}) \right]  \label{q_out}
+\end{align}
 Where $t_a$ and $t_d$ are all jump times to state $s=1$ and $s=0$ respectively. 
 \begin{figure}[h]
 \centering
@@ -334,14 +339,18 @@ After each jump in the chemical state of a motor head, the potential in which th
 The relaxation times of these diffusion processes are much faster than the times between chemical jumps. 
 This is because the chemical rates of the motor heads are very small. 
 Hence we can assume that the averages of the quantities (\ref{q_in}) and (\ref{q_out}) can be described by
-\begin{eqnarray}
-\langle \mathcal Q_{in} \rangle =& \rho^{eq}_1 k_d \left[\Delta E - (1-c)\langle V_r(x) \rangle_{s=1} \right] &= \frac{k_a k_d}{k_a + k_d}\left[\Delta E - (1-c)\langle V_r(x) \rangle_{s=1} \right] \label{Q_in}\\
-\langle \mathcal Q_{out} \rangle =& -\rho^{eq}_0 k_a \left[\Delta E - (1-c)\langle V_r(x) \rangle_{s=0} \right] &= -\frac{k_a k_d}{k_a + k_d}\left[\Delta E - (1-c)\langle V_r(x) \rangle_{s=0} \right]\label{Q_out}
-\end{eqnarray}
+\begin{gather}
+\langle \mathcal Q_{in} \rangle 
+= \rho^{eq}_1 k_d \left[ \Delta E - (1-c)\langle V_r(x) \rangle_{s=1} \right] 
+= \frac{k_a k_d}{k_a + k_d}\left[\Delta E - (1-c)\langle V_r(x) \rangle_{s=1} \right] \label{Q_in} \\
+\langle \mathcal Q_{out} \rangle 
+= -\rho^{eq}_0 k_a \left[ \Delta E - (1-c)\langle V_r(x) \rangle_{s=0} \right] 
+= -\frac{k_a k_d}{k_a + k_d} \left[ \Delta E - (1-c)\langle V_r(x) \rangle_{s=0} \right] \label{Q_out}
+\end{gather}
 where $\langle \cdot \rangle_{s}$ stands for an average over the steady state distribution in a given state $s$. 
 This will give us an expression for the chemical efficiency.
 \begin{equation}
-\eta = \frac{(1-c)\left(\langle V_r\rangle_{s=0}-\langle V_r\rangle_{s=1}\right)}{\Delta E - (1-c)\langle V_r\rangle_{s=1}}\label{eta}
+\eta = \frac{ (1-c) \left( \langle V_r \rangle_{s=0} - \langle V_r \rangle_{s=1} \right) }{ \Delta E - (1-c) \langle V_r \rangle_{s=1} } \label{eta}
 \end{equation}
 From this, we can understand the chemical energy balance, shown in figure \ref{Fig: chem}, by looking at the difference of where a motor head is typically positioned in the potential energy landscape when it is in the attached or detached state. 
 These distributions are computed by collecting the positions of the heads over all times that the head was in the attached/detached state. 
@@ -365,7 +374,7 @@ The detached distributions are broader for $F_l=0$, because to potential is lowe
 
 
 To understand the dependency of the chemical efficiency on the load, we must compare the attached and detached distribution and correlate this with the with of the energy gap along the period of the ratchet. 
-After all, the numerator in $\eta$ is proportional to $\Delta E - V(x)\left[\rho_a(x) - \rho_d(x)\right]$ integrated over a period of the ratchet. 
+After all, the numerator in $\eta$ is proportional to $\Delta E - V(x) \left[ \rho_a(x) - \rho_d(x) \right]$ integrated over a period of the ratchet. 
 This quantity is plotted in figure \ref{Fig: chem_energy_distr}
 \begin{figure}[h]
 \centering
@@ -380,9 +389,9 @@ In this region, the energy gap is larger than around the maximum of the potentia
 Therefore more energy goes into the system, when ATP binds to a head, than energy going out, when ATP is hydrolyzed and the head attaches again to the actin filament. 
 
 
-When the load is increased to $F_l= 25 pN$, the distributions shift to the right but distribution for the attached state remains peaked around the potential minimum, while the detached distribution flattes out and increases around the potential maximum. 
+When the load is increased to $F_l = 25 \, \mathrm{pN}$, the distributions shift to the right but distribution for the attached state remains peaked around the potential minimum, while the detached distribution flattes out and increases around the potential maximum. 
 This leads to an increase of $\eta$. 
-For a load in the opposite direction $F_l = -25 pN$ the effect on $\eta$ is similar but less pronounced, since the slope of the ratchet on the side is less steep and the distributions get more spread out. 
+For a load in the opposite direction $F_l = -25 \, \mathrm{pN}$ the effect on $\eta$ is similar but less pronounced, since the slope of the ratchet on the side is less steep and the distributions get more spread out. 
 
 
 For larger loads, the distributions shift more but since the detached one is flatter, it is more plausible the find a head in the detached state around the potential minimum. 
@@ -396,13 +405,13 @@ For this we assume that the diffusive relaxation time is much shorter than the t
 This will allow us to use steady state distributions to calculate the expected values of the potential energy in equation (\ref{eta}).
 We start with the Fokker-Planck equation for steady states, i.e. $\partial_t \rho = 0$.
 \begin{equation}
-\frac{1}{\gamma}\partial_x\left[\left(F-\partial_x V_r(x)\right)\rho(x) - k_B T \partial_x\rho(x)\right] = 0
+\frac{1}{\gamma} \partial_x \left[ \left( F - \partial_x V_r(x) \right) \rho(x) - k_B T \partial_x \rho(x) \right] = 0
 \label{FP_ss}
 \end{equation}
 where $V$ is the ratchet potential in a given state and F is the constant load force. 
 As we want to calculate perturbations for large loads we will rewrite equation (\ref{FP_ss}) so that we can use $\epsilon = \frac{1}{F}$ as the perturbation.
 \begin{equation}
-\partial_x\left[\rho(x)-\frac{1}{F}\left(\partial_x V_r(x)\rho(x) + k_B T \partial_x\rho(x)\right)\right] = 0
+\partial_x \left[ \rho(x) - \frac{1}{F} \left( \partial_x V_r(x) \rho(x) + k_B T \partial_x \rho(x) \right) \right] = 0
 \label{FP_ss_pert}
 \end{equation}
 For infinitely large loads the steady state distribution is flat, i.e. $\rho_0 = \frac{1}{d}$, which will be the zeroth order solution. 
@@ -410,43 +419,50 @@ Since this will be the case in both the attached and detached state, it will yie
 The first order solution will be of the form $\rho_1 = \rho_0 + \delta\rho_1$. 
 When inserted into (\ref{FP_ss_pert}) and only keeping terms up to first order in $\frac{1}{F}$, we get
 \begin{equation}
-\partial_x\left[\delta\rho_1-\frac{1}{F}\partial_x V_r(x)\rho_0\right] = 0
+\partial_x \left[ \delta \rho_1 - \frac{1}{F} \partial_x V_r(x) \rho_0 \right] = 0
 \end{equation}
 or alternatively
 \begin{equation}
-\delta\rho_1 = \frac{1}{dF}\partial_x V_r + C
+\delta\rho_1 = \frac{1}{dF} \partial_x V_r + C
 \end{equation}
 where $C$ is an integration constant that, after normalization of $\rho_1$, must be equal to $0$.
 However, this first order correction will not contribute to calculations of $\langle V_r \rangle_\rho$ since
-\begin{eqnarray}
-\langle V_r \rangle_{\delta\rho_1} = \int_0^d V_r(x) \delta\rho_1 \rmd x\propto \int_0^d V_r(x)\partial_x V_r(x) \rmd x = \frac{1}{2}\int_0^d \partial_x V_r^2(x) \rmd x = 0
-\end{eqnarray}
+\begin{equation*}
+\langle V_r \rangle_{\delta\rho_1} 
+= \int_0^d V_r(x) \, \delta\rho_1 \; \rmd x\propto \int_0^d V_r(x) \, \partial_x V_r(x) \; \rmd x 
+= \frac{1}{2} \int_0^d \partial_x V_r^2(x) \; \rmd x 
+= 0
+\end{equation*}
 where we used integration by parts and the fact that $V_r(x)$ is periodic.
 Consequently, we need to calculate the second order correction $\delta\rho_2$. 
 Now by inserting $\rho_2 = \rho_1 + \delta\rho_2$ in (\ref{FP_ss_pert}) and only keeping up to second order in $\frac{1}{F}$, we find
- \begin{equation}
- \partial_x\left[\delta\rho_2-\frac{1}{F}\partial_x V_r\delta\rho_1 - \frac{k_B T}{F}\partial_x \delta\rho_1\right] =  \partial_x\left[\delta\rho_2-\frac{1}{dF^2}\left(\partial_x V_r\right)^2 - \frac{k_B T}{dF^2}\partial_x^2 V_r\right] = 0
- \end{equation}
+\begin{equation}
+\partial_x \left[ \delta\rho_2 - \frac{1}{F} \partial_x V_r \, \delta\rho_1 - \frac{k_B T}{F} \partial_x \delta\rho_1 \right] 
+= \partial_x \left[ \delta\rho_2 - \frac{1}{ d F^2 } \left(\partial_x V_r\right)^2 - \frac{k_B T}{dF^2} \partial_x^2 V_r \right] 
+= 0
+\end{equation}
 which solves to
 \begin{equation}
-\delta\rho_2 = \frac{1}{dF^2}\left[\left(\partial_xV_r\right)^2 - k_B T \partial_x^2V_r\right] + C^\prime.
+\delta\rho_2 = \frac{1}{ d F^2} \left[ \left( \partial_x V_r \right)^2 - k_B T \partial_x^2 V_r \right] + C^\prime.
 \end{equation}
 Again by normalization, the integration constant $C^\prime$ can be determined.
 \begin{equation}
-1 = \int_0^d \rho_2\ \rmd x = \int_0^d \left(\frac{1}{d} + \frac{1}{dF}\partial_x V_r + \frac{1}{dF^2}\left[\left(\partial_xV_r\right)^2 - k_B T \partial_x^2V_r\right] + C^\prime\right) \rmd x 
+1 = \int_0^d \rho_2 \; \rmd x 
+= \int_0^d \left\{ \frac{1}{d} + \frac{1}{ d F } \partial_x V_r + \frac{1}{ d F^2 } \left[ \left( \partial_x V_r \right)^2 - k_B T \partial_x^2 V_r \right] + C^\prime\right\} \; \rmd x 
 \end{equation}
 Which simplifies to
 \begin{equation}
-C^\prime = - \frac{1}{d^2F^2}\int_0^d\left(\partial_xV_r\right)^2 \rmd x\ . 
+C^\prime = - \frac{1}{ d^2 F^2 } \int_0^d \left( \partial_x V_r \right)^2 \; \rmd x . 
 \end{equation}
 The first order term again did not contribute and the thermal term vanished as well because of the periodicity of $V_r(x)$. 
 Now the density up to second order is given by
 \begin{equation}
-\rho_2 = \rho_0 + \delta\rho_1 + \delta\rho_2 = \frac{1}{d}\left[1 + \frac{1}{F}\partial_x V_r + \frac{1}{F^2}\left(\left(\partial_xV_r\right)^2 - k_B T \partial_x^2V_r - \frac{1}{d}\int_0^d\left(\partial_xV_r\right)^2 \rmd x\right)\right] \ .
+\rho_2 = \rho_0 + \delta\rho_1 + \delta\rho_2 = \frac{1}{d} + \frac{1}{d F} \partial_x V_r 
++ \frac{1}{d F^2} \left[ \left( \partial_x V_r \right)^2 - k_B T \partial_x^2V_r - \frac{1}{d} \int_0^d \left( \partial_x V_r \right)^2 \; \rmd x \right] .
 \end{equation}
 Observe that in this form, the depends on the ratchet potential only through a first or second order derivative. 
-Therefore the density will appear as a piecewise constant function on $x\in[0,l]$, with different values for $x<al$ and $x>al$. 
-This trend can already be seen in the empirical density obtained from simulations for large load forces $F_L =\pm250 pN$ in figure %TODO
+Therefore the density will appear as a piecewise constant function on $x\in[0,l]$, with different values for $x < a l$ and $x > a l $. 
+This trend can already be seen in the empirical density obtained from simulations for large load forces $F_L = \pm 250 \, \mathrm{pN}$ in figure %TODO
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.8\textwidth,height=!]{pos_multiplot}
@@ -456,41 +472,43 @@ This trend can already be seen in the empirical density obtained from simulation
 
 
 With the second order correction we can now calculate the expected value of the potential energy.
-\begin{eqnarray}
-\langle V_r \rangle_{\delta\rho_2} &=& \int_0^d V_r(x)\delta\rho_2 \rmd x\nonumber\\
-&=& \frac{1}{dF^2}\int_0^d V_r(x) \left[\left(\partial_xV_r\right)^2 - \frac{1}{d}\int_0^d\left(\partial_yV_r\right)^2 \rmd y  - k_B T \partial_x^2V_r\right]\rmd x
-\end{eqnarray}
+\begin{align*}
+\langle V_r \rangle_{\delta\rho_2} 
+&= \int_0^d V_r(x) \, \delta\rho_2 \; \rmd x \\
+&= \frac{1}{d F^2} \int_0^d V_r(x) \left[ \left(\partial_x V_r \right)^2 - \frac{1}{d} \int_0^d \left( \partial_y V_r \right)^2 \; \rmd y  - k_B T \partial_x^2 V_r \right] \; \rmd x
+\end{align*}
 The first two terms will cancel each other and after carrying out the integral for the third term, with $V_r(x)$ given by (\ref{rat_pot}), one finds 
 \begin{equation}
-\langle V_r \rangle_{\delta\rho_2, s=1} = \frac{k_B T}{F^2}\frac{V^2}{a\left(1-a\right)d^2}
+\langle V_r \rangle_{ \delta\rho_2, s=1} = \frac{k_B T}{F^2} \frac{V^2}{a \left(1-a\right) d^2 }
 \end{equation}
 For the expectation value in the detached state, the potentials appearing in the expression for the distributions must be rescaled by a factor $c$, which leads to
 \begin{equation}
-\langle V_r \rangle_{\delta\rho_2, s=0} = \frac{k_B T}{F^2}\frac{cV^2}{a\left(1-a\right)d^2}\ .
+\langle V_r \rangle_{\delta\rho_2, s=0} = \frac{k_B T}{F^2} \frac{c V^2}{a \left(1-a\right) d^2 } .
 \end{equation}
 Similarly, for the zeroth order expectation value we find
 \begin{equation}
-\langle V_r \rangle_{\rho_0} = \frac{1}{d}\int_0^d V_r(x)\rmd x = \frac{V}{2}\ .
+\langle V_r \rangle_{\rho_0} = \frac{1}{d} \int_0^d V_r(x) \; \rmd x = \frac{V}{2} .
 \end{equation}
 Using this, we can calculate $\eta$ up to second order in $\frac{1}{F}$. 
 Note that the zeroth and first order are zero.
 \begin{equation}
-\eta = -\left(\frac{V}{dF}\right)^2\frac{k_BT}{\Delta E - (1-c)\frac{V}{2}}\ \frac{\left(1-c\right)^2}{a(1-a)}
+\eta = -\left( \frac{V}{d F} \right)^2 \frac{k_B T} { \Delta E - (1-c) \frac{V}{2} } \; \frac{ \left(1-c\right)^2 }{ a (1-a) }
 \end{equation}
 With this we show that, at least for a ratchet system with one motor head, it is expected that $\eta$ will become negative for large external loads and eventually goes to zero as the load goes to infinity. 
 This means the driven system looses chemical energy, while the external force is performing work on the system. 
 The efficiency $\eta$ is symmetric in $F$ for large forces, which is also apparent from figure \ref{Fig: chem}. 
-Also note that in the expression for the chemical efficiency, the ratio between the amplitude of the ratchet potential $V$ and the work done by the external force over a period of the potential $dF$ appears in the formula, as well as the ratio between the thermal energy $k_BT$ and the average energy gap between the attached and detached state. 
+Also note that in the expression for the chemical efficiency, the ratio between the amplitude of the ratchet potential $V$ and the work done by the external force over a period of the potential $d F$ appears in the formula, as well as the ratio between the thermal energy $k_B T$ and the average energy gap between the attached and detached state. 
 Indeed for large load on the motor, the efficiency will go to zero as can be seen from the zeroth order solution.
 \par
 In addition we can compute the current using the obtained densities. 
 The current is taken from the Fokker-Planck equation (\ref{FP_ss}).
 \begin{equation}
-\mathcal{J} = \frac{1}{\gamma}\left[\left(F - \partial_x V_r\right)\rho - k_BT\partial_x\rho\right] 
+\mathcal{J} = \frac{1}{\gamma} \left[ \left( F - \partial_x V_r \right) \rho - k_B T \partial_x \rho \right] 
 \end{equation}
 When inserting $\rho_2$, we find the current in leading orders of $F$.
 \begin{equation}
-\mathcal{J} = \frac{F}{\gamma d}\left(1+C^\prime\right)  +  \mathcal{O}(\frac{1}{F^2}) = \frac{F}{\gamma d} - \frac{1}{F\gamma d^2}\int^d_0\left(\partial_x V_r\right)^2 \rmd x + \mathcal{O}(\frac{1}{F^2}) 
+\mathcal{J} = \frac{F}{\gamma d} \left( 1 + C^\prime \right) + \mathcal{O}( \frac{1}{F^2} ) 
+= \frac{F}{\gamma d} - \frac{1}{F\gamma d^2} \int^d_0 \left( \partial_x V_r \right)^2 \; \rmd x + \mathcal{O}(\frac{1}{F^2}) 
 \end{equation}
 Important to note is that the current, integrated over the period of the ratchet, represents the average velocity of the motor. 
 Indeed, the dominant term for large external forces is $\mathcal{J}_0 = \frac{F}{\gamma}$, which was also apparent from the simulations shown in figure \ref{Fig: F_v}. 
