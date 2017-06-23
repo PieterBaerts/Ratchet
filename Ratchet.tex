@@ -35,39 +35,39 @@
 (2) KU Leuven, BIOSYST-MeBioS, Kasteelpark Arenberg 30, B-3001 Leuven, Belgium
 }
 \begin{abstract}
-We present a model for the movement of a myosin-II molecular motor along a straight actin filament, in which the heads of the motor are subjected to a flashing ratchet potential. This simple model already features the non-linear force-velocity relation and aspects of mechanosensing. 
+We present a model for the movement of a myosin-II molecular motor along a straight actin filament, in which the heads of the motor are subjected to a flashing ratchet potential. This simple model already features the non-linear force-velocity relation and aspects of mechanosensing. We also investigate the energy input from the chemical ATP cycle and its dependence on external loads on the motor.  
 \end{abstract}
 
 \maketitle 
 
 \section{Introduction}
 
-The cytoskeleton of a cell serves two main purposes, being the transport of large proteins and governing the cell's motility, e.g. the ability of the cell to move and change its shape. 
+The cytoskeleton of a cell serves two main purposes, being transporting large vesicles and governing the cell's motility, i.e. the ability of the cell to move and change its shape. 
 It mainly consists of long semi-flexible polymers and molecular motors. 
-These motors contain several heads that are able to bind to a polymer filaments and walk along them. 
+These motors contain several heads that are able to bind to polymer filaments and walk along them. 
 The mechanism for walking relies both on a chemical cycle in the motor's head and on the asymmetry of a periodic and electrostatic potential along the length of such a polymer.
 
 
 The chemical cycle is driven by ATP molecules that can attach to a motor head, causing it to change the charge of the head and consequently loosen its bond with the polymer filament. 
 When bound to a motor head, the ATP molecule will hydrolyze to ADP and release a phosphate. 
-It this state, the head can attach to the polymer again and ADP will be released from the motor head and the chemical cycle can start over. 
+It this state, the head can attach to the polymer again, ADP will be released from the motor head and the chemical cycle can start over. 
 Hence, the chemical state of a motor head will determine how strongly it can be coupled to a cytoskeletal filament. 
 
 
 Cytoskeletal polymers exhibit a sequence of monomers that cause a periodical structure. 
 Furthermore, these monomers are polarised, so that when chained together in a polymer, they give rise to a symmetric, ratchet-like, electrostatic potential along the length of the filament. 
-An example of such a potential is shown in Fig X. %TODO 
-The heads of a motor too carry an electric charge and therefore they will feel the ratchet potential of the filaments. 
-In the attached state, the motor will tend to be close to the minimum of the potential. 
+An example of such a potential is shown in figure \ref{Fig: ratchet setup}. 
+The heads of a motor, too, carry an electric charge and therefore they will feel the ratchet potential of the filaments. 
+In the attached state, the motor will tend to be close to minimal potential energy. 
 However, when the chemical state of the head changes, so does its molecular structure and charge. 
 As mentioned earlier, this causes the bond between the head and a filament to either strengthen or loosen. 
 Therefore the head will experience a ratchet potential that is flashing in time, changing the amplitude of the potential from high to low.
 
 
-When tightly bound, the head will most probably be very close a minimum in the ratchet potential, while in the unbound state, it is easier for the motor to diffuse over a larger distance. 
-However, because of the asymmetry of the ratchet, the motor will be biased to explore one side one side of the ratchet rather than the other. 
-Therefore it will be more probable for the motor to jump to an adjacent period of the ratchet potential in the preferred direction, given by the asymmetry of the potential. 
-This will eventually lead to ballistic motion the motor on long timescales.
+When tightly bound, the head will most probably be very close to a minimum in the ratchet potential, while in the unbound state, it is easier for the motor to diffuse over a larger distance. 
+However, because of the asymmetry of the ratchet, the motor will be biased to explore one side of the ratchet rather than the other. 
+Therefore, the motor will more likely jump to an adjacent period of the ratchet potential in the preferred direction, indicated by the asymmetry of the potential. 
+This will eventually lead to ballistic motion of the motor on long timescales.
 
 
 The part of the cytoskeleton that is mainly responsible for the motility of the cell is the actin-myosin cortex.  It will serve as the exemplary system in this paper.
@@ -389,7 +389,7 @@ In this region, the energy gap is larger than around the maximum of the potentia
 Therefore more energy goes into the system, when ATP binds to a head, than energy going out, when ATP is hydrolyzed and the head attaches again to the actin filament. 
 
 
-When the load is increased to $F_l = 25 \, \mathrm{pN}$, the distributions shift to the right but distribution for the attached state remains peaked around the potential minimum, while the detached distribution flattes out and increases around the potential maximum. 
+When the load is increased to $F_l = 25 \, \mathrm{pN}$, the distributions shift to the right but distribution for the attached state remains peaked around the potential minimum, while the detached distribution flattens out and increases around the potential maximum. 
 This leads to an increase of $\eta$. 
 For a load in the opposite direction $F_l = -25 \, \mathrm{pN}$ the effect on $\eta$ is similar but less pronounced, since the slope of the ratchet on the side is less steep and the distributions get more spread out. 
 
@@ -518,34 +518,72 @@ This decay was clearly seen in figure \ref{Fig: eff_frict_decay}, which depicts 
 This isolates the contribution from the ratchet potential. 
 Hence this result, obtained for a one-headed motor, also seems to hold for the simulations of motors with four heads. 
 
+In fact, if we compare the chemical efficiencies for a motor with one head and four heads, we see a great similarity.
+This comparison is made in figure \ref{Fig: chem_eff_1head}.
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\textwidth,height=!]{chemical_cycle_1head}
+\caption{Chemical efficiency of a motor under load. Comparison of one and four headed motors.}
+\label{Fig: chem_eff_1head}
+\end{figure}
+The behavior for large load forces seems to be exactly the same.
+Since $\eta$ is a ratio of chemical energies exchanged through the motor heads, this means that for large enough forces a head of the four headed motor no longer feels the presence of the other heads.
+However the one headed motor is more susceptible to external forces as it's chemical efficiency starts to drop already at smaller loads. 
+Note that the curves with higher detach rate $k_d$ in figure \ref{Fig: chem} tend to approach the curve for one head in figure \ref{Fig: chem_eff_1head}. 
+When the detach rate is increased, the configuration where fewer heads of the motor are attach to the polymer indeed becomes more likely.
 
+
+Another trait of the chemical efficiency curves are the local minima's around $F_l=0$. 
+The understand this we must again look at equation (\ref{eta}) which is determined by the ratchet potential averaged with the heads' distribution in the attached and detached state. 
+For a one headed motor, these distribution will both be peaked around the minimum of the ratchet potential. 
+In fact, the distributions will be given by the Boltzmann distribution.
+\begin{equation}
+\rho_s (x) = e^{-\beta \zeta(s) V_r(x)}
+\end{equation} 
+From this point of view, detaching the head is equivalent to an increasing of the temperature $T\rightarrow\frac{T}{c}$. 
+Hence the distributions for the detached state are broader and the expectation value of $V_r$ will be bigger than in the attached state and $\eta$ will be positive. 
+Now if we apply a small external force, the distributions will be slightly perturbed and given by the McLennan formula
+\begin{equation}
+\rho_s^*(x) \propto e^{-\beta \left[V_r(x) - F_l x\right]}\propto \rho_s(x)\left[1 + \beta F_l x\right]
+\end{equation}
+which will, for small $F_l$, lead to a shift of the distribution $\rho_s$ along the $x$-axis and in the direction of the load. 
+In the detached state this will cause a larger displacement than in the attached state because of the potential in that case is less steep. 
+A larger displacement of the distribution, away from the potential's minimum, means that $\langle V_r \rangle_{s=0}$ will increase more than $\langle V_r \rangle_{s=1}$ and hence $\eta$ has to increase. 
+For a four headed motor, the distributions of the heads at zero load are not exactly peaked around the minimum of the potential because of the fixed distance between each head,  which does not correspond to the period of the ratchet. 
+Therefore the local minimum of $\eta$ lies not exactly at, but close to, $F_l =0$.
+This argument can be further supported by Jensen's inequality, which follow from the fact the the ratchet potential is convex. For this case the inequality reads as follows.
+\begin{equation}
+V_r(\langle x \rangle) \leq \langle V_r(x) \rangle
+\end{equation} 
+A lower bound on the expectation value of $V_r$ is given by the value of $V_r$ at the average position of the heads in a given state. 
+In the detached state this position will be farther away from the minimum of the ratchet so the lower bound is higher than in the attached case.
 
 \section{Tug of war}
-In the previous section we saw that the motor offers resistance when pulled by an external force. 
+In  section III we saw that the motor offers resistance when pulled by an external force. 
 Now we will look at the motor in a setup where it is subjected to different stiffnesses of the environment in which the filaments are able to move. 
 This setup is sketched in figure \ref{Fig: tug}. 
-One can imagine the filaments being part of a huge network that is characterized by an elastic constant $k$. 
-The motor is now interacting with two filament that are arranged in an anti-parallel fashion. 
-Hence it will no longer have a preferred direction to move in and $\langle v\rangle=0$. 
-The observable of interest is now the average force that the motor applies on the filaments. 
-This quantity is plotted in figure \ref{Fig: tug_k} for different stiffnesses $k$ of the surrounding network. \\
-The force with which the motor pulls on the filament depends strongly on the elasticity $k$ and reaches a maximal value for large $k$. 
-This suggests that the motor is able to sense its environments mechanical properties. 
-Similar results were obtained for different motor models \cite{stam2015isoforms,albert2014stochastic}.
-
-
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.6\textwidth,height=!]{tug}
 \caption{Illustration of a motor pulling on two actin filament that are each connect to a wall by a spring.}
 \label{Fig: tug}
 \end{figure}
+One can imagine the filaments being part of a large network that is characterized by an elastic constant $k$. 
+The motor is now interacting with two filament that are arranged in an anti-parallel fashion. 
+Hence it will no longer have a preferred direction to move in and its average velocity will be zero. 
+The observable of interest is now the average force that the motor applies on the filaments, which is measured through the extension of the springs attached to the filaments. 
+This quantity is plotted in figure \ref{Fig: tug_k} for different stiffnesses $k$ of the surrounding network.
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.6\textwidth,height=!]{tug_k}
 \caption{Average force generated by the motor on one of the filaments for varying stiffness $k$.}
 \label{Fig: tug_k}
 \end{figure}
+The force with which the motor pulls on the filament depends strongly on this elasticity $k$ and saturates for large $k$. 
+This suggests that the motor is able to sense its environment's mechanical properties.
+Similar results were obtained for different motor models with load dependent chemical rates \cite{stam2015isoforms,albert2014stochastic}.
+Here we show that the simple ratchet model with constant rates already captures the characteristic. However it is important to include the large fluctuations in this model to preserve the mechanosensing behavior. In some models the force-velocity relation is implemented ad-hoc, such that the velocity of the motor is deterministic and it depends only on the load. In those models the motor will essentially stall in this setup and 
+cease to pull on the filaments. Therefore mechanosensing will not occur spontaneously in those models.
 
 \section{Tug of war II}
 
@@ -581,8 +619,8 @@ Movement of motor.
 \begin{itemize}
 \item Extra data for some plots
 \item Simulation data for $1/F^2$ tail of $\eta$
-\item Chemical efficiency $\eta$ for 1 head - better comparison to perturbation results.
-\item Tug of war section, expand on different models
+\item Explicitly plot result for second order distribution against empirical result
+\item Tug of war section
 \item Intro
 \item References
 \end{itemize}
