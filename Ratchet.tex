@@ -11,6 +11,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amscd}
+\usepackage{mathtools}
 
 \usepackage{color}
 \usepackage{graphicx}
@@ -76,13 +77,22 @@ The part of the cytoskeleton that is mainly responsible for the motility of the 
 \section{The Ratchet model}
 We will be looking at a one dimensional system consisting of a myosin motor, interacting with an actin filament. The dynamics of the motor and filament are described by overdamped Langevin equations. 
 \begin{align}
-\rmd x_M &= \frac{1}{\gamma_M} \left[ - \nabla_M V_t(x_M(t) - x_A(t)) + F_{ext} \right] \; \rmd t + \sqrt{ \frac{2 k_B T}{\gamma_M} } \cdot \rmd W_M \label{eom_M} \\
-\rmd x_A &= - \frac{1}{\gamma_A} \nabla_A V_t(x_M(t) - x_A(t)) \; \rmd t + \sqrt{ \frac{2 k_B T}{\gamma_A} } \cdot \rmd W_A
+\rmd x_M =& 
+\begin{multlined}[t][.35\textwidth]
+\frac{1}{\gamma_M} \left[ - \nabla_M V_t(x_M(t) - x_A(t)) + F_{ext} \right] \; \rmd t \\ 
++ \sqrt{ \frac{2 k_B T}{\gamma_M} } \; \rmd W_M 
+\end{multlined}
+\label{eom_M} \\
+\rmd x_A =& 
+\begin{multlined}[t][.35\textwidth]
+- \frac{1}{\gamma_A} \nabla_A V_t(x_M(t) - x_A(t)) \; \rmd t \\
++ \sqrt{ \frac{2 k_B T}{\gamma_A} } \; \rmd W_A
+\end{multlined}
 \label{eom_A}
 \end{align}
 Where the force from the ratchet interaction is summed over the contributions from all motor heads.
 \begin{equation}
-V_t(x) = \sum_{i=1}^{N} \zeta_t(i) V_{r} (x_i(t))
+V_t(x) = \sum_{i=1}^{N} \zeta_t(i) \, V_{r} (x_i(t))
 \end{equation}
 With $x_i(t) = x_{m}(t)-x_{a}(t) - i\;l$, the position of the $i$th head relative to the actin filament.
 The ratchet potential $V_r$ is defined here as follows.
@@ -340,12 +350,18 @@ The relaxation times of these diffusion processes are much faster than the times
 This is because the chemical rates of the motor heads are very small. 
 Hence we can assume that the averages of the quantities (\ref{q_in}) and (\ref{q_out}) can be described by
 \begin{gather}
+\begin{aligned}[b]
 \langle \mathcal Q_{in} \rangle 
-= \rho^{eq}_1 k_d \left[ \Delta E - (1-c)\langle V_r(x) \rangle_{s=1} \right] 
-= \frac{k_a k_d}{k_a + k_d}\left[\Delta E - (1-c)\langle V_r(x) \rangle_{s=1} \right] \label{Q_in} \\
+=& \rho^{eq}_1 k_d \left[ \Delta E - (1-c)\langle V_r(x) \rangle_{s=1} \right] \\
+=& \frac{k_a k_d}{k_a + k_d}\left[\Delta E - (1-c)\langle V_r(x) \rangle_{s=1} \right] 
+\end{aligned}
+\label{Q_in} \\
+\begin{aligned}[b]
 \langle \mathcal Q_{out} \rangle 
-= -\rho^{eq}_0 k_a \left[ \Delta E - (1-c)\langle V_r(x) \rangle_{s=0} \right] 
-= -\frac{k_a k_d}{k_a + k_d} \left[ \Delta E - (1-c)\langle V_r(x) \rangle_{s=0} \right] \label{Q_out}
+=& -\rho^{eq}_0 k_a \left[ \Delta E - (1-c)\langle V_r(x) \rangle_{s=0} \right] \\
+=& -\frac{k_a k_d}{k_a + k_d} \left[ \Delta E - (1-c)\langle V_r(x) \rangle_{s=0} \right] 
+\end{aligned}
+\label{Q_out}
 \end{gather}
 where $\langle \cdot \rangle_{s}$ stands for an average over the steady state distribution in a given state $s$. 
 This will give us an expression for the chemical efficiency.
@@ -418,48 +434,51 @@ For infinitely large loads the steady state distribution is flat, i.e. $\rho_0 =
 Since this will be the case in both the attached and detached state, it will yield the same expected values of $V$ and therefore $\eta$ must be equal to zero.
 The first order solution will be of the form $\rho_1 = \rho_0 + \delta\rho_1$. 
 When inserted into (\ref{FP_ss_pert}) and only keeping terms up to first order in $\frac{1}{F}$, we get
-\begin{equation}
+\begin{equation*}
 \partial_x \left[ \delta \rho_1 - \frac{1}{F} \partial_x V_r(x) \rho_0 \right] = 0
-\end{equation}
+\end{equation*}
 or alternatively
-\begin{equation}
+\begin{equation*}
 \delta\rho_1 = \frac{1}{dF} \partial_x V_r + C
-\end{equation}
+\end{equation*}
 where $C$ is an integration constant that, after normalization of $\rho_1$, must be equal to $0$.
 However, this first order correction will not contribute to calculations of $\langle V_r \rangle_\rho$ since
-\begin{equation*}
+\begin{align*}
 \langle V_r \rangle_{\delta\rho_1} 
-= \int_0^d V_r(x) \, \delta\rho_1 \; \rmd x\propto \int_0^d V_r(x) \, \partial_x V_r(x) \; \rmd x 
-= \frac{1}{2} \int_0^d \partial_x V_r^2(x) \; \rmd x 
+&= \int_0^d V_r(x) \, \delta\rho_1 \; \rmd x
+\propto \int_0^d V_r(x) \, \partial_x V_r(x) \; \rmd x \\
+&= \frac{1}{2} \int_0^d \partial_x V_r^2(x) \; \rmd x 
 = 0
-\end{equation*}
+\end{align*}
 where we used integration by parts and the fact that $V_r(x)$ is periodic.
 Consequently, we need to calculate the second order correction $\delta\rho_2$. 
 Now by inserting $\rho_2 = \rho_1 + \delta\rho_2$ in (\ref{FP_ss_pert}) and only keeping up to second order in $\frac{1}{F}$, we find
-\begin{equation}
-\partial_x \left[ \delta\rho_2 - \frac{1}{F} \partial_x V_r \, \delta\rho_1 - \frac{k_B T}{F} \partial_x \delta\rho_1 \right] 
+\begin{multline*}
+\partial_x \left[ \delta\rho_2 - \frac{1}{F} \partial_x V_r \, \delta\rho_1 - \frac{k_B T}{F} \partial_x \delta\rho_1 \right] \\
 = \partial_x \left[ \delta\rho_2 - \frac{1}{ d F^2 } \left(\partial_x V_r\right)^2 - \frac{k_B T}{dF^2} \partial_x^2 V_r \right] 
 = 0
-\end{equation}
+\end{multline*}
 which solves to
-\begin{equation}
+\begin{equation*}
 \delta\rho_2 = \frac{1}{ d F^2} \left[ \left( \partial_x V_r \right)^2 - k_B T \partial_x^2 V_r \right] + C^\prime.
-\end{equation}
+\end{equation*}
 Again by normalization, the integration constant $C^\prime$ can be determined.
-\begin{equation}
+\begin{multline*}
 1 = \int_0^d \rho_2 \; \rmd x 
-= \int_0^d \left\{ \frac{1}{d} + \frac{1}{ d F } \partial_x V_r + \frac{1}{ d F^2 } \left[ \left( \partial_x V_r \right)^2 - k_B T \partial_x^2 V_r \right] + C^\prime\right\} \; \rmd x 
-\end{equation}
+= \int_0^d \left\{ \frac{1}{d} + \frac{1}{ d F } \partial_x V_r \right\} \; \rmd x \\
++ \int_0^d \left\{  \frac{1}{ d F^2 } \left[ \left( \partial_x V_r \right)^2 - k_B T \partial_x^2 V_r \right] + C^\prime\right\} \; \rmd x 
+\end{multline*}
 Which simplifies to
 \begin{equation}
 C^\prime = - \frac{1}{ d^2 F^2 } \int_0^d \left( \partial_x V_r \right)^2 \; \rmd x . 
 \end{equation}
 The first order term again did not contribute and the thermal term vanished as well because of the periodicity of $V_r(x)$. 
 Now the density up to second order is given by
-\begin{equation}
-\rho_2 = \rho_0 + \delta\rho_1 + \delta\rho_2 = \frac{1}{d} + \frac{1}{d F} \partial_x V_r 
-+ \frac{1}{d F^2} \left[ \left( \partial_x V_r \right)^2 - k_B T \partial_x^2V_r - \frac{1}{d} \int_0^d \left( \partial_x V_r \right)^2 \; \rmd x \right] .
-\end{equation}
+\begin{align*}
+\rho_2 =& \rho_0 + \delta\rho_1 + \delta\rho_2 \\
+=& \frac{1}{d} + \frac{1}{d F} \partial_x V_r +{} \\
+&+ \frac{1}{d F^2} \left[ \left( \partial_x V_r \right)^2 - k_B T \partial_x^2V_r - \frac{1}{d} \int_0^d \left( \partial_x V_r \right)^2 \; \rmd x \right] .
+\end{align*}
 Observe that in this form, the depends on the ratchet potential only through a first or second order derivative. 
 Therefore the density will appear as a piecewise constant function on $x\in[0,l]$, with different values for $x < a l$ and $x > a l $. 
 This trend can already be seen in the empirical density obtained from simulations for large load forces $F_L = \pm 250 \, \mathrm{pN}$ in figure %TODO
@@ -474,8 +493,10 @@ This trend can already be seen in the empirical density obtained from simulation
 With the second order correction we can now calculate the expected value of the potential energy.
 \begin{align*}
 \langle V_r \rangle_{\delta\rho_2} 
-&= \int_0^d V_r(x) \, \delta\rho_2 \; \rmd x \\
-&= \frac{1}{d F^2} \int_0^d V_r(x) \left[ \left(\partial_x V_r \right)^2 - \frac{1}{d} \int_0^d \left( \partial_y V_r \right)^2 \; \rmd y  - k_B T \partial_x^2 V_r \right] \; \rmd x
+=& \int_0^d V_r(x) \, \delta\rho_2 \; \rmd x \\
+=& \frac{1}{d F^2} \int_0^d V_r(x) \left(\partial_x V_r \right)^2 \; \rmd x  \\
+&- \frac{1}{d^2 F^2} \int_0^d V_r(x) \; \rmd x \int_0^d \left( \partial_y V_r \right)^2 \; \rmd y \\
+&- \frac{k_B T}{d F^2} \int_0^d V_r(x) \, \partial_x^2 V_r \; \rmd x
 \end{align*}
 The first two terms will cancel each other and after carrying out the integral for the third term, with $V_r(x)$ given by (\ref{rat_pot}), one finds 
 \begin{equation}
@@ -506,10 +527,10 @@ The current is taken from the Fokker-Planck equation (\ref{FP_ss}).
 \mathcal{J} = \frac{1}{\gamma} \left[ \left( F - \partial_x V_r \right) \rho - k_B T \partial_x \rho \right] 
 \end{equation}
 When inserting $\rho_2$, we find the current in leading orders of $F$.
-\begin{equation}
-\mathcal{J} = \frac{F}{\gamma d} \left( 1 + C^\prime \right) + \mathcal{O}( \frac{1}{F^2} ) 
-= \frac{F}{\gamma d} - \frac{1}{F\gamma d^2} \int^d_0 \left( \partial_x V_r \right)^2 \; \rmd x + \mathcal{O}(\frac{1}{F^2}) 
-\end{equation}
+\begin{align*}
+\mathcal{J} =& \frac{F}{\gamma d} \left( 1 + C^\prime \right) + \mathcal{O}( \frac{1}{F^2} ) \\
+=& \frac{F}{\gamma d} - \frac{1}{F\gamma d^2} \int^d_0 \left( \partial_x V_r \right)^2 \; \rmd x + \mathcal{O}(\frac{1}{F^2}) 
+\end{align*}
 Important to note is that the current, integrated over the period of the ratchet, represents the average velocity of the motor. 
 Indeed, the dominant term for large external forces is $\mathcal{J}_0 = \frac{F}{\gamma}$, which was also apparent from the simulations shown in figure \ref{Fig: F_v}. 
 Furthermore, the force-independent term vanishes leading to an anti-symmetric form with respect to $F$. 
@@ -573,7 +594,7 @@ The motor is now interacting with two filament that are arranged in an anti-para
 Hence it will no longer have a preferred direction to move in and its average velocity will be zero. 
 The observable of interest is now the average force that the motor applies on the filaments, which is measured through the extension of the springs attached to the filaments. 
 This quantity is plotted in figure \ref{Fig: tug_k} for different stiffnesses $k$ of the surrounding network.
-\begin{figure}[b]
+\begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{tug_k}
 \caption{Average force generated by the motor on one of the filaments for varying stiffness $k$.}
