@@ -77,14 +77,14 @@ The part of the cytoskeleton that is mainly responsible for the motility of the 
 \section{The Ratchet model}
 We will be looking at a one dimensional system consisting of a myosin motor, interacting with an actin filament. The dynamics of the motor and filament are described by overdamped Langevin equations. 
 \begin{align}
-\rmd x_M =& 
-\begin{multlined}[t][.35\textwidth]
+&\begin{multlined}[b][.35\textwidth]
+\rmd x_M = 
 \frac{1}{\gamma_M} \left[ - \nabla_M V_t(x_M(t) - x_A(t)) + F_{ext} \right] \; \rmd t \\ 
 + \sqrt{ \frac{2 k_B T}{\gamma_M} } \; \rmd W_M 
 \end{multlined}
 \label{eom_M} \\
-\rmd x_A =& 
-\begin{multlined}[t][.35\textwidth]
+&\begin{multlined}[b][.35\textwidth]
+\rmd x_A = 
 - \frac{1}{\gamma_A} \nabla_A V_t(x_M(t) - x_A(t)) \; \rmd t \\
 + \sqrt{ \frac{2 k_B T}{\gamma_A} } \; \rmd W_A
 \end{multlined}
