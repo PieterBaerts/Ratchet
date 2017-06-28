@@ -1,21 +1,4 @@
 
-clear
-reset
-
-
-
-set term pdfcairo enhanced linewidth 2
-set yrange[]
-set xrange[]
-set xzeroaxis
-set yzeroaxis
-set xlabel "F_{l} (pN)"
-set ylabel "<v> (nm/µs)"
-set output "F_v.pdf"
-set key top left
-plot [-50:50] "F_v_k=4.dat" u (-$1):2 w lines title "k_{d} = 40 s^{-1}", "F_v_k=8.dat" u (-$1):2 w lines title "k_{d} = 80 s^{-1}", "F_v_k=16.dat" u (-$1):2 w lines title "k_{d} = 160 s^{-1}", "F_v_k=32.dat" u (-$1):2 w lines title "k_{d} = 320 s^{-1}", "F_v_k=64.dat" u (-$1):2 w lines title "k_{d} = 640 s^{-1}", x/0.66 title "F_{l} / {/Symbol g}_M" lt rgb "black"
-
-
 set output "effective_friction.pdf"
 set key top right
 set xzeroaxis
