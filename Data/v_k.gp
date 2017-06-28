@@ -3,6 +3,8 @@
 set term pdfcairo enhanced linewidth 1.75 font ",14"
 set output "v_k.pdf"
 
+load "Data/my.pal"
+
 unset tmargin
 unset bmargin
 unset lmargin
@@ -19,5 +21,5 @@ set xtic 2
 set format y "%g"
 
 #plot [10.:1000.][-0.001:0.002] "v_k.dat" u (1e6*$1):2:3 w yerror
-plot [2**-4:2**4] "Data/v_k.dat" u (1e6*$1/80.):(1e3*$2):(1e3*$3) w yerrorbars
+plot [2**-4:2**4] "Data/v_k.dat" u (1e6*$1/80.):(1e3*$2):(1e3*$3) w yerrorbars lc rgb "#e31a1c"
 
