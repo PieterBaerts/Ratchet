@@ -16,13 +16,6 @@ set key top left
 plot [-50:50] "F_v_k=4.dat" u (-$1):2 w lines title "k_{d} = 40 s^{-1}", "F_v_k=8.dat" u (-$1):2 w lines title "k_{d} = 80 s^{-1}", "F_v_k=16.dat" u (-$1):2 w lines title "k_{d} = 160 s^{-1}", "F_v_k=32.dat" u (-$1):2 w lines title "k_{d} = 320 s^{-1}", "F_v_k=64.dat" u (-$1):2 w lines title "k_{d} = 640 s^{-1}", x/0.66 title "F_{l} / {/Symbol g}_M" lt rgb "black"
 
 
-set xlabel "F_{l} (pN)"
-set ylabel "<v> (nm/µs)"
-set output "F_v_zoom.pdf"
-set key top left
-plot [-0.1:0][0:] "F_v_k=4.dat" u (-$1):2 w lines title "k_{d} = 40 s^{-1}", "F_v_k=8.dat" u (-$1):2 w lines title "k_{d} = 80 s^{-1}", "F_v_k=16.dat" u (-$1):2 w lines title "k_{d} = 160 s^{-1}", "F_v_k=32.dat" u (-$1):2 w lines title "k_{d} = 320 s^{-1}", "F_v_k=64.dat" u (-$1):2 w lines title "k_{d} = 640 s^{-1}"
-
-
 set output "effective_friction.pdf"
 set key top right
 set xzeroaxis
@@ -95,26 +88,6 @@ set key off
 set ylabel "F (pN)"
 set xlabel "k (pN/nm)"
 plot "tug_k.dat" u 1:($1*$3), "" u 1:($1*$3) w lines lt 1
-
-
-set output "v_k.pdf"
-set key off
-set xlabel "k_{d}"
-set ylabel "<v> (nm/µs)"
-set xzeroaxis
-set logscale x
-set xtic 2
-plot [10.:1000.][-0.001:0.002] "v_k.dat" u (1e6*$1):2:3 w yerror
-
-
-
-set output "k_Fstall.pdf"
-set key off
-set xlabel "k_{d}"
-set ylabel "F_{stall} (pN)"
-set xtic 40.
-unset logscale x
-plot [40.:] "k_F.dat" u (10*$1):(-$2) , "" u (10*$1):(-$2) w lines lt 1
 
 reset
 set output "tug_v.pdf"
