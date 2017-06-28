@@ -97,17 +97,6 @@ set xlabel "k (pN/nm)"
 plot "tug_k.dat" u 1:($1*$3), "" u 1:($1*$3) w lines lt 1
 
 
-set output "v_k.pdf"
-set key off
-set xlabel "k_{d}"
-set ylabel "<v> (nm/µs)"
-set xzeroaxis
-set logscale x
-set xtic 2
-plot [10.:1000.][-0.001:0.002] "v_k.dat" u (1e6*$1):2:3 w yerror
-
-
-
 set output "k_Fstall.pdf"
 set key off
 set xlabel "k_{d}"
