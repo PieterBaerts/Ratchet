@@ -162,7 +162,11 @@ This for different values of $c$, the scaling factor of the amplitude of the rat
 \begin{figure}[b]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{c_v_4heads}
-\caption{Average velocity of the motor relative to the actin filament for $c$ for $0$ to $1$.} 
+\caption{Mean velocity of the motor relative to the actin filament for $c \in (0,1)$.
+The mean velocity rapidly decreases towards the $0$ as we approach equilibrium, $c \to 1$.  
+Green line correspond to the fit $ \left\langle v \right\rangle \propto \exp ( - \frac{\alpha}{1-c} ) $.
+%The dependency is guessed, unfortunately I don't have any argument to support it. 
+} 
 \label{Fig: c_v}
 \end{figure}
 We see that average velocity goes to zero when $c$ approaches $1$. 
@@ -174,10 +178,12 @@ This dependency is show in figure \ref{Fig: v_k}.
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{v_k}
-\caption{Average velocity of the motor relative to the actin filament for varying $k_{a}$.}
+\caption{Average velocity of the motor relative to the actin filament for varying $k_{a}$.
+The velocity decreases to $0$ for large discrepancies between attach and detach rates and reaches when they are comparable.
+}
 \label{Fig: v_k} 
 \end{figure}
-The first data point corresponds to the case where $k_{d} = k_{a} = 40 s^{-1}$ and for the following points $k_{d}$ is doubled every time while $k_{a}$ stayas constant. 
+The first data point corresponds to the case where $k_{d} = k_{a} = 40 s^{-1}$ and for the following points $k_{d}$ is doubled every time while $k_{a}$ stays constant. 
 We first observe that the velocity initially increases, then reaches a maximum around $k_{d} = 160 s^{-1}$ and finally decreases again. 
 A high detach rate means that the motor heads will be attached only for a short time. 
 If this time is too short, the motor might not diffuse all the way to the minimum of the ratchet and has a higher probability the move against the direction given by the asymmetry of the potential. 
