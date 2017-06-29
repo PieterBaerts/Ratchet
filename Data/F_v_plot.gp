@@ -1,20 +1,4 @@
 
-unset tmargin
-unset bmargin
-unset lmargin
-unset rmargin
-
-reset
-set output "chemical_cycle.pdf"
-set xzeroaxis
-set yzeroaxis
-set key top left
-set ylabel "Chemical efficiency {/Symbol h}"
-set xlabel "F_{l} (pN)"
-plot "F_q_k=4.dat" u (-$1):(($4+$5)/$4) w lines title "k_{d} = 40 s^{-1}",  "F_q_k=8.dat" u (-$1):(($4+$5)/$4) w lines title "k_{d} = 80 s^{-1}", "F_q_k=16.dat" u (-$1):(($4+$5)/$4) w lines title "k_{d} = 160 s^{-1}", "F_q_k=32.dat" u (-$1):(($4+$5)/$4) w lines title "k_{d} = 320 s^{-1}", "F_q_k=64.dat" u (-$1):(($4+$5)/$4) w lines title "k_{d} = 640 s^{-1}"
-
-
-
 set output "chemical_cycle_1head.pdf"
 set xzeroaxis
 set yzeroaxis

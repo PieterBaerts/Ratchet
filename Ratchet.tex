@@ -383,16 +383,19 @@ Where $t_a$ and $t_d$ are all jump times to state $s=1$ and $s=0$ respectively.
 \caption{Energy landscape in which the myosin motor diffuses, relative to the actin filament.}
 \label{Fig: energy}
 \end{figure}
- We can measure and average these quantities in our simulations and we can define a chemical efficiency as follows.
+ We can measure and average these quantities in our simulations and we can define a chemical efficiency as follows
 \begin{equation}
-\eta = \frac{\langle\mathcal Q_{in}\rangle+\langle\mathcal Q_{out}\rangle}{\langle\mathcal Q_{in}\rangle}
+\eta = \frac{\langle\mathcal Q_{in}\rangle+\langle\mathcal Q_{out}\rangle}{\langle\mathcal Q_{in}\rangle} .
 \end{equation}
 This quantifies the fraction of chemical energy, supplied by the ATP driven cycles of the heads, that remains in the system. 
 This is shown in figure \ref{Fig: chem}.
 \begin{figure}[b]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{chemical_cycle}
-\caption{Net input of chemical energy relative to the total input as a function of load force.}
+\caption{Chemical efficiency as a function of load force.
+By increasing the $k_d/k_a$ ratio the local maximums of chemical efficiencies are getting closer origin,
+and their fluctuations decrease. 
+}
 \label{Fig: chem}
 \end{figure}
 
