@@ -1,13 +1,4 @@
 
-set output "effective_friction.pdf"
-set key top right
-set xzeroaxis
-set yzeroaxis
-set xlabel "F_{l} (pN)"
-set ylabel "F_{eff} (pN)"
-plot [-50:50] "F_v_k=4.dat" u (-$1):(0.66*$2+$1) w lines title "k_{d} = 40 s^{-1}", "F_v_k=8.dat" u (-$1):(0.66*$2+$1) w lines title "k_{d} = 80 s^{-1}", "F_v_k=16.dat" u (-$1):(0.66*$2+$1) w lines title "k_{d} = 160 s^{-1}", "F_v_k=32.dat" u (-$1):(0.66*$2+$1) w lines title "k_{d} = 320 s^{-1}", "F_v_k=64.dat" u (-$1):(0.66*$2+$1) w lines title "k_{d} = 640 s^{-1}"
-
-
 set output "eff_frict_decay.pdf"
 f(x) = a/x
 a=1

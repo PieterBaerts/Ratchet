@@ -18,7 +18,7 @@ set xzeroaxis
 set yzeroaxis
 
 plot [-0.15:0][0:1.1] \
-    "Data/F_q_k=1.dat" u (-$1):($2*1e3):($3*1e3) w lines ls 1 lw 1.25 dashtype 1 title "k_{d}/k_a = 0.25" \
+      "Data/F_q_k=1.dat" u (-$1):($2*1e3):($3*1e3) w lines ls 1 lw 1.25 dashtype 1 title "k_{d}/k_a = 0.25" \
     , "Data/F_q_k=2.dat" u (-$1):($2*1e3):($3*1e3) w lines ls 3 lw 1.25 dashtype 2 title "k_{d}/k_a = 0.5" \
     , "Data/F_stall_k=4.dat" u (-$1):($2*1e3):($3*1e3) w lines ls 6 lw 1.25 dashtype 4 title "k_{d}/k_a = 1" \
     , "Data/F_stall_k=8.dat" u (-$1):($2*1e3):($3*1e3) w lines ls 8 lw 1.25 dashtype 5 title "k_{d}/k_a = 2" \
