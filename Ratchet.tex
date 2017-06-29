@@ -102,7 +102,6 @@ Lastly, in section VI., we look at the coupling of the motor to an elastic envir
 
 \section{The Ratchet model}
 We will be looking at a one dimensional system consisting of a myosin motor, interacting with an actin filament. The dynamics of the motor and filament are described by overdamped Langevin equations. 
-
 \begin{align}
 &\begin{multlined}[b][.35\textwidth]
 \rmd x_M = 
@@ -184,28 +183,33 @@ Actin friction & $\gamma_{a}$ & 0.97 & pN $\upmu$s nm$^{-1}$ & REF\\
 \end{table}
 
 While both the diffusion and the jump process are in equilibrium, the mechanism of the flashing ratchet brings the combined system out of equilibrium, leading to the movement of the motor in a preferred direction, given by the asymmetry of the filament. 
-In simulations we measured the average velocity $\langle v\rangle$ of the motor with respect to the filament. 
+In simulations we measured the mean velocity $\langle v\rangle$ of the motor with respect to the filament. 
 This for different values of $c$, the scaling factor of the amplitude of the ratchet potential, show in figure \ref{Fig: c_v}.
 \begin{figure}[b]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{c_v_4heads}
-\caption{Average velocity of the motor relative to the actin filament for $c$ for $0$ to $1$.} 
+\caption{Mean velocity $\langle v \rangle$ of the motor relative to the actin filament for $c \in (0,1)$.
+The mean velocity rapidly decreases towards the $0$ as we approach equilibrium, $c \to 1$.  
+Green line correspond to the fit $ \left\langle v \right\rangle \propto \exp ( - \frac{\alpha}{1-c} ) $.
+%The dependency is guessed, unfortunately I don't have any argument to support it. 
+} 
 \label{Fig: c_v}
 \end{figure}
-We see that average velocity goes to zero when $c$ approaches $1$. 
+We see that mean velocity goes to zero when $c$ approaches $1$. 
 This is to be expected since $c=1$ corresponds to the case where there is no more flashing of the potential, hence the system is in equilibrium.
 
 
-Alternatively, the average velocity also depends on the concentration of ATP through the detach rate $k_{d}$. 
+Alternatively, the mean velocity also depends on the concentration of ATP through the detach rate $k_{d}$. 
 This dependency is show in figure \ref{Fig: v_k}.
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{v_k}
-\caption{Average velocity of the motor relative to the actin filament for varying $k_{a}$.
+\caption{Mean velocity of the motor relative to the actin filament $\langle v \rangle$ for varying $k_{a}$.
+The velocity decreases to $0$ for large discrepancies between attach and detach rates and reaches when they are comparable.
 }
 \label{Fig: v_k} 
 \end{figure}
-The first data point corresponds to the case where $k_{d} = k_{a} = 40 s^{-1}$ and for the following points $k_{d}$ is doubled every time while $k_{a}$ stayas constant. 
+The first data point corresponds to the case where $k_{d} = k_{a} = 40 s^{-1}$ and for the following points $k_{d}$ is doubled every time while $k_{a}$ stays constant. 
 We first observe that the velocity initially increases, then reaches a maximum around $k_{d} = 160 s^{-1}$ and finally decreases again. 
 A high detach rate means that the motor heads will be attached only for a short time. 
 If this time is too short, the motor might not diffuse all the way to the minimum of the ratchet and has a higher probability the move against the direction given by the asymmetry of the potential. 
@@ -222,30 +226,34 @@ The force that is needed to fully stop the motor, relative to the actin filament
 \left\langle v ( F_{l} = -F_{stall} ) \right\rangle = 0 .
 \]
 Figure \ref{Fig: F_v_zoom}  shows the results from simulations of the motor under load. 
-The points where a curve crosses the vertical axis correspond to the average velocities in figure \ref{Fig: v_k}. 
-We see that the average velocity decreases linearly with increasing load. 
+The points where a curve crosses the vertical axis correspond to the mean velocities in figure \ref{Fig: v_k}. 
+We see that the mean velocity decreases linearly with increasing load. 
 The slope varies for different detach rates. This can be understood if we look at the dependency of the stall force on $k_{d}$ in figure \ref{Fig: k_Fstall}.
-\begin{figure}[b]
+\begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{F_v_zoom}
-\caption{The average velocity of the motor $\langle v \rangle$ with a small load force $F_l$ is plotted for different detach rates.}
+\caption{Mean velocity of the motor $\langle v \rangle$ with a small load force $F_\text{load}$ applied in the direction opposing the movement for different detach rates $k_d$.
+Intersections with the $x$ axis correspond to stall forces for given detach rates. 
+}
 \label{Fig: F_v_zoom} 
 \end{figure}
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{k_Fstall}
-\caption{Stall force for different detach rates.}
+\caption{Stall force $F_\text{stall}$ for different detach rates $k_\text{d}$.
+We observe power-law decay $F_\text{stall} \propto k_\text{d}^{-\alpha}$ with exponent $\alpha = 0.909 \pm 0.030$. 
+}
 \label{Fig: k_Fstall} 
 \end{figure}
 When the detach rate $k_{d}$ increases, so does the fraction of time in which the motor is the least bound to the actin filament. 
 Hence it will be easier to halt a motor when it since the amplitude of its confining potential will be lower on average.
-In figure \ref{Fig: F_v} the average velocity of the motor with respect to the actin filament is plotted for a wider range of the load force. 
+In figure \ref{Fig: F_v} the mean velocity of the motor with respect to the actin filament is plotted for a wider range of the load force. 
 Also the speed of the motor, if it was not  interacting with an actin polymer i.e. $\langle v \rangle = \frac{1}{\gamma_M}F_l$, is shown in black as a reference.
 \begin{figure}[b]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{F_v}
-\caption{Average velocity of the motor against the load force for $c=0.3$.}
+\caption{Mean velocity $\langle v \rangle$ of the motor as a function of the load force $F_\text{load}$ for $c=0.3$.}
 \label{Fig: F_v} 
 \end{figure}
 For small load forces, there is a regime in which the response is very low. 
@@ -277,7 +285,7 @@ or similarly
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{individual_velocities}
-\caption{Individual average velocities of the motor and actin filament. Inset: Zoomed to the linear regime around the origin.}
+\caption{Individual mean velocities of the motor and actin filament. Inset: Zoomed to the linear regime around the origin.}
 \label{Fig: ind_v} 
 \end{figure}
 For figure \ref{Fig: ind_v} we can see that already for small loads, the motor and actin filament will start moving together, i.e. they are coupled by the ratchet interaction. 
@@ -291,7 +299,7 @@ The motor will accelerate for higher loads and its velocity will approach $F_l/\
 The relative velocity $\langle v \rangle$ will be equal to the motor's velocity $\langle v_M \rangle$ in that case.
 
 Alternatively one could look at the nonlinear force-velocity relation by identifying an effective friction force that depends on the load. 
-Without the ratchet interaction, the motion of the motor would satisfy following equation for the average velocity, e.g. the black curve in figure \ref{Fig: F_v}.
+Without the ratchet interaction, the motion of the motor would satisfy following equation for the mean velocity, e.g. the black curve in figure \ref{Fig: F_v}.
 \begin{equation*}
 \gamma_{m}\langle v\rangle - F_{l} = 0
 \end{equation*}
@@ -376,7 +384,7 @@ This is shown in figure \ref{Fig: chem}.
 After each jump in the chemical state of a motor head, the potential in which the whole motor diffuses is altered and a new relaxation process takes place. 
 The relaxation times of these diffusion processes are much faster than the times between chemical jumps. 
 This is because the chemical rates of the motor heads are very small. 
-Hence we can assume that the averages of the quantities (\ref{q_in}) and (\ref{q_out}) can be described by
+Hence we can assume that the means of the quantities (\ref{q_in}) and (\ref{q_out}) can be described by
 \begin{gather}
 \begin{aligned}[b]
 \langle \mathcal Q_{in} \rangle 
@@ -546,7 +554,7 @@ Note that the zeroth and first order are zero.
 With this we show that, at least for a ratchet system with one motor head, it is expected that $\eta$ will become negative for large external loads and eventually goes to zero as the load goes to infinity. 
 This means the driven system looses chemical energy, while the external force is performing work on the system. 
 The efficiency $\eta$ is symmetric in $F$ for large forces, which is also apparent from figure \ref{Fig: chem}. 
-Also note that in the expression for the chemical efficiency, the ratio between the amplitude of the ratchet potential $V$ and the work done by the external force over a period of the potential $d F$ appears in the formula, as well as the ratio between the thermal energy $k_B T$ and the average energy gap between the attached and detached state. 
+Also note that in the expression for the chemical efficiency, the ratio between the amplitude of the ratchet potential $V$ and the work done by the external force over a period of the potential $d F$ appears in the formula, as well as the ratio between the thermal energy $k_B T$ and the mean energy gap between the attached and detached state. 
 Indeed for large load on the motor, the efficiency will go to zero as can be seen from the zeroth order solution.
 \par
 In addition we can compute the current using the obtained densities. 
@@ -559,11 +567,11 @@ When inserting $\rho_2$, we find the current in leading orders of $F$.
 \mathcal{J} =& \frac{F}{\gamma d} \left( 1 + C^\prime \right) + \mathcal{O}( \frac{1}{F^2} ) \\
 =& \frac{F}{\gamma d} - \frac{1}{F\gamma d^2} \int^d_0 \left( \partial_x V_r \right)^2 \; \rmd x + \mathcal{O}(\frac{1}{F^2}) 
 \end{align*}
-Important to note is that the current, integrated over the period of the ratchet, represents the average velocity of the motor. 
+Important to note is that the current, integrated over the period of the ratchet, represents the mean velocity of the motor. 
 Indeed, the dominant term for large external forces is $\mathcal{J}_0 = \frac{F}{\gamma}$, which was also apparent from the simulations shown in figure \ref{Fig: F_v}. 
 Furthermore, the force-independent term vanishes leading to an anti-symmetric form with respect to $F$. 
 The first correction is given by $\frac{F}{\gamma}C^\prime\propto \frac{1}{F}$. 
-This decay was clearly seen in figure \ref{Fig: eff_frict_decay}, which depicts was the average motor velocity deduced by the drag velocity due to the load force $\frac{F}{\gamma}$. 
+This decay was clearly seen in figure \ref{Fig: eff_frict_decay}, which depicts was the mean motor velocity deduced by the drag velocity due to the load force $\frac{F}{\gamma}$. 
 This isolates the contribution from the ratchet potential. 
 Hence this result, obtained for a one-headed motor, also seems to hold for the simulations of motors with four heads. 
 
@@ -604,7 +612,7 @@ This argument can be further supported by Jensen's inequality, which follow from
 \begin{equation}
 V_r(\langle x \rangle) \leq \langle V_r(x) \rangle
 \end{equation} 
-A lower bound on the expectation value of $V_r$ is given by the value of $V_r$ at the average position of the heads in a given state. 
+A lower bound on the expectation value of $V_r$ is given by the value of $V_r$ at the mean position of the heads in a given state. 
 In the detached state this position will be farther away from the minimum of the ratchet so the lower bound is higher than in the attached case.
 
 \section{Tug of war}
@@ -619,13 +627,13 @@ This setup is sketched in figure \ref{Fig: tug}.
 \end{figure}
 One can imagine the filaments being part of a large network that is characterized by an elastic constant $k$. 
 The motor is now interacting with two filament that are arranged in an anti-parallel fashion. 
-Hence it will no longer have a preferred direction to move in and its average velocity will be zero. 
-The observable of interest is now the average force that the motor applies on the filaments, which is measured through the extension of the springs attached to the filaments. 
+Hence it will no longer have a preferred direction to move in and its mean velocity will be zero. 
+The observable of interest is now the mean force that the motor applies on the filaments, which is measured through the extension of the springs attached to the filaments. 
 This quantity is plotted in figure \ref{Fig: tug_k} for different stiffnesses $k$ of the surrounding network.
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{tug_k}
-\caption{Average force generated by the motor on one of the filaments for varying stiffness $k$.}
+\caption{Mean force generated by the motor on one of the filaments for varying stiffness $k$.}
 \label{Fig: tug_k}
 \end{figure}
 The force with which the motor pulls on the filament depends strongly on this elasticity $k$ and saturates for large $k$. 
@@ -641,7 +649,7 @@ Pull beads with constant velocity.
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{tug_v}
-\caption{Average force generated by the motor on one of the filaments during a stretch-compress-cycle of the beads.}
+\caption{Mean force generated by the motor on one of the filaments during a stretch-compress-cycle of the beads.}
 \label{Fig: tug_v}
 \end{figure}
 Look into: Work done during cycle.
@@ -662,8 +670,6 @@ Movement of motor.
 \caption{Displacement of frustrated motor in between the filaments.}
 \label{Fig: tug_F_motor}
 \end{figure}
-
-\section{Conclusions}
 
 \newpage
 \section{TO DO}
