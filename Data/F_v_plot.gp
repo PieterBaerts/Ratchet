@@ -18,29 +18,6 @@ fit [50:] f(x) "F_v.dat" u ($1):(0.66*$2+$1) via a
 plot [10.:][1.:20.] "F_v.dat" u ($1):(0.66*$2+$1) title "Simulation", f(x) title "Fit"
 
 
-set output "individual_velocities.pdf"
-set multiplot
-unset logscale
-set key top left
-set xzeroaxis
-set yzeroaxis
-set xlabel "F_{l} (pN)"
-set ylabel "<v> (nm\µs)"
-plot [-50:50] "F_v_k=8.dat" u (-$1):(($2-$1/0.97)*0.97/(0.66+0.97)) w lines title "<v_{M}>", "F_v_k=8.dat" u (-$1):(-($2+$1/0.66)*0.66/(0.66+0.97)) w lines title "<v_{A}>", x/(0.66+0.97) title "F_{l} / ({/Symbol g}_M + {/Symbol g}_A)" lt rgb "black"
-
-set tmargin at screen 0.26
-set bmargin at screen 0.54
-set lmargin at screen 0.62
-set rmargin at screen 0.92
-set key off
-set xzeroaxis
-set yzeroaxis
-set ytic 0.005
-unset xlabel
-unset ylabel 
-plot [-0.01:0.01] "F_v_k=8.dat" u (-$1):(($2-$1/0.97)*0.97/(0.66+0.97)) w lines title "<v_{M}>", "F_v_k=8.dat" u (-$1):(-($2+$1/0.66)*0.66/(0.66+0.97)) w lines title "<v_{A}>", x/(0.66+0.97) title "F_{l} / ({/Symbol g}_M + {/Symbol g}_A)" lt rgb "black"
-unset multiplot
-
 unset tmargin
 unset bmargin
 unset lmargin
