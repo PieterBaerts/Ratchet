@@ -1,14 +1,4 @@
 
-set output "eff_frict_decay.pdf"
-f(x) = a/x
-a=1
-set xlabel "F_{l}"
-set ylabel "F_{eff}"
-set logscale
-fit [50:] f(x) "F_v.dat" u ($1):(0.66*$2+$1) via a
-plot [10.:][1.:20.] "F_v.dat" u ($1):(0.66*$2+$1) title "Simulation", f(x) title "Fit"
-
-
 unset tmargin
 unset bmargin
 unset lmargin
