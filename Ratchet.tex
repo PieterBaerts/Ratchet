@@ -74,33 +74,41 @@ This will eventually lead to ballistic motion of the motor on long timescales.
 The part of the cytoskeleton that is mainly responsible for the motility of the cell is the actin-myosin cortex and it will serve as the exemplary system in this paper.
 
 
-Ratchet models have been studied extensively in the context of molecular motors REFF(astumian, jullicher, Huxley, Hanggi,...).
+Ratchet models have been studied extensively in the context of molecular motors REFF(astumian, jullicher, Huxley, Hanggi,...). %TODO
 The models that have been used in these studies are very similar to each other but ofter differ in some basic assumptions.
-The specific model that we have studied is presented in section II. and has following important traits:
+The specific model that we have studied is presented in section \ref{sec:ratchet} and has following important traits:
 \begin{itemize}
 \item The chemical rates that do not depend on spacial degrees of freedom. 
 Motor heads can attach and detach anywhere along the polymer filament.
 \item The chemical rates are independent of external forces on the motor.
 \item The motors are rigid with equal spacing between the heads.
 \end{itemize} 
-Furthermore we will be studying non-muscle myosin II motors, that have a small number of heads. These motors are believed to be crucial the motility in eukaryotic cells.
-For larger myosin motors, like the ones in muscle cells, mean-field calculations have lead to analytic results for the force-velocity relation REFF(Jullicher). 
-In experimental studies with synthetic myosin motors, the number of heads per motor is also much higher than in non-muscle cells. Therefore, the results for large motor play a very important role in interpreting and understanding those in-vitro experiments REFF.
+Furthermore we will be studying non-muscle myosin II motors, that have a small number of heads. 
+These motors are believed to be crucial the motility in eukaryotic cells.
+For larger myosin motors, like the ones in muscle cells, mean-field calculations have lead to analytic results for the force-velocity relation REFF(Jullicher). %TODO
+In experimental studies with synthetic myosin motors, the number of heads per motor is also much higher than in non-muscle cells. 
+Therefore, the results for large motor play a very important role in interpreting and understanding those in-vitro experiments REFF. %TODO
 For motors with fewer heads, mean-field methods are not suitable and numerical simulations prove to be useful.
-In section III. we will describe the movement of this motor-polymer system in detail by means of computational simulations.
+In section III. we will describe the movement of this motor-polymer system in detail by means of computational simulations. %XXX
 
 
-Another important aspect of molecular motors is their ability to convert chemical energy into mechanical work REFF.
-The chemical ATP cycle consists out of many consecutive reactions and after one full cycle some net energy is provided to the motor head REFF. However, often this cycle is only represented by two state, e.g.
-ATP bound and ADP bound, in which case a stochastic process on these states always satisfies detailed balance and no chemical energy can be extracted, i.e. the gain of one reaction is canceled by the cost of the following reaction.
+Another important aspect of molecular motors is their ability to convert chemical energy into mechanical work REFF. %TODO
+The chemical ATP cycle consists out of many consecutive reactions and after one full cycle some net energy is provided to the motor head REFF. %TODO
+However, often this cycle is only represented by two state, e.g. ATP bound and ADP bound, 
+in which case a stochastic process on these states always satisfies detailed balance and no chemical energy can be extracted, 
+i.e. the gain of one reaction is canceled by the cost of the following reaction.
 On the other hand we do not want redundant degrees of freedom in our description since we are not really interested in the full chemical details of the process.
-In section IV, we will look at an alternative way of interpreting the chemical input by looking at the differences in energy levels in each jump and we define a chemical efficiency. In section V. we provide a perturbative calculation to validate and understand some features of this chemical efficiency and how it changes when the motor is under external load. 
+In section IV, we will look at an alternative way of interpreting the chemical input by looking at the differences in energy levels in each jump and we define a chemical efficiency. %XXX
+In section V. we provide a perturbative calculation to validate and understand some features of this chemical efficiency and how it changes when the motor is under external load. %XXX
 
 
-Lastly, in section VI., we look at the coupling of the motor to an elastic environment. Earlier studies have shown that  motors are able to sense the stiffness of their environment and that they can adapt the active forces that they generate. In those studies the rates did depend on the load on the motor. We show computationally that a motor in our simple ratchet model behaves similarly.
+Lastly, in section VI., we look at the coupling of the motor to an elastic environment. %XXX
+Earlier studies have shown that  motors are able to sense the stiffness of their environment and that they can adapt the active forces that they generate. 
+In those studies the rates did depend on the load on the motor. We show computationally that a motor in our simple ratchet model behaves similarly.
 
 
 \section{The Ratchet model}
+\label{sec:ratchet}
 We will be looking at a one dimensional system consisting of a myosin motor, interacting with an actin filament. The dynamics of the motor and filament are described by overdamped Langevin equations. 
 \begin{align}
 &\begin{multlined}[b][.35\textwidth]
