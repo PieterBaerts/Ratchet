@@ -10,7 +10,7 @@ set yzeroaxis
 set key top left Left
 
 set ylabel "{/Symbol h}"
-set xlabel "F_{l} (pN)"
+set xlabel "F_{load} (pN)"
 
 plot [:][-0.1:0.5] \
       "Data/F_q_k=1.dat" u (-$1):(($4+$5)/$4):(sqrt($6**2/$4**2+$5**2/$4**4*$7**2)) w errorlines ls 1 lw 1.25 dashtype 1 title "k_{d}/k_a = 0.25" \
