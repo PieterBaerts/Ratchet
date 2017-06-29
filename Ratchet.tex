@@ -78,7 +78,7 @@ Ratchet models have been studied extensively in the context of molecular motors 
 The models that have been used in these studies are very similar to each other but ofter differ in some basic assumptions.
 The specific model that we have studied is presented in section \ref{sec:ratchet} and has following important traits:
 \begin{itemize}
-\item The chemical rates that do not depend on spacial degrees of freedom. 
+\item The chemical rates do not depend on spacial degrees of freedom. 
 Motor heads can attach and detach anywhere along the polymer filament.
 \item The chemical rates are independent of external forces on the motor.
 \item The motors are rigid with equal spacing between the heads.
@@ -231,7 +231,7 @@ In this section, an external load force $F_\text{load}$ is applied to the motor,
 When a force is applied against the preferred direction of the motor, it is expected to slow down. 
 The force that is needed to fully stop the motor, relative to the actin filament, is called the stall force, i.e. 
 \[
-\left\langle v ( F_{l} = -F_{stall} ) \right\rangle = 0 .
+\left\langle v ( F_{load} = -F_{stall} ) \right\rangle = 0 .
 \]
 Figure \ref{Fig: F_v_zoom}  shows the results from simulations of the motor under load. 
 The points where a curve crosses the vertical axis correspond to the mean velocities in figure \ref{Fig: v_k}. 
@@ -258,7 +258,7 @@ We observe power-law decay $F_\text{stall} \propto k_\text{d}^{-\alpha}$ with ex
 When the detach rate $k_{d}$ increases, so does the fraction of time in which the motor is the least bound to the actin filament. 
 Hence it will be easier to halt a motor when it since the amplitude of its confining potential will be lower on average.
 In figure \ref{Fig: F_v} the mean velocity of the motor with respect to the actin filament is plotted for a wider range of the load force. 
-Also the speed of the motor, if it was not  interacting with an actin polymer i.e. $\langle v \rangle = \frac{1}{\gamma_M}F_l$, is shown in black as a reference.
+Also the speed of the motor, if it was not  interacting with an actin polymer i.e. $\langle v \rangle = \frac{1}{\gamma_M}F_{load}$, is shown in black as a reference.
 \begin{figure}[b]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{F_v}
@@ -268,26 +268,26 @@ Also the speed of the motor, if it was not  interacting with an actin polymer i.
 For small load forces, there is a regime in which the response is very low. 
 The ratchet interaction provides a friction to counter the load force. 
 For larger forces the system looses its resilience and the contribution from the load will dominate. 
-The larger the load, the closer the velocity will come to  $\frac{1}{\gamma_M}F_l$.
+The larger the load, the closer the velocity will come to  $\frac{1}{\gamma_M}F_{load}$.
 Curves for higher detach rates are closer to the curve for the completely unbound motor. 
 The motor is more submissive to the external load, which can be understood through the same reasoning as for the stall force.
 It is also interesting to look at the velocities of the motor and actin filament separately, instead of their relative velocity. 
 For equations (\ref{eom_M}) and (\ref{eom_A}) we can obtain the following.
 
 \begin{align*}
-\gamma_M \langle v_M \rangle &= \langle F_r \rangle + F_l \\
+\gamma_M \langle v_M \rangle &= \langle F_r \rangle + F_{load} \\
 \gamma_A \langle v_A \rangle &= -\langle F_r \rangle
 \end{align*}
 Where $\langle v_{M,A} \rangle = \langle \frac{\rmd x_{M,A}}{\rmd t} \rangle$ 
 and $\langle F_r \rangle = - \langle \nabla_M V_t(x_M - x_A ) \rangle = \langle \nabla_A V_t(x_M - x_A ) \rangle $. 
 And since the relative velocity is $\langle v \rangle = \langle v_{M} \rangle - \langle v_{A} \rangle$ we get
 \begin{equation*}
-\langle v \rangle = \frac{\gamma_A + \gamma_M}{\gamma_A \gamma_M} \langle F_r \rangle + \frac{1}{\gamma_M} F_l
+\langle v \rangle = \frac{\gamma_A + \gamma_M}{\gamma_A \gamma_M} \langle F_r \rangle + \frac{1}{\gamma_M} F_{load}
 \end{equation*}
 or similarly
 \begin{align}
-\langle v_M \rangle &= \frac{1}{ \gamma_A + \gamma_M } \left( \gamma_A \langle v \rangle + F_l \right) \label{velocity_M} \\
-\langle v_A \rangle &= -\frac{1}{ \gamma_A + \gamma_M } \left( \gamma_M \langle v \rangle - F_l \right)
+\langle v_M \rangle &= \frac{1}{ \gamma_A + \gamma_M } \left( \gamma_A \langle v \rangle + F_{load} \right) \label{velocity_M} \\
+\langle v_A \rangle &= -\frac{1}{ \gamma_A + \gamma_M } \left( \gamma_M \langle v \rangle - F_{load} \right)
 \label{velocity_A}
 \end{align}
 
@@ -301,25 +301,25 @@ Inset: Zoomed to the linear regime around the origin.
 \label{Fig: ind_v} 
 \end{figure}
 For figure \ref{Fig: ind_v} we can see that already for small loads, the motor and actin filament will start moving together, i.e. they are coupled by the ratchet interaction. 
-In the inset of figure \ref{Fig: ind_v} their velocities, for small loads, go like $F_l/(\gamma_M + \gamma_A)$. 
+In the inset of figure \ref{Fig: ind_v} their velocities, for small loads, go like $F_{load}/(\gamma_M + \gamma_A)$. 
 This can be seen from equations (\ref{velocity_M}) and (\ref{velocity_A}) and the fact that $\langle v \rangle$ stays almost constant around the origin in figure \ref{Fig: F_v}. 
 The relative velocity remains almost constant in this regime.
 Note that the point at which the velocity of the motor drops beneath actin's velocity is where the load is equal to the stall force.
 Since the load is only applied to the motor, for very high loads, the motor will start slipping over the ratchet potential along the actin filament. 
 Consequently, the filament's velocity will stop increase and go to zero for larger loads. 
-The motor will accelerate for higher loads and its velocity will approach $F_l/\gamma_M$. 
+The motor will accelerate for higher loads and its velocity will approach $F_{load}/\gamma_M$. 
 The relative velocity $\langle v \rangle$ will be equal to the motor's velocity $\langle v_M \rangle$ in that case.
 
 Alternatively one could look at the nonlinear force-velocity relation by identifying an effective friction force that depends on the load. 
 Without the ratchet interaction, the motion of the motor would satisfy following equation for the mean velocity, e.g. the black curve in figure \ref{Fig: F_v}.
 \begin{equation*}
-\gamma_{m}\langle v\rangle - F_{l} = 0
+\gamma_{m}\langle v\rangle - F_{load} = 0
 \end{equation*}
 The violation of this relation in the presence of the ratchet interaction gives us this effective friction. 
 It is shown in figure \ref{Fig: effective_friction}. 
 Note that this is the same as the distance between the force-velocity curves and the ratchet-free curve in figure \ref{Fig: F_v}.
 \begin{equation*}
-\gamma_{m} \langle v \rangle - F_{l} = \frac{\gamma_A + \gamma_M}{\gamma_A} \langle F_r \rangle = F_{eff}
+\gamma_{m} \langle v \rangle - F_{load} = \frac{\gamma_A + \gamma_M}{\gamma_A} \langle F_r \rangle = F_{eff}
 \end{equation*}
 \begin{figure}[t]
 \centering
@@ -331,7 +331,7 @@ The response of the system for small loads is linear and independent of the ATP 
 The effective friction generated by the ratchet interaction will reach a maximal value and eventually decay for larger external forces. 
 As the load goes to infinity, the friction provided by the ratchet will go to zero as 
 \begin{equation*}
-\left| \langle F_{eff} \rangle_{F_l\rightarrow\infty} \right| \sim \frac{1}{F_l}
+\left| \langle F_{eff} \rangle_{F_{load}\rightarrow\infty} \right| \sim \frac{1}{F_{load}}
 \end{equation*} 
 which is shown in figure \ref{Fig: eff_frict_decay}. 
 Later on, we will show that for a one headed motor, this is indeed the dominant contribution for large external forces.  
@@ -339,7 +339,7 @@ Later on, we will show that for a one headed motor, this is indeed the dominant 
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{eff_frict_decay}
 \caption{The effective friction, depending on the load, is shown in a logarithmic plot. 
-The fitted curve decays like $\frac{1}{F_l}$, i.e. it has a slope of $-1$ in the logarithmic plot, and fits the simulation data nicely.}
+The fitted curve decays like $\frac{1}{F_{load}}$, i.e. it has a slope of $-1$ in the logarithmic plot, and fits the simulation data nicely.}
 \label{Fig: eff_frict_decay}
 \end{figure}
 
@@ -426,7 +426,7 @@ As argued, since the relaxation is fast, compared to the chemical rates, this ap
 \caption{Distributions of the motor heads in the attached and detached state, for different load forces.}
 \label{Fig: pos_distr}
 \end{figure*}
-In the case without an external load, $F_l=0$, the motor head is very unlikely to cross the potential barrier in the attached state. 
+In the case without an external load, $F_{load}=0$, the motor head is very unlikely to cross the potential barrier in the attached state. 
 The maximum of the distribution is close to the minimum of the potential. 
 The discrepancy comes from the fact that the motor has multiple head with a fixed distance between them, which does not match with the period of the ratchet potential. 
 Also the fact that the distributions seem to exhibit multiple peaks, can be attributed to the motor having four heads. 
@@ -434,7 +434,7 @@ Both in the attached and detached state, the head can be found predominantly on 
 
 
 With increasing load, we see both a shift of the maximum and a flattening of the profile. 
-The detached distributions are broader for $F_l=0$, because to potential is lower and less steep, and also seem to be more susceptible to external forces, i.e. the profile gets more. 
+The detached distributions are broader for $F_{load}=0$, because to potential is lower and less steep, and also seem to be more susceptible to external forces, i.e. the profile gets more. 
 
 
 To understand the dependency of the chemical efficiency on the load, we must compare the attached and detached distribution and correlate this with the with of the energy gap along the period of the ratchet. 
@@ -453,14 +453,14 @@ In this region, the energy gap is larger than around the maximum of the potentia
 Therefore more energy goes into the system, when ATP binds to a head, than energy going out, when ATP is hydrolyzed and the head attaches again to the actin filament. 
 
 
-When the load is increased to $F_l = 25 \, \mathrm{pN}$, the distributions shift to the right but distribution for the attached state remains peaked around the potential minimum, while the detached distribution flattens out and increases around the potential maximum. 
+When the load is increased to $F_{load} = 25 \, \mathrm{pN}$, the distributions shift to the right but distribution for the attached state remains peaked around the potential minimum, while the detached distribution flattens out and increases around the potential maximum. 
 This leads to an increase of $\eta$. 
-For a load in the opposite direction $F_l = -25 \, \mathrm{pN}$ the effect on $\eta$ is similar but less pronounced, since the slope of the ratchet on the side is less steep and the distributions get more spread out. 
+For a load in the opposite direction $F_{load}= -25 \, \mathrm{pN}$ the effect on $\eta$ is similar but less pronounced, since the slope of the ratchet on the side is less steep and the distributions get more spread out. 
 
 
 For larger loads, the distributions shift more but since the detached one is flatter, it is more plausible the find a head in the detached state around the potential minimum. 
 This means that more energy will be dissipated when the heads bind and $\eta$ will go down and even become negative. 
-In the next section we will investigate the behavior of $\eta$ for large loads and show that it indeed has to be negative and that it will decay like $\frac{1}{F_l^2}$ as $F_l$ goes to infinity.
+In the next section we will investigate the behavior of $\eta$ for large loads and show that it indeed has to be negative and that it will decay like $\frac{1}{F_{load}^2}$ as $F_{load}$ goes to infinity.
 
 \section{Perturbative treatment}
 In this section we will show that the chemical cycle must extract energy from the ratchet system with one head and for large load forces, i.e. the chemical efficiency $\eta$ must be negative. 
@@ -602,7 +602,7 @@ Note that the curves with higher detach rate $k_d$ in figure \ref{Fig: chem} ten
 When the detach rate is increased, the configuration where fewer heads of the motor are attach to the polymer indeed becomes more likely.
 
 
-Another trait of the chemical efficiency curves are the local minima's around $F_l=0$. 
+Another trait of the chemical efficiency curves are the local minima's around $F_{load}=0$. 
 The understand this we must again look at equation (\ref{eta}) which is determined by the ratchet potential averaged with the heads' distribution in the attached and detached state. 
 For a one headed motor, these distribution will both be peaked around the minimum of the ratchet potential. 
 In fact, the distributions will be given by the Boltzmann distribution.
@@ -613,13 +613,13 @@ From this point of view, detaching the head is equivalent to an increasing of th
 Hence the distributions for the detached state are broader and the expectation value of $V_r$ will be bigger than in the attached state and $\eta$ will be positive. 
 Now if we apply a small external force, the distributions will be slightly perturbed and given by the McLennan formula
 \begin{equation}
-\rho_s^*(x) \propto e^{-\beta \left[V_r(x) - F_l x\right]}\propto \rho_s(x)\left[1 + \beta F_l x\right]
+\rho_s^*(x) \propto e^{-\beta \left[V_r(x) - F x\right]}\propto \rho_s(x)\left[1 + \beta F x\right]
 \end{equation}
-which will, for small $F_l$, lead to a shift of the distribution $\rho_s$ along the $x$-axis and in the direction of the load. 
+which will, for small $F$, lead to a shift of the distribution $\rho_s$ along the $x$-axis and in the direction of the load. 
 In the detached state this will cause a larger displacement than in the attached state because of the potential in that case is less steep. 
 A larger displacement of the distribution, away from the potential's minimum, means that $\langle V_r \rangle_{s=0}$ will increase more than $\langle V_r \rangle_{s=1}$ and hence $\eta$ has to increase. 
 For a four headed motor, the distributions of the heads at zero load are not exactly peaked around the minimum of the potential because of the fixed distance between each head,  which does not correspond to the period of the ratchet. 
-Therefore the local minimum of $\eta$ lies not exactly at, but close to, $F_l =0$.
+Therefore the local minimum of $\eta$ lies not exactly at, but close to, $F_{load} =0$.
 This argument can be further supported by Jensen's inequality, which follow from the fact the the ratchet potential is convex. For this case the inequality reads as follows.
 \begin{equation}
 V_r(\langle x \rangle) \leq \langle V_r(x) \rangle
