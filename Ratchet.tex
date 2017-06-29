@@ -212,7 +212,7 @@ This dependency is show in figure \ref{Fig: v_k}.
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{v_k}
-\caption{Mean velocity of the motor relative to the actin filament $\langle v \rangle$ for varying $k_{a}$.
+\caption{Mean velocity of the motor relative to the actin filament $\langle v \rangle$ for varying $k_{d}$.
 The velocity decreases to $0$ for large discrepancies between attach and detach rates and reaches when they are comparable.
 }
 \label{Fig: v_k} 
@@ -227,7 +227,7 @@ The simulations show that there is an optimal value of$k_{d}$ to maximize the re
 
 
 \section{Force-velocity relation}
-In this section, an external load force $F_load$ is applied to the motor, as in equation (\ref{eom_M}). 
+In this section, an external load force $F_\text{load}$ is applied to the motor, as in equation (\ref{eom_M}). 
 When a force is applied against the preferred direction of the motor, it is expected to slow down. 
 The force that is needed to fully stop the motor, relative to the actin filament, is called the stall force, i.e. 
 \[
@@ -242,6 +242,7 @@ The slope varies for different detach rates. This can be understood if we look a
 \includegraphics[width=0.45\textwidth,height=!]{F_v_zoom}
 \caption{Mean velocity of the motor $\langle v \rangle$ with a small load force $F_\text{load}$ applied in the direction opposing the movement for different detach rates $k_d$.
 Intersections with the $x$ axis correspond to stall forces for given detach rates. 
+We can see that with increasing $k_d/k_a$ ratio the slope increases as well as the full curve shifts in the low force region, causing a persistent decrease in stall force.  
 }
 \label{Fig: F_v_zoom} 
 \end{figure}
