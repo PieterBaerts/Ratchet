@@ -14,7 +14,7 @@ set logscale y
 
 set xtics 2 
 
-fit B*x**(-a)  "Data/k_F.dat" u ($1/4.):(-$2) via a,B
+fit [8:] B*x**(-a)  "Data/F_k.dat" u ($1/4.):6:7 yerrors via a,B
 
-plot [:32] "Data/k_F.dat" u ($1/4.):(-$2) w linespoints ls 8 \
+plot [0.25:32] "Data/F_k.dat" u ($1/4.):6:7 w yerrorlines ls 8 \
     , B/x**a ls 6 notitle 
