@@ -194,7 +194,7 @@ Actin friction& $\gamma_{a}$ & 0.97 & pN $\upmu$s nm$^{-1}$ & REF\\
 While both the diffusion and the jump process are in equilibrium, the mechanism of the flashing ratchet brings the combined system out of equilibrium, leading to the movement of the motor in a preferred direction, given by the asymmetry of the filament. 
 In simulations we measured the mean velocity $\langle v\rangle$ of the motor with respect to the filament. 
 This for different values of $c$, the scaling factor of the amplitude of the ratchet potential, show in figure \ref{Fig: c_v}.
-\begin{figure}[b]
+\begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{c_v_4heads}
 \caption{Mean velocity $\langle v \rangle$ of the motor relative to the actin filament for $c \in (0,1)$.
@@ -252,7 +252,7 @@ We can see that with increasing $k_d/k_a$ ratio the slope increases as well as t
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{k_Fstall}
 \caption{Stall force $F_\text{stall}$ for different detach rates $k_\text{d}$.
-We observe power-law decay $F_\text{stall} \propto k_\text{d}^{-\alpha}$ with exponent $\alpha = 0.909 \pm 0.030$. 
+We observe power-law decay $F_\text{stall} \propto k_\text{d}^{-\alpha}$ with exponent $\alpha = 1.002 \pm 0.014$. 
 }
 \label{Fig: k_Fstall} 
 \end{figure}
@@ -260,7 +260,7 @@ When the detach rate $k_{d}$ increases, so does the fraction of time in which th
 Hence, it will take a smaller load to halt a motor since the amplitude of its confining potential will be lower on average.
 In figure \ref{Fig: F_v} the mean velocity of the motor with respect to the actin filament is plotted for a wider range of the load force. 
 As a reference, the speed of a non-interacting motor, i.e. $\langle v \rangle = \frac{1}{\gamma_M}F_{load}$, is shown in black as a reference.
-\begin{figure}[b]
+\begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{F_v}
 \caption{Mean velocity $\langle v \rangle$ of the motor as a function of the load force $F_\text{load}$ for $c=0.3$ and $k_d/k_a = 2$.}
@@ -336,12 +336,12 @@ As the load goes to infinity, the friction provided by the ratchet will go to ze
 \end{equation} 
 which is shown in figure \ref{Fig: eff_frict_decay}. 
 Later on, we will show that for a one headed motor, this is indeed the dominant contribution for large external forces.  
-\begin{figure}[b]
+\begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{eff_frict_decay}
 \caption{The effective force, depending on the load, is shown in a logarithmic plot. 
 We can see, that the effective friction asymptotically decay according to the power law $F_\text{eff} \propto F_\text{load}^{-\alpha}$, 
-with exponent determined from the fit to be $\alpha = 1.002 \pm 0.014$, 
+with exponent determined from the fit to be $\alpha = 0.9990 \pm 0.0047$, 
 which is in good agreement with the theoretical prediction \eqref{eq:eff_vs_load}.
 }
 \label{Fig: eff_frict_decay}
