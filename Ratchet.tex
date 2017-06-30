@@ -1,12 +1,9 @@
-% \documentclass[aps,pre,twocolumn,showpacs,showkeys,a4paper]{revtex4-1}
-% \documentclass[aps,pre,onecolumn,showpacs,showkeys,a4paper]{revtex4-1}
-\documentclass[aps,pre,twocolumn,showpacs,showkeys,a4paper]{revtex4}
- % \documentclass[aps,pre,twocolumn,showpacs,showkeys,a4paper]{revtex4}
- %  \documentclass[12pt]{article}  %  \documentclass[12pt]{iopart} %
- %\documentclass{iopart}
+\documentclass[aps,pre,twocolumn,showpacs,showkeys]{revtex4-1}
  %\pdfoutput=1 \input epsf
+
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
+\usepackage{hyperref}
 
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -18,6 +15,7 @@
 \usepackage{subfigure}
 
 \usepackage{upgreek}
+\usepackage{dcolumn}
 \usepackage{natbib}
 
 \DeclareMathOperator{\erfc}{erfc}
@@ -31,10 +29,13 @@
 \begin{document} 
 
 \title{The interaction between Actin and Myosin-II, the flashing ratchet}
-\author{Pieter Baerts$^{(1)}$, Christian Maes$^{(1)}$, Jiří Pešek$^{(2)}$, and Herman Ramon$^{(2)}$}
-\affiliation{(1) KU Leuven, Instituut voor Theoretishe Fysica, Celestijnenlaan 200D, B-3001 Leuven, Belgium\\
-(2) KU Leuven, BIOSYST-MeBioS, Kasteelpark Arenberg 30, B-3001 Leuven, Belgium
-}
+\author{Pieter Baerts}
+\author{Christian Maes}
+\affiliation{KU Leuven, Instituut voor Theoretishe Fysica, Celestijnenlaan 200D, B-3001 Leuven, Belgium}
+\author{Jiří Pešek}
+\author{Herman Ramon}
+\affiliation{KU Leuven, BIOSYST-MeBioS, Kasteelpark Arenberg 30, B-3001 Leuven, Belgium}
+
 \begin{abstract}
 We present a model for the movement of a myosin-II molecular motor along a straight actin filament, in which the heads of the motor are subjected to a flashing ratchet potential. This simple model already features the force-velocity relation and aspects of mechanosensing. We also investigate the energy input from the chemical ATP cycle and its dependence on external loads on the motor.  
 \end{abstract}
@@ -171,20 +172,20 @@ Some of them were took from the literature while others were fitted to give a re
 The friction coefficients were calculated with Stokes' law, using the known dimensions of the molecules \footnote{The myosin II motor and actin filament molecules were approximated in this calculation by long, thin cylinders.} and the viscosity of the extracellular medium.
 \begin{table}[t]
 \centering
-\begin{tabular}{lcccc}
-Parameter & Symbol & Value & Units & Source\\
+\begin{tabular}{lcdcc}
+Parameter & Symbol & \multicolumn{1}{c}{Value} & Units & Source\\
 \hline\hline
-Thermal energy & $k_B T$ & 4.28 & pN nm & --- \\
-Number of heads & $N$ & $4$ & --- & REF\\
-Spacing between heads & $l$ & $15$ & nm & REF\\
-Step length & $d$ & $8$ & nm & REF\\
-Binding rate & $k_{a}$ & $40$ & s$^{-1}$ & REF\\
-Detaching rate & $k_{d}$ & $80$ & s$^{-1}$ & REF\\
-Skewness & $a$ & $0.25$ & --- & ---\\
-Potential amplitude & $V$ & $40$ & pN nm & ---\\
-Potential scaling & $c$ & $0.3$ & --- & ---\\
-Motor friction & $\gamma_{m}$ & 0.66 & pN $\upmu$s nm$^{-1}$ & REF\\
-Actin friction & $\gamma_{a}$ & 0.97 & pN $\upmu$s nm$^{-1}$ & REF\\
+Thermal energy& $k_B T$ & 4.28 & pN nm & --- \\
+Number of heads& $N$ & 4 & --- & REF\\
+Head's spacing& $l$ & 15 & nm & REF\\
+Step length& $d$ & 8 & nm & REF\\
+Binding rate& $k_{a}$ & 40 & s$^{-1}$ & REF\\
+Detaching rate& $k_{d}$ & 80 & s$^{-1}$ & REF\\
+Skewness& $a$ & 0.25 & --- & ---\\
+Potential amplitude& $V$ & 40 & pN nm & ---\\
+Potential scaling& $c$ & 0.3 & --- & ---\\
+Motor friction& $\gamma_{m}$ & 0.66 & pN $\upmu$s nm$^{-1}$ & REF\\
+Actin friction& $\gamma_{a}$ & 0.97 & pN $\upmu$s nm$^{-1}$ & REF\\
 \end{tabular}
 \caption{Table of all parameter values and a reference to their source.}
 \label{Tab: Parameters}
@@ -429,7 +430,14 @@ They are shown in figure \ref{Fig: pos_distr} for different load forces.
 As argued, since the relaxation is fast, compared to the chemical rates, this approximates the steady distribution very well.
 \begin{figure*}[t]
 \centering
-\includegraphics[width=0.9\textwidth,height=!]{pos_distr_all_F}
+\subfigure[Attached state]{ 
+\centering
+\includegraphics[width=.45\textwidth,height=!]{pos_distr_a_F}
+}
+\subfigure[Detached state]{
+\centering
+\includegraphics[width=.45\textwidth,height=!]{pos_distr_d_F}
+}
 \caption{Distributions of the motor heads in the attached and detached state, for different load forces.}
 \label{Fig: pos_distr}
 \end{figure*}
