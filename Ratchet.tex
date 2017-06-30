@@ -550,10 +550,17 @@ Now the density up to second order is given by
 Observe that in this form, the depends on the ratchet potential only through a first or second order derivative. 
 Therefore the density will appear as a piecewise constant function on $x\in[0,l]$, with different values for $x < a l$ and $x > a l $. 
 This trend can already be seen in the empirical density obtained from simulations for large load forces $F_L = \pm 250 \, \mathrm{pN}$ in figure %TODO
-\begin{figure*}[p]
+\begin{figure*}[t]
 \centering
-\includegraphics[width=0.9\textwidth,height=!]{pos_multiplot}
-\caption{Empirical density profiles in both attached and detached state for different loads.}
+\subfigure[Positive load]{
+\includegraphics[width=0.45\textwidth,height=!]{pos_multiplot_p}
+}
+\subfigure[Negative load]{
+\includegraphics[width=0.45\textwidth,height=!]{pos_multiplot_m}
+}
+\caption{Side by side comparison of empirical density profiles in both attachable (a - blue colored) and detached (d - red colored) state for different loads.
+Profiles sharing the same load magnitude $|F_\text{load}|$ are denoted by the symbols.
+}
 \label{Fig: pos_multiplot}
 \end{figure*}
 
