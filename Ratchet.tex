@@ -386,6 +386,7 @@ Where $t_a$ and $t_d$ are all jump times to state $s=1$ and $s=0$ respectively.
  We can measure and average these quantities in our simulations and we can define a chemical efficiency as follows
 \begin{equation}
 \eta = \frac{\langle\mathcal Q_{in}\rangle+\langle\mathcal Q_{out}\rangle}{\langle\mathcal Q_{in}\rangle} .
+\label{eq:efficiency}
 \end{equation}
 This quantifies the fraction of chemical energy, supplied by the ATP driven cycles of the heads, that remains in the system. 
 This is shown in figure \ref{Fig: chem}.
@@ -619,7 +620,12 @@ This comparison is made in figure \ref{Fig: chem_eff_1head}.
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{chemical_cycle_1head}
-\caption{Chemical efficiency of a motor under load. Comparison of one and four headed motors.}
+\caption{Chemical efficiency of a motor under load. 
+Comparison of one (red triangles), four (blue stars), sixteen (green circles) headed motors.
+We observe that with increasing number of heads the efficiency \eqref{eq:efficiency} distribution 
+gets broader and it's variance decreases.
+Moreover, for sixteen heads it became centered without two local maximas. 
+}
 \label{Fig: chem_eff_1head}
 \end{figure}
 The behavior for large load forces seems to be exactly the same.
