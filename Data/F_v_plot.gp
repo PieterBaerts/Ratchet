@@ -1,39 +1,4 @@
 
-set output "effective_friction.pdf"
-set key top right
-set xzeroaxis
-set yzeroaxis
-set xlabel "F_{l} (pN)"
-set ylabel "F_{eff} (pN)"
-plot [-50:50] "F_v_k=4.dat" u (-$1):(0.66*$2+$1) w lines title "k_{d} = 40 s^{-1}", "F_v_k=8.dat" u (-$1):(0.66*$2+$1) w lines title "k_{d} = 80 s^{-1}", "F_v_k=16.dat" u (-$1):(0.66*$2+$1) w lines title "k_{d} = 160 s^{-1}", "F_v_k=32.dat" u (-$1):(0.66*$2+$1) w lines title "k_{d} = 320 s^{-1}", "F_v_k=64.dat" u (-$1):(0.66*$2+$1) w lines title "k_{d} = 640 s^{-1}"
-
-
-set output "eff_frict_decay.pdf"
-f(x) = a/x
-a=1
-set xlabel "F_{l}"
-set ylabel "F_{eff}"
-set logscale
-fit [50:] f(x) "F_v.dat" u ($1):(0.66*$2+$1) via a
-plot [10.:][1.:20.] "F_v.dat" u ($1):(0.66*$2+$1) title "Simulation", f(x) title "Fit"
-
-
-unset tmargin
-unset bmargin
-unset lmargin
-unset rmargin
-
-reset
-set output "chemical_cycle.pdf"
-set xzeroaxis
-set yzeroaxis
-set key top left
-set ylabel "Chemical efficiency {/Symbol h}"
-set xlabel "F_{l} (pN)"
-plot "F_q_k=4.dat" u (-$1):(($4+$5)/$4) w lines title "k_{d} = 40 s^{-1}",  "F_q_k=8.dat" u (-$1):(($4+$5)/$4) w lines title "k_{d} = 80 s^{-1}", "F_q_k=16.dat" u (-$1):(($4+$5)/$4) w lines title "k_{d} = 160 s^{-1}", "F_q_k=32.dat" u (-$1):(($4+$5)/$4) w lines title "k_{d} = 320 s^{-1}", "F_q_k=64.dat" u (-$1):(($4+$5)/$4) w lines title "k_{d} = 640 s^{-1}"
-
-
-
 set output "chemical_cycle_1head.pdf"
 set xzeroaxis
 set yzeroaxis
