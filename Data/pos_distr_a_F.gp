@@ -5,7 +5,7 @@ set output "pos_distr_a_F.pdf"
 load "Data/my.pal"
 
 set xlabel "x (nm)"
-set ylabel "{/Symbol r}_d"
+set ylabel "{/Symbol r}_a"
 
 set key left Left
 
@@ -23,7 +23,7 @@ f = "-100 -25 0 25 100"
 color = "1 3 6 10 8"
 
 plot [0:8][0:0.4] \
-      for [i=1:5] sprintf("Data/pos_distr_F=%s_attached.dat", word(f,i)) u (shift($1+6)):($2*10) title sprintf("F = %s pN", word(f,i)) w points ls word(color,i) \
+      for [i=1:5] sprintf("Data/pos_distr_F=%s_attached.dat", word(f,i)) u (shift($1+6)):($2*10) title sprintf("F_{load} = %s pN", word(f,i)) w points ls word(color,i) \
     , V(shift(x-6)) axis x1y2 lt rgb "#666666" dashtype "-" notitle
 
 
