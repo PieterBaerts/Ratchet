@@ -21,6 +21,6 @@ set xzeroaxis
 fit [:3] A*exp(-c/(1-x)) "Data/v_c_extra.dat" u 1:(1e3*abs($2)):(1e3*$3) yerrors via A,c
 
 #plot [0:1][1e-4:] "Data/v_c_extra.dat" u 1:(1e3*abs($2)):(1e3*$3) w yerrorbars, 
-plot [0:1] "Data/v_c_extra.dat" u 1:(1e3*abs($2)):(1e3*$3) w yerrorbars lc "#e31a1c", \
+plot [0:1] "Data/v_c_extra.dat" u 1:(1e3*abs($2)):(1e3*$3) w yerrorbars ls 8, \
     A*exp(-c/(1-x)) w lines ls 6
 
