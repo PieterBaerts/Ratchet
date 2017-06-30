@@ -45,42 +45,6 @@ do for [f in "-1000 -500 -250 -100 -25 0 25 100 250 500 1000"] {
     print (D_mean-A_mean)/(30,4/0.7 - A_mean)
 }
 
-set key top left
-set ylabel "V(x)[{/Symbol r}_d(x)-{/Symbol r}_a(x)]"
-set output "chem_energy_distr_all_F.pdf"
-set arrow 1 from 6.,graph(0,0) to 6.,graph(1,1) lt 0 lc rgb "black" nohead 
-sign(x) = x==0 ? 0 : x/abs(x)
-f = "-100 -25 0 25 100"
-red = "0 62 0 250 250"
-green = "0 188 188 188 0"
-blue = "250 250 0 62 0"
-rgb(r,g,b) = 65536 * r + 256 * g + b
-plot [0:8][-0.2:0.8] for [i=1:5] sprintf("< paste pos_distr_F=%s_attached.dat pos_distr_F=%s_detached.dat", word(f,i), word(f,i)) u (shift($1+6)):((30.4-0.7*V($1))*($2-$5)) title sprintf("F = %spN", word(f,i)) pointtype 1 lt rgb rgb(word(red,i),word(green,i),word(blue,i))
-#, V(shift(x-6)) axis x1y2 lt rgb "black" title "V(x)"
-
-set term pdfcairo enhanced size 10,3
-set key top left 
-set output "pos_distr_all_F.pdf"
-set multiplot
-set ylabel "Empirical density {/Symbol r}_a"
-set title "Attached state" font ",15"
-set bmargin at screen 0.9
-set tmargin at screen 0.2
-set rmargin at screen 0.47
-set lmargin at screen 0.07
-set arrow 1 from 6.,graph(0,0) to 6.,graph(1,1) lt 0 lc rgb "black" nohead 
-sign(x) = x==0 ? 0 : x/abs(x)
-f = "-100 -25 0 25 100"
-red = "0 62 0 250 250"
-green = "0 188 188 188 0"
-blue = "250 250 0 62 0"
-rgb(r,g,b) = 65536 * r + 256 * g + b
-plot [0:8][0:0.4] for [i=1:5] sprintf("pos_distr_F=%s_attached.dat", word(f,i)) u (shift($1+6)):($2*10) title sprintf("F = %spN", word(f,i)) pointtype 1 lt rgb rgb(word(red,i),word(green,i),word(blue,i))
-#, V(shift(x-6)) axis x1y2 lt rgb "black" title "V(x)"
-
-
-unset multiplot
-
 set term pdfcairo enhanced size 10,13
 set output "pos_multiplot.pdf"
 set multiplot
