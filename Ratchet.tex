@@ -110,36 +110,52 @@ In those studies the rates did depend on the load on the motor. We show computat
 
 \section{The Ratchet model}
 \label{sec:ratchet}
-We will be looking at a one dimensional system consisting of a myosin motor, interacting with an actin filament. The dynamics of the motor and filament are described by overdamped Langevin equations. 
+We consider a one dimensional model representing a myosin motor interaction with an actin filament, see figure~\ref{Fig: ratchet setup}.
+First, we assume that the rigidity of the actin polymer and myosin backbone is high enough that their elongations can be neglected.
+Second, we assume that all myosin heads are attached directly to the myosin backbone at fixed equidistant positions, see figure~\ref{Fig: ratchet setup}. 
+These simplifications allow us to model both, the motor and the filament, as point particles undergoing overdamped diffusion. 
+Moreover, each myosin head has an internal state, which represent its chemical state, 
+i.e. whether there is an ATP bounded or not to the myosin head. 
+
+The dynamics of the full system is then described by coupled overdamped Langevin equations 
 \begin{align}
-&\begin{multlined}[b][.35\textwidth]
-\rmd x_M = 
-\frac{1}{\gamma_M} \left[ - \nabla_M V_t(x_M(t) - x_A(t)) + F_{ext} \right] \; \rmd t \\ 
-+ \sqrt{ \frac{2 k_B T}{\gamma_M} } \; \rmd W_M 
+&\begin{multlined}[b]
+\rmd x_\text{M} = 
+\frac{1}{\gamma_\text{M}} \left[ - \nabla_\text{M} V_t(x_\text{M}(t) - x_\text{A}(t)) + F_\text{load} \right] \; \rmd t 
+\\ 
++ \sqrt{ \frac{2 k_B T}{\gamma_\text{M}} } \; \rmd W_\text{M} ,
 \end{multlined}
 \label{eom_M} \\
-&\begin{multlined}[b][.35\textwidth]
-\rmd x_A = 
-- \frac{1}{\gamma_A} \nabla_A V_t(x_M(t) - x_A(t)) \; \rmd t \\
-+ \sqrt{ \frac{2 k_B T}{\gamma_A} } \; \rmd W_A
+&\begin{multlined}[b][.42\textwidth]
+\rmd x_\text{A} = 
+- \frac{1}{\gamma_\text{A}} \nabla_\text{A} V_t(x_\text{M}(t) - x_\text{A}(t)) \; \rmd t 
+\\
++ \sqrt{ \frac{2 k_B T}{\gamma_\text{A}} } \; \rmd W_\text{A} ,
 \end{multlined}
 \label{eom_A}
 \end{align}
-Where the force from the ratchet interaction is summed over the contributions from all motor heads.
+where $x_\text{M}$ ($x_\text{A}$) denote the position of myosin motor (actin polymer), 
+$\gamma$ is the Stokes drag,
+$T$ is the absolute temperature of the environment,
+$W$ denotes the Wiener process,
+$F_\text{load}$ is an external load on the motor, 
+and the interaction potential $V_t$ represents the overall ratchet interaction, which is a sum over individual contributions from all motor heads,
 \begin{equation}
-V_t(x) = \sum_{i=1}^{N} \zeta_t(i) \, V_{r} (x_i(t))
+V_t(x) = \sum\limits_{i=1}^{N} \zeta_t(i) \, V_\text{r} (x - i \, d ), 
 \end{equation}
-With $x_i(t) = x_{m}(t)-x_{a}(t) - i\;l$, the position of the $i$th head relative to the actin filament.
-The ratchet potential $V_r$ is defined here as follows.
+where $d$ is the distance between myosin heads, 
+$\zeta_t(i)$ represents the internal state, see bellow, 
+and $V_\text{r}$ is the periodical ratchet potential 
 \begin{equation}
-V_{r}(x) =  \begin{cases}
-        V_r(x+d) & x < 0 \\[1ex] 
-        \displaystyle \frac{ V x }{ a d } & 0 \leq x < a d \\[2ex]
-        \displaystyle \frac{ V (d-x) }{ (1-a) d } & a d \leq x < d \\[2ex]
-        V_r(x-d) & d \leq x  
-   \end{cases}
+V_\text{r}(x) =  \begin{cases}
+        V_\text{r}(x+\ell) & x < 0 \\[1ex] 
+        \displaystyle \frac{ V x }{ a \ell } & 0 \leq x < a \ell \\[2ex]
+        \displaystyle \frac{ V (\ell-x) }{ (1-a) \ell } & a \ell \leq x < \ell \\[2ex]
+        V_\text{r}(x-\ell) & \ell \leq x  
+   \end{cases} ,
    \label{rat_pot}
 \end{equation}
+with total height $V$ 
 Hence this is a period, asymmetric potential.
 In the meantime, the internal state of the motor heads evolve according to a continuous time Markov jump process with rates $k_a$, $k_d$ to jump to respectively the attached state $s=1$ and the detached state $s=0$.
 \begin{equation}
