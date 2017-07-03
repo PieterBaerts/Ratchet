@@ -1,0 +1,53 @@
+set style line 1 lt 1 lc rgb '#a50026'
+set style line 2 lt 1 lc rgb '#d73027'
+set style line 3 lt 1 lc rgb '#f46d43'
+set style line 4 lt 1 lc rgb '#fdae61'
+set style line 5 lt 1 lc rgb '#fee08b'
+set style line 6 lt 1 lc rgb '#ffffbf'
+set style line 7 lt 1 lc rgb '#d9ef8b'
+set style line 8 lt 1 lc rgb '#a6d96a'
+set style line 9 lt 1 lc rgb '#66bd63'
+set style line 10 lt 1 lc rgb '#1a9850'
+set style line 11 lt 1 lc rgb '#006837'
+
+# palette
+set palette defined (\
+ 1 '#a50026',\
+ 2 '#d73027',\
+ 3 '#f46d43',\
+ 4 '#fdae61',\
+ 5 '#fee08b',\
+ 6 '#ffffbf',\
+ 7 '#d9ef8b',\
+ 8 '#a6d96a',\
+ 9 '#66bd63',\
+ 10 '#1a9850',\
+ 11 '#006837')
+
+set style line 1 lt 1 pt 1 lc rgb '#6a3d9a'
+set style line 2 lt 1 pt 2 lc rgb '#cab2d6'
+set style line 3 lt 1 pt 3 lc rgb '#1f78b4'
+set style line 4 lt 1 pt 4 lc rgb '#a6cee3'
+set style line 5 lt 1 pt 5 lc rgb '#b2df8a'
+set style line 6 lt 1 pt 6 lc rgb '#33a02c'
+set style line 7 lt 1 pt 7 lc rgb '#fb9a99'
+set style line 8 lt 1 pt 8 lc rgb '#e31a1c'
+set style line 9 lt 1 pt 9 lc rgb '#fdbf6f'
+set style line 10 lt 1 pt 10 lc rgb '#ff7f00'
+set style line 11 lt 1 pt 11 lc rgb '#b15928'
+set style line 12 lt 1 pt 12 lc rgb '#ffff99'
+
+# palette
+set palette defined (\
+ 1 '#6a3d9a',\
+ 2 '#cab2d6',\
+ 3 '#1f78b4',\
+ 4 '#a6cee3',\
+ 5 '#b2df8a',\
+ 6 '#33a02c',\
+ 7 '#fb9a99',\
+ 8 '#e31a1c',\
+ 9 '#fdbf6f',\
+ 10 '#ff7f00',\
+ 11 '#b15928',\
+ 12 '#ffff99')
