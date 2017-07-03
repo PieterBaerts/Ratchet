@@ -110,10 +110,10 @@ In those studies the rates did depend on the load on the motor. We show computat
 
 \section{The Ratchet model}
 \label{sec:ratchet}
-We consider a one dimensional model representing a myosin motor interaction with an actin filament, see figure~\ref{Fig: ratchet setup}.
+We consider a one dimensional model representing a myosin interacting with an actin filament, see figure~\ref{Fig: ratchet setup}.
 First, we assume that the rigidity of the actin polymer and myosin backbone is high enough that their elongations can be neglected.
 Second, we assume that all myosin heads are attached directly to the myosin backbone at fixed equidistant positions, see figure~\ref{Fig: ratchet setup}. 
-These simplifications allow us to model both, the motor and the filament, as point particles undergoing overdamped diffusion. 
+These simplifications allow us to model both, the motor and the filament, as point particles undergoing overdamped diffusion \cite{}. %TODO
 Moreover, each myosin head has an internal state, which represent its chemical state, 
 i.e. whether there is an ATP bounded or not to the myosin head. 
 
@@ -134,18 +134,19 @@ The dynamics of the full system is then described by coupled overdamped Langevin
 \end{multlined}
 \label{eom_A}
 \end{align}
-where $x_\text{M}$ ($x_\text{A}$) denote the position of myosin motor (actin polymer), 
+where $x_\text{M}$ ($x_\text{A}$) denote the position of myosin (actin polymer), 
 $\gamma$ is the Stokes drag,
 $T$ is the absolute temperature of the environment,
 $W$ denotes the Wiener process,
 $F_\text{load}$ is an external load on the motor, 
 and the interaction potential $V_t$ represents the overall ratchet interaction, which is a sum over individual contributions from all motor heads,
 \begin{equation}
-V_t(x) = \sum\limits_{i=1}^{N} \zeta_t(i) \, V_\text{r} (x - i \, d ), 
+V_t(x) = \sum\limits_{i=0}^{N-1} \zeta_t(i) \, V_\text{r} (x - i \, d ), 
 \end{equation}
 where $d$ is the distance between myosin heads, 
+$N$ is the number of heads per motor,
 $\zeta_t(i)$ represents the internal state, see bellow, 
-and $V_\text{r}$ is the periodical ratchet potential 
+and $V_\text{r}$ is the periodical ratchet potential, see figure~\ref{}, %TODO 
 \begin{equation}
 V_\text{r}(x) =  \begin{cases}
         V_\text{r}(x+\ell) & x < 0 \\[1ex] 
@@ -155,20 +156,18 @@ V_\text{r}(x) =  \begin{cases}
    \end{cases} ,
    \label{rat_pot}
 \end{equation}
-with total height $V$ 
-Hence this is a period, asymmetric potential.
-In the meantime, the internal state of the motor heads evolve according to a continuous time Markov jump process with rates $k_a$, $k_d$ to jump to respectively the attached state $s=1$ and the detached state $s=0$.
+with total height $V$,
+period $\ell$ 
+and skewness parameter $a \in [0,1]$. 
+
+%%%%%%%%%%%%%%%%%%%
+Unlike in traditional models \cite{}, %TODO
+in our model the internal state represents whether ATP is bound or unbound to the myosin head. 
+This change, of motor heads evolve as a continuous time Markov jump process with rates $k_\text{bind}$, $k_\text{unbind}$ 
 \begin{equation}
-s = 1 \overset{k_d}{\underset{k_a}{\rightleftarrows}} s = 0
+\zeta_t = 1 \overset{k_\text{bind}}{\underset{k_\text{unbind}}{\rightleftarrows}} \zeta_t = c
 \end{equation}
-Depending on the internal state of the head we have 
-\begin{equation}
-\zeta_t(i) =  \begin{cases} 
-      1 & s(i) = 1\\
-      c & s(i) = 0
-   \end{cases}
-\end{equation}
-where $c\in\left[0,1\right]$ and $s(i)$ is the internal state of the $i$th head. 
+where $c\in\left[0,1\right]$. 
 The parameter $c$ determines the amplitude of the ratchet potential when the motor is loosely bound to the filament. 
 The evolution of the internal state of the heads, i.e. a two-level system, is governed by the rate for going from state $0$ to $1$ is $k_{a}$ and the reverse rate is $k_{d}$.
 These rates depend on the concentrations of the relevant chemical species present in ATP hydrolysis, more specifically $k_{d}$ is proportional to $[\text{ATP}]$ while $k_{a}$ is proportional to the inverse of $[\text{ADP}]$ and $[\text{P}_\text{i}]$ [REF]. 
