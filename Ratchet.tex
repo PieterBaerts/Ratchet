@@ -197,9 +197,11 @@ but they depend on the concentrations of the relevant chemical species present i
 More specifically $k_\text{bind}$ is proportional to $[\text{ATP}]$ while $k_\text{unbind}$ is inversely proportional to $[\text{ADP}]$ and $[\text{P}_\text{i}]$.
 The dynamics is then represented by dichotomous continuous times Markov process with constant rates,
 \begin{equation}
-\zeta_t = 1 \overset{k_\text{bind}}{\underset{k_\text{unbind}}{\rightleftarrows}} \zeta_t = c
+\zeta_t = 1 \overset{k_\text{bind}}{\underset{k_\text{unbind}}{\rightleftarrows}} \zeta_t = c ,
+\label{eq:transition}
 \end{equation}
-where $c\in\left[0,1\right]$ determines the amplitude of the ratchet potential when the motor is loosely bound to the filament \cite{Nie2014,nie2014conformational}.
+where $c\in\left[0,1\right]$ determines the amplitude of the ratchet potential when the motor is loosely bound to the filament, 
+which we use as an approximation for changes in the free energy landscape \cite{Nie2014,nie2014conformational}.
 While both the diffusion and the jump process are in equilibrium, the mechanism of the flashing ratchet brings the combined system out of equilibrium, leading to the movement of the motor in a preferred direction, given by the asymmetry of the filament. 
 
 Figure~\ref{Fig: ratchet setup} depicts the whole setup of the system
@@ -228,9 +230,11 @@ Actin friction& $\gamma_{a}$ & 0.97 & pN $\upmu$s nm$^{-1}$ & \cite{Broersma1960
 \label{Tab: Parameters}
 \end{table}
 
-\section{Mean velocity} 
-In simulations we measured the mean velocity $\langle v\rangle$ of the motor with respect to the filament. 
-This for different values of $c$, the scaling factor of the amplitude of the ratchet potential, show in figure \ref{Fig: c_v}.
+\section{Mean velocity}
+At first, we study the mean velocity $\langle v\rangle$ of the motor with four heads with respect to the filament for different values of scaling factor $c$, see figure~\ref{Fig: c_v}.
+We see that mean velocity has maximum at $c=0$ and goes to zero when $c$ approaches $1$. 
+This is to be expected since $c=1$ corresponds the equilibrium, where there is no difference between the two internal states, cf.~\eqref{eq:transition},
+on the other hand $c=0$ corresponds to the biggest discrepancy between those two states. 
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{c_v_4heads}
@@ -241,26 +245,23 @@ Green line correspond to the fit $ \left\langle v \right\rangle \propto \exp ( -
 } 
 \label{Fig: c_v}
 \end{figure}
-We see that mean velocity goes to zero when $c$ approaches $1$. 
-This is to be expected since $c=1$ corresponds to the case where there is no more flashing of the potential, hence the system is in equilibrium.
 
 
-Alternatively, the mean velocity also depends on the concentration of ATP through the detach rate $k_{d}$. 
-This dependency is show in figure \ref{Fig: v_k}.
+Secondly, the mean velocity also depends on the concentration of ATP through the unbind rate. 
+In this setup, we fix the binding rate $k_\text{bind}$ and scaling factor $c$ and vary the unbinding rate $k_\text{unbind}$, see figure~\ref{Fig: v_k}. 
+We observe that the maximal velocity is reached for rates close to $k_\text{bind} = k_\text{unbound}$. 
+We hypothesize that the slight shift of the maximum towards $k_\text{bind}/k_\text{unbind} = 1.4$ is due to the asymmetry of the ratchet potential $a$.
+Departing far from this ratio means that one of the states become dominant and thus the system effectively approaches equilibrium.  
+The main difference between $k_\text{bind}/k_\text{unbind}$ low or high is the amount interaction with actin. 
+Weak interaction means that the system is trapped for shorter times in local minimums and diffuses more, hence the variance in the speed increases. 
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{v_k}
-\caption{Mean velocity of the motor relative to the actin filament $\langle v \rangle$ for varying $k_{d}$.
-The velocity decreases to $0$ for large discrepancies between attach and detach rates and reaches when they are comparable.
+\caption{Mean velocity of the motor relative to the actin filament $\langle v \rangle$ for varying $k_\text{unbind}$.
+The velocity decreases to $0$ for large discrepancies between binding and unbinding rate and reaches maximum when they are comparable.
 }
 \label{Fig: v_k} 
 \end{figure}
-The first data point corresponds to the case where $k_{d} = k_{a} = 40 s^{-1}$ and for the following points $k_{d}$ is doubled every time while $k_{a}$ stays constant. 
-We first observe that the velocity initially increases, then reaches a maximum around $k_{d} = 160 s^{-1}$ and finally decreases again. 
-A high detach rate means that the motor heads will be attached only for a short time. 
-If this time is too short, the motor might not diffuse all the way to the minimum of the ratchet and has a higher probability the move against the direction given by the asymmetry of the potential. 
-On the other hand, when the detach rate is low the motor has a lot of time to fully equilibrate and will no longer contribute to the generated current. 
-The simulations show that there is an optimal value of$k_{d}$ to maximize the relative velocity between the motor and the actin filament. 
 
 
 
