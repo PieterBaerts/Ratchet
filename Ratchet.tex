@@ -116,6 +116,15 @@ Second, we assume that all myosin heads are attached directly to the myosin back
 These simplifications allow us to model both, the motor and the filament, as point particles undergoing overdamped diffusion \cite{}. %TODO
 Moreover, each myosin head has an internal state, which represent its chemical state, 
 i.e. whether there is an ATP bounded or not to the myosin head. 
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.45\textwidth,height=!]{ratchet_illustration}
+\caption{In the top of this illustration, the backbone of the myosin motor is shown with heads that are a distance $l$ apart. 
+In the bottom, the potential along an actin filament is depicted. 
+It had a period $d$ and skewness $a$. 
+Depending on the internal state of the motor head, it will feel a ratchet potential with hight $V$ or $cV$.} 
+\label{Fig: ratchet setup}
+\end{figure}
 
 The dynamics of positions is described by coupled overdamped Langevin equations 
 \begin{align}
@@ -146,7 +155,7 @@ V_t(x) = \sum\limits_{i=0}^{N-1} \zeta_t(i) \, V_\text{r} (x - i \, d ),
 where $d$ is the distance between myosin heads, 
 $N$ is the number of heads per motor,
 $\zeta_t(i)$ represents the internal state, see bellow, 
-and $V_\text{r}$ is the periodical ratchet potential, see figure~\ref{}, %TODO 
+and $V_\text{r}$ is the periodical ratchet potential, see figure~\ref{Fig: energy},
 \begin{equation}
 V_\text{r}(x) =  \begin{cases}
         V_\text{r}(x+\ell) & x < 0 \\[1ex] 
@@ -159,6 +168,12 @@ V_\text{r}(x) =  \begin{cases}
 with total height $V$,
 period $\ell$ 
 and skewness parameter $a \in [0,1]$. 
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.45\textwidth,height=!]{energy}
+\caption{Energy landscape in which the myosin motor diffuses, relative to the actin filament.}
+\label{Fig: energy}
+\end{figure}
 
 The dynamics of internal state of heads is govern by continuous time Markov process. 
 Unlike in traditional models \cite{}, %TODO
@@ -172,15 +187,6 @@ The parameter $c$ determines the amplitude of the ratchet potential when the mot
 The evolution of the internal state of the heads, i.e. a two-level system, is governed by the rate for going from state $0$ to $1$ is $k_{a}$ and the reverse rate is $k_{d}$.
 These rates depend on the concentrations of the relevant chemical species present in ATP hydrolysis, more specifically $k_{d}$ is proportional to $[\text{ATP}]$ while $k_{a}$ is proportional to the inverse of $[\text{ADP}]$ and $[\text{P}_\text{i}]$ [REF]. 
 Figure \ref{Fig: ratchet setup} depicts the whole setup of motor and flashing ratchet. 
-\begin{figure}[t]
-\centering
-\includegraphics[width=0.45\textwidth,height=!]{ratchet_illustration}
-\caption{In the top of this illustration, the backbone of the myosin motor is shown with heads that are a distance $l$ apart. 
-In the bottom, the potential along an actin filament is depicted. 
-It had a period $d$ and skewness $a$. 
-Depending on the internal state of the motor head, it will feel a ratchet potential with hight $V$ or $cV$.} 
-\label{Fig: ratchet setup}
-\end{figure}
 
 Table \ref{Tab: Parameters} lists the values of the parameters used in this model. 
 Some of them were took from the literature while others were fitted to give a realistic speeds and stall force for the myosin II motor. 
@@ -392,12 +398,6 @@ We can count all the contributions of jumps to state $s=1$ and to state $s=0$ se
 \mathcal Q_{out} &= -\sum_{t_a} \left[ \Delta E + (c-1) V_r(x_{t_a}) \right]  \label{q_out}
 \end{align}
 Where $t_a$ and $t_d$ are all jump times to state $s=1$ and $s=0$ respectively. 
-\begin{figure}[t]
-\centering
-\includegraphics[width=0.45\textwidth,height=!]{energy}
-\caption{Energy landscape in which the myosin motor diffuses, relative to the actin filament.}
-\label{Fig: energy}
-\end{figure}
  We can measure and average these quantities in our simulations and we can define a chemical efficiency as follows
 \begin{equation}
 \eta = \frac{\langle\mathcal Q_{in}\rangle+\langle\mathcal Q_{out}\rangle}{\langle\mathcal Q_{in}\rangle} .
