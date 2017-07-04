@@ -110,14 +110,14 @@ In those studies the rates did depend on the load on the motor. We show computat
 
 \section{The Ratchet model}
 \label{sec:ratchet}
-In order to investage the movement of myosin along the actin filament we consider the following one dimensional model:
+In order to investigate the movement of myosin along the actin filament we consider the following one dimensional model:
 First, we assume that the rigidity of the actin polymer and myosin backbone is high enough that their elongations can be neglected.
 Second, we assume that all myosin heads are attached directly to the myosin backbone at fixed equidistant positions, see figure~\ref{Fig: ratchet setup}. 
 These simplifications allow us to model both, the motor and the filament, as point particles undergoing overdamped diffusion \cite{}. %TODO
 Moreover, each myosin head has an internal state, which represent its chemical state, 
 i.e. whether there is an ATP bounded or not to the myosin head. 
 
-The dynamics of the full system is then described by coupled overdamped Langevin equations 
+The dynamics of positions is described by coupled overdamped Langevin equations 
 \begin{align}
 &\begin{multlined}[b]
 \rmd x_\text{M} = 
@@ -160,10 +160,10 @@ with total height $V$,
 period $\ell$ 
 and skewness parameter $a \in [0,1]$. 
 
-%%%%%%%%%%%%%%%%%%%
+The dynamics of internal state of heads is govern by continuous time Markov process. 
 Unlike in traditional models \cite{}, %TODO
 in our model the internal state represents whether ATP is bound or unbound to the myosin head. 
-This change, of motor heads evolve as a continuous time Markov jump process with rates $k_\text{bind}$, $k_\text{unbind}$ 
+This is reflected in the assumption the rates $k_\text{bind}$, $k_\text{unbind}$ independent of the load 
 \begin{equation}
 \zeta_t = 1 \overset{k_\text{bind}}{\underset{k_\text{unbind}}{\rightleftarrows}} \zeta_t = c
 \end{equation}
