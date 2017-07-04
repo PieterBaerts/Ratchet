@@ -173,16 +173,16 @@ and skewness parameter $a \in [0,1]$.
 \includegraphics[width=0.45\textwidth,height=!]{energy}
 \caption{Energy landscape for the myosin's head.
 The basic interaction with actin polymer is via Ratchet potential with the potential height $V$, period $\ell$ and skewness parameter $a$.
-The transition between ATP \emph{bounded} and \emph{unbounded} state is govern by rates $k_\text{bind}$, $k_\text{unbind}$ 
+The transition between ATP \emph{bound} and \emph{unbound} state is govern by rates $k_\text{bind}$, $k_\text{unbind}$ 
 and is associated with the chemical energy $\Delta E$.
-In the \emph{bounded} state the ratchet potential is scaled down by factor $c$. 
+In the \emph{bound} state the ratchet potential is scaled down by factor $c$. 
 }
 \label{Fig: energy}
 \end{figure}
 
 The dynamics of internal state of heads is govern by continuous time Markov process. 
 Unlike in traditional models \cite{}, %TODO
-in our model the internal state represents whether ATP is bound or unbound to the myosin head. 
+in our model the internal state represents whether ATP is \emph{bound} or \emph{unbound} to the myosin head. 
 This is reflected in the assumption the rates $k_\text{bind}$, $k_\text{unbind}$ independent of the load 
 \begin{equation}
 \zeta_t = 1 \overset{k_\text{bind}}{\underset{k_\text{unbind}}{\rightleftarrows}} \zeta_t = c
