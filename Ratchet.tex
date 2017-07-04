@@ -57,7 +57,7 @@ Hence, the chemical state of a motor head will determine how strongly it can be 
 
 
 Cytoskeletal polymers exhibit a sequence of monomers that cause a periodical structure. 
-Furthermore, these monomers are polarised, so that when chained together in a polymer, they give rise to a symmetric, ratchet-like, electrostatic potential along the length of the filament. 
+Furthermore, these monomers are polarized, so that when chained together in a polymer, they give rise to a symmetric, ratchet-like, electrostatic potential along the length of the filament. 
 An example of such a potential is shown in figure \ref{Fig: ratchet setup}. 
 The heads of a motor, too, carry an electric charge and therefore they will feel the ratchet potential of the filaments. 
 In the attached state, the motor will tend to be close to minimal potential energy. 
@@ -182,20 +182,31 @@ In the \emph{bound} state the ratchet potential is scaled down by factor $c$.
 
 The dynamics of internal state of heads is govern by continuous time Markov process. 
 Unlike in traditional models \cite{}, %TODO
-in our model the internal state represents whether ATP is \emph{bound} or \emph{unbound} to the myosin head. 
-This is reflected in the assumption the rates $k_\text{bind}$, $k_\text{unbind}$ independent of the load 
+in our model the internal state represents whether ATP, or its product, is \emph{bound} or \emph{unbound} to the myosin head,
+not the actual situation whether the head itself is bound or unbound on a given actin filament.
+This is a simplification over the full chemical network governing the internal states of myosin \cite{Bierbaum2011,Bierbaum2013},  
+which focuses only at those long lasting states which significantly change the myosin's head physical properties.
+Namely, we look at states where ADP is bounded and where there is no molecule bounded to myosin head as escape rates from those states are small with respect to other transitions \cite{Bierbaum2011}, 
+for which the estimated free energy landscapes \cite{Nie2014,nie2014conformational} reflect well the conformal and charge distribution changes.
+In order to obtain the transition rates between these to two states, we start from the three state model introduced by Albert et al. \cite{albert2014stochastic},
+which we further simplify by unifying the state corresponding to the hydrolized ATP (i.e. ADP+P) and ADP with P released state as this process occurs on much shorter time-scale than other transitions.
+Lastly, as the internal state reflects the chemical state of the head rather then the act of binding to actin itself,
+we assume that external load have little influence on the associated rates but rather opposes the underlying free energy landscape. 
+These considerations are reflected in the assumption the rates $k_\text{bind}$, $k_\text{unbind}$ independent of the load, 
+but they depend on the concentrations of the relevant chemical species present in ATP hydrolysis. 
+More specifically $k_\text{bind}$ is proportional to $[\text{ATP}]$ while $k_\text{unbind}$ is inversely proportional to $[\text{ADP}]$ and $[\text{P}_\text{i}]$.
+The dynamics is then represented by dichotomous continuous times Markov process with constant rates,
 \begin{equation}
 \zeta_t = 1 \overset{k_\text{bind}}{\underset{k_\text{unbind}}{\rightleftarrows}} \zeta_t = c
 \end{equation}
-where $c\in\left[0,1\right]$. 
-The parameter $c$ determines the amplitude of the ratchet potential when the motor is loosely bound to the filament. 
-The evolution of the internal state of the heads, i.e. a two-level system, is governed by the rate for going from state $0$ to $1$ is $k_{a}$ and the reverse rate is $k_{d}$.
-These rates depend on the concentrations of the relevant chemical species present in ATP hydrolysis, more specifically $k_{d}$ is proportional to $[\text{ATP}]$ while $k_{a}$ is proportional to the inverse of $[\text{ADP}]$ and $[\text{P}_\text{i}]$ [REF]. 
-Figure \ref{Fig: ratchet setup} depicts the whole setup of motor and flashing ratchet. 
+where $c\in\left[0,1\right]$ determines the amplitude of the ratchet potential when the motor is loosely bound to the filament \cite{Nie2014,nie2014conformational}.
+While both the diffusion and the jump process are in equilibrium, the mechanism of the flashing ratchet brings the combined system out of equilibrium, leading to the movement of the motor in a preferred direction, given by the asymmetry of the filament. 
 
+Figure~\ref{Fig: ratchet setup} depicts the whole setup of the system
+and figure~\ref{Fig: energy} depicts the dynamics involved in flashing ratchet. 
 Table \ref{Tab: Parameters} lists the values of the parameters used in this model. 
-Some of them were took from the literature while others were fitted to give a realistic speeds and stall force for the myosin II motor. 
-The friction coefficients were calculated with Stokes' law, using the known dimensions of the molecules \footnote{The myosin II motor and actin filament molecules were approximated in this calculation by long, thin cylinders.} and the viscosity of the extracellular medium.
+Some of them were taken from the literature while others were fitted to give a realistic mean velocities and stall force for the myosin II. 
+The friction coefficients were calculated with Stokes' law \cite{Broersma1960,Broersma1981}, using the known dimensions of the molecules\footnote{The myosin II and actin filament molecules were approximated in this calculation by long, thin cylinders \cite{}.} and the viscosity of the extracellular medium \cite{}. %TODO
 \begin{table}[t]
 \centering
 \begin{tabular}{lcdcc}
@@ -205,19 +216,19 @@ Thermal energy& $k_B T$ & 4.28 & pN nm & --- \\
 Number of heads& $N$ & 4 & --- & REF\\
 Head's spacing& $l$ & 15 & nm & REF\\
 Step length& $d$ & 8 & nm & REF\\
-Binding rate& $k_{a}$ & 40 & s$^{-1}$ & REF\\
-Detaching rate& $k_{d}$ & 80 & s$^{-1}$ & REF\\
+Binding rate& $k_\text{unbind}$ & 40 & s$^{-1}$ & \cite{albert2014stochastic} \\
+Detaching rate& $k_\text{bind}$ & 80 & s$^{-1}$ & \cite{albert2014stochastic} \\
 Skewness& $a$ & 0.25 & --- & ---\\
 Potential amplitude& $V$ & 40 & pN nm & ---\\
 Potential scaling& $c$ & 0.3 & --- & ---\\
-Motor friction& $\gamma_{m}$ & 0.66 & pN $\upmu$s nm$^{-1}$ & REF\\
-Actin friction& $\gamma_{a}$ & 0.97 & pN $\upmu$s nm$^{-1}$ & REF\\
+Motor friction& $\gamma_{m}$ & 0.66 & pN $\upmu$s nm$^{-1}$ & \cite{Broersma1960,Broersma1981} \\ %TODO
+Actin friction& $\gamma_{a}$ & 0.97 & pN $\upmu$s nm$^{-1}$ & \cite{Broersma1960,Broersma1981} \\ %TODO
 \end{tabular}
 \caption{Table of all parameter values and a reference to their source.}
 \label{Tab: Parameters}
 \end{table}
 
-While both the diffusion and the jump process are in equilibrium, the mechanism of the flashing ratchet brings the combined system out of equilibrium, leading to the movement of the motor in a preferred direction, given by the asymmetry of the filament. 
+\section{Mean velocity} 
 In simulations we measured the mean velocity $\langle v\rangle$ of the motor with respect to the filament. 
 This for different values of $c$, the scaling factor of the amplitude of the ratchet potential, show in figure \ref{Fig: c_v}.
 \begin{figure}[t]
@@ -569,7 +580,7 @@ Now the density up to second order is given by
 &+ \frac{1}{d F^2} \left[ \left( \partial_x V_r \right)^2 - k_B T \partial_x^2V_r - \frac{1}{d} \int_0^d \left( \partial_x V_r \right)^2 \; \rmd x \right] .
 \end{align*}
 Observe that in this form, the depends on the ratchet potential only through a first or second order derivative. 
-Therefore the density will appear as a piecewise constant function on $x\in[0,l]$, with different values for $x < a l$ and $x > a l $. 
+Therefore the density will appear as a piece-wise constant function on $x\in[0,l]$, with different values for $x < a l$ and $x > a l $. 
 This trend can already be seen in the empirical density obtained from simulations for large load forces $F_L = \pm 250 \, \mathrm{pN}$ in figure %TODO
 \begin{figure*}[t]
 \centering
@@ -598,7 +609,7 @@ The first two terms will cancel each other and after carrying out the integral f
 \begin{equation}
 \langle V_r \rangle_{ \delta\rho_2, s=1} = \frac{k_B T}{F^2} \frac{V^2}{a \left(1-a\right) d^2 }
 \end{equation}
-For the expectation value in the detached state, the potentials appearing in the expression for the distributions must be rescaled by a factor $c$, which leads to
+For the expectation value in the detached state, the potentials appearing in the expression for the distributions must be re-scaled by a factor $c$, which leads to
 \begin{equation}
 \langle V_r \rangle_{\delta\rho_2, s=0} = \frac{k_B T}{F^2} \frac{c V^2}{a \left(1-a\right) d^2 } .
 \end{equation}
