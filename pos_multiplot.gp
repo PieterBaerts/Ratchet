@@ -38,7 +38,7 @@ shift(x) = x<0 ? shift(x+8) : (x>8 ? shift(x-8) : x)
 
 f = "0_attached 0_detached -25_attached -25_detached 25_attached 25_detached -100_attached -100_detached 100_attached 100_detached -250_attached -250_detached 250_attached 250_detached"
 val = "0 0 -25 -25 25 25 -100 -100 100 100 -250 -250 250 250"
-state = "a d a d a d a d a d a d a d"
+state = "unbound bound unbound bound unbound bound unbound bound unbound bound unbound bound unbound bound"
 color = "1 10 2 11 3 12 4 13 5 14 6 15 7 16"
 
 plot [0:8][0:0.4] \
