@@ -21,6 +21,19 @@
   <defs
      id="defs3063">
     <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Mend"
+       style="overflow:visible;">
+      <path
+         id="path3832"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;"
+         transform="scale(0.4) rotate(180) translate(10,0)" />
+    </marker>
+    <marker
        style="overflow:visible"
        inkscape:stockid="InfiniteLineEnd"
        id="InfiniteLineEnd"
@@ -171,6 +184,48 @@
          d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
          transform="scale(0.6,0.6)" />
     </marker>
+    <marker
+       inkscape:stockid="Arrow2Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Mend"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4433"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="scale(-0.6,-0.6)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Mend-7"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path3832-2"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Mend-9"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path3832-28"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)" />
+    </marker>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -220,7 +275,7 @@
        xml:space="preserve"
        id="flowRoot10567"
        style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:TeX Gyre Pagella;-inkscape-font-specification:TeX Gyre Pagella"
-       transform="translate(100.8108,5.8447665)"><flowRegion
+       transform="translate(-14.447605,11.501621)"><flowRegion
          id="flowRegion10569"><rect
            id="rect10571"
            width="180.38835"
@@ -331,8 +386,8 @@
        d="m 122.5,34.899994 a 3.5,3.5 0 1 1 -7,0 3.5,3.5 0 1 1 7,0 z"
        transform="matrix(-3.3750027,0,0,-3.3749976,729.06323,318.41856)" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:2.24999523;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow2Mstart)"
-       d="m 142.96616,127.49702 -47.250035,0 0,0"
+       style="fill:none;stroke:#000000;stroke-width:2.24999523000000012;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend)"
+       d="m 93.861288,127.49702 47.250032,0 0,0"
        id="path8076"
        inkscape:connector-curvature="0" />
     <flowRoot
@@ -362,5 +417,43 @@
            y="66.067688"
            style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:TeX Gyre Pagella;-inkscape-font-specification:TeX Gyre Pagella" /></flowRegion><flowPara
          id="flowPara10565"
-         style="font-size:22px">Actin filament</flowPara></flowRoot>  </g>
+         style="font-size:22px">Actin filament</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot10524-1"
+       style="font-size:22px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:TG Pagella Math;-inkscape-font-specification:TG Pagella Math Italic"
+       transform="translate(205.74865,34.946583)"><flowRegion
+         id="flowRegion10526-5"><rect
+           id="rect10528-6"
+           width="45.65559"
+           height="31.392136"
+           x="274"
+           y="60.649994"
+           style="font-size:22px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:TG Pagella Math;-inkscape-font-specification:TG Pagella Math Italic" /></flowRegion><flowPara
+         id="flowPara10530-1">F<flowSpan
+   style="font-size:22px;baseline-shift:sub"
+   id="flowSpan8831">r</flowSpan></flowPara></flowRoot>    <path
+       style="fill:none;stroke:#000000;stroke-width:2.24999523;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend)"
+       d="m 460.60649,129.74174 47.25003,0 0,0"
+       id="path8076-2"
+       inkscape:connector-curvature="0" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot10524-1-1"
+       style="font-size:22px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:TG Pagella Math;-inkscape-font-specification:TG Pagella Math Italic"
+       transform="translate(194.43494,236.21712)"><flowRegion
+         id="flowRegion10526-5-2"><rect
+           id="rect10528-6-4"
+           width="45.65559"
+           height="31.392136"
+           x="274"
+           y="60.649994"
+           style="font-size:22px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:TG Pagella Math;-inkscape-font-specification:TG Pagella Math Italic" /></flowRegion><flowPara
+         id="flowPara10530-1-7">F<flowSpan
+   style="font-size:22px;baseline-shift:sub"
+   id="flowSpan8831-8">r</flowSpan></flowPara></flowRoot>    <path
+       style="fill:none;stroke:#000000;stroke-width:2.24999523;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#marker4202)"
+       d="m 484.08818,277.97927 -47.25003,0 0,0"
+       id="path8076-2-6"
+       inkscape:connector-curvature="0" />
+  </g>
 </svg>
