@@ -75,7 +75,7 @@ This will eventually lead to ballistic motion of the motor on long timescales.
 The part of the cytoskeleton that is mainly responsible for the motility of the cell is the actin-myosin cortex and it will serve as the exemplary system in this paper.
 
 
-Ratchet models have been studied extensively in the context of molecular motors REFF(astumian, jullicher, Huxley, Hanggi,...). %TODO
+Ratchet models have been studied extensively in the context of molecular motors \cite{reimann2002brownian,astumian1994fluctuation,astumian1996mechanochemical,julicher1997modeling,Reimann2002introduction,julicher1997spontaneous,peskin1995correlation,huxley1969mechanism,huxley1971proposed}.
 The models that have been used in these studies are very similar to each other but often differ in some basic assumptions.
 The specific model that we have studied is presented in section \ref{sec:ratchet} and has following important traits:
 \begin{itemize}
@@ -85,26 +85,26 @@ Motor heads can attach and detach anywhere along the polymer filament.
 \item The motors are rigid with equal spacing between the heads.
 \end{itemize} 
 Furthermore we will be studying non-muscle myosin II motors, that have a small number of heads. 
-These motors are believed to be crucial the motility in eukaryotic cells.
-For larger myosin motors, like the ones in muscle cells, mean-field calculations have lead to analytic results for the force-velocity relation REFF(Jullicher). %TODO
+These motors are believed to be crucial the motility in eukaryotic cells.%TODO
+For larger myosin motors, like the ones in muscle cells, mean-field calculations have lead to analytic results for the force-velocity relation \cite{julicher1997modeling}.
 In experimental studies with synthetic myosin motors, the number of heads per motor is also much higher than in non-muscle cells. 
-Therefore, the results for large motor play a very important role in interpreting and understanding those in-vitro experiments REFF. %TODO
+Therefore, the results for large motor play a very important role in interpreting and understanding those in-vitro experiments \cite{brown2009cross-correlated}.
 For motors with fewer heads, mean-field methods are not suitable and numerical simulations prove to be useful.
-In section III. we will describe the movement of this motor-polymer system in detail by means of computational simulations. %XXX
+In sections \ref{sec:velocity} and \ref{sec:force-velocity} we will describe the movement of this motor-polymer system in detail by means of computational simulations.
 
 
-Another important aspect of molecular motors is their ability to convert chemical energy into mechanical work REFF. %TODO
-The chemical cycle of ATP hydrolysis consists out of many consecutive reactions and after one full cycle a net amount of energy is provided to the motor head REFF. %TODO
+Another important aspect of molecular motors is their ability to convert chemical energy into mechanical work \cite{astumian1996mechanochemical}.
+The chemical cycle of ATP hydrolysis consists out of many consecutive reactions and after one full cycle a net amount of energy is provided to the motor head.
 However, often this cycle is represented by only two states, e.g. ATP bound and ADP bound, 
 in which case a stochastic process on these states always satisfies detailed balance and no chemical energy can be extracted. 
 In other words, the gain of one reaction is canceled by the cost of the following reaction.
 On the other hand we do not want any redundant degrees of freedom in our description since we are not really interested in the full chemical details of the process.
-In section IV, we will look at an alternative way of interpreting the chemical input by measuring the differences in potential energy in each jump and we define a chemical efficiency. %XXX
-In section V. we provide a perturbative calculation to validate and understand some features of this chemical efficiency and how it changes when the motor is under external load. %XXX
+In section \ref{sec:energie}, we will look at an alternative way of interpreting the chemical input by measuring the differences in potential energy in each jump and we define a chemical efficiency.
+In section \ref{sec:perturb} we provide a perturbative calculation to validate and understand some features of this chemical efficiency and how it changes when the motor is under external load.
 
 
-Lastly, in section VI., we look at the coupling of the motor to an elastic environment. %XXX
-Earlier studies have shown that  motors are able to sense the stiffness of their environment and that they can adapt the active forces that they generate REFF. %TODO
+Lastly, in section \ref{sec:tug}, we look at the coupling of the motor to an elastic environment.
+Earlier studies have shown that motors are able to sense the stiffness of their environment and that they can adapt the active forces that they generate \cite{stam2015isoforms,albert2014stochastic}.
 In those studies the rates did depend on the load on the motor. We show computationally that a motor in our simple ratchet model with constant rates behaves similarly.
 
 
@@ -215,14 +215,14 @@ The friction coefficients were calculated with Stokes' law \cite{Broersma1960,Br
 Parameter & Symbol & \multicolumn{1}{c}{Value} & Units & Source\\
 \hline\hline
 Thermal energy& $k_B T$ & 4.28 & pN nm & --- \\
-Number of heads& $N$ & 4 & --- & REF\\
-Head's spacing& $l$ & 15 & nm & REF\\
-Step length& $d$ & 8 & nm & REF\\
+Number of heads& $N$ & 4 & --- & \cite{pollard1982structure}\\
+Head's spacing& $l$ & 15 & nm & \cite{pollard1982structure}\\
+Step length& $d$ & 8 & nm & \cite{vilfan2003instabilities}\\
 Binding rate& $k_\text{unbind}$ & 40 & s$^{-1}$ & \cite{albert2014stochastic} \\
 Detaching rate& $k_\text{bind}$ & 80 & s$^{-1}$ & \cite{albert2014stochastic} \\
 Skewness& $a$ & 0.25 & --- & ---\\
 Potential amplitude& $V$ & 40 & pN nm & ---\\
-Potential scaling& $c$ & 0.3 & --- & ---\\
+Potential scaling& $c$ & 0.3 & --- & \cite{Nie2014, nie2014conformational}\\
 Motor friction& $\gamma_{m}$ & 0.66 & pN $\upmu$s nm$^{-1}$ & \cite{Broersma1960,Broersma1981} \\ %TODO
 Actin friction& $\gamma_{a}$ & 0.97 & pN $\upmu$s nm$^{-1}$ & \cite{Broersma1960,Broersma1981} \\ %TODO
 \end{tabular}
@@ -231,6 +231,7 @@ Actin friction& $\gamma_{a}$ & 0.97 & pN $\upmu$s nm$^{-1}$ & \cite{Broersma1960
 \end{table}
 
 \section{Mean velocity}
+\label{sec:velocity}
 At first, we study the mean velocity $\langle v\rangle$ of the motor with four heads with respect to the filament for different values of scaling factor $c$, see figure~\ref{Fig: c_v}.
 We see that mean velocity has maximum at $c=0$ and goes to zero when $c$ approaches $1$. 
 This is to be expected since $c=1$ corresponds the equilibrium, where there is no difference between the two internal states, cf.~\eqref{eq:transition},
@@ -266,6 +267,7 @@ The velocity decreases to $0$ for large discrepancies between binding and unbind
 
 
 \section{Force-velocity relation}
+\label{sec:force-velocity}
 In this section, an external load force $F_\text{load}$ is applied to the motor, as in equation (\ref{eom_M}). 
 When applying a force against the preferred direction of the motor, it is expected to slow down. 
 The force that is needed to stop the motor, relative to the actin filament, is called the stall force, i.e. 
@@ -387,7 +389,7 @@ which is in good agreement with the theoretical prediction \eqref{eq:eff_vs_load
 
 
 \section{Energy input from the chemical process}
-
+\label{sec:energie}
 The chemical cycle of the motor heads, driven by ATP, is modeled by a two-state continuous time jump process. 
 The dynamics of the system is fully determined by the two rates $k_a$ and $k_d$. 
 The evolution of probability density of the system $\rho_s$ is governed by the master equation, where $s = \{0,1\}$ is the chemical state of a motor head. 
@@ -516,6 +518,7 @@ This means that more energy will be dissipated when the heads bind and $\eta$ wi
 In the next section we will investigate the behavior of $\eta$ for large loads and show that it indeed has to be negative and that it will decay like $\frac{1}{F_{load}^2}$ as $F_{load}$ goes to infinity.
 
 \section{Perturbative treatment}
+\label{sec:perturb}
 In this section we will show that the chemical cycle must extract energy from the ratchet system with one head and for large load forces, i.e. the chemical efficiency $\eta$ must be negative. 
 We will do this by calculating the perturbative corrections to the probability density of the position of the motor with respect to the actin filament, both in the attached and detached state. 
 For this we assume that the diffusive relaxation time is much shorter than the typical time between jumps in the chemical state of the heads. 
@@ -693,6 +696,7 @@ A lower bound on the expectation value of $V_r$ is given by the value of $V_r$ a
 In the detached state this position will be farther away from the minimum of the ratchet so the lower bound is higher than in the attached case.
 
 \section{Tug of war}
+\label{sec:tug}
 \subsection{Mechanosensing}
 In  section III we saw that the motor offers resistance when pulled by an external force. 
 Now we will look at the motor in a setup where it is subjected to different stiffnesses of the environment in which the filaments are able to move. 
