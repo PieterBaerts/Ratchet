@@ -265,28 +265,54 @@ The velocity decreases to $0$ for large discrepancies between binding and unbind
 
 
 
-\section{Force-velocity relation}
+\section{Force -- velocity relation}
 \label{sec:force-velocity}
-In this section, an external load force $F_\text{load}$ is applied to the motor, as in equation (\ref{eom_M}). 
-When applying a force against the preferred direction of the motor, it is expected to slow down. 
-The force that is needed to stop the motor, relative to the actin filament, is called the stall force, i.e. 
+In this section, we investigate the dependency of the mean velocity on an external load force $F_\text{load}$ applied to the motor parallel to the preferred direction, 
+cf. figure~\ref{Fig: ratchet setup}.
+Figure~\ref{Fig: F_v} shows typical force -- mean velocity relations for various unbinding rates $k_\text{unbind}$, which mimics the dependency on ATP concentration.
+For small load forces, the response is very low. 
+This is due to the interaction with an actin polymer, which provides an additional friction force to counter the load force. 
+For larger forces the system looses its resilience and the contribution from the load will dominate. 
+The larger the load, the more the velocity will approach the velocity of a non-interacting motor, $\langle v \rangle = \frac{1}{\gamma_\text{M}}F_\text{load}$.
+Curves for higher ATP binding rates are closer to the curve for the completely unbound motor, %TODO
+which means that the motor is more submissive to the external load.
+%TODO comparisson with literature 
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.45\textwidth,height=!]{F_v}
+\caption{Mean velocity $\langle v \rangle$ of the motor as a function of the load force $F_\text{load}$ for $c=0.3$ and for various binding rate $k_\text{bind}$.
+Solid black line correspond to a situation when there will be no interaction with the actin filament, i.e. $\langle v \rangle = F_\text{load} / \gamma_\text{M}$. 
+}
+\label{Fig: F_v} 
+\end{figure}
+
+\subsection{Stall force}
+From figure~\ref{Fig: F_v} it is apparent, that when applying a force against the preferred direction of the motor, 
+the motor first slows down until it stops before it reverses its direction. 
+The force magnitude that is needed to stop the motor's movement relative to the actin filament is called the stall force $F_\text{stall}$,  
 \[
-\left\langle v ( F_{load} = -F_{stall} ) \right\rangle = 0 .
+\left\langle v ( F_\text{load} \equiv -F_\text{stall} ) \right\rangle = 0 .
 \]
-Figure \ref{Fig: F_v_zoom}  shows the results from simulations of the motor under load. 
-The intersections of the curves with the vertical axis correspond to the mean velocities in figure \ref{Fig: v_k} . 
-We see that the mean velocity decreases linearly with increasing load. 
-The slope varies for different detach rates. This can be understood by observing the dependency of the stall force on $k_{d}$ in figure \ref{Fig: k_Fstall}.
+Figure~\ref{Fig: F_v_zoom} shows the inset of figure~\ref{Fig: F_v} for small negative loads. 
+The intersections with the horizontal axis correspond to stall forces,  
+while intersections of the curves with the vertical axis correspond to the mean velocities in figure \ref{Fig: v_k}. 
+We see that for small loads the mean velocity decreases linearly with increasing load. 
+We observe that the slope of the force -- mean velocity relation increases with the binding rate $k_\text{bind}$. 
+This is responsible for monotonous decrease of the stall force $F_\text{stall}$ with respect to the binding rate $k_\text{bind}$, see figure \ref{Fig: k_Fstall}.
+When the binding rate increases, so does the fraction of time in which the motor is less interacting with the actin filament. 
+Hence, it will take on average a smaller load to halt a motor since the amplitude of its confining potential will be typically lower.
+Ultimately, when the system is found only in the unbounded state the relative mean velocity is zero, $\langle v \rangle = 0$, as the system reached an equilibrium 
+and thus the stall force reaches zero as well, $F_\text{stall} \to 0$.
+%TODO Relate to power law => Maybe some analytics can help
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{F_v_zoom}
-\caption{Mean velocity of the motor $\langle v \rangle$ with a small load force $F_\text{load}$ applied in the direction opposing the movement for different detach rates $k_d$.
-Intersections with the $x$ axis correspond to stall forces for given detach rates. 
-We can see that with increasing $k_d/k_a$ ratio the slope increases as well as the full curve shifts in the low force region, causing a persistent decrease in stall force.  
+\caption{Mean velocity of the motor $\langle v \rangle$ with a small load force $F_\text{load}$ applied in the direction opposing the movement for different binding rates $k_\text{bind}$.
+Intersections with the $x$ axis correspond to stall forces $F_\text{stall}$ for given detach rates. 
+We can see that with increasing $k_\text{bind}/k_\text{unbind}$ ratio the slope increases as well as the full curve shifts in the low force region, causing a persistent decrease in stall force.  
 }
 \label{Fig: F_v_zoom} 
 \end{figure}
-
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{k_Fstall}
@@ -295,42 +321,45 @@ We observe power-law decay $F_\text{stall} \propto k_\text{d}^{-\alpha}$ with ex
 }
 \label{Fig: k_Fstall} 
 \end{figure}
-When the detach rate $k_{d}$ increases, so does the fraction of time in which the motor is the least bound to the actin filament. 
-Hence, it will take a smaller load to halt a motor since the amplitude of its confining potential will be lower on average.
-In figure \ref{Fig: F_v} the mean velocity of the motor with respect to the actin filament is plotted for a wider range of the load force. 
-As a reference, the speed of a non-interacting motor, i.e. $\langle v \rangle = \frac{1}{\gamma_M}F_{load}$, is shown in black as a reference.
-\begin{figure}[t]
-\centering
-\includegraphics[width=0.45\textwidth,height=!]{F_v}
-\caption{Mean velocity $\langle v \rangle$ of the motor as a function of the load force $F_\text{load}$ for $c=0.3$ and $k_d/k_a = 2$.}
-\label{Fig: F_v} 
-\end{figure}
-For small load forces, there is a regime in which the response is very low. 
-The ratchet interaction provides a friction force to counter the load force. 
-For larger forces the system looses its resilience and the contribution from the load will dominate. 
-The larger the load, the more the velocity will approach  $\frac{1}{\gamma_M}F_{load}$.
-Curves for higher detach rates are closer to the curve for the completely unbound motor. 
-The motor is more submissive to the external load, which can be understood through the same reasoning as for the stall force.
-It is also interesting to investigate the velocities of the motor and actin filament with respect to an inertial frame of reference, instead of the relative velocity to each other. 
-For equations (\ref{eom_M}) and (\ref{eom_A}) we can obtain the following.
 
-\begin{align*}
-\gamma_M \langle v_M \rangle &= \langle F_r \rangle + F_{load} \\
-\gamma_A \langle v_A \rangle &= -\langle F_r \rangle
-\end{align*}
-Where $\langle v_{M,A} \rangle = \langle \frac{\rmd x_{M,A}}{\rmd t} \rangle$ 
-and $\langle F_r \rangle = - \langle \nabla_M V_t(x_M - x_A ) \rangle = \langle \nabla_A V_t(x_M - x_A ) \rangle $. 
-And since the relative velocity is $\langle v \rangle = \langle v_{M} \rangle - \langle v_{A} \rangle$ we get
-\begin{equation*}
-\langle v \rangle = \frac{\gamma_A + \gamma_M}{\gamma_A \gamma_M} \langle F_r \rangle + \frac{1}{\gamma_M} F_{load}
-\end{equation*}
-or similarly
+\subsection{Velocity with respect to medium}
+Until now, we have investigated the relative velocity of the myosin and actin polymer, however this does not give us any information,
+whether it is motor who is moving with respect to the medium or rather the actin polymer who is being pushed through the medium.
+In order to find the dependency between individual velocities and relative velocity we start by taking the mean value of equations \eqref{eom_M} and \eqref{eom_A}
 \begin{align}
-\langle v_M \rangle &= \frac{1}{ \gamma_A + \gamma_M } \left( \gamma_A \langle v \rangle + F_{load} \right) \label{velocity_M} \\
-\langle v_A \rangle &= -\frac{1}{ \gamma_A + \gamma_M } \left( \gamma_M \langle v \rangle - F_{load} \right)
+\gamma_\text{M} \langle v_\text{M} \rangle &= \frac{ \langle \rmd x_\text{M} \rangle }{\rmd t} = \langle F_\text{r} \rangle + F_\text{load} , \label{pre_velocity_M} \\
+\gamma_\text{A} \langle v_\text{A} \rangle &= \frac{ \langle \rmd x_\text{A} \rangle }{\rmd t} = -\langle F_\text{r} \rangle , \nonumber
+\end{align}
+where $F_\text{r}$ denote ratchet force, 
+$F_\text{r} = - \nabla_\text{M} V_t( x_\text{M} - x_\text{A} ) = \nabla_\text{A} V_t(x_\text{M} - x_\text{A} )$. 
+Hence, the relative velocity in terms of the mean ratchet force is given by 
+\begin{equation*}
+\langle v \rangle 
+= \langle v_\text{M} - v_\text{A} \rangle 
+= \frac{\gamma_\text{A} + \gamma_\text{M}}{\gamma_\text{A} \gamma_\text{M}} \langle F_\text{r} \rangle + \frac{1}{\gamma_\text{M}} F_\text{load} ,
+\end{equation*}
+which yields to individual velocities in terms of the mean velocity and load 
+\begin{align}
+\langle v_\text{M} \rangle &= \frac{1}{ \gamma_\text{A} + \gamma_\text{M} } \left( \gamma_\text{A} \langle v \rangle + F_\text{load} \right) ,
+\label{velocity_M} \\
+\langle v_\text{A} \rangle &= -\frac{1}{ \gamma_\text{A} + \gamma_\text{M} } \left( \gamma_\text{M} \langle v \rangle - F_\text{load} \right) .
 \label{velocity_A}
 \end{align}
+Note, that for the load equal the stall force, both velocities are equal and non-zero.
+This is related to the fact that the full system is moving with respect to the liquid, as can be seen from the mean velocity of the geometric center 
+\begin{multline*}
+\langle v_\text{center} \rangle = \left\langle \frac{ v_\text{M} + v_\text{A} }{2} \right\rangle 
+= \\
+= \frac{ \gamma_\text{A} - \gamma_\text{M} }{ 2 ( \gamma_\text{A} + \gamma_\text{M} ) } \langle v \rangle + \frac{1}{ \gamma_\text{A} + \gamma_\text{M} } F_\text{load}
+, 
+\end{multline*}
+which is proportional to both load and relative velocity and is zero only when $\langle v \rangle = - 2 F_\text{load} / ( \gamma_\text{A} - \gamma_\text{M} )$.
 
+The dependency of individual velocities on the load is show in figure~\ref{Fig: ind_v}, 
+where we observe that for relatively small loads, the motor and actin filament are moving together, because the coupling by the ratchet interaction proves to be dominant. 
+This can be explained by linear dependency of equations \eqref{velocity_M} and \eqref{velocity_A} on the load, 
+along with the fact that for small loads the mean relative velocity is as well linear in the load, see figure~\ref{Fig: F_v}. 
+The inset of figure~\ref{Fig: ind_v} then depicts the velocities for very small loads.
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{individual_velocities}
@@ -340,41 +369,39 @@ Inset: Zoomed to the linear regime around the origin.
 }
 \label{Fig: ind_v} 
 \end{figure}
-For figure \ref{Fig: ind_v} we can observe that already for small loads, the motor and actin filament start moving together, i.e. they are coupled by the ratchet interaction. 
-In the inset of figure \ref{Fig: ind_v} their velocities, for small loads, go like $F_{load}/(\gamma_M + \gamma_A)$. 
-This can be derived from equations (\ref{velocity_M}) and (\ref{velocity_A}) and the fact that the relative velocity $\langle v \rangle$ remains almost constant around the origin in figure \ref{Fig: F_v}. 
-Note that at the point where the velocity of the motor drops beneath actin's velocity, the load is equal to the stall force.
-Since the load is only applied to the motor, for very high loads, the motor will start slipping over the ratchet potential along the actin filament. 
-Consequently, the filament's velocity will stop increase and approaches zero for larger loads. 
-The motor will accelerate for higher loads and its velocity will go to $F_{load}/\gamma_M$. 
-The relative velocity $\langle v \rangle$ will be equal to the motor's velocity $\langle v_M \rangle$ in that case.
 
-Alternatively one could look at the nonlinear force-velocity relation by identifying an effective friction force that depends on the load. 
-Without the ratchet interaction, the motion of the motor would satisfy following equation for the mean velocity, e.g. the black curve in figure \ref{Fig: F_v}.
+Since the load is only applied to the motor, for very high loads, the motor will start slipping over the ratchet potential along the actin filament. 
+Consequently, the actin's mean velocity will stop increase and approaches zero for larger loads 
+while the myosin's mean velocity go to $F_\text{load}/\gamma_\text{M}$ as can be seen in figure~\ref{Fig: ind_v}. 
+As well the relative velocity $\langle v \rangle$ will be equal to the motor's velocity $\langle v_M \rangle$ in that case, 
+cf. equations~\eqref{velocity_M} and~\eqref{velocity_A}.
+This is in good agreement with the figure~\ref{Fig: F_v}.
+
+\subsection{Effective friction force} 
+One can interpret the nonlinear force-velocity relation for the myosin \eqref{pre_velocity_M} as balance between the load, drag force and an effective friction force, caused by the ratchet interaction, 
+that intrinsically depends on the load. 
+Without the ratchet interaction, the motion of the myosin would satisfy $ \gamma_\text{M}\langle v\rangle = F_\text{load}$. 
+The discrepancy in this relation we interpret as the effective friction force $F_\text{eff}$ 
 \begin{equation*}
-\gamma_{m}\langle v\rangle - F_{load} = 0
+\gamma_\text{M} \langle v \rangle - F_\text{load} = \frac{\gamma_\text{A} + \gamma_\text{M} }{\gamma_\text{A}} \langle F_\text{r} \rangle \equiv F_\text{eff}.
 \end{equation*}
-The violation of this relation in the presence of the ratchet interaction gives us this effective force. 
-It is shown in figure \ref{Fig: effective_force}. 
 Note that this is the same as the distance between the force-velocity curves and the ratchet-free curve in figure \ref{Fig: F_v}.
-\begin{equation*}
-\gamma_{m} \langle v \rangle - F_{load} = \frac{\gamma_A + \gamma_M}{\gamma_A} \langle F_r \rangle = F_{eff}
-\end{equation*}
-\begin{figure}[t]
-\centering
-\includegraphics[width=0.45\textwidth,height=!]{effective_friction}
-\caption{Effective force from the ratchet interaction depending on the load force on the motor.}
-\label{Fig: effective_force}
-\end{figure}
-The response of the system for small loads is linear and independent of the ATP concentration. 
-The effective force generated by the ratchet interaction will reach a maximal value and eventually decay for larger external forces. 
-As the load goes to infinity, the friction provided by the ratchet will go to zero as 
+In figure \ref{Fig: effective_force} we observe, 
+that the response of the system for small loads is linear and independent of the rates and hence of the ATP concentration. 
+%TODO Why?
+The effective friction force generated by the ratchet interaction will reach a maximal value and eventually decay for larger external forces. 
+In section~\ref{sec:perturb} we will show that, as the load goes to infinity, the friction provided by the ratchet will go to zero as 
 \begin{equation}
 \left| \langle F_\text{eff} \rangle_{F_\text{load}\rightarrow\infty} \right| \asymp \frac{1}{F_\text{load}} , 
 \label{eq:eff_vs_load}
 \end{equation} 
 which is shown in figure \ref{Fig: eff_frict_decay}. 
-Later on, we will show that for a one headed motor, this is indeed the dominant contribution for large external forces.  
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.45\textwidth,height=!]{effective_friction}
+\caption{Effective friction force from the ratchet interaction depending on the load force on the motor.}
+\label{Fig: effective_force}
+\end{figure}
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{eff_frict_decay}
