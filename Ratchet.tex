@@ -431,20 +431,35 @@ This system will always relax to its equilibrium steady state $\rho^{eq}_s$.
 In equilibrium, detailed balance is satisfied and the chemical cycle does not dissipate heat on its own, on average.
 Similarly, the diffusion processes of the myosin and actin own their own, without an external force, are in equilibrium.
 However, when coupled together, we observe the motor walking along the actin track. 
-This suggests that non-equilibrium is caused be the relaxation of the diffusion processes immediately after each change in the chemical state of a motor head. 
+This suggests that non-equilibrium is caused by the relaxation of the diffusion processes immediately after each change in the chemical state of a motor head. 
 The energy that is dissipated in these recurring relaxations is provided by the changes in potential energy during each chemical jump. 
 Figure \ref{Fig: energy} shows the energy landscape in which the myosin motor diffuses, relative to the actin filament. 
 In state $s=0$ the motor head moves in the top ratchet, at a higher energy but with a smaller amplitude, while in state $s=1$ the head's coupling is stronger and the amplitude of the ratchet is higher. 
-To each jump there is an amount of energy that is absorbed or dissipated by the system. 
-We can count all the contributions of jumps to state $s=1$ and to state $s=0$ separately.
+
+We can define the internal energy stored in the motor heads as the sum over the potential energies of all heads, 
+which depends on the position of the motor relative to the actin filament and the states of all heads.
+\begin{equation}
+E(x_\text{M}-x_\text{A}, \{s\}) = \sum_{i=1}^N (1-s(i))\Delta E + \zeta(i)V_r(x_\text{M} - x_\text{A} -id)
+\end{equation}
+This quantity will fluctuate due to the diffusion of the motor and actin filament and it will change abruptly when a head changes its chemical state.
 \begin{align}
-\mathcal Q_{in} &= \sum_{t_d} \left[ \Delta E + (c-1) V_r(x_{t_d}) \right]  \label{q_in} \\
-\mathcal Q_{out} &= -\sum_{t_a} \left[ \Delta E + (c-1) V_r(x_{t_a}) \right]  \label{q_out}
+\dot{E} =& \frac{\partial E}{\partial x_\text{M}}\dot{x_\text{M}} + \frac{\partial E}{\partial x_\text{A}}\dot{x_\text{A}} + \sum_{i=1}^{N}\frac{\partial E}{\partial s(i)}\dot{s(i)}\\
+=& \nabla_{\text{M}} V \dot{x_\text{M}} + \nabla_{\text{M}} V \dot{x_\text{A}} + \dot{\mathcal Q}_\text{in} + \dot{\mathcal Q}_\text{out}\\
+=& -\dot{\mathcal W}_\text{M} + \dot{\mathcal W}_\text{A}  + \dot{\mathcal Q}_{\text{in}} + \dot{\mathcal Q}_{\text{out}}
+\end{align}
+Here, we can identify currents of the work done by the ratchet force on the motor $\mathcal W_\text{M}$ and on the actin filament $\mathcal W_\text{A}$,
+ as well as the heat exchanged with the chemical cycle $\mathcal Q_\text{in}$ and $\mathcal Q_\text{out}$. %TODO include figures and explain that since E is confined, change in E is zero and total change in chemical heat is equal to work done by ratchet force
+
+To each chemical jump there is an amount of energy that is absorbed or dissipated by the system. 
+We can count all the contributions of jumps to state $s=1$ and to state $s=0$ separately over a time $T$.
+\begin{align}
+\mathcal Q_\text{in} &= \sum_{t_d \leq T} \left[ \Delta E + (c-1) V_r(x_{t_d}) \right]  \label{q_in} \\
+\mathcal Q_\text{out} &= -\sum_{t_a \leq T} \left[ \Delta E + (c-1) V_r(x_{t_a}) \right]  \label{q_out}
 \end{align}
 Where $t_a$ and $t_d$ are all jump times to state $s=1$ and $s=0$ respectively. 
  We can measure and average these quantities in our simulations and we can define a chemical efficiency as follows
 \begin{equation}
-\eta = \frac{\langle\mathcal Q_{in}\rangle+\langle\mathcal Q_{out}\rangle}{\langle\mathcal Q_{in}\rangle} .
+\eta = \frac{\langle\mathcal Q_\text{in}\rangle+\langle\mathcal Q_\text{out}\rangle}{\langle\mathcal Q_\text{in}\rangle} .
 \label{eq:efficiency}
 \end{equation}
 This quantifies the fraction of chemical energy, supplied by the ATP driven cycles of the heads, that remains in the system. 
@@ -466,15 +481,15 @@ This is because the chemical rates of the motor heads are very small.
 Hence we can assume that the means of the quantities (\ref{q_in}) and (\ref{q_out}) can be described by
 \begin{gather}
 \begin{aligned}[b]
-\langle \mathcal Q_{in} \rangle 
-=& \rho^{eq}_1 k_d \left[ \Delta E - (1-c)\langle V_r(x) \rangle_{s=1} \right] \\
-=& \frac{k_a k_d}{k_a + k_d}\left[\Delta E - (1-c)\langle V_r(x) \rangle_{s=1} \right] 
+\langle \mathcal Q_\text{in} \rangle 
+=& \rho^{eq}_1 k_d T\left[ \Delta E - (1-c)\langle V_r(x) \rangle_{s=1} \right] \\
+=& \frac{k_a k_d}{k_a + k_d}T\left[\Delta E - (1-c)\langle V_r(x) \rangle_{s=1} \right] 
 \end{aligned}
 \label{Q_in} \\
 \begin{aligned}[b]
-\langle \mathcal Q_{out} \rangle 
-=& -\rho^{eq}_0 k_a \left[ \Delta E - (1-c)\langle V_r(x) \rangle_{s=0} \right] \\
-=& -\frac{k_a k_d}{k_a + k_d} \left[ \Delta E - (1-c)\langle V_r(x) \rangle_{s=0} \right] 
+\langle \mathcal Q_\text{out} \rangle 
+=& -\rho^{eq}_0 k_a T\left[ \Delta E - (1-c)\langle V_r(x) \rangle_{s=0} \right] \\
+=& -\frac{k_a k_d}{k_a + k_d} T\left[ \Delta E - (1-c)\langle V_r(x) \rangle_{s=0} \right] 
 \end{aligned}
 \label{Q_out}
 \end{gather}
