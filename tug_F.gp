@@ -13,5 +13,5 @@ set xzeroaxis
 set yzeroaxis
 
 plot [-100:100] \
-      "Data/tug_F.dat" u (-$1/2):($2*0.97+$1):($3*0.97) w errorlines ls 8 lw 1.25 dashtype 1 title"Load on filaments"  \
-    , "Data/tug_F_compare.dat" u (-$1):(($2+$1/0.66)*0.97):($3*0.97) w errorlines ls 3 lw 1.25 dashtype 1 title "Load on motor" \
+      "Data/tug_F.dat" u ($1):(-($2-$4)-2*$1/0.97):($3) w errorlines ls 8 lw 1.25 dashtype 1 title"Load on filaments"  \
+    , "Data/tug_F_compare.dat" u (-$1):(($2+$1/0.66)):($3) w errorlines ls 3 lw 1.25 dashtype 1 title "Load on motor" \
