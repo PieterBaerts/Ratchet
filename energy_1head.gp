@@ -1,5 +1,6 @@
 #!/usr/bin/gnuplot
 set term pdfcairo enhanced linewidth 1.75 font ",14"
+set output "energy_1head.pdf"
  
 
 set key bottom left
@@ -14,7 +15,6 @@ s(x) = x<0.5 ? 1 : 0
 set key top right
 
 
-set output "Energie_1head.pdf"
 set multiplot layout 1,2 
 
 set key bottom left
