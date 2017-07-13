@@ -22,6 +22,7 @@
 
 \newcommand{\rmd}{{\mathrm d}}
 \newcommand{\rme}{{\mathrm e}}
+\newcommand{\dbar}{{\mathchar '26 \mkern-11mu {\mathrm d}}}
 
 \renewcommand{\vec}[1]{{\boldsymbol {#1}}}
  %  \usepackage{showkeys}
@@ -30,7 +31,7 @@
 
 \title{The interaction between Actin and Myosin-II, the flashing ratchet}
 \author{Pieter Baerts}
-\author{Christian Maes}
+%\author{Christian Maes}
 \affiliation{KU Leuven, Instituut voor Theoretishe Fysica, Celestijnenlaan 200D, B-3001 Leuven, Belgium}
 \author{Jiří Pešek}
 \author{Herman Ramon}
@@ -151,6 +152,7 @@ $F_\text{load}$ is an external load on the motor,
 and the interaction potential $V_t$ represents the overall ratchet interaction, which is a sum over individual contributions from all motor heads,
 \begin{equation}
 V_t(x) = \sum\limits_{i=0}^{N-1} \zeta_t(i) \, V_\text{r} (x - i \, d ), 
+\label{eq:ratchet_interaction}
 \end{equation}
 where $d$ is the distance between myosin heads, 
 $N$ is the number of heads per motor,
@@ -416,6 +418,46 @@ which is in good agreement with the theoretical prediction \eqref{eq:eff_vs_load
 
 \section{Chemical efficiency}
 \label{sec:energie}
+In order to investigate the chemical efficiency 
+we first define the total energy of the full system as a sum of the ratchet interaction~\eqref{eq:ratchet_interaction}
+and the energy stored in ATP (and its products), 
+\begin{equation*}
+E( x_\text{M}, x_\text{A}, \{ \zeta_i \}) = V_t( x_\text{M} - x_\text{A} ) + \Delta E \sum\limits_{i=1}^N \chi( \zeta_i = c ) ,
+\end{equation*}
+where $\Delta E$ is the internal energy stored by a single ATP and $\chi$ is a characteristic function\footnote{
+$\chi(\text{condition}) = 1$ if condition is fulfilled otherwise $0$.
+}.
+Over the time, this quantity fluctuate due to the diffusion of the myosin and actin filament and due to changes in internal state of individual heads.
+This leads to 
+\begin{align}
+\rmd E 
+&= \rmd x_\text{M} \circ \nabla_\text{M} E  
++ \rmd x_\text{A} \circ \nabla_\text{A} E 
++ \sum\limits_{i=1}^N \rmd \zeta_i \; \partial_{\zeta_i} E  
+\nonumber \\
+&= \rmd x_\text{M} \circ \nabla_\text{M} V_t  
++ \rmd x_\text{A} \circ \nabla_\text{A} V_t 
++ \dbar {\mathcal Q}_\text{in} 
++ \dbar {\mathcal Q}_\text{out} 
+\nonumber \\
+&= - \left( \dbar {\mathcal Q}_\text{M} + \dbar {\mathcal Q}_\text{A} \right) 
++ \dbar {\mathcal Q}_{\text{in}} 
++ \dbar {\mathcal Q}_{\text{out}}
+\end{align}
+where we identify the heat  exerted to myosin and actin 
+\begin{gather*}
+{\mathcal Q}_\text{A} = \int \rmd x_\text{A} \circ \left[ - \nabla_\text{A} V_t( x_\text{A}, x_\text{M} ) \right], \\
+{\mathcal Q}_\text{M} = \int \rmd x_\text{M} \circ \left[ - \nabla_\text{M} V_t( x_\text{A}, x_\text{M} ) \right],
+\end{gather*}
+as well as the heat exchanged with the chemical cycle $\mathcal Q_\text{in}$ and $\mathcal Q_\text{out}$ defined as 
+\begin{gather}
+{\mathcal Q}_\text{in} = \sum_{t_\text{unbind} \leq T} \left[ \Delta E + (c-1) V_r(x_{t_\text{unbind}}) \right] , 
+\label{q_in} \\
+{\mathcal Q}_\text{out} = -\sum_{t_\text{bind} \leq T} \left[ \Delta E + (c-1) V_r(x_{t_\text{bind}}) \right] 
+\label{q_out}
+\end{gather}
+
+
 The chemical cycle of individual motor heads, driven by ATP, is modeled by a two-state continuous time jump process \eqref{eq:transition} with constant rates.
 The evolution of probability density of the system $\rho_s$ is governed by the master equation, where $s = \{0,1\}$ is the chemical state of a motor head. 
 State $s=0$ corresponds to an ATP bound head, loosely bound to the actin filament, while in the state $s=1$ the head is strongly coupled to the ratchet potential along the actin filament.
@@ -436,27 +478,10 @@ The energy that is dissipated in these recurring relaxations is provided by the 
 Figure \ref{Fig: energy} shows the energy landscape in which the myosin motor diffuses, relative to the actin filament. 
 In state $s=0$ the motor head moves in the top ratchet, at a higher energy but with a smaller amplitude, while in state $s=1$ the head's coupling is stronger and the amplitude of the ratchet is higher. 
 
-We can define the internal energy stored in the motor heads as the sum over the potential energies of all heads, 
-which depends on the position of the motor relative to the actin filament and the states of all heads.
-\begin{equation}
-E(x_\text{M}-x_\text{A}, \{s\}) = \sum_{i=1}^N (1-s(i))\Delta E + \zeta(i)V_r(x_\text{M} - x_\text{A} -id)
-\end{equation}
-This quantity will fluctuate due to the diffusion of the motor and actin filament and it will change abruptly when a head changes its chemical state.
-\begin{align}
-\dot{E} =& \frac{\partial E}{\partial x_\text{M}}\dot{x_\text{M}} + \frac{\partial E}{\partial x_\text{A}}\dot{x_\text{A}} + \sum_{i=1}^{N}\frac{\partial E}{\partial s(i)}\dot{s(i)}\\
-=& \nabla_{\text{M}} V \dot{x_\text{M}} + \nabla_{\text{M}} V \dot{x_\text{A}} + \dot{\mathcal Q}_\text{in} + \dot{\mathcal Q}_\text{out}\\
-=& -\left(\dot{\mathcal W}_\text{M} + \dot{\mathcal W}_\text{A} \right) + \dot{\mathcal Q}_{\text{in}} + \dot{\mathcal Q}_{\text{out}}
-\end{align}
-Here, we can identify currents of the work done by the ratchet force on the motor $\mathcal W_\text{M}$ and on the actin filament $\mathcal W_\text{A}$,
- as well as the heat exchanged with the chemical cycle $\mathcal Q_\text{in}$ and $\mathcal Q_\text{out}$. %TODO include figures and explain that since E is confined, change in E is zero and total change in chemical heat is equal to work done by ratchet force
 
 To each chemical jump there is an amount of energy that is absorbed or dissipated by the system. 
 We can count all the contributions of jumps to state $s=1$ and to state $s=0$ separately over a time $T$.
-\begin{align}
-\mathcal Q_\text{in} &= \sum_{t_d \leq T} \left[ \Delta E + (c-1) V_r(x_{t_d}) \right]  \label{q_in} \\
-\mathcal Q_\text{out} &= -\sum_{t_a \leq T} \left[ \Delta E + (c-1) V_r(x_{t_a}) \right]  \label{q_out}
-\end{align}
-Where $t_a$ and $t_d$ are all jump times to state $s=1$ and $s=0$ respectively. 
+
  We can measure and average these quantities in our simulations and we can define a chemical efficiency as follows
 \begin{equation}
 \eta = \frac{\langle\mathcal Q_\text{in}\rangle+\langle\mathcal Q_\text{out}\rangle}{\langle\mathcal Q_\text{in}\rangle} .
