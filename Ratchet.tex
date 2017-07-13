@@ -328,7 +328,7 @@ whether it is motor who is moving with respect to the medium or rather the actin
 In order to find the dependency between individual velocities and relative velocity we start by taking the mean value of equations \eqref{eom_M} and \eqref{eom_A}
 \begin{align}
 \gamma_\text{M} \langle v_\text{M} \rangle &= \frac{ \langle \rmd x_\text{M} \rangle }{\rmd t} = \langle F_\text{r} \rangle + F_\text{load} , \label{pre_velocity_M} \\
-\gamma_\text{A} \langle v_\text{A} \rangle &= \frac{ \langle \rmd x_\text{A} \rangle }{\rmd t} = -\langle F_\text{r} \rangle , \nonumber
+\gamma_\text{A} \langle v_\text{A} \rangle &= \frac{ \langle \rmd x_\text{A} \rangle }{\rmd t} = -\langle F_\text{r} \rangle , \label{pre_velocity_A}
 \end{align}
 where $F_\text{r}$ denote ratchet force, 
 $F_\text{r} = - \nabla_\text{M} V_t( x_\text{M} - x_\text{A} ) = \nabla_\text{A} V_t(x_\text{M} - x_\text{A} )$. 
@@ -774,7 +774,6 @@ cease to pull on the filaments. Therefore mechanosensing will not occur spontane
 In this setup the motor is again interacting with two anti-parallel actin filaments, however, now the filaments are directly subjected to an external load.
 This is illustrated in figure \ref{Fig: tug_F_illustration}. 
 The motor is in the middle of this symmetric setup and will not move on average. 
-Here, we are interested in the force-velocity relation of the filaments, rather than the motor.
 
 \begin{figure}[b]
 \centering
@@ -784,29 +783,37 @@ Here, we are interested in the force-velocity relation of the filaments, rather 
 \end{figure}
 
 The mean velocities of the actin filaments and motor are given by
-\begin{align}
-\langle v_\text{A1} \rangle &= \frac{1}{\gamma_\text{A} } \left( -F_\text{load} - F_\text{r1} \right) \\
-\langle v_\text{M} \rangle &= \frac{1}{\gamma_\text{M} } \left( F_\text{r1} + F_\text{r2} \right)\\
-\langle v_\text{A2} \rangle &= \frac{1}{ \gamma_\text{A} } \left( F_\text{load} - F_\text{r2}  \right) 
-\end{align}
+\begin{align*}
+\langle v_\text{A1} \rangle &= \frac{1}{\gamma_\text{A} } \left( F_\text{load} - \langle F_\text{r1} \rangle \right) \\
+\langle v_\text{M} \rangle &= \frac{1}{\gamma_\text{M} } \left( \langle F_\text{r1} \rangle + \langle F_\text{r2} \rangle \right)\\
+\langle v_\text{A2} \rangle &= \frac{1}{ \gamma_\text{A} } \left( - F_\text{load} - \langle F_\text{r2} \rangle \right) 
+\end{align*}
 where $\text{A1}$ and $\text{A2}$ denote the two different actin filaments and $F_\text{r1}$ and $F_\text{r2}$ are the ratchet forces between the motor and respectively filament $\text{A1}$ and $\text{A2}$. 
+
 Note that the mean velocity of the motor is proportional to the mean center of mass velocity of both actin filaments. 
-
 \begin{equation}
-\langle v_\text{M} \rangle = \frac{\gamma_\text{A}}{\gamma_\text{M}} \left(\langle v_\text{A1} \rangle + \langle v_\text{A2} \rangle \right) \label{tug_F_motor}
+\langle v_\text{M} \rangle = \frac{\gamma_\text{A}}{\gamma_\text{M}} \left(\langle v_\text{A1} \rangle + \langle v_\text{A2} \rangle \right) \label{tug_F_motor} \nonumber
 \end{equation}
-
 Because of the anti-parallel alignment of the filaments, $F_{r1}$ and $F_{r2}$ are equal but opposite on average. 
 Therefore the motor will not experience any mean displacement.  
 
-
-The force-velocity relation of the filaments is shown in figure \ref{Fig: tug_F}.
+Although the motor doesn't experience an external load and it will not have a net force on average, there will be a tension on the motor due to interaction with both actin filaments. This tension is given by
+\begin{equation}
+\langle F_\text{r1}\rangle - \langle F_\text{r2}\rangle = -\gamma_\text{A}\left(\langle v_\text{A1}\rangle - \langle v_\text{A2}\rangle \right) - 2F_\text{load} \nonumber
+\end{equation}
+The tension on the motor is shown in figure \ref{Fig: tug_F}, where it is compared to the tension when the load is applied on the motor instead of the filaments, like in section \ref{sec:force-velocity}. There the tension can be derived from equations (\ref{pre_velocity_M}),(\ref{pre_velocity_A}), (\ref{velocity_M}) and (\ref{velocity_A}).
+\begin{align}
+\langle F_\text{r} \rangle - F_\text{load} &= - \gamma_\text{M} \langle v_\text{M} \rangle - 2\gamma_\text{A} \langle v_\text{A} \rangle \nonumber\\
+ &= \frac{\gamma_\text{A}\gamma_\text{M}}{\gamma_\text{A}+\gamma_\text{M}}\langle v\rangle - \left(1 + \frac{\gamma_\text{A}}{\gamma_\text{A}+\gamma_\text{M}} \right) F_\text{load} \nonumber
+\end{align}
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{tug_F}
 \caption{Analogue to figure~\ref{Fig: effective_force}, now with two filaments instead of one and an external force in the filaments instead of the motor.}
 \label{Fig: tug_F}
 \end{figure}
+For small loads, the tension in both cases is equal to twice the load force. As we have seen in section \ref{sec:force-velocity}, the ratchet force tends to completely oppose the load. Therefore,  
+
 
 The empirical velocity of the motor is plotted in figure \ref{Fig: tug_F_motor}. 
 
