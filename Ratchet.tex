@@ -473,6 +473,7 @@ Thus the total chemical energy consists of two parts ${\mathcal Q}^\text{chem} =
 where we sum over all jump times $t_\text{bind}$($t_\text{unbind}$) in the given ``direction''. 
 $t_\text{fin}$ denotes the duration of the process. 
 
+\subsubsection{Load on the motor}
 Note that, when we use the equation of motion \eqref{eom_M} the heat exchange with the surrounding \eqref{eq:heat_hb_M} can be rewritten as 
 \begin{multline*}
 {\mathcal Q}_\text{M}^\text{hb} 
@@ -495,6 +496,8 @@ Hence, the total energy balance equation \eqref{eq:energy_balance} simplifies to
 \]
 which does not explicitly depend on the load $F_\text{load}$. 
 
+\subsubsection{Tug of war} 
+
 At last, notice that the internal energy of the system \eqref{eq:internal_energy} is bounded.
 Hence, if we interpret the energy balance equation \eqref{eq:energy_balance} in terms of mean dissipation rates defined as 
 \[
@@ -504,7 +507,6 @@ we obtain en equation representing the conservation of fluxes
 \[
 0 = q_\text{M}^\text{hb} + q_\text{A}^\text{hb} + w^\text{ext}_\text{M} + q^\text{chem} .
 \]
-
 
 \subsection{Chemical efficiency} 
 \subsubsection{Transport efficiency} 
@@ -525,10 +527,12 @@ while for no load $F_\text{load} = 0$ it captures how much of the chemical energ
 \eta_\text{tr}( F_\text{load} = 0 ) = \frac{ \left\langle \int \rmd x_\text{M} \circ \left[ - \nabla_M V_t \right] \right\rangle }{ \left\langle {\mathcal Q}^\text{chem} \right\rangle } .
 \]
 
+
+
 \subsubsection{Chemical cycle efficiency}
 Alternatively we can define a efficiency 
 \begin{equation}
-\eta = \frac{\langle\mathcal Q_\text{in}\rangle+\langle\mathcal Q_\text{out}\rangle}{\langle\mathcal Q_\text{in}\rangle} .
+\eta_\text{chem} = \frac{\langle\mathcal Q_\text{in}\rangle+\langle\mathcal Q_\text{out}\rangle}{\langle\mathcal Q_\text{in}\rangle} .
 \label{eq:efficiency}
 \end{equation}
 This quantifies the fraction of chemical energy, supplied by the ATP driven cycles of the heads, that remains in the system. 
