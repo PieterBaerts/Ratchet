@@ -417,6 +417,12 @@ which is in good agreement with the theoretical prediction \eqref{eq:ratchet_vs_
 
 \subsection{Tension in the motor}
 
+The force-velocity relation can also be exploited to derive the tension in the motor. Since both the load and ratchet force are directly applied to the motor, the tension can be derived from equations (\ref{pre_velocity_M}),(\ref{pre_velocity_A}), (\ref{velocity_M}) and (\ref{velocity_A}).
+\begin{align}
+\langle F_\text{r} \rangle - F_\text{load} &= - \gamma_\text{M} \langle v_\text{M} \rangle - 2\gamma_\text{A} \langle v_\text{A} \rangle \nonumber\\
+ &= \frac{\gamma_\text{A}\gamma_\text{M}}{\gamma_\text{A}+\gamma_\text{M}}\langle v\rangle - \left(1 + \frac{\gamma_\text{A}}{\gamma_\text{A}+\gamma_\text{M}} \right) F_\text{load} \nonumber
+ \label{tension}
+\end{align}
 
 
 \section{Chemical efficiency}
@@ -830,15 +836,11 @@ Although the motor doesn't experience an external load and it will not have a ne
 \begin{equation}
 \langle F_\text{r1}\rangle - \langle F_\text{r2}\rangle = -\gamma_\text{A}\left(\langle v_\text{A1}\rangle - \langle v_\text{A2}\rangle \right) - 2F_\text{load} \nonumber
 \end{equation}
-The tension on the motor is shown in figure \ref{Fig: tug_F}, where it is compared to the tension when the load is applied on the motor instead of the filaments, like in section \ref{sec:force-velocity}. There the tension can be derived from equations (\ref{pre_velocity_M}),(\ref{pre_velocity_A}), (\ref{velocity_M}) and (\ref{velocity_A}).
-\begin{align}
-\langle F_\text{r} \rangle - F_\text{load} &= - \gamma_\text{M} \langle v_\text{M} \rangle - 2\gamma_\text{A} \langle v_\text{A} \rangle \nonumber\\
- &= \frac{\gamma_\text{A}\gamma_\text{M}}{\gamma_\text{A}+\gamma_\text{M}}\langle v\rangle - \left(1 + \frac{\gamma_\text{A}}{\gamma_\text{A}+\gamma_\text{M}} \right) F_\text{load} \nonumber
-\end{align}
+The tension on the motor is shown in figure \ref{Fig: tug_F}, where it is compared to the tension when the load is applied on the motor instead of the filaments, given by \eqref{tension}. 
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{tug_F}
-\caption{Analogue to figure~\ref{Fig: effective_force}, now with two filaments instead of one and an external force in the filaments instead of the motor.}
+\caption{Analogue to figure~\ref{Fig: ratchet_force}, now with two filaments instead of one and an external force in the filaments instead of the motor.}
 \label{Fig: tug_F}
 \end{figure}
 For small loads, the tension in both cases is equal to twice the load force. As we have seen in section \ref{sec:force-velocity}, the ratchet force tends to completely oppose the load. Therefore,  
