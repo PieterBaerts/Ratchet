@@ -461,6 +461,84 @@ as well as the heat exchanged with the chemical cycle $\mathcal Q_\text{in}$ and
 {\mathcal Q}_\text{out} = -\sum_{t_\text{bind} \leq T} \left[ \Delta E + (c-1) V_r(x_{t_\text{bind}}) \right] 
 \label{q_out}
 \end{gather}
+where we sum over all jump times $t_\text{bind}$($t_\text{unbind}$) in the given ``direction''. 
+$t_\text{fin}$ denotes the duration of the process. 
+
+\subsubsection{Load on the motor}
+Note that, when we use the equation of motion \eqref{eom_M} the heat exchange with the surrounding \eqref{eq:heat_hb_M} can be rewritten as 
+\begin{multline*}
+{\mathcal Q}_\text{M}^\text{hb} 
+= \int \rmd x_\text{M} \circ \left[ \nabla_\text{M} V_t - F_\text{load} \right] 
+\\
+= \int \rmd x_\text{M} \circ \nabla_\text{M} V_t - {\mathcal W}_\text{M}^\text{ext} .
+\end{multline*}
+Similarly for the heat dissipated by actin's interaction with the environment we get 
+\[
+{\mathcal Q}_\text{A}^\text{hb} 
+= \int \rmd x_\text{A} \circ \nabla_\text{A} V_t . 
+\]
+Hence, the total energy balance equation \eqref{eq:energy_balance} simplifies to 
+\[
+\rmd E 
+= \rmd x_\text{M} \circ \nabla_\text{M} V_t  
++ \rmd x_\text{A} \circ \nabla_\text{A} V_t  
++ {\mathcal Q}_\text{in}^\text{chem}
++ {\mathcal Q}_\text{out}^\text{chem} , 
+\]
+which does not explicitly depend on the load $F_\text{load}$. 
+
+\subsubsection{Tug of war} 
+%TODO
+
+At last, note that the internal energy of the system \eqref{eq:internal_energy} is bounded.
+Hence, if we interpret the energy balance equation \eqref{eq:energy_balance} in terms of mean dissipation rates defined as 
+\[
+q = \lim_{\Delta t \to \infty} \frac{1}{\Delta t} \left\langle {\mathcal Q}(\Delta t) \right\rangle ,
+\]
+we obtain en equation representing the conservation of fluxes 
+\[
+0 = q_\text{M}^\text{hb} + q_\text{A}^\text{hb} + w^\text{ext}_\text{M} + q^\text{chem} .
+\]
+
+\subsection{Chemical efficiency} 
+\subsubsection{Transport efficiency} 
+The first efficiency discussed in details in \cite{} %TODO 
+is the efficiency related to transport properties. 
+Namely, we identify the heat dissipated to the environment by the motor alone as the output work 
+\[
+{\mathcal W}^\text{out}_\text{M} = - {\mathcal Q}^\text{hb}_\text{M} 
+\] 
+and chemical work $\mathcal Q^\text{chem}$ and the work done by the load $\mathcal W^\text{ext}_\text{M}$.
+Hence the transport efficiency can be defined as 
+\[
+\eta_\text{tr} = \frac{ \left\langle {\mathcal W}^\text{out}_\text{M} \right\rangle }{ \left\langle {\mathcal Q}^\text{chem} \right\rangle + \left\langle {\mathcal W}^\text{ext}_\text{M} \right\rangle } .
+\]
+Note, that for large load ($F_\text{load} \to \infty$) such efficiency approaches $\eta_\text{tr} \to 1$, 
+while for no load $F_\text{load} = 0$ it captures how much of the chemical energy get dissipated by the motor's motion  
+\[
+\eta_\text{tr}( F_\text{load} = 0 ) = \frac{ \left\langle \int \rmd x_\text{M} \circ \left[ - \nabla_M V_t \right] \right\rangle }{ \left\langle {\mathcal Q}^\text{chem} \right\rangle } .
+\]
+
+
+
+\subsubsection{Chemical cycle efficiency}
+Alternatively we can define a efficiency 
+\begin{equation}
+\eta_\text{chem} = \frac{\langle\mathcal Q_\text{in}\rangle+\langle\mathcal Q_\text{out}\rangle}{\langle\mathcal Q_\text{in}\rangle} .
+\label{eq:efficiency}
+\end{equation}
+This quantifies the fraction of chemical energy, supplied by the ATP driven cycles of the heads, that remains in the system. 
+This is shown in figure \ref{Fig: chem}.
+\begin{figure}[b]
+\centering
+\includegraphics[width=0.45\textwidth,height=!]{chemical_cycle}
+\caption{Chemical efficiency $\eta$ as a function of load force $F_\text{load}$.
+By increasing the $k_d/k_a$ ratio the local maximums of chemical efficiencies are getting closer origin,
+and their fluctuations decrease. 
+}
+\label{Fig: chem}
+\end{figure}
+>>>>>>> Stashed changes
 
 The chemical cycle of individual motor heads, driven by ATP, is modeled by a two-state continuous time jump process \eqref{eq:transition} with constant rates.
 The evolution of probability density of the system $\rho_s$ is governed by the master equation, where $s = \{0,1\}$ is the chemical state of a motor head. 
