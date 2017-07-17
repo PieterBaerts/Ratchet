@@ -16,8 +16,8 @@ set logscale y
 set xlabel "F_{load}"
 set ylabel "F_{r}"
 
-plot [10.:500][1.:20.] \
+plot [1:500][0.5:10.] \
       "Data/F_v.dat" u ($1):(0.66*0.97/(0.66+0.97)*($2+$1/0.66)):($3*0.66*0.97/(0.66+0.97)) w yerrorbars ls 8 title "Simulation" \
-    , f(x) ls 6 title "Fit"
+    , f(x)*0.97/(0.66+0.97) ls 6 title "Fit"
 
 
