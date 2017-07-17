@@ -165,7 +165,7 @@ V_\text{r}(x) =  \begin{cases}
         \displaystyle \frac{ V (\ell-x) }{ (1-a) \ell } & a \ell \leq x < \ell \\[2ex]
         V_\text{r}(x-\ell) & \ell \leq x  
    \end{cases} ,
-   \label{rat_pot}
+   \label{eq:ratchet_potential}
 \end{equation}
 with total height $V$,
 period $\ell$ 
@@ -329,8 +329,8 @@ Until now, we have investigated the relative velocity of the myosin and actin po
 whether it is motor who is moving with respect to the medium or rather the actin polymer who is being pushed through the medium.
 In order to find the dependency between individual velocities and relative velocity we start by taking the mean value of equations \eqref{eq:eom_M} and \eqref{eq:eom_A}
 \begin{align}
-\gamma_\text{M} \langle v_\text{M} \rangle &= \frac{ \langle \rmd x_\text{M} \rangle }{\rmd t} = \langle F_\text{r} \rangle + F_\text{load} , \label{pre_velocity_M} \\
-\gamma_\text{A} \langle v_\text{A} \rangle &= \frac{ \langle \rmd x_\text{A} \rangle }{\rmd t} = -\langle F_\text{r} \rangle , \label{pre_velocity_A}
+\gamma_\text{M} \langle v_\text{M} \rangle &= \frac{ \langle \rmd x_\text{M} \rangle }{\rmd t} = \langle F_\text{r} \rangle + F_\text{load} , \label{eq:pre_velocity_M} \\
+\gamma_\text{A} \langle v_\text{A} \rangle &= \frac{ \langle \rmd x_\text{A} \rangle }{\rmd t} = -\langle F_\text{r} \rangle , \label{eq:pre_velocity_A}
 \end{align}
 where $F_\text{r}$ denote ratchet force, 
 $F_\text{r} = - \nabla_\text{M} V_t( x_\text{M} - x_\text{A} ) = \nabla_\text{A} V_t(x_\text{M} - x_\text{A} )$. 
@@ -343,9 +343,9 @@ Hence, the relative velocity in terms of the mean ratchet force is given by
 which yields to individual velocities in terms of the mean velocity and load 
 \begin{align}
 \langle v_\text{M} \rangle &= \frac{1}{ \gamma_\text{A} + \gamma_\text{M} } \left( \gamma_\text{A} \langle v \rangle + F_\text{load} \right) ,
-\label{velocity_M} \\
+\label{eq:velocity_M} \\
 \langle v_\text{A} \rangle &= -\frac{1}{ \gamma_\text{A} + \gamma_\text{M} } \left( \gamma_\text{M} \langle v \rangle - F_\text{load} \right) .
-\label{velocity_A}
+\label{eq:velocity_A}
 \end{align}
 Note, that for the load equal the stall force, both velocities are equal and non-zero.
 This is related to the fact that the full system is moving with respect to the liquid, as can be seen from the mean velocity of the geometric center 
@@ -359,7 +359,7 @@ which is proportional to both load and relative velocity and is zero only when $
 
 The dependency of individual velocities on the load is show in figure~\ref{fig:ind_v}, 
 where we observe that for relatively small loads, the motor and actin filament are moving together, because the coupling by the ratchet interaction proves to be dominant. 
-This can be explained by linear dependency of equations \eqref{velocity_M} and \eqref{velocity_A} on the load, 
+This can be explained by linear dependency of equations \eqref{eq:velocity_M} and \eqref{eq:velocity_A} on the load, 
 along with the fact that for small loads the mean relative velocity is as well linear in the load, see figure~\ref{fig:F_v}. 
 The inset of figure~\ref{fig:ind_v} then depicts the velocities for very small loads.
 \begin{figure}[t]
@@ -376,11 +376,11 @@ Since the load is only applied to the motor, for very high loads, the motor will
 Consequently, the actin's mean velocity will stop increase and approaches zero for larger loads 
 while the myosin's mean velocity go to $F_\text{load}/\gamma_\text{M}$ as can be seen in figure~\ref{fig:ind_v}. 
 As well the relative velocity $\langle v \rangle$ will be equal to the motor's velocity $\langle v_M \rangle$ in that case, 
-cf. equations~\eqref{velocity_M} and~\eqref{velocity_A}.
+cf. equations~\eqref{eq:velocity_M} and~\eqref{eq:velocity_A}.
 This is in good agreement with the figure~\ref{fig:F_v}.
 
 \subsection{Ratchet force} 
-One can interpret the nonlinear force-velocity relation for the myosin \eqref{pre_velocity_M} as balance between the load, drag force and the force caused by the ratchet interaction, 
+One can interpret the nonlinear force-velocity relation for the myosin \eqref{eq:pre_velocity_M} as balance between the load, drag force and the force caused by the ratchet interaction, 
 that intrinsically depends on the load. 
 Without the ratchet interaction, the motion of the myosin would satisfy $ \gamma_\text{M}\langle v\rangle = F_\text{load}$. 
 The discrepancy in this relation, up to a pre-factor, equals the mean force exerted via the flashing ratchet $\langle F_\text{r}\rangle$ 
@@ -417,11 +417,13 @@ which is in good agreement with the theoretical prediction \eqref{eq:ratchet_vs_
 
 \subsection{Tension in the motor}
 
-The force-velocity relation can also be exploited to derive the tension in the motor. Since both the load and ratchet force are directly applied to the motor, the tension can be derived from equations (\ref{pre_velocity_M}),(\ref{pre_velocity_A}), (\ref{velocity_M}) and (\ref{velocity_A}).
+The force-velocity relation can also be exploited to derive the tension in the motor. 
+Since both the load and ratchet force are directly applied to the motor, the tension can be derived from equations \eqref{eq:pre_velocity_M}, \eqref{eq:pre_velocity_A}, \eqref{eq:velocity_M} and \eqref{eq:velocity_A}.
 \begin{align}
-\langle F_\text{r} \rangle - F_\text{load} &= - \gamma_\text{M} \langle v_\text{M} \rangle - 2\gamma_\text{A} \langle v_\text{A} \rangle \nonumber\\
- &= \frac{\gamma_\text{A}\gamma_\text{M}}{\gamma_\text{A}+\gamma_\text{M}}\langle v\rangle - \left(1 + \frac{\gamma_\text{A}}{\gamma_\text{A}+\gamma_\text{M}} \right) F_\text{load} \nonumber
- \label{tension}
+\langle F_\text{r} \rangle - F_\text{load} 
+&= - \gamma_\text{M} \langle v_\text{M} \rangle - 2\gamma_\text{A} \langle v_\text{A} \rangle \nonumber \\
+&= \frac{\gamma_\text{A}\gamma_\text{M}}{\gamma_\text{A}+\gamma_\text{M}}\langle v\rangle - \left(1 + \frac{\gamma_\text{A}}{\gamma_\text{A}+\gamma_\text{M}} \right) F_\text{load}
+\label{eq:tension}
 \end{align}
 
 
@@ -474,10 +476,10 @@ Thus the total chemical energy consists of two parts ${\mathcal Q}^\text{chem} =
 \begin{align}
 {\mathcal Q}_\text{in}^\text{chem} 
 &= \sum_{t_\text{unbind} \leq t_\text{fin} } \left[ \Delta E + (c-1) V_r(x_{t_\text{unbind}}) \right] , 
-\label{q_in} \\
+\label{eq:q_in} \\
 {\mathcal Q}_\text{out}^\text{chem} 
 &= -\sum_{t_\text{bind} \leq t_\text{fin} } \left[ \Delta E + (c-1) V_r(x_{t_\text{bind}}) \right] 
-\label{q_out}
+\label{eq:q_out}
 \end{align}
 where we sum over all jump times $t_\text{bind}$($t_\text{unbind}$) in the given ``direction''. 
 $t_\text{fin}$ denotes the duration of the process. 
@@ -567,18 +569,19 @@ Hence we can assume that the means of the quantities (\ref{q_in}) and (\ref{q_ou
 =& \rho^{eq}_1 k_d T\left[ \Delta E - (1-c)\langle V_r(x) \rangle_{s=1} \right] \\
 =& \frac{k_a k_d}{k_a + k_d}T\left[\Delta E - (1-c)\langle V_r(x) \rangle_{s=1} \right] 
 \end{aligned}
-\label{Q_in} \\
+\label{eq:mean_q_in} \\
 \begin{aligned}[b]
 \langle \mathcal Q_\text{out} \rangle 
 =& -\rho^{eq}_0 k_a T\left[ \Delta E - (1-c)\langle V_r(x) \rangle_{s=0} \right] \\
 =& -\frac{k_a k_d}{k_a + k_d} T\left[ \Delta E - (1-c)\langle V_r(x) \rangle_{s=0} \right] 
 \end{aligned}
-\label{Q_out}
+\label{eq:mean_q_out}
 \end{gather}
 where $\langle \cdot \rangle_{s}$ stands for an average over the steady state distribution in a given state $s$. 
 This will give us an expression for the chemical efficiency.
 \begin{equation}
-\eta = \frac{ (1-c) \left( \langle V_r \rangle_{s=0} - \langle V_r \rangle_{s=1} \right) }{ \Delta E - (1-c) \langle V_r \rangle_{s=1} } \label{eta}
+\eta = \frac{ (1-c) \left( \langle V_r \rangle_{s=0} - \langle V_r \rangle_{s=1} \right) }{ \Delta E - (1-c) \langle V_r \rangle_{s=1} } 
+\label{eq:eta}
 \end{equation}
 From this, we can understand the chemical energy balance, shown in figure \ref{fig:chem}, by looking at the difference of where a motor head is typically positioned in the potential energy landscape when it is in the attached or detached state. 
 These distributions are computed by collecting the positions of the heads over all times that the head was in the attached/detached state. 
@@ -644,22 +647,22 @@ In the next section we will investigate the behavior of $\eta$ for large loads a
 In this section we will show that the chemical cycle must extract energy from the ratchet system with one head and for large load forces, i.e. the chemical efficiency $\eta$ must be negative. 
 We will do this by calculating the perturbative corrections to the probability density of the position of the motor with respect to the actin filament, both in the attached and detached state. 
 For this we assume that the diffusive relaxation time is much shorter than the typical time between jumps in the chemical state of the heads. 
-This will allow us to use steady state distributions to calculate the expected values of the potential energy in equation \eqref{eta}.
+This will allow us to use steady state distributions to calculate the expected values of the potential energy in equation \eqref{eq:eta}.
 We start with the Fokker-Planck equation for steady states, i.e. $\partial_t \rho = 0$.
 \begin{equation}
 \frac{1}{\gamma} \partial_x \left[ \left( F - \partial_x V_r(x) \right) \rho(x) - k_B T \partial_x \rho(x) \right] = 0
-\label{FP_ss}
+\label{eq:FP_ss}
 \end{equation}
 where $V$ is the ratchet potential in a given state and F is the constant load force. 
-As we want to calculate perturbations for large loads we will rewrite equation \eqref{FP_ss} so that we can use $\epsilon = \frac{1}{F}$ as the perturbation.
+As we want to calculate perturbations for large loads we will rewrite equation \eqref{eq:FP_ss} so that we can use $\epsilon = \frac{1}{F}$ as the perturbation.
 \begin{equation}
 \partial_x \left[ \rho(x) - \frac{1}{F} \left( \partial_x V_r(x) \rho(x) + k_B T \partial_x \rho(x) \right) \right] = 0
-\label{FP_ss_pert}
+\label{eq:FP_ss_pert}
 \end{equation}
 For infinitely large loads the steady state distribution is flat, i.e. $\rho_0 = \frac{1}{d}$, which will be the zeroth order solution. 
 Since this will be the case in both the attached and detached state, it will yield the same expected values of $V$ and therefore $\eta$ must be equal to zero.
 The first order solution will be of the form $\rho_1 = \rho_0 + \delta\rho_1$. 
-When inserted into \eqref{FP_ss_pert} and only keeping terms up to first order in $\frac{1}{F}$, we get
+When inserted into \eqref{eq:FP_ss_pert} and only keeping terms up to first order in $\frac{1}{F}$, we get
 \begin{equation*}
 \partial_x \left[ \delta \rho_1 - \frac{1}{F} \partial_x V_r(x) \rho_0 \right] = 0
 \end{equation*}
@@ -678,7 +681,7 @@ However, this first order correction will not contribute to calculations of $\la
 \end{align*}
 where we used integration by parts and the fact that $V_r(x)$ is periodic.
 Consequently, we need to calculate the second order correction $\delta\rho_2$. 
-Now by inserting $\rho_2 = \rho_1 + \delta\rho_2$ in \eqref{FP_ss_pert} and only keeping up to second order in $\frac{1}{F}$, we find
+Now by inserting $\rho_2 = \rho_1 + \delta\rho_2$ in \eqref{eq:FP_ss_pert} and only keeping up to second order in $\frac{1}{F}$, we find
 \begin{multline*}
 \partial_x \left[ \delta\rho_2 - \frac{1}{F} \partial_x V_r \, \delta\rho_1 - \frac{k_B T}{F} \partial_x \delta\rho_1 \right] \\
 = \partial_x \left[ \delta\rho_2 - \frac{1}{ d F^2 } \left(\partial_x V_r\right)^2 - \frac{k_B T}{dF^2} \partial_x^2 V_r \right] 
@@ -731,7 +734,7 @@ With the second order correction we can now calculate the expected value of the 
 &- \frac{1}{d^2 F^2} \int_0^d V_r(x) \; \rmd x \int_0^d \left( \partial_y V_r \right)^2 \; \rmd y \\
 &- \frac{k_B T}{d F^2} \int_0^d V_r(x) \, \partial_x^2 V_r \; \rmd x
 \end{align*}
-The first two terms will cancel each other and after carrying out the integral for the third term, with $V_r(x)$ given by \eqref{rat_pot}, one finds 
+The first two terms will cancel each other and after carrying out the integral for the third term, with $V_r(x)$ given by \eqref{eq:ratchet_potential}, one finds 
 \begin{equation}
 \langle V_r \rangle_{ \delta\rho_2, s=1} = \frac{k_B T}{F^2} \frac{V^2}{a \left(1-a\right) d^2 }
 \end{equation}
@@ -755,7 +758,7 @@ Also note that in the expression for the chemical efficiency, the ratio between 
 Indeed for large load on the motor, the efficiency will go to zero as can be seen from the zeroth order solution.
 \par
 In addition we can compute the current using the obtained densities. 
-The current is taken from the Fokker-Planck equation \eqref{FP_ss}.
+The current is taken from the Fokker-Planck equation \eqref{eq:FP_ss}.
 \begin{equation}
 \mathcal{J} = \frac{1}{\gamma} \left[ \left( F - \partial_x V_r \right) \rho - k_B T \partial_x \rho \right] 
 \end{equation}
@@ -793,7 +796,7 @@ When the detach rate is increased, the configuration where fewer heads of the mo
 
 
 Another trait of the chemical efficiency curves are the local minima's around $F_{load}=0$. 
-The understand this we must again look at equation \eqref{eta} which is determined by the ratchet potential averaged with the heads' distribution in the attached and detached state. 
+The understand this we must again look at equation \eqref{eq:eta} which is determined by the ratchet potential averaged with the heads' distribution in the attached and detached state. 
 For a one headed motor, these distribution will both be peaked around the minimum of the ratchet potential. 
 In fact, the distributions will be given by the Boltzmann distribution.
 \begin{equation}
@@ -874,7 +877,7 @@ where $\text{A1}$ and $\text{A2}$ denote the two different actin filaments and $
 Note that the mean velocity of the motor is proportional to the mean center of mass velocity of both actin filaments. 
 \begin{equation}
 \langle v_\text{M} \rangle = \frac{\gamma_\text{A}}{\gamma_\text{M}} \left(\langle v_\text{A1} \rangle + \langle v_\text{A2} \rangle \right) 
-\label{tug_F_motor}
+\label{eq:tug_F_motor}
 \end{equation}
 Because of the anti-parallel alignment of the filaments, $F_{r1}$ and $F_{r2}$ are equal but opposite on average. 
 Therefore the motor will not experience any mean displacement.  
@@ -883,7 +886,7 @@ Although the motor doesn't experience an external load and it will not have a ne
 \begin{equation*}
 \langle F_\text{r1}\rangle - \langle F_\text{r2}\rangle = -\gamma_\text{A}\left(\langle v_\text{A1}\rangle - \langle v_\text{A2}\rangle \right) - 2F_\text{load}
 \end{equation*}
-The tension on the motor is shown in figure \ref{fig:tug_F}, where it is compared to the tension when the load is applied on the motor instead of the filaments, given by \eqref{tension}. 
+The tension on the motor is shown in figure \ref{fig:tug_F}, where it is compared to the tension when the load is applied on the motor instead of the filaments, given by \eqref{eq:tension}. 
 \begin{align*}
 \langle F_\text{r} \rangle - F_\text{load} 
 &= - \gamma_\text{M} \langle v_\text{M} \rangle - 2\gamma_\text{A} \langle v_\text{A} \rangle \\
