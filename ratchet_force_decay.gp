@@ -1,6 +1,6 @@
 #!/usr/bin/gnuplot
 set term pdfcairo enhanced linewidth 1.75 font ",14"
-set output "eff_frict_decay.pdf"
+set output "ratchet_force_decay.pdf"
 
 load "Data/my.pal"
 
