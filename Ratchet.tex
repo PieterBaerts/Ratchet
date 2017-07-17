@@ -485,7 +485,9 @@ where we sum over all jump times $t_\text{bind}$($t_\text{unbind}$) in the given
 $t_\text{fin}$ denotes the duration of the process. 
 
 \subsubsection{Load on the motor}
-Note that, when we use the equation of motion \eqref{eq:eom_M} the heat exchange with the surrounding \eqref{eq:heat_hb_M} can be rewritten as 
+If we restrict the discussion only to the simplest setup, i.e. single loaded myosin with single actin,  
+and we use the equation of motion \eqref{eq:eom_M}, 
+the heat exchange with the surrounding \eqref{eq:heat_hb_M} can be rewritten as 
 \begin{multline*}
 {\mathcal Q}_\text{M}^\text{hb} 
 = \int \rmd x_\text{M} \circ \left[ \nabla_\text{M} V_t - F_\text{load} \right] 
@@ -495,9 +497,10 @@ Note that, when we use the equation of motion \eqref{eq:eom_M} the heat exchange
 Similarly for the heat dissipated by actin's interaction with the environment we get 
 \[
 {\mathcal Q}_\text{A}^\text{hb} 
-= \int \rmd x_\text{A} \circ \nabla_\text{A} V_t . 
+= \int \rmd x_\text{A} \circ \nabla_\text{A} V_t , 
 \]
-Hence, the total energy balance equation \eqref{eq:energy_balance} simplifies to 
+thus the heat dissipated to heath bath can be expressed in terms of the work done by the ratchet potential and external load. 
+Consequently, the total energy balance equation \eqref{eq:energy_balance} simplifies to 
 \[
 \rmd E 
 = \rmd x_\text{M} \circ \nabla_\text{M} V_t  
