@@ -421,46 +421,58 @@ which is in good agreement with the theoretical prediction \eqref{eq:ratchet_vs_
 
 \section{Chemical efficiency}
 \label{sec:energie}
-In order to investigate the chemical efficiency 
-we first define the total energy of the full system as a sum of the ratchet interaction~\eqref{eq:ratchet_interaction}
+In previous years, a lot of effort was directed towards the assessment of the efficiency of molecular motors \cite{}. %TODO 
+Unfortunately, main focus of these works was biased towards the transport properties of the aforementioned motors. 
+However myosin II main role is in generating of the tension in the cytoskeletal network \cite{}. %TODO
+
+\subsection{First law of thermodynamics}
+We start our discussion from the energy balance on the level of individual trajectories \cite{Pesek2013},
+which can be symbolically summarized as 
+\begin{equation}
+\rmd E = \dbar {\mathcal Q}_\text{M}^\text{hb} + \dbar {\mathcal Q}_\text{A}^\text{hb} + \dbar {\mathcal W}^\text{ext}_\text{M} + \dbar {\mathcal Q}^\text{chem}, 
+\label{eq:energy_balance}
+\end{equation}
+where the energy of the full system consists of the interaction ratchet potential \eqref{eq:ratchet_interaction}
 and the energy stored in ATP (and its products), 
-\begin{equation*}
+\begin{equation}
 E( x_\text{M}, x_\text{A}, \{ \zeta_i \}) = V_t( x_\text{M} - x_\text{A} ) + \Delta E \sum\limits_{i=1}^N \chi( \zeta_i = c ) ,
-\end{equation*}
-where $\Delta E$ is the internal energy stored by a single ATP and $\chi$ is a characteristic function\footnote{
+\label{eq:internal_energy}
+\end{equation}
+where $\Delta E$ represents the actual internal energy stored by a single ATP and $\chi$ is a characteristic function\footnote{
 $\chi(\text{condition}) = 1$ if condition is fulfilled otherwise $0$.
 }.
-Over the time, this quantity fluctuate due to the diffusion of the myosin and actin filament and due to changes in internal state of individual heads.
-This leads to 
+
+The energy of the system is subjected to the change driven by the interaction with the environment, 
+which in case of the overdamped diffusion represents a heath bath 
+and thus every interaction is associated with a heat exchange \cite{Pesek2013}
 \begin{align}
-\rmd E 
-&= \rmd x_\text{M} \circ \nabla_\text{M} E  
-+ \rmd x_\text{A} \circ \nabla_\text{A} E 
-+ \sum\limits_{i=1}^N \rmd \zeta_i \; \partial_{\zeta_i} E  
-\nonumber \\
-&= \rmd x_\text{M} \circ \nabla_\text{M} V_t  
-+ \rmd x_\text{A} \circ \nabla_\text{A} V_t 
-+ \dbar {\mathcal Q}_\text{in} 
-+ \dbar {\mathcal Q}_\text{out} 
-\nonumber \\
-&= - \left( \dbar {\mathcal Q}_\text{M} + \dbar {\mathcal Q}_\text{A} \right) 
-+ \dbar {\mathcal Q}_{\text{in}} 
-+ \dbar {\mathcal Q}_{\text{out}}
-\end{align}
-where we identify the heat exerted to myosin and actin 
-\begin{gather*}
-{\mathcal Q}_\text{A} 
-= \int \rmd x_\text{A} \circ \left[ - \nabla_\text{A} V_t( x_\text{A}, x_\text{M} ) \right], \\
-{\mathcal Q}_\text{M} 
-= \int \rmd x_\text{M} \circ \left[ - \nabla_\text{M} V_t( x_\text{A}, x_\text{M} ) \right],
-\end{gather*}
-as well as the heat exchanged with the chemical cycle $\mathcal Q_\text{in}$ and $\mathcal Q_\text{out}$ defined as 
-\begin{gather}
-{\mathcal Q}_\text{in} = \sum_{t_\text{unbind} \leq T} \left[ \Delta E + (c-1) V_r(x_{t_\text{unbind}}) \right] , 
+{\mathcal Q}_\text{M}^\text{hb} 
+&= \int \rmd x_\text{M} \circ \left[ - \gamma_\text{M} \frac{\rmd x_\text{M} }{\rmd t} + \sqrt{ 2 k_B T \gamma_\text{M} } \, \frac{ \rmd W_\text{M} }{ \rmd t } \right] , 
+\label{eq:heat_hb_M} \\
+{\mathcal Q}_\text{A}^\text{hb} 
+&= \int \rmd x_\text{A} \circ \left[ - \gamma_\text{A} \frac{\rmd x_\text{A} }{\rmd t} + \sqrt{ 2 k_B T \gamma_\text{A} } \, \frac{ \rmd W_\text{A} }{ \rmd t } \right] ,
+\label{eq:heat_hb_A}
+\end{align} 
+where the first term is the dissipation of the energy due to the friction and the second is the energy gained by the thermal activity of the environment. 
+Note that those integrals are evaluated in the Stratonovich sense.
+And by the work caused by the external load 
+\[
+{\mathcal W}^\text{ext}_\text{M} = \int \rmd x_\text{M} \circ F_\text{load} = \Delta x_\text{M} F_\text{load}, 
+\]
+where we used the fact that the external load $F-\text{load}$ is constant. 
+
+The last term in the energy balance \eqref{eq:energy_balance} is the contribution from the chemical cycle. 
+The chemical cycle consists of binding an ATP, it's hydrolyses, release of phosphor and finally release of ADP, 
+the first part provides a chemical energy to the system stored in ATP and ADP while the later part is associated with dissipation of the remaining energy to surroundings. 
+Thus the total chemical energy consists of two parts ${\mathcal Q}^\text{chem} = {\mathcal Q}^\text{chem}_\text{in} + {\mathcal Q}^\text{chem}_\text{out}$,
+\begin{align}
+{\mathcal Q}_\text{in}^\text{chem} 
+&= \sum_{t_\text{unbind} \leq t_\text{fin} } \left[ \Delta E + (c-1) V_r(x_{t_\text{unbind}}) \right] , 
 \label{q_in} \\
-{\mathcal Q}_\text{out} = -\sum_{t_\text{bind} \leq T} \left[ \Delta E + (c-1) V_r(x_{t_\text{bind}}) \right] 
+{\mathcal Q}_\text{out}^\text{chem} 
+&= -\sum_{t_\text{bind} \leq t_\text{fin} } \left[ \Delta E + (c-1) V_r(x_{t_\text{bind}}) \right] 
 \label{q_out}
-\end{gather}
+\end{align}
 where we sum over all jump times $t_\text{bind}$($t_\text{unbind}$) in the given ``direction''. 
 $t_\text{fin}$ denotes the duration of the process. 
 
