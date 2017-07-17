@@ -417,6 +417,12 @@ which is in good agreement with the theoretical prediction \eqref{eq:ratchet_vs_
 
 \subsection{Tension in the motor}
 
+The force-velocity relation can also be exploited to derive the tension in the motor. Since both the load and ratchet force are directly applied to the motor, the tension can be derived from equations (\ref{pre_velocity_M}),(\ref{pre_velocity_A}), (\ref{velocity_M}) and (\ref{velocity_A}).
+\begin{align}
+\langle F_\text{r} \rangle - F_\text{load} &= - \gamma_\text{M} \langle v_\text{M} \rangle - 2\gamma_\text{A} \langle v_\text{A} \rangle \nonumber\\
+ &= \frac{\gamma_\text{A}\gamma_\text{M}}{\gamma_\text{A}+\gamma_\text{M}}\langle v\rangle - \left(1 + \frac{\gamma_\text{A}}{\gamma_\text{A}+\gamma_\text{M}} \right) F_\text{load} \nonumber
+ \label{tension}
+\end{align}
 
 
 \section{Chemical efficiency}
@@ -846,7 +852,6 @@ cease to pull on the filaments. Therefore mechanosensing will not occur spontane
 
 
 \subsection{Load on the actin filaments}
-
 In this setup the motor is again interacting with two anti-parallel actin filaments, however, now the filaments are directly subjected to an external load.
 This is illustrated in figure \ref{fig:tug_F_illustration}. 
 The motor is in the middle of this symmetric setup and will not move on average. 
@@ -868,20 +873,22 @@ where $\text{A1}$ and $\text{A2}$ denote the two different actin filaments and $
 
 Note that the mean velocity of the motor is proportional to the mean center of mass velocity of both actin filaments. 
 \begin{equation}
-\langle v_\text{M} \rangle = \frac{\gamma_\text{A}}{\gamma_\text{M}} \left(\langle v_\text{A1} \rangle + \langle v_\text{A2} \rangle \right) \label{tug_F_motor} \nonumber
+\langle v_\text{M} \rangle = \frac{\gamma_\text{A}}{\gamma_\text{M}} \left(\langle v_\text{A1} \rangle + \langle v_\text{A2} \rangle \right) 
+\label{tug_F_motor}
 \end{equation}
 Because of the anti-parallel alignment of the filaments, $F_{r1}$ and $F_{r2}$ are equal but opposite on average. 
 Therefore the motor will not experience any mean displacement.  
 
 Although the motor doesn't experience an external load and it will not have a net force on average, there will be a tension on the motor due to interaction with both actin filaments. This tension is given by
-\begin{equation}
-\langle F_\text{r1}\rangle - \langle F_\text{r2}\rangle = -\gamma_\text{A}\left(\langle v_\text{A1}\rangle - \langle v_\text{A2}\rangle \right) - 2F_\text{load} \nonumber
-\end{equation}
-The tension on the motor is shown in figure \ref{fig:tug_F}, where it is compared to the tension when the load is applied on the motor instead of the filaments, like in section \ref{sec:force-velocity}. There the tension can be derived from equations \eqref{pre_velocity_M},\eqref{pre_velocity_A}, \eqref{velocity_M} and \eqref{velocity_A}.
-\begin{align}
-\langle F_\text{r} \rangle - F_\text{load} &= - \gamma_\text{M} \langle v_\text{M} \rangle - 2\gamma_\text{A} \langle v_\text{A} \rangle \nonumber\\
- &= \frac{\gamma_\text{A}\gamma_\text{M}}{\gamma_\text{A}+\gamma_\text{M}}\langle v\rangle - \left(1 + \frac{\gamma_\text{A}}{\gamma_\text{A}+\gamma_\text{M}} \right) F_\text{load} \nonumber
-\end{align}
+\begin{equation*}
+\langle F_\text{r1}\rangle - \langle F_\text{r2}\rangle = -\gamma_\text{A}\left(\langle v_\text{A1}\rangle - \langle v_\text{A2}\rangle \right) - 2F_\text{load}
+\end{equation*}
+The tension on the motor is shown in figure \ref{fig:tug_F}, where it is compared to the tension when the load is applied on the motor instead of the filaments, given by \eqref{tension}. 
+\begin{align*}
+\langle F_\text{r} \rangle - F_\text{load} 
+&= - \gamma_\text{M} \langle v_\text{M} \rangle - 2\gamma_\text{A} \langle v_\text{A} \rangle \\
+&= \frac{\gamma_\text{A}\gamma_\text{M}}{\gamma_\text{A}+\gamma_\text{M}}\langle v\rangle - \left(1 + \frac{\gamma_\text{A}}{\gamma_\text{A}+\gamma_\text{M}} \right) F_\text{load}
+\end{align*}
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{tug_F}
