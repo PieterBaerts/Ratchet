@@ -1,4 +1,4 @@
-\documentclass[aps,pre,twocolumn,showpacs,showkeys,superscriptaddress]{revtex4-1}
+\documentclass[aps,pre,twocolumn,showpacs,showkeys,superscriptaddress,floatfix]{revtex4-1}
  %\pdfoutput=1 \input epsf
 
 \usepackage[utf8]{inputenc}
@@ -120,11 +120,12 @@ i.e. whether there is an ATP bounded or not to the myosin head.
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{ratchet_illustration}
-\caption{In this illustration the basic setup is depicted.  
+\caption{
+\label{fig:ratchet setup}
+In this illustration the basic setup is depicted.  
 The backbone of the myosin motor is shown with four heads that are equidistantly spaced with $d$ denoting their respective distance. 
 The load $F_\text{load}$ is applied only on myosin and the actin filament is freely diffusing. 
 } 
-\label{fig:ratchet setup}
 \end{figure}
 
 The dynamics of positions is described by coupled overdamped Langevin equations 
@@ -173,13 +174,14 @@ and skewness parameter $a \in [0,1]$.
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{energy}
-\caption{Energy landscape for the myosin's head.
+\caption{
+\label{fig:energy}
+Energy landscape for the myosin's head.
 The basic interaction with actin polymer is via Ratchet potential with the potential height $V$, period $\ell$ and skewness parameter $a$.
 The transition between ATP \emph{bound} and \emph{unbound} state is govern by rates $k_\text{bind}$, $k_\text{unbind}$ 
 and is associated with the chemical energy $\Delta E$.
 In the \emph{bound} state the ratchet potential is scaled down by factor $c$. 
 }
-\label{fig:energy}
 \end{figure}
 
 The dynamics of internal state of heads is govern by continuous time Markov process. 
@@ -213,9 +215,10 @@ Some of them were taken from the literature while others were fitted to give a r
 The friction coefficients were calculated with Stokes' law \cite{Broersma1960,Broersma1981}, using the known dimensions of the molecules\footnote{The myosin II and actin filament molecules were approximated in this calculation by long, thin cylinders \cite{}.} and the viscosity of the extracellular medium \cite{}. %TODO
 \begin{table}[t]
 \centering
+\begin{ruledtabular}
 \begin{tabular}{lcdcc}
 Parameter & Symbol & \multicolumn{1}{c}{Value} & Units & Source\\
-\hline\hline
+\hline
 Thermal energy& $k_B T$ & 4.28 & pN nm & --- \\
 Number of heads& $N$ & 4 & --- & \cite{pollard1982structure}\\
 Head's spacing& $l$ & 15 & nm & \cite{pollard1982structure}\\
@@ -228,8 +231,11 @@ Potential scaling& $c$ & 0.3 & --- & \cite{Nie2014, nie2014conformational}\\
 Motor friction& $\gamma_{m}$ & 0.66 & pN $\upmu$s nm$^{-1}$ & \cite{Broersma1960,Broersma1981} \\ %TODO
 Actin friction& $\gamma_{a}$ & 0.97 & pN $\upmu$s nm$^{-1}$ & \cite{Broersma1960,Broersma1981} \\ %TODO
 \end{tabular}
-\caption{Table of all parameter values and a reference to their source.}
+\end{ruledtabular}
+\caption{
 \label{tab:parameters}
+Table of all parameter values and a reference to their source.
+}
 \end{table}
 
 \subsection{Other setups}
@@ -246,8 +252,10 @@ This setup is shown in figure \ref{fig:tug_F_illustration}.
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{tug_F_illustration}
-\caption{Setup of a motor interacting with two actin filaments that experience equal but opposite loads.}
+\caption{
 \label{fig:tug_F_illustration}
+Setup of a motor interacting with two actin filaments that experience equal but opposite loads.
+}
 \end{figure}
 
 This means that we have now two filaments, denoted by subscript ${\text{A}_1}$ and ${\text{A}_2}$ respectively,
@@ -311,8 +319,10 @@ This setup is sketched in figure \ref{fig:tug}.
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{tug}
-\caption{Illustration of a motor pulling on two actin filament that are each connect to a wall by a spring.}
+\caption{
 \label{fig:tug}
+Illustration of a motor pulling on two actin filament that are each connect to a wall by a spring.
+}
 \end{figure}
 
 The equations of motion are then just a modification of \eqref{eq:eom_two_actins}  
@@ -353,12 +363,13 @@ on the other hand $c=0$ corresponds to the biggest discrepancy between those two
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{c_v_4heads}
-\caption{Mean velocity $\langle v \rangle$ of the motor relative to the actin filament for $c \in (0,1)$.
+\caption{
+\label{fig:c_v}
+Mean velocity $\langle v \rangle$ of the motor relative to the actin filament for $c \in (0,1)$.
 The mean velocity rapidly decreases towards the $0$ as we approach equilibrium, $c \to 1$.  
 Green line correspond to the fit $ \left\langle v \right\rangle \propto \exp ( - \frac{\alpha}{1-c} ) $.
 %The dependency is guessed, unfortunately I don't have any argument to support it. 
 } 
-\label{fig:c_v}
 \end{figure}
 
 
@@ -371,10 +382,11 @@ Weak interaction means that the system is trapped for shorter times in local min
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{v_k}
-\caption{Mean velocity of the motor relative to the actin filament $\langle v \rangle$ for varying $k_\text{unbind}$.
+\caption{
+\label{fig:v_k} 
+Mean velocity of the motor relative to the actin filament $\langle v \rangle$ for varying $k_\text{unbind}$.
 The velocity decreases to $0$ for large discrepancies between binding and unbinding rate and reaches maximum when they are comparable.
 }
-\label{fig:v_k} 
 \end{figure}
 
 
@@ -394,10 +406,11 @@ which means that the motor is more submissive to the external load.
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{F_v}
-\caption{Mean velocity $\langle v \rangle$ of the motor as a function of the load force $F_\text{load}$ for $c=0.3$ and for various binding rate $k_\text{bind}$.
+\caption{
+\label{fig:F_v} 
+Mean velocity $\langle v \rangle$ of the motor as a function of the load force $F_\text{load}$ for $c=0.3$ and for various binding rate $k_\text{bind}$.
 Solid black line correspond to a situation when there will be no interaction with the actin filament, i.e. $\langle v \rangle = F_\text{load} / \gamma_\text{M}$. 
 }
-\label{fig:F_v} 
 \end{figure}
 
 \subsection{Stall force}
@@ -421,19 +434,21 @@ and thus the stall force reaches zero as well, $F_\text{stall} \to 0$.
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{F_v_zoom}
-\caption{Mean velocity of the motor $\langle v \rangle$ with a small load force $F_\text{load}$ applied in the direction opposing the movement for different binding rates $k_\text{bind}$.
+\caption{
+\label{fig:F_v_zoom} 
+Mean velocity of the motor $\langle v \rangle$ with a small load force $F_\text{load}$ applied in the direction opposing the movement for different binding rates $k_\text{bind}$.
 Intersections with the $x$ axis correspond to stall forces $F_\text{stall}$ for given detach rates. 
 We can see that with increasing $k_\text{bind}/k_\text{unbind}$ ratio the slope increases as well as the full curve shifts in the low force region, causing a persistent decrease in stall force.  
 }
-\label{fig:F_v_zoom} 
 \end{figure}
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{k_Fstall}
-\caption{Stall force $F_\text{stall}$ for different detach rates $k_\text{d}$.
+\caption{
+\label{fig:k_Fstall} 
+Stall force $F_\text{stall}$ for different detach rates $k_\text{d}$.
 We observe power-law decay $F_\text{stall} \propto k_\text{d}^{-\alpha}$ with exponent $\alpha = 1.002 \pm 0.014$. 
 }
-\label{fig:k_Fstall} 
 \end{figure}
 
 \subsection{Velocity with respect to medium}
@@ -477,11 +492,12 @@ The inset of figure~\ref{fig:ind_v} then depicts the velocities for very small l
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{individual_velocities}
-\caption{Mean velocities of the motor and actin filament with respect to an inertial frame of reference for $k_d/k_a = 2$.
+\caption{
+\label{fig:ind_v} 
+Mean velocities of the motor and actin filament with respect to an inertial frame of reference for $k_d/k_a = 2$.
 We observe that only the myosin is moving while the velocity of the dragged actin filament decreases as we increase the load on the myosin motor.
 Inset: Zoomed to the linear regime around the origin.
 }
-\label{fig:ind_v} 
 \end{figure}
 
 Since the load is only applied to the motor, for very high loads, the motor will start slipping over the ratchet potential along the actin filament. 
@@ -513,18 +529,21 @@ which is shown in figure \ref{fig:ratchet_force_decay}.
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{ratchet_force}
-\caption{Effective friction force from the ratchet interaction depending on the load force on the motor.}
+\caption{
 \label{fig:ratchet_force}
+Effective friction force from the ratchet interaction depending on the load force on the motor.
+}
 \end{figure}
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{ratchet_force_decay}
-\caption{The ratchet force, depending on the load, is shown in a logarithmic plot. 
+\caption{
+\label{fig:ratchet_force_decay}
+The ratchet force, depending on the load, is shown in a logarithmic plot. 
 We can see that the ratchet force asymptotically decays according to the power law $F_\text{eff} \propto F_\text{load}^{-\alpha}$, 
 with exponent determined from the fit to be $\alpha = 0.9990 \pm 0.0047$, 
 which is in good agreement with the theoretical prediction \eqref{eq:ratchet_vs_load}.
 }
-\label{fig:ratchet_force_decay}
 \end{figure}
 
 \subsection{Tension in the motor}
@@ -565,8 +584,10 @@ The tension on the motor is shown in figure \ref{fig:tug_F}, where it is compare
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{tug_F}
-\caption{Analogue to figure~\ref{fig:ratchet_force}, now with two filaments instead of one and an external force in the filaments instead of the motor.}
+\caption{
 \label{fig:tug_F}
+Analogue to figure~\ref{fig:ratchet_force}, now with two filaments instead of one and an external force in the filaments instead of the motor.
+}
 \end{figure}
 For small loads, the tension in both cases is equal to twice the load force. As we have seen in section \ref{sec:force-velocity}, the ratchet force tends to completely oppose the load. Therefore,  
 
@@ -576,8 +597,10 @@ The empirical velocity of the motor is plotted in figure \ref{fig:tug_F_motor}.
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{tug_F_motor}
-\caption{Mean velocity of frustrated motor in between the two filaments under load.} %TODO
+\caption{
 \label{fig:tug_F_motor}
+Mean velocity of frustrated motor in between the two filaments under load.
+} %TODO
 \end{figure}
 
 \section{Mechanosensing}
@@ -586,12 +609,13 @@ This quantity is plotted in figure \ref{fig:tug_k} for different stiffnesses $k$
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{tug_k}
-\caption{Mean force $F_\text{fil}$ generated by the motor on one of the filaments for varying spring stiffness $k_\text{sp}$.
+\caption{
+\label{fig:tug_k}
+Mean force $F_\text{fil}$ generated by the motor on one of the filaments for varying spring stiffness $k_\text{sp}$.
 Lower stiffness enables the polymers to find a local minimum of the ratchet potential more easily, 
 thus the exerted force is lower as the contribution of ratchet potential is minimized. 
 On the other hand, high stiffness leads to saturation of the exerted force as the main contribution is given by ratchet potential. 
 }
-\label{fig:tug_k}
 \end{figure}
 The force with which the motor pulls on the filament depends strongly on this elasticity $k$ and saturates for large $k$. 
 This suggests that the motor is able to sense its environment's mechanical properties.
@@ -806,11 +830,12 @@ This is shown in figure \ref{fig:chem}.
 \begin{figure}[b]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{chemical_cycle}
-\caption{Chemical efficiency $\eta$ as a function of load force $F_\text{load}$.
+\caption{
+\label{fig:chem}
+Chemical efficiency $\eta$ as a function of load force $F_\text{load}$.
 By increasing the $k_d/k_a$ ratio the local maximums of chemical efficiencies are getting closer origin,
 and their fluctuations decrease. 
 }
-\label{fig:chem}
 \end{figure}
 
 After each jump in the chemical state of a motor head, the potential in which the whole motor diffuses is altered and a new relaxation process takes place. 
@@ -851,12 +876,13 @@ As argued, since the relaxation is fast, compared to the chemical rates, this ap
 \centering
 \includegraphics[width=.45\textwidth,height=!]{pos_distr_d_F}
 }
-\caption{Spatial distributions $\rho$ of individual heads of the motor with respect to the ratchet potential (denoted by dashed black line) for different load forces $F_\text{load}$.
+\caption{
+\label{fig:pos_distr}
+Spatial distributions $\rho$ of individual heads of the motor with respect to the ratchet potential (denoted by dashed black line) for different load forces $F_\text{load}$.
 The spatial distribution is taken as the average over all heads at the given motor in a given internal state.
 We observe that heads in the attachable state follow the potential closely while those in the detached state do not. 
 Also by increasing the external load, all distributions universally become flat. 
 }
-\label{fig:pos_distr}
 \end{figure*}
 In the case without an external load, $F_{load}=0$, the motor head is very unlikely to cross the potential barrier in the attached state. 
 The maximum of the distribution is close to the minimum of the potential. 
@@ -875,10 +901,11 @@ This quantity is plotted in figure \ref{fig:chem_energy_distr}
 \begin{figure}[b]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{chem_energy_distr_all_F}
-\caption{Density of the nett energy output \eqref{} produced by the chemical cycle for various load forces $F_\text{load}$. %TODO
+\caption{
+\label{fig:chem_energy_distr}
+Density of the nett energy output \eqref{} produced by the chemical cycle for various load forces $F_\text{load}$. %TODO
 We observe that the optimal output is achieved when there is the biggest discrepancy between spatial distributions, see figure~\ref{fig:pos_distr}. 
 }
-\label{fig:chem_energy_distr}
 \end{figure}
 
 
@@ -903,9 +930,9 @@ In the next section we will investigate the behavior of $\eta$ for large loads a
 \item References
 \end{itemize}
 
-\begin{acknowledgements}
+\begin{acknowledgments}
 Christian Maes
-\end{acknowledgements}
+\end{acknowledgments}
 
 \appendix* 
 \section{Perturbative treatment}
@@ -985,10 +1012,11 @@ This trend can already be seen in the empirical density obtained from simulation
 \subfigure[Negative load]{
 \includegraphics[width=0.45\textwidth,height=!]{pos_multiplot_m}
 }
-\caption{Side by side comparison of empirical density profiles in both attachable (a - blue colored) and detached (d - red colored) state for different loads.
+\caption{
+\label{fig:pos_multiplot}
+Side by side comparison of empirical density profiles in both attachable (a - blue colored) and detached (d - red colored) state for different loads.
 Profiles sharing the same load magnitude $|F_\text{load}|$ are denoted by the symbols.
 }
-\label{fig:pos_multiplot}
 \end{figure*}
 
 
@@ -1046,13 +1074,14 @@ This comparison is made in figure \ref{fig:chem_eff_1head}.
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{chemical_cycle_1head}
-\caption{Chemical efficiency of a motor under load. 
+\caption{
+\label{fig:chem_eff_1head}
+Chemical efficiency of a motor under load. 
 Comparison of one (red triangles), four (blue stars), sixteen (green circles) headed motors.
 We observe that with increasing number of heads the efficiency \eqref{eq:efficiency} distribution 
 gets broader and it's variance decreases.
 Moreover, for sixteen heads it became centered without two local maximas. 
 }
-\label{fig:chem_eff_1head}
 \end{figure}
 The behavior for large load forces seems to be exactly the same.
 Since $\eta$ is a ratio of chemical energies exchanged through the motor heads, this means that for large enough forces a head of the four headed motor no longer feels the presence of the other heads.
