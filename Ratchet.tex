@@ -233,44 +233,79 @@ Actin friction& $\gamma_{a}$ & 0.97 & pN $\upmu$s nm$^{-1}$ & \cite{Broersma1960
 \end{table}
 
 \subsection{Other setups}
+While the previous setup is the most studied \cite{}, %TODO
+it's aim is to characterize the transport induced by molecular motors.
+However, recent experiments show that myosin II role is mainly for cross-linking the cytoskeleton and consequently producing an active tension inside the network \cite{}. %TODO
+Here we present two natural extensions of the previous setup suitable for investigation of the behavior of the molecular motor inside of the network.
+
 \subsubsection{External load on filaments}
 \label{sec:load_on_fil}
-In this setup the motor is interacting with two anti-parallel actin filaments. 
-However, now the filaments are directly subjected to an external load.
-This is illustrated in figure \ref{fig:tug_F_illustration}. 
-The equations of motion are given by
-
-\begin{align*}
-&\begin{multlined}[b]
-\rmd x_\text{M} = \\
-- \frac{1}{\gamma_\text{M}} \left[ \nabla_\text{M} V_t(x_\text{M}(t) - x_\text{A1}(t)) + \nabla_\text{M} V_t(x_\text{M}(t) - x_\text{A2}(t)) \right] \; \rmd t 
-\\ 
-+ \sqrt{ \frac{2 k_B T}{\gamma_\text{M}} } \; \rmd W_\text{M} ,
-\end{multlined}\\
-&\begin{multlined}[b][.42\textwidth]
-\rmd x_\text{A1} = 
-\frac{1}{\gamma_\text{A}} \left[ - \nabla_\text{A1} V_t(x_\text{M}(t) - x_\text{A1}(t)) + F_\text{load} \right] \; \rmd t 
-\\
-+ \sqrt{ \frac{2 k_B T}{\gamma_\text{A}} } \; \rmd W_\text{A1} ,
-\end{multlined}\\
-&\begin{multlined}[b][.42\textwidth]
-\rmd x_\text{A2} = 
-\frac{1}{\gamma_\text{A}} \left[ - \nabla_\text{A1} V_t(x_\text{M}(t) - x_\text{A2}(t)) - F_\text{load} \right] \; \rmd t 
-\\
-+ \sqrt{ \frac{2 k_B T}{\gamma_\text{A}} } \; \rmd W_\text{A2} .
-\end{multlined}
-\end{align*}
-
-\begin{figure}[b]
+The first extension is that the motor is interacting with two, rather then one, anti-parallel actin filaments. 
+Consequently, the external load is now applied directly at filaments instead directly at the motor.
+This setup is shown in figure \ref{fig:tug_F_illustration}. 
+\begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{tug_F_illustration}
 \caption{Setup of a motor interacting with two actin filaments that experience equal but opposite loads.}
 \label{fig:tug_F_illustration}
 \end{figure}
 
-\subsubsection{Elastic environment}
+This means that we have now two filaments, denoted by subscript $\text{A1}$ and $\text{A2}$ respectively,
+subjected to free diffusion and external load $F_\text{load}$
+which are interacting with the myosin II motor via the ratchet potential~\eqref{eq:ratchet_interaction}. 
+This lead to equations of motion 
+\begin{equation}
+\begin{gathered}
+\begin{multlined}[b][.45\textwidth]
+\rmd x_\text{M} = 
+- \frac{1}{\gamma_\text{M}} \bigl[ \nabla_\text{M} V_t(x_\text{M}(t) - x_\text{A1}(t)) 
+\\
++ \nabla_\text{M} V_t(x_\text{A2}(t) - x_\text{M}(t)) \bigr] \; \rmd t 
++ \sqrt{ \frac{2 k_B T}{\gamma_\text{M}} } \; \rmd W_\text{M} ,
+\end{multlined}\\
+\begin{multlined}[b][.45\textwidth]
+\rmd x_\text{A1} = 
+\frac{1}{\gamma_\text{A}} \left[ - \nabla_\text{A1} V_t(x_\text{M}(t) - x_\text{A1}(t)) + F_\text{load} \right] \; \rmd t 
+\\
++ \sqrt{ \frac{2 k_B T}{\gamma_\text{A}} } \; \rmd W_\text{A1} ,
+\end{multlined}\\
+\begin{multlined}[b][.45\textwidth]
+\rmd x_\text{A2} = 
+\frac{1}{\gamma_\text{A}} \left[ - \nabla_\text{A1} V_t(x_\text{A2}(t) - x_\text{M}(t)) - F_\text{load} \right] \; \rmd t 
+\\
++ \sqrt{ \frac{2 k_B T}{\gamma_\text{A}} } \; \rmd W_\text{A2} ,
+\end{multlined}
+\end{gathered}
+\label{eq:eom_two_actins}
+\end{equation}
+where the anti-alignment of polymers in substitution of $-x$ instead of $x$ for the second polymer in the argument of the ratchet potential~\eqref{eq:ratchet_interaction}.
 
-Here, we will look at the motor in a setup where it is subjected to different stiffnesses of the environment in which the filaments are able to move. 
+Note that due to the symmetry of the setup the mean velocity of the myosin is inherently zero,
+\begin{multline*}
+\left\langle v_\text{M} \right\rangle 
+= - \frac{1}{\gamma_\text{M}} \bigl[ 
+\left\langle \nabla_\text{M} V_t(x_\text{M}(t) - x_\text{A1}(t)) \right\rangle
+\\ 
++ \left\langle \nabla_\text{M} V_t(x_\text{A2}(t) - x_\text{M}(t)) \right\rangle 
+\bigr] 
+\\
+= - \frac{\gamma_\text{A}}{\gamma_\text{M}} \left[ 
+\left\langle v_\text{A1} \right\rangle 
++ \left\langle v_\text{A2} \right\rangle 
+\right]
+\equiv 0 . 
+\end{multline*}
+
+\subsubsection{Elastic environment}
+As polymers inside the cytoskeleton are usually thoroughly interconnected rather then freely diffusing \cite{}, %TODO  
+we can opt for an alternative approach, 
+rather then applying an external load we attach filaments to fixed points by a spring with a constant $k$. 
+These points represent points of interaction with the rest of the network while the spring constant $k$ represent elastic properties of the full network. 
+The myosin is again interacting with two filaments that are arranged in an anti-parallel fashion. 
+Hence, similarly to previous case, it will no longer have a preferred direction to move in and consequently its mean velocity will be zero. 
+The observable of interest is now the mean force that the motor applies on the filaments, 
+which is measured through the extension of the springs attached to the filaments,
+and which represent the active tension in the network produced by the single myosin. 
 This setup is sketched in figure \ref{fig:tug}. 
 \begin{figure}[t]
 \centering
@@ -279,33 +314,34 @@ This setup is sketched in figure \ref{fig:tug}.
 \label{fig:tug}
 \end{figure}
 
-The equations of motion are as follows.
-\begin{align*}
-&\begin{multlined}[b]
-\rmd x_\text{M} = \\
-- \frac{1}{\gamma_\text{M}} \left[ \nabla_\text{M} V_t(x_\text{M}(t) - x_\text{A1}(t)) + \nabla_\text{M} V_t(x_\text{M}(t) - x_\text{A2}(t)) \right] \; \rmd t 
-\\ 
+The equations of motion are then just a modification of \eqref{eq:eom_two_actins}  
+\begin{equation}
+\begin{gathered}
+\begin{multlined}[b][.45\textwidth]
+\rmd x_\text{M} = 
+- \frac{1}{\gamma_\text{M}} \bigl[ \nabla_\text{M} V_t(x_\text{M}(t) - x_\text{A1}(t)) 
+\\
++ \nabla_\text{M} V_t(x_\text{A2}(t) - x_\text{M}(t)) \bigr] \; \rmd t 
 + \sqrt{ \frac{2 k_B T}{\gamma_\text{M}} } \; \rmd W_\text{M} ,
 \end{multlined}\\
-&\begin{multlined}[b][.42\textwidth]
-\rmd x_\text{A1} = \\
-\frac{1}{\gamma_\text{A}} \left[ - \nabla_\text{A1} V_t(x_\text{M}(t) - x_\text{A1}(t)) - k\left(x_\text{A1}(t) - x_\text{A1}(0)\right) \right] \; \rmd t 
+\begin{multlined}[b][.45\textwidth]
+\rmd x_\text{A1} = 
+\frac{1}{\gamma_\text{A}} \bigl[ - \nabla_\text{A1} V_t(x_\text{M}(t) - x_\text{A1}(t)) 
 \\
+- k \left( x_\text{A1}(t) - x_\text{A1}(0) \right) \bigr] \; \rmd t 
 + \sqrt{ \frac{2 k_B T}{\gamma_\text{A}} } \; \rmd W_\text{A1} ,
 \end{multlined}\\
-&\begin{multlined}[b][.42\textwidth]
-\rmd x_\text{A2} = \\
-\frac{1}{\gamma_\text{A}} \left[ - \nabla_\text{A1} V_t(x_\text{M}(t) - x_\text{A2}(t)) - k\left(x_\text{A2}(t) - x_\text{A2}(0)\right) \right] \; \rmd t 
+\begin{multlined}[b][.45\textwidth]
+\rmd x_\text{A2} = 
+\frac{1}{\gamma_\text{A}} \bigl[ - \nabla_\text{A1} V_t(x_\text{A2}(t) - x_\text{M}(t))
 \\
-+ \sqrt{ \frac{2 k_B T}{\gamma_\text{A}} } \; \rmd W_\text{A2}
+- k \left( x_\text{A2}(t) - x_\text{A2}(0) \right) \bigr] \; \rmd t 
++ \sqrt{ \frac{2 k_B T}{\gamma_\text{A}} } \; \rmd W_\text{A2} ,
 \end{multlined}
-\end{align*}
-
-One can imagine the filaments being part of a large network that is characterized by an elastic constant $k$. 
-The motor is again interacting with two filament that are arranged in an anti-parallel fashion. 
-Hence it will no longer have a preferred direction to move in and its mean velocity will be zero. 
-The observable of interest is now the mean force that the motor applies on the filaments, which is measured through the extension of the springs attached to the filaments. 
-
+\end{gathered}
+\label{eq:eom_two_actins_no_load}
+\end{equation}
+where the load is replaced by the force caused by springs and the reference point for the springs is chosen as their position at the initial time. 
 
 \section{Mean velocity}
 \label{sec:velocity}
