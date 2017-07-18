@@ -667,15 +667,18 @@ and we use the equation of motion \eqref{eq:eom_M},
 the heat exchange with the surrounding \eqref{eq:heat_hb_M} can be rewritten as 
 \begin{multline*}
 {\mathcal Q}_\text{M}^\text{hb} 
-= \int \rmd x_\text{M} \circ \left[ \nabla_\text{M} V_t - F_\text{load} \right] 
+= \int \rmd x_\text{M} \circ \left[ \nabla_\text{M} V_t(x_\text{M} - x_\text{A} ) - F_\text{load} \right] 
 \\
-= \int \rmd x_\text{M} \circ \nabla_\text{M} V_t - {\mathcal W}_\text{M}^\text{ext} .
+= \int \rmd x_\text{M} \circ \nabla V_t(x_\text{M} - x_\text{A} ) - {\mathcal W}_\text{M}^\text{ext} ,
 \end{multline*}
+where $\nabla V_t$ denotes the derivative with respect to the argument. 
 Similarly for the heat dissipated by actin's interaction with the environment we get 
-\[
+\begin{multline*}
 {\mathcal Q}_\text{A}^\text{hb} 
-= \int \rmd x_\text{A} \circ \nabla_\text{A} V_t , 
-\]
+= \int \rmd x_\text{A} \circ \nabla_\text{A} V_t(x_\text{M} - x_\text{A} )
+\\
+= - \int \rmd x_\text{A} \circ \nabla V_t(x_\text{M} - x_\text{A} ) ,
+\end{multline*}
 thus the heat dissipated to heath bath can be expressed in terms of the work done by the ratchet potential and external load. 
 Consequently, the total energy balance equation \eqref{eq:energy_balance} simplifies to 
 \[
@@ -731,6 +734,17 @@ modifies the energy balance \eqref{eq:energy_balance}, resp. \eqref{eq:energy_ba
 \rmd E = \dbar {\mathcal Q}_\text{M}^\text{hb} + \dbar {\mathcal Q}_{\text{A}_1}^\text{hb} + \dbar {\mathcal Q}_{\text{A}_2}^\text{hb} + \dbar {\mathcal Q}^\text{chem}, 
 \end{equation*}
 as there is no external load but all the accumulated energy is now stored in harmonic potentials 
+\begin{multline*}
+E( x_\text{M}, x_{\text{A}_1}, x_{\text{A}_2}, \{ \zeta_i \}) 
+= V_t( x_\text{M} - x_{\text{A}_1} ) 
++ V_t( x_{\text{A}_2} - x_\text{M} ) 
+\\
++ \frac{1}{2} k \left[ x_{\text{A}_1} - x_{\text{A}_1}(0) \right]^2 
++ \frac{1}{2} k \left[ x_{\text{A}_2} - x_{\text{A}_2}(0) \right]^2 
+\\
++ \Delta E \sum\limits_{i=1}^N \chi( \zeta_i = c ) .
+\end{multline*}
+
 
 \subsubsection{Heat fluxes}
 At last, note that the internal energy of the system \eqref{eq:internal_energy} is bounded.
