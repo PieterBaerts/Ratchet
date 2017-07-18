@@ -694,13 +694,15 @@ which does not explicitly depend on the load $F_\text{load}$.
 \subsubsection{Heat fluxes}
 At last, note that the internal energy of the system \eqref{eq:internal_energy} is bounded.
 Hence, if we interpret the energy balance equation \eqref{eq:energy_balance} in terms of mean dissipation rates defined as 
-\[
+\begin{equation}
 q = \lim_{\Delta t \to \infty} \frac{1}{\Delta t} \left\langle {\mathcal Q}(\Delta t) \right\rangle ,
-\]
+\label{eq:heat_flux}
+\end{equation}
 we obtain en equation representing the conservation of fluxes 
-\[
+\begin{equation}
 0 = q_\text{M}^\text{hb} + q_\text{A}^\text{hb} + w^\text{ext}_\text{M} + q^\text{chem} 
-\]
+\label{eq:heat_flux_balance}
+\end{equation}
 for arbitrary initial condition. 
 Such equality is trivially true for arbitrarily small time when the initial condition corresponds the steady state. 
 
@@ -742,6 +744,12 @@ Thus the equation \eqref{eq:work_load} is replaced by
 {\mathcal W}^\text{ext}_{\text{A}_2} &= - \int \rmd x_{\text{A}_2} \circ F_\text{load} = - \Delta x_{\text{A}_2} F_\text{load}. 
 \end{align*}
 
+Note, that the interpretation of the energy balance \eqref{eq:energy_balance_two_filaments} in terms of the heat fluxes \eqref{eq:heat_flux}
+while following the same arguments as for \eqref{eq:heat_flux_balance} is possible and leads to   
+\[
+0 = q_\text{M}^\text{hb} + q_{\text{A}_1}^\text{hb} + q_{\text{A}_2}^\text{hb} + w^\text{ext}_{\text{A}_1} + w^\text{ext}_{\text{A}_2} + q^\text{chem} .
+\]
+
 \paragraph{Elastic environment}
 The second model, described in paragraph \ref{sec:environment} and depicted in figure \ref{fig:tug}, 
 modifies the energy balance \eqref{eq:energy_balance}, resp. \eqref{eq:energy_balance_two_filaments}, even further
@@ -759,8 +767,7 @@ E( x_\text{M}, x_{\text{A}_1}, x_{\text{A}_2}, \{ \zeta_i \})
 \\
 + \Delta E \sum\limits_{i=1}^N \chi( \zeta_i = c ) .
 \end{multline*}
-
-
+Contrary to the previous setup, the total energy of the system is no longer bound and hence the heat fluxes \eqref{eq:heat_flux} are only balanced in the steady state. 
 
 \subsection{Chemical efficiency} 
 Efficiency, in general, relate a ``useful'' output with the input.
