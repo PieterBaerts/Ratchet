@@ -250,7 +250,7 @@ This setup is shown in figure \ref{fig:tug_F_illustration}.
 \label{fig:tug_F_illustration}
 \end{figure}
 
-This means that we have now two filaments, denoted by subscript $\text{A1}$ and $\text{A2}$ respectively,
+This means that we have now two filaments, denoted by subscript ${\text{A}_1}$ and ${\text{A}_2}$ respectively,
 subjected to free diffusion and external load $F_\text{load}$
 which are interacting with the myosin II motor via the ratchet potential~\eqref{eq:ratchet_interaction}. 
 This lead to equations of motion 
@@ -258,22 +258,22 @@ This lead to equations of motion
 \begin{gathered}
 \begin{multlined}[b][.45\textwidth]
 \rmd x_\text{M} = 
-- \frac{1}{\gamma_\text{M}} \bigl[ \nabla_\text{M} V_t(x_\text{M}(t) - x_\text{A1}(t)) 
+- \frac{1}{\gamma_\text{M}} \bigl[ \nabla_\text{M} V_t(x_\text{M}(t) - x_{\text{A}_1}(t)) 
 \\
-+ \nabla_\text{M} V_t(x_\text{A2}(t) - x_\text{M}(t)) \bigr] \; \rmd t 
++ \nabla_\text{M} V_t(x_{\text{A}_2}(t) - x_\text{M}(t)) \bigr] \; \rmd t 
 + \sqrt{ \frac{2 k_B T}{\gamma_\text{M}} } \; \rmd W_\text{M} ,
 \end{multlined}\\
 \begin{multlined}[b][.45\textwidth]
-\rmd x_\text{A1} = 
-\frac{1}{\gamma_\text{A}} \left[ - \nabla_\text{A1} V_t(x_\text{M}(t) - x_\text{A1}(t)) + F_\text{load} \right] \; \rmd t 
+\rmd x_{\text{A}_1} = 
+\frac{1}{\gamma_\text{A}} \left[ - \nabla_{\text{A}_1} V_t(x_\text{M}(t) - x_{\text{A}_1}(t)) + F_\text{load} \right] \; \rmd t 
 \\
-+ \sqrt{ \frac{2 k_B T}{\gamma_\text{A}} } \; \rmd W_\text{A1} ,
++ \sqrt{ \frac{2 k_B T}{\gamma_\text{A}} } \; \rmd W_{\text{A}_1} ,
 \end{multlined}\\
 \begin{multlined}[b][.45\textwidth]
-\rmd x_\text{A2} = 
-\frac{1}{\gamma_\text{A}} \left[ - \nabla_\text{A1} V_t(x_\text{A2}(t) - x_\text{M}(t)) - F_\text{load} \right] \; \rmd t 
+\rmd x_{\text{A}_2} = 
+\frac{1}{\gamma_\text{A}} \left[ - \nabla_{\text{A}_1} V_t(x_{\text{A}_2}(t) - x_\text{M}(t)) - F_\text{load} \right] \; \rmd t 
 \\
-+ \sqrt{ \frac{2 k_B T}{\gamma_\text{A}} } \; \rmd W_\text{A2} ,
++ \sqrt{ \frac{2 k_B T}{\gamma_\text{A}} } \; \rmd W_{\text{A}_2} ,
 \end{multlined}
 \end{gathered}
 \label{eq:eom_two_actins}
@@ -284,19 +284,20 @@ Note that due to the symmetry of the setup the mean velocity of the myosin is in
 \begin{multline*}
 \left\langle v_\text{M} \right\rangle 
 = - \frac{1}{\gamma_\text{M}} \bigl[ 
-\left\langle \nabla_\text{M} V_t(x_\text{M}(t) - x_\text{A1}(t)) \right\rangle
+\left\langle \nabla_\text{M} V_t(x_\text{M}(t) - x_{\text{A}_1}(t)) \right\rangle
 \\ 
-+ \left\langle \nabla_\text{M} V_t(x_\text{A2}(t) - x_\text{M}(t)) \right\rangle 
++ \left\langle \nabla_\text{M} V_t(x_{\text{A}_2}(t) - x_\text{M}(t)) \right\rangle 
 \bigr] 
 \\
 = - \frac{\gamma_\text{A}}{\gamma_\text{M}} \left[ 
-\left\langle v_\text{A1} \right\rangle 
-+ \left\langle v_\text{A2} \right\rangle 
+\left\langle v_{\text{A}_1} \right\rangle 
++ \left\langle v_{\text{A}_2} \right\rangle 
 \right]
 \equiv 0 . 
 \end{multline*}
 
 \subsubsection{Elastic environment}
+\label{sec:environment}
 As polymers inside the cytoskeleton are usually thoroughly interconnected rather then freely diffusing \cite{}, %TODO  
 we can opt for an alternative approach, 
 rather then applying an external load we attach filaments to fixed points by a spring with a constant $k$. 
@@ -319,24 +320,24 @@ The equations of motion are then just a modification of \eqref{eq:eom_two_actins
 \begin{gathered}
 \begin{multlined}[b][.45\textwidth]
 \rmd x_\text{M} = 
-- \frac{1}{\gamma_\text{M}} \bigl[ \nabla_\text{M} V_t(x_\text{M}(t) - x_\text{A1}(t)) 
+- \frac{1}{\gamma_\text{M}} \bigl[ \nabla_\text{M} V_t(x_\text{M}(t) - x_{\text{A}_1}(t)) 
 \\
-+ \nabla_\text{M} V_t(x_\text{A2}(t) - x_\text{M}(t)) \bigr] \; \rmd t 
++ \nabla_\text{M} V_t(x_{\text{A}_2}(t) - x_\text{M}(t)) \bigr] \; \rmd t 
 + \sqrt{ \frac{2 k_B T}{\gamma_\text{M}} } \; \rmd W_\text{M} ,
 \end{multlined}\\
 \begin{multlined}[b][.45\textwidth]
-\rmd x_\text{A1} = 
-\frac{1}{\gamma_\text{A}} \bigl[ - \nabla_\text{A1} V_t(x_\text{M}(t) - x_\text{A1}(t)) 
+\rmd x_{\text{A}_1} = 
+\frac{1}{\gamma_\text{A}} \bigl[ - \nabla_{\text{A}_1} V_t(x_\text{M}(t) - x_{\text{A}_1}(t)) 
 \\
-- k \left( x_\text{A1}(t) - x_\text{A1}(0) \right) \bigr] \; \rmd t 
-+ \sqrt{ \frac{2 k_B T}{\gamma_\text{A}} } \; \rmd W_\text{A1} ,
+- k \left( x_{\text{A}_1}(t) - x_{\text{A}_1}(0) \right) \bigr] \; \rmd t 
++ \sqrt{ \frac{2 k_B T}{\gamma_\text{A}} } \; \rmd W_{\text{A}_1} ,
 \end{multlined}\\
 \begin{multlined}[b][.45\textwidth]
-\rmd x_\text{A2} = 
-\frac{1}{\gamma_\text{A}} \bigl[ - \nabla_\text{A1} V_t(x_\text{A2}(t) - x_\text{M}(t))
+\rmd x_{\text{A}_2} = 
+\frac{1}{\gamma_\text{A}} \bigl[ - \nabla_{\text{A}_1} V_t(x_{\text{A}_2}(t) - x_\text{M}(t))
 \\
-- k \left( x_\text{A2}(t) - x_\text{A2}(0) \right) \bigr] \; \rmd t 
-+ \sqrt{ \frac{2 k_B T}{\gamma_\text{A}} } \; \rmd W_\text{A2} ,
+- k \left( x_{\text{A}_2}(t) - x_{\text{A}_2}(0) \right) \bigr] \; \rmd t 
++ \sqrt{ \frac{2 k_B T}{\gamma_\text{A}} } \; \rmd W_{\text{A}_2} ,
 \end{multlined}
 \end{gathered}
 \label{eq:eom_two_actins_no_load}
@@ -541,15 +542,15 @@ A similar analysis can be made for the setup in section \ref{sec:load_on_fil}.
 There, the motor is in the middle of this symmetric setup and will not move on average. 
 The mean velocities of the actin filaments and motor are given by
 \begin{align*}
-\langle v_\text{A1} \rangle &= \frac{1}{\gamma_\text{A} } \left( F_\text{load} - \langle F_\text{r1} \rangle \right) \\
+\langle v_{\text{A}_1} \rangle &= \frac{1}{\gamma_\text{A} } \left( F_\text{load} - \langle F_\text{r1} \rangle \right) \\
 \langle v_\text{M} \rangle &= \frac{1}{\gamma_\text{M} } \left( \langle F_\text{r1} \rangle + \langle F_\text{r2} \rangle \right)\\
-\langle v_\text{A2} \rangle &= \frac{1}{ \gamma_\text{A} } \left( - F_\text{load} - \langle F_\text{r2} \rangle \right) 
+\langle v_{\text{A}_2} \rangle &= \frac{1}{ \gamma_\text{A} } \left( - F_\text{load} - \langle F_\text{r2} \rangle \right) 
 \end{align*}
-where $\text{A1}$ and $\text{A2}$ denote the two different actin filaments and $F_\text{r1}$ and $F_\text{r2}$ are the ratchet forces between the motor and respectively filament $\text{A1}$ and $\text{A2}$. 
+where ${\text{A}_1}$ and ${\text{A}_2}$ denote the two different actin filaments and $F_\text{r1}$ and $F_\text{r2}$ are the ratchet forces between the motor and respectively filament ${\text{A}_1}$ and ${\text{A}_2}$. 
 
 Note that the mean velocity of the motor is proportional to the mean center of mass velocity of both actin filaments. 
 \begin{equation}
-\langle v_\text{M} \rangle = \frac{\gamma_\text{A}}{\gamma_\text{M}} \left(\langle v_\text{A1} \rangle + \langle v_\text{A2} \rangle \right) 
+\langle v_\text{M} \rangle = \frac{\gamma_\text{A}}{\gamma_\text{M}} \left(\langle v_{\text{A}_1} \rangle + \langle v_{\text{A}_2} \rangle \right) 
 \label{eq:tug_F_motor}
 \end{equation}
 Because of the anti-parallel alignment of the filaments, $F_{r1}$ and $F_{r2}$ are equal but opposite on average. 
@@ -557,7 +558,7 @@ Therefore the motor will not experience any mean displacement.
 
 Although the motor doesn't experience an external load and it will not have a net force on average, there will be a tension on the motor due to interaction with both actin filaments. This tension is given by
 \begin{equation*}
-\langle F_\text{r1}\rangle - \langle F_\text{r2}\rangle = -\gamma_\text{A}\left(\langle v_\text{A1}\rangle - \langle v_\text{A2}\rangle \right) - 2F_\text{load}
+\langle F_\text{r1}\rangle - \langle F_\text{r2}\rangle = -\gamma_\text{A}\left(\langle v_{\text{A}_1}\rangle - \langle v_{\text{A}_2}\rangle \right) - 2F_\text{load}
 \end{equation*}
 The tension on the motor is shown in figure \ref{fig:tug_F}, where it is compared to the tension when the load is applied on the motor instead of the filaments, given by \eqref{eq:tension}. 
 
@@ -639,9 +640,10 @@ and thus every interaction is associated with a heat exchange \cite{Pesek2013}
 where the first term is the dissipation of the energy due to the friction and the second is the energy gained by the thermal activity of the environment. 
 Note that those integrals are evaluated in the Stratonovich sense.
 The energy is also changed by the work of the external load 
-\[
+\begin{equation}
 {\mathcal W}^\text{ext}_\text{M} = \int \rmd x_\text{M} \circ F_\text{load} = \Delta x_\text{M} F_\text{load}, 
-\]
+\label{eq:work_load}
+\end{equation}
 where we used the fact that the external load $F_\text{load}$ is constant. 
 
 The last term in the energy balance \eqref{eq:energy_balance} is the contribution from the chemical cycle. 
@@ -686,7 +688,49 @@ Consequently, the total energy balance equation \eqref{eq:energy_balance} simpli
 which does not explicitly depend on the load $F_\text{load}$. 
 
 \subsubsection{Tug of war} 
-%TODO
+In section \ref{sec:ratchet} we introduced two alternative models more suitable for capturing the behavior of myosin inside the polymer network known as actomyosin cortex.
+
+\paragraph{Force on filaments}
+In the first model, see paragraph~\ref{sec:load_on_fil} and figure~\ref{fig:tug_F_illustration},
+the myosin is attached between two polymers on which the load is applied, 
+hence the energy balance \eqref{eq:energy_balance} is modified to  
+\begin{multline}
+\rmd E = \dbar {\mathcal Q}_\text{M}^\text{hb} + \dbar {\mathcal Q}_{\text{A}_1}^\text{hb} + \dbar {\mathcal Q}_{\text{A}_2}^\text{hb} 
+\\
++ \dbar {\mathcal W}^\text{ext}_{\text{A}_1} + \dbar {\mathcal W}^\text{ext}_{\text{A}_2} + \dbar {\mathcal Q}^\text{chem}, 
+\label{eq:energy_balance_two_filaments}
+\end{multline}
+where the energy now contains contributions from both polymers
+\begin{multline*}
+E( x_\text{M}, x_{\text{A}_1}, x_{\text{A}_2}, \{ \zeta_i \}) 
+= V_t( x_\text{M} - x_{\text{A}_1} ) 
+\\
++ V_t( x_{\text{A}_2} - x_\text{M} ) 
++ \Delta E \sum\limits_{i=1}^N \chi( \zeta_i = c ) .
+\end{multline*}
+Note, that the last sum is over all heads of the motor, $N = N_{\text{A}_1} + N_{\text{A}_2}$.
+Contributions from the heat exchange with environment \eqref{eq:heat_hb_A} remains the same, even though in this case we have two contributions from both filaments
+\begin{align*}
+{\mathcal Q}_{\text{A}_1}^\text{hb} 
+&= \int \rmd x_{\text{A}_1} \circ \left[ - \gamma_\text{A} \frac{\rmd x_{\text{A}_1} }{\rmd t} + \sqrt{ 2 k_B T \gamma_\text{A} } \, \frac{ \rmd W_{\text{A}_1} }{ \rmd t } \right] , \\ 
+{\mathcal Q}_{\text{A}_2}^\text{hb} 
+&= \int \rmd x_{\text{A}_2} \circ \left[ - \gamma_\text{A} \frac{\rmd x_{\text{A}_2} }{\rmd t} + \sqrt{ 2 k_B T \gamma_\text{A} } \, \frac{ \rmd W_{\text{A}_2} }{ \rmd t } \right] ,
+\end{align*}
+and the external load is now not applied on the motor but on each actin polymer.
+Thus the equation \eqref{eq:work_load} is replaced by 
+\begin{align*}
+{\mathcal W}^\text{ext}_{\text{A}_1} &= \int \rmd x_{\text{A}_1} \circ F_\text{load} = \Delta x_{\text{A}_1} F_\text{load}, 
+\\
+{\mathcal W}^\text{ext}_{\text{A}_2} &= - \int \rmd x_{\text{A}_2} \circ F_\text{load} = - \Delta x_{\text{A}_2} F_\text{load}. 
+\end{align*}
+
+\paragraph{Elastic environment}
+The second model, described in paragraph \ref{sec:environment} and depicted in figure \ref{fig:tug}, 
+modifies the energy balance \eqref{eq:energy_balance}, resp. \eqref{eq:energy_balance_two_filaments}, even further
+\begin{equation*}
+\rmd E = \dbar {\mathcal Q}_\text{M}^\text{hb} + \dbar {\mathcal Q}_{\text{A}_1}^\text{hb} + \dbar {\mathcal Q}_{\text{A}_2}^\text{hb} + \dbar {\mathcal Q}^\text{chem}, 
+\end{equation*}
+as there is no external load but all the accumulated energy is now stored in harmonic potentials 
 
 \subsubsection{Heat fluxes}
 At last, note that the internal energy of the system \eqref{eq:internal_energy} is bounded.
