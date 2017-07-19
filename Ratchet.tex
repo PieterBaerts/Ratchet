@@ -640,7 +640,7 @@ which can be symbolically summarized as
 where the energy of the full system consists of the interaction ratchet potential \eqref{eq:ratchet_interaction}
 and the energy stored in ATP (and its products), 
 \begin{equation}
-E( x_\text{M}, x_\text{A}, \{ \zeta_i \}) = V_t( x_\text{M} - x_\text{A} ) + \Delta E \sum\limits_{i=1}^N \chi( \zeta_i = c ) ,
+E( x_\text{M}, x_\text{A}, \{ \zeta_i \}) = V_t( x_\text{M} - x_\text{A} ) + \Delta E \sum\limits_{i=0}^{N-1} \chi( \zeta_i = c ) ,
 \label{eq:internal_energy}
 \end{equation}
 where $\Delta E$ represents the actual internal energy stored by a single ATP and $\chi$ is a characteristic function\footnote{
@@ -747,7 +747,7 @@ E( x_\text{M}, x_{\text{A}_1}, x_{\text{A}_2}, \{ \zeta_i \})
 = V_t( x_\text{M} - x_{\text{A}_1} ) 
 \\
 + V_t( x_{\text{A}_2} - x_\text{M} ) 
-+ \Delta E \sum\limits_{i=1}^N \chi( \zeta_i = c ) .
++ \Delta E \sum\limits_{i=0}^{N-1} \chi( \zeta_i = c ) .
 \end{multline*}
 Note, that the last sum is over all heads of the motor, $N = N_{\text{A}_1} + N_{\text{A}_2}$.
 Contributions from the heat exchange with environment \eqref{eq:heat_hb_A} remains the same, even though in this case we have two contributions from both filaments
@@ -786,7 +786,7 @@ E( x_\text{M}, x_{\text{A}_1}, x_{\text{A}_2}, \{ \zeta_i \})
 + \frac{1}{2} k \left[ x_{\text{A}_1} - x_{\text{A}_1}(0) \right]^2 
 + \frac{1}{2} k \left[ x_{\text{A}_2} - x_{\text{A}_2}(0) \right]^2 
 \\
-+ \Delta E \sum\limits_{i=1}^N \chi( \zeta_i = c ) .
++ \Delta E \sum\limits_{i=0}^{N-1} \chi( \zeta_i = c ) .
 \end{multline*}
 Contrary to the previous setup, the total energy of the system is no longer bound and hence the heat fluxes \eqref{eq:heat_flux} are only balanced in the steady state. 
 
@@ -822,14 +822,78 @@ i.e. how much of the chemical energy provided to the system is dissipated by the
 
 
 \subsection{Chemical cycle efficiency} %TODO 
-Alternatively we can define a efficiency 
+Alternative approach it to identify as the ``useful'' is ratio the chemical energy supplied by ATP which is transformed to other forms of energy, 
+i.e. either is dissipated by myosin and actin through they diffusion or is stored in the interaction potential and thus increase the tension in the system. 
+This consideration leads to chemical cycle efficiency defined as 
 \begin{equation}
-\eta_\text{chem} = \frac{\langle\mathcal Q_\text{in}\rangle+\langle\mathcal Q_\text{out}\rangle}{\langle\mathcal Q_\text{in}\rangle} .
+\eta_\text{chem} = \frac{\langle\mathcal Q^\text{chem}_\text{in}\rangle+\langle\mathcal Q^\text{chem}_\text{out}\rangle}{\langle\mathcal Q^\text{chem}_\text{in}\rangle} .
 \label{eq:efficiency}
 \end{equation}
-This quantifies the fraction of chemical energy, supplied by the ATP driven cycles of the heads, that remains in the system. 
-This is shown in figure \ref{fig:chem}.
-\begin{figure}[b]
+
+\subsubsection{Simple setup}
+For a system in the simple setup which have reached already a steady state the mean heat \eqref{eq:q_in} and \eqref{eq:q_out} produced over a time interval of length $\Delta t$ 
+by transitions of a single head $i$ displaced by $i d$ is given by 
+\begin{gather*}
+\begin{multlined}[b][.42\textwidth]
+\langle \mathcal Q^\text{chem}_\text{in}(i) \rangle 
+= \Delta t \, k_\text{unbind} 
+\\ \times 
+\!\!\!\! \sum\limits_{\{\zeta_j\} : \zeta_i = 1 } \!\!\!\! \rho(\{ \zeta_j \} ) 
+\left[ \Delta E - (1-c) \left\langle V_r(x - i \, d ) \middle| \{ \zeta_j \} \right\rangle \right] 
+\end{multlined}
+%\label{eq:mean_q_in} 
+\\
+\begin{multlined}[b][.42\textwidth]
+\langle \mathcal Q^\text{chem}_\text{out}(i) \rangle 
+= - \Delta t \, k_\text{bind} 
+\\ \times 
+\!\!\!\! \sum\limits_{\{\zeta_j\} : \zeta_i = c } \!\!\!\! \rho(\{ \zeta_j \} ) 
+\left[ \Delta E - (1-c) \left\langle V_r(x - i \, d ) \middle| \{ \zeta_j \} \right\rangle \right] 
+\end{multlined}
+%\label{eq:mean_q_out}
+\end{gather*}
+where $\langle V | X \rangle$ is the steady state conditional mean value with respect to the fixed internal state $X$ 
+and $\rho(X) \in [0,1]$ denotes the probability of the occupation of the corresponding internal state $X$ in a steady state, 
+which does not depend on the position due to the independence of the positional independence of its internal dynamics~\eqref{eq:transition}. 
+Moreover, due to the independence of individual heads the probability occupation of a given internal state can be written as 
+\[
+\rho( \{ \zeta_i \} ) = \prod_{i=0}^{N-1} \rho_1( \zeta_i ), 
+\]  
+where 
+\[
+\rho_1(\zeta) = \begin{cases} 
+\frac{ k_\text{bind} }{ k_\text{bind} + k_\text{unbind} } & \zeta = 1 , \\
+\frac{ k_\text{unbind} }{ k_\text{bind} + k_\text{unbind} } & \zeta = c . 
+\end{cases} 
+\]
+
+By using again the independence of the evolution of individual heads we can express the total mean heats produced in chemical cycle as a sum of contributions from individual heads
+\begin{align*}
+\langle \mathcal Q_\text{in}^\text{chem} \rangle 
+=& \sum\limits_{i=0}^{N-1} \left\langle \mathcal Q_\text{in}^\text{chem}(i) \right\rangle 
+= \Delta t \frac{ k_\text{bind} k_\text{unbind} }{ k_\text{bind} + k_\text{unbind} } 
+\\ &\times
+\left[ N \, \Delta E 
+- (1-c) \sum\limits_{i=0}^{N-1} \left\langle V_r(x - i d ) \middle| \zeta_i = 1 \right\rangle 
+\right] ,  
+\\
+\langle \mathcal Q^\text{chem}_\text{out} \rangle 
+=& \sum\limits_{i=0}^{N-1} \left\langle \mathcal Q_\text{out}^\text{chem}(i) \right\rangle 
+= - \Delta t \frac{ k_\text{bind} k_\text{unbind} }{ k_\text{bind} + k_\text{unbind} } 
+\\ &\times
+\left[ N \, \Delta E 
+- (1-c) \sum\limits_{i=0}^{N-1} \left\langle V_r(x - i d ) \middle| \zeta_i = c \right\rangle  
+\right] , 
+\end{align*}
+which leads to a more explicit expression for the efficiency \eqref{eq:efficiency} 
+\begin{equation}
+\eta_\text{chem} = (1-c) \sum\limits_{i=0}^{N-1} \frac{ \left\langle V_r(x-id) \middle| \zeta_i = c \right\rangle - \left\langle V_r( x -id ) \middle| \zeta_i = 1 \right\rangle }
+{ N \Delta E - (1-c) \sum\limits_{j=0}^{N-1} \left\langle V_r(x-jd) \middle| \zeta_j = 1 \right\rangle } 
+. 
+\label{eq:eta}
+\end{equation}
+This efficiency is shown in figure~\ref{fig:chem}.
+\begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{chemical_cycle}
 \caption{
@@ -840,30 +904,6 @@ and their fluctuations decrease.
 }
 \end{figure}
 
-After each jump in the chemical state of a motor head, the potential in which the whole motor diffuses is altered and a new relaxation process takes place. 
-The relaxation times of these diffusion processes are much faster than the times between chemical jumps. 
-This is because the chemical rates of the motor heads are very small. 
-Hence we can assume that the means of the quantities \eqref{eq:q_in} and \eqref{eq:q_out} can be described by
-\begin{gather}
-\begin{aligned}[b]
-\langle \mathcal Q_\text{in} \rangle 
-=& \rho^{eq}_1 k_d T\left[ \Delta E - (1-c)\langle V_r(x) \rangle_{s=1} \right] \\
-=& \frac{k_a k_d}{k_a + k_d}T\left[\Delta E - (1-c)\langle V_r(x) \rangle_{s=1} \right] 
-\end{aligned}
-\label{eq:mean_q_in} \\
-\begin{aligned}[b]
-\langle \mathcal Q_\text{out} \rangle 
-=& -\rho^{eq}_0 k_a T\left[ \Delta E - (1-c)\langle V_r(x) \rangle_{s=0} \right] \\
-=& -\frac{k_a k_d}{k_a + k_d} T\left[ \Delta E - (1-c)\langle V_r(x) \rangle_{s=0} \right] 
-\end{aligned}
-\label{eq:mean_q_out}
-\end{gather}
-where $\langle \cdot \rangle_{s}$ stands for an average over the steady state distribution in a given state $s$. 
-This will give us an expression for the chemical efficiency.
-\begin{equation}
-\eta = \frac{ (1-c) \left( \langle V_r \rangle_{s=0} - \langle V_r \rangle_{s=1} \right) }{ \Delta E - (1-c) \langle V_r \rangle_{s=1} } 
-\label{eq:eta}
-\end{equation}
 From this, we can understand the chemical energy balance, shown in figure \ref{fig:chem}, by looking at the difference of where a motor head is typically positioned in the potential energy landscape when it is in the attached or detached state. 
 These distributions are computed by collecting the positions of the heads over all times that the head was in the attached/detached state. 
 They are shown in figure \ref{fig:pos_distr} for different load forces. 
