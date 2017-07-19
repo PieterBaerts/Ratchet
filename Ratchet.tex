@@ -831,8 +831,28 @@ This consideration leads to chemical cycle efficiency defined as
 \end{equation}
 
 \subsubsection{Simple setup}
-For a system in the simple setup which have reached already a steady state the mean heat \eqref{eq:q_in} and \eqref{eq:q_out} produced over a time interval of length $\Delta t$ 
-by transitions of a single head $i$ displaced by $i d$ is given by 
+For a system in a simple setup with four heads, we investigate the dependency of such chemical efficiency on the load, see figure~\ref{fig:chem}.
+We observe that the chemical efficiency has two local maximums. 
+We will later show that these two maximums correspond to a frustrated system, 
+where the load is close to the point where it is able to overpower any forces induced by the ratchet potential. 
+Another observation, which we will discuss in depth later, is that the efficiency reaches a negative value, 
+which we interpret as a situation where the work done by the load $F_\text{load}$ is converted back to chemical energy. 
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.45\textwidth,height=!]{chemical_cycle}
+\caption{
+\label{fig:chem}
+Chemical efficiency $\eta$ as a function of load force $F_\text{load}$.
+Solid lines are plotted at the level of $1\sigma$. 
+By increasing the $k_d/k_a$ ratio the local maximums of chemical efficiencies are getting closer origin,
+and their fluctuations decrease. 
+}
+\end{figure}
+
+In order to properly understand these features, 
+we try evaluate the chemical efficiency \eqref{eq:efficiency} in a steady state. 
+We start by evaluating the mean heat \eqref{eq:q_in} and \eqref{eq:q_out} produced over a time interval of length $\Delta t$ 
+by transitions of a single head $i$ displaced by $i d$  
 \begin{gather*}
 \begin{multlined}[b][.42\textwidth]
 \langle \mathcal Q^\text{chem}_\text{in}(i) \rangle 
@@ -867,7 +887,8 @@ where
 \end{cases} 
 \]
 
-By using again the independence of the evolution of individual heads we can express the total mean heats produced in chemical cycle as a sum of contributions from individual heads
+Another consequence of the independence of the time evolution of individual heads is, 
+that we can express the total mean heats produced in chemical cycle as a sum of contributions from individual heads
 \begin{align*}
 \langle \mathcal Q_\text{in}^\text{chem} \rangle 
 =& \sum\limits_{i=0}^{N-1} \left\langle \mathcal Q_\text{in}^\text{chem}(i) \right\rangle 
@@ -886,25 +907,43 @@ By using again the independence of the evolution of individual heads we can expr
 \right] , 
 \end{align*}
 which leads to a more explicit expression for the efficiency \eqref{eq:efficiency} 
-\begin{equation}
-\eta_\text{chem} = (1-c) \sum\limits_{i=0}^{N-1} \frac{ \left\langle V_r(x-id) \middle| \zeta_i = c \right\rangle - \left\langle V_r( x -id ) \middle| \zeta_i = 1 \right\rangle }
-{ N \Delta E - (1-c) \sum\limits_{j=0}^{N-1} \left\langle V_r(x-jd) \middle| \zeta_j = 1 \right\rangle } 
+\begin{multline}
+\eta_\text{chem} = \frac{1-c}{N}
+\\ \times
+\sum\limits_{i=0}^{N-1} \frac{ \left\langle V_r(x-id) \middle| \zeta_i = c \right\rangle - \left\langle V_r( x -id ) \middle| \zeta_i = 1 \right\rangle }
+{ \Delta E - \frac{1-c}{N} \sum\limits_{j=0}^{N-1} \left\langle V_r(x-jd) \middle| \zeta_j = 1 \right\rangle } 
 . 
 \label{eq:eta}
-\end{equation}
-This efficiency is shown in figure~\ref{fig:chem}.
+\end{multline}
+We can see that the numerator is given by the average difference between mean potentials in ATP attached and detached states over all heads. 
+If we interpret the dependency of the chemical efficiency on the load as a probabilistic distribution with finite variance and assume that the main contribution to the shape is from the numerator, by using central limit theorem the efficiency-load dependency will approach a Gaussian distribution with increasing number of heads. 
+This is confirmed by figure \ref{fig:chem_eff_1head}, where indeed the distribution is getting broader with increasing number of heads and has only a single maximum.
+Moreover we can see that the empirical efficiency has less variance with the increasing number of heads. 
+From these we can conclude that there is a significant qualitative difference between motors with low and high numbers of heads. 
+Thus experiments in vitro with large myosin II motors \cite{} does not necessarily capture the behavior of the motors inside a cytoskeleton. %TODO 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.45\textwidth,height=!]{chemical_cycle}
+\includegraphics[width=0.45\textwidth,height=!]{chemical_cycle_1head}
 \caption{
-\label{fig:chem}
-Chemical efficiency $\eta$ as a function of load force $F_\text{load}$.
-By increasing the $k_d/k_a$ ratio the local maximums of chemical efficiencies are getting closer origin,
-and their fluctuations decrease. 
+\label{fig:chem_eff_1head}
+Chemical efficiency of a motor under load. 
+Comparison of one (red triangles), four (blue stars), sixteen (green circles) headed motors.
+We observe that with increasing number of heads the efficiency \eqref{eq:efficiency} distribution 
+gets broader and it's variance decreases.
+Moreover, for sixteen heads it became centered without two local maximas. 
 }
 \end{figure}
 
-From this, we can understand the chemical energy balance, shown in figure \ref{fig:chem}, by looking at the difference of where a motor head is typically positioned in the potential energy landscape when it is in the attached or detached state. 
+From the figure \ref{fig:chem_eff_1head} is also apparent that there is no qualitative difference in chemical efficiency between the system with 4 heads and 1 head,
+hence we will further restrict the discussion to the more simple case of system having only a single head.
+The chemical efficiency expression then simplifies to
+\[
+\eta_\text{chem} = (1-c)
+\frac{ \left\langle V_r(x) \middle| \zeta = c \right\rangle - \left\langle V_r(x) \middle| \zeta = 1 \right\rangle }
+{ \Delta E - (1-c) \left\langle V_r(x) \middle| \zeta = 1 \right\rangle } 
+. 
+\] 
+As the potential is known in our model, the only missing information is thus the steady state distribution. 
 These distributions are computed by collecting the positions of the heads over all times that the head was in the attached/detached state. 
 They are shown in figure \ref{fig:pos_distr} for different load forces. 
 As argued, since the relaxation is fast, compared to the chemical rates, this approximates the steady distribution very well.
@@ -914,6 +953,7 @@ As argued, since the relaxation is fast, compared to the chemical rates, this ap
 \centering
 \includegraphics[width=.45\textwidth,height=!]{pos_distr_a_F}
 }
+%\\
 \subfigure[Detached state]{
 \centering
 \includegraphics[width=.45\textwidth,height=!]{pos_distr_d_F}
@@ -1113,18 +1153,6 @@ Hence this result, obtained for a one-headed motor, also seems to hold for the s
 
 In fact, if we compare the chemical efficiencies for a motor with one head and four heads, we see a great similarity.
 This comparison is made in figure \ref{fig:chem_eff_1head}.
-\begin{figure}[t]
-\centering
-\includegraphics[width=0.45\textwidth,height=!]{chemical_cycle_1head}
-\caption{
-\label{fig:chem_eff_1head}
-Chemical efficiency of a motor under load. 
-Comparison of one (red triangles), four (blue stars), sixteen (green circles) headed motors.
-We observe that with increasing number of heads the efficiency \eqref{eq:efficiency} distribution 
-gets broader and it's variance decreases.
-Moreover, for sixteen heads it became centered without two local maximas. 
-}
-\end{figure}
 The behavior for large load forces seems to be exactly the same.
 Since $\eta$ is a ratio of chemical energies exchanged through the motor heads, this means that for large enough forces a head of the four headed motor no longer feels the presence of the other heads.
 However the one headed motor is more susceptible to external forces as it's chemical efficiency starts to drop already at smaller loads. 
