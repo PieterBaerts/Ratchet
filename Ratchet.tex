@@ -627,13 +627,10 @@ cease to pull on the filaments. Therefore mechanosensing will not occur spontane
 
 
 
-\section{Chemical efficiency}
+\section{First law of thermodynamics}
 \label{sec:energie}
-In previous years, a lot of effort was directed towards the assessment of the efficiency of molecular motors \cite{}. %TODO 
-Unfortunately, main focus of these works was biased towards the transport properties of the aforementioned motors. 
-However myosin II main role is in generating of the tension in the cytoskeletal network \cite{}. %TODO
-
-\subsection{First law of thermodynamics}
+Before we discuss an efficiency of the myosin in various setups, 
+we need to introduce the basic notion of energy, heat and work. 
 We start our discussion from the energy balance on the level of individual trajectories \cite{Pesek2013},
 which can be symbolically summarized as 
 \begin{equation}
@@ -685,7 +682,7 @@ Thus the total chemical energy consists of two parts ${\mathcal Q}^\text{chem} =
 where we sum over all jump times $t_\text{bind}$($t_\text{unbind}$) in the given ``direction''. 
 $t_\text{fin}$ denotes the duration of the process. 
 
-\subsubsection{Load on the motor}
+\subsection{Load on the motor}
 If we restrict the discussion only to the simplest setup, i.e. single loaded myosin with single actin,  
 and we use the equation of motion \eqref{eq:eom_M}, 
 the heat exchange with the surrounding \eqref{eq:heat_hb_M} can be rewritten as 
@@ -715,7 +712,7 @@ Consequently, the total energy balance equation \eqref{eq:energy_balance} simpli
 which does not explicitly depend on the load $F_\text{load}$. 
 
 
-\subsubsection{Heat fluxes}
+\subsection{Heat fluxes}
 At last, note that the internal energy of the system \eqref{eq:internal_energy} is bounded.
 Hence, if we interpret the energy balance equation \eqref{eq:energy_balance} in terms of mean dissipation rates defined as 
 \begin{equation}
@@ -731,10 +728,10 @@ for arbitrary initial condition.
 Such equality is trivially true for arbitrarily small time when the initial condition corresponds the steady state. 
 
 
-\subsubsection{Tug of war} 
+\subsection{Tug of war} 
 In section \ref{sec:ratchet} we introduced two alternative models more suitable for capturing the behavior of myosin inside the polymer network known as actomyosin cortex.
 
-\paragraph{Force on filaments}
+\subsubsection{Force on filaments}
 In the first model, see paragraph~\ref{sec:load_on_fil} and figure~\ref{fig:tug_F_illustration},
 the myosin is attached between two polymers on which the load is applied, 
 hence the energy balance \eqref{eq:energy_balance} is modified to  
@@ -774,7 +771,7 @@ while following the same arguments as for \eqref{eq:heat_flux_balance} is possib
 0 = q_\text{M}^\text{hb} + q_{\text{A}_1}^\text{hb} + q_{\text{A}_2}^\text{hb} + w^\text{ext}_{\text{A}_1} + w^\text{ext}_{\text{A}_2} + q^\text{chem} .
 \]
 
-\paragraph{Elastic environment}
+\subsubsection{Elastic environment}
 The second model, described in paragraph \ref{sec:environment} and depicted in figure \ref{fig:tug}, 
 modifies the energy balance \eqref{eq:energy_balance}, resp. \eqref{eq:energy_balance_two_filaments}, even further
 \begin{equation*}
@@ -793,14 +790,19 @@ E( x_\text{M}, x_{\text{A}_1}, x_{\text{A}_2}, \{ \zeta_i \})
 \end{multline*}
 Contrary to the previous setup, the total energy of the system is no longer bound and hence the heat fluxes \eqref{eq:heat_flux} are only balanced in the steady state. 
 
-\subsection{Chemical efficiency} 
+\section{Chemical efficiency} 
+\label{sec:efficiency}
+In previous years, a lot of effort was directed towards the assessment of the efficiency of molecular motors \cite{}. %TODO 
+Unfortunately, main focus of these works was biased towards the transport properties of the aforementioned motors. 
+However myosin II main role is in generating of the tension in the cytoskeletal network \cite{}. %TODO
+
 Efficiency, in general, relate a ``useful'' output with the input.
 As the ``usefulness'' heavily depends on the setup, there is a plethora of possible choices.
 Here we discuss one common choice and one choice, to the best knowledge of authors, previously not discussed in the leturature. 
 The first definition of the chemical efficiency, well discussed in the literature \cite{}, is related to the transport properties of molecular motors. 
 The second definition of the chemical efficiency captures the speed of the tension generation in networks, which typically contain a myosin~II. 
 
-\subsubsection{Transport efficiency} 
+\subsection{Transport efficiency} 
 As we have stated, the first efficiency we discuss is related to transport properties. 
 Namely, we identify the heat dissipated to the environment by the motor alone as the output work 
 \[
@@ -819,7 +821,7 @@ while for no load $F_\text{load} = 0$ it captures how much of the chemical energ
 i.e. how much of the chemical energy provided to the system is dissipated by the motor and not by the polymer. 
 
 
-\subsubsection{Chemical cycle efficiency} %TODO 
+\subsection{Chemical cycle efficiency} %TODO 
 Alternatively we can define a efficiency 
 \begin{equation}
 \eta_\text{chem} = \frac{\langle\mathcal Q_\text{in}\rangle+\langle\mathcal Q_\text{out}\rangle}{\langle\mathcal Q_\text{in}\rangle} .
