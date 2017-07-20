@@ -999,7 +999,7 @@ This is due to the effective friction caused by the potential as the particle ge
 Such behaviour is associated with a negative efficiency. 
 In the appendix we have proven this hypothesis on the system with a single head and have shown that the efficiency decay with the force 
 \[
-\eta \asymp - \frac{1}{ F_\text{load}^2 } \qquad \text{for} \quad F_\text{load} \to \infty .
+\eta \asymp - \frac{1}{ F_\text{load}^2 } \qquad \text{for} \quad F_\text{load} \to \pm \infty .
 \]
 
 
@@ -1023,6 +1023,33 @@ Moreover, for sixteen heads it became centered without two local maximas.
 }
 \end{figure}
 
+
+Another trait of the chemical efficiency curves are the local minima's around $F_\text{load}=0$. 
+The understand this we must again look at equation \eqref{eq:eta} which is determined by the ratchet potential averaged with the heads' distribution in the attached and detached state. 
+For a one headed motor, these distribution will both be peaked around the minimum of the ratchet potential. 
+In fact, the distributions will be given by the Boltzmann distribution.
+\begin{equation}
+\rho(x,\zeta) = \frac{1}{Z(\zeta)} e^{-\beta \zeta V_r(x)}
+\end{equation} 
+From this point of view, detaching the head is equivalent to an increasing of the temperature $T\rightarrow\frac{T}{c}$. 
+Hence the distributions for the detached state are broader and the expectation value of $V_r$ will be bigger than in the attached state and $\eta$ will be positive. 
+Now if we apply a small external force, the distributions will be slightly perturbed and given by the McLennan formula
+\begin{equation}
+\rho_s^*(x) \propto e^{-\beta \left[V_r(x) - F x\right]}\propto \rho_s(x)\left[1 + \beta F x\right]
+\end{equation}
+which will, for small $F$, lead to a shift of the distribution $\rho_s$ along the $x$-axis and in the direction of the load. 
+In the detached state this will cause a larger displacement than in the attached state because of the potential in that case is less steep. 
+A larger displacement of the distribution, away from the potential's minimum, means that $\langle V_r \rangle_{s=0}$ will increase more than $\langle V_r \rangle_{s=1}$ and hence $\eta$ has to increase. 
+For a four headed motor, the distributions of the heads at zero load are not exactly peaked around the minimum of the potential because of the fixed distance between each head,  which does not correspond to the period of the ratchet. 
+Therefore the local minimum of $\eta$ lies not exactly at, but close to, $F_{load} =0$.
+This argument can be further supported by Jensen's inequality, which follow from the fact the the ratchet potential is convex. For this case the inequality reads as follows.
+\begin{equation}
+V_r(\langle x \rangle) \leq \langle V_r(x) \rangle
+\end{equation} 
+A lower bound on the expectation value of $V_r$ is given by the value of $V_r$ at the mean position of the heads in a given state. 
+In the detached state this position will be farther away from the minimum of the ratchet so the lower bound is higher than in the attached case.
+
+
 \section{TO DO}
 \begin{itemize}
 \item Plot theoretical result for second order distribution against empirical result
@@ -1037,9 +1064,10 @@ Christian Maes
 \appendix* 
 \section{Perturbative treatment}
 \label{sec:perturb}
-In this section we will show that the chemical cycle must extract energy from the ratchet system with one head and for large load forces, i.e. the chemical efficiency $\eta$ must be negative. 
-We will do this by calculating the perturbative corrections to the probability density of the position of the motor with respect to the actin filament, both in the attached and detached state. 
-For this we assume that the diffusive relaxation time is much shorter than the typical time between jumps in the chemical state of the heads. 
+Here we show that the chemical cycle must extract energy from the ratchet system with one head and for large load forces, 
+i.e. the chemical efficiency \eqref{eq:eta} must be negative. 
+We will show this by calculating the perturbative corrections to the probability density of the position of the motor with respect to the actin filament, both in the ATP bound and ATP unbound state. 
+For this we assume that the relaxation time of the position in a given potential is much shorter than the typical time between jumps in the chemical state of the heads. 
 This will allow us to use steady state distributions to calculate the expected values of the potential energy in equation \eqref{eq:eta}.
 We start with the Fokker-Planck equation for steady states, i.e. $\partial_t \rho = 0$.
 \begin{equation}
@@ -1104,20 +1132,20 @@ Now the density up to second order is given by
 Observe that in this form, the depends on the ratchet potential only through a first or second order derivative. 
 Therefore the density will appear as a piece-wise constant function on $x\in[0,l]$, with different values for $x < a l$ and $x > a l $. 
 This trend can already be seen in the empirical density obtained from simulations for large load forces $F_L = \pm 250 \, \mathrm{pN}$ in figure %TODO
-\begin{figure*}[t]
-\centering
-\subfigure[Positive load]{
-\includegraphics[width=0.45\textwidth,height=!]{pos_multiplot_p}
-}
-\subfigure[Negative load]{
-\includegraphics[width=0.45\textwidth,height=!]{pos_multiplot_m}
-}
-\caption{
-\label{fig:pos_multiplot}
-Side by side comparison of empirical density profiles in both attachable (a - blue colored) and detached (d - red colored) state for different loads.
-Profiles sharing the same load magnitude $|F_\text{load}|$ are denoted by the symbols.
-}
-\end{figure*}
+%\begin{figure*}[t]
+%\centering
+%\subfigure[Positive load]{
+%\includegraphics[width=0.45\textwidth,height=!]{pos_multiplot_p}
+%}
+%\subfigure[Negative load]{
+%\includegraphics[width=0.45\textwidth,height=!]{pos_multiplot_m}
+%}
+%\caption{
+%\label{fig:pos_multiplot}
+%Side by side comparison of empirical density profiles in both attachable (a - blue colored) and detached (d - red colored) state for different loads.
+%Profiles sharing the same load magnitude $|F_\text{load}|$ are denoted by the symbols.
+%}
+%\end{figure*}
 
 
 With the second order correction we can now calculate the expected value of the potential energy.
@@ -1176,32 +1204,6 @@ Since $\eta$ is a ratio of chemical energies exchanged through the motor heads, 
 However the one headed motor is more susceptible to external forces as it's chemical efficiency starts to drop already at smaller loads. 
 Note that the curves with higher detach rate $k_d$ in figure \ref{fig:chem} tend to approach the curve for one head in figure \ref{fig:chem_eff_1head}. 
 When the detach rate is increased, the configuration where fewer heads of the motor are attach to the polymer indeed becomes more likely.
-
-
-Another trait of the chemical efficiency curves are the local minima's around $F_{load}=0$. 
-The understand this we must again look at equation \eqref{eq:eta} which is determined by the ratchet potential averaged with the heads' distribution in the attached and detached state. 
-For a one headed motor, these distribution will both be peaked around the minimum of the ratchet potential. 
-In fact, the distributions will be given by the Boltzmann distribution.
-\begin{equation}
-\rho_s (x) = e^{-\beta \zeta(s) V_r(x)}
-\end{equation} 
-From this point of view, detaching the head is equivalent to an increasing of the temperature $T\rightarrow\frac{T}{c}$. 
-Hence the distributions for the detached state are broader and the expectation value of $V_r$ will be bigger than in the attached state and $\eta$ will be positive. 
-Now if we apply a small external force, the distributions will be slightly perturbed and given by the McLennan formula
-\begin{equation}
-\rho_s^*(x) \propto e^{-\beta \left[V_r(x) - F x\right]}\propto \rho_s(x)\left[1 + \beta F x\right]
-\end{equation}
-which will, for small $F$, lead to a shift of the distribution $\rho_s$ along the $x$-axis and in the direction of the load. 
-In the detached state this will cause a larger displacement than in the attached state because of the potential in that case is less steep. 
-A larger displacement of the distribution, away from the potential's minimum, means that $\langle V_r \rangle_{s=0}$ will increase more than $\langle V_r \rangle_{s=1}$ and hence $\eta$ has to increase. 
-For a four headed motor, the distributions of the heads at zero load are not exactly peaked around the minimum of the potential because of the fixed distance between each head,  which does not correspond to the period of the ratchet. 
-Therefore the local minimum of $\eta$ lies not exactly at, but close to, $F_{load} =0$.
-This argument can be further supported by Jensen's inequality, which follow from the fact the the ratchet potential is convex. For this case the inequality reads as follows.
-\begin{equation}
-V_r(\langle x \rangle) \leq \langle V_r(x) \rangle
-\end{equation} 
-A lower bound on the expectation value of $V_r$ is given by the value of $V_r$ at the mean position of the heads in a given state. 
-In the detached state this position will be farther away from the minimum of the ratchet so the lower bound is higher than in the attached case.
 
 
 \bibliography{ratchet}
