@@ -983,16 +983,24 @@ Both, in the bound and unbound state, the head can be found predominantly on the
 When the load is increased to $F_\text{load} = 25 \, \mathrm{pN}$, the average steady state distribution shifts in both the ATP bound and unbound state to the right. 
 While the distribution for the ATP unbound state remains peaked around the potential minimum, cf. figure~\ref{fig:pos_distr},
 the distribution in the ATP bound state flattens out and increases around the potential maximum. 
-This leads to an increase of $\eta$, see figures~\ref{fig:chem} and \ref{fig:chem_energy_distr}. 
+This is due to the potential being less steep, which means that heads in that particular state are more susceptible to external forces,  
+which in this particular case leads to an increase of $\eta$ due to the increase in discrepancy between the average distributions, 
+see figures~\ref{fig:chem} and \ref{fig:chem_energy_distr}. 
 
-For a load in the opposite direction $F_\text{load}= -25 \, \mathrm{pN}$ the effect on $\eta$ is similar but less pronounced, 
-figure~\ref{fig:chem_energy_distr}, 
+For a load in the opposite direction $F_\text{load}= -25 \, \mathrm{pN}$ the effect on average densities is similar but less pronounced, 
+see figure~\ref{fig:chem_energy_distr}, 
 since the slope of the ratchet on the side is less steep and the distributions get more spread out, cf. figure~\ref{fig:pos_distr}. 
 
 For larger loads, distributions shift and flatten even more, figure~\ref{fig:pos_distr}. 
-Hence, it is more plausible to find a head in the ATP bound state around the potential minimum. 
-This means that more energy will be dissipated when the heads bind and $\eta$ will go down and even become negative. 
-In the next section we will investigate the behavior of $\eta$ for large loads and show that it indeed has to be negative and that it will decay like $\frac{1}{F_{load}^2}$ as $F_{load}$ goes to infinity.
+In the extreme situation, it leads up to completely flat distribution and thus zero efficiency, figure~\ref{fig:chem}.
+For high loads we also observe the population inversion, see figure~\ref{fig:pos_distr}, 
+where the potential maximums are more occupied then the potential minimum. 
+This is due to the effective friction caused by the potential as the particle gets slown down if draged along the potential gradient, thus they spend more time on the up-slope then on the down-slope of the potential.
+Such behaviour is associated with a negative efficiency. 
+In the appendix we have proven this hypothesis on the system with a single head and have shown that the efficiency decay with the force 
+\[
+\eta \asymp - \frac{1}{ F_\text{load}^2 } \qquad \text{for} \quad F_\text{load} \to \infty .
+\]
 
 
 If we interpret the dependency of the chemical efficiency \eqref{eq:eta} on the load as a probabilistic distribution with finite variance and assume that the main contribution to the shape, figure~\ref{fig:chem}, is from the numerator, 
@@ -1014,28 +1022,6 @@ gets broader and it's variance decreases.
 Moreover, for sixteen heads it became centered without two local maximas. 
 }
 \end{figure}
-
-
-hence we will further restrict the discussion to the more simple case of system having only a single head.
-
-the motor head is very unlikely to cross the potential barrier in the attached state. 
-Since the relaxation of position in a given potential is fast, compared to the chemical rates, this approximates the steady distribution very well.
-
-
-With increasing load, we see both a shift of the maximum and a flattening of the profile. 
-The detached distributions are broader for $F_{load}=0$, because to potential is lower and less steep, and also seem to be more susceptible to external forces, i.e. the profile gets more. 
-
-
-To understand the dependency of the chemical efficiency on the load, we must compare the attached and detached distribution and correlate this with the with of the energy gap along the period of the ratchet. 
-After all, the numerator in $\eta$ is proportional to $\Delta E - V(x) \left[ \rho_a(x) - \rho_d(x) \right]$ integrated over a period of the ratchet. 
-This quantity is plotted in figure \ref{fig:chem_energy_distr}
-
-
-For example, in absence of a load, the distribution in the attached state is peak around the potential's minimum and has a higher amplitude there compared to the distribution in the detached state. 
-In this region, the energy gap is larger than around the maximum of the potential. 
-Therefore more energy goes into the system, when ATP binds to a head, than energy going out, when ATP is hydrolyzed and the head attaches again to the actin filament. 
-
-
 
 \section{TO DO}
 \begin{itemize}
