@@ -916,8 +916,9 @@ which leads to a more explicit expression for the efficiency \eqref{eq:efficienc
 \label{eq:eta}
 \end{multline}
 We can see that the numerator is given by the average difference between mean potentials in ATP attached and detached states over all heads. 
-If we interpret the dependency of the chemical efficiency on the load as a probabilistic distribution with finite variance and assume that the main contribution to the shape is from the numerator, by using central limit theorem the efficiency-load dependency will approach a Gaussian distribution with increasing number of heads. 
-This is confirmed by figure \ref{fig:chem_eff_1head}, where indeed the distribution is getting broader with increasing number of heads and has only a single maximum.
+If we interpret the dependency of the chemical efficiency on the load as a probabilistic distribution with finite variance and assume that the main contribution to the shape, figure~\ref{fig:chem}, is from the numerator, 
+by using central limit theorem the efficiency-load dependency will approach a Gaussian distribution with increasing number of heads. 
+This is confirmed by the figure~\ref{fig:chem_eff_1head}, where indeed the distribution is getting broader with increasing number of heads and has only a single maximum.
 Moreover we can see that the empirical efficiency has less variance with the increasing number of heads. 
 From these we can conclude that there is a significant qualitative difference between motors with low and high numbers of heads. 
 Thus experiments in vitro with large myosin II motors \cite{} does not necessarily capture the behavior of the motors inside a cytoskeleton. %TODO 
@@ -934,7 +935,7 @@ Moreover, for sixteen heads it became centered without two local maximas.
 }
 \end{figure}
 
-From the figure \ref{fig:chem_eff_1head} is also apparent that there is no qualitative difference in chemical efficiency between the system with 4 heads and 1 head,
+From the figure \ref{fig:chem_eff_1head} it is also apparent that there is no qualitative difference in chemical efficiency between the system with four heads and one head,
 hence we will further restrict the discussion to the more simple case of system having only a single head.
 The chemical efficiency expression then simplifies to
 \[
@@ -944,9 +945,8 @@ The chemical efficiency expression then simplifies to
 . 
 \] 
 As the potential is known in our model, the only missing information is thus the steady state distribution. 
-These distributions are computed by collecting the positions of the heads over all times that the head was in the attached/detached state. 
-They are shown in figure \ref{fig:pos_distr} for different load forces. 
-As argued, since the relaxation is fast, compared to the chemical rates, this approximates the steady distribution very well.
+These distributions are empirically obtained by collecting the positions of the heads over all times that the head was in the attached/detached state. 
+They are shown in figure~\ref{fig:pos_distr} for different load forces. 
 \begin{figure*}[t]
 \centering
 \subfigure[Attachable state]{ 
@@ -966,6 +966,8 @@ We observe that heads in the attachable state follow the potential closely while
 Also by increasing the external load, all distributions universally become flat. 
 }
 \end{figure*}
+
+Since the relaxation of position in a given potential is fast, compared to the chemical rates, this approximates the steady distribution very well.
 In the case without an external load, $F_{load}=0$, the motor head is very unlikely to cross the potential barrier in the attached state. 
 The maximum of the distribution is close to the minimum of the potential. 
 The discrepancy comes from the fact that the motor has multiple head with a fixed distance between them, which does not match with the period of the ratchet potential. 
