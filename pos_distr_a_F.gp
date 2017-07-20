@@ -22,7 +22,7 @@ shift(x) = x<0 ? shift(x+8) : (x>8 ? shift(x-8) : x)
 f = "-100 -25 0 25 100"
 color = "1 3 6 10 8"
 
-plot [0:8][0:0.4] \
+plot [0:8][0:0.3] \
       for [i=1:5] sprintf("Data/pos_distr_F=%s_attached.dat", word(f,i)) u (shift($1+6)):($2*10) title sprintf("F_{load} = %s pN", word(f,i)) w points ls word(color,i) \
     , V(shift(x-6)) axis x1y2 lt rgb "#666666" dashtype "-" notitle
 
