@@ -627,13 +627,10 @@ cease to pull on the filaments. Therefore mechanosensing will not occur spontane
 
 
 
-\section{Chemical efficiency}
+\section{First law of thermodynamics}
 \label{sec:energie}
-In previous years, a lot of effort was directed towards the assessment of the efficiency of molecular motors \cite{}. %TODO 
-Unfortunately, main focus of these works was biased towards the transport properties of the aforementioned motors. 
-However myosin II main role is in generating of the tension in the cytoskeletal network \cite{}. %TODO
-
-\subsection{First law of thermodynamics}
+Before we discuss an efficiency of the myosin in various setups, 
+we need to introduce the basic notion of energy, heat and work. 
 We start our discussion from the energy balance on the level of individual trajectories \cite{Pesek2013},
 which can be symbolically summarized as 
 \begin{equation}
@@ -643,7 +640,7 @@ which can be symbolically summarized as
 where the energy of the full system consists of the interaction ratchet potential \eqref{eq:ratchet_interaction}
 and the energy stored in ATP (and its products), 
 \begin{equation}
-E( x_\text{M}, x_\text{A}, \{ \zeta_i \}) = V_t( x_\text{M} - x_\text{A} ) + \Delta E \sum\limits_{i=1}^N \chi( \zeta_i = c ) ,
+E( x_\text{M}, x_\text{A}, \{ \zeta_i \}) = V_t( x_\text{M} - x_\text{A} ) + \Delta E \sum\limits_{i=0}^{N-1} \chi( \zeta_i = c ) ,
 \label{eq:internal_energy}
 \end{equation}
 where $\Delta E$ represents the actual internal energy stored by a single ATP and $\chi$ is a characteristic function\footnote{
@@ -685,7 +682,7 @@ Thus the total chemical energy consists of two parts ${\mathcal Q}^\text{chem} =
 where we sum over all jump times $t_\text{bind}$($t_\text{unbind}$) in the given ``direction''. 
 $t_\text{fin}$ denotes the duration of the process. 
 
-\subsubsection{Load on the motor}
+\subsection{Load on the motor}
 If we restrict the discussion only to the simplest setup, i.e. single loaded myosin with single actin,  
 and we use the equation of motion \eqref{eq:eom_M}, 
 the heat exchange with the surrounding \eqref{eq:heat_hb_M} can be rewritten as 
@@ -715,7 +712,7 @@ Consequently, the total energy balance equation \eqref{eq:energy_balance} simpli
 which does not explicitly depend on the load $F_\text{load}$. 
 
 
-\subsubsection{Heat fluxes}
+\subsection{Heat fluxes}
 At last, note that the internal energy of the system \eqref{eq:internal_energy} is bounded.
 Hence, if we interpret the energy balance equation \eqref{eq:energy_balance} in terms of mean dissipation rates defined as 
 \begin{equation}
@@ -731,10 +728,10 @@ for arbitrary initial condition.
 Such equality is trivially true for arbitrarily small time when the initial condition corresponds the steady state. 
 
 
-\subsubsection{Tug of war} 
+\subsection{Tug of war} 
 In section \ref{sec:ratchet} we introduced two alternative models more suitable for capturing the behavior of myosin inside the polymer network known as actomyosin cortex.
 
-\paragraph{Force on filaments}
+\subsubsection{Force on filaments}
 In the first model, see paragraph~\ref{sec:load_on_fil} and figure~\ref{fig:tug_F_illustration},
 the myosin is attached between two polymers on which the load is applied, 
 hence the energy balance \eqref{eq:energy_balance} is modified to  
@@ -750,7 +747,7 @@ E( x_\text{M}, x_{\text{A}_1}, x_{\text{A}_2}, \{ \zeta_i \})
 = V_t( x_\text{M} - x_{\text{A}_1} ) 
 \\
 + V_t( x_{\text{A}_2} - x_\text{M} ) 
-+ \Delta E \sum\limits_{i=1}^N \chi( \zeta_i = c ) .
++ \Delta E \sum\limits_{i=0}^{N-1} \chi( \zeta_i = c ) .
 \end{multline*}
 Note, that the last sum is over all heads of the motor, $N = N_{\text{A}_1} + N_{\text{A}_2}$.
 Contributions from the heat exchange with environment \eqref{eq:heat_hb_A} remains the same, even though in this case we have two contributions from both filaments
@@ -774,7 +771,7 @@ while following the same arguments as for \eqref{eq:heat_flux_balance} is possib
 0 = q_\text{M}^\text{hb} + q_{\text{A}_1}^\text{hb} + q_{\text{A}_2}^\text{hb} + w^\text{ext}_{\text{A}_1} + w^\text{ext}_{\text{A}_2} + q^\text{chem} .
 \]
 
-\paragraph{Elastic environment}
+\subsubsection{Elastic environment}
 The second model, described in paragraph \ref{sec:environment} and depicted in figure \ref{fig:tug}, 
 modifies the energy balance \eqref{eq:energy_balance}, resp. \eqref{eq:energy_balance_two_filaments}, even further
 \begin{equation*}
@@ -789,18 +786,23 @@ E( x_\text{M}, x_{\text{A}_1}, x_{\text{A}_2}, \{ \zeta_i \})
 + \frac{1}{2} k \left[ x_{\text{A}_1} - x_{\text{A}_1}(0) \right]^2 
 + \frac{1}{2} k \left[ x_{\text{A}_2} - x_{\text{A}_2}(0) \right]^2 
 \\
-+ \Delta E \sum\limits_{i=1}^N \chi( \zeta_i = c ) .
++ \Delta E \sum\limits_{i=0}^{N-1} \chi( \zeta_i = c ) .
 \end{multline*}
 Contrary to the previous setup, the total energy of the system is no longer bound and hence the heat fluxes \eqref{eq:heat_flux} are only balanced in the steady state. 
 
-\subsection{Chemical efficiency} 
+\section{Chemical efficiency} 
+\label{sec:efficiency}
+In previous years, a lot of effort was directed towards the assessment of the efficiency of molecular motors \cite{}. %TODO 
+Unfortunately, main focus of these works was biased towards the transport properties of the aforementioned motors. 
+However myosin II main role is in generating of the tension in the cytoskeletal network \cite{}. %TODO
+
 Efficiency, in general, relate a ``useful'' output with the input.
 As the ``usefulness'' heavily depends on the setup, there is a plethora of possible choices.
 Here we discuss one common choice and one choice, to the best knowledge of authors, previously not discussed in the leturature. 
 The first definition of the chemical efficiency, well discussed in the literature \cite{}, is related to the transport properties of molecular motors. 
 The second definition of the chemical efficiency captures the speed of the tension generation in networks, which typically contain a myosin~II. 
 
-\subsubsection{Transport efficiency} 
+\subsection{Transport efficiency} 
 As we have stated, the first efficiency we discuss is related to transport properties. 
 Namely, we identify the heat dissipated to the environment by the motor alone as the output work 
 \[
@@ -819,59 +821,139 @@ while for no load $F_\text{load} = 0$ it captures how much of the chemical energ
 i.e. how much of the chemical energy provided to the system is dissipated by the motor and not by the polymer. 
 
 
-\subsubsection{Chemical cycle efficiency} %TODO 
-Alternatively we can define a efficiency 
+\subsection{Chemical cycle efficiency} %TODO 
+Alternative approach it to identify as the ``useful'' is ratio the chemical energy supplied by ATP which is transformed to other forms of energy, 
+i.e. either is dissipated by myosin and actin through they diffusion or is stored in the interaction potential and thus increase the tension in the system. 
+This consideration leads to chemical cycle efficiency defined as 
 \begin{equation}
-\eta_\text{chem} = \frac{\langle\mathcal Q_\text{in}\rangle+\langle\mathcal Q_\text{out}\rangle}{\langle\mathcal Q_\text{in}\rangle} .
+\eta_\text{chem} = \frac{\langle\mathcal Q^\text{chem}_\text{in}\rangle+\langle\mathcal Q^\text{chem}_\text{out}\rangle}{\langle\mathcal Q^\text{chem}_\text{in}\rangle} .
 \label{eq:efficiency}
 \end{equation}
-This quantifies the fraction of chemical energy, supplied by the ATP driven cycles of the heads, that remains in the system. 
-This is shown in figure \ref{fig:chem}.
-\begin{figure}[b]
+
+\subsubsection{Simple setup}
+For a system in a simple setup with four heads, we investigate the dependency of such chemical efficiency on the load, see figure~\ref{fig:chem}.
+We observe that the chemical efficiency has two local maximums. 
+We will later show that these two maximums correspond to a frustrated system, 
+where the load is close to the point where it is able to overpower any forces induced by the ratchet potential. 
+Another observation, which we will discuss in depth later, is that the efficiency reaches a negative value, 
+which we interpret as a situation where the work done by the load $F_\text{load}$ is converted back to chemical energy. 
+\begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{chemical_cycle}
 \caption{
 \label{fig:chem}
 Chemical efficiency $\eta$ as a function of load force $F_\text{load}$.
+Solid lines are plotted at the level of $1\sigma$. 
 By increasing the $k_d/k_a$ ratio the local maximums of chemical efficiencies are getting closer origin,
 and their fluctuations decrease. 
 }
 \end{figure}
 
-After each jump in the chemical state of a motor head, the potential in which the whole motor diffuses is altered and a new relaxation process takes place. 
-The relaxation times of these diffusion processes are much faster than the times between chemical jumps. 
-This is because the chemical rates of the motor heads are very small. 
-Hence we can assume that the means of the quantities \eqref{eq:q_in} and \eqref{eq:q_out} can be described by
-\begin{gather}
-\begin{aligned}[b]
-\langle \mathcal Q_\text{in} \rangle 
-=& \rho^{eq}_1 k_d T\left[ \Delta E - (1-c)\langle V_r(x) \rangle_{s=1} \right] \\
-=& \frac{k_a k_d}{k_a + k_d}T\left[\Delta E - (1-c)\langle V_r(x) \rangle_{s=1} \right] 
-\end{aligned}
-\label{eq:mean_q_in} \\
-\begin{aligned}[b]
-\langle \mathcal Q_\text{out} \rangle 
-=& -\rho^{eq}_0 k_a T\left[ \Delta E - (1-c)\langle V_r(x) \rangle_{s=0} \right] \\
-=& -\frac{k_a k_d}{k_a + k_d} T\left[ \Delta E - (1-c)\langle V_r(x) \rangle_{s=0} \right] 
-\end{aligned}
-\label{eq:mean_q_out}
-\end{gather}
-where $\langle \cdot \rangle_{s}$ stands for an average over the steady state distribution in a given state $s$. 
-This will give us an expression for the chemical efficiency.
-\begin{equation}
-\eta = \frac{ (1-c) \left( \langle V_r \rangle_{s=0} - \langle V_r \rangle_{s=1} \right) }{ \Delta E - (1-c) \langle V_r \rangle_{s=1} } 
+In order to properly understand these features, 
+we try evaluate the chemical efficiency \eqref{eq:efficiency} in a steady state. 
+We start by evaluating the mean heat \eqref{eq:q_in} and \eqref{eq:q_out} produced over a time interval of length $\Delta t$ 
+by transitions of a single head $i$ displaced by $i d$  
+\begin{gather*}
+\begin{multlined}[b][.42\textwidth]
+\langle \mathcal Q^\text{chem}_\text{in}(i) \rangle 
+= \Delta t \, k_\text{unbind} 
+\\ \times 
+\!\!\!\! \sum\limits_{\{\zeta_j\} : \zeta_i = 1 } \!\!\!\! \rho(\{ \zeta_j \} ) 
+\left[ \Delta E - (1-c) \left\langle V_r(x - i \, d ) \middle| \{ \zeta_j \} \right\rangle \right] 
+\end{multlined}
+%\label{eq:mean_q_in} 
+\\
+\begin{multlined}[b][.42\textwidth]
+\langle \mathcal Q^\text{chem}_\text{out}(i) \rangle 
+= - \Delta t \, k_\text{bind} 
+\\ \times 
+\!\!\!\! \sum\limits_{\{\zeta_j\} : \zeta_i = c } \!\!\!\! \rho(\{ \zeta_j \} ) 
+\left[ \Delta E - (1-c) \left\langle V_r(x - i \, d ) \middle| \{ \zeta_j \} \right\rangle \right] 
+\end{multlined}
+%\label{eq:mean_q_out}
+\end{gather*}
+where $\langle V | X \rangle$ is the steady state conditional mean value with respect to the fixed internal state $X$ 
+and $\rho(X) \in [0,1]$ denotes the probability of the occupation of the corresponding internal state $X$ in a steady state, 
+which does not depend on the position due to the independence of the positional independence of its internal dynamics~\eqref{eq:transition}. 
+Moreover, due to the independence of individual heads the probability occupation of a given internal state can be written as 
+\[
+\rho( \{ \zeta_i \} ) = \prod_{i=0}^{N-1} \rho_1( \zeta_i ), 
+\]  
+where 
+\[
+\rho_1(\zeta) = \begin{cases} 
+\frac{ k_\text{bind} }{ k_\text{bind} + k_\text{unbind} } & \zeta = 1 , \\
+\frac{ k_\text{unbind} }{ k_\text{bind} + k_\text{unbind} } & \zeta = c . 
+\end{cases} 
+\]
+
+Another consequence of the independence of the time evolution of individual heads is, 
+that we can express the total mean heats produced in chemical cycle as a sum of contributions from individual heads
+\begin{align*}
+\langle \mathcal Q_\text{in}^\text{chem} \rangle 
+=& \sum\limits_{i=0}^{N-1} \left\langle \mathcal Q_\text{in}^\text{chem}(i) \right\rangle 
+= \Delta t \frac{ k_\text{bind} k_\text{unbind} }{ k_\text{bind} + k_\text{unbind} } 
+\\ &\times
+\left[ N \, \Delta E 
+- (1-c) \sum\limits_{i=0}^{N-1} \left\langle V_r(x - i d ) \middle| \zeta_i = 1 \right\rangle 
+\right] ,  
+\\
+\langle \mathcal Q^\text{chem}_\text{out} \rangle 
+=& \sum\limits_{i=0}^{N-1} \left\langle \mathcal Q_\text{out}^\text{chem}(i) \right\rangle 
+= - \Delta t \frac{ k_\text{bind} k_\text{unbind} }{ k_\text{bind} + k_\text{unbind} } 
+\\ &\times
+\left[ N \, \Delta E 
+- (1-c) \sum\limits_{i=0}^{N-1} \left\langle V_r(x - i d ) \middle| \zeta_i = c \right\rangle  
+\right] , 
+\end{align*}
+which leads to a more explicit expression for the efficiency \eqref{eq:efficiency} 
+\begin{multline}
+\eta_\text{chem} = \frac{1-c}{N}
+\\ \times
+\sum\limits_{i=0}^{N-1} \frac{ \left\langle V_r(x-id) \middle| \zeta_i = c \right\rangle - \left\langle V_r( x -id ) \middle| \zeta_i = 1 \right\rangle }
+{ \Delta E - \frac{1-c}{N} \sum\limits_{j=0}^{N-1} \left\langle V_r(x-jd) \middle| \zeta_j = 1 \right\rangle } 
+. 
 \label{eq:eta}
-\end{equation}
-From this, we can understand the chemical energy balance, shown in figure \ref{fig:chem}, by looking at the difference of where a motor head is typically positioned in the potential energy landscape when it is in the attached or detached state. 
-These distributions are computed by collecting the positions of the heads over all times that the head was in the attached/detached state. 
-They are shown in figure \ref{fig:pos_distr} for different load forces. 
-As argued, since the relaxation is fast, compared to the chemical rates, this approximates the steady distribution very well.
+\end{multline}
+We can see that the numerator is given by the average difference between mean potentials in ATP attached and detached states over all heads. 
+If we interpret the dependency of the chemical efficiency on the load as a probabilistic distribution with finite variance and assume that the main contribution to the shape, figure~\ref{fig:chem}, is from the numerator, 
+by using central limit theorem the efficiency-load dependency will approach a Gaussian distribution with increasing number of heads. 
+This is confirmed by the figure~\ref{fig:chem_eff_1head}, where indeed the distribution is getting broader with increasing number of heads and has only a single maximum.
+Moreover we can see that the empirical efficiency has less variance with the increasing number of heads. 
+From these we can conclude that there is a significant qualitative difference between motors with low and high numbers of heads. 
+Thus experiments in vitro with large myosin II motors \cite{} does not necessarily capture the behavior of the motors inside a cytoskeleton. %TODO 
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.45\textwidth,height=!]{chemical_cycle_1head}
+\caption{
+\label{fig:chem_eff_1head}
+Chemical efficiency of a motor under load. 
+Comparison of one (red triangles), four (blue stars), sixteen (green circles) headed motors.
+We observe that with increasing number of heads the efficiency \eqref{eq:efficiency} distribution 
+gets broader and it's variance decreases.
+Moreover, for sixteen heads it became centered without two local maximas. 
+}
+\end{figure}
+
+From the figure \ref{fig:chem_eff_1head} it is also apparent that there is no qualitative difference in chemical efficiency between the system with four heads and one head,
+hence we will further restrict the discussion to the more simple case of system having only a single head.
+The chemical efficiency expression then simplifies to
+\[
+\eta_\text{chem} = (1-c)
+\frac{ \left\langle V_r(x) \middle| \zeta = c \right\rangle - \left\langle V_r(x) \middle| \zeta = 1 \right\rangle }
+{ \Delta E - (1-c) \left\langle V_r(x) \middle| \zeta = 1 \right\rangle } 
+. 
+\] 
+As the potential is known in our model, the only missing information is thus the steady state distribution. 
+These distributions are empirically obtained by collecting the positions of the heads over all times that the head was in the attached/detached state. 
+They are shown in figure~\ref{fig:pos_distr} for different load forces. 
 \begin{figure*}[t]
 \centering
 \subfigure[Attachable state]{ 
 \centering
 \includegraphics[width=.45\textwidth,height=!]{pos_distr_a_F}
 }
+%\\
 \subfigure[Detached state]{
 \centering
 \includegraphics[width=.45\textwidth,height=!]{pos_distr_d_F}
@@ -884,6 +966,8 @@ We observe that heads in the attachable state follow the potential closely while
 Also by increasing the external load, all distributions universally become flat. 
 }
 \end{figure*}
+
+Since the relaxation of position in a given potential is fast, compared to the chemical rates, this approximates the steady distribution very well.
 In the case without an external load, $F_{load}=0$, the motor head is very unlikely to cross the potential barrier in the attached state. 
 The maximum of the distribution is close to the minimum of the potential. 
 The discrepancy comes from the fact that the motor has multiple head with a fixed distance between them, which does not match with the period of the ratchet potential. 
@@ -1072,18 +1156,6 @@ Hence this result, obtained for a one-headed motor, also seems to hold for the s
 
 In fact, if we compare the chemical efficiencies for a motor with one head and four heads, we see a great similarity.
 This comparison is made in figure \ref{fig:chem_eff_1head}.
-\begin{figure}[t]
-\centering
-\includegraphics[width=0.45\textwidth,height=!]{chemical_cycle_1head}
-\caption{
-\label{fig:chem_eff_1head}
-Chemical efficiency of a motor under load. 
-Comparison of one (red triangles), four (blue stars), sixteen (green circles) headed motors.
-We observe that with increasing number of heads the efficiency \eqref{eq:efficiency} distribution 
-gets broader and it's variance decreases.
-Moreover, for sixteen heads it became centered without two local maximas. 
-}
-\end{figure}
 The behavior for large load forces seems to be exactly the same.
 Since $\eta$ is a ratio of chemical energies exchanged through the motor heads, this means that for large enough forces a head of the four headed motor no longer feels the presence of the other heads.
 However the one headed motor is more susceptible to external forces as it's chemical efficiency starts to drop already at smaller loads. 
