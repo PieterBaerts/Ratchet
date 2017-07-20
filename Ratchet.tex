@@ -109,10 +109,10 @@ In those studies the rates did depend on the load on the motor. We show computat
 
 \section{The Ratchet model}
 \label{sec:ratchet}
-In order to investigate the movement of myosin along the actin filament and the forces it generates, we consider the following one dimensional model:
-First, we assume that the rigidity of the actin polymer and myosin backbone is high enough that their elongations can be neglected.
-Second, we assume that all myosin heads are attached directly to the myosin backbone at fixed equidistant positions, see figure~\ref{fig:ratchet setup}. 
-These simplifications allow us to model both the motor and the filament as point particles undergoing overdamped diffusion \cite{vanKampen1981stochastic}.
+In order to investigate the movement of myosin along the actin filament and the forces it generates, we consider the following one dimensional model.
+Firstly, we assume that the rigidity of the actin polymer and myosin backbone is high enough that their elongations can be neglected.
+Secondly, we assume that all myosin heads are attached directly to the myosin backbone at fixed equidistant positions, see figure~\ref{fig:ratchet setup}. 
+These simplifications allow us to model both the motor and the filament as point particles undergoing overdamped diffusion in the inter-cellular environment \cite{vanKampen1981stochastic}.
 Moreover, each myosin head has an internal state, which represent its chemical state, 
 i.e. whether there is an ATP bounded or not to the myosin head. 
 \begin{figure}[t]
@@ -303,15 +303,15 @@ Note that due to the symmetry of the setup the mean velocity of the myosin is in
 
 \subsubsection{Elastic environment}
 \label{sec:environment}
-As polymers inside the cytoskeleton are usually thoroughly interconnected rather then freely diffusing \cite{blanchoin2014actin,ennomani2015architecture},
-we can opt for an alternative approach, 
-rather then applying an external load we attach filaments to fixed points by a spring with a constant $k$. 
-These points represent points of interaction with the rest of the network while the spring constant $k$ represent elastic properties of the full network. 
-The myosin is again interacting with two filaments that are arranged in an anti-parallel fashion. 
-Hence, similarly to previous case, it will no longer have a preferred direction to move in and consequently its mean velocity will be zero. 
-The observable of interest is now the mean force that the motor applies on the filaments, 
+As polymers inside the cytoskeleton are usually thoroughly interconnected rather then freely diffusing \cite{blanchoin2014actin,ennomani2016architecture},
+we can opt for an alternative approach.
+Rather then applying an external load we attach filaments to fixed points by a spring with a constant $k$, similar to \cite{albert2014stochastic}. 
+These points represent points of interaction with the rest of the network while the spring constant $k$ represents the elastic properties of the full network. 
+The myosin motor is again interacting with two filaments that are arranged in an anti-parallel fashion. 
+Hence, similar to the previous case, it will no longer have a preferred direction to move in and consequently its mean velocity will be zero. 
+The observable of interest is now the mean force that the motor applies to the filaments, 
 which is measured through the extension of the springs attached to the filaments,
-and which represent the active tension in the network produced by the single myosin. 
+and which represent the active tension in the network produced by the single myosin molecule. 
 This setup is sketched in figure \ref{fig:tug}. 
 \begin{figure}[t]
 \centering
@@ -353,7 +353,7 @@ where the load is replaced by the force caused by springs and the reference poin
 
 \subsection{Numerical method}
 
-Euler-Maruyama %TODO
+We use an Euler-Maruyama integration scheme to stochastically evolve the systems from a randomised initial configuration \cite{kloeden1989survey,maruyama1955continuous}. Results are obtained after both ergodic and ensemble averaging, up to a minimal time of $1s$ and over $100$ or more independent copies.    
 
 \section{Mean velocity}
 \label{sec:velocity}
