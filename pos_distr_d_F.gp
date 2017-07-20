@@ -5,7 +5,7 @@ set output "pos_distr_d_F.pdf"
 load "Data/my.pal"
 
 set xlabel "x (nm)"
-set ylabel "{/Symbol r}_{bound}"
+set ylabel "~{/Symbol r}\342\200\276 (x,{/Symbol z}=c)"
 
 set key left Left
 

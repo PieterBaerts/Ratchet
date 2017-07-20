@@ -907,18 +907,63 @@ that we can express the total mean heats produced in chemical cycle as a sum of 
 \right] , 
 \end{align*}
 which leads to a more explicit expression for the efficiency \eqref{eq:efficiency} 
-\begin{multline}
+\begin{multline*}
 \eta_\text{chem} = \frac{1-c}{N}
 \\ \times
 \sum\limits_{i=0}^{N-1} \frac{ \left\langle V_r(x-id) \middle| \zeta_i = c \right\rangle - \left\langle V_r( x -id ) \middle| \zeta_i = 1 \right\rangle }
 { \Delta E - \frac{1-c}{N} \sum\limits_{j=0}^{N-1} \left\langle V_r(x-jd) \middle| \zeta_j = 1 \right\rangle } 
 . 
+\end{multline*}
+We can further introduce an average probability density of a single head 
+\begin{equation}
+\bar{\rho}(x,\zeta) = \frac{1}{N} \sum\limits_{i=0}^{N-1} \sum\limits_{ \{ \zeta_j \} : \zeta_i = \zeta } \rho( x + i d, \{ \zeta_j \} ) ,
+\label{eq:eff_distribution}
+\end{equation}
+which allow us to further simplify the expression for the chemical efficiency to 
+\begin{equation}
+\eta_\text{chem} = (1-c)
+\frac{ \left\langle V_r(x) \middle| \zeta = c \right\rangle_{\bar{\rho}} - \left\langle V_r(x) \middle| \zeta = 1 \right\rangle_{\bar{\rho}} }
+{ \Delta E - (1-c) \left\langle V_r(x) \middle| \zeta = 1 \right\rangle_{\bar{\rho}} } 
+. 
 \label{eq:eta}
-\end{multline}
+\end{equation}
 We can see that the numerator is given by the average difference between mean potentials in ATP attached and detached states over all heads. 
-If we interpret the dependency of the chemical efficiency on the load as a probabilistic distribution with finite variance and assume that the main contribution to the shape, figure~\ref{fig:chem}, is from the numerator, 
+As the potential is known in our model, the only missing information is thus the steady state distribution 
+or to be more precise average steady state density for single head \eqref{eq:eff_distribution}.  
+These distributions are empirically obtained by collecting the positions of the heads over all times that the head was in the ATP bound/unbound state 
+and are shown in figure~\ref{fig:pos_distr} for different load forces. 
+\begin{figure}[t]
+\centering
+\subfigure[ATP unbound state]{ 
+\centering
+\includegraphics[width=.45\textwidth,height=!]{pos_distr_a_F}
+}
+\\
+\subfigure[ATP bound state]{
+\centering
+\includegraphics[width=.45\textwidth,height=!]{pos_distr_d_F}
+}
+\caption{
+\label{fig:pos_distr}
+Spatial distributions $\rho$ of individual heads of the motor with respect to the ratchet potential (denoted by dashed black line) for different load forces $F_\text{load}$.
+The spatial distribution is taken as the average over all heads at the given motor in a given internal state.
+We observe that heads in the attachable state follow the potential closely while those in the detached state do not. 
+Also by increasing the external load, all distributions universally become flat. 
+}
+\end{figure}
+
+In the case without external load, $F_\text{load}=0$, 
+the maximum of the distribution is close to the minimum of the potential,  
+where the discrepancy in the position comes from the averaging over multiple heads with a fixed distance between them, 
+which does not match with the period of the ratchet potential. 
+Also the fact that the distributions seem to exhibit multiple peaks, can be attributed to the motor having four heads. 
+Both, in the bound and unbound state, the head can be found predominantly on the ``soft'' slope of the ratchet.
+
+
+If we interpret the dependency of the chemical efficiency \eqref{eq:eta} on the load as a probabilistic distribution with finite variance and assume that the main contribution to the shape, figure~\ref{fig:chem}, is from the numerator, 
 by using central limit theorem the efficiency-load dependency will approach a Gaussian distribution with increasing number of heads. 
 This is confirmed by the figure~\ref{fig:chem_eff_1head}, where indeed the distribution is getting broader with increasing number of heads and has only a single maximum.
+It is also apparent that there is no qualitative difference in chemical efficiency between the system with four heads and one head.
 Moreover we can see that the empirical efficiency has less variance with the increasing number of heads. 
 From these we can conclude that there is a significant qualitative difference between motors with low and high numbers of heads. 
 Thus experiments in vitro with large myosin II motors \cite{} does not necessarily capture the behavior of the motors inside a cytoskeleton. %TODO 
@@ -935,44 +980,11 @@ Moreover, for sixteen heads it became centered without two local maximas.
 }
 \end{figure}
 
-From the figure \ref{fig:chem_eff_1head} it is also apparent that there is no qualitative difference in chemical efficiency between the system with four heads and one head,
-hence we will further restrict the discussion to the more simple case of system having only a single head.
-The chemical efficiency expression then simplifies to
-\[
-\eta_\text{chem} = (1-c)
-\frac{ \left\langle V_r(x) \middle| \zeta = c \right\rangle - \left\langle V_r(x) \middle| \zeta = 1 \right\rangle }
-{ \Delta E - (1-c) \left\langle V_r(x) \middle| \zeta = 1 \right\rangle } 
-. 
-\] 
-As the potential is known in our model, the only missing information is thus the steady state distribution. 
-These distributions are empirically obtained by collecting the positions of the heads over all times that the head was in the ATP bound/unbound state. 
-They are shown in figure~\ref{fig:pos_distr} for different load forces. 
-\begin{figure*}[t]
-\centering
-\subfigure[Attachable state]{ 
-\centering
-\includegraphics[width=.45\textwidth,height=!]{pos_distr_a_F}
-}
-%\\
-\subfigure[Detached state]{
-\centering
-\includegraphics[width=.45\textwidth,height=!]{pos_distr_d_F}
-}
-\caption{
-\label{fig:pos_distr}
-Spatial distributions $\rho$ of individual heads of the motor with respect to the ratchet potential (denoted by dashed black line) for different load forces $F_\text{load}$.
-The spatial distribution is taken as the average over all heads at the given motor in a given internal state.
-We observe that heads in the attachable state follow the potential closely while those in the detached state do not. 
-Also by increasing the external load, all distributions universally become flat. 
-}
-\end{figure*}
 
+hence we will further restrict the discussion to the more simple case of system having only a single head.
+
+the motor head is very unlikely to cross the potential barrier in the attached state. 
 Since the relaxation of position in a given potential is fast, compared to the chemical rates, this approximates the steady distribution very well.
-In the case without an external load, $F_{load}=0$, the motor head is very unlikely to cross the potential barrier in the attached state. 
-The maximum of the distribution is close to the minimum of the potential. 
-The discrepancy comes from the fact that the motor has multiple head with a fixed distance between them, which does not match with the period of the ratchet potential. 
-Also the fact that the distributions seem to exhibit multiple peaks, can be attributed to the motor having four heads. 
-Both in the attached and detached state, the head can be found predominantly on the soft slope of the ratchet, which is to be expected.
 
 
 With increasing load, we see both a shift of the maximum and a flattening of the profile. 
