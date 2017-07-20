@@ -7,7 +7,7 @@ load "Data/my.pal"
 set xlabel "x (nm)"
 set ylabel "~{/Symbol r}\342\200\276 (x,{/Symbol z}=1)"
 
-set key left Left
+set key left Left width -4
 
 unset x2tics 
 unset y2tics

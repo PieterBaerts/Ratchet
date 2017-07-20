@@ -5,9 +5,9 @@ set output "chem_energy_distr_all_F.pdf"
 load "Data/my.pal"
 
 set xlabel "x (nm)"
-set ylabel "{/Symbol r}(x) [ q_{in}(x) + q_{out}(x) ]"
+set ylabel "V(x) [ ~{/Symbol r}\342\200\276 (x,{/Symbol z}=c) - ~{/Symbol r}\342\200\276 (x,{/Symbol z}=1) ]"
 
-set key left Left
+set key top center Left width -4    
 
 unset x2tics 
 unset y2tics
@@ -22,8 +22,8 @@ shift(x) = x<0 ? shift(x+8) : (x>8 ? shift(x-8) : x)
 f = "-100 -25 0 25 100"
 color = "1 3 6 10 8"
 
-plot [0:8][-0.2:0.8] \
-     for [i=1:5] sprintf("< paste Data/pos_distr_F=%s_attached.dat Data/pos_distr_F=%s_detached.dat", word(f,i), word(f,i)) u (shift($1+6)):((30.4-0.7*V($1))*($2-$5)) title sprintf("F_{load} = %s pN", word(f,i)) w points ls word(color,i) \
+plot [0:8][:] \
+     for [i=1:5] sprintf("< paste Data/pos_distr_F=%s_attached.dat Data/pos_distr_F=%s_detached.dat", word(f,i), word(f,i)) u (shift($1+6)):(V($1)*($5-$2)) title sprintf("F_{load} = %s pN", word(f,i)) w points ls word(color,i) \
     , V(shift(x-6)) axis x1y2 lt rgb "#666666" dashtype "-" notitle \
     , 0 lt rgb "black" lw 1.25 notitle 
 

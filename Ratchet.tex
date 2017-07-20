@@ -930,7 +930,7 @@ which allow us to further simplify the expression for the chemical efficiency to
 \end{equation}
 We can see that the numerator is given by the average difference between mean potentials in ATP attached and detached states over all heads. 
 As the potential is known in our model, the only missing information is thus the steady state distribution 
-or to be more precise average steady state density for single head \eqref{eq:eff_distribution}.  
+or to be more precise the average steady state density for a single head \eqref{eq:eff_distribution}.  
 These distributions are empirically obtained by collecting the positions of the heads over all times that the head was in the ATP bound/unbound state 
 and are shown in figure~\ref{fig:pos_distr} for different load forces. 
 \begin{figure}[t]
@@ -953,12 +953,46 @@ Also by increasing the external load, all distributions universally become flat.
 }
 \end{figure}
 
+The difference between the average distribution \eqref{eq:eff_distribution} in the ATP bound state and ATP unbound state is directly translated to the mean heat flux \eqref{eq:heat_flux} out of the chemical system
+\begin{multline*}
+q_\text{in}^\text{chem} + q_\text{out}^\text{chem} 
+= (1-c) \frac{ k_\text{bind} k_\text{unbind} }{ k_\text{bind} + k_\text{unbind} } 
+\\ \times
+\left[ \left\langle V_r(x) \middle| \zeta = c \right\rangle_{\bar{\rho}} - \left\langle V_r(x) \middle| \zeta = 1 \right\rangle_{\bar{\rho}} \right] .
+\end{multline*} 
+This is summarized in the figure~\ref{fig:chem_energy_distr}, 
+where we show the spatial dependency of the given heat flux.
+We can see a major contribution from the tails where the difference in the average densities is weighted by potential maximum.
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.45\textwidth,height=!]{chem_energy_distr_all_F}
+\caption{
+\label{fig:chem_energy_distr}
+Space resolved denominator of the efficiency \eqref{eq:eta} for various load forces $F_\text{load}$. %TODO
+We observe that the optimal output is achieved when there is the biggest discrepancy between spatial distributions, compare with figure~\ref{fig:pos_distr} and \ref{fig:chem}. 
+}
+\end{figure}
+
 In the case without external load, $F_\text{load}=0$, 
-the maximum of the distribution is close to the minimum of the potential,  
+the maximum of the distribution, see fig.~\ref{fig:pos_distr}, is close to the minimum of the potential,  
 where the discrepancy in the position comes from the averaging over multiple heads with a fixed distance between them, 
 which does not match with the period of the ratchet potential. 
 Also the fact that the distributions seem to exhibit multiple peaks, can be attributed to the motor having four heads. 
 Both, in the bound and unbound state, the head can be found predominantly on the ``soft'' slope of the ratchet.
+
+When the load is increased to $F_\text{load} = 25 \, \mathrm{pN}$, the average steady state distribution shifts in both the ATP bound and unbound state to the right. 
+While the distribution for the ATP unbound state remains peaked around the potential minimum, cf. figure~\ref{fig:pos_distr},
+the distribution in the ATP bound state flattens out and increases around the potential maximum. 
+This leads to an increase of $\eta$, see figures~\ref{fig:chem} and \ref{fig:chem_energy_distr}. 
+
+For a load in the opposite direction $F_\text{load}= -25 \, \mathrm{pN}$ the effect on $\eta$ is similar but less pronounced, 
+figure~\ref{fig:chem_energy_distr}, 
+since the slope of the ratchet on the side is less steep and the distributions get more spread out, cf. figure~\ref{fig:pos_distr}. 
+
+For larger loads, distributions shift and flatten even more, figure~\ref{fig:pos_distr}. 
+Hence, it is more plausible to find a head in the ATP bound state around the potential minimum. 
+This means that more energy will be dissipated when the heads bind and $\eta$ will go down and even become negative. 
+In the next section we will investigate the behavior of $\eta$ for large loads and show that it indeed has to be negative and that it will decay like $\frac{1}{F_{load}^2}$ as $F_{load}$ goes to infinity.
 
 
 If we interpret the dependency of the chemical efficiency \eqref{eq:eta} on the load as a probabilistic distribution with finite variance and assume that the main contribution to the shape, figure~\ref{fig:chem}, is from the numerator, 
@@ -995,30 +1029,12 @@ The detached distributions are broader for $F_{load}=0$, because to potential is
 To understand the dependency of the chemical efficiency on the load, we must compare the attached and detached distribution and correlate this with the with of the energy gap along the period of the ratchet. 
 After all, the numerator in $\eta$ is proportional to $\Delta E - V(x) \left[ \rho_a(x) - \rho_d(x) \right]$ integrated over a period of the ratchet. 
 This quantity is plotted in figure \ref{fig:chem_energy_distr}
-\begin{figure}[b]
-\centering
-\includegraphics[width=0.45\textwidth,height=!]{chem_energy_distr_all_F}
-\caption{
-\label{fig:chem_energy_distr}
-Density of the nett energy output \eqref{} produced by the chemical cycle for various load forces $F_\text{load}$. %TODO
-We observe that the optimal output is achieved when there is the biggest discrepancy between spatial distributions, see figure~\ref{fig:pos_distr}. 
-}
-\end{figure}
 
 
 For example, in absence of a load, the distribution in the attached state is peak around the potential's minimum and has a higher amplitude there compared to the distribution in the detached state. 
 In this region, the energy gap is larger than around the maximum of the potential. 
 Therefore more energy goes into the system, when ATP binds to a head, than energy going out, when ATP is hydrolyzed and the head attaches again to the actin filament. 
 
-
-When the load is increased to $F_{load} = 25 \, \mathrm{pN}$, the distributions shift to the right but distribution for the attached state remains peaked around the potential minimum, while the detached distribution flattens out and increases around the potential maximum. 
-This leads to an increase of $\eta$. 
-For a load in the opposite direction $F_{load}= -25 \, \mathrm{pN}$ the effect on $\eta$ is similar but less pronounced, since the slope of the ratchet on the side is less steep and the distributions get more spread out. 
-
-
-For larger loads, the distributions shift more but since the detached one is flatter, it is more plausible the find a head in the detached state around the potential minimum. 
-This means that more energy will be dissipated when the heads bind and $\eta$ will go down and even become negative. 
-In the next section we will investigate the behavior of $\eta$ for large loads and show that it indeed has to be negative and that it will decay like $\frac{1}{F_{load}^2}$ as $F_{load}$ goes to infinity.
 
 
 \section{TO DO}
