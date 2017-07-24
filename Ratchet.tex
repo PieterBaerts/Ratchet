@@ -224,7 +224,7 @@ Detaching rate& $k_\text{bind}$ & 80 & s$^{-1}$ & \cite{albert2014stochastic} \\
 Skewness& $a$ & 0.25 & --- & ---\\
 Potential amplitude& $V$ & 40 & pN nm & ---\\
 Potential scaling& $c$ & 0.3 & --- & \cite{Nie2014, nie2014conformational}\\
-Chemical energy gap & $\Delta E$ & 30.4 & pN nm & \cite{}\\ %TODO
+Chemical energy gap & $\Delta E$ & 30.4 & pN nm & \cite{gajewski1986thermodynamics}\\
 Motor friction& $\gamma_{m}$ & 0.66 & pN $\upmu$s nm$^{-1}$ & \cite{Broersma1960,Broersma1981} \\ %TODO
 Actin friction& $\gamma_{a}$ & 0.97 & pN $\upmu$s nm$^{-1}$ & \cite{Broersma1960,Broersma1981} \\ %TODO
 \end{tabular}
@@ -397,13 +397,13 @@ The velocity decreases to $0$ for large discrepancies between binding and unbind
 In this section, we investigate the dependency of the mean velocity on an external load force $F_\text{load}$ applied to the motor parallel to the preferred direction, 
 cf. figure~\ref{fig:ratchet setup}.
 Figure~\ref{fig:F_v} shows the typical force -- mean velocity relations for various unbinding rates $k_\text{unbind}$, which mimics the dependency on ATP concentration.
+Such a force-velocity relation was already presented in 2002 by Reimann \cite{reimann2002brownian}.
 For small load forces, the response is very low. 
 This is due to the interaction with an actin polymer, which provides an additional friction force to counter the load force. 
 For larger forces the system looses its resilience and the contribution from the load will dominate. 
 The larger the load, the more the velocity will approach the velocity of a non-interacting motor, $\langle v \rangle = \frac{1}{\gamma_\text{M}}F_\text{load}$.
-Curves for higher ATP binding rates are closer to the curve for the completely unbound motor, %TODO
+Curves for higher ATP binding rates are closer to the curve for the completely unbound motor,
 which means that the motor is more submissive to the external load.
-%TODO comparisson with literature 
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{F_v}
@@ -647,9 +647,8 @@ This suggests that the motor is not only able to sense external forces, but also
 Similar results were obtained for different motor models with load dependent chemical rates \cite{stam2015isoforms,albert2014stochastic}. 
 However, the models used in those studies exhibit rates the depend on the strain or tension in the myosin motor. 
 In our study, we show that similar behaviour also occurs in a simple flashing ratchet with constant chemical rates. 
-It is important to include the fluctuations in this stochastic model to preserve the mechanosensing feature. In some models the force-velocity relation is implemented ad-hoc, such that the velocity of the motor is deterministic and it depends only on the load \cite{}. %TODO
-In those models the motor will essentially stall in this given setup and 
-cease to exert a force on the filaments. Therefore mechanosensing will not occur spontaneously in those models.
+It is important to include the fluctuations in this stochastic model to preserve the mechanosensing feature. In mean field models, where the force-velocity relation would be is implemented such that the velocity of the motor depends deterministically on the load, the motor will essentially stall in this given setup and cease to exert a force on the filaments. 
+Therefore mechanosensing will not occur spontaneously in those models.
 
 \section{First law of thermodynamics}
 \label{sec:energie}
