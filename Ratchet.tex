@@ -526,9 +526,10 @@ One can interpret the nonlinear force-velocity relation for the myosin \eqref{eq
 that intrinsically depends on the load. 
 Without the ratchet interaction, the motion of the myosin would satisfy $ \gamma_\text{M}\langle v\rangle = F_\text{load}$. 
 The discrepancy in this relation, up to a pre-factor, equals the mean force exerted via the flashing ratchet $\langle F_\text{r}\rangle$ 
-\begin{equation*}
+\begin{equation}
 \frac{\gamma_\text{A}\gamma_\text{M}}{\gamma_\text{A} + \gamma_\text{M} } \left(\langle v \rangle - \frac{F_\text{load}}{\gamma_\text{M}}\right) = \langle F_\text{r} \rangle.
-\end{equation*}
+\label{eq:mean_ratchet_force}
+\end{equation}
 Note that this is the same as the distance between the force-velocity curves and the ratchet-free curve in figure \ref{fig:F_v}.
 In figure \ref{fig:ratchet_force} we observe, 
 that the response of the system for small loads is linear and independent of the rates and hence of the ATP concentration. 
@@ -942,6 +943,11 @@ We can further introduce an average probability density of a single head
 \bar{\rho}(x,\zeta) = \frac{1}{N} \sum\limits_{i=0}^{N-1} \sum\limits_{ \{ \zeta_j \} : \zeta_i = \zeta } \rho( x + i d, \{ \zeta_j \} ) ,
 \label{eq:eff_distribution}
 \end{equation}
+and consequently conditional average probability denstity
+\begin{equation}
+\bar{\rho}(x|\zeta) = \bar{\rho}(x,\zeta) \left[ \int\limits_0^\ell \rmd y \; \bar{\rho}(y,\zeta) \right]^{-1}
+\label{eq:cond_prob}
+\end{equation}
 which allow us to further simplify the expression for the chemical efficiency to 
 \begin{equation}
 \eta_\text{chem} = (1-c)
@@ -1024,7 +1030,7 @@ In the appendix we have proven this hypothesis on the system with a single head 
 \eta \asymp - \frac{1}{ F_\text{load}^2 } \qquad \text{for} \quad F_\text{load} \to \pm \infty .
 \]
 
-
+\subsubsection{Dependency on number of heads}
 If we interpret the dependency of the chemical efficiency \eqref{eq:eta} on the load as a probabilistic distribution with finite variance and assume that the main contribution to the shape, figure~\ref{fig:chem}, is from the numerator, 
 by using central limit theorem the efficiency-load dependency will approach a Gaussian distribution with increasing number of heads. 
 This is confirmed by the figure~\ref{fig:chem_eff_1head}, where indeed the distribution is getting broader with increasing number of heads and has only a single maximum.
@@ -1045,31 +1051,61 @@ Moreover, for sixteen heads it became centered without two local maximas.
 }
 \end{figure}
 
-
+\subsubsection{Local minimum}
 Another trait of the chemical efficiency curves are the local minima's around $F_\text{load}=0$. 
-The understand this we must again look at equation \eqref{eq:eta} which is determined by the ratchet potential averaged with the heads' distribution in the attached and detached state. 
+This can be understand from the equation \eqref{eq:eta}, which is determined by the ratchet potential averaged with the heads' distribution in the attached and detached state. 
 For a one headed motor, these distribution will both be peaked around the minimum of the ratchet potential. 
-In fact, the distributions will be given by the Boltzmann distribution.
+In fact, these distributions will be given by the Boltzmann distribution
 \begin{equation}
-\rho(x,\zeta) = \frac{1}{Z(\zeta)} e^{-\beta \zeta V_r(x)}
+\rho_0(x,\zeta) = \frac{1}{Z(\zeta)} e^{-\beta \zeta V_r(x)}
 \end{equation} 
-From this point of view, detaching the head is equivalent to an increasing of the temperature $T\rightarrow\frac{T}{c}$. 
-Hence the distributions for the detached state are broader and the expectation value of $V_r$ will be bigger than in the attached state and $\eta$ will be positive. 
-Now if we apply a small external force, the distributions will be slightly perturbed and given by the McLennan formula
-\begin{equation}
-\rho_s^*(x) \propto e^{-\beta \left[V_r(x) - F x\right]}\propto \rho_s(x)\left[1 + \beta F x\right]
-\end{equation}
-which will, for small $F$, lead to a shift of the distribution $\rho_s$ along the $x$-axis and in the direction of the load. 
-In the detached state this will cause a larger displacement than in the attached state because of the potential in that case is less steep. 
-A larger displacement of the distribution, away from the potential's minimum, means that $\langle V_r \rangle_{s=0}$ will increase more than $\langle V_r \rangle_{s=1}$ and hence $\eta$ has to increase. 
-For a four headed motor, the distributions of the heads at zero load are not exactly peaked around the minimum of the potential because of the fixed distance between each head,  which does not correspond to the period of the ratchet. 
-Therefore the local minimum of $\eta$ lies not exactly at, but close to, $F_{load} =0$.
-This argument can be further supported by Jensen's inequality, which follow from the fact the the ratchet potential is convex. For this case the inequality reads as follows.
-\begin{equation}
-V_r(\langle x \rangle) \leq \langle V_r(x) \rangle
-\end{equation} 
-A lower bound on the expectation value of $V_r$ is given by the value of $V_r$ at the mean position of the heads in a given state. 
-In the detached state this position will be farther away from the minimum of the ratchet so the lower bound is higher than in the attached case.
+in the lowest order of approximation, as the binding and unbinding rates operate on much longer time scale then the relaxation governed by the diffusion. 
+From this point of view, ATP binding is effectively equivalent to an increasing of the temperature of the heat bath $T\rightarrow\frac{T}{c}$. 
+Hence the distributions for the ATP bound state are broader and the expectation value of $V_r$ will be bigger than in the attached state and $\eta$ will be positive. 
+
+Now if we apply a small external force, those distributions will be slightly perturbed. 
+Following the McLennan formula~\cite{} we thus obtain %TODO 
+\begin{align*}
+\rho^*(x) 
+&\sim e^{-\beta \left[V_r(x) - F_\text{load} \left( x - x_\text{min} \right) \right]} \\
+&\approx \rho_0(x) \left[1 + \beta F_\text{load} \left( x - x_\text{min} \right) \right]
+\end{align*}
+close to the potential minimum $x_\text{min}$, i.e. $V(x) \ge V(x_\text{min})$. 
+This leads, for small $F_\text{load}$, to a shift of the distribution $\rho$ in the direction of the load
+as can be seen from 
+\begin{multline}
+\left\langle x \right\rangle_{\rho^*} 
+= x_\text{min} + \left\langle x - x_\text{min} \right\rangle_{\rho^*}
+\\
+\approx x_\text{min} + \left\langle x - x_\text{min} \right\rangle_{\rho_0} 
++ \beta F \left\langle \left( x - x_\text{min} \right)^2 \right\rangle_{\rho_0} 
+\\
+= \left\langle x \right\rangle_{\rho_0}
++ \beta F \left\langle \left( x - x_\text{min} \right)^2 \right\rangle_{\rho_0} .
+\label{eq:mean_position_shift}
+\end{multline}
+From the previous equation it follows that more spread-out distribution will be affected more by the force.
+This means that in our case the ATP bound state will be more affected.
+A larger displacement of the distribution, away from the potential's minimum, 
+means that the mean ratchet potential in the ATP bound state $\left\langle V_r \middle| \zeta = c \right\rangle$ will increase more than the mean ratchet potential in the ATP unbound state $\left\langle V_r \middle| \zeta = 1 \right\rangle$ and hence the chemical efficiency \eqref{eq:eta} has to increase. 
+
+This argument can be further supported by Jensen's inequality.
+The ratchet potential is convex close to its minimum, 
+moreover, if we assume that the majority of the probability distribution is localized close to the potential minimum,
+we can concur that the Jensen's inequality will hold for sufficiently small load  
+\begin{equation*}
+V_r(\langle x | \zeta \rangle) \leq \langle V_r(x) | \zeta \rangle , 
+\end{equation*} 
+where the lower bound on the expectation value of the ratchet potential \eqref{eq:ratchet_potential} is given by the value of the ratchet potential at the mean position of the heads in a given state. 
+We have shown in \eqref{eq:mean_position_shift} that the mean position is shifted by the action of the external force and consequently it shifts the lower bound for the mean value of the ratchet potential itself. 
+Moreover, in the ATP bound state the mean position will be further away from the minimum of the ratchet \eqref{eq:mean_position_shift} so the lower bound is higher than in the ATP unbound state.
+
+For a four headed motor, the distributions of the heads at zero load are not exactly peaked around the minimum of the potential. 
+This is due to the fixed distance between each head, which does not correspond to the period of the ratchet. 
+Therefore the local minimum of $\eta$ lies not exactly at, but close to, $F_\text{load} =0$, see figure ~\ref{fig:chem}.
+
+\subsubsection{Tug of war}
+%TODO
 
 
 \section{TO DO}
@@ -1088,72 +1124,79 @@ Christian Maes
 \label{sec:perturb}
 Here we show that the chemical cycle must extract energy from the ratchet system with one head and for large load forces, 
 i.e. the chemical efficiency \eqref{eq:eta} must be negative. 
-We will show this by calculating the perturbative corrections to the probability density of the position of the motor with respect to the actin filament, both in the ATP bound and ATP unbound state. 
-For this we assume that the relaxation time of the position in a given potential is much shorter than the typical time between jumps in the chemical state of the heads. 
-This will allow us to use steady state distributions to calculate the expected values of the potential energy in equation \eqref{eq:eta}.
-We start with the Fokker-Planck equation for steady states, i.e. $\partial_t \rho = 0$.
+We will show this by calculating the perturbative corrections to the probability density of the position of the motor with respect to the actin filament in the regime of large load $F_\text{load} \to \infty$, both in the ATP bound and ATP unbound state. 
+
+First, we assume that the relaxation time of the position in a given potential is much shorter than the typical time between jumps in the chemical state of the heads. 
+This effectively leads to time scale separations,
+thus the conditional probability distribution \eqref{eq:cond_prob} is given as a steady state solution of the corresponding Fokker-Planck equation in a given state $\zeta$
 \begin{equation}
-\frac{1}{\gamma} \partial_x \left[ \left( F - \partial_x V_r(x) \right) \rho(x) - k_B T \partial_x \rho(x) \right] = 0
+\frac{1}{\gamma} \partial_x \left[ \left( F_\text{load} - \zeta \partial_x V_r(x) \right) \rho(x) - k_B T \partial_x \rho(x) \right] = 0 ,
 \label{eq:FP_ss}
 \end{equation}
-where $V$ is the ratchet potential in a given state and F is the constant load force. 
-As we want to calculate perturbations for large loads we will rewrite equation \eqref{eq:FP_ss} so that we can use $\epsilon = \frac{1}{F}$ as the perturbation.
+where $V_r$ is the ratchet potential the bare \eqref{eq:ratchet_potential} and $F_\text{load}$ is the external constant load. 
+
+The first step is expressing the equation \eqref{eq:FP_ss} in terms of $\epsilon = F_\text{load}^{-1}$ instead of load force $f_\text{load}$,
+which makes it more convenient for the expansion
 \begin{equation}
-\partial_x \left[ \rho(x) - \frac{1}{F} \left( \partial_x V_r(x) \rho(x) + k_B T \partial_x \rho(x) \right) \right] = 0
+\partial_x \left[ \rho(x) - \epsilon \left( \zeta \partial_x V_r(x) \rho(x) + k_B T \partial_x \rho(x) \right) \right] = 0 
 \label{eq:FP_ss_pert}
 \end{equation}
-For infinitely large loads the steady state distribution is flat, i.e. $\rho_0 = \frac{1}{d}$, which will be the zeroth order solution. 
-Since this will be the case in both the attached and detached state, it will yield the same expected values of $V$ and therefore $\eta$ must be equal to zero.
-The first order solution will be of the form $\rho_1 = \rho_0 + \delta\rho_1$. 
-When inserted into \eqref{eq:FP_ss_pert} and only keeping terms up to first order in $\frac{1}{F}$, we get
+Due to the periodical boundary conditions, the zeroth order approximation correspond to the flat distribution, i.e. $\rho_0 = \frac{1}{\ell}$. 
+Note that at the leading order the conditional probability density is independent of the internal state $\zeta$,
+thus the chemical efficiency \eqref{eq:eta} is zero. 
+
+For the first order solution we start with an ansatz $\rho_1 = \rho_0 + \delta\rho_1$. 
+When inserted into \eqref{eq:FP_ss_pert} we get
 \begin{equation*}
-\partial_x \left[ \delta \rho_1 - \frac{1}{F} \partial_x V_r(x) \rho_0 \right] = 0
+\delta\rho_1 = \frac{\epsilon}{\ell} \partial_x V_r + C
 \end{equation*}
-or alternatively
-\begin{equation*}
-\delta\rho_1 = \frac{1}{dF} \partial_x V_r + C
-\end{equation*}
-where $C$ is an integration constant that, after normalization of $\rho_1$, must be equal to $0$.
-However, this first order correction will not contribute to calculations of $\langle V_r \rangle_\rho$ since
-\begin{align*}
-\langle V_r \rangle_{\delta\rho_1} 
-&= \int_0^d V_r(x) \, \delta\rho_1 \; \rmd x
-\propto \int_0^d V_r(x) \, \partial_x V_r(x) \; \rmd x \\
-&= \frac{1}{2} \int_0^d \partial_x V_r^2(x) \; \rmd x 
-= 0
-\end{align*}
-where we used integration by parts and the fact that $V_r(x)$ is periodic.
-Consequently, we need to calculate the second order correction $\delta\rho_2$. 
-Now by inserting $\rho_2 = \rho_1 + \delta\rho_2$ in \eqref{eq:FP_ss_pert} and only keeping up to second order in $\frac{1}{F}$, we find
-\begin{multline*}
-\partial_x \left[ \delta\rho_2 - \frac{1}{F} \partial_x V_r \, \delta\rho_1 - \frac{k_B T}{F} \partial_x \delta\rho_1 \right] \\
-= \partial_x \left[ \delta\rho_2 - \frac{1}{ d F^2 } \left(\partial_x V_r\right)^2 - \frac{k_B T}{dF^2} \partial_x^2 V_r \right] 
-= 0
-\end{multline*}
-which solves to
-\begin{equation*}
-\delta\rho_2 = \frac{1}{ d F^2} \left[ \left( \partial_x V_r \right)^2 - k_B T \partial_x^2 V_r \right] + C^\prime.
-\end{equation*}
-Again by normalization, the integration constant $C^\prime$ can be determined.
-\begin{multline*}
-1 = \int_0^d \rho_2 \; \rmd x 
-= \int_0^d \left\{ \frac{1}{d} + \frac{1}{ d F } \partial_x V_r \right\} \; \rmd x \\
-+ \int_0^d \left\{  \frac{1}{ d F^2 } \left[ \left( \partial_x V_r \right)^2 - k_B T \partial_x^2 V_r \right] + C^\prime\right\} \; \rmd x 
-\end{multline*}
-Which simplifies to
+where $C$ is an integration constant.
+Due to the normalization 
 \begin{equation}
-C^\prime = - \frac{1}{ d^2 F^2 } \int_0^d \left( \partial_x V_r \right)^2 \; \rmd x . 
+1 = \int\limits_0^\ell \rmd x \; \rho_1(x), 
+\label{eq:normalization}
 \end{equation}
-The first order term again did not contribute and the thermal term vanished as well because of the periodicity of $V_r(x)$. 
-Now the density up to second order is given by
+and periodicity of the ratchet potential \eqref{eq:ratchet_potential} the aforementioned integration constant has to be equal to $0$.
+
+Note, that the first order correction does not contribute to calculations of $\langle V_r | \zeta \rangle_\rho$ 
 \begin{align*}
-\rho_2 =& \rho_0 + \delta\rho_1 + \delta\rho_2 \\
-=& \frac{1}{d} + \frac{1}{d F} \partial_x V_r +{} \\
-&+ \frac{1}{d F^2} \left[ \left( \partial_x V_r \right)^2 - k_B T \partial_x^2V_r - \frac{1}{d} \int_0^d \left( \partial_x V_r \right)^2 \; \rmd x \right] .
+\langle V_r | \zeta \rangle_{\delta \rho_1} 
+&= \int\limits_0^\ell V_r(x) \, \delta\rho_1(x) \; \rmd x
+\propto \int\limits_0^\ell V_r(x) \, \partial_x V_r(x) \; \rmd x \\
+&= \frac{1}{2} \int\limits_0^\ell \partial_x V_r^2(x) \; \rmd x 
+= 0
 \end{align*}
-Observe that in this form, the depends on the ratchet potential only through a first or second order derivative. 
-Therefore the density will appear as a piece-wise constant function on $x\in[0,l]$, with different values for $x < a l$ and $x > a l $. 
-This trend can already be seen in the empirical density obtained from simulations for large load forces $F_L = \pm 250 \, \mathrm{pN}$ in figure %TODO
+where we again used the fact that the ratchet potential $V_r(x)$ is periodic.
+
+Consequently, we need to calculate the second order correction $\delta\rho_2$. 
+Starting from the ansatz $\rho_2 = \rho_1 + \delta\rho_2$ in \eqref{eq:FP_ss_pert} and keeping up the terms up to quadratic order in $\epsilon$, we find
+\begin{equation*}
+\delta\rho_2 = \frac{ \epsilon^2 }{ \ell } \left[ \left( \zeta \partial_x V_r \right)^2 - k_B T \zeta \partial_x^2 V_r \right] + C^\prime .
+\end{equation*}
+Again by requiring the normalization~\eqref{eq:normalization}, the integration constant $C^\prime$ can be determined
+\begin{multline*}
+1 = \int\limits_0^\ell \rho_2(x) \; \rmd x 
+\\
+= 1  
++ \frac{\epsilon^2}{ \ell } \int\limits_0^\ell \left[ \left( \zeta \partial_x V_r(x) \right)^2 - k_B T \zeta \partial_x^2 V_r(x) \right] \; \rmd x 
++ \ell C^\prime ,
+\end{multline*}
+which leads to
+\begin{equation}
+C^\prime = - \frac{\epsilon^2 \zeta^2}{ \ell^2 } \int\limits_0^\ell \left( \partial_x V_r(x) \right)^2 \; \rmd x . 
+\end{equation}
+Now the density up to second order is given by
+\begin{multline*}
+\rho_2(x)  
+= \frac{1}{\ell} \Biggl\{ 1  + \epsilon \zeta \partial_x V_r(x) \\
++ \epsilon^2 \zeta^2 \left[ \left( \partial_x V_r(x) \right)^2 - \frac{1}{\ell} \int\limits_0^\ell \left( \partial_y V_r(y) \right)^2 \; \rmd y \right] 
+\\
+- \epsilon^2 \zeta k_B T \partial_x^2 V_r(x)  
+\Biggr\} .
+\end{multline*}
+Note that up to the quadratic order in $\epsilon$ the conditional probability density depends on the ratchet potential only through a first or second order derivatives. 
+Therefore the density will appear as a piece-wise constant function on $x \in [0,\ell]$, with different values for $x < a l$ and $x > a l $. 
+This trend can already be seen in the empirical density obtained from simulations for large load forces $F_\text{load} = \pm 100 \, \mathrm{pN}$ in figure~\ref{fig:pos_distr}. 
 %\begin{figure*}[t]
 %\centering
 %\subfigure[Positive load]{
@@ -1170,63 +1213,58 @@ This trend can already be seen in the empirical density obtained from simulation
 %\end{figure*}
 
 
-With the second order correction we can now calculate the expected value of the potential energy.
+With the second order correction, we can now calculate the change in the expected value of the potential energy
 \begin{align*}
-\langle V_r \rangle_{\delta\rho_2} 
-=& \int_0^d V_r(x) \, \delta\rho_2 \; \rmd x \\
-=& \frac{1}{d F^2} \int_0^d V_r(x) \left(\partial_x V_r \right)^2 \; \rmd x  \\
-&- \frac{1}{d^2 F^2} \int_0^d V_r(x) \; \rmd x \int_0^d \left( \partial_y V_r \right)^2 \; \rmd y \\
-&- \frac{k_B T}{d F^2} \int_0^d V_r(x) \, \partial_x^2 V_r \; \rmd x
+\langle V_r | \zeta \rangle_{\delta\rho_2} 
+=& \int\limits_0^\ell V_r(x) \, \delta\rho_2 \; \rmd x \\
+=& \frac{\epsilon^2 \zeta^2}{\ell} \int\limits_0^\ell V_r(x) \left(\partial_x V_r(x) \right)^2 \; \rmd x  \\
+&- \frac{\epsilon^2 \zeta^2}{\ell^2} \int\limits_0^\ell V_r(x) \; \rmd x \int\limits_0^\ell \left( \partial_y V_r(y) \right)^2 \; \rmd y \\
+&- \frac{\epsilon^2 \zeta k_B T}{\ell} \int\limits_0^\ell V_r(x) \, \partial_x^2 V_r(x) \; \rmd x .
 \end{align*}
-The first two terms will cancel each other and after carrying out the integral for the third term, with $V_r(x)$ given by \eqref{eq:ratchet_potential}, one finds 
-\begin{equation}
-\langle V_r \rangle_{ \delta\rho_2, s=1} = \frac{k_B T}{F^2} \frac{V^2}{a \left(1-a\right) d^2 }
-\end{equation}
-For the expectation value in the detached state, the potentials appearing in the expression for the distributions must be re-scaled by a factor $c$, which leads to
-\begin{equation}
-\langle V_r \rangle_{\delta\rho_2, s=0} = \frac{k_B T}{F^2} \frac{c V^2}{a \left(1-a\right) d^2 } .
-\end{equation}
-Similarly, for the zeroth order expectation value we find
-\begin{equation}
-\langle V_r \rangle_{\rho_0} = \frac{1}{d} \int_0^d V_r(x) \; \rmd x = \frac{V}{2} .
-\end{equation}
-Using this, we can calculate $\eta$ up to second order in $\frac{1}{F}$. 
-Note that the zeroth and first order are zero.
-\begin{equation}
-\eta = -\left( \frac{V}{d F} \right)^2 \frac{k_B T} { \Delta E - (1-c) \frac{V}{2} } \; \frac{ \left(1-c\right)^2 }{ a (1-a) }
-\end{equation}
-With this we show that, at least for a ratchet system with one motor head, it is expected that $\eta$ will become negative for large external loads and eventually goes to zero as the load goes to infinity. 
-This means the driven system looses chemical energy, while the external force is performing work on the system. 
-The efficiency $\eta$ is symmetric in $F$ for large forces, which is also apparent from figure \ref{fig:chem}. 
-Also note that in the expression for the chemical efficiency, the ratio between the amplitude of the ratchet potential $V$ and the work done by the external force over a period of the potential $d F$ appears in the formula, as well as the ratio between the thermal energy $k_B T$ and the mean energy gap between the attached and detached state. 
-Indeed for large load on the motor, the efficiency will go to zero as can be seen from the zeroth order solution.
-\par
-In addition we can compute the current using the obtained densities. 
-The current is taken from the Fokker-Planck equation \eqref{eq:FP_ss}.
-\begin{equation}
-\mathcal{J} = \frac{1}{\gamma} \left[ \left( F - \partial_x V_r \right) \rho - k_B T \partial_x \rho \right] 
-\end{equation}
-When inserting $\rho_2$, we find the current in leading orders of $F$.
+After tedious but straightforward calculation we found that the first two terms will cancel each other. 
+Hence only the last term remains, which after an explicit calculation leads to  
 \begin{align*}
-\mathcal{J} =& \frac{F}{\gamma d} \left( 1 + C^\prime \right) + \mathcal{O}( \frac{1}{F^2} ) \\
-=& \frac{F}{\gamma d} - \frac{1}{F\gamma d^2} \int^d_0 \left( \partial_x V_r \right)^2 \; \rmd x + \mathcal{O}(\frac{1}{F^2}) 
+\langle V_r | \zeta = 1 \rangle_{\rho_2} &= \frac{V}{2} + \frac{k_B T}{F_\text{load}^2} \frac{V^2}{a \left(1-a\right) \ell^2 }, \\
+\langle V_r | \zeta = c \rangle_{\rho_2} &= \frac{V}{2} + \frac{k_B T}{F_\text{load}^2} \frac{c V^2}{a \left(1-a\right) \ell^2 } .
 \end{align*}
-Important to note is that the current, integrated over the period of the ratchet, represents the mean velocity of the motor. 
-Indeed, the dominant term for large external forces is $\mathcal{J}_0 = \frac{F}{\gamma}$, which was also apparent from the simulations shown in figure \ref{fig:F_v}. 
-Furthermore, the force-independent term vanishes leading to an anti-symmetric form with respect to $F$. 
-The first correction is given by $\frac{F}{\gamma}C^\prime\propto \frac{1}{F}$. 
-This decay was clearly seen in figure \ref{fig:ratchet_force_decay}, which depicts was the mean motor velocity deduced by the drag velocity due to the load force $\frac{F}{\gamma}$. 
-This isolates the contribution from the ratchet potential. 
-Hence this result, obtained for a one-headed motor, also seems to hold for the simulations of motors with four heads. 
+By using these expression we get the chemical efficiency~\eqref{eq:eta} up to the second order in $\epsilon$  
+\begin{equation}
+\eta_\text{chem} = - \frac{ \left(1-c\right)^2 }{ a (1-a) } \, \frac{k_B T} { \Delta E - (1-c) \frac{V}{2} } \left( \frac{V}{\ell F_\text{load}} \right)^2 .
+\end{equation}
+As was advertised, the zeroth and linear order in $\epsilon$ do not contribute, 
+the chemical efficiency decays towards zero as $F_\text{load}^{-2}$ and it is negative for large loads independently of the direction of the load.
+The symmetry for of the chemical efficiency $\eta_\text{chem}$ is for large loads confirmed in the figure~\ref{fig:chem}. 
+The fact that the chemical efficiency is negative in this regime, 
+means the driven system builds up a chemical energy in the environment, while the external force is performing work on the system. 
+Also note that in the expression for the chemical efficiency, 
+the ratio between the amplitude of the ratchet potential $V$ and the work done by the external force over a period of the potential $\ell F_\text{load}$ appears in the formula, 
+as well as the ratio between the thermal energy $k_B T$ and the mean energy gap between the attached and detached state. 
 
-In fact, if we compare the chemical efficiencies for a motor with one head and four heads, we see a great similarity.
-This comparison is made in figure \ref{fig:chem_eff_1head}.
-The behavior for large load forces seems to be exactly the same.
-Since $\eta$ is a ratio of chemical energies exchanged through the motor heads, this means that for large enough forces a head of the four headed motor no longer feels the presence of the other heads.
-However the one headed motor is more susceptible to external forces as it's chemical efficiency starts to drop already at smaller loads. 
-Note that the curves with higher detach rate $k_d$ in figure \ref{fig:chem} tend to approach the curve for one head in figure \ref{fig:chem_eff_1head}. 
-When the detach rate is increased, the configuration where fewer heads of the motor are attach to the polymer indeed becomes more likely.
-
+In addition we can compute the steady state probabilistic current in each respective internal state.
+The probabilistic current is given by 
+\[
+\mathcal{J}(x) = \frac{1}{\gamma} \left[ \left( F_\text{load} - \partial_x V_r(x) \right) \rho(x) - k_B T \partial_x \rho(x) \right] 
+\]
+Which simplifies in the second order in the large load regime to
+\begin{align*}
+\mathcal{J}(x) 
+&= \frac{F_\text{load}}{\gamma \ell} - \frac{\zeta^2}{F_\text{load} \gamma \ell^2} \int\limits^\ell_0 \left( \partial_x V_r(x) \right)^2 \; \rmd x \\
+&= \frac{F_\text{load}}{\gamma \ell} - \frac{\zeta^2 V^2}{\gamma F_\text{load} \ell^3 a (1-a) } ,
+\end{align*}
+which is independent of the position. 
+Note, that the current integrated over the period of the ratchet $\ell$, represents the mean velocity of the motor in the given state
+\[
+\left\langle v \middle| \zeta \right\rangle 
+= \int\limits_0^\ell \rmd x \; {\mathcal J}(x) 
+= \frac{F_\text{load}}{\gamma} - \frac{\zeta^2 V^2}{\gamma F_\text{load} \ell^2 a (1-a) } .
+\] 
+Indeed, the dominant term for large external forces is $\langle v \rangle_{\rho_0} = F_\text{load} / \gamma$ independently of the internal state, 
+which was already demonstrated in the figure~\ref{fig:F_v}. 
+Furthermore, the force-independent term (i.e. term proportional to $(F_\text{load})^0$) vanishes leading to an anti-symmetric form with respect to the load $F_\text{load}$. 
+The first correction decay linearly in the external load, which was clearly seen in the figure~\ref{fig:ratchet_force_decay}, 
+which exposes the first correction to the mean velocity, cf. equation~\eqref{eq:mean_ratchet_force}. 
+As there is no fundumental difference in the Focker-Planck equation for one head and for four heads regarding the currents for large driving forces, 
+the result obtained for a one-headed motor also holds for the simulations of motors with four heads. 
 
 \bibliography{ratchet}
 
