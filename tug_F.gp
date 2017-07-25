@@ -7,7 +7,7 @@ load "Data/my.pal"
 set key right Left width -2 
 
 set xlabel "F_{load} (pN)"
-set ylabel "F_{eff} (pN)"
+set ylabel "Tension (pN)"
 
 set xzeroaxis
 set yzeroaxis
