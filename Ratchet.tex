@@ -944,7 +944,7 @@ We can further introduce an average probability density of a single head
 \bar{\rho}(x,\zeta) = \frac{1}{N} \sum\limits_{i=0}^{N-1} \sum\limits_{ \{ \zeta_j \} : \zeta_i = \zeta } \rho( x + i d, \{ \zeta_j \} ) ,
 \label{eq:eff_distribution}
 \end{equation}
-and consequently conditional average probability denstity
+and consequently conditional average probability density
 \begin{equation}
 \bar{\rho}(x|\zeta) = \bar{\rho}(x,\zeta) \left[ \int\limits_0^\ell \rmd y \; \bar{\rho}(y,\zeta) \right]^{-1}
 \label{eq:cond_prob}
@@ -983,21 +983,43 @@ Also by increasing the external load, all distributions universally become flat.
 \end{figure}
 
 The difference between the average distribution \eqref{eq:eff_distribution} in the ATP bound state and ATP unbound state is directly translated to the mean heat flux \eqref{eq:heat_flux} out of the chemical system
-\begin{multline*}
+\begin{multline}
 q_\text{in}^\text{chem} + q_\text{out}^\text{chem} 
 = (1-c) \frac{ k_\text{bind} k_\text{unbind} }{ k_\text{bind} + k_\text{unbind} } 
 \\ \times
-\left[ \left\langle V_r(x) \middle| \zeta = c \right\rangle_{\bar{\rho}} - \left\langle V_r(x) \middle| \zeta = 1 \right\rangle_{\bar{\rho}} \right] .
-\end{multline*} 
-This is summarized in the figure~\ref{fig:chem_energy_distr}, 
+\left[ \left\langle V_r(x) \middle| \zeta = c \right\rangle_{\bar{\rho}} - \left\langle V_r(x) \middle| \zeta = 1 \right\rangle_{\bar{\rho}} \right] ,
+\label{eq:heat_flux}
+\end{multline} 
+which is depicted in the figure~\ref{fig:chem_energy_distr}, 
 where we show the spatial dependency of the given heat flux.
-We can see a major contribution from the tails where the difference in the average densities is weighted by potential maximum.
+We can see that a major flux is close to the ratchet potential's minimum \eqref{eq:ratchet_potential} where both the probability density is localized as well as the gap is the largest. 
+On the other hand, close to the ratchet potential's maximum the heat flux is small.
+However, if we compare it to the numerator of the chemical efficiency~\eqref{eq:eta}, see figure~\ref{fig:chem_efficiency_distr}, 
+we can see that a major contribution to the chemical efficiency actually comes from the region around the ratchet potential's maximum.
+This discrepancy can be interpreted in the following sense: 
+While most transitions occur close to the ratchet potential's minimum due to the large probability density, thus providing a large flux, 
+those particles after a transition does not diffuse far before next transition, 
+hence the contribution to the chemical efficiency associated with discrepancy between chemical input and output is relatively small. 
+On the other hand, particle which switched the internal state close to the potential maximum relaxes relatively fast, compared to the transition rates, 
+to the vicinity of the ratchet potential's minimum and thus create a larger discrepancy leading to high contribution to the efficiency. 
+However these transitions are rare due to the low probability density and hence the total flux density is relatively small.  
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{chem_energy_distr_all_F}
 \caption{
 \label{fig:chem_energy_distr}
-Space resolved denominator of the efficiency \eqref{eq:eta} for various load forces $F_\text{load}$. %TODO
+Heat flux~\eqref{eq:heat_flux} density, i.e. $\int \rmd x \; q(x) = q$, for various loads.  
+We can see that the largest heat flux is around the ratchet potential~\eqref{eq:ratchet_potential} minimum, where the gap is largest. 
+However, the region which contributes to the chemical efficiency~\eqref{eq:eta} the most is the close to the ratchet potential maximum, 
+see figure~\ref{fig:chem_efficiency_distr} where the heat flux is very small. 
+}
+\end{figure}
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.45\textwidth,height=!]{chem_efficiency_distr_all_F}
+\caption{
+\label{fig:chem_efficiency_distr}
+Space resolved numerator of the efficiency \eqref{eq:eta} for various load forces $F_\text{load}$. 
 We observe that the optimal output is achieved when there is the biggest discrepancy between spatial distributions, compare with figure~\ref{fig:pos_distr} and \ref{fig:chem}. 
 }
 \end{figure}
@@ -1024,8 +1046,9 @@ For larger loads, distributions shift and flatten even more, figure~\ref{fig:pos
 In the extreme situation, it leads up to completely flat distribution and thus zero efficiency, figure~\ref{fig:chem}.
 For high loads we also observe the population inversion, see figure~\ref{fig:pos_distr}, 
 where the potential maximums are more occupied then the potential minimum. 
-This is due to the effective friction caused by the potential as the particle gets slown down if draged along the potential gradient, thus they spend more time on the up-slope then on the down-slope of the potential.
-Such behaviour is associated with a negative efficiency. 
+This is due to the effective friction caused by the potential as the particle gets slower when dragged along the potential gradient, 
+thus they spend more time on the up-slope then on the down-slope of the potential.
+Such behavior is associated with a negative efficiency. 
 In the appendix we have proven this hypothesis on the system with a single head and have shown that the efficiency decay with the force 
 \[
 \eta \asymp - \frac{1}{ F_\text{load}^2 } \qquad \text{for} \quad F_\text{load} \to \pm \infty .

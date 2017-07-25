@@ -1,13 +1,13 @@
 #!/usr/bin/gnuplot
 set term pdfcairo enhanced linewidth 1.75 font ",14"
-set output "chem_energy_distr_all_F.pdf" 
+set output "chem_efficiency_distr_all_F.pdf" 
 
 load "Data/my.pal"
 
 set xlabel "x (nm)"
-set ylabel "q_{in}(x) + q_{out}(x)"
+set ylabel "V(x) [ ~{/Symbol r}\342\200\276 (x|{/Symbol z}=c) - ~{/Symbol r}\342\200\276 (x|{/Symbol z}=1) ]"
 
-set key top left Left width -4    
+set key top center Left width -4    
 
 unset x2tics 
 unset y2tics
@@ -26,10 +26,12 @@ c = 0.3
 dE = 30.4
 kbind = 40.
 kunbind = 80.
-N = 4.
+
+s = 0.
+cum(x) = ( s=s+x )
 
 plot [0:8][:] \
-     for [i=1:5] sprintf("< paste Data/pos_distr_F=%s_attached.dat Data/pos_distr_F=%s_detached.dat", word(f,i), word(f,i)) u (shift($1+6)):(N*(dE - (1.-c) * V($1))*(kbind*$2-kunbind*$5)) title sprintf("F_{load} = %s pN", word(f,i)) w points ls word(color,i) \
+     for [i=1:5] sprintf("< paste Data/pos_distr_F=%s_attached.dat Data/pos_distr_F=%s_detached.dat", word(f,i), word(f,i)) u (shift($1+6)):(V($1)*(($5/kbind-$2/kunbind)*(kbind+kunbind))) title sprintf("F_{load} = %s pN", word(f,i)) w points ls word(color,i) \
     , V(shift(x-6)) axis x1y2 lt rgb "#666666" dashtype "-" notitle \
     , 0 lt rgb "black" lw 1.25 notitle 
 
