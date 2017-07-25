@@ -1213,17 +1213,26 @@ which leads to
 C^\prime = - \frac{\epsilon^2 \zeta^2}{ \ell^2 } \int\limits_0^\ell \left( \partial_x V_r(x) \right)^2 \; \rmd x . 
 \end{equation}
 Now the density up to second order is given by
-\begin{multline*}
+\begin{multline}
 \rho_2(x)  
 = \frac{1}{\ell} \Biggl\{ 1  + \epsilon \zeta \partial_x V_r(x) \\
 + \epsilon^2 \zeta^2 \left[ \left( \partial_x V_r(x) \right)^2 - \frac{1}{\ell} \int\limits_0^\ell \left( \partial_y V_r(y) \right)^2 \; \rmd y \right] 
 \\
 - \epsilon^2 \zeta k_B T \partial_x^2 V_r(x)  
 \Biggr\} .
-\end{multline*}
+\label{eq:prob_density_large}
+\end{multline}
 Note that up to the quadratic order in $\epsilon$ the conditional probability density depends on the ratchet potential only through a first or second order derivatives. 
 Therefore the density will appear as a piece-wise constant function on $x \in [0,\ell]$, with different values for $x < a l$ and $x > a l $. 
-This trend can already be seen in the empirical density obtained from simulations for large load forces $F_\text{load} = \pm 100 \, \mathrm{pN}$ in figure~\ref{fig:pos_distr}. 
+This trend can already be seen in the empirical density obtained from simulations for large load forces $F_\text{load} = \pm 100 \, \mathrm{pN}$ in figure~\ref{fig:pos_distr},
+and is further demonstrated on motor with a single head in figure~\ref{fig:prob_density_large}. 
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.45\textwidth,height=!]{pos_compare.pdf}
+\caption{\label{fig:prob_density_large}
+Empirical probability density for large loads for motor with single head in an ATP unbound state compared with the theoretical prediction \eqref{eq:prob_density_large}.
+}
+\end{figure}
 %\begin{figure*}[t]
 %\centering
 %\subfigure[Positive load]{
