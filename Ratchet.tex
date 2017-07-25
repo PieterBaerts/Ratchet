@@ -707,6 +707,23 @@ Thus the total chemical energy consists of two parts ${\mathcal Q}^\text{chem} =
 where we sum over all jump times $t_\text{bind}$($t_\text{unbind}$) in the given ``direction''. 
 $t_\text{fin}$ denotes the duration of the process. 
 
+Figure~\ref{fig:energy_evolution} depicts a time evolution of the internal energy \eqref{eq:internal_energy} for a single trajectory of the system for $F_\text{load} = 0$.
+Note, that while we can identify the chemical input and output by the direction of the jump in the total energy, 
+without any additional information it is impossible to distinguish which part of the heat dissipated to the heat bath corresponds to the myosin and which to the actin.
+For non-zero load the heat dissipated to the heat bath will contain the work of the external forces as well, 
+thus making the separation of individual components even more difficult. 
+\begin{figure}
+\centering
+\includegraphics[width=.45\textwidth,height=!]{energy_1head.pdf}
+\caption{\label{fig:energy_evolution}
+Illustration of the time-evolution of the energy of the system over a single trajectory for $F_\text{load} = 0$.
+The red line depicts the internal energy $E$ of the system over the time~\eqref{eq:internal_energy},
+black arrows denote the dissipated and obtained chemical heat~\eqref{eq:q_out}, resp.~\eqref{eq:q_in},
+and the blue area denote the total heat dissipated to the heat bath ${\mathcal Q}_\text{M}^\text{hb} + {\mathcal Q}_\text{A}^\text{hb}$, 
+see~\eqref{eq:heat_hb_M} and~\eqref{eq:heat_hb_A}.
+}
+\end{figure}
+
 \subsection{Load on the motor}
 If we restrict the discussion only to the simplest setup, i.e. single loaded myosin with single actin,  
 and we use the equation of motion \eqref{eq:eom_M}, 
@@ -988,7 +1005,7 @@ q_\text{in}^\text{chem} + q_\text{out}^\text{chem}
 = (1-c) \frac{ k_\text{bind} k_\text{unbind} }{ k_\text{bind} + k_\text{unbind} } 
 \\ \times
 \left[ \left\langle V_r(x) \middle| \zeta = c \right\rangle_{\bar{\rho}} - \left\langle V_r(x) \middle| \zeta = 1 \right\rangle_{\bar{\rho}} \right] ,
-\label{eq:heat_flux}
+\label{eq:heat_flux_explicit}
 \end{multline} 
 which is depicted in the figure~\ref{fig:chem_energy_distr}, 
 where we show the spatial dependency of the given heat flux.
@@ -1008,7 +1025,7 @@ However these transitions are rare due to the low probability density and hence 
 \includegraphics[width=0.45\textwidth,height=!]{chem_energy_distr_all_F}
 \caption{
 \label{fig:chem_energy_distr}
-Heat flux~\eqref{eq:heat_flux} density, i.e. $\int \rmd x \; q(x) = q$, for various loads.  
+Heat flux~\eqref{eq:heat_flux_explicit} density, i.e. $\int \rmd x \; q(x) = q$, for various loads.  
 We can see that the largest heat flux is around the ratchet potential~\eqref{eq:ratchet_potential} minimum, where the gap is largest. 
 However, the region which contributes to the chemical efficiency~\eqref{eq:eta} the most is the close to the ratchet potential maximum, 
 see figure~\ref{fig:chem_efficiency_distr} where the heat flux is very small. 
