@@ -833,17 +833,17 @@ E( x_\text{M}, x_{\text{A}_1}, x_{\text{A}_2}, \{ \zeta_i \})
 \end{multline*}
 Contrary to the previous setup, the total energy of the system is no longer bound, hence the heat fluxes \eqref{eq:heat_flux} are only balanced in the steady state. 
 
-\section{Chemical efficiency} 
+\section{Efficiency} 
 \label{sec:efficiency}
 In previous years, a lot of effort was directed towards the assessment of the efficiency of molecular motors \cite{Schmiedl2008,boksenbojm2009entropy}. %TODO more citations
 Unfortunately, main focus of these works was biased towards the transport properties of the aforementioned motors. 
 However the main role of myosin II is generating the tension in the cytoskeletal network \cite{ma2012nonmuscle,chugh2017actin,monier2010actomyosin}.
 
-Efficiency, in general, relate a ``useful'' output with the input.
+Efficiency, in general, relates a ``useful'' output with the input.
 As the ``usefulness'' heavily depends on the setup, there is a plethora of possible choices.
-Here we discuss one common choice and one choice, to the best knowledge of authors, previously not discussed in the leturature. 
-The first definition of the chemical efficiency, well discussed in the literature \cite{}, is related to the transport properties of molecular motors. 
-The second definition of the chemical efficiency captures the speed of the tension generation in networks, which typically contain a myosin~II. 
+Here we discuss a common choice and one particular choice which is, to the best knowledge of the authors, previously not discussed in the literature. 
+First, we revisit the common definition of efficiency, well discussed in the literature \cite{}, which is related to the transport properties of molecular motors. %TODO
+The second definition of the chemical efficiency captures the speed of the tension generation in networks, due to myosin~II. 
 
 \subsection{Transport efficiency} 
 As we have stated, the first efficiency we discuss is related to transport properties. 
@@ -857,29 +857,29 @@ Hence the transport efficiency can be defined as
 \eta_\text{tr} = \frac{ \left\langle {\mathcal W}^\text{out}_\text{M} \right\rangle }{ \left\langle {\mathcal Q}^\text{chem} \right\rangle + \left\langle {\mathcal W}^\text{ext}_\text{M} \right\rangle } .
 \]
 Note, that for large load ($F_\text{load} \to \infty$) such efficiency approaches $\eta_\text{tr} \to 1$, 
-while for no load $F_\text{load} = 0$ it captures how much of the chemical energy get dissipated by the motor's motion  
+while in absence of a load $F_\text{load} = 0$ it captures how much of the chemical energy get dissipated by the motor's motion  
 \[
 \eta_\text{tr}( F_\text{load} = 0 ) = \frac{ \left\langle \int \rmd x_\text{M} \circ \left[ - \nabla_M V_t \right] \right\rangle }{ \left\langle {\mathcal Q}^\text{chem} \right\rangle } ,
 \]
 i.e. how much of the chemical energy provided to the system is dissipated by the motor and not by the polymer. 
 
 
-\subsection{Chemical cycle efficiency} %TODO 
-Alternative approach it to identify as the ``useful'' is ratio the chemical energy supplied by ATP which is transformed to other forms of energy, 
-i.e. either is dissipated by myosin and actin through they diffusion or is stored in the interaction potential and thus increase the tension in the system. 
-This consideration leads to chemical cycle efficiency defined as 
+\subsection{Chemical efficiency} %TODO 
+An alternative approach is to identify as the ``useful'' output by looking at the chemical energy supplied by ATP which is transformed to other forms of energy, 
+i.e. either it is dissipated by myosin and actin through their diffusion or it is stored in the interaction potential and thus increases the tension in the system. 
+This consideration leads to a chemical efficiency defined as 
 \begin{equation}
 \eta_\text{chem} = \frac{\langle\mathcal Q^\text{chem}_\text{in}\rangle+\langle\mathcal Q^\text{chem}_\text{out}\rangle}{\langle\mathcal Q^\text{chem}_\text{in}\rangle} .
 \label{eq:efficiency}
 \end{equation}
 
 \subsubsection{Simple setup}
-For a system in a simple setup with four heads, we investigate the dependency of such chemical efficiency on the load, see figure~\ref{fig:chem}.
+For a system in the simple setup with four heads, we investigate the dependency of such chemical efficiency on the load, see figure~\ref{fig:chem}.
 We observe that the chemical efficiency has two local maximums. 
 We will later show that these two maximums correspond to a frustrated system, 
 where the load is close to the point where it is able to overpower any forces induced by the ratchet potential. 
-Another observation, which we will discuss in depth later, is that the efficiency reaches a negative value, 
-which we interpret as a situation where the work done by the load $F_\text{load}$ is converted back to chemical energy. 
+Another observation, which we will discuss in depth later, is that the efficiency reaches negative values for large loads, 
+which we interpret as work done by the load $F_\text{load}$ that is converted back to chemical energy. 
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{chemical_cycle}
@@ -895,7 +895,7 @@ and their fluctuations decrease.
 In order to properly understand these features, 
 we try evaluate the chemical efficiency \eqref{eq:efficiency} in a steady state. 
 We start by evaluating the mean heat \eqref{eq:q_in} and \eqref{eq:q_out} produced over a time interval of length $\Delta t$ 
-by transitions of a single head $i$ displaced by $i d$  
+by transitions of a single head $i$ displaced with respect to the end of the motor by $i d$,  
 \begin{gather*}
 \begin{multlined}[b][.42\textwidth]
 \langle \mathcal Q^\text{chem}_\text{in}(i) \rangle 
@@ -916,8 +916,8 @@ by transitions of a single head $i$ displaced by $i d$
 %\label{eq:mean_q_out}
 \end{gather*}
 where $\langle V | X \rangle$ is the steady state conditional mean value with respect to the fixed internal state $X$ 
-and $\rho(X) \in [0,1]$ denotes the probability of the occupation of the corresponding internal state $X$ in a steady state, 
-which does not depend on the position due to the independence of the positional independence of its internal dynamics~\eqref{eq:transition}. 
+and $\rho(X) \in [0,1]$ denotes the probability of the occupation of the corresponding internal state $X$ in the steady state, 
+which does not depend on the position due to the independence of the internal state dynamics~\eqref{eq:transition} on position. 
 Moreover, due to the independence of individual heads the probability occupation of a given internal state can be written as 
 \[
 \rho( \{ \zeta_i \} ) = \prod_{i=0}^{N-1} \rho_1( \zeta_i ), 
@@ -930,8 +930,8 @@ where
 \end{cases} 
 \]
 
-Another consequence of the independence of the time evolution of individual heads is, 
-that we can express the total mean heats produced in chemical cycle as a sum of contributions from individual heads
+Another consequence of the independence of the individual heads 
+is that we can express the total mean heats produced in chemical cycle as a sum of contributions from individual heads
 \begin{align*}
 \langle \mathcal Q_\text{in}^\text{chem} \rangle 
 =& \sum\limits_{i=0}^{N-1} \left\langle \mathcal Q_\text{in}^\text{chem}(i) \right\rangle 
@@ -957,12 +957,12 @@ which leads to a more explicit expression for the efficiency \eqref{eq:efficienc
 { \Delta E - \frac{1-c}{N} \sum\limits_{j=0}^{N-1} \left\langle V_r(x-jd) \middle| \zeta_j = 1 \right\rangle } 
 . 
 \end{multline*}
-We can further introduce an average probability density of a single head 
+We can further introduce an average probability density over all heads 
 \begin{equation}
 \bar{\rho}(x,\zeta) = \frac{1}{N} \sum\limits_{i=0}^{N-1} \sum\limits_{ \{ \zeta_j \} : \zeta_i = \zeta } \rho( x + i d, \{ \zeta_j \} ) ,
 \label{eq:eff_distribution}
 \end{equation}
-and consequently conditional average probability density
+and consequently the conditional average probability density
 \begin{equation}
 \bar{\rho}(x|\zeta) = \bar{\rho}(x,\zeta) \left[ \int\limits_0^\ell \rmd y \; \bar{\rho}(y,\zeta) \right]^{-1}
 \label{eq:cond_prob}
@@ -977,9 +977,9 @@ which allow us to further simplify the expression for the chemical efficiency to
 \end{equation}
 We can see that the numerator is given by the average difference between mean potentials in ATP attached and detached states over all heads. 
 As the potential is known in our model, the only missing information is thus the steady state distribution 
-or to be more precise the average steady state density for a single head \eqref{eq:eff_distribution}.  
-These distributions are empirically obtained by collecting the positions of the heads over all times that the head was in the ATP bound/unbound state 
-and are shown in figure~\ref{fig:pos_distr} for different load forces. 
+or to be more precise the average steady state density for all heads \eqref{eq:eff_distribution}.  
+These distributions are empirically obtained by collecting the positions of the heads over all times in which the head was in the ATP bound/unbound state.
+They are shown in figure~\ref{fig:pos_distr} for different load forces. 
 \begin{figure}[t]
 \centering
 \subfigure[ATP unbound state]{ 
@@ -993,9 +993,9 @@ and are shown in figure~\ref{fig:pos_distr} for different load forces.
 }
 \caption{
 \label{fig:pos_distr}
-Spatial distributions $\rho$ of individual heads of the motor with respect to the ratchet potential (denoted by dashed black line) for different load forces $F_\text{load}$.
-The spatial distribution is taken as the average over all heads at the given motor in a given internal state.
-We observe that heads in the attachable state follow the potential closely while those in the detached state do not. 
+Spatial distributions $\rho$ of the motor heads with respect to the ratchet potential (denoted by dashed black line) for different load forces $F_\text{load}$.
+The spatial distribution is taken as the average over all heads of a given motor in a given internal state.
+We observe that heads in the ATP unbound state follow the potential closely while those in the bound state do not. 
 Also by increasing the external load, all distributions universally become flat. 
 }
 \end{figure}
@@ -1009,17 +1009,17 @@ q_\text{in}^\text{chem} + q_\text{out}^\text{chem}
 \label{eq:heat_flux_explicit}
 \end{multline} 
 which is depicted in the figure~\ref{fig:chem_energy_distr}, 
-where we show the spatial dependency of the given heat flux.
-We can see that a major flux is close to the ratchet potential's minimum \eqref{eq:ratchet_potential} where both the probability density is localized as well as the gap is the largest. 
-On the other hand, close to the ratchet potential's maximum the heat flux is small.
+where we show the spatial dependency of the heat fluxes.
+We can see that a major flux is close to the ratchet potential's minimum \eqref{eq:ratchet_potential} where both the probability density is localized and the gap is the largest. 
+On the other hand, close to the ratchet potential's maximum the heat flux is close to zero.
 However, if we compare it to the numerator of the chemical efficiency~\eqref{eq:eta}, see figure~\ref{fig:chem_efficiency_distr}, 
 we can see that a major contribution to the chemical efficiency actually comes from the region around the ratchet potential's maximum.
 This discrepancy can be interpreted in the following sense: 
 While most transitions occur close to the ratchet potential's minimum due to the large probability density, thus providing a large flux, 
 those particles after a transition does not diffuse far before next transition, 
-hence the contribution to the chemical efficiency associated with discrepancy between chemical input and output is relatively small. 
-On the other hand, particle which switched the internal state close to the potential maximum relaxes relatively fast, compared to the transition rates, 
-to the vicinity of the ratchet potential's minimum and thus create a larger discrepancy leading to high contribution to the efficiency. 
+hence the contribution to the chemical efficiency, associated with the discrepancy between chemical input and output, is relatively small. 
+On the other hand, a particle that switched its internal state close to the potential maximum relaxes relatively fast, compared to the transition rates, 
+to the vicinity of the ratchet potential's minimum and thus creates a larger discrepancy leading to high contribution to the efficiency. 
 However these transitions are rare due to the low probability density and hence the total flux density is relatively small.  
 \begin{figure}[t]
 \centering
@@ -1047,9 +1047,9 @@ the maximum of the distribution, see fig.~\ref{fig:pos_distr}, is close to the m
 where the discrepancy in the position comes from the averaging over multiple heads with a fixed distance between them, 
 which does not match with the period of the ratchet potential. 
 Also the fact that the distributions seem to exhibit multiple peaks, can be attributed to the motor having four heads. 
-Both, in the bound and unbound state, the head can be found predominantly on the ``soft'' slope of the ratchet.
+Both in the bound and unbound state, the head can be found predominantly on the ``soft'' slope of the ratchet.
 
-When the load is increased to $F_\text{load} = 25 \, \mathrm{pN}$, the average steady state distribution shifts in both the ATP bound and unbound state to the right. 
+When the load is increased to $F_\text{load} = 25 \, \mathrm{pN}$, the average steady state distribution shifts to the right in both the ATP bound and unbound state. 
 While the distribution for the ATP unbound state remains peaked around the potential minimum, cf. figure~\ref{fig:pos_distr},
 the distribution in the ATP bound state flattens out and increases around the potential maximum. 
 This is due to the potential being less steep, which means that heads in that particular state are more susceptible to external forces,  
@@ -1061,11 +1061,12 @@ see figure~\ref{fig:chem_energy_distr},
 since the slope of the ratchet on the side is less steep and the distributions get more spread out, cf. figure~\ref{fig:pos_distr}. 
 
 For larger loads, distributions shift and flatten even more, figure~\ref{fig:pos_distr}. 
-In the extreme situation, it leads up to completely flat distribution and thus zero efficiency, figure~\ref{fig:chem}.
-For high loads we also observe the population inversion, see figure~\ref{fig:pos_distr}, 
-where the potential maximums are more occupied then the potential minimum. 
-This is due to the effective friction caused by the potential as the particle gets slower when dragged along the potential gradient, 
-thus they spend more time on the up-slope then on the down-slope of the potential.
+In the extreme situation, it leads to completely flat distribution and thus zero efficiency, figure~\ref{fig:chem}.
+For high loads we also observe a population inversion, see figure~\ref{fig:pos_distr}, 
+where the potential maximum is more occupied then the potential minimum. 
+This is due to the effective friction caused by the potential. 
+As the particle gets slower when dragged along the potential gradient, 
+ they spend more time on the up-slope then on the down-slope of the potential.
 Such behavior is associated with a negative efficiency. 
 In the appendix we have proven this hypothesis on the system with a single head and have shown that the efficiency decay with the force 
 \[
