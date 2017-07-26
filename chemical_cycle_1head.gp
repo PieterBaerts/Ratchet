@@ -4,7 +4,7 @@ set output "chemical_cycle_1head.pdf"
 
 load "Data/my.pal"
 
-set xlabel "F_{l} (pN)"
+set xlabel "F_{load} (pN)"
 set ylabel "{/Symbol h}"
 
 set key top left Left
