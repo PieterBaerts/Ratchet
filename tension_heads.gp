@@ -1,6 +1,6 @@
 #!/usr/bin/gnuplot
 set term pdfcairo enhanced linewidth 1.75 font ",14"
-set output "tension.pdf"
+set output "tension_heads.pdf"
 
 load "Data/my.pal"
 

@@ -1,6 +1,6 @@
 #!/usr/bin/gnuplot
 set term pdfcairo enhanced linewidth 1.75 font ",14"
-set output "effective_friction_heads.pdf"
+set output "ratchet_froce_heads.pdf"
 
 load "Data/my.pal"
 
