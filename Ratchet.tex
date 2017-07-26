@@ -233,6 +233,7 @@ Table of all parameter values and a reference to their source.
 \end{table}
 
 \subsection{Other setups}
+\label{sec:other_setups}
 While the previous setup is the most studied \cite{reimann2002brownian,astumian1994fluctuation,finer1994single,julicher1997modeling,kishino1988force,peskin1995correlation,saito1994movement},
 it's aim is to characterize the transport induced by molecular motors.
 However, recent experiments show that myosin II role is mainly for cross-linking the cytoskeleton and consequently producing an active tension inside the network \cite{ma2012nonmuscle}.
@@ -542,7 +543,7 @@ which is depicted in figure~\ref{fig:ratchet_force_decay}.
 \includegraphics[width=0.45\textwidth,height=!]{ratchet_force}
 \caption{
 \label{fig:ratchet_force}
-Mean force from the ratchet interaction depending on the load force on the motor for several values of $k_\text{bind}$. For small loads, the ratchet force completely counter to load, hance the linear regime around $F_\text{load}=0$ goes like
+Mean force from the ratchet interaction depending on the load force on the motor for several values of $k_\text{bind}$. For small loads, the ratchet force completely counter to load, hence the linear regime around $F_\text{load}=0$ goes like
 }
 \end{figure}
 \begin{figure}[t]
@@ -591,11 +592,12 @@ We observe that for small loads the tension is linear in load, this is in good a
 see figure~\ref{fig:F_v}.
 In this regime the velocity is small compared to the initial load, as most of the load is countered by the ratchet interaction, 
 hence the only the second term in \eqref{eq:tension} contributes
-\[
+\begin{equation}
 \langle F_\text{r} \rangle - F_\text{load} 
 \approx
 - \left(1 + \frac{\gamma_\text{A}}{\gamma_\text{A}+\gamma_\text{M}} \right) F_\text{load}.
-\]
+\label{eq:tension_low_load} 
+\end{equation}
 
 For the large force the motor slips over the potential and hence the mean ratchet force $\langle F_\text{r}$ approaches zero,
 as can be seen in figures~\ref{fig:ratchet_force} and~\ref{fig:ratchet_force_decay}, 
@@ -609,8 +611,8 @@ This is further supported by calculations of the mean velocity for a motor with 
 
 
 \subsubsection{Tug of war}
-A similar analysis can be made for alternative setups presented in section \ref{sec:load_on_fil}. 
-In case of ``tug of war'' setup, the motor is in the middle of two actin polymers aligned anti-parallel. 
+A similar analysis can be made for alternative setups presented in the section~\ref{sec:other_setups}. 
+In the case of the ``tug of war'' setup, cf.~\ref{sec:load_on_fil}, the motor is in the middle of two actin polymers aligned anti-parallel. 
 The mean velocities in general for all elements of the system in this setup are given by
 \begin{align*}
 \langle v_{\text{A}_1} \rangle &= \frac{1}{\gamma_\text{A} } \left( F_\text{load} - \langle F_{\text{r}_1} \rangle \right) , \\
@@ -650,29 +652,30 @@ For small loads, ratchet forces balance the load applied on both filaments, thus
 \[
 \langle F_{\text{r}_1}\rangle - \langle F_{\text{r}_2}\rangle \approx - 2 F_\text{load} .
 \] 
-This is a similar behavior to the setup 
+This is a similar behavior to the previously discussed setup~\eqref{eq:tension_low_load}, 
+where the proportionality constant $ 1 + \gamma_\text{A} / (\gamma_\text{A} + \gamma_\text{M} )$ lies in the closed interval $[1,2]$ rather then exactly being $2$ like in this setup. 
 
-As we have seen in section \ref{sec:force-velocity}, the ratchet force tends to completely oppose the load. 
-Therefore, the loads are transmitted from the filaments to the motor.
-For larger load, the tensions in the different setups will differ. 
-The motor and filaments start to slip, as in section \ref{sec:ind_velo}. 
-Consequently, the mean ratchet force decreases and the increase in tension diminishes.
-The difference in the two setups lies in the fact that, in the simple setup, the load is applied directly to the motor. 
+When the load increase the motor starts to slip.
+Consequently, the mean ratchet force decreases, cf. figure~\ref{fig:ratchet_force} and~\ref{fig:ratchet_force_decay}, and the increase in tension diminishes, 
+as was shown in the figure~\ref{fig:tug_F}.
+This behavior underlines the main difference between the ``tug of war'' setup and the simple setup, where the load is applied directly to the motor. 
 As the ratchet force vanishes for large load, a residual tension from the load remains.
-In the other setup, the tension on the motor is completely due to the forces from the ratchet interaction with the two filaments. 
-For large loads this tension goes to zero as the mean ratchet forces go to zero. 
+However, in the ``tug of war'' setup, this residual tension is not transmitted further to the motor due to the vanishing ratchet interaction.  
 
-The empirical velocity of the motor, in setup \ref{sec:load_on_fil}, is plotted in figure \ref{fig:tug_F_motor}. 
+Lastly, the variance of the motor velocity, cf. figure~\ref{fig:tug_F_motor}, seems to behave similarly to the tension on the motor in the figure~\ref{fig:tug_F}. 
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{tug_F_motor}
-\caption{
-\label{fig:tug_F_motor}
-Mean velocity of frustrated motor in between the two filaments under load. The variance of the motor's velocity grows as the load increases. For even larger loads the motor and filaments start slipping and the variance decreases again.
+\caption{\label{fig:tug_F_motor}
+Mean velocity of frustrated motor in between the two filaments under load. 
+The variance of the motor's velocity grows as the load increases. 
+For even larger loads the motor and filaments start slipping and the variance decreases again.
 }
 \end{figure}
+While the mean velocity stays close to zero, the variance increases as the tension builds up in the motor. 
+As the motor begins to slip over the filaments, the variance appears to decrease again.
 
-The variance of the motor velocity seems to behave similarly to the tension on the motor in figure \ref{fig:tug_F}. While the mean velocity stays close to zero, the variance increases as the tension builds up in the motor. As the motor begins to slip over the filaments, the variance appears to decrease again.
+
 
 
 \subsection{Mechanosensing}
