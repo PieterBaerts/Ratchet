@@ -703,26 +703,26 @@ It has been shown that mechanosensing takes place on the cellular scale, where t
 
 \section{First law of thermodynamics}
 \label{sec:energie}
-Before we discuss an efficiency of the myosin in various setups, 
-we need to introduce the basic notion of energy, heat and work. 
+Before we discuss an efficiency of the myosin II motor in various setups,
+we need to introduce the basic notions of energy, heat and work. 
 We start our discussion from the energy balance on the level of individual trajectories \cite{Pesek2013},
 which can be symbolically summarized as 
 \begin{equation}
 \rmd E = \dbar {\mathcal Q}_\text{M}^\text{hb} + \dbar {\mathcal Q}_\text{A}^\text{hb} + \dbar {\mathcal W}^\text{ext}_\text{M} + \dbar {\mathcal Q}^\text{chem}, 
 \label{eq:energy_balance}
 \end{equation}
-where the energy of the full system consists of the interaction ratchet potential \eqref{eq:ratchet_interaction}
-and the energy stored in ATP (and its products), 
+where the energy of the full system consists of the interaction with the ratchet potential~\eqref{eq:ratchet_interaction}
+and the energy stored in the ATP molecules that are bound to the motor heads,
 \begin{equation}
 E( x_\text{M}, x_\text{A}, \{ \zeta_i \}) = V_t( x_\text{M} - x_\text{A} ) + \Delta E \sum\limits_{i=0}^{N-1} \chi( \zeta_i = c ) ,
 \label{eq:internal_energy}
 \end{equation}
-where $\Delta E$ represents the actual internal energy stored by a single ATP and $\chi$ is a characteristic function\footnote{
+where $\Delta E$ represents the actual internal energy stored by in a single ATP and $\chi$ is a characteristic function\footnote{
 $\chi(\text{condition}) = 1$ if condition is fulfilled otherwise $0$.
 }.
 
-The energy of the system is subjected to the change driven by the interaction with the environment, 
-which in case of the overdamped diffusion represents a heath bath 
+The energy of the system is subjected to changes driven by the interaction with the environment.
+In the case of overdamped diffusion, the environment represents a heath bath
 and thus every interaction is associated with a heat exchange \cite{Pesek2013}
 \begin{align}
 {\mathcal Q}_\text{M}^\text{hb} 
@@ -732,7 +732,7 @@ and thus every interaction is associated with a heat exchange \cite{Pesek2013}
 &= \int \rmd x_\text{A} \circ \left[ - \gamma_\text{A} \frac{\rmd x_\text{A} }{\rmd t} + \sqrt{ 2 k_B T \gamma_\text{A} } \, \frac{ \rmd W_\text{A} }{ \rmd t } \right] ,
 \label{eq:heat_hb_A}
 \end{align} 
-where the first term is the dissipation of the energy due to the friction and the second is the energy gained by the thermal activity of the environment. 
+where the first term is the dissipation of energy due to the friction and the second is the energy absorbed from the thermal activity of the environment.
 Note that those integrals are evaluated in the Stratonovich sense.
 The energy is also changed by the work of the external load 
 \begin{equation}
@@ -742,8 +742,8 @@ The energy is also changed by the work of the external load
 where we used the fact that the external load $F_\text{load}$ is constant. 
 
 The last term in the energy balance \eqref{eq:energy_balance} is the contribution from the chemical cycle. 
-The chemical cycle, in the most basic form \cite{}, consists of binding an ATP, it's hydrolyses, release of phosphor and finally release of ADP, %TODO
-the first part provides a chemical energy to the system stored in ATP and ADP while the later part is associated with dissipation of the remaining energy to surroundings. 
+The chemical cycle of a motor head, in the most basic form \cite{astumian1996mechanochemical,Bierbaum2011,Bierbaum2013,albert2014stochastic}, is a sequence of binding an ATP molecule, it's hydrolysis, release of phosphor and finally release of ADP.
+The first step provides the chemical energy to the system, stored in ATP, while the next steps are associated with dissipation of the remaining energy to surroundings.
 Thus the total chemical energy consists of two parts ${\mathcal Q}^\text{chem} = {\mathcal Q}^\text{chem}_\text{in} + {\mathcal Q}^\text{chem}_\text{out}$,
 \begin{align}
 {\mathcal Q}_\text{in}^\text{chem} 
@@ -753,14 +753,14 @@ Thus the total chemical energy consists of two parts ${\mathcal Q}^\text{chem} =
 &= -\sum_{t_\text{bind} \leq t_\text{fin} } \left[ \Delta E + (c-1) V_r(x_{t_\text{bind}}) \right] 
 \label{eq:q_out}
 \end{align}
-where we sum over all jump times $t_\text{bind}$($t_\text{unbind}$) in the given ``direction''. 
+where we sum over the jump times $t_\text{bind}$($t_\text{unbind}$) of all binding(unbinding) events.
 $t_\text{fin}$ denotes the duration of the process. 
 
-Figure~\ref{fig:energy_evolution} depicts a time evolution of the internal energy \eqref{eq:internal_energy} for a single trajectory of the system for $F_\text{load} = 0$.
+Figure~\ref{fig:energy_evolution} depicts a time evolution of the internal energy~\eqref{eq:internal_energy} for a single trajectory of the system for $F_\text{load} = 0$.
 Note, that while we can identify the chemical input and output by the direction of the jump in the total energy, 
-without any additional information it is impossible to distinguish which part of the heat dissipated to the heat bath corresponds to the myosin and which to the actin.
-For non-zero load the heat dissipated to the heat bath will contain the work of the external forces as well, 
-thus making the separation of individual components even more difficult. 
+without any additional information it is impossible to distinguish which part of the heat dissipated to the heat bath corresponds to myosin or to actin.
+For non-zero load, the heat dissipated to the heat bath will contain the work of the external forces as well,
+which makes the separation in individual components even more difficult.
 \begin{figure}
 \centering
 \includegraphics[width=.45\textwidth,height=!]{energy_1head.pdf}
@@ -774,9 +774,9 @@ see~\eqref{eq:heat_hb_M} and~\eqref{eq:heat_hb_A}.
 \end{figure}
 
 \subsection{Load on the motor}
-If we restrict the discussion only to the simplest setup, i.e. single loaded myosin with single actin,  
-and we use the equation of motion \eqref{eq:eom_M}, 
-the heat exchange with the surrounding \eqref{eq:heat_hb_M} can be rewritten as 
+If we restrict the discussion only to the simplest setup, i.e. a single loaded motor with a single actin filament,
+and we use the equation of motion~\eqref{eq:eom_M}, 
+the heat exchange with the surrounding~\eqref{eq:heat_hb_M} can be rewritten as 
 \begin{multline*}
 {\mathcal Q}_\text{M}^\text{hb} 
 = \int \rmd x_\text{M} \circ \left[ \nabla_\text{M} V_t(x_\text{M} - x_\text{A} ) - F_\text{load} \right] 
@@ -791,8 +791,8 @@ Similarly for the heat dissipated by actin's interaction with the environment we
 \\
 = - \int \rmd x_\text{A} \circ \nabla V_t(x_\text{M} - x_\text{A} ) ,
 \end{multline*}
-thus the heat dissipated to heath bath can be expressed in terms of the work done by the ratchet potential and external load. 
-Consequently, the total energy balance equation \eqref{eq:energy_balance} simplifies to 
+thus the heat dissipated to the heath bath can be expressed in terms of the work done by the ratchet potential and external load. 
+Consequently, the total energy balance equation~\eqref{eq:energy_balance} simplifies to 
 \[
 \rmd E 
 = \rmd x_\text{M} \circ \nabla_\text{M} V_t  
@@ -804,28 +804,28 @@ which does not explicitly depend on the load $F_\text{load}$.
 
 
 \subsection{Heat fluxes}
-At last, note that the internal energy of the system \eqref{eq:internal_energy} is bounded.
-Hence, if we interpret the energy balance equation \eqref{eq:energy_balance} in terms of mean dissipation rates defined as 
+Furthermore, note that the internal energy of the system~\eqref{eq:internal_energy} is bounded.
+Hence, if we interpret the energy balance equation~\eqref{eq:energy_balance} in terms of mean dissipation rates defined as 
 \begin{equation}
 q = \lim_{\Delta t \to \infty} \frac{1}{\Delta t} \left\langle {\mathcal Q}(\Delta t) \right\rangle ,
 \label{eq:heat_flux}
 \end{equation}
-we obtain en equation representing the conservation of fluxes 
+we obtain an equation representing the conservation of fluxes 
 \begin{equation}
 0 = q_\text{M}^\text{hb} + q_\text{A}^\text{hb} + w^\text{ext}_\text{M} + q^\text{chem} 
 \label{eq:heat_flux_balance}
 \end{equation}
 for arbitrary initial condition. 
-Such equality is trivially true for arbitrarily small time when the initial condition corresponds the steady state. 
+Such equality is trivially true for arbitrarily small times when the initial condition corresponds to the steady state.
 
 
-\subsection{Tug of war} 
-In section \ref{sec:ratchet} we introduced two alternative models more suitable for capturing the behavior of myosin inside the polymer network known as actomyosin cortex.
+\subsection{Other setups} 
+In section \ref{sec:ratchet} we introduced two alternative models, more suitable for capturing the behavior of myosin motors inside the polymer network known as the actomyosin cortex.
 
-\subsubsection{Force on filaments}
+\subsubsection{Tug of war}
 In the first model, see paragraph~\ref{sec:load_on_fil} and figure~\ref{fig:tug_F_illustration},
-the myosin is attached between two polymers on which the load is applied, 
-hence the energy balance \eqref{eq:energy_balance} is modified to  
+the motor is placed between two polymers on which the load is applied,
+hence the energy balance~\eqref{eq:energy_balance} is modified to  
 \begin{multline}
 \rmd E = \dbar {\mathcal Q}_\text{M}^\text{hb} + \dbar {\mathcal Q}_{\text{A}_1}^\text{hb} + \dbar {\mathcal Q}_{\text{A}_2}^\text{hb} 
 \\
@@ -841,7 +841,7 @@ E( x_\text{M}, x_{\text{A}_1}, x_{\text{A}_2}, \{ \zeta_i \})
 + \Delta E \sum\limits_{i=0}^{N-1} \chi( \zeta_i = c ) .
 \end{multline*}
 Note, that the last sum is over all heads of the motor, $N = N_{\text{A}_1} + N_{\text{A}_2}$.
-Contributions from the heat exchange with environment \eqref{eq:heat_hb_A} remains the same, even though in this case we have two contributions from both filaments
+Contributions from the heat exchange with environment~\eqref{eq:heat_hb_A} remain the same, even though in this case we have two contributions from both filaments
 \begin{align*}
 {\mathcal Q}_{\text{A}_1}^\text{hb} 
 &= \int \rmd x_{\text{A}_1} \circ \left[ - \gamma_\text{A} \frac{\rmd x_{\text{A}_1} }{\rmd t} + \sqrt{ 2 k_B T \gamma_\text{A} } \, \frac{ \rmd W_{\text{A}_1} }{ \rmd t } \right] , \\ 
@@ -849,7 +849,7 @@ Contributions from the heat exchange with environment \eqref{eq:heat_hb_A} remai
 &= \int \rmd x_{\text{A}_2} \circ \left[ - \gamma_\text{A} \frac{\rmd x_{\text{A}_2} }{\rmd t} + \sqrt{ 2 k_B T \gamma_\text{A} } \, \frac{ \rmd W_{\text{A}_2} }{ \rmd t } \right] ,
 \end{align*}
 and the external load is now not applied on the motor but on each actin polymer.
-Thus the equation \eqref{eq:work_load} is replaced by 
+Hence, equation~\eqref{eq:work_load} is replaced by
 \begin{align*}
 {\mathcal W}^\text{ext}_{\text{A}_1} &= \int \rmd x_{\text{A}_1} \circ F_\text{load} = \Delta x_{\text{A}_1} F_\text{load}, 
 \\
@@ -863,8 +863,8 @@ while following the same arguments as for \eqref{eq:heat_flux_balance} is possib
 \]
 
 \subsubsection{Elastic environment}
-The second model, described in paragraph \ref{sec:environment} and depicted in figure \ref{fig:tug}, 
-modifies the energy balance \eqref{eq:energy_balance}, resp. \eqref{eq:energy_balance_two_filaments}, even further
+The second model, described in paragraph~\ref{sec:environment} and depicted in figure~\ref{fig:tug}, 
+further modifies the energy balance~\eqref{eq:energy_balance}, resp.~\eqref{eq:energy_balance_two_filaments},
 \begin{equation*}
 \rmd E = \dbar {\mathcal Q}_\text{M}^\text{hb} + \dbar {\mathcal Q}_{\text{A}_1}^\text{hb} + \dbar {\mathcal Q}_{\text{A}_2}^\text{hb} + \dbar {\mathcal Q}^\text{chem}, 
 \end{equation*}
@@ -879,13 +879,13 @@ E( x_\text{M}, x_{\text{A}_1}, x_{\text{A}_2}, \{ \zeta_i \})
 \\
 + \Delta E \sum\limits_{i=0}^{N-1} \chi( \zeta_i = c ) .
 \end{multline*}
-Contrary to the previous setup, the total energy of the system is no longer bound and hence the heat fluxes \eqref{eq:heat_flux} are only balanced in the steady state. 
+Contrary to the previous setup, the total energy of the system is no longer bound, hence the heat fluxes~\eqref{eq:heat_flux} are only balanced in the steady state.
 
 \section{Chemical efficiency} 
 \label{sec:efficiency}
-In previous years, a lot of effort was directed towards the assessment of the efficiency of molecular motors \cite{Schmiedl2008}. %TODO 
+In previous years, a lot of effort was directed towards the assessment of the efficiency of molecular motors \cite{Schmiedl2008,boksenbojm2009entropy}. %TODO more citations
 Unfortunately, main focus of these works was biased towards the transport properties of the aforementioned motors. 
-However myosin II main role is in generating of the tension in the cytoskeletal network \cite{}. %TODO
+However the main role of myosin II is generating the tension in the cytoskeletal network \cite{ma2012nonmuscle,chugh2017actin,monier2010actomyosin}.
 
 Efficiency, in general, relate a ``useful'' output with the input.
 As the ``usefulness'' heavily depends on the setup, there is a plethora of possible choices.
