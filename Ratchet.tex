@@ -412,7 +412,6 @@ Solid black line correspond to a situation where there will be no interaction wi
 \end{figure}
 
 A similar plot is shown in figure \ref{fig:F_v_heads}, where instead of varying binding rate $k_\text{bind}$ we look at motors with different numbers of heads $N$. Motors with only 1 head are very susceptible to external loads and the force from the ratchet offers little resistance. For 4 or 16 heads we see almost identical force-velocity relations. In section \ref{sec:efficiency}, however, we will see that these motors behave very differently regarding their energetics. The curve for 2 heads lies in between.
-
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{F_v_heads}
@@ -569,37 +568,73 @@ thus the tension applied to the motor is proportional to their difference
 - \left(1 + \frac{\gamma_\text{A}}{\gamma_\text{A}+\gamma_\text{M}} \right) F_\text{load}.
 \label{eq:tension}
 \end{multline}
-
+We plot the tension as a function of the load $F_\text{load}$ in figure~\ref{fig:tension} for various transition rates 
+and in figure~\ref{fig:tension_heads} as a function of the number of heads on a motor. 
 \begin{figure}
 \centering
 \includegraphics[width=.45\textwidth,height=!]{tension.pdf}
+\caption{\label{fig:tension}
+The dependency of the tension~\eqref{eq:tension} on the load force $F_\text{load}$ for different transition rates.
+We can see that with increasing ATP binding rate there is a faster departure from the small load regime towards the large load asymptotic behavior. 
+}
 \end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=.45\textwidth,height=!]{tension_heads.pdf}
+\caption{\label{fig:tension_heads}
+The dependency of the tension~\eqref{eq:tension} on the load force $F_\text{load}$ for different number of heads. 
+We observe a similar behavior as in figure~\ref{fig:tension} for the motor with four and sixteen heads which seems to be indistinguishable, 
+while the motor with a single head departs very rapidly from the low force regime. 
+}
+\end{figure}
+We observe that for small loads the tension is linear in load, this is in good agreement with the observation of a plateau in force velocity relation, 
+see figure~\ref{fig:F_v}.
+In this regime the velocity is small compared to the initial load, as most of the load is countered by the ratchet interaction, 
+hence the only the second term in \eqref{eq:tension} contributes
+\[
+\langle F_\text{r} \rangle - F_\text{load} 
+\approx
+- \left(1 + \frac{\gamma_\text{A}}{\gamma_\text{A}+\gamma_\text{M}} \right) F_\text{load}.
+\]
+
+For the large force the motor slips over the potential and hence the mean ratchet force $\langle F_\text{r}$ approaches zero,
+as can be seen in figures~\ref{fig:ratchet_force} and~\ref{fig:ratchet_force_decay}, 
+thus the large force asymptotic is given the load alone
+\[
+\langle F_\text{r} \rangle - F_\text{load} 
+\asymp - F_\text{load} 
+\qquad \text{for} \qquad F_\text{load} \to \infty. 
+\]
+This is further supported by calculations of the mean velocity for a motor with a single head provided in the appendix, cf. equation~\eqref{eq:mean_velocity_large}.
 
 
-A similar analysis can be made for the setup in section \ref{sec:load_on_fil}. 
-There, the motor is in the middle of this symmetric setup and will not move on average. 
-The mean velocities of the actin filaments and motor are given by
+\subsubsection{Tug of war}
+A similar analysis can be made for alternative setups presented in section \ref{sec:load_on_fil}. 
+In case of ``tug of war'' setup, the motor is in the middle of two actin polymers aligned anti-parallel. 
+The mean velocities in general for all elements of the system in this setup are given by
 \begin{align*}
-\langle v_{\text{A}_1} \rangle &= \frac{1}{\gamma_\text{A} } \left( F_\text{load} - \langle F_\text{r1} \rangle \right) \\
-\langle v_\text{M} \rangle &= \frac{1}{\gamma_\text{M} } \left( \langle F_\text{r1} \rangle + \langle F_\text{r2} \rangle \right)\\
-\langle v_{\text{A}_2} \rangle &= \frac{1}{ \gamma_\text{A} } \left( - F_\text{load} - \langle F_\text{r2} \rangle \right) 
+\langle v_{\text{A}_1} \rangle &= \frac{1}{\gamma_\text{A} } \left( F_\text{load} - \langle F_{\text{r}_1} \rangle \right) , \\
+\langle v_\text{M} \rangle &= \frac{1}{\gamma_\text{M} } \left( \langle F_{\text{r}_1} \rangle + \langle F_{\text{r}_2} \rangle \right) , \\
+\langle v_{\text{A}_2} \rangle &= \frac{1}{ \gamma_\text{A} } \left( - F_\text{load} - \langle F_{\text{r}_2} \rangle \right) ,
 \end{align*}
-where ${\text{A}_1}$ and ${\text{A}_2}$ denote the two different actin filaments and $F_\text{r1}$ and $F_\text{r2}$ are the ratchet forces between the motor and respectively filament ${\text{A}_1}$ and ${\text{A}_2}$. 
+where ${\text{A}_1}$ and ${\text{A}_2}$ denote the two different actin filaments and $F_{\text{r}_1}$ and $F_{\text{r}_2}$ are the ratchet forces between the motor and respectively filament ${\text{A}_1}$ and ${\text{A}_2}$. 
 
-Note that the mean velocity of the motor is proportional to the mean center of mass velocity of both actin filaments. 
-\begin{equation}
-\langle v_\text{M} \rangle = \frac{\gamma_\text{A}}{\gamma_\text{M}} \left(\langle v_{\text{A}_1} \rangle + \langle v_{\text{A}_2} \rangle \right) 
-\label{eq:tug_F_motor}
-\end{equation}
-Because of the anti-parallel alignment of the filaments, $F_{r1}$ and $F_{r2}$ are equal but opposite on average. 
-Therefore the motor will not experience any mean displacement.  
-
-Although the motor doesn't experience an external load and it will not have a net force on average, there will be a tension on the motor due to interaction with both actin filaments. This tension is given by
+Note that the mean velocity of the motor is proportional to the mean center of mass velocity of both actin filaments, 
 \begin{equation*}
-\langle F_\text{r1}\rangle - \langle F_\text{r2}\rangle = -\gamma_\text{A}\left(\langle v_{\text{A}_1}\rangle - \langle v_{\text{A}_2}\rangle \right) - 2F_\text{load}
+\langle v_\text{M} \rangle = \frac{\gamma_\text{A}}{\gamma_\text{M}} \left(\langle v_{\text{A}_1} \rangle + \langle v_{\text{A}_2} \rangle \right) 
+%\label{eq:tug_F_motor}
 \end{equation*}
-The tension in the motor is shown in figure \ref{fig:tug_F}, where it is compared to the tension when the load is applied on the motor instead of the filaments, given by \eqref{eq:tension}. 
+Due to the anti-parallel alignment of the filaments, $F_{{r_1}}$ and $F_{{r_2}}$ are equal but opposite on average. 
+Therefore the motor's mean velocity will be on average zero.  
 
+Although the load on is not applied to the motor directly,
+there will be a tension on the motor due to interaction with both actin filaments. 
+This tension is again given by the difference in the forces applied to their respective ends of the motor,
+\begin{equation*}
+\langle F_{\text{r}_1}\rangle - \langle F_{\text{r}_2}\rangle = -\gamma_\text{A}\left(\langle v_{\text{A}_1}\rangle - \langle v_{\text{A}_2}\rangle \right) - 2F_\text{load} .
+\end{equation*}
+The tension in the motor is shown in figure \ref{fig:tug_F}, 
+where it is compared to the tension when the load is applied on the motor instead of the filaments.
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{tug_F}
@@ -611,15 +646,23 @@ This because, only in the simple setup, the load is directly applied to the moto
 }
 \end{figure}
 
-For small loads, the tension in both cases is equal to twice the load force. As we have seen in section \ref{sec:force-velocity}, the ratchet force tends to completely oppose the load. 
+For small loads, ratchet forces balance the load applied on both filaments, thus the tension is proportional to twice the load 
+\[
+\langle F_{\text{r}_1}\rangle - \langle F_{\text{r}_2}\rangle \approx - 2 F_\text{load} .
+\] 
+This is a similar behavior to the setup 
+
+As we have seen in section \ref{sec:force-velocity}, the ratchet force tends to completely oppose the load. 
 Therefore, the loads are transmitted from the filaments to the motor.
-For larger load, the tensions in the different setups will differ. The motor and filaments start to slip, as in section \ref{sec:ind_velo}. 
+For larger load, the tensions in the different setups will differ. 
+The motor and filaments start to slip, as in section \ref{sec:ind_velo}. 
 Consequently, the mean ratchet force decreases and the increase in tension diminishes.
-The difference in the two setups lies in the fact that, in the simple setup, the load is applied directly to the motor. As the ratchet force vanishes for large load, a residual tension from the load remains.
-In the other setup, the tension on the motor is completely due to the forces from the ratchet interaction with the two filaments. For large loads this tension goes to zero as the mean ratchet forces go to zero. 
+The difference in the two setups lies in the fact that, in the simple setup, the load is applied directly to the motor. 
+As the ratchet force vanishes for large load, a residual tension from the load remains.
+In the other setup, the tension on the motor is completely due to the forces from the ratchet interaction with the two filaments. 
+For large loads this tension goes to zero as the mean ratchet forces go to zero. 
 
 The empirical velocity of the motor, in setup \ref{sec:load_on_fil}, is plotted in figure \ref{fig:tug_F_motor}. 
-
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{tug_F_motor}
@@ -636,7 +679,6 @@ The variance of the motor velocity seems to behave similarly to the tension on t
 \label{sec:mechanosensing}
 In this section we will look at the force that the motor generates and transfers to the filaments in the setup, sketched in figure \ref{fig:tug}. 
 The mean force, which is measured through the extension of the springs, is plotted in figure \ref{fig:tug_k} for different stiffnesses $k$ that represent the surrounding network.
-
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{tug_k}
