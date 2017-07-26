@@ -351,7 +351,7 @@ where the load is replaced by the force caused by springs and the reference poin
 \subsection{Numerical method}
 
 We use an Euler-Maruyama integration scheme to stochastically evolve the systems from a randomised initial configuration \cite{kloeden1989survey,maruyama1955continuous}. 
-Results are obtained after both ergodic and ensemble averaging, up to a minimal time of $1s$ and over $100$ or more independent copies.    
+Results are obtained after both ergodic and ensemble averaging, up to a minimal time of $1\;\mathrm{s}$ with timestep $\Delta t = 0.01\;\mathrm{ns}$ and over $100$ or more independent copies.    
 
 \section{Mean velocity}
 \label{sec:velocity}
@@ -543,7 +543,7 @@ which is shown in figure \ref{fig:ratchet_force_decay}.
 \includegraphics[width=0.45\textwidth,height=!]{ratchet_force}
 \caption{
 \label{fig:ratchet_force}
-Effective friction force from the ratchet interaction depending on the load force on the motor.
+Mean force from the ratchet interaction depending on the load force on the motor for several values of $k_\text{bind}$. For small loads, the ratchet force completely counter to load, hance the linear regime around $F_\text{load}=0$ goes like
 }
 \end{figure}
 \begin{figure}[t]
