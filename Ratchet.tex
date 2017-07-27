@@ -762,10 +762,10 @@ The first step provides the chemical energy to the system, stored in ATP, while 
 Thus the total chemical energy consists of two parts ${\mathcal Q}^\text{chem} = {\mathcal Q}^\text{chem}_\text{in} + {\mathcal Q}^\text{chem}_\text{out}$,
 \begin{align}
 {\mathcal Q}_\text{in}^\text{chem} 
-&= \sum_{t_\text{unbind} \leq t_\text{fin} } \left[ \Delta E + (c-1) V_r(x_{t_\text{unbind}}) \right] , 
+&= \sum_{t_\text{unbind} \leq t_\text{fin} } \left[ \Delta E + (c-1) V_\text{r}(x_{t_\text{unbind}}) \right] , 
 \label{eq:q_in} \\
 {\mathcal Q}_\text{out}^\text{chem} 
-&= -\sum_{t_\text{bind} \leq t_\text{fin} } \left[ \Delta E + (c-1) V_r(x_{t_\text{bind}}) \right] 
+&= -\sum_{t_\text{bind} \leq t_\text{fin} } \left[ \Delta E + (c-1) V_\text{r}(x_{t_\text{bind}}) \right] 
 \label{eq:q_out}
 \end{align}
 where we sum over the jump times $t_\text{bind}$($t_\text{unbind}$) of all binding(unbinding) events.
@@ -965,7 +965,7 @@ by transitions of a single head $i$ displaced with respect to the end of the mot
 = \Delta t \, k_\text{unbind} 
 \\ \times 
 \!\!\!\! \sum\limits_{\{\zeta_j\} : \zeta_i = 1 } \!\!\!\! \rho(\{ \zeta_j \} ) 
-\left[ \Delta E - (1-c) \left\langle V_r(x - i \, d ) \middle| \{ \zeta_j \} \right\rangle \right] 
+\left[ \Delta E - (1-c) \left\langle V_\text{r}(x - i \, d ) \middle| \{ \zeta_j \} \right\rangle \right] 
 \end{multlined}
 %\label{eq:mean_q_in} 
 \\
@@ -974,7 +974,7 @@ by transitions of a single head $i$ displaced with respect to the end of the mot
 = - \Delta t \, k_\text{bind} 
 \\ \times 
 \!\!\!\! \sum\limits_{\{\zeta_j\} : \zeta_i = c } \!\!\!\! \rho(\{ \zeta_j \} ) 
-\left[ \Delta E - (1-c) \left\langle V_r(x - i \, d ) \middle| \{ \zeta_j \} \right\rangle \right] 
+\left[ \Delta E - (1-c) \left\langle V_\text{r}(x - i \, d ) \middle| \{ \zeta_j \} \right\rangle \right] 
 \end{multlined}
 %\label{eq:mean_q_out}
 \end{gather*}
@@ -1001,7 +1001,7 @@ is that we can express the total mean heats produced in chemical cycle as a sum 
 = \Delta t \frac{ k_\text{bind} k_\text{unbind} }{ k_\text{bind} + k_\text{unbind} } 
 \\ &\times
 \left[ N \, \Delta E 
-- (1-c) \sum\limits_{i=0}^{N-1} \left\langle V_r(x - i d ) \middle| \zeta_i = 1 \right\rangle 
+- (1-c) \sum\limits_{i=0}^{N-1} \left\langle V_\text{r}(x - i d ) \middle| \zeta_i = 1 \right\rangle 
 \right] ,  
 \\
 \langle \mathcal Q^\text{chem}_\text{out} \rangle 
@@ -1009,15 +1009,15 @@ is that we can express the total mean heats produced in chemical cycle as a sum 
 = - \Delta t \frac{ k_\text{bind} k_\text{unbind} }{ k_\text{bind} + k_\text{unbind} } 
 \\ &\times
 \left[ N \, \Delta E 
-- (1-c) \sum\limits_{i=0}^{N-1} \left\langle V_r(x - i d ) \middle| \zeta_i = c \right\rangle  
+- (1-c) \sum\limits_{i=0}^{N-1} \left\langle V_\text{r}(x - i d ) \middle| \zeta_i = c \right\rangle  
 \right] , 
 \end{align*}
 which leads to a more explicit expression for the efficiency \eqref{eq:efficiency} 
 \begin{multline*}
 \eta_\text{chem} = \frac{1-c}{N}
 \\ \times
-\sum\limits_{i=0}^{N-1} \frac{ \left\langle V_r(x-id) \middle| \zeta_i = c \right\rangle - \left\langle V_r( x -id ) \middle| \zeta_i = 1 \right\rangle }
-{ \Delta E - \frac{1-c}{N} \sum\limits_{j=0}^{N-1} \left\langle V_r(x-jd) \middle| \zeta_j = 1 \right\rangle } 
+\sum\limits_{i=0}^{N-1} \frac{ \left\langle V_\text{r}(x-id) \middle| \zeta_i = c \right\rangle - \left\langle V_\text{r}( x -id ) \middle| \zeta_i = 1 \right\rangle }
+{ \Delta E - \frac{1-c}{N} \sum\limits_{j=0}^{N-1} \left\langle V_\text{r}(x-jd) \middle| \zeta_j = 1 \right\rangle } 
 . 
 \end{multline*}
 We can further introduce an average probability density over all heads 
@@ -1033,8 +1033,8 @@ and consequently the conditional average probability density
 which allow us to further simplify the expression for the chemical efficiency to 
 \begin{equation}
 \eta_\text{chem} = (1-c)
-\frac{ \left\langle V_r(x) \middle| \zeta = c \right\rangle_{\bar{\rho}} - \left\langle V_r(x) \middle| \zeta = 1 \right\rangle_{\bar{\rho}} }
-{ \Delta E - (1-c) \left\langle V_r(x) \middle| \zeta = 1 \right\rangle_{\bar{\rho}} } 
+\frac{ \left\langle V_\text{r}(x) \middle| \zeta = c \right\rangle_{\bar{\rho}} - \left\langle V_\text{r}(x) \middle| \zeta = 1 \right\rangle_{\bar{\rho}} }
+{ \Delta E - (1-c) \left\langle V_\text{r}(x) \middle| \zeta = 1 \right\rangle_{\bar{\rho}} } 
 . 
 \label{eq:eta}
 \end{equation}
@@ -1068,7 +1068,7 @@ The difference between the average distribution \eqref{eq:eff_distribution} in t
 q_\text{in}^\text{chem} + q_\text{out}^\text{chem} 
 = (1-c) \frac{ k_\text{bind} k_\text{unbind} }{ k_\text{bind} + k_\text{unbind} } 
 \\ \times
-\left[ \left\langle V_r(x) \middle| \zeta = c \right\rangle_{\bar{\rho}} - \left\langle V_r(x) \middle| \zeta = 1 \right\rangle_{\bar{\rho}} \right] ,
+\left[ \left\langle V_\text{r}(x) \middle| \zeta = c \right\rangle_{\bar{\rho}} - \left\langle V_\text{r}(x) \middle| \zeta = 1 \right\rangle_{\bar{\rho}} \right] ,
 \label{eq:heat_flux_explicit}
 \end{multline} 
 which is depicted in the figure~\ref{fig:chem_energy_distr}, 
@@ -1162,17 +1162,17 @@ This can be understand from the equation \eqref{eq:eta}, which is determined by 
 For a one headed motor, these distribution will both be peaked around the minimum of the ratchet potential. 
 In fact, these distributions will be given by the Boltzmann distribution
 \begin{equation}
-\rho_0(x,\zeta) = \frac{1}{Z(\zeta)} e^{-\beta \zeta V_r(x)}
+\rho_0(x,\zeta) = \frac{1}{Z(\zeta)} e^{-\beta \zeta V_\text{r}(x)}
 \end{equation} 
 in the lowest order of approximation, as the binding and unbinding rates operate on much longer time scale then the relaxation governed by the diffusion. 
 From this point of view, ATP binding is effectively equivalent to an increasing of the temperature of the heat bath $T\rightarrow\frac{T}{c}$. 
-Hence the distributions for the ATP bound state are broader and the expectation value of $V_r$ will be bigger than in the attached state and $\eta$ will be positive. 
+Hence the distributions for the ATP bound state are broader and the expectation value of $V_\text{r}$ will be bigger than in the attached state and $\eta$ will be positive. 
 
 Now if we apply a small external force, those distributions will be slightly perturbed. 
 Following the McLennan formula~\cite{} we thus obtain %TODO 
 \begin{align*}
 \rho^*(x) 
-&\sim e^{-\beta \left[V_r(x) - F_\text{load} \left( x - x_\text{min} \right) \right]} \\
+&\sim e^{-\beta \left[V_\text{r}(x) - F_\text{load} \left( x - x_\text{min} \right) \right]} \\
 &\approx \rho_0(x) \left[1 + \beta F_\text{load} \left( x - x_\text{min} \right) \right]
 \end{align*}
 close to the potential minimum $x_\text{min}$, i.e. $V(x) \ge V(x_\text{min})$. 
@@ -1192,14 +1192,14 @@ as can be seen from
 From the previous equation it follows that more spread-out distribution will be affected more by the force.
 This means that in our case the ATP bound state will be more affected.
 A larger displacement of the distribution, away from the potential's minimum, 
-means that the mean ratchet potential in the ATP bound state $\left\langle V_r \middle| \zeta = c \right\rangle$ will increase more than the mean ratchet potential in the ATP unbound state $\left\langle V_r \middle| \zeta = 1 \right\rangle$ and hence the chemical efficiency \eqref{eq:eta} has to increase. 
+means that the mean ratchet potential in the ATP bound state $\left\langle V_\text{r} \middle| \zeta = c \right\rangle$ will increase more than the mean ratchet potential in the ATP unbound state $\left\langle V_\text{r} \middle| \zeta = 1 \right\rangle$ and hence the chemical efficiency \eqref{eq:eta} has to increase. 
 
 This argument can be further supported by Jensen's inequality.
 The ratchet potential is convex close to its minimum, 
 moreover, if we assume that the majority of the probability distribution is localized close to the potential minimum,
 we can concur that the Jensen's inequality will hold for sufficiently small load  
 \begin{equation*}
-V_r(\langle x | \zeta \rangle) \leq \langle V_r(x) | \zeta \rangle , 
+V_\text{r}(\langle x | \zeta \rangle) \leq \langle V_\text{r}(x) | \zeta \rangle , 
 \end{equation*} 
 where the lower bound on the expectation value of the ratchet potential \eqref{eq:ratchet_potential} is given by the value of the ratchet potential at the mean position of the heads in a given state. 
 We have shown in \eqref{eq:mean_position_shift} that the mean position is shifted by the action of the external force and consequently it shifts the lower bound for the mean value of the ratchet potential itself. 
@@ -1269,16 +1269,27 @@ We will show this by calculating the perturbative corrections to the probability
 First, we assume that the relaxation time of the position in a given potential is much shorter than the typical time between jumps in the chemical state of the heads. 
 This effectively leads to time scale separations,
 thus the conditional probability distribution \eqref{eq:cond_prob} is given as a steady state solution of the corresponding Fokker-Planck equation in a given state $\zeta$
+\begin{multline*}
+0 = \frac{1}{\gamma_\text{M}} \partial_\text{M} \left[ \left( F_\text{load} - \zeta \partial V_\text{r}( x_\text{M} - x_\text{A} ) \right) \mu\left( x_\text{M}, x_\text{A} \right)
+\right. \\ \left.
+- k_B T \partial_\text{M} \mu\left( x_\text{M}, x_\text{A} \right) \right] 
+\\
++ \frac{1}{\gamma_\text{A}} \partial_\text{A} \left[ 
+\zeta \partial V_\text{r} \mu( x_\text{M}, x_\text{A} ) 
+- k_B T \partial_\text{A} \mu\left( x_\text{M}, x_\text{A} \right) 
+\right]
+\end{multline*}
+
 \begin{equation}
-\frac{1}{\gamma} \partial_x \left[ \left( F_\text{load} - \zeta \partial_x V_r(x) \right) \rho(x) - k_B T \partial_x \rho(x) \right] = 0 ,
+0 = \frac{1}{\gamma} \partial_x \left[ \left( F_\text{load} - \zeta \partial_x V_\text{r}(x) \right) \rho(x) - k_B T \partial_x \rho(x) \right] ,
 \label{eq:FP_ss}
 \end{equation}
-where $V_r$ is the ratchet potential \eqref{eq:ratchet_potential} and $F_\text{load}$ is the external constant load. 
+where $V_\text{r}$ is the ratchet potential \eqref{eq:ratchet_potential} and $F_\text{load}$ is the external constant load. 
 
 The first step is expressing the equation \eqref{eq:FP_ss} in terms of $\epsilon = F_\text{load}^{-1}$ instead of load force $f_\text{load}$,
 which makes it more convenient for the expansion
 \begin{equation}
-\partial_x \left[ \rho(x) - \epsilon \left( \zeta \partial_x V_r(x) \rho(x) + k_B T \partial_x \rho(x) \right) \right] = 0 
+\partial_x \left[ \rho(x) - \epsilon \left( \zeta \partial_x V_\text{r}(x) \rho(x) + k_B T \partial_x \rho(x) \right) \right] = 0 
 \label{eq:FP_ss_pert}
 \end{equation}
 Due to the periodical boundary conditions, the zeroth order approximation correspond to the flat distribution, i.e. $\rho_0 = \frac{1}{\ell}$. 
@@ -1288,7 +1299,7 @@ thus the chemical efficiency \eqref{eq:eta} is zero.
 For the first order solution we start with an ansatz $\rho_1 = \rho_0 + \delta\rho_1$. 
 When inserted into \eqref{eq:FP_ss_pert} we get
 \begin{equation*}
-\delta\rho_1 = \frac{\epsilon}{\ell} \partial_x V_r + C
+\delta\rho_1 = \frac{\epsilon}{\ell} \partial_x V_\text{r} + C
 \end{equation*}
 where $C$ is an integration constant.
 Due to the normalization 
@@ -1298,40 +1309,40 @@ Due to the normalization
 \end{equation}
 and periodicity of the ratchet potential \eqref{eq:ratchet_potential} the aforementioned integration constant has to be equal to $0$.
 
-Note, that the first order correction does not contribute to calculations of $\langle V_r | \zeta \rangle_\rho$ 
+Note, that the first order correction does not contribute to calculations of $\langle V_\text{r} | \zeta \rangle_\rho$ 
 \begin{align*}
-\langle V_r | \zeta \rangle_{\delta \rho_1} 
-&= \int\limits_0^\ell V_r(x) \, \delta\rho_1(x) \; \rmd x
-\propto \int\limits_0^\ell V_r(x) \, \partial_x V_r(x) \; \rmd x \\
-&= \frac{1}{2} \int\limits_0^\ell \partial_x V_r^2(x) \; \rmd x 
+\langle V_\text{r} | \zeta \rangle_{\delta \rho_1} 
+&= \int\limits_0^\ell V_\text{r}(x) \, \delta\rho_1(x) \; \rmd x
+\propto \int\limits_0^\ell V_\text{r}(x) \, \partial_x V_\text{r}(x) \; \rmd x \\
+&= \frac{1}{2} \int\limits_0^\ell \partial_x V_\text{r}^2(x) \; \rmd x 
 = 0
 \end{align*}
-where we again used the fact that the ratchet potential $V_r(x)$ is periodic.
+where we again used the fact that the ratchet potential $V_\text{r}(x)$ is periodic.
 
 Consequently, we need to calculate the second order correction $\delta\rho_2$. 
 Starting from the ansatz $\rho_2 = \rho_1 + \delta\rho_2$ in \eqref{eq:FP_ss_pert} and keeping up the terms up to quadratic order in $\epsilon$, we find
 \begin{equation*}
-\delta\rho_2 = \frac{ \epsilon^2 }{ \ell } \left[ \left( \zeta \partial_x V_r \right)^2 - k_B T \zeta \partial_x^2 V_r \right] + C^\prime .
+\delta\rho_2 = \frac{ \epsilon^2 }{ \ell } \left[ \left( \zeta \partial_x V_\text{r} \right)^2 - k_B T \zeta \partial_x^2 V_\text{r} \right] + C^\prime .
 \end{equation*}
 Again by requiring the normalization~\eqref{eq:normalization}, the integration constant $C^\prime$ can be determined
 \begin{multline*}
 1 = \int\limits_0^\ell \rho_2(x) \; \rmd x 
 \\
 = 1  
-+ \frac{\epsilon^2}{ \ell } \int\limits_0^\ell \left[ \left( \zeta \partial_x V_r(x) \right)^2 - k_B T \zeta \partial_x^2 V_r(x) \right] \; \rmd x 
++ \frac{\epsilon^2}{ \ell } \int\limits_0^\ell \left[ \left( \zeta \partial_x V_\text{r}(x) \right)^2 - k_B T \zeta \partial_x^2 V_\text{r}(x) \right] \; \rmd x 
 + \ell C^\prime ,
 \end{multline*}
 which leads to
 \begin{equation}
-C^\prime = - \frac{\epsilon^2 \zeta^2}{ \ell^2 } \int\limits_0^\ell \left( \partial_x V_r(x) \right)^2 \; \rmd x . 
+C^\prime = - \frac{\epsilon^2 \zeta^2}{ \ell^2 } \int\limits_0^\ell \left( \partial_x V_\text{r}(x) \right)^2 \; \rmd x . 
 \end{equation}
 Now the density up to second order is given by
 \begin{multline}
 \rho_2(x)  
-= \frac{1}{\ell} \Biggl\{ 1  + \epsilon \zeta \partial_x V_r(x) \\
-+ \epsilon^2 \zeta^2 \left[ \left( \partial_x V_r(x) \right)^2 - \frac{1}{\ell} \int\limits_0^\ell \left( \partial_y V_r(y) \right)^2 \; \rmd y \right] 
+= \frac{1}{\ell} \Biggl\{ 1  + \epsilon \zeta \partial_x V_\text{r}(x) \\
++ \epsilon^2 \zeta^2 \left[ \left( \partial_x V_\text{r}(x) \right)^2 - \frac{1}{\ell} \int\limits_0^\ell \left( \partial_y V_\text{r}(y) \right)^2 \; \rmd y \right] 
 \\
-- \epsilon^2 \zeta k_B T \partial_x^2 V_r(x)  
+- \epsilon^2 \zeta k_B T \partial_x^2 V_\text{r}(x)  
 \Biggr\} .
 \label{eq:prob_density_large}
 \end{multline}
@@ -1364,17 +1375,17 @@ Empirical probability density for large loads for motor with single head in an A
 
 With the second order correction, we can now calculate the change in the expected value of the potential energy
 \begin{align*}
-\langle V_r | \zeta \rangle_{\delta\rho_2} 
-=& \int\limits_0^\ell V_r(x) \, \delta\rho_2 \; \rmd x \\
-=& \frac{\epsilon^2 \zeta^2}{\ell} \int\limits_0^\ell V_r(x) \left(\partial_x V_r(x) \right)^2 \; \rmd x  \\
-&- \frac{\epsilon^2 \zeta^2}{\ell^2} \int\limits_0^\ell V_r(x) \; \rmd x \int\limits_0^\ell \left( \partial_y V_r(y) \right)^2 \; \rmd y \\
-&- \frac{\epsilon^2 \zeta k_B T}{\ell} \int\limits_0^\ell V_r(x) \, \partial_x^2 V_r(x) \; \rmd x .
+\langle V_\text{r} | \zeta \rangle_{\delta\rho_2} 
+=& \int\limits_0^\ell V_\text{r}(x) \, \delta\rho_2 \; \rmd x \\
+=& \frac{\epsilon^2 \zeta^2}{\ell} \int\limits_0^\ell V_\text{r}(x) \left(\partial_x V_\text{r}(x) \right)^2 \; \rmd x  \\
+&- \frac{\epsilon^2 \zeta^2}{\ell^2} \int\limits_0^\ell V_\text{r}(x) \; \rmd x \int\limits_0^\ell \left( \partial_y V_\text{r}(y) \right)^2 \; \rmd y \\
+&- \frac{\epsilon^2 \zeta k_B T}{\ell} \int\limits_0^\ell V_\text{r}(x) \, \partial_x^2 V_\text{r}(x) \; \rmd x .
 \end{align*}
 After tedious but straightforward calculation we found that the first two terms will cancel each other. 
 Hence only the last term remains, which after an explicit calculation leads to  
 \begin{align*}
-\langle V_r | \zeta = 1 \rangle_{\rho_2} &= \frac{V}{2} + \frac{k_B T}{F_\text{load}^2} \frac{V^2}{a \left(1-a\right) \ell^2 }, \\
-\langle V_r | \zeta = c \rangle_{\rho_2} &= \frac{V}{2} + \frac{k_B T}{F_\text{load}^2} \frac{c V^2}{a \left(1-a\right) \ell^2 } .
+\langle V_\text{r} | \zeta = 1 \rangle_{\rho_2} &= \frac{V}{2} + \frac{k_B T}{F_\text{load}^2} \frac{V^2}{a \left(1-a\right) \ell^2 }, \\
+\langle V_\text{r} | \zeta = c \rangle_{\rho_2} &= \frac{V}{2} + \frac{k_B T}{F_\text{load}^2} \frac{c V^2}{a \left(1-a\right) \ell^2 } .
 \end{align*}
 By using these expression we get the chemical efficiency~\eqref{eq:eta} up to the second order in $\epsilon$  
 \begin{equation}
@@ -1392,12 +1403,12 @@ as well as the ratio between the thermal energy $k_B T$ and the mean energy gap 
 In addition we can compute the steady state probabilistic current in each respective internal state.
 The probabilistic current is given by 
 \[
-\mathcal{J}(x) = \frac{1}{\gamma} \left[ \left( F_\text{load} - \partial_x V_r(x) \right) \rho(x) - k_B T \partial_x \rho(x) \right] 
+\mathcal{J}(x) = \frac{1}{\gamma} \left[ \left( F_\text{load} - \partial_x V_\text{r}(x) \right) \rho(x) - k_B T \partial_x \rho(x) \right] 
 \]
 Which simplifies in the second order in the large load regime to
 \begin{align*}
 \mathcal{J}(x) 
-&= \frac{F_\text{load}}{\gamma \ell} - \frac{\zeta^2}{F_\text{load} \gamma \ell^2} \int\limits^\ell_0 \left( \partial_x V_r(x) \right)^2 \; \rmd x \\
+&= \frac{F_\text{load}}{\gamma \ell} - \frac{\zeta^2}{F_\text{load} \gamma \ell^2} \int\limits^\ell_0 \left( \partial_x V_\text{r}(x) \right)^2 \; \rmd x \\
 &= \frac{F_\text{load}}{\gamma \ell} - \frac{\zeta^2 V^2}{\gamma F_\text{load} \ell^3 a (1-a) } ,
 \end{align*}
 which is independent of the position. 
