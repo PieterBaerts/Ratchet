@@ -7,7 +7,7 @@ load "Data/my.pal"
 set xzeroaxis
 set yzeroaxis
 
-set key top left Left width -3
+set key top left Left width -1
 
 set ylabel "{/Symbol h}"
 set xlabel "F_{load} (pN)"
