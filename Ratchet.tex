@@ -817,6 +817,26 @@ Consequently, the total energy balance equation~\eqref{eq:energy_balance} simpli
 \]
 which does not explicitly depend on the load $F_\text{load}$. 
 
+Lastly, in the steady state, 
+we can see that the excess of the chemical cycle in the steady state is dissipated as the work of ratchet potential~\eqref{eq:ratchet_potential} over the separation of motor and filament 
+\begin{multline*}
+\left\langle 
+{\mathcal Q}_\text{in}^\text{chem} + {\mathcal Q}_\text{out}^\text{chem} 
+\right\rangle 
+\\
+= 
+\left\langle 
+\int \rmd \left( x_\text{M} - x_\text{A} \right) \circ \left[ - \nabla V_t( x_\text{M} - x_\text{A} ) \right]
+\right\rangle ,
+\end{multline*} 
+which can be further interpreted in terms of tension on the polymer $\tau_\text{A}$ and the relative velocity $v$ 
+\[
+\left\langle 
+{\mathcal Q}_\text{in}^\text{chem} + {\mathcal Q}_\text{out}^\text{chem} 
+\right\rangle 
+= \left\langle \int \rmd t \; v \, \tau_\text{A} \right\rangle .
+\]
+%TODO reference 
 
 \subsection{Heat fluxes}
 Furthermore, note that the internal energy of the system~\eqref{eq:internal_energy} is bounded.
@@ -1221,14 +1241,16 @@ We observe that the efficiency is rather comparable to a simple setup with a sin
 \end{figure}
 
 \subsubsection{Elastic environment}
-In the case of elastic environment we observe, see figure~\ref{fig:stiffness_efficiency}, that the efficiency is more or less independent of the stiffness. 
-%TODO
+In the case of elastic environment we observe, see figure~\ref{fig:stiffness_efficiency}, that the chemical efficiency~\eqref{eq:eta} is practically independent of the stiffness of the environment, $k_\text{sp}$. 
 \begin{figure}[t]
 \centering
 \includegraphics[width=.45\textwidth,height=!]{k_eta.pdf}
 \caption{\label{fig:stiffness_efficiency}
+The chemical efficiency~\eqref{eq:eta} as a function of the spring constant $k_\text{sp}$.
+We observe a flat profile.
 }
 \end{figure}
+
 
 \subsubsection{Tension and chemical efficiency}
 %TODO
@@ -1256,7 +1278,7 @@ The chemical efficiency is close to a local minimum when the motor is unloaded. 
 For large loads, the chemical efficiency decay and even becomes negative, which means that energy is drained from the diffusion process to the chemical cycle.
 
 \begin{acknowledgments}
-Christian Maes
+Authors are grateful to Christian Maes for many valuable discussions and Bart Smeets and Maxim Cuvelier for proofreading of the manuscript.
 \end{acknowledgments}
 
 \appendix* 
