@@ -635,9 +635,10 @@ Therefore the motor's mean velocity will be on average zero.
 Although the load on is not applied to the motor directly,
 there will be a tension on the motor due to interaction with both actin filaments. 
 This tension is again given by the difference in the forces applied to their respective ends of the motor,
-\begin{equation*}
+\begin{equation}
 \langle F_{\text{r}_1}\rangle - \langle F_{\text{r}_2}\rangle = -\gamma_\text{A}\left(\langle v_{\text{A}_1}\rangle - \langle v_{\text{A}_2}\rangle \right) - 2F_\text{load} .
-\end{equation*}
+\label{eq:tension_tug}
+\end{equation}
 The tension in the motor is shown in figure \ref{fig:tug_F}, 
 \begin{figure}[t]
 \centering
@@ -830,13 +831,14 @@ we can see that the excess of the chemical cycle in the steady state is dissipat
 \right\rangle ,
 \end{multline*} 
 which can be further interpreted in terms of tension on the polymer $\tau_\text{A}$ and the relative velocity $v$ 
-\[
+\begin{equation}
 \left\langle 
 {\mathcal Q}_\text{in}^\text{chem} + {\mathcal Q}_\text{out}^\text{chem} 
 \right\rangle 
 = \left\langle \int \rmd t \; v \, \tau_\text{A} \right\rangle .
-\]
-%TODO reference 
+\label{eq:excess_heat} 
+\end{equation}
+%TODO reference previous text 
 
 \subsection{Heat fluxes}
 Furthermore, note that the internal energy of the system~\eqref{eq:internal_energy} is bounded.
@@ -897,6 +899,27 @@ while following the same arguments as for \eqref{eq:heat_flux_balance} is possib
 0 = q_\text{M}^\text{hb} + q_{\text{A}_1}^\text{hb} + q_{\text{A}_2}^\text{hb} + w^\text{ext}_{\text{A}_1} + w^\text{ext}_{\text{A}_2} + q^\text{chem} .
 \]
 
+Similarly to the simple setup we can express the excess from chemical cycle in the steady state as sum of works of ratchet forces with respect to their respective displacements,
+\begin{multline*}
+\left\langle 
+{\mathcal Q}_\text{in}^\text{chem} + {\mathcal Q}_\text{out}^\text{chem} 
+\right\rangle 
+\\
+= 
+\left\langle 
+\int \rmd \left( x_\text{M} - x_{\text{A}_1} \right) \circ \left[ - \nabla V_t( x_\text{M} - x_{\text{A}_1} ) \right]
+\right\rangle 
+\\
++
+\left\langle 
+\int \rmd \left( x_\text{M} - x_{\text{A}_2} \right) \circ \left[ - \nabla V_t( x_{\text{A}_2} - x_\text{M} ) \right]
+\right\rangle .
+\end{multline*} 
+Due to the symmetry of the setup, the two respective displacements are typically anti-symmetric. 
+Hence, we can interpret it as a tension on the motor~\eqref{eq:tension_tug} correlation with the relative velocity of the motor with respect to a single polymer integrated over the time, similarly to equation~\eqref{eq:excess_heat}. 
+Note, that in this particular setup the interpretation in terms of the tension is not so straightforward compared to the simple setup as those displacement are not completely dependent nor independent. 
+
+
 \subsubsection{Elastic environment}
 The second model, described in paragraph~\ref{sec:environment} and depicted in figure~\ref{fig:tug}, 
 further modifies the energy balance~\eqref{eq:energy_balance}, resp.~\eqref{eq:energy_balance_two_filaments},
@@ -915,6 +938,25 @@ E( x_\text{M}, x_{\text{A}_1}, x_{\text{A}_2}, \{ \zeta_i \})
 + \Delta E \sum\limits_{i=0}^{N-1} \chi( \zeta_i = c ) .
 \end{multline*}
 Contrary to the previous setup, the total energy of the system is no longer bound, hence the heat fluxes~\eqref{eq:heat_flux} are only balanced in the steady state.
+
+Lastly we again look at the excess output from the chemical cycle
+\begin{multline*}
+\left\langle 
+{\mathcal Q}_\text{in}^\text{chem} + {\mathcal Q}_\text{out}^\text{chem} 
+\right\rangle 
+\\
+= 
+\left\langle 
+\int \rmd \left( x_\text{M} - x_{\text{A}_1} \right) \circ \left[ - \nabla V_t( x_\text{M} - x_{\text{A}_1} ) \right]
+\right\rangle 
+\\
++
+\left\langle 
+\int \rmd \left( x_\text{M} - x_{\text{A}_2} \right) \circ \left[ - \nabla V_t( x_{\text{A}_2} - x_\text{M} ) \right]
+\right\rangle 
+\\
++ \left\langle \Delta E_\text{sp} \right\rangle. 
+\end{multline*} 
 
 \section{Efficiency} 
 \label{sec:efficiency}
