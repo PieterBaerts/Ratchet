@@ -21,5 +21,5 @@ plot [-50:50][:] \
     , "Data/F_v_k=4.dat" u (-$1):(gamma_M*gamma_A/(gamma_M+gamma_A)*$2+$1*(1+gamma_A/(gamma_M+gamma_A))):(gamma_M*gamma_A/(gamma_M+gamma_A)*$3) w errorlines ls 6 lw 1.25 dashtype 4 title "k_{bind}/k_{unbind} = 1" \
     , "Data/F_v_k=8.dat" u (-$1):(gamma_M*gamma_A/(gamma_M+gamma_A)*$2+$1*(1+gamma_A/(gamma_M+gamma_A))):(gamma_M*gamma_A/(gamma_M+gamma_A)*$3) w errorlines ls 8 lw 1.25 dashtype 5 title "k_{bind}/k_{unbind} = 2" \
     , "Data/F_v_k=16.dat" u (-$1):(gamma_M*gamma_A/(gamma_M+gamma_A)*$2+$1*(1+gamma_A/(gamma_M+gamma_A))):(gamma_M*gamma_A/(gamma_M+gamma_A)*$3) w errorlines ls 10 lw 1.25 dashtype 6 title "k_{bind}/k_{unbind} = 4" \
-    , -(1+gamma_A/(gamma_A+gamma_M))*x w lines lc rgb "black" lw 1.25 dashtype 1 title "Small load" \
-    , -x w lines ls 4 lw 1.25 dashtype 1 title "Large load" \
+    , -(1+gamma_A/(gamma_A+gamma_M))*x w lines ls 4 lc rgb "black" lw 1.25 dashtype 1 title "- Small load" \
+    , -x w lines ls 4 lc rgb "black" dashtype 2 title "- Large load" \

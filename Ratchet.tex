@@ -107,9 +107,6 @@ An alternative way of interpreting the chemical input by measuring the differenc
 In order to investigate the movement of myosin along the actin filament and the forces it generates, we consider the following one dimensional model.
 Firstly, we assume that the rigidity of the actin polymer and myosin backbone is high enough that their elongations can be neglected.
 Secondly, we assume that all myosin heads are attached directly to the myosin backbone at fixed equidistant positions, see figure~\ref{fig:ratchet setup}.
-These simplifications allow us to model both the motor and the filament as point particles undergoing overdamped diffusion in the inter-cellular environment \cite{vanKampen1981stochastic}.
-Moreover, each myosin head has an internal state, which represent its chemical state, 
-i.e. whether there is an ATP bounded or not to the myosin head. 
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{ratchet_illustration}
@@ -120,6 +117,9 @@ The backbone of the myosin motor is shown with four heads that are equidistantly
 The load $F_\text{load}$ is applied only on myosin and the actin filament is freely diffusing. 
 } 
 \end{figure}
+These simplifications allow us to model both the motor and the filament as point particles undergoing overdamped diffusion in the inter-cellular environment \cite{vanKampen1981stochastic}.
+Moreover, each myosin head has an internal state, which represent its chemical state, 
+i.e. whether there is an ATP bounded or not to the myosin head. 
 
 The dynamics of positions is described by coupled overdamped Langevin equations 
 \begin{align}
@@ -152,18 +152,6 @@ where $d$ is the distance between myosin heads,
 $N$ is the number of heads per motor,
 $\zeta_t(i)$ represents the internal state, see bellow, 
 and $V_\text{r}$ is the periodical ratchet potential, see figure~\ref{fig:energy},
-\begin{equation}
-V_\text{r}(x) =  \begin{cases}
-        V_\text{r}(x+\ell) & x < 0 \\[1ex] 
-        \displaystyle \frac{ V x }{ a \ell } & 0 \leq x < a \ell \\[2ex]
-        \displaystyle \frac{ V (\ell-x) }{ (1-a) \ell } & a \ell \leq x < \ell \\[2ex]
-        V_\text{r}(x-\ell) & \ell \leq x  
-   \end{cases} ,
-   \label{eq:ratchet_potential}
-\end{equation}
-with total height $V$,
-period $\ell$ 
-and skewness parameter $a \in [0,1]$. 
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{energy}
@@ -176,6 +164,18 @@ and is associated with the chemical energy $\Delta E$.
 In the \emph{bound} state the ratchet potential is scaled down by factor $c$. 
 }
 \end{figure}
+\begin{equation}
+V_\text{r}(x) =  \begin{cases}
+        V_\text{r}(x+\ell) & x < 0 \\[1ex] 
+        \displaystyle \frac{ V x }{ a \ell } & 0 \leq x < a \ell \\[2ex]
+        \displaystyle \frac{ V (\ell-x) }{ (1-a) \ell } & a \ell \leq x < \ell \\[2ex]
+        V_\text{r}(x-\ell) & \ell \leq x  
+   \end{cases} ,
+   \label{eq:ratchet_potential}
+\end{equation}
+with total height $V$,
+period $\ell$ 
+and skewness parameter $a \in [0,1]$. 
 
 The dynamics of internal state of heads is governed by continuous time Markov process. 
 Here, the internal state represents whether ATP is \emph{bound} or \emph{unbound} to the myosin head. This specifies the electrostatic properties of the head which will determine the amplitude of the interaction potential with the actin filament.
@@ -357,9 +357,6 @@ Results are obtained after both ergodic and ensemble averaging, up to a minimal 
 \section{Mean velocity}
 \label{sec:velocity}
 At first, we study the mean velocity $\langle v\rangle$ of the motor with four heads with respect to the filament for different values of scaling factor $c$, see figure~\ref{fig:c_v}.
-We see that mean velocity has maximum at $c=0$ and goes to zero when $c$ approaches $1$. 
-This is to be expected since $c=1$ corresponds the equilibrium, where there is no difference between the two internal states, cf.~\eqref{eq:transition},
-on the other hand $c=0$ corresponds to the biggest discrepancy between those two states. 
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{c_v_4heads}
@@ -371,14 +368,13 @@ Green line correspond to the fit $ \left\langle v \right\rangle \propto \exp ( -
 %The dependency is guessed, unfortunately I don't have any argument to support it. 
 } 
 \end{figure}
+We see that mean velocity has maximum at $c=0$ and goes to zero when $c$ approaches $1$. 
+This is to be expected since $c=1$ corresponds the equilibrium, where there is no difference between the two internal states, cf.~\eqref{eq:transition},
+on the other hand $c=0$ corresponds to the biggest discrepancy between those two states. 
 
 
 Secondly, the mean velocity also depends on the concentration of ATP through the unbind rate. 
 In this setup, we fix the binding rate $k_\text{bind}$ and scaling factor $c$ and vary the unbinding rate $k_\text{unbind}$, see figure~\ref{fig:v_k}. 
-We observe that the maximal velocity is reached for rates close to $k_\text{bind} = k_\text{unbound}$. 
-Departing far from this ratio means that one of the states become dominant and thus the system effectively approaches equilibrium.  
-The main difference between $k_\text{bind}/k_\text{unbind}$ low or high is the amount interaction with actin. 
-Weak interaction means that the system is trapped for shorter times in local minimums and diffuses more, hence the variance in the speed increases. 
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{v_k}
@@ -388,6 +384,10 @@ Mean velocity of the motor relative to the actin filament $\langle v \rangle$ fo
 The velocity decreases to $0$ for large discrepancies between binding and unbinding rate and reaches maximum when they are comparable.
 }
 \end{figure}
+We observe that the maximal velocity is reached for rates close to $k_\text{bind} = k_\text{unbound}$. 
+Departing far from this ratio means that one of the states become dominant and thus the system effectively approaches equilibrium.  
+The main difference between $k_\text{bind}/k_\text{unbind}$ low or high is the amount interaction with actin. 
+Weak interaction means that the system is trapped for shorter times in local minimums and diffuses more, hence the variance in the speed increases. 
 
 
 \section{Force -- velocity relation}
@@ -395,13 +395,6 @@ The velocity decreases to $0$ for large discrepancies between binding and unbind
 In this section, we investigate the dependency of the mean velocity on an external load force $F_\text{load}$ applied to the motor parallel to the preferred direction, 
 cf. figure~\ref{fig:ratchet setup}.
 Figure~\ref{fig:F_v} shows the typical force -- mean velocity relations for various unbinding rates $k_\text{unbind}$, which mimics the dependency on ATP concentration.
-Such a force-velocity relation was already presented in 2002 by Reimann \cite{reimann2002brownian}.
-For small load forces, the response is very low. 
-This is due to the interaction with an actin polymer, which provides an additional friction force to counter the load force. 
-For larger forces the system looses its resilience and the contribution from the load will dominate. 
-The larger the load, the more the velocity will approach the velocity of a non-interacting motor, $\langle v \rangle = \frac{1}{\gamma_\text{M}}F_\text{load}$.
-Curves for higher ATP binding rates are closer to the curve for the completely unbound motor,
-which means that the motor is more submissive to the external load.
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{F_v}
@@ -411,8 +404,15 @@ Mean velocity $\langle v \rangle$ of the motor as a function of the load force $
 Solid black line correspond to a situation where there will be no interaction with the actin filament, i.e. $\langle v \rangle = F_\text{load} / \gamma_\text{M}$. 
 }
 \end{figure}
+Such a force-velocity relation was already presented in 2002 by Reimann \cite{reimann2002brownian}.
+For small load forces, the response is very low. 
+This is due to the interaction with an actin polymer, which provides an additional friction force to counter the load force. 
+For larger forces the system looses its resilience and the contribution from the load will dominate. 
+The larger the load, the more the velocity will approach the velocity of a non-interacting motor, $\langle v \rangle = \frac{1}{\gamma_\text{M}}F_\text{load}$.
+Curves for higher ATP binding rates are closer to the curve for the completely unbound motor,
+which means that the motor is more submissive to the external load.
 
-A similar plot is shown in figure \ref{fig:F_v_heads}, where instead of varying binding rate $k_\text{bind}$ we look at motors with different numbers of heads $N$. Motors with only 1 head are very susceptible to external loads and the force from the ratchet offers little resistance. For 4 or 16 heads we see almost identical force-velocity relations. In section \ref{sec:efficiency}, however, we will see that these motors behave very differently regarding their energetics. The curve for 2 heads lies in between.
+A similar plot is shown in figure \ref{fig:F_v_heads}, where instead of varying binding rate $k_\text{bind}$ we look at motors with different numbers of heads $N$. 
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{F_v_heads}
@@ -422,6 +422,9 @@ Mean velocity $\langle v \rangle$ of the motor as a function of the load force $
 Solid black line correspond to a non-interacting motor, i.e. $\langle v \rangle = F_\text{load} / \gamma_\text{M}$. 
 }
 \end{figure}
+Motors with only 1 head are very susceptible to external loads and the force from the ratchet offers little resistance. 
+For 4 or 16 heads we see almost identical force-velocity relations. 
+In section \ref{sec:efficiency}, however, we will see that these motors behave very differently regarding their energetics. The curve for 2 heads lies in between.
 
 \subsection{Stall force}
 From figure~\ref{fig:F_v} it is apparent, that when applying a force against the preferred direction of the motor, 
@@ -431,16 +434,6 @@ The force magnitude that is needed to stop the motor's movement relative to the 
 \left\langle v ( F_\text{load} \equiv -F_\text{stall} ) \right\rangle = 0 .
 \]
 Figure~\ref{fig:F_v_zoom} shows the inset of figure~\ref{fig:F_v} for small negative loads. 
-The intersections with the horizontal axis correspond to stall forces,  
-while intersections of the curves with the vertical axis correspond to the mean velocities in figure \ref{fig:v_k}. 
-We see that for small loads the mean velocity decreases linearly with increasing load. 
-We observe that the slope of the force -- mean velocity relation increases with the binding rate $k_\text{bind}$. 
-This is responsible for monotonous decrease of the stall force $F_\text{stall}$ with respect to the binding rate $k_\text{bind}$, see figure \ref{fig:k_Fstall}.
-When the binding rate increases, so does the fraction of time in which the motor is less interacting with the actin filament. 
-Hence, it will take on average a smaller load to halt a motor since the amplitude of its confining potential will be typically lower.
-Ultimately, when the system is found only in the unbounded state the relative mean velocity is zero, $\langle v \rangle = 0$, as the system reached an equilibrium 
-and thus the stall force reaches zero as well, $F_\text{stall} \to 0$.
-%TODO Relate to power law => Maybe some analytics can help
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{F_v_zoom}
@@ -451,6 +444,11 @@ Intersections with the $x$ axis correspond to stall forces $F_\text{stall}$ for 
 We can see that with increasing $k_\text{bind}/k_\text{unbind}$ ratio the slope increases as well as the full curve shifts in the low force region, causing a persistent decrease in stall force.  
 }
 \end{figure}
+The intersections with the horizontal axis correspond to stall forces,  
+while intersections of the curves with the vertical axis correspond to the mean velocities in figure \ref{fig:v_k}. 
+We see that for small loads the mean velocity decreases linearly with increasing load. 
+We observe that the slope of the force -- mean velocity relation increases with the binding rate $k_\text{bind}$. 
+This is responsible for monotonous decrease of the stall force $F_\text{stall}$ with respect to the binding rate $k_\text{bind}$, see figure \ref{fig:k_Fstall}.
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{k_Fstall}
@@ -460,6 +458,11 @@ Stall force $F_\text{stall}$ for different detach rates $k_\text{d}$.
 We observe power-law decay $F_\text{stall} \propto k_\text{d}^{-\alpha}$ with exponent $\alpha = 1.002 \pm 0.014$. 
 }
 \end{figure}
+When the binding rate increases, so does the fraction of time in which the motor is less interacting with the actin filament. 
+Hence, it will take on average a smaller load to halt a motor since the amplitude of its confining potential will be typically lower.
+Ultimately, when the system is found only in the unbounded state the relative mean velocity is zero, $\langle v \rangle = 0$, as the system reached an equilibrium 
+and thus the stall force reaches zero as well, $F_\text{stall} \to 0$.
+%TODO Relate to power law => Maybe some analytics can help
 
 \subsection{Velocity with respect to medium}
 \label{sec:ind_velo}
@@ -496,10 +499,6 @@ This is related to the fact that the full system is moving with respect to the l
 which is proportional to both load and relative velocity and is zero only when $\langle v \rangle = - 2 F_\text{load} / ( \gamma_\text{A} - \gamma_\text{M} )$.
 
 The dependency of individual velocities on the load is show in figure~\ref{fig:ind_v}, 
-where we observe that for relatively small loads, the motor and actin filament are moving together, because the coupling by the ratchet interaction proves to be dominant. 
-This can be explained by linear dependency of equations \eqref{eq:velocity_M} and \eqref{eq:velocity_A} on the load, 
-along with the fact that for small loads the mean relative velocity is as well linear in the load, see figure~\ref{fig:F_v}. 
-The inset of figure~\ref{fig:ind_v} then depicts the velocities for very small loads.
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{individual_velocities}
@@ -510,11 +509,15 @@ We observe that only the myosin is moving while the velocity of the dragged acti
 Inset: Zoomed to the linear regime around the origin.
 }
 \end{figure}
+where we observe that for relatively small loads, the motor and actin filament are moving together, because the coupling by the ratchet interaction proves to be dominant. 
+This can be explained by linear dependency of equations \eqref{eq:velocity_M} and \eqref{eq:velocity_A} on the load, 
+along with the fact that for small loads the mean relative velocity is as well linear in the load, see figure~\ref{fig:F_v}. 
+The inset of figure~\ref{fig:ind_v} then depicts the velocities for very small loads.
 
 Since the load is only applied to the motor, for very high loads, the motor will start slipping over the ratchet potential along the actin filament. 
 Consequently, the actin's mean velocity will stop increase and approaches zero for larger loads 
 while the myosin's mean velocity go to $F_\text{load}/\gamma_\text{M}$ as can be seen in figure~\ref{fig:ind_v}. 
-As well the relative velocity $\langle v \rangle$ will be equal to the motor's velocity $\langle v_M \rangle$ in that case, 
+As well the relative velocity $\langle v \rangle$ will be equal to the motor's velocity $\langle v_\text{M} \rangle$ in that case, 
 cf. equations~\eqref{eq:velocity_M} and~\eqref{eq:velocity_A}.
 This is in good agreement with the figure~\ref{fig:F_v}.
 
@@ -530,14 +533,6 @@ The discrepancy in this relation, up to a pre-factor, equals the mean force exer
 Note that this is the same as the distance between the force-velocity curves and the ratchet-free curve in figure~\ref{fig:F_v}.
 In figure~\ref{fig:ratchet_force} we observe, 
 that the response of the system for small loads is linear and independent of the rates and hence of the ATP concentration. 
-In this regime the motor hardly moves along the filament and the load is almost completely countered by the mean ratchet force, i.e. it acts as a friction force.
-With increasing load the force generated by the ratchet interaction will reach a maximal value and eventually decay for larger external load forces. 
-In the appendix, cf. equation~\eqref{eq:mean_velocity_large}, we show that the friction provided by the ratchet will go to zero as the load goes to infinity as 
-\begin{equation}
-\left| \langle F_\text{r} \rangle_{F_\text{load}\rightarrow\infty} \right| \asymp \frac{1}{F_\text{load}} , 
-\label{eq:ratchet_vs_load}
-\end{equation} 
-which is depicted in figure~\ref{fig:ratchet_force_decay}. 
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{ratchet_force}
@@ -546,6 +541,14 @@ which is depicted in figure~\ref{fig:ratchet_force_decay}.
 Mean force from the ratchet interaction depending on the load force on the motor for several values of $k_\text{bind}$. For small loads, the ratchet force completely counter to load, hence the linear regime around $F_\text{load}=0$ goes like
 }
 \end{figure}
+In this regime the motor hardly moves along the filament and the load is almost completely countered by the mean ratchet force, i.e. it acts as a friction force.
+With increasing load the force generated by the ratchet interaction will reach a maximal value and eventually decay for larger external load forces. 
+In the appendix, cf. equation~\eqref{eq:mean_velocity_large}, we show that the friction provided by the ratchet will go to zero as the load goes to infinity as 
+\begin{equation}
+\left| \langle F_\text{r} \rangle_{F_\text{load}\rightarrow\infty} \right| \asymp \frac{1}{F_\text{load}} , 
+\label{eq:ratchet_vs_load}
+\end{equation} 
+which is depicted in figure~\ref{fig:ratchet_force_decay}. 
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{ratchet_force_decay}
@@ -570,7 +573,6 @@ thus the tension applied to the motor is proportional to their difference
 \label{eq:tension}
 \end{multline}
 We plot the tension as a function of the load $F_\text{load}$ in figure~\ref{fig:tension} for various transition rates 
-and in figure~\ref{fig:tension_heads} as a function of the number of heads on a motor. 
 \begin{figure}
 \centering
 \includegraphics[width=.45\textwidth,height=!]{tension.pdf}
@@ -579,6 +581,7 @@ The dependency of the tension~\eqref{eq:tension} on the load force $F_\text{load
 We can see that with increasing ATP binding rate there is a faster departure from the small load regime towards the large load asymptotic behavior. 
 }
 \end{figure}
+and in figure~\ref{fig:tension_heads} as a function of the number of heads on a motor. 
 \begin{figure}
 \centering
 \includegraphics[width=.45\textwidth,height=!]{tension_heads.pdf}
@@ -632,11 +635,11 @@ Therefore the motor's mean velocity will be on average zero.
 Although the load on is not applied to the motor directly,
 there will be a tension on the motor due to interaction with both actin filaments. 
 This tension is again given by the difference in the forces applied to their respective ends of the motor,
-\begin{equation*}
+\begin{equation}
 \langle F_{\text{r}_1}\rangle - \langle F_{\text{r}_2}\rangle = -\gamma_\text{A}\left(\langle v_{\text{A}_1}\rangle - \langle v_{\text{A}_2}\rangle \right) - 2F_\text{load} .
-\end{equation*}
+\label{eq:tension_tug}
+\end{equation}
 The tension in the motor is shown in figure \ref{fig:tug_F}, 
-where it is compared to the tension when the load is applied on the motor instead of the filaments.
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{tug_F}
@@ -647,6 +650,7 @@ The tension for small loads follows the same trend, whereas for large loads the 
 This because, only in the simple setup, the load is directly applied to the motor resulting in an asymptotic tension. %TODO fix y label
 }
 \end{figure}
+where it is compared to the tension when the load is applied on the motor instead of the filaments.
 
 For small loads, ratchet forces balance the load applied on both filaments, thus the tension is proportional to twice the load 
 \[
@@ -759,20 +763,16 @@ The first step provides the chemical energy to the system, stored in ATP, while 
 Thus the total chemical energy consists of two parts ${\mathcal Q}^\text{chem} = {\mathcal Q}^\text{chem}_\text{in} + {\mathcal Q}^\text{chem}_\text{out}$,
 \begin{align}
 {\mathcal Q}_\text{in}^\text{chem} 
-&= \sum_{t_\text{unbind} \leq t_\text{fin} } \left[ \Delta E + (c-1) V_r(x_{t_\text{unbind}}) \right] , 
+&= \sum_{t_\text{unbind} \leq t_\text{fin} } \left[ \Delta E + (c-1) V_\text{r}(x_{t_\text{unbind}}) \right] , 
 \label{eq:q_in} \\
 {\mathcal Q}_\text{out}^\text{chem} 
-&= -\sum_{t_\text{bind} \leq t_\text{fin} } \left[ \Delta E + (c-1) V_r(x_{t_\text{bind}}) \right] 
+&= -\sum_{t_\text{bind} \leq t_\text{fin} } \left[ \Delta E + (c-1) V_\text{r}(x_{t_\text{bind}}) \right] 
 \label{eq:q_out}
 \end{align}
 where we sum over the jump times $t_\text{bind}$($t_\text{unbind}$) of all binding(unbinding) events.
 $t_\text{fin}$ denotes the duration of the process. 
 
 Figure~\ref{fig:energy_evolution} depicts a time evolution of the internal energy~\eqref{eq:internal_energy} for a single trajectory of the system for $F_\text{load} = 0$.
-Note, that while we can identify the chemical input and output by the direction of the jump in the total energy, 
-without any additional information it is impossible to distinguish which part of the heat dissipated to the heat bath corresponds to myosin or to actin.
-For non-zero load, the heat dissipated to the heat bath will contain the work of the external forces as well,
-which makes the separation in individual components even more difficult.
 \begin{figure}
 \centering
 \includegraphics[width=.45\textwidth,height=!]{energy_1head.pdf}
@@ -784,6 +784,10 @@ and the blue area denote the total heat dissipated to the heat bath ${\mathcal Q
 see~\eqref{eq:heat_hb_M} and~\eqref{eq:heat_hb_A}.
 }
 \end{figure}
+Note, that while we can identify the chemical input and output by the direction of the jump in the total energy, 
+without any additional information it is impossible to distinguish which part of the heat dissipated to the heat bath corresponds to myosin or to actin.
+For non-zero load, the heat dissipated to the heat bath will contain the work of the external forces as well,
+which makes the separation in individual components even more difficult.
 
 \subsection{Load on the motor}
 If we restrict the discussion only to the simplest setup, i.e. a single loaded motor with a single actin filament,
@@ -814,6 +818,27 @@ Consequently, the total energy balance equation~\eqref{eq:energy_balance} simpli
 \]
 which does not explicitly depend on the load $F_\text{load}$. 
 
+Lastly, in the steady state, 
+we can see that the excess of the chemical cycle in the steady state is dissipated as the work of ratchet potential~\eqref{eq:ratchet_potential} over the separation of motor and filament 
+\begin{multline*}
+\left\langle 
+{\mathcal Q}_\text{in}^\text{chem} + {\mathcal Q}_\text{out}^\text{chem} 
+\right\rangle 
+\\
+= 
+\left\langle 
+\int \rmd \left( x_\text{M} - x_\text{A} \right) \circ \left[ - \nabla V_t( x_\text{M} - x_\text{A} ) \right]
+\right\rangle ,
+\end{multline*} 
+which can be further interpreted in terms of tension on the polymer $\tau_\text{A}$ and the relative velocity $v$ 
+\begin{equation}
+\left\langle 
+{\mathcal Q}_\text{in}^\text{chem} + {\mathcal Q}_\text{out}^\text{chem} 
+\right\rangle 
+= \left\langle \int \rmd t \; v \, \tau_\text{A} \right\rangle .
+\label{eq:excess_heat} 
+\end{equation}
+%TODO reference previous text 
 
 \subsection{Heat fluxes}
 Furthermore, note that the internal energy of the system~\eqref{eq:internal_energy} is bounded.
@@ -874,6 +899,27 @@ while following the same arguments as for \eqref{eq:heat_flux_balance} is possib
 0 = q_\text{M}^\text{hb} + q_{\text{A}_1}^\text{hb} + q_{\text{A}_2}^\text{hb} + w^\text{ext}_{\text{A}_1} + w^\text{ext}_{\text{A}_2} + q^\text{chem} .
 \]
 
+Similarly to the simple setup we can express the excess from chemical cycle in the steady state as sum of works of ratchet forces with respect to their respective displacements,
+\begin{multline*}
+\left\langle 
+{\mathcal Q}_\text{in}^\text{chem} + {\mathcal Q}_\text{out}^\text{chem} 
+\right\rangle 
+\\
+= 
+\left\langle 
+\int \rmd \left( x_\text{M} - x_{\text{A}_1} \right) \circ \left[ - \nabla V_t( x_\text{M} - x_{\text{A}_1} ) \right]
+\right\rangle 
+\\
++
+\left\langle 
+\int \rmd \left( x_\text{M} - x_{\text{A}_2} \right) \circ \left[ - \nabla V_t( x_{\text{A}_2} - x_\text{M} ) \right]
+\right\rangle .
+\end{multline*} 
+Due to the symmetry of the setup, the two respective displacements are typically anti-symmetric. 
+Hence, we can interpret it as a tension on the motor~\eqref{eq:tension_tug} correlation with the relative velocity of the motor with respect to a single polymer integrated over the time, similarly to equation~\eqref{eq:excess_heat}. 
+Note, that in this particular setup the interpretation in terms of the tension is not so straightforward compared to the simple setup as those displacement are not completely dependent nor independent. 
+
+
 \subsubsection{Elastic environment}
 The second model, described in paragraph~\ref{sec:environment} and depicted in figure~\ref{fig:tug}, 
 further modifies the energy balance~\eqref{eq:energy_balance}, resp.~\eqref{eq:energy_balance_two_filaments},
@@ -892,6 +938,25 @@ E( x_\text{M}, x_{\text{A}_1}, x_{\text{A}_2}, \{ \zeta_i \})
 + \Delta E \sum\limits_{i=0}^{N-1} \chi( \zeta_i = c ) .
 \end{multline*}
 Contrary to the previous setup, the total energy of the system is no longer bound, hence the heat fluxes~\eqref{eq:heat_flux} are only balanced in the steady state.
+
+Lastly we again look at the excess output from the chemical cycle
+\begin{multline*}
+\left\langle 
+{\mathcal Q}_\text{in}^\text{chem} + {\mathcal Q}_\text{out}^\text{chem} 
+\right\rangle 
+\\
+= 
+\left\langle 
+\int \rmd \left( x_\text{M} - x_{\text{A}_1} \right) \circ \left[ - \nabla V_t( x_\text{M} - x_{\text{A}_1} ) \right]
+\right\rangle 
+\\
++
+\left\langle 
+\int \rmd \left( x_\text{M} - x_{\text{A}_2} \right) \circ \left[ - \nabla V_t( x_{\text{A}_2} - x_\text{M} ) \right]
+\right\rangle 
+\\
++ \left\langle \Delta E_\text{sp} \right\rangle. 
+\end{multline*} 
 
 \section{Efficiency} 
 \label{sec:efficiency}
@@ -919,7 +984,7 @@ Hence the transport efficiency can be defined as
 Note, that for large load ($F_\text{load} \to \infty$) such efficiency approaches $\eta_\text{tr} \to 1$, 
 while in absence of a load $F_\text{load} = 0$ it captures how much of the chemical energy get dissipated by the motor's motion  
 \[
-\eta_\text{tr}( F_\text{load} = 0 ) = \frac{ \left\langle \int \rmd x_\text{M} \circ \left[ - \nabla_M V_t \right] \right\rangle }{ \left\langle {\mathcal Q}^\text{chem} \right\rangle } ,
+\eta_\text{tr}( F_\text{load} = 0 ) = \frac{ \left\langle \int \rmd x_\text{M} \circ \left[ - \nabla_\text{M} V_t \right] \right\rangle }{ \left\langle {\mathcal Q}^\text{chem} \right\rangle } ,
 \]
 i.e. how much of the chemical energy provided to the system is dissipated by the motor and not by the polymer. 
 
@@ -962,7 +1027,7 @@ by transitions of a single head $i$ displaced with respect to the end of the mot
 = \Delta t \, k_\text{unbind} 
 \\ \times 
 \!\!\!\! \sum\limits_{\{\zeta_j\} : \zeta_i = 1 } \!\!\!\! \rho(\{ \zeta_j \} ) 
-\left[ \Delta E - (1-c) \left\langle V_r(x - i \, d ) \middle| \{ \zeta_j \} \right\rangle \right] 
+\left[ \Delta E - (1-c) \left\langle V_\text{r}(x - i \, d ) \middle| \{ \zeta_j \} \right\rangle \right] 
 \end{multlined}
 %\label{eq:mean_q_in} 
 \\
@@ -971,7 +1036,7 @@ by transitions of a single head $i$ displaced with respect to the end of the mot
 = - \Delta t \, k_\text{bind} 
 \\ \times 
 \!\!\!\! \sum\limits_{\{\zeta_j\} : \zeta_i = c } \!\!\!\! \rho(\{ \zeta_j \} ) 
-\left[ \Delta E - (1-c) \left\langle V_r(x - i \, d ) \middle| \{ \zeta_j \} \right\rangle \right] 
+\left[ \Delta E - (1-c) \left\langle V_\text{r}(x - i \, d ) \middle| \{ \zeta_j \} \right\rangle \right] 
 \end{multlined}
 %\label{eq:mean_q_out}
 \end{gather*}
@@ -998,7 +1063,7 @@ is that we can express the total mean heats produced in chemical cycle as a sum 
 = \Delta t \frac{ k_\text{bind} k_\text{unbind} }{ k_\text{bind} + k_\text{unbind} } 
 \\ &\times
 \left[ N \, \Delta E 
-- (1-c) \sum\limits_{i=0}^{N-1} \left\langle V_r(x - i d ) \middle| \zeta_i = 1 \right\rangle 
+- (1-c) \sum\limits_{i=0}^{N-1} \left\langle V_\text{r}(x - i d ) \middle| \zeta_i = 1 \right\rangle 
 \right] ,  
 \\
 \langle \mathcal Q^\text{chem}_\text{out} \rangle 
@@ -1006,15 +1071,15 @@ is that we can express the total mean heats produced in chemical cycle as a sum 
 = - \Delta t \frac{ k_\text{bind} k_\text{unbind} }{ k_\text{bind} + k_\text{unbind} } 
 \\ &\times
 \left[ N \, \Delta E 
-- (1-c) \sum\limits_{i=0}^{N-1} \left\langle V_r(x - i d ) \middle| \zeta_i = c \right\rangle  
+- (1-c) \sum\limits_{i=0}^{N-1} \left\langle V_\text{r}(x - i d ) \middle| \zeta_i = c \right\rangle  
 \right] , 
 \end{align*}
 which leads to a more explicit expression for the efficiency \eqref{eq:efficiency} 
 \begin{multline*}
 \eta_\text{chem} = \frac{1-c}{N}
 \\ \times
-\sum\limits_{i=0}^{N-1} \frac{ \left\langle V_r(x-id) \middle| \zeta_i = c \right\rangle - \left\langle V_r( x -id ) \middle| \zeta_i = 1 \right\rangle }
-{ \Delta E - \frac{1-c}{N} \sum\limits_{j=0}^{N-1} \left\langle V_r(x-jd) \middle| \zeta_j = 1 \right\rangle } 
+\sum\limits_{i=0}^{N-1} \frac{ \left\langle V_\text{r}(x-id) \middle| \zeta_i = c \right\rangle - \left\langle V_\text{r}( x -id ) \middle| \zeta_i = 1 \right\rangle }
+{ \Delta E - \frac{1-c}{N} \sum\limits_{j=0}^{N-1} \left\langle V_\text{r}(x-jd) \middle| \zeta_j = 1 \right\rangle } 
 . 
 \end{multline*}
 We can further introduce an average probability density over all heads 
@@ -1030,8 +1095,8 @@ and consequently the conditional average probability density
 which allow us to further simplify the expression for the chemical efficiency to 
 \begin{equation}
 \eta_\text{chem} = (1-c)
-\frac{ \left\langle V_r(x) \middle| \zeta = c \right\rangle_{\bar{\rho}} - \left\langle V_r(x) \middle| \zeta = 1 \right\rangle_{\bar{\rho}} }
-{ \Delta E - (1-c) \left\langle V_r(x) \middle| \zeta = 1 \right\rangle_{\bar{\rho}} } 
+\frac{ \left\langle V_\text{r}(x) \middle| \zeta = c \right\rangle_{\bar{\rho}} - \left\langle V_\text{r}(x) \middle| \zeta = 1 \right\rangle_{\bar{\rho}} }
+{ \Delta E - (1-c) \left\langle V_\text{r}(x) \middle| \zeta = 1 \right\rangle_{\bar{\rho}} } 
 . 
 \label{eq:eta}
 \end{equation}
@@ -1065,22 +1130,10 @@ The difference between the average distribution \eqref{eq:eff_distribution} in t
 q_\text{in}^\text{chem} + q_\text{out}^\text{chem} 
 = (1-c) \frac{ k_\text{bind} k_\text{unbind} }{ k_\text{bind} + k_\text{unbind} } 
 \\ \times
-\left[ \left\langle V_r(x) \middle| \zeta = c \right\rangle_{\bar{\rho}} - \left\langle V_r(x) \middle| \zeta = 1 \right\rangle_{\bar{\rho}} \right] ,
+\left[ \left\langle V_\text{r}(x) \middle| \zeta = c \right\rangle_{\bar{\rho}} - \left\langle V_\text{r}(x) \middle| \zeta = 1 \right\rangle_{\bar{\rho}} \right] ,
 \label{eq:heat_flux_explicit}
 \end{multline} 
 which is depicted in the figure~\ref{fig:chem_energy_distr}, 
-where we show the spatial dependency of the heat fluxes.
-We can see that a major flux is close to the ratchet potential's minimum \eqref{eq:ratchet_potential} where both the probability density is localized and the gap is the largest. 
-On the other hand, close to the ratchet potential's maximum the heat flux is close to zero.
-However, if we compare it to the numerator of the chemical efficiency~\eqref{eq:eta}, see figure~\ref{fig:chem_efficiency_distr}, 
-we can see that a major contribution to the chemical efficiency actually comes from the region around the ratchet potential's maximum.
-This discrepancy can be interpreted in the following sense: 
-While most transitions occur close to the ratchet potential's minimum due to the large probability density, thus providing a large flux, 
-those particles after a transition does not diffuse far before next transition, 
-hence the contribution to the chemical efficiency, associated with the discrepancy between chemical input and output, is relatively small. 
-On the other hand, a particle that switched its internal state close to the potential maximum relaxes relatively fast, compared to the transition rates, 
-to the vicinity of the ratchet potential's minimum and thus creates a larger discrepancy leading to high contribution to the efficiency. 
-However these transitions are rare due to the low probability density and hence the total flux density is relatively small.  
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{chem_energy_distr_all_F}
@@ -1092,6 +1145,10 @@ However, the region which contributes to the chemical efficiency~\eqref{eq:eta} 
 see figure~\ref{fig:chem_efficiency_distr} where the heat flux is very small. 
 }
 \end{figure}
+where we show the spatial dependency of the heat fluxes.
+We can see that a major flux is close to the ratchet potential's minimum \eqref{eq:ratchet_potential} where both the probability density is localized and the gap is the largest. 
+On the other hand, close to the ratchet potential's maximum the heat flux is close to zero.
+However, if we compare it to the numerator of the chemical efficiency~\eqref{eq:eta}, see figure~\ref{fig:chem_efficiency_distr}, 
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{chem_efficiency_distr_all_F}
@@ -1101,6 +1158,14 @@ Space resolved numerator of the efficiency \eqref{eq:eta} for various load force
 We observe that the optimal output is achieved when there is the biggest discrepancy between spatial distributions, compare with figure~\ref{fig:pos_distr} and \ref{fig:chem}. 
 }
 \end{figure}
+we can see that a major contribution to the chemical efficiency actually comes from the region around the ratchet potential's maximum.
+This discrepancy can be interpreted in the following sense: 
+While most transitions occur close to the ratchet potential's minimum due to the large probability density, thus providing a large flux, 
+those particles after a transition does not diffuse far before next transition, 
+hence the contribution to the chemical efficiency, associated with the discrepancy between chemical input and output, is relatively small. 
+On the other hand, a particle that switched its internal state close to the potential maximum relaxes relatively fast, compared to the transition rates, 
+to the vicinity of the ratchet potential's minimum and thus creates a larger discrepancy leading to high contribution to the efficiency. 
+However these transitions are rare due to the low probability density and hence the total flux density is relatively small.  
 
 In the case without external load, $F_\text{load}=0$, 
 the maximum of the distribution, see fig.~\ref{fig:pos_distr}, is close to the minimum of the potential,  
@@ -1137,10 +1202,6 @@ In the appendix we have proven this hypothesis on the system with a single head 
 If we interpret the dependency of the chemical efficiency \eqref{eq:eta} on the load as a probabilistic distribution with finite variance and assume that the main contribution to the shape, figure~\ref{fig:chem}, is from the numerator, 
 by using central limit theorem the efficiency-load dependency will approach a Gaussian distribution with increasing number of heads. 
 This is confirmed by the figure~\ref{fig:chem_eff_1head}, where indeed the distribution is getting broader with increasing number of heads and has only a single maximum.
-It is also apparent that there is no qualitative difference in chemical efficiency between the system with four heads and one head.
-Moreover we can see that the empirical efficiency has less variance with the increasing number of heads. 
-From these we can conclude that there is a significant qualitative difference between motors with low and high numbers of heads. 
-Thus experiments in vitro with large myosin II motors \cite{} does not necessarily capture the behavior of the motors inside a cytoskeleton. %TODO 
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{chemical_cycle_1head}
@@ -1149,9 +1210,13 @@ Thus experiments in vitro with large myosin II motors \cite{} does not necessari
 Chemical efficiency of a motor under load with variable number of motor's heads.
 The ``solid'' lines are drawn on the level of one sigma. 
 We observe that with increasing number of heads the efficiency \eqref{eq:efficiency} distribution gets broader and it's variance decreases.
-Moreover, for eight and sixteen heads it became centered without two local maximums.
+Moreover, for sixteen heads it became centered without two local maximums.
 }
 \end{figure}
+It is also apparent that there is no qualitative difference in chemical efficiency between the system with four heads and one head.
+Moreover we can see that the empirical efficiency has less variance with the increasing number of heads. 
+From these we can conclude that there is a significant qualitative difference between motors with low and high numbers of heads. 
+Thus experiments in vitro with large myosin II motors \cite{} does not necessarily capture the behavior of the motors inside a cytoskeleton. %TODO 
 
 \subsubsection{Local minimum}
 Another trait of the chemical efficiency curves are the local minimums around $F_\text{load}=0$. 
@@ -1159,17 +1224,17 @@ This can be understand from the equation \eqref{eq:eta}, which is determined by 
 For a one headed motor, these distribution will both be peaked around the minimum of the ratchet potential. 
 In fact, these distributions will be given by the Boltzmann distribution
 \begin{equation}
-\rho_0(x,\zeta) = \frac{1}{Z(\zeta)} e^{-\beta \zeta V_r(x)}
+\rho_0(x,\zeta) = \frac{1}{Z(\zeta)} e^{-\beta \zeta V_\text{r}(x)}
 \end{equation} 
 in the lowest order of approximation, as the binding and unbinding rates operate on much longer time scale then the relaxation governed by the diffusion. 
 From this point of view, ATP binding is effectively equivalent to an increasing of the temperature of the heat bath $T\rightarrow\frac{T}{c}$. 
-Hence the distributions for the ATP bound state are broader and the expectation value of $V_r$ will be bigger than in the attached state and $\eta$ will be positive. 
+Hence the distributions for the ATP bound state are broader and the expectation value of $V_\text{r}$ will be bigger than in the attached state and $\eta$ will be positive. 
 
 Now if we apply a small external force, those distributions will be slightly perturbed. 
 Following the McLennan formula~\cite{} we thus obtain %TODO 
 \begin{align*}
 \rho^*(x) 
-&\sim e^{-\beta \left[V_r(x) - F_\text{load} \left( x - x_\text{min} \right) \right]} \\
+&\sim e^{-\beta \left[V_\text{r}(x) - F_\text{load} \left( x - x_\text{min} \right) \right]} \\
 &\approx \rho_0(x) \left[1 + \beta F_\text{load} \left( x - x_\text{min} \right) \right]
 \end{align*}
 close to the potential minimum $x_\text{min}$, i.e. $V(x) \ge V(x_\text{min})$. 
@@ -1189,14 +1254,14 @@ as can be seen from
 From the previous equation it follows that more spread-out distribution will be affected more by the force.
 This means that in our case the ATP bound state will be more affected.
 A larger displacement of the distribution, away from the potential's minimum, 
-means that the mean ratchet potential in the ATP bound state $\left\langle V_r \middle| \zeta = c \right\rangle$ will increase more than the mean ratchet potential in the ATP unbound state $\left\langle V_r \middle| \zeta = 1 \right\rangle$ and hence the chemical efficiency \eqref{eq:eta} has to increase. 
+means that the mean ratchet potential in the ATP bound state $\left\langle V_\text{r} \middle| \zeta = c \right\rangle$ will increase more than the mean ratchet potential in the ATP unbound state $\left\langle V_\text{r} \middle| \zeta = 1 \right\rangle$ and hence the chemical efficiency \eqref{eq:eta} has to increase. 
 
 This argument can be further supported by Jensen's inequality.
 The ratchet potential is convex close to its minimum, 
 moreover, if we assume that the majority of the probability distribution is localized close to the potential minimum,
 we can concur that the Jensen's inequality will hold for sufficiently small load  
 \begin{equation*}
-V_r(\langle x | \zeta \rangle) \leq \langle V_r(x) | \zeta \rangle , 
+V_\text{r}(\langle x | \zeta \rangle) \leq \langle V_\text{r}(x) | \zeta \rangle , 
 \end{equation*} 
 where the lower bound on the expectation value of the ratchet potential \eqref{eq:ratchet_potential} is given by the value of the ratchet potential at the mean position of the heads in a given state. 
 We have shown in \eqref{eq:mean_position_shift} that the mean position is shifted by the action of the external force and consequently it shifts the lower bound for the mean value of the ratchet potential itself. 
@@ -1218,14 +1283,16 @@ We observe that the efficiency is rather comparable to a simple setup with a sin
 \end{figure}
 
 \subsubsection{Elastic environment}
-In the case of elastic environment we observe, see figure~\ref{fig:stiffness_efficiency}, that the efficiency is more or less independent of the stiffness. 
-%TODO
+In the case of elastic environment we observe, see figure~\ref{fig:stiffness_efficiency}, that the chemical efficiency~\eqref{eq:eta} is practically independent of the stiffness of the environment, $k_\text{sp}$. 
 \begin{figure}[t]
 \centering
 \includegraphics[width=.45\textwidth,height=!]{k_eta.pdf}
 \caption{\label{fig:stiffness_efficiency}
+The chemical efficiency~\eqref{eq:eta} as a function of the spring constant $k_\text{sp}$.
+We observe a flat profile.
 }
 \end{figure}
+
 
 \subsubsection{Tension and chemical efficiency}
 %TODO
@@ -1253,7 +1320,7 @@ The chemical efficiency is close to a local minimum when the motor is unloaded. 
 For large loads, the chemical efficiency decay and even becomes negative, which means that energy is drained from the diffusion process to the chemical cycle.
 
 \begin{acknowledgments}
-Christian Maes
+Authors are grateful to Christian Maes for many valuable discussions and Bart Smeets and Maxim Cuvelier for proofreading of the manuscript.
 \end{acknowledgments}
 
 \appendix* 
@@ -1266,16 +1333,56 @@ We will show this by calculating the perturbative corrections to the probability
 First, we assume that the relaxation time of the position in a given potential is much shorter than the typical time between jumps in the chemical state of the heads. 
 This effectively leads to time scale separations,
 thus the conditional probability distribution \eqref{eq:cond_prob} is given as a steady state solution of the corresponding Fokker-Planck equation in a given state $\zeta$
+\begin{multline*}
+0 = \frac{1}{\gamma_\text{M}} \partial_\text{M} \left[ \left( F_\text{load} - \zeta \partial V_\text{r}( x_\text{M} - x_\text{A} ) \right) \mu\left( x_\text{M}, x_\text{A} \right)
+\right. \\ \left.
+- k_B T \partial_\text{M} \mu\left( x_\text{M}, x_\text{A} \right) \right] 
+\\
++ \frac{1}{\gamma_\text{A}} \partial_\text{A} \left[ 
+\zeta \partial V_\text{r} \mu( x_\text{M}, x_\text{A} ) 
+- k_B T \partial_\text{A} \mu\left( x_\text{M}, x_\text{A} \right) 
+\right] .
+\end{multline*}
+If we change the variables to describe the geometric center $x_C$ and the distance between motor and actin $\Delta x$
+\begin{align*}
+x_C &= \frac{1}{2} ( x_\text{M} + x_\text{A} ) , \\
+\Delta x &= x_\text{M} - x_\text{A}, 
+\end{align*}
+a more convenient version of the Fokker-Planck is obtained
+\begin{align*}
+0 &= \begin{multlined}[t][.4\textwidth]
+\partial_\Delta \Biggl[ 
+\left( \frac{1}{\gamma_\text{M}} F_\text{load} - \left( \frac{1}{\gamma_\text{M}} + \frac{1}{\gamma_\text{A}} \right) \zeta \partial V_\text{r}( \Delta x ) \right) \mu
+\\ 
+- \left( \frac{1}{\gamma_\text{M}} + \frac{1}{\gamma_\text{A}} \right) k_B T \partial_\Delta \mu 
+\Biggr] 
+\end{multlined}
+\\
+&+ \begin{multlined}[t][.4\textwidth]
+\frac{1}{2} \partial_C \Biggl[
+\left( \frac{1}{\gamma_\text{M}} F_\text{load} - \left( \frac{1}{\gamma_\text{M}} - \frac{1}{\gamma_\text{A}} \right) \zeta \partial V_\text{r}( \Delta x ) \right) \mu
+\\
+- \frac{1}{2} \left( \frac{1}{\gamma_\text{M}} + \frac{1}{\gamma_\text{A}} \right) k_B T \partial_C \mu 
+\Biggr] .
+\end{multlined}
+\end{align*}
+If we integrate over all possible position of the center as our focus in this appendix is on the steady state distribution of the relative position of the motor and actin,
+which completely determines the mean value of both the ratchet potential and the relative velocity, 
+we obtain a reduced Fokker-Planck equation just for the aforementioned displacement ($x \equiv \Delta x$ further on)
 \begin{equation}
-\frac{1}{\gamma} \partial_x \left[ \left( F_\text{load} - \zeta \partial_x V_r(x) \right) \rho(x) - k_B T \partial_x \rho(x) \right] = 0 ,
+0 = \frac{1}{\gamma^*} \partial_x \left[ \left( F^* - \zeta \partial_x V_\text{r}(x) \right) \rho(x) - k_B T \partial_x \rho(x) \right] ,
 \label{eq:FP_ss}
 \end{equation}
-where $V_r$ is the ratchet potential \eqref{eq:ratchet_potential} and $F_\text{load}$ is the external constant load. 
+where $V_\text{r}$ is the ratchet potential \eqref{eq:ratchet_potential} and 
+\begin{align*} 
+\gamma^* &= \frac{ \gamma_\text{M} \gamma_\text{A} }{ \gamma_\text{M} + \gamma_\text{A} } , & 
+F^* &= \frac{ \gamma_\text{A} }{ \gamma_\text{M} + \gamma_\text{A} } F_\text{load} . 
+\end{align*} 
 
-The first step is expressing the equation \eqref{eq:FP_ss} in terms of $\epsilon = F_\text{load}^{-1}$ instead of load force $f_\text{load}$,
+The first step is expressing the equation \eqref{eq:FP_ss} in terms of $\epsilon = ( F^* )^{-1}$ instead of load force $f_\text{load}$,
 which makes it more convenient for the expansion
 \begin{equation}
-\partial_x \left[ \rho(x) - \epsilon \left( \zeta \partial_x V_r(x) \rho(x) + k_B T \partial_x \rho(x) \right) \right] = 0 
+\partial_x \left[ \rho(x) - \epsilon \left( \zeta \partial_x V_\text{r}(x) \rho(x) + k_B T \partial_x \rho(x) \right) \right] = 0 
 \label{eq:FP_ss_pert}
 \end{equation}
 Due to the periodical boundary conditions, the zeroth order approximation correspond to the flat distribution, i.e. $\rho_0 = \frac{1}{\ell}$. 
@@ -1285,7 +1392,7 @@ thus the chemical efficiency \eqref{eq:eta} is zero.
 For the first order solution we start with an ansatz $\rho_1 = \rho_0 + \delta\rho_1$. 
 When inserted into \eqref{eq:FP_ss_pert} we get
 \begin{equation*}
-\delta\rho_1 = \frac{\epsilon}{\ell} \partial_x V_r + C
+\delta\rho_1 = \frac{\epsilon}{\ell} \partial_x V_\text{r} + C
 \end{equation*}
 where $C$ is an integration constant.
 Due to the normalization 
@@ -1295,46 +1402,47 @@ Due to the normalization
 \end{equation}
 and periodicity of the ratchet potential \eqref{eq:ratchet_potential} the aforementioned integration constant has to be equal to $0$.
 
-Note, that the first order correction does not contribute to calculations of $\langle V_r | \zeta \rangle_\rho$ 
-\begin{align*}
-\langle V_r | \zeta \rangle_{\delta \rho_1} 
-&= \int\limits_0^\ell V_r(x) \, \delta\rho_1(x) \; \rmd x
-\propto \int\limits_0^\ell V_r(x) \, \partial_x V_r(x) \; \rmd x \\
-&= \frac{1}{2} \int\limits_0^\ell \partial_x V_r^2(x) \; \rmd x 
+Note, that the first order correction does not contribute to calculations of $\langle V_\text{r} | \zeta \rangle_\rho$ 
+\begin{multline*}
+\langle V_\text{r} | \zeta \rangle_{\delta \rho_1} 
+= \int\limits_0^\ell V_\text{r}(x) \, \delta\rho_1(x) \; \rmd x
+\\
+\propto \int\limits_0^\ell V_\text{r}(x) \, \partial_x V_\text{r}(x) \; \rmd x 
+= \frac{1}{2} \int\limits_0^\ell \partial_x V_\text{r}^2(x) \; \rmd x 
 = 0
-\end{align*}
-where we again used the fact that the ratchet potential $V_r(x)$ is periodic.
+\end{multline*}
+where we again used the fact that the ratchet potential $V_\text{r}(x)$ is periodic.
 
 Consequently, we need to calculate the second order correction $\delta\rho_2$. 
 Starting from the ansatz $\rho_2 = \rho_1 + \delta\rho_2$ in \eqref{eq:FP_ss_pert} and keeping up the terms up to quadratic order in $\epsilon$, we find
 \begin{equation*}
-\delta\rho_2 = \frac{ \epsilon^2 }{ \ell } \left[ \left( \zeta \partial_x V_r \right)^2 - k_B T \zeta \partial_x^2 V_r \right] + C^\prime .
+\delta\rho_2 = \frac{ \epsilon^2 }{ \ell } \left[ \left( \zeta \partial_x V_\text{r} \right)^2 - k_B T \zeta \partial_x^2 V_\text{r} \right] + C^\prime .
 \end{equation*}
 Again by requiring the normalization~\eqref{eq:normalization}, the integration constant $C^\prime$ can be determined
 \begin{multline*}
 1 = \int\limits_0^\ell \rho_2(x) \; \rmd x 
 \\
 = 1  
-+ \frac{\epsilon^2}{ \ell } \int\limits_0^\ell \left[ \left( \zeta \partial_x V_r(x) \right)^2 - k_B T \zeta \partial_x^2 V_r(x) \right] \; \rmd x 
++ \frac{\epsilon^2}{ \ell } \int\limits_0^\ell \left[ \left( \zeta \partial_x V_\text{r}(x) \right)^2 - k_B T \zeta \partial_x^2 V_\text{r}(x) \right] \; \rmd x 
 + \ell C^\prime ,
 \end{multline*}
 which leads to
 \begin{equation}
-C^\prime = - \frac{\epsilon^2 \zeta^2}{ \ell^2 } \int\limits_0^\ell \left( \partial_x V_r(x) \right)^2 \; \rmd x . 
+C^\prime = - \frac{\epsilon^2 \zeta^2}{ \ell^2 } \int\limits_0^\ell \left( \partial_x V_\text{r}(x) \right)^2 \; \rmd x . 
 \end{equation}
 Now the density up to second order is given by
 \begin{multline}
 \rho_2(x)  
-= \frac{1}{\ell} \Biggl\{ 1  + \epsilon \zeta \partial_x V_r(x) \\
-+ \epsilon^2 \zeta^2 \left[ \left( \partial_x V_r(x) \right)^2 - \frac{1}{\ell} \int\limits_0^\ell \left( \partial_y V_r(y) \right)^2 \; \rmd y \right] 
+= \frac{1}{\ell} \Biggl\{ 1  + \epsilon \zeta \partial_x V_\text{r}(x) \\
++ \epsilon^2 \zeta^2 \left[ \left( \partial_x V_\text{r}(x) \right)^2 - \frac{1}{\ell} \int\limits_0^\ell \left( \partial_y V_\text{r}(y) \right)^2 \; \rmd y \right] 
 \\
-- \epsilon^2 \zeta k_B T \partial_x^2 V_r(x)  
+- \epsilon^2 \zeta k_B T \partial_x^2 V_\text{r}(x)  
 \Biggr\} .
 \label{eq:prob_density_large}
 \end{multline}
 Note that up to the quadratic order in $\epsilon$ the conditional probability density depends on the ratchet potential only through a first or second order derivatives. 
-Therefore the density will appear as a piece-wise constant function on $x \in [0,\ell]$, with different values for $x < a l$ and $x > a l $. 
-This trend can already be seen in the empirical density obtained from simulations for large load forces $F_\text{load} = \pm 250 \, \mathrm{pN}$ in figure~\ref{fig:pos_distr},
+Therefore the density will appear as a piece-wise constant function on $x \in [0,\ell]$, with different values for $x < a \ell$ and $x > a \ell$. 
+This trend can already be seen in the empirical density obtained from simulations for large load forces $F^* = \pm 250 \, \mathrm{pN}$ in figure~\ref{fig:pos_distr},
 and is further demonstrated on motor with a single head in figure~\ref{fig:prob_density_large}. 
 \begin{figure}[t]
 \centering
@@ -1354,63 +1462,70 @@ Empirical probability density for large loads for motor with single head in an A
 %\caption{
 %\label{fig:pos_multiplot}
 %Side by side comparison of empirical density profiles in both attachable (a - blue colored) and detached (d - red colored) state for different loads.
-%Profiles sharing the same load magnitude $|F_\text{load}|$ are denoted by the symbols.
+%Profiles sharing the same load magnitude $|F^*|$ are denoted by the symbols.
 %}
 %\end{figure*}
 
 
 With the second order correction, we can now calculate the change in the expected value of the potential energy
 \begin{align*}
-\langle V_r | \zeta \rangle_{\delta\rho_2} 
-=& \int\limits_0^\ell V_r(x) \, \delta\rho_2 \; \rmd x \\
-=& \frac{\epsilon^2 \zeta^2}{\ell} \int\limits_0^\ell V_r(x) \left(\partial_x V_r(x) \right)^2 \; \rmd x  \\
-&- \frac{\epsilon^2 \zeta^2}{\ell^2} \int\limits_0^\ell V_r(x) \; \rmd x \int\limits_0^\ell \left( \partial_y V_r(y) \right)^2 \; \rmd y \\
-&- \frac{\epsilon^2 \zeta k_B T}{\ell} \int\limits_0^\ell V_r(x) \, \partial_x^2 V_r(x) \; \rmd x .
+\langle V_\text{r} | \zeta \rangle_{\delta\rho_2} 
+=& \int\limits_0^\ell V_\text{r}(x) \, \delta\rho_2 \; \rmd x \\
+=& \frac{\epsilon^2 \zeta^2}{\ell} \int\limits_0^\ell V_\text{r}(x) \left(\partial_x V_\text{r}(x) \right)^2 \; \rmd x  \\
+&- \frac{\epsilon^2 \zeta^2}{\ell^2} \int\limits_0^\ell V_\text{r}(x) \; \rmd x \int\limits_0^\ell \left( \partial_y V_\text{r}(y) \right)^2 \; \rmd y \\
+&- \frac{\epsilon^2 \zeta k_B T}{\ell} \int\limits_0^\ell V_\text{r}(x) \, \partial_x^2 V_\text{r}(x) \; \rmd x .
 \end{align*}
 After tedious but straightforward calculation we found that the first two terms will cancel each other. 
 Hence only the last term remains, which after an explicit calculation leads to  
 \begin{align*}
-\langle V_r | \zeta = 1 \rangle_{\rho_2} &= \frac{V}{2} + \frac{k_B T}{F_\text{load}^2} \frac{V^2}{a \left(1-a\right) \ell^2 }, \\
-\langle V_r | \zeta = c \rangle_{\rho_2} &= \frac{V}{2} + \frac{k_B T}{F_\text{load}^2} \frac{c V^2}{a \left(1-a\right) \ell^2 } .
+\langle V_\text{r} | \zeta = 1 \rangle_{\rho_2} &= \frac{V}{2} + \frac{k_B T}{(F^*)^2} \frac{V^2}{a \left(1-a\right) \ell^2 }, \\
+\langle V_\text{r} | \zeta = c \rangle_{\rho_2} &= \frac{V}{2} + \frac{k_B T}{(F^*)^2} \frac{c V^2}{a \left(1-a\right) \ell^2 } .
 \end{align*}
 By using these expression we get the chemical efficiency~\eqref{eq:eta} up to the second order in $\epsilon$  
-\begin{equation}
-\eta_\text{chem} = - \frac{ \left(1-c\right)^2 }{ a (1-a) } \, \frac{k_B T} { \Delta E - (1-c) \frac{V}{2} } \left( \frac{V}{\ell F_\text{load}} \right)^2 .
-\end{equation}
+\begin{align*}
+\eta_\text{chem} 
+&= - \frac{ \left(1-c\right)^2 }{ a (1-a) } \, \frac{k_B T} { \Delta E - (1-c) \frac{V}{2} } \left( \frac{V}{\ell F^*} \right)^2 
+\\
+&= - \frac{ \left(1-c\right)^2 }{ a (1-a) } 
+\frac{k_B T} { \Delta E - (1-c) \frac{V}{2} } 
+\left[ \frac{ ( \gamma_\text{A} + \gamma_\text{M} ) V }{\gamma_\text{A} \ell F_\text{load}} \right]^2 .
+\end{align*}
 As was advertised, the zeroth and linear order in $\epsilon$ do not contribute, 
 the chemical efficiency decays towards zero as $F_\text{load}^{-2}$ and it is negative for large loads independently of the direction of the load.
 The symmetry for of the chemical efficiency $\eta_\text{chem}$ is for large loads confirmed in the figure~\ref{fig:chem}. 
 The fact that the chemical efficiency is negative in this regime, 
 means the driven system builds up a chemical energy in the environment, while the external force is performing work on the system. 
 Also note that in the expression for the chemical efficiency, 
-the ratio between the amplitude of the ratchet potential $V$ and the work done by the external force over a period of the potential $\ell F_\text{load}$ appears in the formula, 
+the ratio between the amplitude of the ratchet potential $V$ and the work done by the external force over a period of the potential $\ell F^*$ appears in the formula, 
 as well as the ratio between the thermal energy $k_B T$ and the mean energy gap between the attached and detached state. 
 
 In addition we can compute the steady state probabilistic current in each respective internal state.
 The probabilistic current is given by 
 \[
-\mathcal{J}(x) = \frac{1}{\gamma} \left[ \left( F_\text{load} - \partial_x V_r(x) \right) \rho(x) - k_B T \partial_x \rho(x) \right] 
+\mathcal{J}(x) = \frac{1}{\gamma^*} \left[ \left( F^* - \partial_x V_\text{r}(x) \right) \rho(x) - k_B T \partial_x \rho(x) \right] 
 \]
 Which simplifies in the second order in the large load regime to
 \begin{align*}
 \mathcal{J}(x) 
-&= \frac{F_\text{load}}{\gamma \ell} - \frac{\zeta^2}{F_\text{load} \gamma \ell^2} \int\limits^\ell_0 \left( \partial_x V_r(x) \right)^2 \; \rmd x \\
-&= \frac{F_\text{load}}{\gamma \ell} - \frac{\zeta^2 V^2}{\gamma F_\text{load} \ell^3 a (1-a) } ,
+&= \frac{F^*}{\gamma^* \ell} - \frac{\zeta^2}{F^* \gamma^* \ell^2} \int\limits^\ell_0 \left( \partial_x V_\text{r}(x) \right)^2 \; \rmd x \\
+&= \frac{F^*}{\gamma^* \ell} - \frac{\zeta^2 V^2}{\gamma^* F^* \ell^3 a (1-a) } ,
 \end{align*}
 which is independent of the position. 
 Note, that the current integrated over the period of the ratchet $\ell$, represents the mean velocity of the motor in the given state
-\begin{equation}
+\begin{multline}
 \left\langle v \middle| \zeta \right\rangle 
 = \int\limits_0^\ell \rmd x \; {\mathcal J}(x) 
-= \frac{F_\text{load}}{\gamma} - \frac{\zeta^2 V^2}{\gamma F_\text{load} \ell^2 a (1-a) } .
+= \frac{F^*}{\gamma^*} - \frac{\zeta^2 V^2}{\gamma^* F^* \ell^2 a (1-a) } 
+\\
+= \frac{F_\text{load}}{\gamma_\text{M}} - \frac{ ( \gamma_\text{M} + \gamma_\text{A} ) \zeta^2 V^2}{\gamma_\text{M} \gamma_\text{A} F_\text{load} \ell^2 a (1-a) } .
 \label{eq:mean_velocity_large}
-\end{equation}
-Indeed, the dominant term for large external forces is $\langle v \rangle_{\rho_0} = F_\text{load} / \gamma$ independently of the internal state, 
+\end{multline}
+Indeed, the dominant term for large external forces is $\langle v \rangle_{\rho_0} = F_\text{load} / \gamma_\text{M}$ independently of the internal state, 
 which was already demonstrated in the figure~\ref{fig:F_v}. 
-Furthermore, the force-independent term (i.e. term proportional to $(F_\text{load})^0$) vanishes leading to an anti-symmetric form with respect to the load $F_\text{load}$. 
+Furthermore, the force-independent term (i.e. term proportional to $F_\text{load}^0$) vanishes leading to an anti-symmetric form with respect to the load $F_\text{load}$. 
 The first correction decay linearly in the external load, which was clearly seen in the figure~\ref{fig:ratchet_force_decay}, 
 which exposes the first correction to the mean velocity, cf. equation~\eqref{eq:mean_ratchet_force}. 
-As there is no fundumental difference in the Focker-Planck equation for one head and for four heads regarding the currents for large driving forces, 
+As there is no fundamental difference in the Fokker-Planck equation for one head and for four heads regarding the currents for large driving forces, 
 the result obtained for a one-headed motor also holds for the simulations of motors with four heads. 
 
 \bibliography{ratchet}
