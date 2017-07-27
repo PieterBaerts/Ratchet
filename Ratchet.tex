@@ -1418,11 +1418,16 @@ Hence only the last term remains, which after an explicit calculation leads to
 \langle V_\text{r} | \zeta = c \rangle_{\rho_2} &= \frac{V}{2} + \frac{k_B T}{(F^*)^2} \frac{c V^2}{a \left(1-a\right) \ell^2 } .
 \end{align*}
 By using these expression we get the chemical efficiency~\eqref{eq:eta} up to the second order in $\epsilon$  
-\begin{equation}
-\eta_\text{chem} = - \frac{ \left(1-c\right)^2 }{ a (1-a) } \, \frac{k_B T} { \Delta E - (1-c) \frac{V}{2} } \left( \frac{V}{\ell F^*} \right)^2 .
-\end{equation}
+\begin{align*}
+\eta_\text{chem} 
+&= - \frac{ \left(1-c\right)^2 }{ a (1-a) } \, \frac{k_B T} { \Delta E - (1-c) \frac{V}{2} } \left( \frac{V}{\ell F^*} \right)^2 
+\\
+&= - \frac{ \left(1-c\right)^2 }{ a (1-a) } 
+\frac{k_B T} { \Delta E - (1-c) \frac{V}{2} } 
+\left[ \frac{ ( \gamma_\text{A} + \gamma_\text{M} ) V }{\gamma_\text{A} \ell F_\text{load}} \right]^2 .
+\end{align*}
 As was advertised, the zeroth and linear order in $\epsilon$ do not contribute, 
-the chemical efficiency decays towards zero as $(F^*)^{-2}$ and it is negative for large loads independently of the direction of the load.
+the chemical efficiency decays towards zero as $F_\text{load}^{-2}$ and it is negative for large loads independently of the direction of the load.
 The symmetry for of the chemical efficiency $\eta_\text{chem}$ is for large loads confirmed in the figure~\ref{fig:chem}. 
 The fact that the chemical efficiency is negative in this regime, 
 means the driven system builds up a chemical energy in the environment, while the external force is performing work on the system. 
@@ -1443,18 +1448,20 @@ Which simplifies in the second order in the large load regime to
 \end{align*}
 which is independent of the position. 
 Note, that the current integrated over the period of the ratchet $\ell$, represents the mean velocity of the motor in the given state
-\begin{equation}
+\begin{multline}
 \left\langle v \middle| \zeta \right\rangle 
 = \int\limits_0^\ell \rmd x \; {\mathcal J}(x) 
-= \frac{F^*}{\gamma^*} - \frac{\zeta^2 V^2}{\gamma^* F^* \ell^2 a (1-a) } .
+= \frac{F^*}{\gamma^*} - \frac{\zeta^2 V^2}{\gamma^* F^* \ell^2 a (1-a) } 
+\\
+= \frac{F_\text{load}}{\gamma_\text{M}} - \frac{ ( \gamma_\text{M} + \gamma_\text{A} ) \zeta^2 V^2}{\gamma_\text{M} \gamma_\text{A} F_\text{load} \ell^2 a (1-a) } .
 \label{eq:mean_velocity_large}
-\end{equation}
-Indeed, the dominant term for large external forces is $\langle v \rangle_{\rho_0} = F^* / \gamma^*$ independently of the internal state, 
+\end{multline}
+Indeed, the dominant term for large external forces is $\langle v \rangle_{\rho_0} = F_\text{load} / \gamma_\text{M}$ independently of the internal state, 
 which was already demonstrated in the figure~\ref{fig:F_v}. 
-Furthermore, the force-independent term (i.e. term proportional to $(F^*)^0$) vanishes leading to an anti-symmetric form with respect to the load $F^*$. 
+Furthermore, the force-independent term (i.e. term proportional to $F_\text{load}^0$) vanishes leading to an anti-symmetric form with respect to the load $F_\text{load}$. 
 The first correction decay linearly in the external load, which was clearly seen in the figure~\ref{fig:ratchet_force_decay}, 
 which exposes the first correction to the mean velocity, cf. equation~\eqref{eq:mean_ratchet_force}. 
-As there is no fundumental difference in the Focker-Planck equation for one head and for four heads regarding the currents for large driving forces, 
+As there is no fundamental difference in the Fokker-Planck equation for one head and for four heads regarding the currents for large driving forces, 
 the result obtained for a one-headed motor also holds for the simulations of motors with four heads. 
 
 \bibliography{ratchet}
