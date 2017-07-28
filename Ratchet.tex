@@ -372,8 +372,10 @@ where the load is replaced by the force caused by springs and the reference poin
 
 We use an Euler-Maruyama integration scheme to stochastically evolve the systems from a randomised initial configuration \cite{kloeden1989survey,maruyama1955continuous}. 
 Most results are obtained after evolving the system up to a time of $1\;\mathrm{s}$ with timestep $\Delta t = 0.01\;\mathrm{ns}$ and averaging over $100$ independent copies.    
-An exception is the data in figure \ref{fig:tug_k}, which was obtained after an ergodic average every $1\;\mathrlap{ms}$ over $10\;\mathrlap{s}$ with timestep $\Delta t = 0.01\;\mathrm{ns}$ and ensemble average over $1000$ independent copies.
-Lastly, to obtain the empirical distribution in figure \ref{fig:pos_distr}, data was gathered by sampling every $0.5\;\mathrm{ms}$ for a total time of $1\;\mathrlap{s}$ with timestep $\Delta t = 0.001\;\mathrm{ns}$ and from $100$ independent simulations and converted into a histogram with a bin width of $0.1\;\mathrm{nm}$.
+An exception is the data in figure \ref{fig:tug_k}, 
+which was obtained after an ergodic average every $1\;\mathrm{ms}$ over $10\;\mathrm{s}$ with timestep $\Delta t = 0.01\;\mathrm{ns}$ and ensemble average over $1000$ independent copies.
+Lastly, to obtain the empirical distribution in figure \ref{fig:pos_distr}, 
+data was gathered by sampling every $0.5\;\mathrm{ms}$ for a total time of $1\;\mathrm{s}$ with timestep $\Delta t = 0.001\;\mathrm{ns}$ and from $100$ independent simulations and converted into a histogram with a bin width of $0.1\;\mathrm{nm}$.
 \section{Mean velocity}
 \label{sec:velocity}
 At first, we study the mean velocity $\langle v\rangle$ of the motor with four heads with respect to the filament for different values of scaling factor $c$, see figure~\ref{fig:c_v}.
@@ -963,7 +965,7 @@ while following the same arguments as for \eqref{eq:heat_flux_balance} is possib
 \]
 
 Similarly to the ``load on the motor'' setup, we can express the excess from chemical cycle in the steady state as sum of works of ratchet forces with respect to their respective displacements,
-\begin{multline*}
+\begin{multline}
 \left\langle 
 {\mathcal Q}_\text{in}^\text{chem} + {\mathcal Q}_\text{out}^\text{chem} 
 \right\rangle 
@@ -977,11 +979,14 @@ Similarly to the ``load on the motor'' setup, we can express the excess from che
 \left\langle 
 \int \rmd \left( x_\text{M} - x_{\text{A}_2} \right) \circ \left[ - \nabla V_t( x_{\text{A}_2} - x_\text{M} ) \right]
 \right\rangle .
-\end{multline*} 
-Due to the symmetry of the setup, the two respective displacements are typically anti-symmetric. 
-Hence, we can interpret it as a tension on the motor~\eqref{eq:tension_tug} correlation with the relative velocity of the motor with respect to a single polymer integrated over the time, similarly to equation~\eqref{eq:excess_heat}. 
+\label{eq:excess_heat_tug}
+\end{multline} 
+If we assume that displacements in the respective integrals are typically anti-symmetric, due to the anti-symmetry of the setup, 
+we can interpret the excess chemical heat as a covariance of the tension on the motor~\eqref{eq:tension_tug} with the relative velocity of the motor with respect to a single polymer integrated over the time, 
+as in the equation~\eqref{eq:excess_heat}. 
 Note, that in this particular setup the interpretation in terms of the tension is not so straightforward as in the case of the setup with either ``load on the motor'' or ``load on the polymer'', 
-because these displacements are not completely dependent nor independent. 
+because the individual displacements $x_\text{M} - x_{\text{A}_1}$ and $x_\text{M} - x_{\text{A}_2}$ are not independent neither dependent on short time scales.
+Only in the long time regime they are anti-symmetric. 
 
 
 \subsubsection{Elastic environment}
@@ -1019,8 +1024,54 @@ Lastly we again look at the excess output from the chemical cycle
 \int \rmd \left( x_\text{M} - x_{\text{A}_2} \right) \circ \left[ - \nabla V_t( x_{\text{A}_2} - x_\text{M} ) \right]
 \right\rangle 
 \\
-+ \left\langle \Delta E_\text{sp} \right\rangle. 
++ k_\text{sp} \left\langle \int \rmd x_{\text{A}_1} \circ \left( x_{\text{A}_1} - x_{\text{A}_1}(0) \right) \right\rangle
+\\ 
++ k_\text{sp} \left\langle \int \rmd x_{\text{A}_2} \circ \left( x_{\text{A}_2} - x_{\text{A}_2}(0) \right) \right\rangle
+,
 \end{multline*} 
+which further simplifies to 
+\begin{multline*}
+\left\langle 
+{\mathcal Q}_\text{in}^\text{chem} + {\mathcal Q}_\text{out}^\text{chem} 
+\right\rangle 
+\\
+= 
+\left\langle 
+\int \rmd \left( x_\text{M} - x_{\text{A}_1} \right) \circ \left[ - \nabla V_t( x_\text{M} - x_{\text{A}_1} ) \right]
+\right\rangle 
+\\
++
+\left\langle 
+\int \rmd \left( x_\text{M} - x_{\text{A}_2} \right) \circ \left[ - \nabla V_t( x_{\text{A}_2} - x_\text{M} ) \right]
+\right\rangle 
+\\
++ \left\langle 
+\Delta E^\text{sp}_1 
+\right\rangle
++ \left\langle 
+\Delta E^\text{sp}_2 
+\right\rangle ,
+\end{multline*} 
+where $E^\text{sp}$ denote the energy stored in the spring, i.e. 
+\[
+\left\langle \Delta E^\text{sp}_{1/2} \right\rangle 
+= 
+\frac{1}{2} k_\text{sp}
+\left\langle
+\left( 
+x_{\text{A}_{1/2}}(t) 
+- 
+x_{\text{A}_{1/2}}(0)  
+\right)^2 
+\right\rangle
+.
+\]
+The interpretation of this excess chemical energy in terms of the tension is even more difficult than in the ``tug of war'' setup~\eqref{eq:excess_heat_tug} due to multiple factors.
+First, there are additional terms related to the change of the energy of springs.
+Second, the mean velocity of all elements in the steady state is zero due to the anti-symmetry of the setup and no additional external force breaking this symmetry. 
+Hence the argument about long time regime is invalid in this case.
+And lastly, no other supplementary information is known about correlations in the displacement with respect to the motor. 
+
 
 \section{Efficiency} 
 \label{sec:efficiency}
