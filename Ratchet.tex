@@ -645,9 +645,9 @@ The tension in the motor is shown in figure \ref{fig:tug_F},
 \includegraphics[width=0.45\textwidth,height=!]{tug_F}
 \caption{
 \label{fig:tug_F}
-Tension in the motor, comparison between setup \ref{sec:load_on_fil} with two loaded filaments and the simple setup with one filament and a load on the motor. 
+Tension in the motor, comparison between setup \ref{sec:load_on_fil} with two loaded filaments and the one with the load on the motor. 
 The tension for small loads follows the same trend, whereas for large loads the tension on the motor differs. 
-This because, only in the simple setup, the load is directly applied to the motor resulting in an asymptotic tension. %TODO fix y label
+This is because, only in the case when the load is applied directly on the motor the motor remains under the tension even for large loads. %TODO fix y label
 }
 \end{figure}
 where it is compared to the tension when the load is applied on the motor instead of the filaments.
@@ -662,7 +662,7 @@ where the proportionality constant $ 1 + \gamma_\text{A} / (\gamma_\text{A} + \g
 When the load increase the motor starts to slip.
 Consequently, the mean ratchet force decreases, cf. figure~\ref{fig:ratchet_force} and~\ref{fig:ratchet_force_decay}, and the increase in tension diminishes, 
 as was shown in the figure~\ref{fig:tug_F}.
-This behavior underlines the main difference between the ``tug of war'' setup and the simple setup, where the load is applied directly to the motor. 
+This behavior underlines the main difference between the ``tug of war'' setup and the ``load on the motor'' setup, where the load is applied directly to the motor. 
 As the ratchet force vanishes for large load, a residual tension from the load remains.
 However, in the ``tug of war'' setup, this residual tension is not transmitted further to the motor due to the vanishing ratchet interaction.  
 
@@ -899,7 +899,7 @@ while following the same arguments as for \eqref{eq:heat_flux_balance} is possib
 0 = q_\text{M}^\text{hb} + q_{\text{A}_1}^\text{hb} + q_{\text{A}_2}^\text{hb} + w^\text{ext}_{\text{A}_1} + w^\text{ext}_{\text{A}_2} + q^\text{chem} .
 \]
 
-Similarly to the simple setup we can express the excess from chemical cycle in the steady state as sum of works of ratchet forces with respect to their respective displacements,
+Similarly to the ``load on the motor'' setup, we can express the excess from chemical cycle in the steady state as sum of works of ratchet forces with respect to their respective displacements,
 \begin{multline*}
 \left\langle 
 {\mathcal Q}_\text{in}^\text{chem} + {\mathcal Q}_\text{out}^\text{chem} 
@@ -917,7 +917,8 @@ Similarly to the simple setup we can express the excess from chemical cycle in t
 \end{multline*} 
 Due to the symmetry of the setup, the two respective displacements are typically anti-symmetric. 
 Hence, we can interpret it as a tension on the motor~\eqref{eq:tension_tug} correlation with the relative velocity of the motor with respect to a single polymer integrated over the time, similarly to equation~\eqref{eq:excess_heat}. 
-Note, that in this particular setup the interpretation in terms of the tension is not so straightforward compared to the simple setup as those displacement are not completely dependent nor independent. 
+Note, that in this particular setup the interpretation in terms of the tension is not so straightforward as in the case of the setup with either ``load on the motor'' or ``load on the polymer'', 
+because these displacements are not completely dependent nor independent. 
 
 
 \subsubsection{Elastic environment}
@@ -998,8 +999,8 @@ This consideration leads to a chemical efficiency defined as
 \label{eq:efficiency}
 \end{equation}
 
-\subsubsection{Simple setup}
-For a system in the simple setup with four heads, we investigate the dependency of such chemical efficiency on the load, see figure~\ref{fig:chem}.
+\subsubsection{Load on the motor}
+For a system where the load is applied on the four headed motor, we investigate the dependency of such chemical efficiency on the load, see figure~\ref{fig:chem}.
 We observe that the chemical efficiency has two local maximums. 
 We will later show that these two maximums correspond to a frustrated system, 
 where the load is close to the point where it is able to overpower any forces induced by the ratchet potential. 
@@ -1277,8 +1278,8 @@ Therefore the local minimum of $\eta$ lies not exactly at, but close to, $F_\tex
 \centering
 \includegraphics[width=.45\textwidth,height=!]{F_eta_setup.pdf}
 \caption{\label{fig:load_efficiency_setups}
-Comparison of the chemical efficiency~\eqref{eq:eta} as a function of the load $F_\text{load}$ for the simple setup and tug of war.
-We observe that the efficiency is rather comparable to a simple setup with a single motor and eight heads rather then with the setup of single motor with four heads.  
+Comparison of the chemical efficiency~\eqref{eq:eta} as a function of the load $F_\text{load}$ for the ``load on the motor'' and the ``tug of war'' setups.
+We observe that the efficiencies are rather comparable.  
 }
 \end{figure}
 
@@ -1309,7 +1310,7 @@ We observe a flat profile.
 
 With our proposed scaled-ratchet model reproduce velocities and stall-forces of the myosin II molecular motor. These quantities depend heavily on the ATP binding rate $k_\text{bind}$.
 We revisit the force-velocity relation for small non-muscle myosin II motors. We investigate how it depends on $k_\text{bind}$ and on the number of heads of the motor $N$.
-In the simple setup, mechanical quantities like the mean ratchet force and tension in the motor can be obtained by a linear combination of the mean relative velocity of the motor and the load applied to it. 
+In the ``load on the motor'' setup, mechanical quantities like the mean ratchet force and tension in the motor can be obtained by a linear combination of the mean relative velocity of the motor and the load applied to it. 
 It is observed that for large loads, the motor begins to slip over the filament track and the force from the ratchet, and the tension generated by it, vanish.
 The decay of the ratchet force corresponds to a theoretical result, obtained by a perturbative expansion around infinitely large loads.
 Furthermore, the motor's ability of mechanosensing naturally emerges from the model without imposing a load-dependence on the chemical rates.
