@@ -239,6 +239,25 @@ it's aim is to characterize the transport induced by molecular motors.
 However, recent experiments show that myosin II role is mainly for cross-linking the cytoskeleton and consequently producing an active tension inside the network \cite{ma2012nonmuscle}.
 Here we present two natural extensions of the previous setup suitable for investigation of the behavior of the molecular motor inside of the network.
 
+\subsubsection{Load on the polymer}
+%TODO
+\begin{align}
+&\begin{multlined}[b][.42\textwidth]
+\rmd x_\text{M} = 
+- \frac{1}{\gamma_\text{M}} \nabla_\text{M} V_t(x_\text{A}(t) - x_\text{M}(t)) \; \rmd t 
+\\ 
++ \sqrt{ \frac{2 k_B T}{\gamma_\text{M}} } \; \rmd W_\text{M} ,
+\end{multlined}
+\label{eq:eom_M_lp} \\
+&\begin{multlined}[b][.42\textwidth]
+\rmd x_\text{A} = 
+- \frac{1}{\gamma_\text{A}} \left[ F_\text{load} + \nabla_\text{A} V_t(x_\text{A}(t) - x_\text{M}(t)) \right] \; \rmd t 
+\\
++ \sqrt{ \frac{2 k_B T}{\gamma_\text{A}} } \; \rmd W_\text{A} ,
+\end{multlined}
+\label{eq:eom_A_lp}
+\end{align}
+
 \subsubsection{Tug of war}
 \label{sec:load_on_fil}
 The first extension is that the motor is interacting with two, rather then one, anti-parallel actin filaments. 
@@ -698,10 +717,11 @@ The tension is plotted in figure~\ref{fig:tug_k} for different stiffness $k_\tex
 \includegraphics[width=0.45\textwidth,height=!]{tug_k}
 \caption{
 \label{fig:tug_k}
-Mean tension on the motor for varying spring stiffness $k_\text{sp}$.
+Mean tension $\tau_\text{M}$ on the motor for varying spring stiffness $k_\text{sp}$.
 Lower stiffness enables the polymers to find a local minimum of the ratchet potential more easily, 
 thus the exerted force is lower as the contribution of ratchet potential is minimized. 
 On the other hand, high stiffness leads to saturation of the exerted force as the main contribution is given by ratchet potential. 
+Inset depicts the mean tension as the function of the spring stiffness on semi-log scale. 
 }
 \end{figure}
 The tension which the motor generate depends strongly on this elasticity $k_\text{sp}$ and saturates for large $k_\text{sp}$. 
@@ -793,20 +813,22 @@ which makes the separation in individual components even more difficult.
 If we restrict the discussion only to the simplest setup, i.e. a single loaded motor with a single actin filament,
 and we use the equation of motion~\eqref{eq:eom_M}, 
 the heat exchange with the surrounding~\eqref{eq:heat_hb_M} can be rewritten as 
-\begin{multline*}
+\begin{multline}
 {\mathcal Q}_\text{M}^\text{hb} 
 = \int \rmd x_\text{M} \circ \left[ \nabla_\text{M} V_t(x_\text{M} - x_\text{A} ) - F_\text{load} \right] 
 \\
 = \int \rmd x_\text{M} \circ \nabla V_t(x_\text{M} - x_\text{A} ) - {\mathcal W}_\text{M}^\text{ext} ,
-\end{multline*}
+\label{eq:heat_hb_M_expl}
+\end{multline}
 where $\nabla V_t$ denotes the derivative with respect to the argument. 
 Similarly for the heat dissipated by actin's interaction with the environment we get 
-\begin{multline*}
+\begin{multline}
 {\mathcal Q}_\text{A}^\text{hb} 
 = \int \rmd x_\text{A} \circ \nabla_\text{A} V_t(x_\text{M} - x_\text{A} )
 \\
 = - \int \rmd x_\text{A} \circ \nabla V_t(x_\text{M} - x_\text{A} ) ,
-\end{multline*}
+\label{eq:heat_hb_A_expl}
+\end{multline}
 thus the heat dissipated to the heath bath can be expressed in terms of the work done by the ratchet potential and external load. 
 Consequently, the total energy balance equation~\eqref{eq:energy_balance} simplifies to 
 \[
@@ -859,8 +881,29 @@ Such equality is trivially true for arbitrarily small times when the initial con
 \subsection{Other setups} 
 In section \ref{sec:ratchet} we introduced two alternative models, more suitable for capturing the behavior of myosin motors inside the polymer network known as the actomyosin cortex.
 
+\subsubsection{Load on the polymer}
+The ``load on the polymer'' setup is a variation to the ``load on the motor'' setup. 
+From the mathematical perspective, it is identical to the ``load on the motor'' setup although differently interpreted. 
+What was once called motor is now called polymer and the other way around.
+This means, that energy balance~\eqref{eq:energy_balance} is preserved 
+with basic expressions for heat dissipated to the heat bath~\eqref{eq:heat_hb_M} and~\eqref{eq:heat_hb_A} kept intact 
+and external work on the motor ${\mathcal W}_\text{M}^\text{ext}$ replaced by the external work on the polymer
+\[
+{\mathcal W}_\text{A}^\text{ext} = - \int \rmd x_\text{A} \circ F_\text{load} = - \Delta x_\text{A} \, F_\text{load} . 
+\]
+Note, that in this particular setup the load is applied in the opposite direction, as can be seen from the equations of motion~\eqref{eq:eom_A_lp}. 
+
+Similarly expressions~\eqref{eq:heat_hb_M_expl} and~\eqref{eq:heat_hb_A_expl} are modified to
+\begin{align*}
+{\mathcal Q}_\text{M}^\text{hb} 
+&= \int \rmd x_\text{A} \circ \nabla V_t(x_\text{A} - x_\text{M} ) ,
+\\
+{\mathcal Q}_\text{A}^\text{hb} 
+&= \int \rmd x_\text{A} \circ \nabla V_t(x_\text{A} - x_\text{M} ) - {\mathcal W}_\text{M}^\text{ext} .
+\end{align*} 
+
 \subsubsection{Tug of war}
-In the first model, see paragraph~\ref{sec:load_on_fil} and figure~\ref{fig:tug_F_illustration},
+In the second model, see paragraph~\ref{sec:load_on_fil} and figure~\ref{fig:tug_F_illustration},
 the motor is placed between two polymers on which the load is applied,
 hence the energy balance~\eqref{eq:energy_balance} is modified to  
 \begin{multline}
