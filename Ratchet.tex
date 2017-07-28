@@ -371,8 +371,9 @@ where the load is replaced by the force caused by springs and the reference poin
 \subsection{Numerical method}
 
 We use an Euler-Maruyama integration scheme to stochastically evolve the systems from a randomised initial configuration \cite{kloeden1989survey,maruyama1955continuous}. 
-Results are obtained after both ergodic and ensemble averaging, up to a minimal time of $1\;\mathrm{s}$ with timestep $\Delta t = 0.01\;\mathrm{ns}$ and over $100$ or more independent copies.    
-
+Most results are obtained after evolving the system up to a time of $1\;\mathrm{s}$ with timestep $\Delta t = 0.01\;\mathrm{ns}$ and averaging over $100$ independent copies.    
+An exception is the data in figure \ref{fig:tug_k}, which was obtained after an ergodic average every $1\;\mathrlap{ms}$ over $10\;\mathrlap{s}$ with timestep $\Delta t = 0.01\;\mathrm{ns}$ and ensemble average over $1000$ independent copies.
+Lastly, to obtain the empirical distribution in figure \ref{fig:pos_distr}, data was gathered by sampling every $0.5\;\mathrm{ms}$ for a total time of $1\;\mathrlap{s}$ with timestep $\Delta t = 0.001\;\mathrm{ns}$ and from $100$ independent simulations and converted into a histogram with a bin width of $0.1\;\mathrm{nm}$.
 \section{Mean velocity}
 \label{sec:velocity}
 At first, we study the mean velocity $\langle v\rangle$ of the motor with four heads with respect to the filament for different values of scaling factor $c$, see figure~\ref{fig:c_v}.
