@@ -718,7 +718,7 @@ The tension is plotted in figure~\ref{fig:tug_k} for different stiffness $k_\tex
 \includegraphics[width=0.45\textwidth,height=!]{tug_k}
 \caption{
 \label{fig:tug_k}
-Mean tension $\tau_\text{M}$ on the motor for varying spring stiffness $k_\text{sp}$.
+Mean tension $\langle \tau_\text{M} \rangle$ on the motor for varying spring stiffness $k_\text{sp}$.
 Lower stiffness enables the polymers to find a local minimum of the ratchet potential more easily, 
 thus the exerted force is lower as the contribution of ratchet potential is minimized. 
 On the other hand, high stiffness leads to saturation of the exerted force as the main contribution is given by ratchet potential. 
@@ -843,7 +843,7 @@ which does not explicitly depend on the load $F_\text{load}$.
 
 Lastly, in the steady state, 
 we can see that the excess of the chemical cycle in the steady state is dissipated as the work of ratchet potential~\eqref{eq:ratchet_potential} over the separation of motor and filament 
-\begin{multline*}
+\begin{multline}
 \left\langle 
 {\mathcal Q}_\text{in}^\text{chem} + {\mathcal Q}_\text{out}^\text{chem} 
 \right\rangle 
@@ -852,13 +852,14 @@ we can see that the excess of the chemical cycle in the steady state is dissipat
 \left\langle 
 \int \rmd \left( x_\text{M} - x_\text{A} \right) \circ \left[ - \nabla V_t( x_\text{M} - x_\text{A} ) \right]
 \right\rangle ,
-\end{multline*} 
+\label{eq:chemical_excess}
+\end{multline} 
 which can be further interpreted in terms of tension on the polymer $\tau_\text{A}$ and the relative velocity $v$ 
 \begin{equation}
 \left\langle 
 {\mathcal Q}_\text{in}^\text{chem} + {\mathcal Q}_\text{out}^\text{chem} 
 \right\rangle 
-= \left\langle \int \rmd t \; v \, \tau_\text{A} \right\rangle .
+= - \left\langle \int \rmd t \; v \, \tau_\text{A} \right\rangle .
 \label{eq:excess_heat} 
 \end{equation}
 %TODO reference previous text 
@@ -897,11 +898,29 @@ Note, that in this particular setup the load is applied in the opposite directio
 Similarly expressions~\eqref{eq:heat_hb_M_expl} and~\eqref{eq:heat_hb_A_expl} are modified to
 \begin{align*}
 {\mathcal Q}_\text{M}^\text{hb} 
-&= \int \rmd x_\text{A} \circ \nabla V_t(x_\text{A} - x_\text{M} ) ,
+&= - \int \rmd x_\text{M} \circ \nabla V_t(x_\text{A} - x_\text{M} ) ,
 \\
 {\mathcal Q}_\text{A}^\text{hb} 
-&= \int \rmd x_\text{A} \circ \nabla V_t(x_\text{A} - x_\text{M} ) - {\mathcal W}_\text{M}^\text{ext} .
+&= \int \rmd x_\text{A} \circ \nabla V_t(x_\text{A} - x_\text{M} ) - {\mathcal W}_\text{A}^\text{ext} .
 \end{align*} 
+Consequently the excess of the chemical cycle~\eqref{eq:chemical_excess} changes to 
+\begin{multline*}
+\left\langle 
+{\mathcal Q}_\text{in}^\text{chem} + {\mathcal Q}_\text{out}^\text{chem} 
+\right\rangle 
+\\
+= 
+\left\langle 
+\int \rmd \left( x_\text{M} - x_\text{A} \right) \circ \left[ - \nabla V_t( x_\text{A} - x_\text{M} ) \right]
+\right\rangle ,
+\end{multline*} 
+which can be again interpreted in terms of the relative velocity $v$ and the tension on the motor $\tau_\text{M}$ 
+\[
+\left\langle 
+{\mathcal Q}_\text{in}^\text{chem} + {\mathcal Q}_\text{out}^\text{chem} 
+\right\rangle 
+= \left\langle \int \rmd t \; v \, \tau_\text{M} \right\rangle .
+\]
 
 \subsubsection{Tug of war}
 In the second model, see paragraph~\ref{sec:load_on_fil} and figure~\ref{fig:tug_F_illustration},
