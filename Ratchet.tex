@@ -239,6 +239,25 @@ it's aim is to characterize the transport induced by molecular motors.
 However, recent experiments show that myosin II role is mainly for cross-linking the cytoskeleton and consequently producing an active tension inside the network \cite{ma2012nonmuscle}.
 Here we present two natural extensions of the previous setup suitable for investigation of the behavior of the molecular motor inside of the network.
 
+\subsubsection{Load on the polymer}
+%TODO
+\begin{align}
+&\begin{multlined}[b][.42\textwidth]
+\rmd x_\text{M} = 
+- \frac{1}{\gamma_\text{M}} \nabla_\text{M} V_t(x_\text{A}(t) - x_\text{M}(t)) \; \rmd t 
+\\ 
++ \sqrt{ \frac{2 k_B T}{\gamma_\text{M}} } \; \rmd W_\text{M} ,
+\end{multlined}
+\label{eq:eom_M_lp} \\
+&\begin{multlined}[b][.42\textwidth]
+\rmd x_\text{A} = 
+- \frac{1}{\gamma_\text{A}} \left[ F_\text{load} + \nabla_\text{A} V_t(x_\text{A}(t) - x_\text{M}(t)) \right] \; \rmd t 
+\\
++ \sqrt{ \frac{2 k_B T}{\gamma_\text{A}} } \; \rmd W_\text{A} ,
+\end{multlined}
+\label{eq:eom_A_lp}
+\end{align}
+
 \subsubsection{Tug of war}
 \label{sec:load_on_fil}
 The first extension is that the motor is interacting with two, rather then one, anti-parallel actin filaments. 
@@ -353,8 +372,10 @@ where the load is replaced by the force caused by springs and the reference poin
 
 We use an Euler-Maruyama integration scheme to stochastically evolve the systems from a randomised initial configuration \cite{kloeden1989survey,maruyama1955continuous}. 
 Most results are obtained after evolving the system up to a time of $1\;\mathrm{s}$ with timestep $\Delta t = 0.01\;\mathrm{ns}$ and averaging over $100$ independent copies.    
-An exception is the data in figure \ref{fig:tug_k}, which was obtained after an ergodic average every $1\;\mathrlap{ms}$ over $10\;\mathrlap{s}$ with timestep $\Delta t = 0.01\;\mathrm{ns}$ and ensemble average over $1000$ independent copies.
-Lastly, to obtain the empirical distribution in figure \ref{fig:pos_distr}, data was gathered by sampling every $0.5\;\mathrm{ms}$ for a total time of $1\;\mathrlap{s}$ with timestep $\Delta t = 0.001\;\mathrm{ns}$ and from $100$ independent simulations and converted into a histogram with a bin width of $0.1\;\mathrm{nm}$.
+An exception is the data in figure \ref{fig:tug_k}, 
+which was obtained after an ergodic average every $1\;\mathrm{ms}$ over $10\;\mathrm{s}$ with timestep $\Delta t = 0.01\;\mathrm{ns}$ and ensemble average over $1000$ independent copies.
+Lastly, to obtain the empirical distribution in figure \ref{fig:pos_distr}, 
+data was gathered by sampling every $0.5\;\mathrm{ms}$ for a total time of $1\;\mathrm{s}$ with timestep $\Delta t = 0.001\;\mathrm{ns}$ and from $100$ independent simulations and converted into a histogram with a bin width of $0.1\;\mathrm{nm}$.
 \section{Mean velocity}
 \label{sec:velocity}
 At first, we study the mean velocity $\langle v\rangle$ of the motor with four heads with respect to the filament for different values of scaling factor $c$, see figure~\ref{fig:c_v}.
@@ -699,10 +720,11 @@ The tension is plotted in figure~\ref{fig:tug_k} for different stiffness $k_\tex
 \includegraphics[width=0.45\textwidth,height=!]{tug_k}
 \caption{
 \label{fig:tug_k}
-Mean tension on the motor for varying spring stiffness $k_\text{sp}$.
+Mean tension $\langle \tau_\text{M} \rangle$ on the motor for varying spring stiffness $k_\text{sp}$.
 Lower stiffness enables the polymers to find a local minimum of the ratchet potential more easily, 
 thus the exerted force is lower as the contribution of ratchet potential is minimized. 
 On the other hand, high stiffness leads to saturation of the exerted force as the main contribution is given by ratchet potential. 
+Inset depicts the mean tension as the function of the spring stiffness on semi-log scale. 
 }
 \end{figure}
 The tension which the motor generate depends strongly on this elasticity $k_\text{sp}$ and saturates for large $k_\text{sp}$. 
@@ -794,20 +816,22 @@ which makes the separation in individual components even more difficult.
 If we restrict the discussion only to the simplest setup, i.e. a single loaded motor with a single actin filament,
 and we use the equation of motion~\eqref{eq:eom_M}, 
 the heat exchange with the surrounding~\eqref{eq:heat_hb_M} can be rewritten as 
-\begin{multline*}
+\begin{multline}
 {\mathcal Q}_\text{M}^\text{hb} 
 = \int \rmd x_\text{M} \circ \left[ \nabla_\text{M} V_t(x_\text{M} - x_\text{A} ) - F_\text{load} \right] 
 \\
 = \int \rmd x_\text{M} \circ \nabla V_t(x_\text{M} - x_\text{A} ) - {\mathcal W}_\text{M}^\text{ext} ,
-\end{multline*}
+\label{eq:heat_hb_M_expl}
+\end{multline}
 where $\nabla V_t$ denotes the derivative with respect to the argument. 
 Similarly for the heat dissipated by actin's interaction with the environment we get 
-\begin{multline*}
+\begin{multline}
 {\mathcal Q}_\text{A}^\text{hb} 
 = \int \rmd x_\text{A} \circ \nabla_\text{A} V_t(x_\text{M} - x_\text{A} )
 \\
 = - \int \rmd x_\text{A} \circ \nabla V_t(x_\text{M} - x_\text{A} ) ,
-\end{multline*}
+\label{eq:heat_hb_A_expl}
+\end{multline}
 thus the heat dissipated to the heath bath can be expressed in terms of the work done by the ratchet potential and external load. 
 Consequently, the total energy balance equation~\eqref{eq:energy_balance} simplifies to 
 \[
@@ -821,7 +845,7 @@ which does not explicitly depend on the load $F_\text{load}$.
 
 Lastly, in the steady state, 
 we can see that the excess of the chemical cycle in the steady state is dissipated as the work of ratchet potential~\eqref{eq:ratchet_potential} over the separation of motor and filament 
-\begin{multline*}
+\begin{multline}
 \left\langle 
 {\mathcal Q}_\text{in}^\text{chem} + {\mathcal Q}_\text{out}^\text{chem} 
 \right\rangle 
@@ -830,13 +854,14 @@ we can see that the excess of the chemical cycle in the steady state is dissipat
 \left\langle 
 \int \rmd \left( x_\text{M} - x_\text{A} \right) \circ \left[ - \nabla V_t( x_\text{M} - x_\text{A} ) \right]
 \right\rangle ,
-\end{multline*} 
-which can be further interpreted in terms of tension on the polymer $\tau_\text{A}$ and the relative velocity $v$ 
+\label{eq:chemical_excess}
+\end{multline} 
+which can be further interpreted in terms of tension on the polymer $\tau_\text{A}$, cf.~\eqref{}, and the relative velocity $v$ %TODO
 \begin{equation}
 \left\langle 
 {\mathcal Q}_\text{in}^\text{chem} + {\mathcal Q}_\text{out}^\text{chem} 
 \right\rangle 
-= \left\langle \int \rmd t \; v \, \tau_\text{A} \right\rangle .
+= - \left\langle \int \rmd t \; v \, \tau_\text{A} \right\rangle .
 \label{eq:excess_heat} 
 \end{equation}
 %TODO reference previous text 
@@ -860,8 +885,47 @@ Such equality is trivially true for arbitrarily small times when the initial con
 \subsection{Other setups} 
 In section \ref{sec:ratchet} we introduced two alternative models, more suitable for capturing the behavior of myosin motors inside the polymer network known as the actomyosin cortex.
 
+\subsubsection{Load on the polymer}
+The ``load on the polymer'' setup is a variation to the ``load on the motor'' setup. 
+From the mathematical perspective, it is identical to the ``load on the motor'' setup although differently interpreted. 
+What was once called motor is now called polymer and the other way around.
+This means, that energy balance~\eqref{eq:energy_balance} is preserved 
+with basic expressions for heat dissipated to the heat bath~\eqref{eq:heat_hb_M} and~\eqref{eq:heat_hb_A} kept intact 
+and external work on the motor ${\mathcal W}_\text{M}^\text{ext}$ replaced by the external work on the polymer
+\[
+{\mathcal W}_\text{A}^\text{ext} = - \int \rmd x_\text{A} \circ F_\text{load} = - \Delta x_\text{A} \, F_\text{load} . 
+\]
+Note, that in this particular setup the load is applied in the opposite direction, as can be seen from the equations of motion~\eqref{eq:eom_A_lp}. 
+
+Similarly expressions~\eqref{eq:heat_hb_M_expl} and~\eqref{eq:heat_hb_A_expl} are modified to
+\begin{align*}
+{\mathcal Q}_\text{M}^\text{hb} 
+&= - \int \rmd x_\text{M} \circ \nabla V_t(x_\text{A} - x_\text{M} ) ,
+\\
+{\mathcal Q}_\text{A}^\text{hb} 
+&= \int \rmd x_\text{A} \circ \nabla V_t(x_\text{A} - x_\text{M} ) - {\mathcal W}_\text{A}^\text{ext} .
+\end{align*} 
+Consequently the excess of the chemical cycle~\eqref{eq:chemical_excess} changes to 
+\begin{multline*}
+\left\langle 
+{\mathcal Q}_\text{in}^\text{chem} + {\mathcal Q}_\text{out}^\text{chem} 
+\right\rangle 
+\\
+= 
+\left\langle 
+\int \rmd \left( x_\text{M} - x_\text{A} \right) \circ \left[ - \nabla V_t( x_\text{A} - x_\text{M} ) \right]
+\right\rangle ,
+\end{multline*} 
+which can be again interpreted in terms of the relative velocity $v$ and the tension on the motor $\tau_\text{M}$, cf.~\eqref{},  
+\[
+\left\langle 
+{\mathcal Q}_\text{in}^\text{chem} + {\mathcal Q}_\text{out}^\text{chem} 
+\right\rangle 
+= \left\langle \int \rmd t \; v \, \tau_\text{M} \right\rangle .
+\]
+
 \subsubsection{Tug of war}
-In the first model, see paragraph~\ref{sec:load_on_fil} and figure~\ref{fig:tug_F_illustration},
+In the second model, see paragraph~\ref{sec:load_on_fil} and figure~\ref{fig:tug_F_illustration},
 the motor is placed between two polymers on which the load is applied,
 hence the energy balance~\eqref{eq:energy_balance} is modified to  
 \begin{multline}
@@ -901,7 +965,7 @@ while following the same arguments as for \eqref{eq:heat_flux_balance} is possib
 \]
 
 Similarly to the ``load on the motor'' setup, we can express the excess from chemical cycle in the steady state as sum of works of ratchet forces with respect to their respective displacements,
-\begin{multline*}
+\begin{multline}
 \left\langle 
 {\mathcal Q}_\text{in}^\text{chem} + {\mathcal Q}_\text{out}^\text{chem} 
 \right\rangle 
@@ -915,11 +979,14 @@ Similarly to the ``load on the motor'' setup, we can express the excess from che
 \left\langle 
 \int \rmd \left( x_\text{M} - x_{\text{A}_2} \right) \circ \left[ - \nabla V_t( x_{\text{A}_2} - x_\text{M} ) \right]
 \right\rangle .
-\end{multline*} 
-Due to the symmetry of the setup, the two respective displacements are typically anti-symmetric. 
-Hence, we can interpret it as a tension on the motor~\eqref{eq:tension_tug} correlation with the relative velocity of the motor with respect to a single polymer integrated over the time, similarly to equation~\eqref{eq:excess_heat}. 
+\label{eq:excess_heat_tug}
+\end{multline} 
+If we assume that displacements in the respective integrals are typically anti-symmetric, due to the anti-symmetry of the setup, 
+we can interpret the excess chemical heat as a covariance of the tension on the motor~\eqref{eq:tension_tug} with the relative velocity of the motor with respect to a single polymer integrated over the time, 
+as in the equation~\eqref{eq:excess_heat}. 
 Note, that in this particular setup the interpretation in terms of the tension is not so straightforward as in the case of the setup with either ``load on the motor'' or ``load on the polymer'', 
-because these displacements are not completely dependent nor independent. 
+because the individual displacements $x_\text{M} - x_{\text{A}_1}$ and $x_\text{M} - x_{\text{A}_2}$ are not independent neither dependent on short time scales.
+Only in the long time regime they are anti-symmetric. 
 
 
 \subsubsection{Elastic environment}
@@ -957,8 +1024,54 @@ Lastly we again look at the excess output from the chemical cycle
 \int \rmd \left( x_\text{M} - x_{\text{A}_2} \right) \circ \left[ - \nabla V_t( x_{\text{A}_2} - x_\text{M} ) \right]
 \right\rangle 
 \\
-+ \left\langle \Delta E_\text{sp} \right\rangle. 
++ k_\text{sp} \left\langle \int \rmd x_{\text{A}_1} \circ \left( x_{\text{A}_1} - x_{\text{A}_1}(0) \right) \right\rangle
+\\ 
++ k_\text{sp} \left\langle \int \rmd x_{\text{A}_2} \circ \left( x_{\text{A}_2} - x_{\text{A}_2}(0) \right) \right\rangle
+,
 \end{multline*} 
+which further simplifies to 
+\begin{multline*}
+\left\langle 
+{\mathcal Q}_\text{in}^\text{chem} + {\mathcal Q}_\text{out}^\text{chem} 
+\right\rangle 
+\\
+= 
+\left\langle 
+\int \rmd \left( x_\text{M} - x_{\text{A}_1} \right) \circ \left[ - \nabla V_t( x_\text{M} - x_{\text{A}_1} ) \right]
+\right\rangle 
+\\
++
+\left\langle 
+\int \rmd \left( x_\text{M} - x_{\text{A}_2} \right) \circ \left[ - \nabla V_t( x_{\text{A}_2} - x_\text{M} ) \right]
+\right\rangle 
+\\
++ \left\langle 
+\Delta E^\text{sp}_1 
+\right\rangle
++ \left\langle 
+\Delta E^\text{sp}_2 
+\right\rangle ,
+\end{multline*} 
+where $E^\text{sp}$ denote the energy stored in the spring, i.e. 
+\[
+\left\langle \Delta E^\text{sp}_{1/2} \right\rangle 
+= 
+\frac{1}{2} k_\text{sp}
+\left\langle
+\left( 
+x_{\text{A}_{1/2}}(t) 
+- 
+x_{\text{A}_{1/2}}(0)  
+\right)^2 
+\right\rangle
+.
+\]
+The interpretation of this excess chemical energy in terms of the tension is even more difficult than in the ``tug of war'' setup~\eqref{eq:excess_heat_tug} due to multiple factors.
+First, there are additional terms related to the change of the energy of springs.
+Second, the mean velocity of all elements in the steady state is zero due to the anti-symmetry of the setup and no additional external force breaking this symmetry. 
+Hence the argument about long time regime is invalid in this case.
+And lastly, no other supplementary information is known about correlations in the displacement with respect to the motor. 
+
 
 \section{Efficiency} 
 \label{sec:efficiency}
