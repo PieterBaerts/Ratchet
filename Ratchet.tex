@@ -631,13 +631,13 @@ which is in good agreement with the theoretical prediction \eqref{eq:ratchet_vs_
 The force-velocity relation can also be exploited to obtain the tension in the motor. 
 Since both the load and ratchet force are directly applied on their respective ends of the motor, 
 thus the tension applied to the motor is proportional to their difference 
-\begin{multline}
-\tau_M =
-\langle F_\text{r} \rangle - F_\text{load} \\
-= \frac{\gamma_\text{A}\gamma_\text{M}}{\gamma_\text{A}+\gamma_\text{M}}\langle v\rangle 
+\begin{align}
+\tau_\text{M} 
+&= \langle F_\text{r} \rangle - F_\text{load} \nonumber \\
+&= \frac{\gamma_\text{A}\gamma_\text{M}}{\gamma_\text{A}+\gamma_\text{M}}\langle v\rangle 
 - \left(1 + \frac{\gamma_\text{A}}{\gamma_\text{A}+\gamma_\text{M}} \right) F_\text{load}.
 \label{eq:tension}
-\end{multline}
+\end{align}
 We plot the tension as a function of the load $F_\text{load}$ in figure~\ref{fig:tension} for various transition rates 
 \begin{figure}
 \centering
@@ -662,7 +662,7 @@ see figure~\ref{fig:F_v}.
 In this regime the velocity is small compared to the initial load, as most of the load is countered by the ratchet interaction, 
 hence the only the second term in \eqref{eq:tension} contributes
 \begin{equation}
-\tau_M
+\tau_\text{M}
 \approx
 - \left(1 + \frac{\gamma_\text{A}}{\gamma_\text{A}+\gamma_\text{M}} \right) F_\text{load}.
 \label{eq:tension_low_load} 
@@ -671,28 +671,30 @@ hence the only the second term in \eqref{eq:tension} contributes
 For the large force the motor slips over the potential and hence the mean ratchet force $\langle F_\text{r}$ approaches zero,
 as can be seen in figures~\ref{fig:ratchet_force} and~\ref{fig:ratchet_force_decay}, 
 thus the large force asymptotic is given the load alone
-\[
-\tau_M 
+\begin{equation}
+\tau_\text{M} 
 \asymp - F_\text{load} 
 \qquad \text{for} \qquad F_\text{load} \to \infty. 
-\]
+\label{eq:tension_large_load}
+\end{equation}
 This is further supported by calculations of the mean velocity for a motor with a single head provided in the appendix, cf. equation~\eqref{eq:mean_velocity_large}.
 
 \subsubsection{Load on the polymer}
-
 In setup \ref{sec:load_on_polymer}, the motor only experiences a force from the ratchet interaction with the polymer and not from a load. 
 Therefore, the tension on the motor is given only by the mean ratchet force.
 In this case it is similar to \eqref{eq:mean_ratchet_force}, but now the load must be divided by $\gamma_\text{A}$ since the load is exerted on the actin filament instead of the motor.
 \begin{equation}
-\tau_M = \langle F_\text{r} \rangle = \frac{\gamma_\text{A}\gamma_\text{M}}{\gamma_\text{A} + \gamma_\text{M} } \left(\langle v \rangle - \frac{F_\text{load}}{\gamma_\text{A}}\right)
-\label{tension_load_on_polymer}
+\tau_\text{M} = \langle F_\text{r} \rangle = \frac{\gamma_\text{A}\gamma_\text{M}}{\gamma_\text{A} + \gamma_\text{M} } \left(\langle v \rangle - \frac{F_\text{load}}{\gamma_\text{A}}\right)
+\label{eq:tension_load_on_polymer}
 \end{equation}
 By the same argumentation as in the basic setup, for small loads, the tension will be given by
 \begin{equation*}
-\tau_M
+\tau_\text{M}
 \approx -\frac{\gamma_\text{M}}{\gamma_\text{A}+\gamma_\text{M}} F_\text{load}.
 \end{equation*}
 This is similar to \eqref{eq:tension_low_load},  where the motor experiences the load directly, up to an exchange of friction coefficients of the motor and actin filament. Furthermore, since the load is not directly applied to the motor in this setup, the overall term $-F_\text{load}$ is not present. Therefore, the tension vanishes for large load in the same way that the relative velocity approaches $F_\text{load} / \gamma_\text{A}$. 
+
+
 \subsubsection{Tug of war}
 A similar analysis can be made for alternative setups presented in the section~\ref{sec:other_setups}. 
 In the case of the ``tug of war'' setup, cf.~\ref{sec:tug_of_war}, the motor is in the middle of two actin polymers aligned anti-parallel. 
@@ -716,7 +718,7 @@ Although the load is not applied to the motor directly,
 there will be a tension on the motor due to interaction with both actin filaments. 
 This tension is again given by the difference in the forces applied to their respective ends of the motor,
 \begin{equation}
-\tau_M = \langle F_{\text{r}_1}\rangle - \langle F_{\text{r}_2}\rangle = -\gamma_\text{A}\left(\langle v_{\text{A}_1}\rangle - \langle v_{\text{A}_2}\rangle \right) - 2F_\text{load} .
+\tau_\text{M} = \langle F_{\text{r}_1}\rangle - \langle F_{\text{r}_2}\rangle = -\gamma_\text{A}\left(\langle v_{\text{A}_1}\rangle - \langle v_{\text{A}_2}\rangle \right) - 2F_\text{load} .
 \label{eq:tension_tug}
 \end{equation}
 The tension in the motor is shown in figure \ref{fig:tug_F}, 
@@ -948,7 +950,7 @@ Such equality is trivially true for arbitrarily small times when the initial con
 In section \ref{sec:ratchet} we introduced two alternative models, more suitable for capturing the behavior of myosin motors inside the polymer network known as the actomyosin cortex.
 
 \subsubsection{Load on the polymer}
-The ``load on the polymer'' setup is a variation to the ``load on the motor'' setup. 
+The ``load on the polymer'' setup is a variation to the ``load on the motor'' setup, cf. section~\ref{sec:load_on_polymer}. 
 From the mathematical perspective, it is identical to the ``load on the motor'' setup although differently interpreted. 
 What was once called motor is now called polymer and the other way around.
 This means, that energy balance~\eqref{eq:energy_balance} is preserved 
@@ -989,7 +991,7 @@ which can be again interpreted in terms of the relative velocity $v$ and the ten
 
 \subsubsection{Tug of war}
 In the second model, see paragraph~\ref{sec:tug_of_war} and figure~\ref{fig:tug_F_illustration},
-the motor is placed between two polymers on which the load is applied,
+the motor is placed between two polymers on which the load is applied, cf. section~\ref{sec:tug},
 hence the energy balance~\eqref{eq:energy_balance} is modified to  
 \begin{multline}
 \rmd E = \dbar {\mathcal Q}_\text{M}^\text{hb} + \dbar {\mathcal Q}_{\text{A}_1}^\text{hb} + \dbar {\mathcal Q}_{\text{A}_2}^\text{hb} 
@@ -1168,6 +1170,7 @@ i.e. how much of the chemical energy provided to the system is dissipated by the
 
 
 \subsection{Chemical efficiency} %TODO 
+\label{sec:chemical_efficiency}
 An alternative approach is to identify as the ``useful'' output by looking at the chemical energy supplied by ATP which is transformed to other forms of energy, 
 i.e. either it is dissipated by myosin and actin through their diffusion or it is stored in the interaction potential and thus increases the tension in the system. 
 This consideration leads to a chemical efficiency defined as 
@@ -1451,7 +1454,7 @@ Therefore the local minimum of $\eta$ lies not exactly at, but close to, $F_\tex
 
 \subsubsection{Load on the polymer}
 As was already discussed, the situation with the load on the polymer is almost identical to the one with the load on the motor.
-The main difference is in the notion what we perceive as the motor and what we perceive as the polymer.
+The main difference is in the notion what we perceive as the motor and what we perceive as the polymer, cf. section~\ref{sec:load_on_polymer}.
 Thus, it is not surprising that the chemical efficiency \eqref{eq:eta} as a function of the load $F_\text{load}$ 
 resembles the one with the load on the motor, see figure~\ref{fig:load_efficiency_setups}. 
 \begin{figure}[t]
@@ -1475,14 +1478,25 @@ where we plot the chemical efficiency $\eta$ with respect to re-scaled load.
 \caption{\label{fig:load_efficiency_setups_rescaled}
 Comparison of the chemical efficiency~\eqref{eq:eta} as a function of the re-scaled load $F^*$ for the ``load on the motor'', ``load on the polymer'' and the ``tug of war'' setups.
 For the ``load on the motor'' setup the re-scaled load is $F^* = F_\text{load} / \gamma_\text{M}$, 
-while for all other setups the re-scaled load is defined as $F^* = F_\text{load} / \gamma_\text{A}$.
+while for the ``load on the polymer'' the re-scaled load is defined as $F^* = F_\text{load} / \gamma_\text{A}$.
+Lastly, for the ``tug of war'' setup we define the re-scaled load as $F^* = 2 F_\text{load} / \gamma_\text{A}$,
+where the factor $2$ comes from the fact that the load is applied once on each side of the system.
 We observe that these efficiency profiles for ``load on the motor'' and ``load on the polymer'' collapse on each other.    
 }
 \end{figure}
 
 
 \subsubsection{Tug of war}
-The figures~\ref{fig:load_efficiency_setups} and~\ref{fig:load_efficiency_setups_rescaled} depict as well a chemical efficiency $\eta$ dependency on the load $F_\text{load}$ for the ``tug of war'' setup. 
+The figures~\ref{fig:load_efficiency_setups} and~\ref{fig:load_efficiency_setups_rescaled} depict as well a chemical efficiency $\eta$ dependency on the load $F_\text{load}$ for the ``tug of war'' setup, cf. section~\ref{sec:tug_of_war} 
+We can see that the general shape is preserved.
+In the figure~\ref{fig:load_efficiency_setups}, we can see, that the large load asymptotic behavior correspond to the one of the ``load on the polymer'' setup.
+This can be explained by the same asymptotic behavior for the relative velocity $\langle v\rangle$, cf. figure~\ref{fig:F_v_setups}, 
+and for the tension on the motor $\tau_\text{M}$, cf. figure~\ref{fig:tug_F}, while having equation~\eqref{eq:excess_heat_tug} in mind.
+
+For small loads, see figure~\ref{fig:load_efficiency_setups_rescaled}, the chemical efficiency for the ``tug of war'' setup correspond to the ``load on polymer'' setup only when the load is scaled by factor~$2$. 
+This points to the fact, that rather then the external load $F_\text{load}$ the tension on the motor $\tau_\text{M}$ generated by the ratchet interaction is important,
+which for small loads when polymers do not slip is close to twice the external load. 
+We will discuss this connection later, cf. figure~\ref{fig:tension_efficiency}. 
 
 
 \subsubsection{Elastic environment}
@@ -1495,16 +1509,32 @@ The chemical efficiency~\eqref{eq:eta} as a function of the spring constant $k_\
 We observe a flat profile.
 }
 \end{figure}
-
+Unfortunately, we cannot use here the same reasoning as for the ``tug of war'' setup, as the mean velocity of the motor in the steady state is zero. 
 
 \subsubsection{Tension and chemical efficiency}
-%TODO
+During the investigation of the chemical efficiency dependency on the external load $F_\text{load}$ for the ``tug of war'' setup, 
+we discovered that rather then the load itself, the tension on the motor $\tau_\text{M}$ might be the intrinsic parameter. 
+This is confirmed in the figure~\ref{fig:tension_efficiency}, 
+where we plot the chemical efficiency as a function of the tension in the motor for all the setups mentioned above, 
+and represents our main result. 
 \begin{figure}[t]
 \centering
 \includegraphics[width=.45\textwidth,height=!]{tension_eta.pdf}
 \caption{\label{fig:tension_efficiency}
+The chemical efficiency \eqref{eq:eta} as a function of the tension in the motor $\tau_\text{M}$.
+For small tension 
 }
 \end{figure}
+
+For small tension, caused either by small external load $F_\text{load}$ or small stiffness of the surrounding network $k_\text{sp}$, 
+the chemical efficiency has relatively flat profile with weak positive response to the increase in the tension.
+This can be explained by perturbations in the steady state average probability density for motor's heads 
+and was discussed in more details in the section~\ref{sec:chemical_efficiency}, 
+cf. equations~\eqref{eq:eta} and~\eqref{eq:heat_flux_explicit}, and figures~\ref{fig:pos_distr} and~\ref{fig:chem_energy_distr}.  
+
+With increasing load, both positive and negative, the tension on the motor in the ``load on the polymer'' and ``tug of war'' setups increase up to a certain threshold,
+where the polymers start to slip with respect to the motor, and thus another increase in the driving leads only further decrease in the tension~\eqref{eq:tension_load_on_polymer} and~\eqref{eq:tension_tug}.
+This is not true for ``load on the motor'' setup, where there is always a residual tension from the load alone~\eqref{eq:tension_large_load}.  
 
 
 \section{Conclusions}
