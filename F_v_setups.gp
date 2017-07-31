@@ -2,6 +2,9 @@
 set term pdfcairo enhanced linewidth 1.75 font ",14"
 set output "F_v_setups.pdf"
 
+gamma_M = 0.66
+gamma_A = 0.97
+
 load "Data/my.pal"
 
 unset tmargin
@@ -20,11 +23,11 @@ set xzeroaxis
 set yzeroaxis
 
 plot [-150:150][] \
-    "Data/F_q_k=8.dat" u (-$1):2:3 w errorlines ls 1 lw 1.25 dashtype 1 title "Load on motor" \
-    , x/0.66 ls 1 lw 1.25 dashtype 1 title "F_{load} / {/Symbol g}_M"
-    , "Data/F_q_fil.dat" u 1:(-$2):3 w errorlines ls 3 lw 1.25 dashtype 2 title "Load on polymer" \
-    , "Data/tug_F.dat" u (-$1):2:3 w errorlines ls 6 lw 1.25 dashtype 4 title "Tug of war" \
-    , x/0.97 ls 3 dashtype 2 title "F_{load} / {/Symbol g}_A"
+      "Data/F_q_k=8.dat" u (-$1):2:3 w errorlines ls 8 lw 1.25 dashtype 1 title "Load on motor" \
+    , x/gamma_M ls 8 lw 1.25 dashtype 1 title "- Large load" \
+    , "Data/F_q_fil.dat" u 1:(-$2):3 w errorlines ls 6 lw 1.25 dashtype 2 title "Load on polymer" \
+    , "Data/tug_F.dat" u (-$1):2:3 w errorlines ls 3 lw 1.25 dashtype 4 title "Tug of war" \
+    , x/gamma_A ls 3 dashtype 4 title "- Large load" \
 
 
 set tmargin at screen 0.30
@@ -34,16 +37,16 @@ set rmargin at screen 0.9
 
 set key off
 
-set ytic 0.002
-set xtic 0.002
+set ytic 100
+set xtic 100
 
 unset xlabel
 unset ylabel 
 
-plot [-150:150][] \
-    "Data/F_q_k=8.dat" u (-$1/0.66):2:3 w errorlines ls 1 lw 1.25 dashtype 1 title "Load on motor" \
-    , "Data/F_q_fil.dat" u ($1/0.97):(-$2):3 w errorlines ls 3 lw 1.25 dashtype 2 title "Load on polymer" \
-    , "Data/tug_F.dat" u (-$1/0.97):2:3 w errorlines ls 6 lw 1.25 dashtype 4 title "Tug of war" \
+plot [-150:150][-150:150] \
+      "Data/F_q_k=8.dat" u (-$1/0.66):2:3 w lines ls 8 lw 1.25 dashtype 1 title "Load on motor" \
+    , "Data/F_q_fil.dat" u ($1/0.97):(-$2):3 w lines ls 6 lw 1.25 dashtype 2 title "Load on polymer" \
+    , "Data/tug_F.dat" u (-$1/0.97):2:3 w lines ls 3 lw 1.25 dashtype 4 title "Tug of war" \
 
 
 unset multiplot
