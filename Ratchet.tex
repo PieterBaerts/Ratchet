@@ -488,7 +488,7 @@ For the setups where the load is applied to the filaments, the relative velocity
 In the inset of figure \ref{fig:F_v_setups}, the force-velocity relations are plotted on rescaled x-axes for the different setups. "Load on the motor" is plotted with respect to $F_\text{load} / \gamma_\text{M}$ instead of $F_\text{load}$,
 while the other setups are plotted with respect to $F_\text{load} / \gamma_\text{A}$.
 The curve for the simplest setups, with one motor and one polymer, collapse on this plot, 
-confirming the fact that they can be mapped onto each other by switching friction coefficients $\gamma_\text{M}\leftrightarrow\gamma_\text{A}$ and reversing the relative velocity.
+confirming the fact that they can be mapped onto each other by switching friction coefficients $\gamma_\text{M}\leftrightarrow\gamma_\text{A}$ and reversing the relative velocity. The curve for the tug of war setup behaves 
 
 \subsection{Stall force}
 From figure~\ref{fig:F_v} it is apparent, that when applying a force against the preferred direction of the motor, 
@@ -626,14 +626,15 @@ which is in good agreement with the theoretical prediction \eqref{eq:ratchet_vs_
 }
 \end{figure}
 
+
 \subsection{Tension in the motor}
 The force-velocity relation can also be exploited to obtain the tension in the motor. 
 Since both the load and ratchet force are directly applied on their respective ends of the motor, 
-thus the tension applied to the motor is proportional to their difference  
+thus the tension applied to the motor is proportional to their difference 
 \begin{multline}
-\langle F_\text{r} \rangle - F_\text{load} 
+\tau_M =
+\langle F_\text{r} \rangle - F_\text{load} \\
 = \frac{\gamma_\text{A}\gamma_\text{M}}{\gamma_\text{A}+\gamma_\text{M}}\langle v\rangle 
-\\
 - \left(1 + \frac{\gamma_\text{A}}{\gamma_\text{A}+\gamma_\text{M}} \right) F_\text{load}.
 \label{eq:tension}
 \end{multline}
@@ -661,7 +662,7 @@ see figure~\ref{fig:F_v}.
 In this regime the velocity is small compared to the initial load, as most of the load is countered by the ratchet interaction, 
 hence the only the second term in \eqref{eq:tension} contributes
 \begin{equation}
-\langle F_\text{r} \rangle - F_\text{load} 
+\tau_M
 \approx
 - \left(1 + \frac{\gamma_\text{A}}{\gamma_\text{A}+\gamma_\text{M}} \right) F_\text{load}.
 \label{eq:tension_low_load} 
@@ -671,13 +672,27 @@ For the large force the motor slips over the potential and hence the mean ratche
 as can be seen in figures~\ref{fig:ratchet_force} and~\ref{fig:ratchet_force_decay}, 
 thus the large force asymptotic is given the load alone
 \[
-\langle F_\text{r} \rangle - F_\text{load} 
+\tau_M 
 \asymp - F_\text{load} 
 \qquad \text{for} \qquad F_\text{load} \to \infty. 
 \]
 This is further supported by calculations of the mean velocity for a motor with a single head provided in the appendix, cf. equation~\eqref{eq:mean_velocity_large}.
 
+\subsubsection{Load on the polymer}
 
+In setup \ref{sec:load_on_polymer}, the motor only experiences a force from the ratchet interaction with the polymer and not from a load. 
+Therefore, the tension on the motor is given only by the mean ratchet force.
+In this case it is similar to \eqref{eq:mean_ratchet_force}, but now the load must be divided by $\gamma_\text{A}$ since the load is exerted on the actin filament instead of the motor.
+\begin{equation}
+\tau_M = \langle F_\text{r} \rangle = \frac{\gamma_\text{A}\gamma_\text{M}}{\gamma_\text{A} + \gamma_\text{M} } \left(\langle v \rangle - \frac{F_\text{load}}{\gamma_\text{A}}\right)
+\label{tension_load_on_polymer}
+\end{equation}
+By the same argumentation as in the basic setup, for small loads, the tension will be given by
+\begin{equation*}
+\tau_M
+\approx -\frac{\gamma_\text{M}}{\gamma_\text{A}+\gamma_\text{M}} F_\text{load}.
+\end{equation*}
+This is similar to \eqref{eq:tension_low_load},  where the motor experiences the load directly, up to an exchange of friction coefficients of the motor and actin filament. Furthermore, since the load is not directly applied to the motor in this setup, the overall term $-F_\text{load}$ is not present. Therefore, the tension vanishes for large load in the same way that the relative velocity approaches $F_\text{load} / \gamma_\text{A}$. 
 \subsubsection{Tug of war}
 A similar analysis can be made for alternative setups presented in the section~\ref{sec:other_setups}. 
 In the case of the ``tug of war'' setup, cf.~\ref{sec:tug_of_war}, the motor is in the middle of two actin polymers aligned anti-parallel. 
@@ -691,17 +706,17 @@ where ${\text{A}_1}$ and ${\text{A}_2}$ denote the two different actin filaments
 
 Note that the mean velocity of the motor is proportional to the mean center of mass velocity of both actin filaments, 
 \begin{equation*}
-\langle v_\text{M} \rangle = \frac{\gamma_\text{A}}{\gamma_\text{M}} \left(\langle v_{\text{A}_1} \rangle + \langle v_{\text{A}_2} \rangle \right) 
+\langle v_\text{M} \rangle = \frac{\gamma_\text{A}}{\gamma_\text{M}} \left(\langle v_{\text{A}_1} \rangle + \langle v_{\text{A}_2} \rangle \right) .
 %\label{eq:tug_F_motor}
 \end{equation*}
 Due to the anti-parallel alignment of the filaments, $F_{{r_1}}$ and $F_{{r_2}}$ are equal but opposite on average. 
-Therefore the motor's mean velocity will be on average zero.  
+Therefore the motor's mean velocity will be zero on average.  
 
-Although the load on is not applied to the motor directly,
+Although the load is not applied to the motor directly,
 there will be a tension on the motor due to interaction with both actin filaments. 
 This tension is again given by the difference in the forces applied to their respective ends of the motor,
 \begin{equation}
-\langle F_{\text{r}_1}\rangle - \langle F_{\text{r}_2}\rangle = -\gamma_\text{A}\left(\langle v_{\text{A}_1}\rangle - \langle v_{\text{A}_2}\rangle \right) - 2F_\text{load} .
+\tau_M = \langle F_{\text{r}_1}\rangle - \langle F_{\text{r}_2}\rangle = -\gamma_\text{A}\left(\langle v_{\text{A}_1}\rangle - \langle v_{\text{A}_2}\rangle \right) - 2F_\text{load} .
 \label{eq:tension_tug}
 \end{equation}
 The tension in the motor is shown in figure \ref{fig:tug_F}, 
@@ -710,12 +725,12 @@ The tension in the motor is shown in figure \ref{fig:tug_F},
 \includegraphics[width=0.45\textwidth,height=!]{tug_F}
 \caption{
 \label{fig:tug_F}
-Tension in the motor, comparison between setup \ref{sec:tug_of_war} with two loaded filaments and the one with the load on the motor. 
-The tension for small loads follows the same trend, whereas for large loads the tension on the motor differs. 
-This is because, only in the case when the load is applied directly on the motor the motor remains under the tension even for large loads. %TODO fix y label
+Tension in the motor, comparison between setup \ref{sec:tug_of_war} with two loaded filaments, setup \ref{sec:load_on_polymer} with one loaded filament and the basic setup with the load on the motor. 
+The tension for small loads follows the same trend for the basic setup and ``tug of war'', whereas for large loads the tensions agree for the setups without a load on the motor. 
+This is because, only in the case when the load is applied directly on the motor, it remains under the tension even for large loads.
 }
 \end{figure}
-where it is compared to the tension when the load is applied on the motor instead of the filaments.
+where it is compared to the tension in the setups with only one actin filament.
 
 For small loads, ratchet forces balance the load applied on both filaments, thus the tension is proportional to twice the load 
 \[
@@ -729,7 +744,11 @@ Consequently, the mean ratchet force decreases, cf. figure~\ref{fig:ratchet_forc
 as was shown in the figure~\ref{fig:tug_F}.
 This behavior underlines the main difference between the ``tug of war'' setup and the ``load on the motor'' setup, where the load is applied directly to the motor. 
 As the ratchet force vanishes for large load, a residual tension from the load remains.
-However, in the ``tug of war'' setup, this residual tension is not transmitted further to the motor due to the vanishing ratchet interaction.  
+However, in the ``tug of war'' setup, this residual tension is not transmitted further to the motor due to the vanishing ratchet interaction.
+In the setup ``Load on the polymer'', the tension in the motor does not build up as fast with increasing load because the motor experiences a ratchet force only from one actin filament.
+The initial tension there is less then half of the tension in the setup with two loaded filaments.
+This suggests that the ratchet force is better transmitted to the motor in the ``tug of war'' setup.
+
 
 Lastly, the variance of the motor velocity, cf. figure~\ref{fig:tug_F_motor}, seems to behave similarly to the tension on the motor in the figure~\ref{fig:tug_F}. 
 \begin{figure}[t]
