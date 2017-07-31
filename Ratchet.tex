@@ -960,12 +960,13 @@ Consequently the excess of the chemical cycle~\eqref{eq:chemical_excess} changes
 \right\rangle ,
 \end{multline*} 
 which can be again interpreted in terms of the relative velocity $v$ and the tension on the motor $\tau_\text{M}$, cf.~\eqref{},  
-\[
+\begin{equation}
 \left\langle 
 {\mathcal Q}_\text{in}^\text{chem} + {\mathcal Q}_\text{out}^\text{chem} 
 \right\rangle 
 = \left\langle \int \rmd t \; v \, \tau_\text{M} \right\rangle .
-\]
+\label{eq:chemical_excess_poly}
+\end{equation}
 
 \subsubsection{Tug of war}
 In the second model, see paragraph~\ref{sec:tug_of_war} and figure~\ref{fig:tug_F_illustration},
@@ -1429,16 +1430,40 @@ For a four headed motor, the distributions of the heads at zero load are not exa
 This is due to the fixed distance between each head, which does not correspond to the period of the ratchet. 
 Therefore the local minimum of $\eta$ lies not exactly at, but close to, $F_\text{load} =0$, see figure ~\ref{fig:chem}.
 
-\subsubsection{Tug of war}
-%TODO
+\subsubsection{Load on the polymer}
+As was already discussed, the situation with the load on the polymer is almost identical to the one with the load on the motor.
+The main difference is in the notion what we perceive as the motor and what we perceive as the polymer.
+Thus, it is not surprising that the chemical efficiency \eqref{eq:eta} as a function of the load $F_\text{load}$ 
+resembles the one with the load on the motor, see figure~\ref{fig:load_efficiency_setups}. 
 \begin{figure}[t]
 \centering
 \includegraphics[width=.45\textwidth,height=!]{F_eta_setup.pdf}
 \caption{\label{fig:load_efficiency_setups}
-Comparison of the chemical efficiency~\eqref{eq:eta} as a function of the load $F_\text{load}$ for the ``load on the motor'' and the ``tug of war'' setups.
-We observe that the efficiencies are rather comparable.  
+Comparison of the chemical efficiency~\eqref{eq:eta} as a function of the load $F_\text{load}$ for the ``load on the motor'', ``load on the polymer'' and the ``tug of war'' setups.
+We observe that these efficiency profiles differ in the width of the distribution, while it's general shape remains the same.   
 }
 \end{figure}
+The main difference between the curve for the ``load on the motor'' and ``load on the polymer'' setup is the width of the distribution. 
+This can be understood from equations~\eqref{eq:chemical_excess} and~\eqref{eq:chemical_excess_poly}, 
+where we see that the excess of the chemical energy entering the system is proportional to the relative velocity.
+In the figure~\ref{fig:F_v_setups} we observe a different asymptotic behavior of the relative velocity by factor $\gamma_\text{M} / \gamma_\text{A}$,
+hence we expect that the same factor applies in the steady state for the rate of the excess chemical heat production. 
+This hypothesis is further confirmed in figure~\ref{fig:load_efficiency_setups_rescaled},
+where we plot the chemical efficiency $\eta$ with respect to re-scaled load. 
+\begin{figure}[t]
+\centering
+\includegraphics[width=.45\textwidth,height=!]{F_eta_setup_rescaled.pdf}
+\caption{\label{fig:load_efficiency_setups_rescaled}
+Comparison of the chemical efficiency~\eqref{eq:eta} as a function of the re-scaled load $F^*$ for the ``load on the motor'', ``load on the polymer'' and the ``tug of war'' setups.
+For the ``load on the motor'' setup the re-scaled load is $F^* = F_\text{load} / \gamma_\text{M}$, 
+while for all other setups the re-scaled load is defined as $F^* = F_\text{load} / \gamma_\text{A}$.
+We observe that these efficiency profiles for ``load on the motor'' and ``load on the polymer'' collapse on each other.    
+}
+\end{figure}
+
+
+\subsubsection{Tug of war}
+%TODO
 
 \subsubsection{Elastic environment}
 In the case of elastic environment we observe, see figure~\ref{fig:stiffness_efficiency}, that the chemical efficiency~\eqref{eq:eta} is practically independent of the stiffness of the environment, $k_\text{sp}$. 
