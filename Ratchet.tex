@@ -234,13 +234,27 @@ Table of all parameter values and a reference to their source.
 
 \subsection{Other setups}
 \label{sec:other_setups}
-While the previous setup is the most studied \cite{reimann2002brownian,astumian1994fluctuation,finer1994single,julicher1997modeling,kishino1988force,peskin1995correlation,saito1994movement},
+To investigate whether some aspects of the motor are more general, we will also study its behavior in other setups.
+While the basic setup, shwon in figure \ref{fig:ratchet setup}, is the most studied \cite{reimann2002brownian,astumian1994fluctuation,finer1994single,julicher1997modeling,kishino1988force,peskin1995correlation,saito1994movement},
 it's aim is to characterize the transport induced by molecular motors.
-However, recent experiments show that myosin II role is mainly for cross-linking the cytoskeleton and consequently producing an active tension inside the network \cite{ma2012nonmuscle}.
-Here we present two natural extensions of the previous setup suitable for investigation of the behavior of the molecular motor inside of the network.
+However, recent experiments show that myosin II role is mainly to cross-linking the cytoskeleton and consequently producing an active tension inside the network \cite{ma2012nonmuscle}.
+Here, we present one alternative to the basic setup and two natural extensions suitable for investigation of the behavior of the molecular motor inside of a larger network.
 
 \subsubsection{Load on the polymer}
-%TODO
+We will investigate a very similar setup to the basic one, but with the external load applied to the polymer instead of the molecular motor. 
+This will not cause a residual tension on the motor for large loads, which will be relevant for our discussion later on. 
+The setup is depicted in figure \ref{fig:load_on_polymer setup}.
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.45\textwidth,height=!]{load_on_polymer_illustration}
+\caption{
+\label{fig:load_on_polymer setup}
+In this illustration, a variation of the basic setup is shown.  
+Now, the load $F_\text{load}$ is applied on actin polymer instead of the myosin motor. Also the orientation of the ratchet along the polymer is reversed.
+} 
+\end{figure}
+
+The equations of motion are very similar to those of the basic setup, i.e. \eqref{eq:eom_M} and \eqref{eq:eom_A}.
 \begin{align}
 &\begin{multlined}[b][.42\textwidth]
 \rmd x_\text{M} = 
@@ -257,11 +271,15 @@ Here we present two natural extensions of the previous setup suitable for invest
 \end{multlined}
 \label{eq:eom_A_lp}
 \end{align}
-
+Note that the argument of the ratchet potential is reversed with respect to the basic setup.
+This corresponds to a ratchet that is oriented in the opposite direction.
+The load $F_\text{load}$ is now applied to the actin filament instead of the myosin motor.
+The equations of motion of this setup can easily be mapped into those of the basic setup by interchanging the label of myosin and actin, 
+e.g. $\gamma_\text{M}\leftrightarrow\gamma_\text{A}$, and reversing the direction of the load.
 \subsubsection{Tug of war}
 \label{sec:load_on_fil}
-The first extension is that the motor is interacting with two, rather then one, anti-parallel actin filaments. 
-Consequently, the external load is now applied directly at filaments instead directly at the motor.
+The first setup to investigate the myosin motor in a more natural setup, is that the motor is interacting with two, rather then one, anti-parallel actin filaments. 
+The external load is again applied directly to filaments instead of the motor.
 This setup is shown in figure \ref{fig:tug_F_illustration}. 
 \begin{figure}[t]
 \centering

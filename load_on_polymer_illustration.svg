@@ -14,7 +14,7 @@
    id="svg3061"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="ratchet_illustration.svg"
+   sodipodi:docname="load_on_polymer_illustration.svg"
    inkscape:export-filename="/home/pieter/Documents/Ratchet/load_on_polymer_illustration.png"
    inkscape:export-xdpi="599.96198"
    inkscape:export-ydpi="599.96198">
@@ -308,7 +308,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -339,25 +339,7 @@
            width="180.38835"
            id="rect10571" /></flowRegion><flowPara
          style="font-size:22px"
-         id="flowPara10573">Motor backbone</flowPara></flowRoot>    <path
-       sodipodi:nodetypes="cc"
-       inkscape:connector-curvature="0"
-       id="path6096"
-       d="m 428.12551,201.15952 52.32589,0"
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#Arrow2Lstart);marker-end:url(#Arrow2Lend)" />
-    <text
-       sodipodi:linespacing="125%"
-       id="text6498"
-       y="227.66563"
-       x="446.10825"
-       style="font-size:40px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:TeX Gyre Adventor;-inkscape-font-specification:TeX Gyre Adventor Italic"
-       xml:space="preserve"><tspan
-         style="font-size:22px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:TeX Gyre Bonum;-inkscape-font-specification:TeX Gyre Bonum Italic"
-         y="227.66563"
-         x="446.10825"
-         id="tspan6500"
-         sodipodi:role="line">d</tspan></text>
-    <flowRoot
+         id="flowPara10573">Motor backbone</flowPara></flowRoot>    <flowRoot
        transform="translate(360.43093,89.218989)"
        style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:TeX Gyre Pagella;-inkscape-font-specification:TeX Gyre Pagella"
        id="flowRoot10567-4"
