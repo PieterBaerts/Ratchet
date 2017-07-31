@@ -44,9 +44,9 @@ unset xlabel
 unset ylabel 
 
 plot [-50:50][-50:50] \
-      "Data/F_q_k=8.dat" u (-$1/0.66):2:3 w linespoints ls 8 lw 1.25 dashtype 1 title "Load on motor" \
-    , "Data/F_q_fil.dat" u ($1/0.97):(-$2):3 w linespoints ls 6 lw 1.25 dashtype 2 title "Load on polymer" \
-    , "Data/tug_F.dat" u (-$1/0.97):2:3 w linespoints ls 3 lw 1.25 dashtype 4 title "Tug of war" \
+      "Data/F_q_k=8.dat" u (-$1/0.66):2:3 w points ls 8 lw 1.25 pointsize 0.85 dashtype 1 title "Load on motor" \
+    , "Data/F_q_fil.dat" u ($1/0.97):(-$2):3 w points ls 6 lw 1.25 pointsize 0.85 dashtype 2 title "Load on polymer" \
+    , "Data/tug_F.dat" u (-$1/0.97):2:3 w points ls 3 lw 1.25 pointsize 0.85 dashtype 4 title "Tug of war" \
 
 
 unset multiplot
