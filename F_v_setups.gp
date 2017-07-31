@@ -40,6 +40,7 @@ set xtic 0.002
 unset xlabel
 unset ylabel 
 
+plot [-150:150][] \
     "Data/F_q_k=8.dat" u (-$1/0.66):2:3 w errorlines ls 1 lw 1.25 dashtype 1 title "Load on motor" \
     , "Data/F_q_fil.dat" u ($1/0.97):(-$2):3 w errorlines ls 3 lw 1.25 dashtype 2 title "Load on polymer" \
     , "Data/tug_F.dat" u (-$1/0.97):2:3 w errorlines ls 6 lw 1.25 dashtype 4 title "Tug of war" \
