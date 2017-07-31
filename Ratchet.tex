@@ -241,6 +241,7 @@ However, recent experiments show that myosin II role is mainly to cross-linking 
 Here, we present one alternative to the basic setup and two natural extensions suitable for investigation of the behavior of the molecular motor inside of a larger network.
 
 \subsubsection{Load on the polymer}
+\label{sec:load_on_polymer}
 We will investigate a very similar setup to the basic one, but with the external load applied to the polymer instead of the molecular motor. 
 This will not cause a residual tension on the motor for large loads, which will be relevant for our discussion later on. 
 The setup is depicted in figure \ref{fig:load_on_polymer setup}.
@@ -265,7 +266,7 @@ The equations of motion are very similar to those of the basic setup, i.e. \eqre
 \label{eq:eom_M_lp} \\
 &\begin{multlined}[b][.42\textwidth]
 \rmd x_\text{A} = 
-- \frac{1}{\gamma_\text{A}} \left[ F_\text{load} + \nabla_\text{A} V_t(x_\text{A}(t) - x_\text{M}(t)) \right] \; \rmd t 
+\frac{1}{\gamma_\text{A}} \left[ F_\text{load} - \nabla_\text{A} V_t(x_\text{A}(t) - x_\text{M}(t)) \right] \; \rmd t 
 \\
 + \sqrt{ \frac{2 k_B T}{\gamma_\text{A}} } \; \rmd W_\text{A} ,
 \end{multlined}
@@ -275,9 +276,9 @@ Note that the argument of the ratchet potential is reversed with respect to the 
 This corresponds to a ratchet that is oriented in the opposite direction.
 The load $F_\text{load}$ is now applied to the actin filament instead of the myosin motor.
 The equations of motion of this setup can easily be mapped into those of the basic setup by interchanging the label of myosin and actin, 
-e.g. $\gamma_\text{M}\leftrightarrow\gamma_\text{A}$, and reversing the direction of the load.
+i.e. $\gamma_\text{M}\leftrightarrow\gamma_\text{A}$ and $x_\text{M}\leftrightarrow x_\text{A}$.
 \subsubsection{Tug of war}
-\label{sec:load_on_fil}
+\label{sec:tug_of_war}
 The first setup to investigate the myosin motor in a more natural setup, is that the motor is interacting with two, rather then one, anti-parallel actin filaments. 
 The external load is again applied directly to filaments instead of the motor.
 This setup is shown in figure \ref{fig:tug_F_illustration}. 
@@ -466,6 +467,29 @@ Motors with only 1 head are very susceptible to external loads and the force fro
 For 4 or 16 heads we see almost identical force-velocity relations. 
 In section \ref{sec:efficiency}, however, we will see that these motors behave very differently regarding their energetics. The curve for 2 heads lies in between.
 
+Also, a comparison can be made between the various setups. In figure \ref{fig:F_v_setups} the force-velocity relation is shown for setups \ref{sec:ratchet}, \ref{sec:load_on_polymer} and \ref{sec:tug_of_war}.
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.45\textwidth,height=!]{F_v_setups}
+\caption{
+\label{fig:F_v_setups} 
+Mean velocity $\langle v \rangle$ of the motor with respect to the filament, as a function of the load force $F_\text{load}$ for different setups.
+For large loads, the curves approach either  $F_\text{load} / \gamma_\text{M}$ or $F_\text{load} / \gamma_\text{A}$, depending on whether the load is applied to the motor or to the polymer. 
+Inset: Force-velocity plotted with rescaled x-axes,
+$F_\text{load}\rightarrow F_\text{load} / \gamma_\text{M}$ for the setup with the loaded motor and $F_\text{load}\rightarrow F_\text{load} / \gamma_\text{A}$ for the loaded filaments.
+}
+\end{figure}
+Note that for the setups where the actin filaments are loaded, 
+the velocity of filaments with respect to the motor is measured.
+For small load, the mean velocity remains very low in all setups.
+For higher loads a clear distinction becomes apparent.
+When the load is applied to the motor the relative velocity goes to $F_\text{load} / \gamma_\text{M}$.
+For the setups where the load is applied to the filaments, the relative velocity goes to $F_\text{load} / \gamma_\text{A}$.
+In the inset of figure \ref{fig:F_v_setups}, the force-velocity relations are plotted on rescaled x-axes for the different setups. "Load on the motor" is plotted with respect to $F_\text{load} / \gamma_\text{M}$ instead of $F_\text{load}$,
+while the other setups are plotted with respect to $F_\text{load} / \gamma_\text{A}$.
+The curve for the simplest setups, with one motor and one polymer, collapse on this plot, 
+confirming the fact that they can be mapped onto each other by switching friction coefficients $\gamma_\text{M}\leftrightarrow\gamma_\text{A}$ and reversing the relative velocity.
+
 \subsection{Stall force}
 From figure~\ref{fig:F_v} it is apparent, that when applying a force against the preferred direction of the motor, 
 the motor first slows down until it stops before it reverses its direction. 
@@ -481,7 +505,7 @@ Figure~\ref{fig:F_v_zoom} shows the inset of figure~\ref{fig:F_v} for small nega
 \label{fig:F_v_zoom} 
 Mean velocity of the motor $\langle v \rangle$ with a small load force $F_\text{load}$ applied in the direction opposing the movement for different binding rates $k_\text{bind}$.
 Intersections with the $x$ axis correspond to stall forces $F_\text{stall}$ for given detach rates. 
-We can see that with increasing $k_\text{bind}/k_\text{unbind}$ ratio the slope increases as well as the full curve shifts in the low force region, causing a persistent decrease in stall force.  
+We can see that with increasing $k_\text{bind}/k_\text{unbind}$ ratio the slope increases as well as the full curve shifts in the low force region, causing a persistent decrease in stall force. 
 }
 \end{figure}
 The intersections with the horizontal axis correspond to stall forces,  
@@ -570,7 +594,8 @@ The discrepancy in this relation, up to a pre-factor, equals the mean force exer
 \frac{\gamma_\text{A}\gamma_\text{M}}{\gamma_\text{A} + \gamma_\text{M} } \left(\langle v \rangle - \frac{F_\text{load}}{\gamma_\text{M}}\right) = \langle F_\text{r} \rangle.
 \label{eq:mean_ratchet_force}
 \end{equation}
-Note that this is the same as the distance between the force-velocity curves and the ratchet-free curve in figure~\ref{fig:F_v}.
+Note that this is the same as the distance between the force-velocity curves and the ratchet-free curve in figure~\ref{fig:F_v}. Also note that, using the rescaled parameters \eqref{eq:rescale_parameters} introduce in the appendix, 
+we can write the mean ratchet force as $\langle F_\text{r} \rangle = \gamma^* \langle v \rangle - F^*$.
 In figure~\ref{fig:ratchet_force} we observe, 
 that the response of the system for small loads is linear and independent of the rates and hence of the ATP concentration. 
 \begin{figure}[t]
@@ -655,7 +680,7 @@ This is further supported by calculations of the mean velocity for a motor with 
 
 \subsubsection{Tug of war}
 A similar analysis can be made for alternative setups presented in the section~\ref{sec:other_setups}. 
-In the case of the ``tug of war'' setup, cf.~\ref{sec:load_on_fil}, the motor is in the middle of two actin polymers aligned anti-parallel. 
+In the case of the ``tug of war'' setup, cf.~\ref{sec:tug_of_war}, the motor is in the middle of two actin polymers aligned anti-parallel. 
 The mean velocities in general for all elements of the system in this setup are given by
 \begin{align*}
 \langle v_{\text{A}_1} \rangle &= \frac{1}{\gamma_\text{A} } \left( F_\text{load} - \langle F_{\text{r}_1} \rangle \right) , \\
@@ -685,7 +710,7 @@ The tension in the motor is shown in figure \ref{fig:tug_F},
 \includegraphics[width=0.45\textwidth,height=!]{tug_F}
 \caption{
 \label{fig:tug_F}
-Tension in the motor, comparison between setup \ref{sec:load_on_fil} with two loaded filaments and the one with the load on the motor. 
+Tension in the motor, comparison between setup \ref{sec:tug_of_war} with two loaded filaments and the one with the load on the motor. 
 The tension for small loads follows the same trend, whereas for large loads the tension on the motor differs. 
 This is because, only in the case when the load is applied directly on the motor the motor remains under the tension even for large loads. %TODO fix y label
 }
@@ -943,7 +968,7 @@ which can be again interpreted in terms of the relative velocity $v$ and the ten
 \]
 
 \subsubsection{Tug of war}
-In the second model, see paragraph~\ref{sec:load_on_fil} and figure~\ref{fig:tug_F_illustration},
+In the second model, see paragraph~\ref{sec:tug_of_war} and figure~\ref{fig:tug_F_illustration},
 the motor is placed between two polymers on which the load is applied,
 hence the energy balance~\eqref{eq:energy_balance} is modified to  
 \begin{multline}
@@ -1510,6 +1535,7 @@ where $V_\text{r}$ is the ratchet potential \eqref{eq:ratchet_potential} and
 \begin{align*} 
 \gamma^* &= \frac{ \gamma_\text{M} \gamma_\text{A} }{ \gamma_\text{M} + \gamma_\text{A} } , & 
 F^* &= \frac{ \gamma_\text{A} }{ \gamma_\text{M} + \gamma_\text{A} } F_\text{load} . 
+\label{eq:rescale_parameters}
 \end{align*} 
 
 The first step is expressing the equation \eqref{eq:FP_ss} in terms of $\epsilon = ( F^* )^{-1}$ instead of load force $f_\text{load}$,
