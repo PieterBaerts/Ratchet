@@ -666,21 +666,24 @@ This is in good agreement with the figure~\ref{fig:F_v}.
 One can interpret the nonlinear force-velocity relation for the myosin~\eqref{eq:pre_velocity_M} as balance between the load, drag force and the force caused by the ratchet interaction, 
 that intrinsically depends on the load. 
 Without the ratchet interaction, the motion of the myosin would satisfy $ \gamma_\text{M}\langle v\rangle = F_\text{load}$. 
-The discrepancy in this relation, up to a pre-factor, equals the mean force exerted via the flashing ratchet $\langle F_\text{r}\rangle$ 
+The discrepancy in this relation, up to a pre-factor, equals the mean force exerted via the flashing ratchet $\langle F_\text{r}\rangle$, 
+cf. equation~\eqref{eq:mean_velocity_Fr_Fl},
 \begin{equation}
-\frac{\gamma_\text{A}\gamma_\text{M}}{\gamma_\text{A} + \gamma_\text{M} } \left(\langle v \rangle - \frac{F_\text{load}}{\gamma_\text{M}}\right) = \langle F_\text{r} \rangle.
+\frac{\gamma_\text{A}\gamma_\text{M}}{\gamma_\text{A} + \gamma_\text{M} } \left(\langle v \rangle + \frac{F_\text{load}}{\gamma_\text{M}}\right) = \langle F_\text{r} \rangle.
 \label{eq:mean_ratchet_force}
 \end{equation}
-Note that this is the same as the distance between the force-velocity curves and the ratchet-free curve in figure~\ref{fig:F_v}. Also note that, using the rescaled parameters \eqref{eq:rescale_parameters} introduce in the appendix, 
+Note that this is the same as the distance between the force-velocity curves and the ratchet-free curve in figure~\ref{fig:F_v}. 
+Also note that, using the re-scaled parameters \eqref{eq:rescale_parameters} introduce in the appendix, 
 we can write the mean ratchet force as $\langle F_\text{r} \rangle = \gamma^* \langle v \rangle - F^*$.
-In figure~\ref{fig:ratchet_force} we observe, 
+In figure~\ref{fig:ratchet_force} we show, 
 that the response of the system for small loads is linear and independent of the rates and hence of the ATP concentration. 
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{ratchet_force}
 \caption{
 \label{fig:ratchet_force}
-Mean force from the ratchet interaction depending on the load force on the motor for several values of $k_\text{bind}$. For small loads, the ratchet force completely counter to load, hence the linear regime around $F_\text{load}=0$ goes like
+Mean force from the ratchet interaction depending on the load force on the motor for several values of $k_\text{bind}$. 
+For small loads, the ratchet force completely counter to load, hence the linear regime around $F_\text{load}=0$ goes like
 }
 \end{figure}
 In this regime the motor hardly moves along the filament and the load is almost completely countered by the mean ratchet force, i.e. it acts as a friction force.
@@ -699,7 +702,7 @@ which is depicted in figure~\ref{fig:ratchet_force_decay}.
 The ratchet force, depending on the load, is shown in a logarithmic plot. 
 We can see that the ratchet force asymptotically decays according to the power law $F_\text{eff} \propto F_\text{load}^{-\alpha}$, 
 with exponent determined from the fit to be $\alpha = 0.9990 \pm 0.0047$, 
-which is in good agreement with the theoretical prediction \eqref{eq:ratchet_vs_load}.
+which is in good agreement with the theoretical prediction~\eqref{eq:ratchet_vs_load}.
 }
 \end{figure}
 
