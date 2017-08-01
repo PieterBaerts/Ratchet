@@ -27,8 +27,8 @@ set ytics 0.01
 
 plot [0:8][0.065:0.105] \
       "Data/pos_distr_F=250_attached.dat" u (shift($1+6)):($2*10) title "Empirical F_{load}= -250 pN" w points ls 3 lw 1.25 dashtype 1 \
-    , 2./3.*rho(x,250) title "Theory F_{load}= 250 pN" ls 4 lw 1.25 dashtype 1 \
+    , 2./3.*rho(x,250) title "Theory F_{load}= -250 pN" ls 4 lw 1.25 dashtype 1 \
     , "Data/pos_distr_F=-250_attached.dat" u (shift($1+6)):($2*10) title "Empirical F_{load}= 250 pN" w points ls 8 lw 1.25 dashtype 2 \
-    , 2./3.*rho(x,-250) title "Theory F_{load}= -250 pN" ls 7 lw 1.25 dashtype 2 \
+    , 2./3.*rho(x,-250) title "Theory F_{load}= 250 pN" ls 7 lw 1.25 dashtype 2 \
 
 
