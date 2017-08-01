@@ -105,8 +105,8 @@ An alternative way of interpreting the chemical input by measuring the differenc
 \section{The Ratchet model}
 \label{sec:ratchet}
 In order to investigate the movement of myosin along the actin filament and the forces it generates, we consider the following one dimensional model.
-Firstly, we assume that the rigidity of the actin polymer and myosin backbone is high enough that their elongations can be neglected.
-Secondly, we assume that all myosin heads are attached directly to the myosin backbone at fixed equidistant positions, see figure~\ref{fig:ratchet setup}.
+At first, we assume that the rigidity of the actin polymer and myosin backbone is high enough that their elongations can be neglected.
+Second, we assume that all myosin heads are attached directly to the myosin backbone at fixed equidistant positions, see figure~\ref{fig:ratchet setup}.
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{ratchet_illustration}
@@ -125,7 +125,7 @@ The dynamics of positions is described by coupled overdamped Langevin equations
 \begin{align}
 &\begin{multlined}[b]
 \rmd x_\text{M} = 
-\frac{1}{\gamma_\text{M}} \left[ - \nabla_\text{M} V_t(x_\text{M}(t) - x_\text{A}(t)) + F_\text{load} \right] \; \rmd t 
+- \frac{1}{\gamma_\text{M}} \left[ \nabla_\text{M} V_t(x_\text{M}(t) - x_\text{A}(t)) + F_\text{load} \right] \; \rmd t 
 \\ 
 + \sqrt{ \frac{2 k_B T}{\gamma_\text{M}} } \; \rmd W_\text{M} ,
 \end{multlined}
@@ -177,16 +177,18 @@ with total height $V$,
 period $\ell$ 
 and skewness parameter $a \in [0,1]$. 
 
-The dynamics of internal state of heads is governed by continuous time Markov process. 
-Here, the internal state represents whether ATP is \emph{bound} or \emph{unbound} to the myosin head. This specifies the electrostatic properties of the head which will determine the amplitude of the interaction potential with the actin filament.
+The dynamics of the internal state of heads is governed by continuous time Markov process. 
+Contrary to other popular choices \cite{}, here the internal state represents whether ATP (or one of its products) is \emph{bound} or \emph{unbound} to the myosin head. %TODO
+This specifies the electrostatic properties of the head which will determine the amplitude of the interaction potential with the actin filament.
 No effective dependencies on position or external forces are imposed on the dynamics of the chemical cycle. 
-Work done by external forces is dissipated through the diffusion processes of the motor and polymer, see section \ref{sec:energie}.
+Work done by external forces is dissipated through the diffusion processes of the motor and polymer, see section~\ref{sec:energie}.
 This is a simplification over the full chemical network governing the internal states of myosin \cite{Bierbaum2011,Bierbaum2013},  
 which focuses only on the long lasting states that significantly change the myosin's head physical properties.
-Namely, we look at states where ADP is bounded and where there is no molecule bound to myosin head as escape rates from those states are small with respect to other transitions \cite{Bierbaum2011},%TODO 
+Namely, we look at states where ADP is bounded and where there is no molecule bound to myosin head as escape rates from those states are small with respect to other transitions \cite{Bierbaum2011}, %TODO 
 for which the estimated free energy landscapes \cite{Nie2014,nie2014conformational} very well reflect the changes in  conformation and electric charge of the myosin head \cite{barterls1993myosin}.
 In order to obtain the transition rates between these to two states, we start from the three state model introduced by Albert et al. \cite{albert2014stochastic},
 which we further simplify by unifying the state corresponding to the hydrolized ATP (i.e. ADP+P) and ADP with P released state as this process occurs on much shorter time-scale than other transitions.
+
 Lastly, as the internal state reflects the chemical state of the head rather then the act of binding to actin itself,
 we assume that external load have little influence on the associated rates but rather opposes the underlying free energy landscape. 
 These considerations are reflected in the assumption the rates $k_\text{bind}$, $k_\text{unbind}$ independent of the load, 
@@ -199,12 +201,12 @@ The dynamics is then represented by dichotomous continuous times Markov process 
 \end{equation}
 where $c\in\left[0,1\right]$ determines the amplitude of the ratchet potential when the motor is loosely bound to the filament, 
 which we use as an approximation for changes in the free energy landscape \cite{Nie2014,nie2014conformational}.
-While both the diffusion and the jump process are in equilibrium, the mechanism of the flashing ratchet brings the combined system out of equilibrium, leading to the movement of the motor in a preferred direction, given by the asymmetry of the filament. 
+While both the diffusion and the jump process are in equilibrium, the mechanism of the flashing ratchet brings the combined system out of equilibrium, leading to the movement of the motor in a preferred direction, given by the asymmetry of the filament \cite{}. %TODO
 
 Figure~\ref{fig:ratchet setup} depicts the whole setup of the system
 and figure~\ref{fig:energy} depicts the dynamics involved in flashing ratchet. 
 Table \ref{tab:parameters} lists the values of the parameters used in this model. 
-Some of them were taken from the literature while others were fitted to give a realistic mean velocities and stall force for the myosin II. 
+Some of them were taken from the literature while others were fitted to give a realistic mean velocities and stall force for the myosin~II. 
 The friction coefficients were calculated with Stokes' law \cite{Broersma1960,Broersma1981}, using the known dimensions of the molecules \cite{yogurtcu2012mechanochemical,pollard1982structure} and the viscosity of the extracellular medium \cite{li2004diffusion}.
 \begin{table}[t]
 \centering
@@ -234,17 +236,19 @@ Table of all parameter values and a reference to their source.
 
 \subsection{Other setups}
 \label{sec:other_setups}
-To investigate whether some aspects of the motor are more general, we will also study its behavior in other setups.
-While the basic setup, shwon in figure \ref{fig:ratchet setup}, is the most studied \cite{reimann2002brownian,astumian1994fluctuation,finer1994single,julicher1997modeling,kishino1988force,peskin1995correlation,saito1994movement},
+While the aforementioned setup, shown in figure~\ref{fig:ratchet setup}, is the most studied \cite{reimann2002brownian,astumian1994fluctuation,finer1994single,julicher1997modeling,kishino1988force,peskin1995correlation,saito1994movement},
 it's aim is to characterize the transport induced by molecular motors.
-However, recent experiments show that myosin II role is mainly to cross-linking the cytoskeleton and consequently producing an active tension inside the network \cite{ma2012nonmuscle}.
-Here, we present one alternative to the basic setup and two natural extensions suitable for investigation of the behavior of the molecular motor inside of a larger network.
+However, recent experiments show that myosin~II role is mainly to cross-linking the cytoskeleton 
+and consequently producing an active tension inside the network \cite{ma2012nonmuscle}.
+Here, we present couple of natural extensions of this setup, which we will further on call ``load on the motor, suitable for capturing the behavior of the motor inside these networks.
 
 \subsubsection{Load on the polymer}
 \label{sec:load_on_polymer}
-We will investigate a very similar setup to the basic one, but with the external load applied to the polymer instead of the molecular motor. 
-This will not cause a residual tension on the motor for large loads, which will be relevant for our discussion later on. 
-The setup is depicted in figure \ref{fig:load_on_polymer setup}.
+The first setup which we introduce is very similar to the ``load on the motor'', 
+but with the external load applied to the polymer instead of the molecular motor. 
+This correspond to a situation when the motor is attached to the polymer which itself is under the tension due to the action of other motors and complex interactions.
+As we will show later, in this setup there will be no more residual tension on the motor for large loads, which will be relevant for our discussion of the chemical efficiency. 
+The basic scheme of this setup is depicted in the figure~\ref{fig:load_on_polymer setup}.
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{load_on_polymer_illustration}
@@ -255,33 +259,37 @@ Now, the load $F_\text{load}$ is applied on actin polymer instead of the myosin 
 } 
 \end{figure}
 
-The equations of motion are very similar to those of the basic setup, i.e. \eqref{eq:eom_M} and \eqref{eq:eom_A}.
+As was advertised, the equations of motion are very similar to those of the ``load on the motor'', i.e. \eqref{eq:eom_M} and \eqref{eq:eom_A}.
 \begin{align}
 &\begin{multlined}[b][.42\textwidth]
 \rmd x_\text{M} = 
-- \frac{1}{\gamma_\text{M}} \nabla_\text{M} V_t(x_\text{A}(t) - x_\text{M}(t)) \; \rmd t 
+- \frac{1}{\gamma_\text{M}} \nabla_\text{M} V_t(x_\text{M}(t) - x_\text{A}(t)) \; \rmd t 
 \\ 
 + \sqrt{ \frac{2 k_B T}{\gamma_\text{M}} } \; \rmd W_\text{M} ,
 \end{multlined}
 \label{eq:eom_M_lp} \\
 &\begin{multlined}[b][.42\textwidth]
 \rmd x_\text{A} = 
-\frac{1}{\gamma_\text{A}} \left[ F_\text{load} - \nabla_\text{A} V_t(x_\text{A}(t) - x_\text{M}(t)) \right] \; \rmd t 
+\frac{1}{\gamma_\text{A}} \left[ F_\text{load} - \nabla_\text{A} V_t(x_\text{M}(t) - x_\text{A}(t)) \right] \; \rmd t 
 \\
-+ \sqrt{ \frac{2 k_B T}{\gamma_\text{A}} } \; \rmd W_\text{A} ,
++ \sqrt{ \frac{2 k_B T}{\gamma_\text{A}} } \; \rmd W_\text{A} .
 \end{multlined}
 \label{eq:eom_A_lp}
 \end{align}
-Note that the argument of the ratchet potential is reversed with respect to the basic setup.
-This corresponds to a ratchet that is oriented in the opposite direction.
-The load $F_\text{load}$ is now applied to the actin filament instead of the myosin motor.
-The equations of motion of this setup can easily be mapped into those of the basic setup by interchanging the label of myosin and actin, 
-i.e. $\gamma_\text{M}\leftrightarrow\gamma_\text{A}$ and $x_\text{M}\leftrightarrow x_\text{A}$.
+Note that the argument of the ratchet potential is kept the same, 
+while the load $F_\text{load}$ is applied on the polymer and its direction is flipped with respect to the ``load on the motor'' setup. 
+This ensures that the mean relative velocity of the motor with respect to the polymer are directly comparable in both setups. 
+Another consequence is, 
+that the equations of motion of this particular setup can easily be mapped into the ``load on the motor'' setup by interchanging the label of myosin and actin 
+along with the flipping of the axis, 
+i.e. $\gamma_\text{M}\leftrightarrow\gamma_\text{A}$ and $x_\text{M}\leftrightarrow - x_\text{A}$.
+
+
 \subsubsection{Tug of war}
 \label{sec:tug_of_war}
-The first setup to investigate the myosin motor in a more natural setup, is that the motor is interacting with two, rather then one, anti-parallel actin filaments. 
-The external load is again applied directly to filaments instead of the motor.
-This setup is shown in figure \ref{fig:tug_F_illustration}. 
+Another setup, which we investigate, is a natural extension of the previous setup, but now the myosin motor is interacting with two, rather then one, 
+anti-parallel actin filaments. 
+The external load is again applied directly to filaments instead of the motor, as demonstrated in the figure~\ref{fig:tug_F_illustration}. 
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{tug_F_illustration}
@@ -290,29 +298,32 @@ This setup is shown in figure \ref{fig:tug_F_illustration}.
 Setup of a motor interacting with two actin filaments that experience equal but opposite loads.
 }
 \end{figure}
+This correspond to a situation when the motor is actively cross-linking two polymers, which are subjected to the tension caused by other motors and other external influences.  
 
-This means that we have now two filaments, denoted by subscript ${\text{A}_1}$ and ${\text{A}_2}$ respectively,
-subjected to free diffusion and external load $F_\text{load}$
-which are interacting with the myosin II motor via the ratchet potential~\eqref{eq:ratchet_interaction}. 
+In another words we now have two filaments, denoted by subscript ${\text{A}_1}$ and ${\text{A}_2}$ respectively,
+subjected to free diffusion and external load $F_\text{load}$,
+which are interacting with the myosin~II motor via the ratchet potential~\eqref{eq:ratchet_interaction}.
 This lead to equations of motion 
 \begin{equation}
 \begin{gathered}
 \begin{multlined}[b][.45\textwidth]
 \rmd x_\text{M} = 
-- \frac{1}{\gamma_\text{M}} \bigl[ \nabla_\text{M} V_t(x_\text{M}(t) - x_{\text{A}_1}(t)) 
+- \frac{1}{\gamma_\text{M}} \nabla_\text{M} \bigl[ 
+V_t(x_{\text{A}_1}(t) - x_\text{M}(t)) 
 \\
-+ \nabla_\text{M} V_t(x_{\text{A}_2}(t) - x_\text{M}(t)) \bigr] \; \rmd t 
++ V_t(x_\text{M}(t) - x_{\text{A}_2}(t)) 
+\bigr] \; \rmd t 
 + \sqrt{ \frac{2 k_B T}{\gamma_\text{M}} } \; \rmd W_\text{M} ,
 \end{multlined}\\
 \begin{multlined}[b][.45\textwidth]
 \rmd x_{\text{A}_1} = 
-\frac{1}{\gamma_\text{A}} \left[ - \nabla_{\text{A}_1} V_t(x_\text{M}(t) - x_{\text{A}_1}(t)) + F_\text{load} \right] \; \rmd t 
+- \frac{1}{\gamma_\text{A}} \left[ F_\text{load} + \nabla_{\text{A}_1} V_t(x_{\text{A}_1}(t) - x_\text{M}(t)) \right] \; \rmd t 
 \\
 + \sqrt{ \frac{2 k_B T}{\gamma_\text{A}} } \; \rmd W_{\text{A}_1} ,
 \end{multlined}\\
 \begin{multlined}[b][.45\textwidth]
 \rmd x_{\text{A}_2} = 
-\frac{1}{\gamma_\text{A}} \left[ - \nabla_{\text{A}_1} V_t(x_{\text{A}_2}(t) - x_\text{M}(t)) - F_\text{load} \right] \; \rmd t 
+\frac{1}{\gamma_\text{A}} \left[ F_\text{load} - \nabla_{\text{A}_2} V_t(x_\text{M}(t) - x_{\text{A}_2}(t)) \right] \; \rmd t 
 \\
 + \sqrt{ \frac{2 k_B T}{\gamma_\text{A}} } \; \rmd W_{\text{A}_2} ,
 \end{multlined}
@@ -320,31 +331,35 @@ This lead to equations of motion
 \label{eq:eom_two_actins}
 \end{equation}
 where the anti-alignment of polymers in substitution of $-x$ instead of $x$ for the second polymer in the argument of the ratchet potential~\eqref{eq:ratchet_interaction}.
+Note, that the actin from the ``load on the polymer'' setup correspond to a polymer denoted by $\text{A}_2$ in this setup. 
 
-Note that due to the symmetry of the setup the mean velocity of the myosin is inherently zero,
+Also note, that due to the symmetry of the setup in the steady state the mean velocity of the myosin is inherently zero,
 \begin{multline*}
 \left\langle v_\text{M} \right\rangle 
-= - \frac{1}{\gamma_\text{M}} \bigl[ 
+= \frac{1}{\gamma_\text{M}} \bigl[ 
 \left\langle \nabla_\text{M} V_t(x_\text{M}(t) - x_{\text{A}_1}(t)) \right\rangle
 \\ 
 + \left\langle \nabla_\text{M} V_t(x_{\text{A}_2}(t) - x_\text{M}(t)) \right\rangle 
 \bigr] 
 \\
-= - \frac{\gamma_\text{A}}{\gamma_\text{M}} \left[ 
+= \frac{\gamma_\text{A}}{\gamma_\text{M}} \left[ 
 \left\langle v_{\text{A}_1} \right\rangle 
 + \left\langle v_{\text{A}_2} \right\rangle 
 \right]
 \equiv 0 . 
 \end{multline*}
 
+
 \subsubsection{Elastic environment}
 \label{sec:environment}
 As polymers inside the cytoskeleton are usually thoroughly interconnected rather then freely diffusing \cite{blanchoin2014actin,ennomani2016architecture},
 we can opt for an alternative approach.
-Rather then applying an external load we attach filaments to fixed points by a spring with a constant $k_\text{sp}$, similar to \cite{albert2014stochastic}. 
+Rather then applying an external load we attach filaments to fixed points by a spring with a constant $k_\text{sp}$, 
+similarly to the approach discussed in \cite{albert2014stochastic}. 
 These points represent points of interaction with the rest of the network while the spring constant $k_\text{sp}$ represents the elastic properties of the full network. 
 The myosin motor is again interacting with two filaments that are arranged in an anti-parallel fashion. 
-Hence, similar to the previous case, it will no longer have a preferred direction to move in and consequently its mean velocity will be zero. 
+Hence, similar to the previous case, it will no longer have a preferred direction to move in and 
+it eventually reach a steady state where its mean velocity will be zero. 
 The observable of interest is now the mean force that the motor applies to the filaments, 
 which is measured through the extension of the springs attached to the filaments,
 and which represent the active tension in the network produced by the single myosin molecule. 
@@ -363,29 +378,31 @@ The equations of motion are then just a modification of \eqref{eq:eom_two_actins
 \begin{gathered}
 \begin{multlined}[b][.45\textwidth]
 \rmd x_\text{M} = 
-- \frac{1}{\gamma_\text{M}} \bigl[ \nabla_\text{M} V_t(x_\text{M}(t) - x_{\text{A}_1}(t)) 
+- \frac{1}{\gamma_\text{M}} \nabla_\text{M} \bigl[ 
+V_t(x_{\text{A}_1}(t) - x_\text{M}(t)) 
 \\
-+ \nabla_\text{M} V_t(x_{\text{A}_2}(t) - x_\text{M}(t)) \bigr] \; \rmd t 
++ V_t(x_\text{M}(t) - x_{\text{A}_2}(t)) 
+\bigr] \; \rmd t 
 + \sqrt{ \frac{2 k_B T}{\gamma_\text{M}} } \; \rmd W_\text{M} ,
 \end{multlined}\\
 \begin{multlined}[b][.45\textwidth]
 \rmd x_{\text{A}_1} = 
-\frac{1}{\gamma_\text{A}} \bigl[ - \nabla_{\text{A}_1} V_t(x_\text{M}(t) - x_{\text{A}_1}(t)) 
+- \frac{1}{\gamma_\text{A}} \bigl[ \nabla_{\text{A}_1} V_t( x_{\text{A}_1}(t) - x_\text{M}(t) ) 
 \\
-- k_\text{sp} \left( x_{\text{A}_1}(t) - x_{\text{A}_1}(0) \right) \bigr] \; \rmd t 
++ k_\text{sp} \left( x_{\text{A}_1}(t) - x_{\text{A}_1}(0) \right) \bigr] \; \rmd t 
 + \sqrt{ \frac{2 k_B T}{\gamma_\text{A}} } \; \rmd W_{\text{A}_1} ,
 \end{multlined}\\
 \begin{multlined}[b][.45\textwidth]
 \rmd x_{\text{A}_2} = 
-\frac{1}{\gamma_\text{A}} \bigl[ - \nabla_{\text{A}_1} V_t(x_{\text{A}_2}(t) - x_\text{M}(t))
+- \frac{1}{\gamma_\text{A}} \bigl[ \nabla_{\text{A}_2} V_t( x_\text{M}(t) - x_{\text{A}_2}(t) )
 \\
-- k_\text{sp} \left( x_{\text{A}_2}(t) - x_{\text{A}_2}(0) \right) \bigr] \; \rmd t 
++ k_\text{sp} \left( x_{\text{A}_2}(t) - x_{\text{A}_2}(0) \right) \bigr] \; \rmd t 
 + \sqrt{ \frac{2 k_B T}{\gamma_\text{A}} } \; \rmd W_{\text{A}_2} ,
 \end{multlined}
 \end{gathered}
 \label{eq:eom_two_actins_no_load}
 \end{equation}
-where the load is replaced by the force caused by springs and the reference point for the springs is chosen as their position at the initial time. 
+where the load is replaced by the force caused by springs and where the reference point for the springs is chosen as their position at the initial time. 
 
 \subsection{Numerical method}
 
