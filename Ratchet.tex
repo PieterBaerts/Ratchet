@@ -710,32 +710,37 @@ which is in good agreement with the theoretical prediction~\eqref{eq:ratchet_vs_
 \subsection{Tension in the motor}
 The force-velocity relation can also be exploited to obtain the tension in the motor. 
 Since both the load and ratchet force are directly applied on their respective ends of the motor, 
-thus the tension applied to the motor is proportional to their difference 
+the tension applied to the motor $\tau_\text{M}$ is proportional to their difference,
+where we choose the sign of the tension in such a way 
+that the positive value corresponds to a pair of forces applied on each end of the motor in the direction away from the motor,
+i.e.  
 \begin{align}
-\tau_\text{M} 
-&= \langle F_\text{r} \rangle - F_\text{load} \nonumber \\
+\left\langle \tau_\text{M} \right\rangle 
+&= \langle F_\text{r} \rangle + F_\text{load} \nonumber \\
 &= \frac{\gamma_\text{A}\gamma_\text{M}}{\gamma_\text{A}+\gamma_\text{M}}\langle v\rangle 
-- \left(1 + \frac{\gamma_\text{A}}{\gamma_\text{A}+\gamma_\text{M}} \right) F_\text{load}.
++ \left(1 + \frac{\gamma_\text{A}}{\gamma_\text{A}+\gamma_\text{M}} \right) F_\text{load}.
 \label{eq:tension}
 \end{align}
-Note that in the similar fashion we can define as well a tension on the polymer as
+Note, that we omit the normalization by the length of the motor as it is just division by a constant due to the infinite rigidity of the motor in our model.   
+In a similar fashion we can define as well a tension on the polymer as
 \begin{align}
-\tau_\text{A}  
+\left\langle \tau_\text{A} \right\rangle 
 &= - \langle F_\text{r} \rangle \nonumber \\
 &= - \frac{\gamma_\text{A}\gamma_\text{M}}{\gamma_\text{A}+\gamma_\text{M}}\langle v\rangle 
-+ \frac{\gamma_\text{A}}{\gamma_\text{A}+\gamma_\text{M}} F_\text{load}.
+- \frac{\gamma_\text{A}}{\gamma_\text{A}+\gamma_\text{M}} F_\text{load}.
 \label{eq:tension_on_polymer}
 \end{align}
-We plot the tension on the motor as a function of the load $F_\text{load}$ in figure~\ref{fig:tension} for various transition rates 
+
+We plot the tension on the motor as a function of the load $F_\text{load}$ in figure~\ref{fig:tension} for various ATP binding rates 
 \begin{figure}
 \centering
 \includegraphics[width=.45\textwidth,height=!]{tension.pdf}
 \caption{\label{fig:tension}
-The dependency of the tension~\eqref{eq:tension} on the load force $F_\text{load}$ for different transition rates.
+The dependency of the tension~\eqref{eq:tension} on the load force $F_\text{load}$ for different ATP binding rates $k_\text{bind}$.
 We can see that with increasing ATP binding rate there is a faster departure from the small load regime towards the large load asymptotic behavior. 
 }
 \end{figure}
-and in figure~\ref{fig:tension_heads} as a function of the number of heads on a motor. 
+and in figure~\ref{fig:tension_heads} as a function of the amount of heads on a motor $N$. 
 \begin{figure}
 \centering
 \includegraphics[width=.45\textwidth,height=!]{tension_heads.pdf}
@@ -748,11 +753,11 @@ while the motor with a single head departs very rapidly from the low force regim
 We observe that for small loads the tension is linear in load, this is in good agreement with the observation of a plateau in force velocity relation, 
 see figure~\ref{fig:F_v}.
 In this regime the velocity is small compared to the initial load, as most of the load is countered by the ratchet interaction, 
-hence the only the second term in \eqref{eq:tension} contributes
+hence the only the second term in~\eqref{eq:tension} contributes
 \begin{equation}
-\tau_\text{M}
+\left\langle \tau_\text{M} \right\rangle
 \approx
-- \left(1 + \frac{\gamma_\text{A}}{\gamma_\text{A}+\gamma_\text{M}} \right) F_\text{load}.
+\left(1 + \frac{\gamma_\text{A}}{\gamma_\text{A}+\gamma_\text{M}} \right) F_\text{load}.
 \label{eq:tension_low_load} 
 \end{equation}
 
@@ -760,9 +765,9 @@ For the large force the motor slips over the potential and hence the mean ratche
 as can be seen in figures~\ref{fig:ratchet_force} and~\ref{fig:ratchet_force_decay}, 
 thus the large force asymptotic is given the load alone
 \begin{equation}
-\tau_\text{M} 
-\asymp - F_\text{load} 
-\qquad \text{for} \qquad F_\text{load} \to \infty. 
+\left\langle \tau_\text{M} \right\rangle
+\asymp F_\text{load} 
+\qquad \text{for} \qquad F_\text{load} \to \pm \infty. 
 \label{eq:tension_large_load}
 \end{equation}
 This is further supported by calculations of the mean velocity for a motor with a single head provided in the appendix, cf. equation~\eqref{eq:mean_velocity_large}.
