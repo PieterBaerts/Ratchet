@@ -341,8 +341,8 @@ Note that due to the symmetry of the setup the mean velocity of the myosin is in
 \label{sec:environment}
 As polymers inside the cytoskeleton are usually thoroughly interconnected rather then freely diffusing \cite{blanchoin2014actin,ennomani2016architecture},
 we can opt for an alternative approach.
-Rather then applying an external load we attach filaments to fixed points by a spring with a constant $k$, similar to \cite{albert2014stochastic}. 
-These points represent points of interaction with the rest of the network while the spring constant $k$ represents the elastic properties of the full network. 
+Rather then applying an external load we attach filaments to fixed points by a spring with a constant $k_\text{sp}$, similar to \cite{albert2014stochastic}. 
+These points represent points of interaction with the rest of the network while the spring constant $k_\text{sp}$ represents the elastic properties of the full network. 
 The myosin motor is again interacting with two filaments that are arranged in an anti-parallel fashion. 
 Hence, similar to the previous case, it will no longer have a preferred direction to move in and consequently its mean velocity will be zero. 
 The observable of interest is now the mean force that the motor applies to the filaments, 
@@ -372,14 +372,14 @@ The equations of motion are then just a modification of \eqref{eq:eom_two_actins
 \rmd x_{\text{A}_1} = 
 \frac{1}{\gamma_\text{A}} \bigl[ - \nabla_{\text{A}_1} V_t(x_\text{M}(t) - x_{\text{A}_1}(t)) 
 \\
-- k \left( x_{\text{A}_1}(t) - x_{\text{A}_1}(0) \right) \bigr] \; \rmd t 
+- k_\text{sp} \left( x_{\text{A}_1}(t) - x_{\text{A}_1}(0) \right) \bigr] \; \rmd t 
 + \sqrt{ \frac{2 k_B T}{\gamma_\text{A}} } \; \rmd W_{\text{A}_1} ,
 \end{multlined}\\
 \begin{multlined}[b][.45\textwidth]
 \rmd x_{\text{A}_2} = 
 \frac{1}{\gamma_\text{A}} \bigl[ - \nabla_{\text{A}_1} V_t(x_{\text{A}_2}(t) - x_\text{M}(t))
 \\
-- k \left( x_{\text{A}_2}(t) - x_{\text{A}_2}(0) \right) \bigr] \; \rmd t 
+- k_\text{sp} \left( x_{\text{A}_2}(t) - x_{\text{A}_2}(0) \right) \bigr] \; \rmd t 
 + \sqrt{ \frac{2 k_B T}{\gamma_\text{A}} } \; \rmd W_{\text{A}_2} ,
 \end{multlined}
 \end{gathered}
@@ -1092,8 +1092,8 @@ E( x_\text{M}, x_{\text{A}_1}, x_{\text{A}_2}, \{ \zeta_i \})
 = V_t( x_\text{M} - x_{\text{A}_1} ) 
 + V_t( x_{\text{A}_2} - x_\text{M} ) 
 \\
-+ \frac{1}{2} k \left[ x_{\text{A}_1} - x_{\text{A}_1}(0) \right]^2 
-+ \frac{1}{2} k \left[ x_{\text{A}_2} - x_{\text{A}_2}(0) \right]^2 
++ \frac{1}{2} k_\text{sp} \left[ x_{\text{A}_1} - x_{\text{A}_1}(0) \right]^2 
++ \frac{1}{2} k_\text{sp} \left[ x_{\text{A}_2} - x_{\text{A}_2}(0) \right]^2 
 \\
 + \Delta E \sum\limits_{i=0}^{N-1} \chi( \zeta_i = c ) .
 \end{multline*}
