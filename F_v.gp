@@ -25,5 +25,6 @@ plot [-50:50][-80:80] \
     , "Data/F_v_k=8.dat" u 1:2:3 w errorlines ls 8 lw 1.25 dashtype 5 title "k_{bind}/k_{unbind} = 2" \
     , "Data/F_v_k=16.dat" u 1:2:3 w errorlines ls 10 lw 1.25 dashtype 6 title "k_{bind}/k_{unbind} = 4" \
     , "Data/F_v_detached.dat" u 1:2:3 w errorlines ls 12 lc rgb "black" lw 1.25 dashtype 8 title "k_{bind}/k_{unbind} = {/Symbol \245}" \
-    , -x/0.66 lc rgb "black" lw 1.25 dashtype 8 title "-F_{load} / {/Symbol g}_M"
+    , -x/0.66 ls 1 lc rgb "black" lw 1.25 dashtype 1 notitle \
+
 #    , "Data/F_v_k=32.dat" u 1:2:3 w errorlines ls 11 lw 1.25 dashtype 7 title "k_{bind}/k_{unbind} = 8" \
