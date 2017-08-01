@@ -647,7 +647,16 @@ where the polymer velocities are clearly bounded.
 For small loads, the motor and actin filament are moving together, as the coupling by the ratchet interaction proves to be dominant. 
 This hypothesis can be further supported by the linear dependency of equations~\eqref{eq:velocity_M} and~\eqref{eq:velocity_A} on the load, 
 which is due to the fact that for small loads also the mean relative velocity \eqref{eq:mean_velocity} is linear in the load, see figure~\ref{fig:F_v}. 
-Such a response is depicted in the inset of the figure~\ref{fig:ind_v}, where we show the individual velocities for very small loads.
+Moreover as the mean velocity response to the external force is typically small compared to the direct contribution from the external load the individual velocities,
+we can be further approximate them by  
+\begin{align*}
+\left\langle v_\text{M} \right\rangle 
+&\approx - \frac{ F_\text{load} }{ \gamma_\text{A} + \gamma_\text{M} } + \frac{ \gamma_\text{A} }{ \gamma_\text{A} + \gamma_\text{M} } \left\langle v \right\rangle_{ F_\text{load} = 0 },
+\\
+\left\langle v_\text{A} \right\rangle 
+&\approx - \frac{ F_\text{load} }{ \gamma_\text{A} + \gamma_\text{M} } - \frac{ \gamma_\text{M} }{ \gamma_\text{A} + \gamma_\text{M} } \left\langle v \right\rangle_{ F_\text{load} = 0 } .
+\end{align*}
+Such a response is depicted in the inset of the figure~\ref{fig:ind_v}, where the shift in individual velocities caused by the relative velocity for very small loads is constant.
 
 Since the load is only applied to the motor in this setup, for very high loads, the motor will start slipping over the ratchet potential along the actin filament. 
 Consequently, the actin's mean velocity will stop increase and approaches zero 
@@ -752,7 +761,7 @@ while the motor with a single head departs very rapidly from the low force regim
 \end{figure}
 We observe that for small loads the tension is linear in load, this is in good agreement with the observation of a plateau in force velocity relation, 
 see figure~\ref{fig:F_v}.
-In this regime the velocity is small compared to the initial load, as most of the load is countered by the ratchet interaction, 
+In this regime the velocity is small compared to the initial load as most of the load is countered by the ratchet interaction, 
 hence the only the second term in~\eqref{eq:tension} contributes
 \begin{equation}
 \left\langle \tau_\text{M} \right\rangle
@@ -775,26 +784,29 @@ This is further supported by calculations of the mean velocity for a motor with 
 
 \subsubsection{Load on the polymer}
 A similar analysis can be made for alternative setups presented in the section~\ref{sec:other_setups}. 
-In the case when the load is applied directly to the polymer instead to the motor, cf. section~\ref{sec:load_on_polymer}, 
+In the case when the load is applied directly to the polymer instead to the motor, cf. setup ``load on the polymer'' introduced in the section~\ref{sec:load_on_polymer}, 
 the motor only experiences a force from the ratchet interaction with the polymer and not from a load. 
-Therefore, the tension on the motor is given only by the mean ratchet force.
-In this case it is similar to~\eqref{eq:mean_ratchet_force}, i.e. 
+Therefore, the tension on the motor is given only by the mean ratchet force,  
+cf. the equation~\eqref{eq:mean_ratchet_force},  
+where the load must be divided by $\gamma_\text{A}$ since the load is exerted on the actin filament instead of the motor,
+i.e.
 \begin{equation}
-\tau_\text{M} = \langle F_\text{r} \rangle = \frac{\gamma_\text{A}\gamma_\text{M}}{\gamma_\text{A} + \gamma_\text{M} } \left(\langle v \rangle - \frac{F_\text{load}}{\gamma_\text{A}}\right) , 
+\left\langle \tau_\text{M} \right\rangle 
+= \langle F_\text{r} \rangle 
+= \frac{\gamma_\text{A}\gamma_\text{M}}{\gamma_\text{A} + \gamma_\text{M} } \left(\langle v \rangle + \frac{F_\text{load}}{\gamma_\text{A}}\right) . 
 \label{eq:tension_load_on_polymer}
 \end{equation}
-where the load must be divided by $\gamma_\text{A}$ since the load is exerted on the actin filament instead of the motor.
-Following the same argumentation as in the basic setup, for small loads, the tension will be given by
+Following the same argumentation as in the ``load on the motor'' setup, for small loads, the tension will be given by
 \begin{equation*}
-\tau_\text{M}
-\approx -\frac{\gamma_\text{M}}{\gamma_\text{A}+\gamma_\text{M}} F_\text{load}.
+\left\langle \tau_\text{M} \right\rangle
+\approx \frac{\gamma_\text{M}}{\gamma_\text{A}+\gamma_\text{M}} F_\text{load}.
 \end{equation*}
 This is similar to~\eqref{eq:tension_low_load}, where the motor experiences the load directly, up to an exchange of friction coefficients of the motor and actin filament. 
 
-Furthermore, since the load is not directly applied to the motor in this setup, the overall term $-F_\text{load}$ is not present. 
-Therefore, the tension vanishes for large load in the same way that the relative velocity approaches $F_\text{load} / \gamma_\text{A}$, see~\eqref{eq:ratchet_vs_load},
+Furthermore, since the load is not directly applied to the motor in this setup, the overall term $F_\text{load}$ is not present. 
+Therefore, the tension vanishes for large load in the same way that the relative velocity approaches $-F_\text{load} / \gamma_\text{A}$, see~\eqref{eq:ratchet_vs_load},
 \begin{equation}
-\tau_\text{M} 
+\langle \tau_\text{M} \rangle 
 \propto
 F_\text{load}^{-1}
 \qquad\text{for}\qquad
