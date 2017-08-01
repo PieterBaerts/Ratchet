@@ -32,8 +32,8 @@ plot [-150:150][] \
 
 set tmargin at screen 0.30
 set bmargin at screen 0.52
-set lmargin at screen 0.62
-set rmargin at screen 0.9
+set lmargin at screen 0.20
+set rmargin at screen 0.48
 
 set key off
 
