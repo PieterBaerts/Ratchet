@@ -540,11 +540,11 @@ and reversing the relative velocity.
 However, the ``tug of war'' setup manifests a clear difference for mid-range loads due to the more complex interaction. 
 
 \subsection{Stall force}
-From figure~\ref{fig:F_v} it is apparent, that when applying a force against the preferred direction of the motor, 
+From the figure~\ref{fig:F_v} it is apparent, that when applying a force against the preferred direction of the motor, 
 the motor first slows down until it stops before it reverses its direction. 
 The force magnitude that is needed to stop the motor's movement relative to the actin filament is called the stall force $F_\text{stall}$,  
 \[
-\left\langle v ( F_\text{load} \equiv -F_\text{stall} ) \right\rangle = 0 .
+\left\langle v ( F_\text{load} \equiv F_\text{stall} ) \right\rangle = 0 .
 \]
 Figure~\ref{fig:F_v_zoom} shows the inset of figure~\ref{fig:F_v} for small negative loads. 
 \begin{figure}[t]
@@ -552,16 +552,16 @@ Figure~\ref{fig:F_v_zoom} shows the inset of figure~\ref{fig:F_v} for small nega
 \includegraphics[width=0.45\textwidth,height=!]{F_v_zoom}
 \caption{
 \label{fig:F_v_zoom} 
-Mean velocity of the motor $\langle v \rangle$ with a small load force $F_\text{load}$ applied in the direction opposing the movement for different binding rates $k_\text{bind}$.
+Mean velocity of the motor $\langle v \rangle$ with a small load force $F_\text{load}$ applied in the direction opposing the movement for different ATP binding rates $k_\text{bind}$.
 Intersections with the $x$ axis correspond to stall forces $F_\text{stall}$ for given detach rates. 
 We can see that with increasing $k_\text{bind}/k_\text{unbind}$ ratio the slope increases as well as the full curve shifts in the low force region, causing a persistent decrease in stall force. 
 }
 \end{figure}
 The intersections with the horizontal axis correspond to stall forces,  
-while intersections of the curves with the vertical axis correspond to the mean velocities in figure \ref{fig:v_k}. 
+while intersections of the curves with the vertical axis correspond to the mean velocities for system without any external load, compare figure~\ref{fig:v_k}. 
 We see that for small loads the mean velocity decreases linearly with increasing load. 
-We observe that the slope of the force -- mean velocity relation increases with the binding rate $k_\text{bind}$. 
-This is responsible for monotonous decrease of the stall force $F_\text{stall}$ with respect to the binding rate $k_\text{bind}$, see figure \ref{fig:k_Fstall}.
+Moreover, the slope of the force -- mean velocity relation increases with the binding rate $k_\text{bind}$. 
+This is responsible for monotonous decrease of the stall force $F_\text{stall}$ with respect to the ATP binding rate $k_\text{bind}$, see figure~\ref{fig:k_Fstall}.
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{k_Fstall}
@@ -571,9 +571,9 @@ Stall force $F_\text{stall}$ for different detach rates $k_\text{d}$.
 We observe power-law decay $F_\text{stall} \propto k_\text{d}^{-\alpha}$ with exponent $\alpha = 1.002 \pm 0.014$. 
 }
 \end{figure}
-When the binding rate increases, so does the fraction of time in which the motor is less interacting with the actin filament. 
+When the ATP binding rate increases, so does the fraction of time in which the motor is less interacting with the actin filament. 
 Hence, it will take on average a smaller load to halt a motor since the amplitude of its confining potential will be typically lower.
-Ultimately, when the system is found only in the unbounded state the relative mean velocity is zero, $\langle v \rangle = 0$, as the system reached an equilibrium 
+Ultimately, when the system is found only in the ATP unbound state the relative mean velocity is zero, $\langle v \rangle = 0$, as the system reached an equilibrium 
 and thus the stall force reaches zero as well, $F_\text{stall} \to 0$.
 %TODO Relate to power law => Maybe some analytics can help
 
