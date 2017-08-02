@@ -8,7 +8,7 @@ set multiplot
 
 set key off
 
-set ylabel "Tension (pN)"
+set ylabel "{/Symbol \341}{/Symbol t}_M{/Symbol \361} (pN)"
 set xlabel "k_{sp} (pN/nm)"
 
 set logscale y 
