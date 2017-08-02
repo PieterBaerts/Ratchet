@@ -982,7 +982,7 @@ where the first term is the dissipation of energy due to the friction and the se
 Note that those integrals are evaluated in the Stratonovich sense.
 The energy is also changed by the work of the external load 
 \begin{equation}
-{\mathcal W}^\text{ext}_\text{M} = \int \rmd x_\text{M} \circ F_\text{load} = \Delta x_\text{M} F_\text{load}, 
+{\mathcal W}^\text{ext}_\text{M} = - \int \rmd x_\text{M} \circ F_\text{load} = - \Delta x_\text{M} F_\text{load}, 
 \label{eq:work_load}
 \end{equation}
 where we use the fact that the external load $F_\text{load}$ is constant. 
@@ -999,10 +999,10 @@ Thus the total chemical energy consists of two parts ${\mathcal Q}^\text{chem} =
 &= -\sum_{t_\text{bind} \leq t_\text{fin} } \left[ \Delta E + (c-1) V_\text{r}(x_{t_\text{bind}}) \right] 
 \label{eq:q_out}
 \end{align}
-where we sum over the jump times $t_\text{bind}$($t_\text{unbind}$) of all binding(unbinding) events.
+where we sum over the jump times $t_\text{bind}$($t_\text{unbind}$) of all ATP binding(ADP unbinding) events.
 $t_\text{fin}$ denotes the duration of the process. 
 
-Figure~\ref{fig:energy_evolution} depicts a time evolution of the internal energy~\eqref{eq:internal_energy} for a single trajectory of the system for $F_\text{load} = 0$.
+Figure~\ref{fig:energy_evolution} depicts a time evolution of the internal energy~\eqref{eq:internal_energy} for a single trajectory of the system without any external load, $F_\text{load} = 0$.
 \begin{figure}
 \centering
 \includegraphics[width=.45\textwidth,height=!]{energy_1head.pdf}
@@ -1025,7 +1025,7 @@ and we use the equation of motion~\eqref{eq:eom_M},
 the heat exchange with the surrounding~\eqref{eq:heat_hb_M} can be rewritten as 
 \begin{multline}
 {\mathcal Q}_\text{M}^\text{hb} 
-= \int \rmd x_\text{M} \circ \left[ \nabla_\text{M} V_t(x_\text{M} - x_\text{A} ) - F_\text{load} \right] 
+= \int \rmd x_\text{M} \circ \left[ \nabla_\text{M} V_t(x_\text{M} - x_\text{A} ) + F_\text{load} \right] 
 \\
 = \int \rmd x_\text{M} \circ \nabla V_t(x_\text{M} - x_\text{A} ) - {\mathcal W}_\text{M}^\text{ext} ,
 \label{eq:heat_hb_M_expl}
@@ -1063,12 +1063,12 @@ we can see that the excess of the chemical cycle in the steady state is dissipat
 \right\rangle ,
 \label{eq:chemical_excess}
 \end{multline} 
-which can be further interpreted in terms of tension on the polymer $\tau_\text{A}$, cf.~\eqref{eq:tension_on_polymer}, and the relative velocity $v$ 
+which can be further interpreted in terms of tension on the polymer $\tau_\text{A}$, cf.~\eqref{eq:tension_on_polymer}, and the relative velocity $v$, cf.~\eqref{eq:mean_velocity}, 
 \begin{equation}
 \left\langle 
 {\mathcal Q}_\text{in}^\text{chem} + {\mathcal Q}_\text{out}^\text{chem} 
 \right\rangle 
-= - \left\langle \int \rmd t \; v \, \tau_\text{A} \right\rangle .
+= \left\langle \int \rmd t \; v \, \tau_\text{A} \right\rangle .
 \label{eq:excess_heat} 
 \end{equation}
 %TODO reference previous text 
