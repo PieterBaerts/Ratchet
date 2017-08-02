@@ -1090,27 +1090,29 @@ Such equality is trivially true for arbitrarily small times when the initial con
 
 
 \subsection{Other setups} 
-In section \ref{sec:ratchet} we introduced two alternative models, more suitable for capturing the behavior of myosin motors inside the polymer network known as the actomyosin cortex.
+In section \ref{sec:ratchet} we introduced three alternative models, 
+more suitable for capturing the behavior of myosin motors inside the polymer network known as the actomyosin cortex.
 
 \subsubsection{Load on the polymer}
 The ``load on the polymer'' setup is a variation to the ``load on the motor'' setup, cf. section~\ref{sec:load_on_polymer}. 
-From the mathematical perspective, it is identical to the ``load on the motor'' setup although differently interpreted. 
-What was called motor in the basic setup, is now called polymer and visa versa.
+From the mathematical perspective, it is almost identical to the ``load on the motor'' setup although differently interpreted. 
+What was called motor in the basic setup, is now called polymer and visa versa
+and the x-axis is reversed.
 This means that energy balance~\eqref{eq:energy_balance} is preserved 
 with basic expressions for heat dissipated to the heat bath~\eqref{eq:heat_hb_M} and~\eqref{eq:heat_hb_A} kept intact 
 and external work on the motor ${\mathcal W}_\text{M}^\text{ext}$ replaced by the external work on the polymer
 \[
-{\mathcal W}_\text{A}^\text{ext} = - \int \rmd x_\text{A} \circ F_\text{load} = - \Delta x_\text{A} \, F_\text{load} . 
+{\mathcal W}_\text{A}^\text{ext} = \int \rmd x_\text{A} \circ F_\text{load} = \Delta x_\text{A} \, F_\text{load} . 
 \]
 Note, that in this particular setup the load is applied in the opposite direction, as can be seen from the equations of motion~\eqref{eq:eom_A_lp}. %TODO check if true 
 
 Similarly expressions~\eqref{eq:heat_hb_M_expl} and~\eqref{eq:heat_hb_A_expl} are modified to
 \begin{align*}
 {\mathcal Q}_\text{M}^\text{hb} 
-&= - \int \rmd x_\text{M} \circ \nabla V_t(x_\text{A} - x_\text{M} ) ,
+&= \int \rmd x_\text{M} \circ \nabla V_t(x_\text{M} - x_\text{A} ) ,
 \\
 {\mathcal Q}_\text{A}^\text{hb} 
-&= \int \rmd x_\text{A} \circ \nabla V_t(x_\text{A} - x_\text{M} ) - {\mathcal W}_\text{A}^\text{ext} .
+&= - \int \rmd x_\text{A} \circ \nabla V_t(x_\text{M} - x_\text{A} ) - {\mathcal W}_\text{A}^\text{ext} .
 \end{align*} 
 Consequently the excess of the chemical cycle~\eqref{eq:chemical_excess} changes to 
 \begin{multline*}
@@ -1120,10 +1122,11 @@ Consequently the excess of the chemical cycle~\eqref{eq:chemical_excess} changes
 \\
 = 
 \left\langle 
-\int \rmd \left( x_\text{M} - x_\text{A} \right) \circ \left[ - \nabla V_t( x_\text{A} - x_\text{M} ) \right]
+\int \rmd \left( x_\text{M} - x_\text{A} \right) \circ \left[ - \nabla V_t( x_\text{M} - x_\text{A} ) \right]
 \right\rangle ,
 \end{multline*} 
-which can be again interpreted in terms of the relative velocity $v$ and the tension on the motor $\tau_\text{M}$, cf.~\eqref{eq:tension_load_on_polymer},  
+which can be again interpreted in terms of the relative velocity $v$, cf.~\eqref{eq:mean_velocity}, 
+and the tension on the motor $\tau_\text{M}$, cf.~\eqref{eq:tension_load_on_polymer},  
 \begin{equation}
 \left\langle 
 {\mathcal Q}_\text{in}^\text{chem} + {\mathcal Q}_\text{out}^\text{chem} 
