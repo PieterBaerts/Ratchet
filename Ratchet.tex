@@ -1728,12 +1728,12 @@ First, we assume that the relaxation time of the position in a given potential i
 This effectively leads to time scale separations,
 thus the conditional probability distribution \eqref{eq:cond_prob} is given as a steady state solution of the corresponding Fokker-Planck equation in a given state $\zeta$
 \begin{multline*}
-0 = \frac{1}{\gamma_\text{M}} \partial_\text{M} \left[ \left( F_\text{load} - \zeta \partial V_\text{r}( x_\text{M} - x_\text{A} ) \right) \mu\left( x_\text{M}, x_\text{A} \right)
+0 = - \frac{1}{\gamma_\text{M}} \partial_\text{M} \left[ \left( F_\text{load} + \zeta \partial_\text{M} V_\text{r}( x_\text{M} - x_\text{A} ) \right) \mu\left( x_\text{M}, x_\text{A} \right)
 \right. \\ \left.
-- k_B T \partial_\text{M} \mu\left( x_\text{M}, x_\text{A} \right) \right] 
++ k_B T \partial_\text{M} \mu\left( x_\text{M}, x_\text{A} \right) \right] 
 \\
 + \frac{1}{\gamma_\text{A}} \partial_\text{A} \left[ 
-\zeta \partial V_\text{r} \mu( x_\text{M}, x_\text{A} ) 
+\zeta \partial_\text{M} V_\text{r} \, \mu( x_\text{M}, x_\text{A} ) 
 - k_B T \partial_\text{A} \mu\left( x_\text{M}, x_\text{A} \right) 
 \right] .
 \end{multline*}
@@ -1745,18 +1745,18 @@ x_C &= \frac{1}{2} ( x_\text{M} + x_\text{A} ) , \\
 a more convenient version of the Fokker-Planck is obtained
 \begin{align*}
 0 &= \begin{multlined}[t][.4\textwidth]
-\partial_\Delta \Biggl[ 
-\left( \frac{1}{\gamma_\text{M}} F_\text{load} - \left( \frac{1}{\gamma_\text{M}} + \frac{1}{\gamma_\text{A}} \right) \zeta \partial V_\text{r}( \Delta x ) \right) \mu
+- \partial_\Delta \Biggl[ 
+\left( \frac{1}{\gamma_\text{M}} F_\text{load} + \left( \frac{1}{\gamma_\text{M}} + \frac{1}{\gamma_\text{A}} \right) \zeta \partial V_\text{r}( \Delta x ) \right) \mu
 \\ 
-- \left( \frac{1}{\gamma_\text{M}} + \frac{1}{\gamma_\text{A}} \right) k_B T \partial_\Delta \mu 
++ \left( \frac{1}{\gamma_\text{M}} + \frac{1}{\gamma_\text{A}} \right) k_B T \partial_\Delta \mu 
 \Biggr] 
 \end{multlined}
 \\
-&+ \begin{multlined}[t][.4\textwidth]
+&- \begin{multlined}[t][.4\textwidth]
 \frac{1}{2} \partial_C \Biggl[
-\left( \frac{1}{\gamma_\text{M}} F_\text{load} - \left( \frac{1}{\gamma_\text{M}} - \frac{1}{\gamma_\text{A}} \right) \zeta \partial V_\text{r}( \Delta x ) \right) \mu
+\left( \frac{1}{\gamma_\text{M}} F_\text{load} + \left( \frac{1}{\gamma_\text{M}} - \frac{1}{\gamma_\text{A}} \right) \zeta \partial V_\text{r}( \Delta x ) \right) \mu
 \\
-- \frac{1}{2} \left( \frac{1}{\gamma_\text{M}} + \frac{1}{\gamma_\text{A}} \right) k_B T \partial_C \mu 
++ \frac{1}{2} \left( \frac{1}{\gamma_\text{M}} + \frac{1}{\gamma_\text{A}} \right) k_B T \partial_C \mu 
 \Biggr] .
 \end{multlined}
 \end{align*}
@@ -1771,7 +1771,7 @@ where $V_\text{r}$ is the ratchet potential \eqref{eq:ratchet_potential} and
 \begin{equation}
 \begin{aligned}[.4\textwidth] 
 \gamma^* &= \frac{ \gamma_\text{M} \gamma_\text{A} }{ \gamma_\text{M} + \gamma_\text{A} } , \\ 
-F^* &= \frac{ \gamma_\text{A} }{ \gamma_\text{M} + \gamma_\text{A} } F_\text{load} . 
+F^* &= - \frac{ \gamma_\text{A} }{ \gamma_\text{M} + \gamma_\text{A} } F_\text{load} . 
 \end{aligned} 
 \label{eq:rescale_parameters}
 \end{equation}
@@ -1914,10 +1914,10 @@ Note, that the current integrated over the period of the ratchet $\ell$, represe
 = \int\limits_0^\ell \rmd x \; {\mathcal J}(x) 
 = \frac{F^*}{\gamma^*} - \frac{\zeta^2 V^2}{\gamma^* F^* \ell^2 a (1-a) } 
 \\
-= \frac{F_\text{load}}{\gamma_\text{M}} - \frac{ ( \gamma_\text{M} + \gamma_\text{A} ) \zeta^2 V^2}{\gamma_\text{M} \gamma_\text{A} F_\text{load} \ell^2 a (1-a) } .
+= - \frac{F_\text{load}}{\gamma_\text{M}} - \frac{ ( \gamma_\text{M} + \gamma_\text{A} ) \zeta^2 V^2}{\gamma_\text{M} \gamma_\text{A} F_\text{load} \ell^2 a (1-a) } .
 \label{eq:mean_velocity_large}
 \end{multline}
-Indeed, the dominant term for large external forces is $\langle v \rangle_{\rho_0} = F_\text{load} / \gamma_\text{M}$ independently of the internal state, 
+Indeed, the dominant term for large external forces is $\langle v \rangle_{\rho_0} = - F_\text{load} / \gamma_\text{M}$ independently of the internal state, 
 which was already demonstrated in the figure~\ref{fig:F_v}. 
 Furthermore, the force-independent term (i.e. term proportional to $F_\text{load}^0$) vanishes leading to an anti-symmetric form with respect to the load $F_\text{load}$. 
 The first correction decay linearly in the external load, which was clearly seen in the figure~\ref{fig:ratchet_force_decay}, 
