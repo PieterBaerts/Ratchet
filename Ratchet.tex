@@ -240,13 +240,14 @@ While the aforementioned setup, shown in figure~\ref{fig:ratchet_setup}, is the 
 it's aim is to characterize the transport induced by molecular motors.
 However, recent experiments show that myosin~II motors' role is mainly to cross-linking the cytoskeleton 
 and consequently producing an active tension inside the network \cite{ma2012nonmuscle}.
-Here, we present couple of natural extensions of this setup, which we will further on call ``load on the motor, suitable for capturing the behavior of the motor inside these networks.
+Here, we present a couple of natural extensions to this setup, suitable for capturing the behavior of the motor inside these networks.
+The basic setup will be further referred to as ``load on the motor''.
 
 \subsubsection{Load on the polymer}
 \label{sec:load_on_polymer}
-The first setup which we introduce is very similar to the ``load on the motor'', 
-but with the external load applied to the polymer instead of the molecular motor. 
-This correspond to a situation when the motor is attached to the polymer which itself is under the tension due to the action of other motors and complex interactions.
+The first setup that we introduce is very similar to ``load on the motor'', 
+but now with the external load applied to the polymer instead of the molecular motor. 
+This correspond to a situation where the motor is attached to the polymer, which itself is under the tension due to the action of other motors and complex interactions in a larger network.
 As we will show later, in this setup there will be no more residual tension on the motor for large loads, which will be relevant for our discussion of the chemical efficiency. 
 The basic scheme of this setup is depicted in the figure~\ref{fig:load_on_polymer setup}.
 \begin{figure}[t]
@@ -404,12 +405,12 @@ V_t(x_{\text{A}_1}(t) - x_\text{M}(t))
 where the load is replaced by the force caused by springs and where the reference point for the springs is chosen as their position at the initial time. 
 
 \subsection{Numerical method}
-We use an Euler-Maruyama integration scheme to stochastically evolve the systems from a randomised initial configuration \cite{kloeden1989survey,maruyama1955continuous}. 
-Most results are obtained after evolving the system up to a time of $1\;\mathrm{s}$ with timestep $\Delta t = 0.01\;\mathrm{ns}$ and averaging over $100$ independent copies.    
+We use an Euler-Maruyama integration scheme to stochastically evolve the systems from a randomized initial configuration \cite{kloeden1989survey,maruyama1955continuous}. 
+Most results are obtained after evolving the system up to a time of $1\;\mathrm{s}$ with time step $\Delta t = 0.01\;\mathrm{ns}$ and averaging over $100$ independent copies.    
 An exception is the data in figure \ref{fig:tug_k}, 
-which was obtained after an ergodic average every $1\;\mathrm{ms}$ over $10\;\mathrm{s}$ with timestep $\Delta t = 0.01\;\mathrm{ns}$ and ensemble average over $1000$ independent copies.
+which was obtained after an ergodic average every $1\;\mathrm{ms}$ over $10\;\mathrm{s}$ with time step $\Delta t = 0.01\;\mathrm{ns}$ and ensemble average over $1000$ independent copies.
 Lastly, to obtain the empirical distribution in figure \ref{fig:pos_distr}, 
-data was gathered by sampling every $0.5\;\mathrm{ms}$ for a total time of $1\;\mathrm{s}$ with timestep $\Delta t = 0.001\;\mathrm{ns}$ and from $100$ independent simulations and converted into a histogram with a bin width of $0.1\;\mathrm{nm}$.
+data was gathered by sampling every $0.5\;\mathrm{ms}$ for a total time of $1\;\mathrm{s}$ with time step $\Delta t = 0.001\;\mathrm{ns}$ and from $100$ independent simulations and converted into a histogram with a bin width of $0.1\;\mathrm{nm}$.
 
 
 \section{Mean velocity}
@@ -421,8 +422,8 @@ At first, we study the mean velocity of the motor with four heads with respect t
 - \frac{ \left\langle \rmd x_\text{A} \right\rangle }{ \rmd t } ,
 \label{eq:mean_velocity} 
 \end{equation}
-for different values of scaling factor $c$ without any external load $F_\text{load} = 0$.
-Note that in this particular case, where there is no external load setups ``load on the motor'' and ``load on the polymer'' coincide. 
+for different values of the scaling factor $c$ and without any external load $F_\text{load} = 0$.
+Note that in this particular case, where there is no external load, setups ``load on the motor'' and ``load on the polymer'' coincide. 
 
 The results are shown in the figure~\ref{fig:c_v},
 \begin{figure}[t]
@@ -436,12 +437,12 @@ Green line correspond to the fit $ \left\langle v \right\rangle \propto \exp ( -
 %The dependency is guessed, unfortunately I don't have any argument to support it. 
 } 
 \end{figure}
-where we see that mean velocity has maximum at $c=0$ and goes to zero when $c$ approaches $1$. 
-This is to be expected since $c=1$ corresponds the equilibrium, where there is no difference between the two internal states, cf.~\eqref{eq:transition},
-on the other hand for $c=0$ we have the biggest discrepancy between the internal two states of each head. 
+where we see that the mean velocity has a maximum at $c=0$ and goes to zero when $c$ approaches $1$. 
+This is to be expected since $c=1$ corresponds to equilibrium, where there is no difference between the two internal states, cf.~\eqref{eq:transition}.
+On the other hand, for $c=0$ we have the biggest discrepancy between the two internal states of each head. 
 
 
-Secondly, the mean velocity~\eqref{eq:mean_velocity} also depends on the concentration of ATP through the unbind rate. 
+Secondly, the mean velocity~\eqref{eq:mean_velocity} also depends on the concentration of ATP through the binding rate $k_\text{bind}$. 
 In this setup, we fix the ATP unbinding rate $k_\text{unbind}$ and scaling factor $c$, cf. table~\ref{tab:parameters}, and vary the ATP binding rate $k_\text{bind}$. 
 The resulting dependency is shown in the figure~\ref{fig:v_k}. 
 \begin{figure}[t]
@@ -455,19 +456,19 @@ The velocity decreases to $0$ for large discrepancies between binding and unbind
 \end{figure}
 We observe that the maximal velocity is reached for rates close to $k_\text{bind} = k_\text{unbound}$. 
 Departing far from this ratio means that one of the states become dominant and thus the system effectively approaches equilibrium.  
-The main difference between the $k_\text{bind}/k_\text{unbind}$ being low or high is the amount of the interaction with actin. 
+The main difference between the $k_\text{bind}/k_\text{unbind}$ being low or high is the amplitude of the interaction with actin. 
 In the ATP bound state the interaction is weaker, 
-which is reflected in the fact that the system is trapped for shorter times in local minimums and diffuses more, 
-hence the variance of the relative velocity is higher when compared to the ATP unbound state. 
+which is reflected in the fact that the system is trapped for shorter times close to the local minimums and diffuses more. 
+Hence, the variance of the relative velocity is higher when compared to the ATP unbound state. 
 
 
 \section{Force -- velocity relation}
 \label{sec:force-velocity}
-While in the previous section we have investigated the mean relative velocity for motor in the ``load on the motor without'' any external load, 
-here we focus on the dependency of the mean relative velocity \eqref{eq:mean_velocity} on an external load force $F_\text{load}$ applied on the motor anti-parallel to the preferred direction, 
+In the previous section, we have investigated the mean relative velocity for motor in the ``load on the motor'' setup without any external load. 
+Here we will focus on the dependency of the mean relative velocity \eqref{eq:mean_velocity} on an external load force $F_\text{load}$ applied on the motor anti-parallel to the preferred direction, 
 cf. figure~\ref{fig:ratchet_setup}.
 
-Figure~\ref{fig:F_v} shows the typical force -- mean velocity relations for various ATP unbinding rates $k_\text{unbind}$, which mimics the dependency on ATP concentration.
+Figure~\ref{fig:F_v} shows the typical force -- mean velocity relations for various ATP binding rates $k_\text{unbind}$, which mimics the dependency on ATP concentration.
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{F_v}
@@ -481,10 +482,10 @@ For small load forces, the interaction with an actin polymer provides an additio
 which results in small response of the relative velocity $\langle v \rangle$.
 For larger forces the system looses its resilience and the contribution from the load will dominate. 
 The larger the load, the more the velocity will approach the velocity of a non-interacting motor, $\langle v \rangle = - \frac{1}{\gamma_\text{M}} F_\text{load}$.
-This will be exactly proven later. 
+This will be exactly proven later on, in section \ref{sec:ind_velo}. 
 Curves for higher ATP binding rates are closer to the curve for the completely unbound motor.
 As the motor is more loosely bound to the polymer, it is more submissive to the external load.
-Such a force-velocity relation was already presented in 2002 by Reimann \cite{reimann2002brownian} for a flashing ratchet, representing a model with a single head.
+Such a force-velocity relation was already presented in 2002 by Reimann \cite{reimann2002brownian} for a flashing ratchet, representing a motor with a single head.
 
 A similar plot is shown in figure \ref{fig:F_v_heads}, where instead of varying ATP binding rate $k_\text{bind}$ we look at motors with different numbers of heads $N$. 
 \begin{figure}[t]
@@ -497,11 +498,11 @@ Solid black line correspond to a non-interacting motor, i.e. $\langle v \rangle 
 }
 \end{figure}
 Motors with only one head are very susceptible to external loads and the force from the ratchet offers little resistance. 
-On the other hand, the motors with four and sixteen heads has almost identical force-velocity relations. 
+On the other hand, the motors with four and sixteen heads have almost identical force-velocity relations. 
 However, it would be na\"{\i}ve to consider these motors identical as they behave very differently regarding their energetics,  
-which we will show in the section~\ref{sec:efficiency}.
+which we will discuss in the section~\ref{sec:efficiency}.
 
-In figure~\ref{fig:F_v_setups} we compare the force-velocity relation of the ``load on the motor'' setup with other alternative setups,
+In figure~\ref{fig:F_v_setups} we compare the force-velocity relation of the ``load on the motor'' setup with alternative setups,
 namely with the ``load on the polymer'', cf. section~\ref{sec:load_on_polymer} and the ``tug of war'', cf. section~\ref{sec:tug_of_war}.
 \begin{figure}[t]
 \centering
@@ -515,7 +516,7 @@ $F_\text{load} \to - F_\text{load} / \gamma_\text{M}$ for the ``load on the moto
 and $F_\text{load} \to - F_\text{load} / \gamma_\text{A}$ for the ``load on the filament'' and the ``tug of war'' setup. 
 }
 \end{figure}
-Note that for the ``tug of war setup'' we have two equivalent choices for the relative velocity,
+Note that for the ``tug of war'' setup we have two equivalent choices for the relative velocity,
 however due to the symmetry of the setup, cf. figure~\ref{fig:tug_F_illustration}, in the steady state these options differ only by sign, 
 hence we define the relative velocity~\eqref{eq:mean_velocity} as 
 \[
@@ -526,7 +527,7 @@ hence we define the relative velocity~\eqref{eq:mean_velocity} as
 - \frac{ \left\langle \rmd x_{\text{A}_1} \right\rangle }{ \rmd t } \right) .
 \]
 For small loads, the mean relative velocity $\langle v \rangle$ of the motor with respect to the polymer remains close to each other in all setups.
-However, for high loads a clear difference in their asymptotic becomes apparent.
+However, for high loads a clear difference in their asymptotic behavior becomes apparent.
 When the load is applied to the motor the relative velocity goes to $ - F_\text{load} / \gamma_\text{M}$.
 For the setups where the load is applied to the filaments, the relative velocity goes to $ - F_\text{load} / \gamma_\text{A}$ with increasing load.
 
@@ -535,10 +536,10 @@ the force-velocity relations are plotted on rescaled x-axes for the different se
 which takes the difference in their asymptotic behavior into account. 
 Thus, the ``load on the motor'' setup is plotted with respect to $ - F_\text{load} / \gamma_\text{M}$ instead of $F_\text{load}$,
 while the other setups are plotted with respect to $ - F_\text{load} / \gamma_\text{A}$.
-The curve for the simplest setups, with one motor and one polymer, collapse on this plot, 
+The curve for the simplest setups, with one motor and one polymer, collapse in this plot, 
 confirming the fact that they can be mapped onto each other by switching friction coefficients $\gamma_\text{M} \leftrightarrow \gamma_\text{A}$ 
 and reversing the relative velocity. 
-However, the ``tug of war'' setup manifests a clear difference for mid-range loads due to the more complex interaction. 
+However, the ``tug of war'' setup manifests a clear difference for mid-range loads due to the more complex interaction with two polymer. 
 
 \subsection{Stall force}
 From the figure~\ref{fig:F_v} it is apparent, that when applying a force against the preferred direction of the motor, 
