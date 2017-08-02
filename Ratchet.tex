@@ -418,6 +418,7 @@ At first, we study the mean velocity of the motor with four heads with respect t
 \label{eq:mean_velocity} 
 \end{equation}
 for different values of the scaling factor $c$ and without any external load $F_\text{load} = 0$.
+Since the scaling factor $c$ modifies the interaction strength between the motor and polymer, it effectively models the electrostatic screening of the charges in the ionic solution inside a cell\cite{barterls1993myosin}.
 Note that in this particular case, where there is no external load, setups ``load on the motor'' and ``load on the polymer'' coincide. 
 
 The results are shown in the figure~\ref{fig:c_v},
@@ -866,7 +867,7 @@ This tension is again given by the difference in the forces applied to their res
 = 2 F_\text{load} - \gamma_\text{A} \left(\langle v_{\text{A}_2}\rangle - \langle v_{\text{A}_1}\rangle \right) .
 \label{eq:tension_tug}
 \end{equation}
-The tension in the motor is shown in figure \ref{fig:tug_F}, 
+The tension in the motor for the different setups constitutes an important result and is shown in figure \ref{fig:tug_F}, 
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{tug_F}
@@ -887,6 +888,9 @@ This behavior is similar to the tension in the previously discussed setups  ``lo
 where the proportionality constants are $ 1 + \gamma_\text{A} / (\gamma_\text{A} + \gamma_\text{M} )$ and $\gamma_\text{M} / (\gamma_\text{A} + \gamma_\text{M} )$ respectively. 
 Note that the proportionality constant for the ``load on the motor'' setup, which lies in the closed interval $[1,2]$, 
 is always bigger or equal then the one in the ``load on the polymer'', which is in the interval $[0,1]$, and smaller or equal then in the ``tug of war'' setup. 
+In the ``load on the polymer'' setup, the tension in the motor does not build up as fast with increasing load because the motor experiences a ratchet force only from one actin filament.
+The initial tension there is less then half of the tension in the setup with two loaded filaments.
+This suggests that the ratchet force, per motor head, is better transmitted to the motor in the ``tug of war'' setup.
 This is confirmed by figure~\ref{fig:tug_F}.
 
 As described earlier, the motor starts to slip when the load is increased.
@@ -896,10 +900,6 @@ This behavior underlines the main difference between the ``tug of war'' and ``lo
 where the load is applied directly to the motor. 
 Furthermore, as the ratchet force vanishes for large load, a residual tension from the load remains.
 However, in the ``tug of war'' and ``load on the polymer'' setup, this residual tension is not transmitted further to the motor due to the vanishing ratchet interaction.
-In the ``load on the polymer'' setup, the tension in the motor does not build up as fast with increasing load because the motor experiences a ratchet force only from one actin filament.
-The initial tension there is less then half of the tension in the setup with two loaded filaments.
-This suggests that the ratchet force, per motor head, is better transmitted to the motor in the ``tug of war'' setup.
-
 
 Lastly, the variance of the motor velocity, cf. figure~\ref{fig:tug_F_motor}, seems to behave similarly to the tension on the motor in the figure~\ref{fig:tug_F}. 
 While the mean velocity stays close to zero, the variance increases as the tension builds up in the motor. 
@@ -1319,7 +1319,7 @@ i.e. how much of the chemical energy provided to the system is dissipated by the
 \label{sec:chemical_efficiency}
 An alternative approach is to identify the ``useful'' output by looking at the chemical energy, supplied by ATP, that is transformed to other forms of energy, 
 i.e. either it is dissipated by myosin and actin through their diffusion or it is stored in the interaction potential and thus increases the tension in the system. 
-This consideration leads to a chemical efficiency defined as 
+This consideration leads to a novel chemical efficiency defined as 
 \begin{equation}
 \eta_\text{chem} = \frac{\langle\mathcal Q^\text{chem}_\text{in}\rangle+\langle\mathcal Q^\text{chem}_\text{out}\rangle}{\langle\mathcal Q^\text{chem}_\text{in}\rangle} .
 \label{eq:efficiency}
@@ -1693,10 +1693,8 @@ In the end, we can conclude that the additional tension caused by the ratchet po
 
 
 \section{Conclusions}
-%TODO
-
 With our scaled-ratchet model, which is a variation of a Brownian ratchet, we reproduce velocities and stall-forces of the myosin II molecular motor. 
-These quantities depend heavily on the ATP binding rate $k_\text{bind}$.
+These quantities depend heavily on the ATP binding rate $k_\text{bind}$ and on the scaling factor $c$, that models screening of the interactions by ionic concentrations in the inter-cellular environment.
 We revisit the force-velocity relation for small non-muscle myosin II motors. 
 We investigate how it depends on $k_\text{bind}$ and on the number of heads of the motor $N$.
 In the ``load on the motor'' setup, mechanical quantities like the mean ratchet force and tension in the motor can be obtained by a linear combination of the mean relative velocity of the motor and the load applied to it. 
