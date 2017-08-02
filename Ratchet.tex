@@ -815,7 +815,7 @@ F_\text{load} \to \infty
 
 
 \subsubsection{Tug of war}
-In the case of the ``tug of war'' setup, cf. section~\ref{sec:tug_of_war}, the motor is in between of two actin polymers aligned anti-parallel. 
+In the case of setup ``tug of war'', cf. section~\ref{sec:tug_of_war}, the motor is in between two actin polymers aligned anti-parallel. 
 
 We again start from the mean velocities for all components of the system in this setup \eqref{eq:eom_two_actins},
 \begin{align*}
@@ -883,35 +883,35 @@ For small loads, ratchet forces balance the load applied on both filaments, thus
 \[
 \langle \tau_\text{M} \rangle \approx 2 F_\text{load} .
 \] 
-This is a similar behavior to the previously discussed ``load on the motor'' and ``load on the polymer'' setup, cf. equations~\eqref{eq:tension_low_load} and~\eqref{eq:tension_load_on_polymer}, 
-where the proportionality constant is $ 1 + \gamma_\text{A} / (\gamma_\text{A} + \gamma_\text{M} )$ and $\gamma_\text{M} / (\gamma_\text{A} + \gamma_\text{M} )$ respectively. 
+This behavior is similar to the tension in the previously discussed setups  ``load on the motor'' and ``load on the polymer'' setup, cf. equations~\eqref{eq:tension_low_load} and~\eqref{eq:tension_load_on_polymer}, 
+where the proportionality constants are $ 1 + \gamma_\text{A} / (\gamma_\text{A} + \gamma_\text{M} )$ and $\gamma_\text{M} / (\gamma_\text{A} + \gamma_\text{M} )$ respectively. 
 Note that the proportionality constant for the ``load on the motor'' setup, which lies in the closed interval $[1,2]$, 
 is always bigger or equal then the one in the ``load on the polymer'', which is in the interval $[0,1]$, and smaller or equal then in the ``tug of war'' setup. 
 This is confirmed by figure~\ref{fig:tug_F}.
 
-When the load increase the motor starts to slip.
+As described earlier, the motor starts to slip when the load is increased.
 Consequently, the mean ratchet force decreases, cf. figure~\ref{fig:ratchet_force} and~\ref{fig:ratchet_force_decay}, and the increase in tension diminishes, 
 as was shown in the figure~\ref{fig:tug_F}.
 This behavior underlines the main difference between the ``tug of war'' and ``load on the polymer'' setups and the ``load on the motor'' setup, 
 where the load is applied directly to the motor. 
-And consequently, as the ratchet force vanishes for large load, a residual tension from the load remains.
+Furthermore, as the ratchet force vanishes for large load, a residual tension from the load remains.
 However, in the ``tug of war'' and ``load on the polymer'' setup, this residual tension is not transmitted further to the motor due to the vanishing ratchet interaction.
 In the ``load on the polymer'' setup, the tension in the motor does not build up as fast with increasing load because the motor experiences a ratchet force only from one actin filament.
 The initial tension there is less then half of the tension in the setup with two loaded filaments.
-This suggests that the ratchet force is better transmitted to the motor in the ``tug of war'' setup.
+This suggests that the ratchet force, per motor head, is better transmitted to the motor in the ``tug of war'' setup.
 
 
 Lastly, the variance of the motor velocity, cf. figure~\ref{fig:tug_F_motor}, seems to behave similarly to the tension on the motor in the figure~\ref{fig:tug_F}. 
 While the mean velocity stays close to zero, the variance increases as the tension builds up in the motor. 
 As the motor begins to slip over the filaments, the variance appears to decrease again.
-
+However, we do not have a formal proof of this relation.
 
 
 
 \subsubsection{Mechanosensing}
 \label{sec:mechanosensing}
 The last setup, introduced in section~\ref{sec:other_setups}, is the case where the motor is situated between two anti-parallel actin filaments, which are attached to wall via springs, see sketch in figure~\ref{fig:tug}. 
-Similarly as in the previous setup, the tension in the motor is given by the difference or ratchet forces applied on it.
+Similarly as in the previous setup, the tension in the motor is given by the difference of the ratchet forces applied on it.
 However, in this setup, there is no external load on actin polymers and thus in the steady state we have a simple balance between the ratchet interaction and springs. 
 This means that the tension on the motor is given by
 \[
@@ -920,7 +920,7 @@ This means that the tension on the motor is given by
 = k_\text{sp} \left( \left\langle \Delta x_2 \right\rangle - \left\langle \Delta x_1 \right\rangle \right) ,
 \]
 where $k_\text{sp}$ is the spring stiffness and $\Delta x_1 = x_1(t) - x_1(0)$ ($\Delta x_2 = x_2(t) - x_2(0)$) is the extension of the spring attached to first (second) actin. 
-The tension is plotted in figure~\ref{fig:tug_k} for different stiffness $k_\text{sp}$ that represent the varying elasticity of the surrounding network.
+The tension is plotted in figure~\ref{fig:tug_k} for different stiffnesses $k_\text{sp}$ that represent the varying elasticity of the surrounding network.
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{tug_k}
@@ -933,13 +933,13 @@ On the other hand, high stiffness leads to saturation of the exerted force as th
 Inset depicts the mean tension as the function of the spring stiffness on semi-log scale. 
 }
 \end{figure}
-The tension which the motor generate depends strongly on this elasticity $k_\text{sp}$ and saturates for large $k_\text{sp}$. 
-This suggests that the motor is not only able to sense external forces, but also its environment's mechanical properties.
+The tension that the motor generates depends strongly on this elasticity $k_\text{sp}$ and saturates for large $k_\text{sp}$. 
+This suggests that the motor is not only able to respond to external forces, but also to sense its environment's mechanical properties.
 
-Similar results were obtained for different motor models with load dependent chemical rates \cite{stam2015isoforms,albert2014stochastic}. 
-However, the models used in those studies exhibit rates the depend on the strain or tension in the myosin motor. 
-In our study, we show that this behavior also occurs in a simple flashing ratchet with constant chemical rates. 
-It is important to include the fluctuations in this stochastic model to preserve the mechanosensing feature. 
+Similar results were obtained for different motor models\cite{stam2015isoforms,albert2014stochastic}. 
+However, the models used in those studies exhibit rates that depend on the strain or tension in the myosin motor. 
+In our study, we show that this behavior also occurs in a simple Brownian ratchet with constant chemical rates.
+It is important to include the fluctuations in this stochastic model to preserve the mechanosensing feature.
 In mean field models, where the phenomenological force-velocity relation would be implemented deterministically, 
 the motor would essentially stall in this given setup and cease to exert a net force on the filaments. 
 Therefore mechanosensing will not occur spontaneously in those models.
