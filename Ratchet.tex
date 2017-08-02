@@ -542,13 +542,13 @@ and reversing the relative velocity.
 However, the ``tug of war'' setup manifests a clear difference for mid-range loads due to the more complex interaction with two polymer. 
 
 \subsection{Stall force}
-From the figure~\ref{fig:F_v} it is apparent, that when applying a force against the preferred direction of the motor, 
+From figure~\ref{fig:F_v} it is apparent that when applying a force against the preferred direction of the motor, 
 the motor first slows down until it stops before it reverses its direction. 
 The force magnitude that is needed to stop the motor's movement relative to the actin filament is called the stall force $F_\text{stall}$,  
 \[
 \left\langle v ( F_\text{load} \equiv F_\text{stall} ) \right\rangle = 0 .
 \]
-Figure~\ref{fig:F_v_zoom} shows the inset of figure~\ref{fig:F_v} for small negative loads. 
+Figure~\ref{fig:F_v_zoom} shows a zoomed in version of figure~\ref{fig:F_v} for small loads, opposite to the motor's preferred direction of motion. 
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{F_v_zoom}
@@ -573,18 +573,18 @@ Stall force $F_\text{stall}$ for different detach rates $k_\text{d}$.
 We observe power-law decay $F_\text{stall} \propto k_\text{d}^{-\alpha}$ with exponent $\alpha = 1.002 \pm 0.014$. 
 }
 \end{figure}
-When the ATP binding rate increases, so does the fraction of time in which the motor is less interacting with the actin filament. 
-Hence, it will take on average a smaller load to halt a motor since the amplitude of its confining potential will be typically lower.
+When the ATP binding rate increases, so does the fraction of time in which the motor is weakly interacting with the actin filament. 
+Hence, on average it will take a smaller load to halt a motor since the amplitude of its confining potential will be typically lower.
 Ultimately, when the system is found only in the ATP unbound state the relative mean velocity is zero, $\langle v \rangle = 0$, as the system reached an equilibrium 
 and thus the stall force reaches zero as well, $F_\text{stall} \to 0$.
 %TODO Relate to power law => Maybe some analytics can help
 
 \subsection{Velocity with respect to medium}
 \label{sec:ind_velo}
-Until now, we have investigated the relative velocity of the myosin and actin polymer \eqref{eq:mean_velocity}, however this does not give us any information,
-whether it is motor who is moving with respect to the medium or rather the actin polymer who is being pushed through the medium.
+Until now, we have investigated the relative velocity of the myosin and actin polymer \eqref{eq:mean_velocity}, however this does not give us additional information of
+whether it is the motor that is moving with respect to the medium or rather the actin polymer that is being pushed back through the medium.
 In order to find the dependency between individual velocities and relative velocity in the ``load on the motor'' setup, 
-we start from their explicit form, cf. equations~\eqref{eq:eom_M} and~\eqref{eq:eom_A},
+we start by taking expectation values of their equations of motion, cf. equations~\eqref{eq:eom_M} and~\eqref{eq:eom_A},
 \begin{align}
 \gamma_\text{M} \langle v_\text{M} \rangle &= \frac{ \langle \rmd x_\text{M} \rangle }{\rmd t} = \langle F_\text{r} \rangle - F_\text{load} , 
 \label{eq:pre_velocity_M} 
@@ -596,7 +596,7 @@ where $F_\text{r}$ denote ratchet force,
 \[
 F_\text{r} = - \nabla_\text{M} V_t( x_\text{M} - x_\text{A} ) = \nabla_\text{A} V_t(x_\text{M} - x_\text{A} ) . 
 \]
-Next we express the relative velocity \eqref{eq:mean_velocity} in terms of the mean ratchet force $\langle F_\text{r} \rangle$ and the external load $F_\text{load}$  
+Next, we express the relative velocity \eqref{eq:mean_velocity} in terms of the mean ratchet force $\langle F_\text{r} \rangle$ and the external load $F_\text{load}$  
 \begin{equation}
 \langle v \rangle 
 = \langle v_\text{M} - v_\text{A} \rangle 
@@ -619,7 +619,7 @@ This is related to the fact that the full system is moving with respect to the l
 = \frac{ \gamma_\text{A} - \gamma_\text{M} }{ 2 ( \gamma_\text{A} + \gamma_\text{M} ) } \langle v \rangle - \frac{1}{ \gamma_\text{A} + \gamma_\text{M} } F_\text{load}
 , 
 \end{multline*}
-which is proportional to both load and relative velocity and is zero only when $\langle v \rangle = 2 F_\text{load} / ( \gamma_\text{A} - \gamma_\text{M} )$.
+which is proportional to both the load and the relative velocity and is zero only when $\langle v \rangle = 2 F_\text{load} / ( \gamma_\text{A} - \gamma_\text{M} )$.
 
 Also note, that the ratchet force is bounded by 
 \[
@@ -630,8 +630,8 @@ F_\text{r}
 \frac{ N V }{ \ell a } ,
 \]
 cf. equations~\eqref{eq:ratchet_potential} and~\eqref{eq:ratchet_interaction}, 
-which means that there is a maximal amount of the load the ratchet interaction can transmit from the motor to the polymer 
-and thus there exists an upper and lower bound for polymer's velocity~\eqref{eq:pre_velocity_A}.   
+which means that there is a maximal portion of the load that the ratchet interaction can transmit from the motor to the polymer 
+and thus there exists an upper and lower bound for the polymer's velocity~\eqref{eq:pre_velocity_A}.   
 This can be seen in the figure~\ref{fig:ind_v} depicting the individual velocities as a function of the external load $F_\text{load}$,  
 \begin{figure}[t]
 \centering
@@ -643,12 +643,12 @@ We observe that only the myosin is moving while the velocity of the dragged acti
 Inset: Zoomed to the linear regime around the origin.
 }
 \end{figure}
-where the polymer velocities are clearly bounded. 
+where the polymer's velocity is clearly bounded. 
 
 For small loads, the motor and actin filament are moving together, as the coupling by the ratchet interaction proves to be dominant. 
 This hypothesis can be further supported by the linear dependency of equations~\eqref{eq:velocity_M} and~\eqref{eq:velocity_A} on the load, 
 which is due to the fact that for small loads also the mean relative velocity \eqref{eq:mean_velocity} is linear in the load, see figure~\ref{fig:F_v}. 
-Moreover as the mean velocity response to the external force is typically small compared to the direct contribution from the external load the individual velocities,
+Moreover as the mean velocity's response to the external force is typically very small compared to the direct contribution from the external load to the individual velocities,
 we can be further approximate them by  
 \begin{align*}
 \left\langle v_\text{M} \right\rangle 
@@ -660,17 +660,17 @@ we can be further approximate them by
 Such a response is depicted in the inset of the figure~\ref{fig:ind_v}, where the shift in individual velocities caused by the relative velocity for very small loads is constant.
 
 Since the load is only applied to the motor in this setup, for very high loads, the motor will start slipping over the ratchet potential along the actin filament. 
-Consequently, the actin's mean velocity will stop increase and approaches zero 
-while the myosin's mean velocity go to $\langle v_\text{M} \rangle \asymp F_\text{load}/\gamma_\text{M} $
+Consequently, the actin filament's mean velocity will stop increasing and eventually approaches zero, 
+while the myosin motor's mean velocity goes to $\langle v_\text{M} \rangle \asymp F_\text{load}/\gamma_\text{M} $
 as can be seen in figure~\ref{fig:ind_v}. 
-This is due to the fact that the asymptotic behavior of the relative velocity 
+This is due to the fact that the asymptotic behavior of the relative velocity  is
 \[
 \langle v \rangle \asymp - \frac{ F_\text{load} }{\gamma_\text{M} },
 \]
-which can be obtained directly from the equation~\eqref{eq:mean_velocity_Fr_Fl} as the contribution from the ratchet force is bounded.
-The asymptotic behavior for the motor and the polymer the follows from equations~\eqref{eq:velocity_M} and~\eqref{eq:velocity_A} for $ \left\langle v \right\rangle = - F_\text{load} / \gamma_\text{M} $. 
+which can be obtained directly from equation~\eqref{eq:mean_velocity_Fr_Fl} as the contribution from the ratchet force is bounded.
+The asymptotic behavior for the motor and the polymer follows from equations~\eqref{eq:velocity_M} and~\eqref{eq:velocity_A} for $ \left\langle v \right\rangle = - F_\text{load} / \gamma_\text{M} $. 
 From there it is also apparent that the relative mean velocity in the limit of infinitely large load $F_\text{load} \to \pm \infty$ will be equal to the motor's velocity $\langle v_\text{M} \rangle$.
-This is in good agreement with the figure~\ref{fig:F_v}.
+This is agrees with the data in figure~\ref{fig:F_v}.
 
 \subsection{Ratchet force} 
 One can interpret the nonlinear force-velocity relation for the myosin~\eqref{eq:pre_velocity_M} as balance between the load, drag force and the force caused by the ratchet interaction, 
