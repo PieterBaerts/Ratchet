@@ -10,7 +10,7 @@ load "Data/my.pal"
 set key left Left width -2 
 
 set xlabel "F_{load} (pN)"
-set ylabel "Tension (pN)"
+set ylabel "{/Symbol \341}{/Symbol t}_M{/Symbol \361} (pN)"
 
 set xzeroaxis
 set yzeroaxis

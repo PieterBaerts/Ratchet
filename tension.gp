@@ -10,7 +10,7 @@ set xzeroaxis
 set yzeroaxis
 
 set xlabel "F_{load} (pN)"
-set ylabel "Tension (pN)"
+set ylabel "{/Symbol \341}{/Symbol t}_M{/Symbol \361} (pN)"
 
 gamma_M = 0.66
 gamma_A = 0.97
