@@ -335,13 +335,13 @@ Note, that the actin from the ``load on the polymer'' setup correspond to a poly
 Also note, that due to the symmetry of the setup in the steady state the mean velocity of the myosin is inherently zero,
 \begin{multline*}
 \left\langle v_\text{M} \right\rangle 
-= \frac{1}{\gamma_\text{M}} \bigl[ 
-\left\langle \nabla_\text{M} V_t(x_\text{M}(t) - x_{\text{A}_1}(t)) \right\rangle
+= - \frac{1}{\gamma_\text{M}} \bigl[ 
+\left\langle \nabla_\text{M} V_t( x_{\text{A}_1}(t) - x_\text{M}(t) ) \right\rangle
 \\ 
-+ \left\langle \nabla_\text{M} V_t(x_{\text{A}_2}(t) - x_\text{M}(t)) \right\rangle 
++ \left\langle \nabla_\text{M} V_t( x_\text{M}(t) - x_{\text{A}_2}(t) ) \right\rangle 
 \bigr] 
 \\
-= \frac{\gamma_\text{A}}{\gamma_\text{M}} \left[ 
+= - \frac{\gamma_\text{A}}{\gamma_\text{M}} \left[ 
 \left\langle v_{\text{A}_1} \right\rangle 
 + \left\langle v_{\text{A}_2} \right\rangle 
 \right]
@@ -820,15 +820,15 @@ F_\text{load} \to \infty
 In the case of the ``tug of war'' setup, cf. section~\ref{sec:tug_of_war}, the motor is in the middle of two actin polymers aligned anti-parallel. 
 The mean velocities in general for all elements of the system in this setup are given by
 \begin{align*}
-\langle v_{\text{A}_1} \rangle &= \frac{1}{\gamma_\text{A} } \left( F_\text{load} - \langle F_{\text{r}_1} \rangle \right) , \\
-\langle v_\text{M} \rangle &= \frac{1}{\gamma_\text{M} } \left( \langle F_{\text{r}_1} \rangle + \langle F_{\text{r}_2} \rangle \right) , \\
-\langle v_{\text{A}_2} \rangle &= \frac{1}{ \gamma_\text{A} } \left( - F_\text{load} - \langle F_{\text{r}_2} \rangle \right) ,
+\langle v_{\text{A}_1} \rangle &= \frac{1}{\gamma_\text{A} } \left( \langle F_{\text{r}_1} \rangle - F_\text{load} \right) , \\
+\langle v_\text{M} \rangle &= \frac{1}{\gamma_\text{M} } \left( \langle F_{\text{r}_2} \rangle - \langle F_{\text{r}_1} \rangle \right) , \\
+\langle v_{\text{A}_2} \rangle &= \frac{1}{ \gamma_\text{A} } \left( F_\text{load} - \langle F_{\text{r}_2} \rangle \right) ,
 \end{align*}
 where ${\text{A}_1}$ and ${\text{A}_2}$ denote the two different actin filaments and $F_{\text{r}_1}$ and $F_{\text{r}_2}$ are the ratchet forces between the motor and respectively filament ${\text{A}_1}$ and ${\text{A}_2}$. 
 
 Note that the mean velocity of the motor is proportional to the mean center of mass velocity of both actin filaments, 
 \begin{equation*}
-\langle v_\text{M} \rangle = \frac{\gamma_\text{A}}{\gamma_\text{M}} \left(\langle v_{\text{A}_1} \rangle + \langle v_{\text{A}_2} \rangle \right) .
+\langle v_\text{M} \rangle = - \frac{\gamma_\text{A}}{\gamma_\text{M}} \left(\langle v_{\text{A}_1} \rangle + \langle v_{\text{A}_2} \rangle \right) .
 %\label{eq:tug_F_motor}
 \end{equation*}
 Due to the anti-parallel alignment of the filaments, $F_{{r_1}}$ and $F_{{r_2}}$ are equal but opposite on average. 
