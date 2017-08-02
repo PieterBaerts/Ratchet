@@ -10,7 +10,7 @@ set yzeroaxis
 set key top right Left width -3
 
 set ylabel "{/Symbol h}"
-set xlabel "{/Symbol t}_M (pN)"
+set xlabel "{/Symbol \341}{/Symbol t}_M{/Symbol \361} (pN)"
 
 gamma_M = 0.66
 gamma_A = 0.97
