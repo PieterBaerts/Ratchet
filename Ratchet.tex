@@ -44,7 +44,7 @@ Here we revise the Brownian ratchet model,
 which was previously studied in the context of an active transport, 
 in setups resembling a motor placed in a polymer network.
 We show that such a model is not only capable of capturing mechanosensing behavior,
-but also its chemical cycle's efficiency is directly related to the active tension on the motor.  
+but also its chemical cycle's efficiency is directly related to the active tension it exerts.  
 \end{abstract}
 
 \maketitle 
@@ -1501,14 +1501,15 @@ which does not match with the period of the ratchet potential.
 Also the fact that the distributions seem to exhibit multiple peaks, can be attributed to the motor having four heads. 
 Both in the bound and unbound state, the head can be found predominantly on the ``soft'' slope of the ratchet.
 
-When the load is increased to $F_\text{load} = 25 \, \mathrm{pN}$, the average steady state distribution shifts to the right in both the ATP bound and unbound state. 
+When the load is increased to $F_\text{load} = - 25 \, \mathrm{pN}$, the average steady state distribution shifts to the right in both the ATP bound and unbound state. 
 While the distribution for the ATP unbound state remains peaked around the potential minimum, cf. figure~\ref{fig:pos_distr},
-the distribution in the ATP bound state flattens out and increases around the potential maximum. 
+the distribution in the ATP bound state flattens out and increases around the potential maximum,
+which is a trademark of a frustrated system.  
 This is due to the potential being less steep, which means that heads in that particular state are more susceptible to external forces,  
 which in this particular case leads to an increase of $\eta$ due to the increase in discrepancy between the average distributions, 
 see figures~\ref{fig:chem} and \ref{fig:chem_energy_distr}. 
 
-For a load in the opposite direction $F_\text{load}= -25 \, \mathrm{pN}$ the effect on average densities is similar but less pronounced, 
+For a load in the opposite direction $F_\text{load}= 25 \, \mathrm{pN}$ the effect on average densities is similar but less pronounced, 
 see figure~\ref{fig:chem_energy_distr}, 
 since the slope of the ratchet on the side is less steep and the distributions get more spread out, cf. figure~\ref{fig:pos_distr}. 
 
@@ -1561,21 +1562,21 @@ Now if we apply a small external force, those distributions will be slightly per
 Following the McLennan formula~\cite{} we obtain %TODO 
 \begin{align*}
 \rho^*(x) 
-&\sim e^{-\beta \left[V_\text{r}(x) - F_\text{load} \left( x - x_\text{min} \right) \right]} \\
-&\approx \rho_0(x) \left[1 + \beta F_\text{load} \left( x - x_\text{min} \right) \right]
+&\sim e^{-\beta \left[V_\text{r}(x) + F_\text{load} \left( x - x_\text{min} \right) \right]} \\
+&\approx \rho_0(x) \left[1 - \beta F_\text{load} \left( x - x_\text{min} \right) \right]
 \end{align*}
 close to the potential minimum $x_\text{min}$, i.e. $V(x) \ge V(x_\text{min})$. 
-This leads, for small $F_\text{load}$, to a shift of the distribution $\rho$ in the direction of the load
+This leads, for small $F_\text{load}$, to a shift of the distribution $\rho$ in the direction opposite of the load
 as can be seen from 
 \begin{multline}
 \left\langle x \right\rangle_{\rho^*} 
 = x_\text{min} + \left\langle x - x_\text{min} \right\rangle_{\rho^*}
 \\
 \approx x_\text{min} + \left\langle x - x_\text{min} \right\rangle_{\rho_0} 
-+ \beta F \left\langle \left( x - x_\text{min} \right)^2 \right\rangle_{\rho_0} 
+- \beta F_\text{load} \left\langle \left( x - x_\text{min} \right)^2 \right\rangle_{\rho_0} 
 \\
 = \left\langle x \right\rangle_{\rho_0}
-+ \beta F \left\langle \left( x - x_\text{min} \right)^2 \right\rangle_{\rho_0} .
+- \beta F_\text{load} \left\langle \left( x - x_\text{min} \right)^2 \right\rangle_{\rho_0} .
 \label{eq:mean_position_shift}
 \end{multline}
 From the previous equation it follows that a more spread-out distribution will be affected more by the force.
@@ -1592,6 +1593,8 @@ V_\text{r}(\langle x | \zeta \rangle) \leq \langle V_\text{r}(x) | \zeta \rangle
 \end{equation*} 
 where the lower bound on the expectation value of the ratchet potential \eqref{eq:ratchet_potential} is given by the value of the ratchet potential at the mean position of the heads in a given state. 
 We have shown in \eqref{eq:mean_position_shift} that the mean position is shifted by the action of the external force and consequently it shifts the lower bound for the mean value of the ratchet potential itself. 
+Moreover, we have seen in the figure~\ref{fig:pos_distr} that the probability distribution for small loads is well localized around it's mean value,
+thus the shift in the lower bound for the potential represent a shift in the mean value as well. 
 Furthermore, in the ATP bound state the mean position will be further away from the minimum of the ratchet \eqref{eq:mean_position_shift} so the lower bound is higher than in the ATP unbound state.
 
 For a four headed motor, the distributions of the heads at zero load are not exactly peaked around the minimum of the potential. 
