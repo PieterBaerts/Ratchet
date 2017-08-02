@@ -1027,16 +1027,15 @@ the heat exchange with the surrounding~\eqref{eq:heat_hb_M} can be rewritten as
 {\mathcal Q}_\text{M}^\text{hb} 
 = \int \rmd x_\text{M} \circ \left[ \nabla_\text{M} V_t(x_\text{M} - x_\text{A} ) + F_\text{load} \right] 
 \\
-= \int \rmd x_\text{M} \circ \nabla V_t(x_\text{M} - x_\text{A} ) - {\mathcal W}_\text{M}^\text{ext} ,
+= \int \rmd x_\text{M} \circ \nabla_\text{M} V_t(x_\text{M} - x_\text{A} ) - {\mathcal W}_\text{M}^\text{ext} .
 \label{eq:heat_hb_M_expl}
 \end{multline}
-where $\nabla V_t$ denotes the derivative with respect to the argument. 
 Similarly for the heat dissipated by actin's interaction with the environment we get 
 \begin{multline}
 {\mathcal Q}_\text{A}^\text{hb} 
 = \int \rmd x_\text{A} \circ \nabla_\text{A} V_t(x_\text{M} - x_\text{A} )
 \\
-= - \int \rmd x_\text{A} \circ \nabla V_t(x_\text{M} - x_\text{A} ) ,
+= - \int \rmd x_\text{A} \circ \nabla_\text{M} V_t(x_\text{M} - x_\text{A} ) ,
 \label{eq:heat_hb_A_expl}
 \end{multline}
 thus the heat dissipated to the heath bath can be expressed in terms of the work done by the ratchet potential and external load. 
@@ -1059,7 +1058,7 @@ we can see that the excess of the chemical cycle in the steady state is dissipat
 \\
 = 
 \left\langle 
-\int \rmd \left( x_\text{M} - x_\text{A} \right) \circ \left[ - \nabla V_t( x_\text{M} - x_\text{A} ) \right]
+\int \rmd \left( x_\text{M} - x_\text{A} \right) \circ \left[ - \nabla_\text{M} V_t( x_\text{M} - x_\text{A} ) \right]
 \right\rangle ,
 \label{eq:chemical_excess}
 \end{multline} 
@@ -1109,10 +1108,10 @@ Note, that in this particular setup the load is applied in the opposite directio
 Similarly expressions~\eqref{eq:heat_hb_M_expl} and~\eqref{eq:heat_hb_A_expl} are modified to
 \begin{align*}
 {\mathcal Q}_\text{M}^\text{hb} 
-&= \int \rmd x_\text{M} \circ \nabla V_t(x_\text{M} - x_\text{A} ) ,
+&= \int \rmd x_\text{M} \circ \nabla_\text{M} V_t(x_\text{M} - x_\text{A} ) ,
 \\
 {\mathcal Q}_\text{A}^\text{hb} 
-&= - \int \rmd x_\text{A} \circ \nabla V_t(x_\text{M} - x_\text{A} ) - {\mathcal W}_\text{A}^\text{ext} .
+&= - \int \rmd x_\text{A} \circ \nabla_\text{M} V_t(x_\text{M} - x_\text{A} ) - {\mathcal W}_\text{A}^\text{ext} .
 \end{align*} 
 Consequently the excess of the chemical cycle~\eqref{eq:chemical_excess} changes to 
 \begin{multline*}
@@ -1122,7 +1121,7 @@ Consequently the excess of the chemical cycle~\eqref{eq:chemical_excess} changes
 \\
 = 
 \left\langle 
-\int \rmd \left( x_\text{M} - x_\text{A} \right) \circ \left[ - \nabla V_t( x_\text{M} - x_\text{A} ) \right]
+\int \rmd \left( x_\text{M} - x_\text{A} \right) \circ \left[ - \nabla_\text{M} V_t( x_\text{M} - x_\text{A} ) \right]
 \right\rangle ,
 \end{multline*} 
 which can be again interpreted in terms of the relative velocity $v$, cf.~\eqref{eq:mean_velocity}, 
@@ -1148,9 +1147,9 @@ hence the energy balance~\eqref{eq:energy_balance} is modified to
 where the energy now contains contributions from both polymers
 \begin{multline*}
 E( x_\text{M}, x_{\text{A}_1}, x_{\text{A}_2}, \{ \zeta_i \}) 
-= V_t( x_\text{M} - x_{\text{A}_1} ) 
+= V_t( x_\text{M} - x_{\text{A}_2} ) 
 \\
-+ V_t( x_{\text{A}_2} - x_\text{M} ) 
++ V_t( x_{\text{A}_1} - x_\text{M} ) 
 + \Delta E \sum\limits_{i=0}^{N-1} \chi( \zeta_i = c ) .
 \end{multline*}
 Note, that the last sum is over all heads of the motor, $N = N_{\text{A}_1} + N_{\text{A}_2}$.
@@ -1164,9 +1163,9 @@ Contributions from the heat exchange with the environment~\eqref{eq:heat_hb_A} r
 and the external load is now not applied on the motor but on each actin polymer.
 Hence, equation~\eqref{eq:work_load} is replaced by
 \begin{align*}
-{\mathcal W}^\text{ext}_{\text{A}_1} &= \int \rmd x_{\text{A}_1} \circ F_\text{load} = \Delta x_{\text{A}_1} F_\text{load}, 
+{\mathcal W}^\text{ext}_{\text{A}_1} &= - \int \rmd x_{\text{A}_1} \circ F_\text{load} = - \Delta x_{\text{A}_1} F_\text{load}, 
 \\
-{\mathcal W}^\text{ext}_{\text{A}_2} &= - \int \rmd x_{\text{A}_2} \circ F_\text{load} = - \Delta x_{\text{A}_2} F_\text{load}. 
+{\mathcal W}^\text{ext}_{\text{A}_2} &= \int \rmd x_{\text{A}_2} \circ F_\text{load} = \Delta x_{\text{A}_2} F_\text{load}. 
 \end{align*}
 
 Note, that the interpretation of the energy balance \eqref{eq:energy_balance_two_filaments} in terms of the heat fluxes \eqref{eq:heat_flux}
@@ -1183,21 +1182,21 @@ Similarly to the ``load on the motor'' setup, we can express the excess from the
 \\
 = 
 \left\langle 
-\int \rmd \left( x_\text{M} - x_{\text{A}_1} \right) \circ \left[ - \nabla V_t( x_\text{M} - x_{\text{A}_1} ) \right]
+\int \rmd \left( x_\text{M} - x_{\text{A}_1} \right) \circ \left[ - \nabla_\text{M} V_t( x_{\text{A}_1} - x_\text{M} ) \right]
 \right\rangle 
 \\
 +
 \left\langle 
-\int \rmd \left( x_\text{M} - x_{\text{A}_2} \right) \circ \left[ - \nabla V_t( x_{\text{A}_2} - x_\text{M} ) \right]
+\int \rmd \left( x_\text{M} - x_{\text{A}_2} \right) \circ \left[ - \nabla_\text{M} V_t( x_\text{M} - x_{\text{A}_2} ) \right]
 \right\rangle .
 \label{eq:excess_heat_tug}
 \end{multline} 
 If we assume that displacements in the respective integrals are typically anti-symmetric, due to the anti-symmetry of the setup, 
-we can interpret the excess chemical heat as a covariance of the tension on the motor~\eqref{eq:tension_tug} with the relative velocity of the motor with respect to a single polymer integrated over the time, 
+we can interpret the excess chemical heat as a covariance of the tension on the motor~\eqref{eq:tension_tug} with the relative velocity of the motor with respect to a single polymer \eqref{eq:mean_velocity_Fr_Fl} integrated over the time, 
 as in the equation~\eqref{eq:excess_heat}. 
 Note, that in this particular setup the interpretation in terms of the tension is not so straightforward as in the case of the setup with either ``load on the motor'' or ``load on the polymer'', 
-because the individual displacements $x_\text{M} - x_{\text{A}_1}$ and $x_\text{M} - x_{\text{A}_2}$ are not independent nor dependent only on very short time scales.
-Only in the long time regime they are anti-symmetric. 
+because the individual displacements $x_\text{M} - x_{\text{A}_1}$ and $x_\text{M} - x_{\text{A}_2}$ are subjected to thermal fluctuations on short time scale. 
+Only on the long time scale they are anti-symmetric and the tension relaxes to a steady value.  
 
 
 \subsubsection{Elastic environment}
@@ -1210,8 +1209,8 @@ further modifies the energy balance~\eqref{eq:energy_balance}, resp.~\eqref{eq:e
 as there is no external load but all the accumulated energy is now stored in harmonic potentials 
 \begin{multline*}
 E( x_\text{M}, x_{\text{A}_1}, x_{\text{A}_2}, \{ \zeta_i \}) 
-= V_t( x_\text{M} - x_{\text{A}_1} ) 
-+ V_t( x_{\text{A}_2} - x_\text{M} ) 
+= V_t( x_\text{M} - x_{\text{A}_2} ) 
++ V_t( x_{\text{A}_1} - x_\text{M} ) 
 \\
 + \frac{1}{2} k_\text{sp} \left[ x_{\text{A}_1} - x_{\text{A}_1}(0) \right]^2 
 + \frac{1}{2} k_\text{sp} \left[ x_{\text{A}_2} - x_{\text{A}_2}(0) \right]^2 
@@ -1228,12 +1227,12 @@ Lastly we again look at the excess output from the chemical cycle
 \\
 = 
 \left\langle 
-\int \rmd \left( x_\text{M} - x_{\text{A}_1} \right) \circ \left[ - \nabla V_t( x_\text{M} - x_{\text{A}_1} ) \right]
+\int \rmd \left( x_\text{M} - x_{\text{A}_1} \right) \circ \left[ - \nabla_\text{M} V_t( x_{\text{A}_1} - x_\text{M} ) \right]
 \right\rangle 
 \\
 +
 \left\langle 
-\int \rmd \left( x_\text{M} - x_{\text{A}_2} \right) \circ \left[ - \nabla V_t( x_{\text{A}_2} - x_\text{M} ) \right]
+\int \rmd \left( x_\text{M} - x_{\text{A}_2} \right) \circ \left[ - \nabla_\text{M} V_t( x_\text{M} - x_{\text{A}_2} ) \right] 
 \right\rangle 
 \\
 + k_\text{sp} \left\langle \int \rmd x_{\text{A}_1} \circ \left( x_{\text{A}_1} - x_{\text{A}_1}(0) \right) \right\rangle
@@ -1249,12 +1248,12 @@ which further simplifies to
 \\
 = 
 \left\langle 
-\int \rmd \left( x_\text{M} - x_{\text{A}_1} \right) \circ \left[ - \nabla V_t( x_\text{M} - x_{\text{A}_1} ) \right]
+\int \rmd \left( x_\text{M} - x_{\text{A}_1} \right) \circ \left[ - \nabla_\text{M} V_t( x_{\text{A}_1} - x_\text{M} ) \right]
 \right\rangle 
 \\
 +
 \left\langle 
-\int \rmd \left( x_\text{M} - x_{\text{A}_2} \right) \circ \left[ - \nabla V_t( x_{\text{A}_2} - x_\text{M} ) \right]
+\int \rmd \left( x_\text{M} - x_{\text{A}_2} \right) \circ \left[ - \nabla_\text{M} V_t( x_\text{M} - x_{\text{A}_2} ) \right]
 \right\rangle 
 \\
 + \left\langle 
@@ -1266,14 +1265,14 @@ which further simplifies to
 \end{multline*} 
 where $E^\text{sp}$ denote the energy stored in the spring, i.e. 
 \[
-\left\langle \Delta E^\text{sp}_{1/2} \right\rangle 
+\left\langle \Delta E^\text{sp}_\alpha \right\rangle 
 = 
 \frac{1}{2} k_\text{sp}
 \left\langle
 \left( 
-x_{\text{A}_{1/2}}(t) 
+x_{\text{A}_\alpha}(t) 
 - 
-x_{\text{A}_{1/2}}(0)  
+x_{\text{A}_\alpha}(0)  
 \right)^2 
 \right\rangle
 .
