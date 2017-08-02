@@ -339,22 +339,6 @@ V_t(x_{\text{A}_1}(t) - x_\text{M}(t))
 where the anti-alignment of polymers in substitution of $-x$ instead of $x$ for the second polymer in the argument of the ratchet potential~\eqref{eq:ratchet_interaction}.
 Note, that the actin from the ``load on the polymer'' setup correspond to a polymer denoted by $\text{A}_2$ in this setup. 
 
-Also note, that due to the symmetry of the setup in the steady state the mean velocity of the myosin is inherently zero,
-\begin{multline*}
-\left\langle v_\text{M} \right\rangle 
-= - \frac{1}{\gamma_\text{M}} \bigl[ 
-\left\langle \nabla_\text{M} V_t( x_{\text{A}_1}(t) - x_\text{M}(t) ) \right\rangle
-\\ 
-+ \left\langle \nabla_\text{M} V_t( x_\text{M}(t) - x_{\text{A}_2}(t) ) \right\rangle 
-\bigr] 
-\\
-= - \frac{\gamma_\text{A}}{\gamma_\text{M}} \left[ 
-\left\langle v_{\text{A}_1} \right\rangle 
-+ \left\langle v_{\text{A}_2} \right\rangle 
-\right]
-\equiv 0 . 
-\end{multline*}
-
 
 \subsubsection{Elastic environment}
 \label{sec:environment}
@@ -599,9 +583,10 @@ we start by taking expectation values of their equations of motion, cf. equation
 \label{eq:pre_velocity_A}
 \end{align}
 where $F_\text{r}$ denote ratchet force, 
-\[
+\begin{equation}
 F_\text{r} = - \nabla_\text{M} V_t( x_\text{M} - x_\text{A} ) = \nabla_\text{A} V_t(x_\text{M} - x_\text{A} ) . 
-\]
+\label{eq:ratchet_force}
+\end{equation}
 Next, we express the relative velocity \eqref{eq:mean_velocity} in terms of the mean ratchet force $\langle F_\text{r} \rangle$ and the external load $F_\text{load}$  
 \begin{equation}
 \langle v \rangle 
@@ -804,10 +789,11 @@ i.e.
 \label{eq:tension_load_on_polymer}
 \end{equation}
 Following the same argumentation as in the ``load on the motor'' setup, for small loads, the tension will be given by
-\begin{equation*}
+\begin{equation}
 \left\langle \tau_\text{M} \right\rangle
 \approx \frac{\gamma_\text{M}}{\gamma_\text{A}+\gamma_\text{M}} F_\text{load}.
-\end{equation*}
+\label{eq:tension_low_load_on_polymer}
+\end{equation}
 This is similar to~\eqref{eq:tension_low_load}, where the motor experiences the load directly, up to an exchange of friction coefficients of the motor and actin filament. 
 
 Furthermore, since the load is not directly applied to the motor in this setup, the overall term $F_\text{load}$ is not present. 
@@ -825,27 +811,54 @@ F_\text{load} \to \infty
 
 \subsubsection{Tug of war}
 In the case of the ``tug of war'' setup, cf. section~\ref{sec:tug_of_war}, the motor is in between of two actin polymers aligned anti-parallel. 
-The mean velocities in general for all elements of the system in this setup are given by
+
+We again start from the mean velocities for all components of the system in this setup \eqref{eq:eom_two_actins},
 \begin{align*}
-\langle v_{\text{A}_1} \rangle &= \frac{1}{\gamma_\text{A} } \left( \langle F_{\text{r}_1} \rangle - F_\text{load} \right) , \\
-\langle v_\text{M} \rangle &= \frac{1}{\gamma_\text{M} } \left( \langle F_{\text{r}_2} \rangle - \langle F_{\text{r}_1} \rangle \right) , \\
+\langle v_{\text{A}_1} \rangle &= - \frac{1}{\gamma_\text{A} } \left( \langle F_{\text{r}_1} \rangle + F_\text{load} \right) , \\
+\langle v_\text{M} \rangle &= \frac{1}{\gamma_\text{M} } \left( \langle F_{\text{r}_2} \rangle + \langle F_{\text{r}_1} \rangle \right) , \\
 \langle v_{\text{A}_2} \rangle &= \frac{1}{ \gamma_\text{A} } \left( F_\text{load} - \langle F_{\text{r}_2} \rangle \right) ,
 \end{align*}
-where ${\text{A}_1}$ and ${\text{A}_2}$ denote the two different actin filaments and $F_{\text{r}_1}$ and $F_{\text{r}_2}$ are the ratchet forces between the motor and respectively filament ${\text{A}_1}$ and ${\text{A}_2}$. 
+where ${\text{A}_1}$ and ${\text{A}_2}$ denote the two different actin filaments 
+and $F_{\text{r}_1}$ and $F_{\text{r}_2}$ are the ratchet forces~\eqref{eq:ratchet_force} between the motor and respectively filament ${\text{A}_1}$ and ${\text{A}_2}$,
+\begin{align*}
+F_{\text{r}_1} &= - \nabla_\text{M} V( x_{\text{A}_1} - x_\text{M} ) , 
+\\
+F_{\text{r}_2} &= - \nabla_\text{M} V( x_\text{M} - x_{\text{A}_2} ) .
+\end{align*} 
 
-Note that the mean velocity of the motor is proportional to the mean center of mass velocity of both actin filaments, 
-\begin{equation*}
-\langle v_\text{M} \rangle = - \frac{\gamma_\text{A}}{\gamma_\text{M}} \left(\langle v_{\text{A}_1} \rangle + \langle v_{\text{A}_2} \rangle \right) .
-%\label{eq:tug_F_motor}
-\end{equation*}
-Due to the anti-parallel alignment of the filaments, $F_{{r_1}}$ and $F_{{r_2}}$ are equal but opposite on average. 
-Therefore the motor's mean velocity will be zero on average.  
+Note, that due to the symmetry of the setup in the steady state the mean velocity of the myosin is inherently zero,
+\begin{multline*}
+\left\langle v_\text{M} \right\rangle 
+= - \frac{1}{\gamma_\text{M}} \bigl[ 
+\left\langle \nabla_\text{M} V_t( x_{\text{A}_1}(t) - x_\text{M}(t) ) \right\rangle
+\\ 
++ \left\langle \nabla_\text{M} V_t( x_\text{M}(t) - x_{\text{A}_2}(t) ) \right\rangle 
+\bigr] 
+\\
+= - \frac{\gamma_\text{A}}{\gamma_\text{M}} \left[ 
+\left\langle v_{\text{A}_1} \right\rangle 
++ \left\langle v_{\text{A}_2} \right\rangle 
+\right]
+\equiv 0 , 
+\end{multline*}
+which is demonstrated in the figure~\ref{fig:tug_F_motor}.
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.45\textwidth,height=!]{tug_F_motor}
+\caption{\label{fig:tug_F_motor}
+Mean velocity of frustrated motor in between the two filaments under load. 
+The variance of the motor's velocity grows as the load increases. 
+For even larger loads the motor and filaments start slipping and the variance decreases again.
+}
+\end{figure}
 
 Although the load is not applied to the motor directly,
 there will be a tension on the motor due to interaction with both actin filaments. 
 This tension is again given by the difference in the forces applied to their respective ends of the motor,
 \begin{equation}
-\tau_\text{M} = \langle F_{\text{r}_1}\rangle - \langle F_{\text{r}_2}\rangle = -\gamma_\text{A}\left(\langle v_{\text{A}_1}\rangle - \langle v_{\text{A}_2}\rangle \right) - 2F_\text{load} .
+\tau_\text{M} 
+= \langle F_{\text{r}_2}\rangle - \langle F_{\text{r}_1}\rangle 
+= 2 F_\text{load} - \gamma_\text{A} \left(\langle v_{\text{A}_2}\rangle - \langle v_{\text{A}_1}\rangle \right) .
 \label{eq:tension_tug}
 \end{equation}
 The tension in the motor is shown in figure \ref{fig:tug_F}, 
@@ -861,12 +874,15 @@ This is because, only in the case when the load is applied directly on the motor
 \end{figure}
 where it is compared to the tension in the setups with only one actin filament.
 
-For small loads, ratchet forces balance the load applied on both filaments, thus the tension is proportional to twice the load 
+For small loads, ratchet forces balance the load applied on both filaments, thus the tension is approximately proportional to twice the load 
 \[
-\tau_\text{M} \approx - 2 F_\text{load} .
+\tau_\text{M} \approx 2 F_\text{load} .
 \] 
-This is a similar behavior to the previously discussed setup~\eqref{eq:tension_low_load}, 
-where the proportionality constant $ 1 + \gamma_\text{A} / (\gamma_\text{A} + \gamma_\text{M} )$ lies in the closed interval $[1,2]$ rather then exactly being $2$ like in this setup. 
+This is a similar behavior to the previously discussed ``load on the motor'' and ``load on the polymer'' setup, cf. equations~\eqref{eq:tension_low_load} and~\eqref{eq:tension_load_on_polymer}, 
+where the proportionality constant is $ 1 + \gamma_\text{A} / (\gamma_\text{A} + \gamma_\text{M} )$ and $\gamma_\text{M} / (\gamma_\text{A} + \gamma_\text{M} )$ respectively. 
+Note that the proportionality constant for the ``load on the motor'' setup, which lies in the closed interval $[1,2]$, 
+is always bigger or equal then the one in the ``load on the polymer'', which is in the interval $[0,1]$, and smaller or equal then in the ``tug of war'' setup. 
+This is confirmed by figure~\ref{fig:tug_F}.
 
 When the load increase the motor starts to slip.
 Consequently, the mean ratchet force decreases, cf. figure~\ref{fig:ratchet_force} and~\ref{fig:ratchet_force_decay}, and the increase in tension diminishes, 
@@ -881,15 +897,6 @@ This suggests that the ratchet force is better transmitted to the motor in the `
 
 
 Lastly, the variance of the motor velocity, cf. figure~\ref{fig:tug_F_motor}, seems to behave similarly to the tension on the motor in the figure~\ref{fig:tug_F}. 
-\begin{figure}[t]
-\centering
-\includegraphics[width=0.45\textwidth,height=!]{tug_F_motor}
-\caption{\label{fig:tug_F_motor}
-Mean velocity of frustrated motor in between the two filaments under load. 
-The variance of the motor's velocity grows as the load increases. 
-For even larger loads the motor and filaments start slipping and the variance decreases again.
-}
-\end{figure}
 While the mean velocity stays close to zero, the variance increases as the tension builds up in the motor. 
 As the motor begins to slip over the filaments, the variance appears to decrease again.
 
