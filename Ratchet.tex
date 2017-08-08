@@ -89,7 +89,7 @@ This will eventually lead to directed motion of the motor on long timescales \ci
 Such ratchet models have been studied extensively in the context of molecular motors \cite{reimann2002brownian,astumian1994fluctuation,astumian1996mechanochemical,julicher1997modeling,Reimann2002introduction,julicher1997spontaneous,peskin1995correlation,huxley1969mechanism,huxley1971proposed}.
 The models that have been used in these studies are very similar to each other but often differ in some basic assumptions.
 The specific model that we have studied is presented in section~\ref{sec:ratchet}. 
-It has the important trait that the chemical rates do not depend on spacial degrees of freedom and motor heads can attach and detach anywhere along the polymer filament.
+It has the important trait that the chemical rates do not depend on spatial degrees of freedom and motor heads can attach and detach anywhere along the polymer filament.
 Furthermore, the rates do not dependent on external forces on the motor but solely on concentrations of chemicals involved in ATP hydrolysis. 
 We assume that constant concentrations are maintained in the environment at all times. 
 The type of motor that we will be studying is non-muscle myosin~II, which have a small number of heads \cite{pollard1982structure}. 
@@ -191,7 +191,7 @@ with total height $V$,
 period $\ell$ 
 and skewness parameter $a \in [0,1]$. 
 
-The dynamics of the internal state of heads is governed by continuous time Markov process. 
+The dynamics of the internal state of heads is governed by a continuous time Markov process. 
 Here, the internal state represents whether ATP (or one of its products) is \emph{bound} or \emph{unbound} to the myosin head. 
 This specifies the electrostatic properties of the head which will determine the amplitude of the interaction potential with the actin filament.
 No effective dependencies on position or external forces are imposed on the dynamics of the chemical cycle. 
@@ -203,8 +203,8 @@ for which the estimated free energy landscapes \cite{Nie2014,nie2014conformation
 In order to obtain the transition rates between these to two states, we start from the three state model introduced by Albert et al. \cite{albert2014stochastic},
 which we further simplify by unifying the state corresponding to the hydrolized ATP (i.e. ADP+P) and ADP with P released state as this process occurs on much shorter time-scale than other transitions.
 
-Lastly, as the internal state reflects the chemical state of the head rather then the act of binding to actin itself,
-we assume that external load have little influence on the associated rates but rather opposes the underlying free energy landscape. 
+Lastly, as the internal state reflects the chemical state of the head rather than the act of binding to actin itself,
+we assume that an external load has little influence on the associated rates but rather opposes the underlying free energy landscape. 
 These considerations are reflected in the assumption the rates $k_\text{bind}$, $k_\text{unbind}$ independent of the load, 
 but they depend on the concentrations of the relevant chemical species present in ATP hydrolysis. 
 More specifically $k_\text{bind}$ is proportional to $[\text{ATP}]$ while $k_\text{unbind}$ is inversely proportional to $[\text{ADP}]$ and $[\text{P}_\text{i}]$.
@@ -251,7 +251,7 @@ Table of all parameter values and a reference to their source.
 \subsection{Other setups}
 \label{sec:other_setups}
 While the aforementioned setup, shown in figure~\ref{fig:ratchet_setup}, is the most studied \cite{reimann2002brownian,astumian1994fluctuation,finer1994single,julicher1997modeling,kishino1988force,peskin1995correlation,saito1994movement},
-it's aim is to characterize the transport induced by molecular motors.
+its aim is to characterize the transport induced by molecular motors.
 However, recent experiments show that myosin~II motors' role is mainly to cross-linking the cytoskeleton 
 and consequently producing an active tension inside the network \cite{ma2012nonmuscle}.
 Here, we present a couple of natural extensions to this setup, suitable for capturing the behavior of the motor inside these networks.
@@ -262,7 +262,7 @@ The basic setup will be further referred to as ``load on the motor''.
 The first setup that we introduce is very similar to ``load on the motor'', 
 but now with the external load applied to the polymer instead of the molecular motor. 
 This correspond to a situation where the motor is attached to the polymer, which itself is under the tension due to the action of other motors and complex interactions in a larger network.
-As we will show later, in this setup there will be no more residual tension on the motor for large loads, which will be relevant for our discussion of the chemical efficiency. 
+As we will show later, in this setup the tension on the motor will vanish for large loads, which will be relevant for our discussion of the chemical efficiency. 
 The basic scheme of this setup is depicted in the figure~\ref{fig:load_on_polymer setup}.
 \begin{figure}[t]
 \centering
@@ -314,10 +314,10 @@ Setup of a motor interacting with two actin filaments that experience equal but 
 \end{figure}
 This correspond to a situation when the motor is actively cross-linking two polymers, which are subjected to the tension caused by other motors and other external influences.  
 
-In another words we now have two filaments, denoted by subscript ${\text{A}_1}$ and ${\text{A}_2}$ respectively,
+In other words, we now have two filaments, denoted by subscript ${\text{A}_1}$ and ${\text{A}_2}$ respectively,
 subjected to free diffusion and external load $F_\text{load}$,
 which are interacting with the myosin~II motor via the ratchet potential~\eqref{eq:ratchet_interaction}.
-This lead to equations of motion 
+This leads to equations of motion 
 \begin{equation}
 \begin{gathered}
 \begin{multlined}[b][.45\textwidth]
@@ -345,19 +345,19 @@ V_t(x_{\text{A}_1}(t) - x_\text{M}(t))
 \label{eq:eom_two_actins}
 \end{equation}
 where the anti-alignment of polymers in substitution of $-x$ instead of $x$ for the second polymer in the argument of the ratchet potential~\eqref{eq:ratchet_interaction}.
-Note, that the actin from the ``load on the polymer'' setup correspond to a polymer denoted by $\text{A}_2$ in this setup. 
+Note, that the actin from the ``load on the polymer'' setup corresponds to a polymer denoted by $\text{A}_2$ in this setup. 
 
 
 \subsubsection{Elastic environment}
 \label{sec:environment}
 As polymers inside the cytoskeleton are usually thoroughly interconnected rather then freely diffusing \cite{blanchoin2014actin,ennomani2016architecture},
 we can opt for an alternative approach.
-Rather then applying an external load we attach filaments to fixed points by a spring with a constant $k_\text{sp}$, 
+Rather than applying an external load we attach filaments to fixed points by a spring with a constant $k_\text{sp}$, 
 similarly to the approach discussed in \cite{albert2014stochastic}. 
 These points represent points of interaction with the rest of the network while the spring constant $k_\text{sp}$ represents the elastic properties of the full network. 
 The myosin motor is again interacting with two filaments that are arranged in an anti-parallel fashion. 
 Hence, similar to the previous case, it will no longer have a preferred direction to move in and 
-it eventually reach a steady state where its mean velocity will be zero. 
+it eventually reaches a steady state where its mean velocity will be zero. 
 The observable of interest is now the mean force that the motor applies to the filaments, 
 which is measured through the extension of the springs attached to the filaments,
 and which represent the active tension in the network produced by the single myosin molecule. 
@@ -457,7 +457,7 @@ We observe that the maximal velocity is reached for rates close to $k_\text{bind
 Departing far from this ratio means that one of the states become dominant and thus the system effectively approaches equilibrium.  
 The main difference between the $k_\text{bind}/k_\text{unbind}$ being low or high is the amplitude of the interaction with actin. 
 In the ATP bound state the interaction is weaker, 
-which is reflected in the fact that the system is trapped for shorter times close to the local minimums and diffuses more. 
+which is reflected in the fact that the system is trapped for shorter times close to the local minima and diffuses more. 
 Hence, the variance of the relative velocity is higher when compared to the ATP unbound state. 
 
 
@@ -1550,7 +1550,7 @@ From these we can conclude that there is a significant qualitative difference be
 Thus experiments in vitro with large myosin II motors \cite{brown2009cross-correlated} does not necessarily capture the behavior of the motors inside a cytoskeleton. 
 
 \subsubsection{Local minimum}
-Another trait of the chemical efficiency curves are the local minimums around $F_\text{load}=0$. 
+Another trait of the chemical efficiency curves are the local minima around $F_\text{load}=0$. 
 This can be understood from equation \eqref{eq:eta}, which is determined by the ratchet potential averaged with the heads' distribution in the attached and detached state. 
 For a one headed motor, these distribution will both be peaked around the minimum of the ratchet potential. 
 In fact, these distributions will be given by the Boltzmann distribution
