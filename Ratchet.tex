@@ -101,7 +101,7 @@ For motors with fewer heads, mean-field methods are not suitable and numerical s
 
 In sections~\ref{sec:velocity} and~\ref{sec:force-velocity} we will describe the dynamics of this motor-polymer system in detail by means of numerical methods.
 Furthermore, we investigate the behavior of the motor in various setups, e.g. the coupling of the motor to an elastic environment.
-Earlier studies have shown that myosin~II motors are able to sense the stiffness of their environment and that they can adapt the active forces that they generate \cite{stam2015isoforms,albert2014stochastic}.
+Earlier studies have shown that myosin~II motors are able to sense the stiffness of their environment and that they can adapt the active forces that they generate \cite{stam2015isoforms,Albert2014}.
 In those studies the chemical rates did depend on the load on the motor. 
 We show that a motor in our simple ratchet model with constant rates behaves similarly.
 
@@ -200,7 +200,7 @@ This is a simplification over the full chemical network governing the internal s
 which focuses only on the long lasting states that significantly change the myosin's head physical properties.
 Namely, we look at states where ADP is bounded and where there is no molecule bound to myosin head as escape rates from those states are small with respect to other transitions \cite{Bierbaum2011},  
 for which the estimated free energy landscapes \cite{Nie2014,nie2014conformational} very well reflect the changes in  conformation and electric charge of the myosin head \cite{barterls1993myosin}.
-In order to obtain the transition rates between these to two states, we start from the three state model introduced by Albert et al. \cite{albert2014stochastic},
+In order to obtain the transition rates between these to two states, we start from the three state model introduced by Albert et al. \cite{Albert2014},
 which we further simplify by unifying the state corresponding to the hydrolized ATP (i.e. ADP+P) and ADP with P released state as this process occurs on much shorter time-scale than other transitions.
 
 Lastly, as the internal state reflects the chemical state of the head rather than the act of binding to actin itself,
@@ -232,8 +232,8 @@ Thermal energy& $k_B T$ & 4.28 & pN nm & --- \\
 Number of heads& $N$ & 4 & --- & \cite{pollard1982structure}\\
 Head's spacing& $l$ & 15 & nm & \cite{pollard1982structure}\\
 Step length& $d$ & 8 & nm & \cite{vilfan2003instabilities}\\
-Binding rate& $k_\text{unbind}$ & 40 & s$^{-1}$ & \cite{albert2014stochastic} \\
-Detaching rate& $k_\text{bind}$ & 80 & s$^{-1}$ & \cite{albert2014stochastic} \\
+Binding rate& $k_\text{unbind}$ & 40 & s$^{-1}$ & \cite{Albert2014} \\
+Detaching rate& $k_\text{bind}$ & 80 & s$^{-1}$ & \cite{Albert2014} \\
 Skewness& $a$ & 0.25 & --- & ---\\
 Potential amplitude& $V$ & 40 & pN nm & ---\\
 Potential scaling& $c$ & 0.3 & --- & \cite{Nie2014, nie2014conformational}\\
@@ -353,7 +353,7 @@ Note, that the actin from the ``load on the polymer'' setup corresponds to a pol
 As polymers inside the cytoskeleton are usually thoroughly interconnected rather then freely diffusing \cite{blanchoin2014actin,ennomani2016architecture},
 we can opt for an alternative approach.
 Rather than applying an external load we attach filaments to fixed points by a spring with a constant $k_\text{sp}$, 
-similarly to the approach discussed in \cite{albert2014stochastic}. 
+similarly to the approach discussed in \cite{Albert2014}. 
 These points represent points of interaction with the rest of the network while the spring constant $k_\text{sp}$ represents the elastic properties of the full network. 
 The myosin motor is again interacting with two filaments that are arranged in an anti-parallel fashion. 
 Hence, similar to the previous case, it will no longer have a preferred direction to move in and 
@@ -939,7 +939,7 @@ Inset depicts the mean tension as the function of the spring stiffness on semi-l
 The tension that the motor generates depends strongly on this elasticity $k_\text{sp}$ and saturates for large $k_\text{sp}$. 
 This suggests that the motor is not only able to respond to external forces, but also to sense its environment's mechanical properties.
 
-Similar results were obtained for different motor models \cite{stam2015isoforms,albert2014stochastic}. 
+Similar results were obtained for different motor models \cite{stam2015isoforms,Albert2014}. 
 However, the models used in those studies exhibit rates that depend on the strain or tension in the myosin motor. 
 In our study, we show that this behavior also occurs in a simple Brownian ratchet with constant chemical rates.
 It is important to include the fluctuations in this stochastic model to preserve the mechanosensing feature.
@@ -991,7 +991,7 @@ The energy is also changed by the work of the external load
 where we use the fact that the external load $F_\text{load}$ is constant. 
 
 The last term in the energy balance \eqref{eq:energy_balance} is the contribution from the chemical cycle. 
-The chemical cycle of a motor head, in the most basic form \cite{astumian1996mechanochemical,Bierbaum2011,Bierbaum2013,albert2014stochastic}, is a sequence of binding an ATP molecule, it's hydrolysis, release of phosphor and finally release of ADP.
+The chemical cycle of a motor head, in the most basic form \cite{astumian1996mechanochemical,Bierbaum2011,Bierbaum2013,Albert2014}, is a sequence of binding an ATP molecule, it's hydrolysis, release of phosphor and finally release of ADP.
 The first step provides the chemical energy to the system, stored in ATP, while the next steps are associated with dissipation of the remaining energy to surroundings.
 Thus the total chemical energy consists of two parts ${\mathcal Q}^\text{chem} = {\mathcal Q}^\text{chem}_\text{in} + {\mathcal Q}^\text{chem}_\text{out}$,
 \begin{align}
