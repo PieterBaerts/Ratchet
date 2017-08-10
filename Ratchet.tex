@@ -134,7 +134,7 @@ These simplifications allow us to model both the motor and the filament as point
 Moreover, each myosin head has an internal state, which represent its chemical state, 
 i.e. whether there is an ATP bounded or not to the myosin head. 
 
-The dynamics of positions is described by coupled overdamped Langevin equations 
+The dynamic of positions is described by coupled overdamped Langevin equations 
 \begin{align}
 &\begin{multlined}[b]
 \rmd x_\text{M} = 
@@ -151,12 +151,14 @@ The dynamics of positions is described by coupled overdamped Langevin equations
 \end{multlined}
 \label{eq:eom_A}
 \end{align}
-where $x_\text{M}$ ($x_\text{A}$) denote the position of myosin (actin polymer), 
+where $x_\text{M}$ denote the position of myosin's first head, 
+$x_\text{A}$ denote a position of some reference point on the actin, 
 $\gamma$ is the Stokes drag,
 $T$ is the absolute temperature of the environment,
 $W$ denotes the Wiener process,
 $F_\text{load}$ is an external load on the motor, 
-and the interaction potential $V_t$ represents the overall ratchet interaction, which is a sum over individual contributions from all motor heads,
+and the interaction potential $V_t$ represents the overall ratchet interaction, 
+which is a sum over individual contributions from all motor heads,
 \begin{equation}
 V_t(x) = \sum\limits_{i=0}^{N-1} \zeta_t(i) \, V_\text{r} (x - i \, d ), 
 \label{eq:ratchet_interaction}
@@ -191,7 +193,18 @@ period $\ell$
 and skewness parameter $a \in [0,1]$. 
 
 The dynamics of the internal state of heads is governed by a continuous time Markov process. 
-Here, the internal state represents whether ATP (or one of its products) is \emph{bound} or \emph{unbound} to the myosin head. 
+More specifically by dichotomous continuous times Markov process with constant rates,
+\begin{equation}
+\zeta_t = 1 \overset{k_\text{bind}}{\underset{k_\text{unbind}}{\rightleftarrows}} \zeta_t = c ,
+\label{eq:transition}
+\end{equation}
+where $c\in\left[0,1\right]$ determines the amplitude of the ratchet potential when the motor is weakly interacting with the filament, 
+which we use as an approximation for changes in the free energy landscape \cite{Nie2014,nie2014conformational}.
+
+This choice is justified by the fact that in our the internal state represents whether ATP (or one of its products) is \emph{bound} or \emph{unbound} to the myosin head,
+rather than the act of binding the myosin to the actin itself.
+
+%%%%%%%
 This specifies the electrostatic properties of the head which will determine the amplitude of the interaction potential with the actin filament.
 No effective dependencies on position or external forces are imposed on the dynamics of the chemical cycle. 
 Work done by external forces is dissipated through the diffusion processes of the motor and polymer, see section~\ref{sec:energie}.
@@ -199,22 +212,17 @@ This is a simplification over the full chemical network governing the internal s
 which focuses only on the long lasting states that significantly change the myosin's head physical properties.
 Namely, we look at states where ADP is bounded and where there is no molecule bound to myosin head as escape rates from those states are small with respect to other transitions \cite{Bierbaum2011},  
 for which the estimated free energy landscapes \cite{Nie2014,nie2014conformational} very well reflect the changes in  conformation and electric charge of the myosin head \cite{barterls1993myosin}.
+
 In order to obtain the transition rates between these to two states, we start from the three state model introduced by Albert et al. \cite{Albert2014},
 which we further simplify by unifying the state corresponding to the hydrolized ATP (i.e. ADP+P) and ADP with P released state as this process occurs on much shorter time-scale than other transitions.
 
-Lastly, as the internal state reflects the chemical state of the head rather than the act of binding to actin itself,
+Lastly, as the internal state reflects the chemical state of the head rather ,
 we assume that an external load has little influence on the associated rates but rather opposes the underlying free energy landscape. 
 These considerations are reflected in the assumption the rates $k_\text{bind}$, $k_\text{unbind}$ independent of the load, 
 but they depend on the concentrations of the relevant chemical species present in ATP hydrolysis. 
 More specifically $k_\text{bind}$ is proportional to $[\text{ATP}]$ while $k_\text{unbind}$ is inversely proportional to $[\text{ADP}]$ and $[\text{P}_\text{i}]$.
-The dynamics is then represented by dichotomous continuous times Markov process with constant rates,
-\begin{equation}
-\zeta_t = 1 \overset{k_\text{bind}}{\underset{k_\text{unbind}}{\rightleftarrows}} \zeta_t = c ,
-\label{eq:transition}
-\end{equation}
-where $c\in\left[0,1\right]$ determines the amplitude of the ratchet potential when the motor is loosely bound to the filament, 
-which we use as an approximation for changes in the free energy landscape \cite{Nie2014,nie2014conformational}.
-While both the diffusion and the jump process are in equilibrium, the mechanism of the flashing ratchet brings the combined system out of equilibrium, leading to the movement of the motor in a preferred direction, given by the asymmetry of the filament \cite{Reimann2002introduction,de2007symmetries}.
+The dynamics is then represented While both the diffusion and the jump process are in equilibrium, the mechanism of the flashing ratchet brings the combined system out of equilibrium, leading to the movement of the motor in a preferred direction, given by the asymmetry of the filament \cite{Reimann2002introduction,de2007symmetries}.
+%%%%
 
 Figure~\ref{fig:ratchet_setup} depicts the whole setup of the system
 and figure~\ref{fig:energy} depicts the dynamics involved in flashing ratchet. 
