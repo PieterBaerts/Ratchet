@@ -22,7 +22,7 @@ set ylabel "{/Symbol \341}v{/Symbol \361} (mm/s)"
 set xzeroaxis
 set yzeroaxis
 
-plot [-150:150][] \
+plot [-100:100][] \
       "Data/F_q_k=8.dat" u 1:2:3 w errorlines ls 8 lw 1.25 dashtype 1 title "Load on motor" \
     , -x/gamma_M ls 8 lw 1.25 dashtype 1 title "- Large load" \
     , "Data/F_q_fil.dat" u (-$1):(-$2):3 w errorlines ls 6 lw 1.25 dashtype 2 title "Load on polymer" \
