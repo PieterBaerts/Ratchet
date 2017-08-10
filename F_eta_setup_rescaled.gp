@@ -12,7 +12,7 @@ set yzeroaxis
 
 set key top right Right width -1
 
-set ylabel "{/Symbol h}"
+set ylabel "{/Symbol h}_{chem}"
 set xlabel "F^* (nm/{/Symbol u}s)"
 
 plot [-150:150][-0.2:0.35] \

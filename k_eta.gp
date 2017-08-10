@@ -13,7 +13,7 @@ set format x "10^{%L}"
 
 set key top left Left width -1
 
-set ylabel "{/Symbol h}"
+set ylabel "{/Symbol h}_{chem}"
 set xlabel "k_{sp} (pN/nm)"
 
 plot [:][:] \

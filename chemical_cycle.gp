@@ -9,7 +9,7 @@ set yzeroaxis
 
 set key top right Right width -4
 
-set ylabel "{/Symbol h}"
+set ylabel "{/Symbol h}_{chem}"
 set xlabel "F_{load} (pN)"
 
 plot [:][-0.25:0.45] \
