@@ -14,6 +14,9 @@ set xlabel "k_{sp} (pN/nm)"
 set logscale y 
 set logscale x 
 
+set format x "10^{%L}"
+set format y "10^{%L}"
+
 plot [:][0.025:10] \
     "Data/tug_k.dat" u 1:($1*(-$2+$4)):($1*sqrt($3**2+$5**2)) w errorlines ls 8 lw 1.25 notitle 
 
@@ -31,6 +34,7 @@ set xtics 1e-4,100,1
 set ytics 0.1
 
 unset logscale y 
+set format y "%g"
 
 plot [:][0:] \
     "Data/tug_k.dat" u 1:($1*(-$2+$4)):($1*sqrt($3**2+$5**2)) w lines ls 8 lw 1.25 notitle 

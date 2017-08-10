@@ -15,6 +15,8 @@ set key off
 set xlabel "c"
 set ylabel "{/Symbol \341}v{/Symbol \361} (µm/s)"
 
+set format y "10^{%L}"
+
 set xzeroaxis
 set logscale y
 

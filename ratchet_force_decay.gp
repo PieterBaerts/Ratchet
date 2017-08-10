@@ -13,6 +13,9 @@ fit [50:] f(x) "Data/F_v.dat" u ($1):(0.66*$2+$1):($3*0.66) yerrors via a,b
 set logscale x
 set logscale y
 
+set format x "10^{%L}"
+set format y "10^{%L}"
+
 set xlabel "F_{load}"
 set ylabel "F_{r}"
 

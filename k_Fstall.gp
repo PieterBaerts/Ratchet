@@ -12,6 +12,8 @@ set ylabel "F_{stall} (pN)"
 set logscale x
 set logscale y
 
+set format y "10^{%L}"
+
 set xtics 2 
 
 fit [8:] B*x**(-a)  "Data/F_k.dat" u ($1/4.):6:7 yerrors via a,B
