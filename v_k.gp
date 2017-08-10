@@ -17,7 +17,7 @@ set ylabel "{/Symbol \341}v{/Symbol \361} (µm/s)"
 set xzeroaxis
 set logscale x
 
-set xtic 2
+set xtics ("2^{-4}" 0.0625, "2^{-3}" 0.125, "2^{-2}" 0.25, "2^{-1}" 0.5, "2^0" 1, "2^1" 2, "2^2" 4, "2^3" 8, "2^4" 16, "2^5" 32 )
 set format y "%g"
 
 #plot [10.:1000.][-0.001:0.002] "v_k.dat" u (1e6*$1):2:3 w yerror

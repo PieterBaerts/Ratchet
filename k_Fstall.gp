@@ -13,8 +13,7 @@ set logscale x
 set logscale y
 
 set format y "10^{%L}"
-
-set xtics 2 
+set xtics ("2^{-2}" 0.25, "2^{-1}" 0.5, "2^0" 1, "2^1" 2, "2^2" 4, "2^3" 8, "2^4" 16, "2^5" 32 )
 
 fit [8:] B*x**(-a)  "Data/F_k.dat" u ($1/4.):6:7 yerrors via a,B
 
