@@ -410,8 +410,10 @@ which was obtained after an ergodic average every $1\;\mathrm{ms}$ over $10\;\ma
 Lastly, to obtain the empirical distribution in figure \ref{fig:pos_distr}, 
 data was gathered by sampling every $0.5\;\mathrm{ms}$ for a total time of $1\;\mathrm{s}$ with time step $\Delta t = 0.001\;\mathrm{ns}$ and from $100$ independent simulations and converted into a histogram with a bin width of $0.1\;\mathrm{nm}$.
 
+\section{Model verification}
+%TODO
 
-\section{Mean velocity}
+\subsection{Mean velocity}
 \label{sec:velocity}
 At first, we study the mean velocity of the motor with four heads with respect to the filament in the ``load on the motor'' setup,
 \begin{equation}
@@ -461,7 +463,7 @@ which is reflected in the fact that the system is trapped for shorter times clos
 Hence, the variance of the relative velocity is higher when compared to the ATP unbound state. 
 
 
-\section{Force -- velocity relation}
+\subsection{Force -- velocity relation}
 \label{sec:force-velocity}
 In the previous section, we have investigated the mean relative velocity for motor in the ``load on the motor'' setup without any external load. 
 Here we will focus on the dependency of the mean relative velocity \eqref{eq:mean_velocity} on an external load force $F_\text{load}$ applied on the motor anti-parallel to the preferred direction, 
@@ -671,6 +673,9 @@ which can be obtained directly from equation~\eqref{eq:mean_velocity_Fr_Fl} as t
 The asymptotic behavior for the motor and the polymer follows from equations~\eqref{eq:velocity_M} and~\eqref{eq:velocity_A} for $ \left\langle v \right\rangle = - F_\text{load} / \gamma_\text{M} $. 
 From there it is also apparent that the relative mean velocity in the limit of infinitely large load $F_\text{load} \to \pm \infty$ will be equal to the motor's velocity $\langle v_\text{M} \rangle$.
 This is agrees with the data in figure~\ref{fig:F_v}.
+
+\section{Tension}
+%TODO
 
 \subsection{Ratchet force} 
 One can interpret the nonlinear force-velocity relation for the myosin~\eqref{eq:pre_velocity_M} as balance between the load, drag force and the force caused by the ratchet interaction, 
@@ -911,7 +916,7 @@ However, we do not have a formal proof of this relation.
 
 
 
-\subsubsection{Mechanosensing}
+\subsection{Mechanosensing}
 \label{sec:mechanosensing}
 The last setup, introduced in section~\ref{sec:other_setups}, is the case where the motor is situated between two anti-parallel actin filaments, which are attached to wall via springs, see sketch in figure~\ref{fig:tug}. 
 Similarly as in the previous setup, the tension in the motor is given by the difference of the ratchet forces applied on it.
@@ -946,11 +951,12 @@ It is important to include the fluctuations in this stochastic model to preserve
 In mean field models, where the phenomenological force-velocity relation would be implemented deterministically, 
 the motor would essentially stall in this given setup and cease to exert a net force on the filaments. 
 Therefore mechanosensing will not occur spontaneously in those models.
+This is the main result of the first part of our study. 
 
 It has been shown that mechanosensing takes place on the cellular scale, 
 where the cytoskeleton is coupled to the environment through focal adhesions \cite{geiger2009environmental}.
 
-\section{First law of thermodynamics}
+\section{Energy balance}
 \label{sec:energie}
 Before we discuss an efficiency of the myosin II motor in various setups,
 we need to introduce the basic notions of energy, heat and work. 
