@@ -6,7 +6,7 @@ load "Data/my.pal"
 
 set key off
 
-set xlabel "k_{bind}/k_{unbind}"
+set xlabel "k_{bind} (k_{unbind})"
 set ylabel "F_{stall} (pN)"
 
 set logscale x

@@ -17,7 +17,7 @@ set ylabel "{/Symbol \341}v{/Symbol \361} (mm/s)"
 set xzeroaxis
 set yzeroaxis
 
-plot [-100:100][-80:80] \
+plot [-100:100][-150:150] \
        "Data/F_v_attached.dat" u 1:2:3 w errorlines ls 2 lc rgb "black" lw 1.25 dashtype 3 title "k_{bind}/k_{unbind} = 0" \
     , "Data/F_q_k=1.dat" u 1:2:3 w errorlines ls 1 lw 1.25 dashtype 1 title "k_{bind}/k_{unbind} = 0.25" \
     , "Data/F_q_k=2.dat" u 1:2:3 w errorlines ls 3 lw 1.25 dashtype 2 title "k_{bind}/k_{unbind} = 0.5" \
