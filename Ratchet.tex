@@ -230,8 +230,8 @@ While both the diffusion and the jump process are in equilibrium, the mechanism 
 Figure~\ref{fig:ratchet_setup} depicts the whole setup of the system
 and figure~\ref{fig:energy} depicts the dynamics involved in flashing ratchet. 
 Table \ref{tab:parameters} lists the values of the parameters used in this model. 
-Some of them were taken from the literature while others were fitted to give a realistic\cite{} mean relative velocities and stall force for the myosin~II. %TODO
-The friction coefficients were calculated with Stokes' law \cite{Broersma1960,Broersma1981}, using the known dimensions of the molecules \cite{yogurtcu2012mechanochemical,pollard1982structure} and the viscosity of the intracellular medium \cite{li2004diffusion}.
+Some of them were taken from the literature while others were fitted to give a realistic mean relative velocities~\cite{} and stall force~\cite{} for the myosin~II. %TODO
+The friction coefficients were calculated with Stokes' law~\cite{Broersma1960,Broersma1981}, using the known dimensions of the molecules~\cite{yogurtcu2012mechanochemical,pollard1982structure} and the viscosity of the intracellular medium~\cite{li2004diffusion}.
 \begin{table}[t]
 \centering
 \begin{ruledtabular}
@@ -258,14 +258,15 @@ Table of all parameter values and a reference to their source.
 }
 \end{table}
 
-\subsection{Other setups}
+\subsection{Alternative setups}
 \label{sec:other_setups}
-While the aforementioned setup, shown in figure~\ref{fig:ratchet_setup}, is the most studied \cite{reimann2002brownian,astumian1994fluctuation,finer1994single,julicher1997modeling,kishino1988force,peskin1995correlation,saito1994movement},
+While the previously introduced setup, shown in figure~\ref{fig:ratchet_setup}, is the most studied \cite{reimann2002brownian,astumian1994fluctuation,finer1994single,julicher1997modeling,kishino1988force,peskin1995correlation,saito1994movement},
 its aim is to characterize the transport induced by molecular motors.
-However, recent experiments show that myosin~II motors' role is mainly to cross-linking the cytoskeleton 
+However, recent experiments show that myosin~II motors' role is mainly to cross-link the cytoskeleton~\cite{} %TODO 
 and consequently producing an active tension inside the network \cite{ma2012nonmuscle}.
-Here, we present a couple of natural extensions to this setup, suitable for capturing the behavior of the motor inside these networks.
-The basic setup will be further referred to as ``load on the motor''.
+As one of the aims of this paper is to investigate the validity of such a model in these situations, 
+we present a couple of natural extensions of this setup, more faithfully capturing the behavior of the motors inside these networks.
+The original setup will be further referred to as ``load on the motor''.
 
 \subsubsection{Load on the polymer}
 \label{sec:load_on_polymer}
@@ -313,7 +314,7 @@ i.e. $\gamma_\text{M}\leftrightarrow\gamma_\text{A}$ and $x_\text{M}\leftrightar
 \label{sec:tug_of_war}
 Another setup, which we investigate, is a natural extension of the previous setup, but now the myosin motor is interacting with two, rather then one, 
 anti-parallel actin filaments. 
-The external load is again applied directly to filaments instead of the motor, as demonstrated in the figure~\ref{fig:tug_F_illustration}. 
+The external load is again applied directly to filaments instead of the motor, as demonstrated in figure~\ref{fig:tug_F_illustration}. 
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{tug_F_illustration}
@@ -322,12 +323,8 @@ The external load is again applied directly to filaments instead of the motor, a
 Setup of a motor interacting with two actin filaments that experience equal but opposite loads.
 }
 \end{figure}
-This correspond to a situation when the motor is actively cross-linking two polymers, which are subjected to the tension caused by other motors and other external influences.  
-
-In other words, we now have two filaments, denoted by subscript ${\text{A}_1}$ and ${\text{A}_2}$ respectively,
-subjected to free diffusion and external load $F_\text{load}$,
-which are interacting with the myosin~II motor via the ratchet potential~\eqref{eq:ratchet_interaction}.
-This leads to equations of motion 
+This corresponds to a situation where the motor is actively cross-linking two polymers, which are subjected to the tension caused by other motors and other external influences.  
+Hence equations of motion read
 \begin{equation}
 \begin{gathered}
 \begin{multlined}[b][.45\textwidth]
@@ -354,23 +351,24 @@ V_t(x_{\text{A}_1}(t) - x_\text{M}(t))
 \end{gathered}
 \label{eq:eom_two_actins}
 \end{equation}
-where the anti-alignment of polymers in substitution of $-x$ instead of $x$ for the second polymer in the argument of the ratchet potential~\eqref{eq:ratchet_interaction}.
-Note, that the actin from the ``load on the polymer'' setup corresponds to a polymer denoted by $\text{A}_2$ in this setup. 
+where we denoted by subscript ${\text{A}_1}$ the first and by ${\text{A}_2}$ the second actin filament respectively
+and where the anti-alignment of polymers is represented by substitution of $-x$ instead of $x$ in the argument of the ratchet potential~\eqref{eq:ratchet_interaction} for the second polymer.
+Note, that the actin from the ``load on the polymer'' setup corresponds to the polymer denoted by $\text{A}_2$ in this setup. 
 
 
 \subsubsection{Elastic environment}
 \label{sec:environment}
-As polymers inside the cytoskeleton are usually thoroughly interconnected rather then freely diffusing \cite{blanchoin2014actin,ennomani2016architecture},
+As polymers inside the cytoskeleton are usually thoroughly interconnected rather than freely diffusing \cite{blanchoin2014actin,ennomani2016architecture},
 we can opt for an alternative approach.
-Rather than applying an external load we attach filaments to fixed points by a spring with a constant $k_\text{sp}$, 
+Rather than applying an external load we attach filaments to fixed points by a spring with a constant stiffness $k_\text{sp}$, 
 similarly to the approach discussed in \cite{Albert2014}. 
-These points represent points of interaction with the rest of the network while the spring constant $k_\text{sp}$ represents the elastic properties of the full network. 
+These points represent points of interaction with the rest of the network while the spring stiffness $k_\text{sp}$ represents the elastic properties of the full network. 
 The myosin motor is again interacting with two filaments that are arranged in an anti-parallel fashion. 
 Hence, similar to the previous case, it will no longer have a preferred direction to move in and 
 it eventually reaches a steady state where its mean velocity will be zero. 
 The observable of interest is now the mean force that the motor applies to the filaments, 
 which is measured through the extension of the springs attached to the filaments,
-and which represent the active tension in the network produced by the single myosin molecule. 
+and which represent the active tension in the network produced by the single myosin minifilament. 
 This setup is sketched in figure \ref{fig:tug}. 
 \begin{figure}[t]
 \centering
@@ -381,7 +379,7 @@ Illustration of a motor pulling on two actin filament that are each connect to a
 }
 \end{figure}
 
-The equations of motion are then just a modification of \eqref{eq:eom_two_actins}  
+The equations of motion are than just a modification of \eqref{eq:eom_two_actins}, i.e.,   
 \begin{equation}
 \begin{gathered}
 \begin{multlined}[b][.45\textwidth]
