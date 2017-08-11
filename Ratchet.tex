@@ -419,7 +419,8 @@ Lastly, to obtain the empirical distribution in figure \ref{fig:pos_distr},
 data was gathered by sampling every $0.5\;\mathrm{ms}$ for a total time of $1\;\mathrm{s}$ with time step $\Delta t = 0.001\;\mathrm{ns}$ and from $100$ independent simulations and converted into a histogram with a bin width of $0.1\;\mathrm{nm}$.
 
 \section{Model verification}
-First, we verify that our modified model reproduce a behavior reported in the literature for the simple flashing ratchet model. 
+As our models deviate from traditionally used ratchet model, 
+we need to verify that we can reproduce a behavior reported in the literature for both a simple flashing ratchet model and myosin II motor. 
 %TODO
 
 \subsection{Mean velocity}
@@ -462,11 +463,12 @@ The resulting dependency is shown in the figure~\ref{fig:v_k}.
 \label{fig:v_k} 
 Mean velocity of the motor relative to the actin filament $\langle v \rangle$ for varying $k_\text{bind}$.
 The velocity decreases to $0$ for large discrepancies between binding and unbinding rate and reaches maximum when they are comparable.
+Note that the ATP binding rate $k_\text{bind}$ is show in units of $k_\text{unbind}$ on logarithmic scale.
 }
 \end{figure}
 We observe that the maximal velocity is reached for rates close to $k_\text{bind} = k_\text{unbound}$. 
 Deviating far from this ratio means that one of the states become dominant and thus the system effectively approaches equilibrium.  
-The main difference between the $k_\text{bind}/k_\text{unbind}$ being low or high is the amplitude of the interaction with actin. 
+The main difference between $k_\text{bind}/k_\text{unbind}$ being low or high is the amplitude of the interaction with actin. 
 In the ATP bound state the interaction is weaker, 
 which is reflected in the fact that the system is trapped for shorter times close to the local minima and diffuses more. 
 Hence, the variance of the relative velocity is higher when compared to the ATP unbound state. 
