@@ -46,7 +46,7 @@ Here we revise the Brownian ratchet model,
 which was previously studied in the context of active transport, 
 in setups resembling a motor in a polymer network.
 We show that such a model is not only capable of capturing mechanosensing behavior,
-but also its chemical cycle's efficiency is directly related to the active tension the motor exerts.  
+but also that its chemical cycle's efficiency is directly related to the active tension the motor exerts. 
 \end{abstract}
 
 \maketitle 
@@ -69,12 +69,12 @@ However, before we do so, we revisit certain features of molecular motors in a s
 Cytoskeletal polymers exhibit a sequence of monomers that cause a periodical structure \cite{yogurtcu2012mechanochemical}. 
 Furthermore, these monomers are polarized, so that when chained together in a polymer, they give rise to an asymmetric, ratchet-like, electrostatic potential along the length of the filament \cite{Nie2014,nie2014conformational}. 
 A simplified version of such a potential, used in this work, is shown in figure~\ref{fig:energy}. 
-The heads of a myosin~II motor, too, carry an electric charge \cite{barterls1993myosin} and therefore they will feel the ratchet potential of the filaments. 
+The heads of a myosin~II motor, too, carry an electric charge \cite{barterls1993myosin} and therefore they will feel the sawtooth potential of the filaments. %I used sawtooth instead of ratchet in a couple places in the intro, to see how it looks/reads.
 The chemical cycle that powers the molecular motor is driven by ATP molecules that can attach to a head of the motor, causing it to change the charge distribution of the head and consequently loosen its bond with the polymer filament \cite{adelstein1980regulation}. 
 When bound to a motor head, the ATP molecule will hydrolyze to ADP and release a phosphate \cite{gajewski1986thermodynamics}. 
 It this state, the head can attach to the polymer again, ADP will be released from the motor head and the chemical cycle can start over. 
 Hence, the chemical state of a motor head in our model will determine how strongly it can be coupled to a cytoskeletal filament \cite{Nie2014,nie2014conformational}. 
-Therefore, the head will experience a ratchet potential that is stochastically flashing in time, changing the amplitude of the potential from high to low.
+Therefore, the head will experience a sawtooth potential that is stochastically flashing in time, changing the amplitude of the potential from high to low.
 
 This mechanism motivates the assumptions of ratchet models, 
 being that the motor heads interact with a periodic asymmetric potential that changes depending on the chemical state of the head. 
@@ -82,7 +82,7 @@ Whenever a motor is in a state where no ATP is bound to heads, i.e., the state i
 the head will most probably be very close to a minimum of the ratchet potential, 
 while in the state where the ATP is bound to heads, it is easier for the motor to diffuse over a larger distance. 
 However, because of the asymmetry of the ratchet, the motor will be biased to explore one side of the ratchet rather than the other. 
-Therefore, the motor will more likely jump to an adjacent period of the ratchet potential in the preferred direction, indicated by the asymmetry of the ratchet potential \cite{reimann2002brownian}.
+Therefore, the motor will more likely jump to an adjacent period of the sawtooth in the preferred direction, indicated by the asymmetry of the ratchet potential \cite{reimann2002brownian}.
 This will eventually lead to directed motion of the motor on long timescales \cite{hoffmann2016molecular,Reimann2002introduction,de2007symmetries}. 
 
 Such ratchet models have been studied extensively in the context of molecular motors \cite{reimann2002brownian,astumian1994fluctuation,astumian1996mechanochemical,julicher1997modeling,Reimann2002introduction,julicher1997spontaneous,peskin1995correlation,huxley1969mechanism,huxley1971proposed}.
@@ -95,13 +95,15 @@ The type of motor that we will be studying is non-muscle myosin~II, which have a
 These non-muscle myosin~II motors are crucial to the motility of most eukaryotic cells \cite{vicente2009non}.
 For larger myosin motors, like the ones in muscle cells, mean-field calculations have led to analytic results for the force-velocity relation \cite{julicher1997modeling}.
 In experimental studies with synthetic myosin motors, the number of heads per motor is also much higher than in non-muscle cells \cite{brown2009cross-correlated}. 
-Therefore, the results for large motor play a very important role in interpreting and understanding those in-vitro experiments.
+Therefore, the results for large motor play an important role in interpreting and understanding those in-vitro experiments.
 For motors with fewer heads, mean-field methods are not suitable and numerical simulations prove to be useful.
 
-In sections~\ref{sec:velocity} and~\ref{sec:force-velocity} we will describe the dynamics of this motor-polymer system in detail by means of numerical methods.
+In section~\ref{sec:model_verification} we will describe the dynamics of this motor-polymer system in detail by means of numerical methods.
+Specifically we will study the mean velocity, force -- velocity relation and stall force of myosin~II motors in order to verify our proposed model. 
+The tension in the motor is derived directly from the force -- velocity relation in section \ref{sec:tension}.
 Furthermore, we investigate the behavior of the motor in various setups, e.g., the coupling of the motor to an elastic environment.
 Earlier studies have shown that myosin~II motors are able to sense the stiffness of their environment and that they can adapt the active forces that they generate \cite{stam2015isoforms,Albert2014}.
-In those studies the chemical rates did depend on the load on the motor. 
+In those studies, the chemical rates did depend on the load on the motor. 
 We show that a motor in our simple ratchet model with constant rates behaves similarly.
 
 Another important aspect of molecular motors is their ability to convert chemical energy into mechanical work \cite{astumian1996mechanochemical}.
@@ -111,9 +113,12 @@ in which case a stochastic process on these states always satisfies detailed bal
 In other words, the energetic gain of one reaction is canceled by the cost of the following reaction.
 On the other hand, we do not want any redundant degrees of freedom in our description since we are not really interested in the full chemical details of the process.
 In section~\ref{sec:energie}, we will look at the energy balances in various setups of a myosin~II motor interacting with actin filaments.
-A novel way of defining a chemical efficiency, by interpreting the chemical input by measuring the differences in potential energy in each jump, is presented in section \ref{sec:efficiency}. 
-There, we investigate how this efficiency depends on the external load, number of heads of the motor and ATP concentration. 
-We observe that the chemical efficiency is a useful measure, related to the tension in the motor, that is relevant in all of the considered setups.
+We are able to link the excess heat for the chemical cycle to the active tension produced by the motor.
+This consideration leads to a novel way of defining a chemical efficiency, which is presented in section \ref{sec:efficiency}. 
+This efficiency compares the net amount of energy that is extracted from the ATP cycle to the total energy that is supplies to the motor.
+Simultaneously, the chemical efficiency relates the chemical input, measured by the differences in potential energy in each jump, to its tension in the motor, rather than to its displacement.
+We investigate how this efficiency depends on the external load, number of heads of the motor and ATP concentration. 
+We observe that the chemical efficiency is a measure that is relevant in all of the considered setups.
 
 \section{The Ratchet model}
 \label{sec:ratchet}
@@ -419,6 +424,7 @@ Lastly, to obtain the empirical distribution in figure \ref{fig:pos_distr},
 data was gathered by sampling every $0.5\;\mathrm{ms}$ for a total time of $1\;\mathrm{s}$ with time step $\Delta t = 0.001\;\mathrm{ns}$ and from $100$ independent simulations and converted into a histogram with a bin width of $0.1\;\mathrm{nm}$.
 
 \section{Model verification}
+\label{sec:model_verification}
 As our models deviate from traditionally used ratchet model, 
 we need to verify that we can reproduce a behavior reported in the literature for both a simple flashing ratchet model and myosin II motor. 
 %TODO
@@ -560,6 +566,7 @@ and thus the stall force reaches zero as well, $F_\text{stall} \to 0$.
 
 
 \section{Tension}
+\label{sec:tension}
 %TODO
 
 \subsection{Ratchet force} 
@@ -839,7 +846,7 @@ Therefore mechanosensing will not occur spontaneously in those models.
 This is the main result of the first part of our study. 
 
 It has been shown that mechanosensing takes place on the cellular scale, 
-where the cytoskeleton is coupled to the environment through focal adhesions \cite{geiger2009environmental}.
+where the cytoskeleton is coupled to the environment through focal adhesions \cite{geiger2009environmental,etienne2015cells}.
 
 \section{Energy balance}
 \label{sec:energie}
