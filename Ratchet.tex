@@ -134,7 +134,7 @@ These simplifications allow us to model both the motor and the filament as point
 Moreover, each myosin head has an internal state, which represent its chemical state, 
 i.e., whether there is an ATP bounded or not to the myosin head. 
 
-The dynamic of positions is described by coupled overdamped Langevin equations 
+The dynamics of the positions is described by coupled overdamped Langevin equations 
 \begin{align}
 &\begin{multlined}[b]
 \rmd x_\text{M} = 
@@ -151,8 +151,8 @@ The dynamic of positions is described by coupled overdamped Langevin equations
 \end{multlined}
 \label{eq:eom_A}
 \end{align}
-where $x_\text{M}$ denote the position of myosin's first head, 
-$x_\text{A}$ denote a position of some reference point on the actin, 
+where $x_\text{M}$ denotes the position of the motor's first head, 
+$x_\text{A}$ denotes a position of an arbitrary reference point on the actin filament, 
 $\gamma$ is the Stokes drag,
 $T$ is the absolute temperature of the environment,
 $W$ denotes the Wiener process,
@@ -192,45 +192,45 @@ with total height $V$,
 period $\ell$ 
 and skewness parameter $a \in [0,1]$. 
 
-The dynamics of the internal state of heads is governed by a continuous time Markov process. 
-More specifically by dichotomous continuous times Markov process with constant rates,
+The dynamics of the internal state of heads is governed by a continuous time Markov process, that is dichotomous and has constant rates,
 \begin{equation}
 \zeta_t = 1 \overset{k_\text{bind}}{\underset{k_\text{unbind}}{\rightleftarrows}} \zeta_t = c ,
 \label{eq:transition}
 \end{equation}
 where $c\in\left[0,1\right]$ determines the amplitude of the ratchet potential when the motor is weakly interacting with the filament, 
-which we use as an approximation for changes in the free energy landscape \cite{Nie2014,nie2014conformational}.
+which we use to account for changes in the free energy landscape \cite{Nie2014,nie2014conformational}.
 
-This choice is justified by the multiple considerations: 
-First, in our setup the internal state represents whether ATP (or one of its products) is \emph{bound} or \emph{unbound} to the myosin head,
-rather than the act of binding the myosin to the actin itself.
-In other words, the internal state characterize the electrochemical properties of the head, 
+This choice is justified by multiple considerations: 
+First, in our model the internal state represents whether ATP (or one of its products) is \emph{bound} or \emph{unbound} to the myosin head,
+rather than the binding the myosin motor to the actin filament itself.
+In other words, the internal state characterizes the electrochemical properties of the head, 
 which further determine the magnitude of the interaction potential with the actin filament.
 
-Second we assume, that whether the head is bounded or not has a little influence on the binding site of the ATP molecule,
+Second, we assume that whether the head is bounded or not has no influence on the binding site of the ATP molecule,
 thus we don't impose any effective dependency of the dynamics of the chemical cycle on the relative position of myosin and actin. 
 
-Similarly, we assume that an external load has also little influence on the binding site of the ATP, 
+Similarly, we assume that an external load does not influence the binding site of ATP, 
 but rather opposes the underlying free energy landscape. 
 
 At last, we simplify the full chemical network governing the internal states of myosin~II \cite{Bierbaum2011,Bierbaum2013} to only two states,  
-which represent the long lasting states that significantly change the myosin's head physical properties.
-Namely, we look at states where ADP is bounded and where there is no molecule bound to myosin head as escape rates from those states are small with respect to other transitions \cite{Bierbaum2011},  
-for which the estimated free energy landscapes \cite{Nie2014,nie2014conformational} very well reflect the changes in conformation and electric charge of the myosin head \cite{barterls1993myosin}.
+which represent the long lasting states that significantly change the motor's head physical properties.
+Namely, we look at states where either ATP is bound or ADP  is bound to the myosin head, 
+as escape rates from those states are small with respect to other transitions \cite{Bierbaum2011}. 
+For these states, the estimated free energy landscapes \cite{Nie2014,nie2014conformational} very well reflect the changes in conformation and electric charge of the myosin head \cite{barterls1993myosin}.
 
 Note that while the rates $k_\text{bind}$, $k_\text{unbind}$ are independent of the load, 
-they depend on the concentrations of the relevant chemical species present during ATP hydrolysis. 
+they depend on the concentrations of the relevant chemical species involved in ATP hydrolysis. 
 More specifically $k_\text{bind}$ is proportional to $[\text{ATP}]$ while $k_\text{unbind}$ is inversely proportional to $[\text{ADP}]$ and $[\text{P}_\text{i}]$.
 
 In order to obtain these transition rates between these to two states, we start from the three state model introduced by Albert et al. \cite{Albert2014},
-which we further simplify by unifying the state corresponding to the hydrolized ATP (i.e. ADP+P) and ADP with P released state as this process occurs on much shorter time-scale than other transitions.
+which we further simplify by unifying the states corresponding to the hydrolized ATP (i.e. ADP+P) and ADP with P released, as this process occurs on much shorter time-scale than other transitions.
 
-While both the diffusion and the jump process are in equilibrium, the mechanism of the flashing ratchet brings the combined system out of equilibrium, leading to the movement of the motor in a preferred direction, given by the asymmetry of the filament \cite{Reimann2002introduction,de2007symmetries}.
+While both the diffusion and the jump process are separately in equilibrium, the mechanism of the flashing ratchet brings the combined system out of equilibrium, leading to the movement of the motor in a preferred direction, given by the asymmetry of the filament \cite{Reimann2002introduction,de2007symmetries}.
 
 Figure~\ref{fig:ratchet_setup} depicts the whole setup of the system
 and figure~\ref{fig:energy} depicts the dynamics involved in flashing ratchet. 
 Table \ref{tab:parameters} lists the values of the parameters used in this model. 
-Some of them were taken from the literature while others were fitted to give a realistic mean relative velocities~\cite{} and stall force~\cite{} for the myosin~II. %TODO
+Some of them were taken from the literature while others were fitted to give a realistic mean relative velocities~\cite{placcais2009spontaneous,saito1994movement} and stall force~\cite{kishino1988force,finer1994single} for the myosin~II.
 The friction coefficients were calculated with Stokes' law~\cite{Broersma1960,Broersma1981}, using the known dimensions of the molecules~\cite{yogurtcu2012mechanochemical,pollard1982structure} and the viscosity of the intracellular medium~\cite{li2004diffusion}.
 \begin{table}[t]
 \centering
@@ -260,12 +260,12 @@ Table of all parameter values and a reference to their source.
 
 \subsection{Alternative setups}
 \label{sec:other_setups}
-While the previously introduced setup, shown in figure~\ref{fig:ratchet_setup}, is the most studied \cite{reimann2002brownian,astumian1994fluctuation,finer1994single,julicher1997modeling,kishino1988force,peskin1995correlation,saito1994movement},
+While the previously introduced setup, shown in figure~\ref{fig:ratchet_setup}, is studied the most \cite{reimann2002brownian,astumian1994fluctuation,finer1994single,julicher1997modeling,kishino1988force,peskin1995correlation,saito1994movement},
 its aim is to characterize the transport induced by molecular motors.
-However, recent experiments show that myosin~II motors' role is mainly to cross-link the cytoskeleton~\cite{} %TODO 
-and consequently producing an active tension inside the network \cite{ma2012nonmuscle}.
+However, recent experiments show that myosin~II motors' role is mainly to cross-link the cytoskeleton \cite{ma2012nonmuscle}
+and consequently producing an active tension inside the network \cite{chugh2017actin,monier2010actomyosin}.
 As one of the aims of this paper is to investigate the validity of such a model in these situations, 
-we present a couple of natural extensions of this setup, more faithfully capturing the behavior of the motors inside these networks.
+we present a couple of natural extensions of this setup, more faithfully capturing the behavior of myosin~II motors inside these networks.
 The original setup will be further referred to as ``load on the motor''.
 
 \subsubsection{Load on the polymer}
@@ -352,8 +352,8 @@ V_t(x_{\text{A}_1}(t) - x_\text{M}(t))
 \label{eq:eom_two_actins}
 \end{equation}
 where we denoted by subscript ${\text{A}_1}$ the first and by ${\text{A}_2}$ the second actin filament respectively
-and where the anti-alignment of polymers is represented by substitution of $-x$ instead of $x$ in the argument of the ratchet potential~\eqref{eq:ratchet_interaction} for the second polymer.
-Note, that the actin from the ``load on the polymer'' setup corresponds to the polymer denoted by $\text{A}_2$ in this setup. 
+and where the anti-alignment of polymers is represented by substitution of $x$ by $-x$ in the argument of the ratchet potential~\eqref{eq:ratchet_interaction} for the first polymer $\text{A}_1$.
+Note, that the actin filament from the ``load on the polymer'' setup corresponds to the polymer denoted by $\text{A}_2$ in this setup. 
 
 
 \subsubsection{Elastic environment}
@@ -454,7 +454,7 @@ On the other hand, for $c=0$ we have the biggest discrepancy between the two int
 
 
 Secondly, the mean velocity~\eqref{eq:mean_velocity} also depends on the concentration of ATP through the binding rate $k_\text{bind}$. 
-In this setup, we fix the ATP unbinding rate $k_\text{unbind}$ and scaling factor $c$, cf. table~\ref{tab:parameters}, and varied the ATP binding rate $k_\text{bind}$. 
+In this setup, we fix the ATP unbinding rate $k_\text{unbind}$ and scaling factor $c$, cf. table~\ref{tab:parameters}, and vary the ATP binding rate $k_\text{bind}$. 
 The resulting dependency is shown in the figure~\ref{fig:v_k}. 
 \begin{figure}[t]
 \centering
@@ -463,12 +463,12 @@ The resulting dependency is shown in the figure~\ref{fig:v_k}.
 \label{fig:v_k} 
 Mean velocity of the motor relative to the actin filament $\langle v \rangle$ for varying $k_\text{bind}$.
 The velocity decreases to $0$ for large discrepancies between binding and unbinding rate and reaches maximum when they are comparable.
-Note that the ATP binding rate $k_\text{bind}$ is show in units of $k_\text{unbind}$ on logarithmic scale.
+Note that the ATP binding rate $k_\text{bind}$ is show in units of $k_\text{unbind}$ on a logarithmic scale.
 }
 \end{figure}
 We observe that the maximal velocity is reached for rates close to $k_\text{bind} = k_\text{unbound}$. 
 Deviating far from this ratio means that one of the states become dominant and thus the system effectively approaches equilibrium.  
-The main difference between $k_\text{bind}/k_\text{unbind}$ being low or high is the amplitude of the interaction with actin. 
+The main difference between $k_\text{bind}/k_\text{unbind}$ being low or high is the mean amplitude of the interaction with actin. 
 In the ATP bound state the interaction is weaker, 
 which is reflected in the fact that the system is trapped for shorter times close to the local minima and diffuses more. 
 Hence, the variance of the relative velocity is higher when compared to the ATP unbound state. 
@@ -480,7 +480,7 @@ In the previous section, we have investigated the mean relative velocity for a m
 Here we will focus on the dependency of the mean relative velocity \eqref{eq:mean_velocity} on an external load force $F_\text{load}$ applied on the motor anti-parallel to the preferred direction, 
 cf. figure~\ref{fig:ratchet_setup}.
 
-Figure~\ref{fig:F_v} shows the typical force -- mean velocity relations for various ATP binding rates $k_\text{unbind}$, which can represent the dependency on ATP concentration.
+Figure~\ref{fig:F_v} shows the typical force -- mean velocity relations for various ATP binding rates $k_\text{unbind}$, which represents the dependency on ATP concentration.
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{F_v}
@@ -517,7 +517,7 @@ On the other hand, the motors with four and sixteen heads have almost identical 
 However, it would be na\"{\i}ve to consider these motors identical as they behave very differently regarding their energetics,  
 which we will discuss in the section~\ref{sec:efficiency}.
 
-A comparison of the force -- velocity relation for alternative setups with the one in the ``load on the polymer'' setup is provided in the appendix~\ref{sec:force_velocity_other}.
+A comparison of the force -- velocity relation for alternative setups with the ``load on the motor'' setup is provided in the appendix~\ref{sec:force_velocity_other}.
 
 \subsection{Stall force}
 From figure~\ref{fig:F_v} it is apparent that when applying a force against the preferred direction of the motor, 
