@@ -540,7 +540,9 @@ Figure~\ref{fig:F_v_zoom} shows a zoomed in version of figure~\ref{fig:F_v} for 
 \label{fig:F_v_zoom} 
 Mean velocity of the motor $\langle v \rangle$ with a small load force $F_\text{load}$ applied in the direction opposing the movement for different ATP binding rates $k_\text{bind}$.
 Intersections with the $x$ axis correspond to stall forces $F_\text{stall}$ for given detach rates. 
-We can see that with increasing $k_\text{bind}/k_\text{unbind}$ ratio the slope increases as well as the full curve shifts in the low force region, causing a persistent decrease in stall force. 
+We can see that with increasing $k_\text{bind}/k_\text{unbind}$ ratio the slope increases as well as the full curve shifts in the low force region, 
+causing a persistent decrease in stall force. 
+Note that both $k_\text{bind} = 0 $ and $k_\text{bind} = \infty$ correspond to equilibrium and thus the mean velocity for zero load is zero as well as is the stall force.  
 }
 \end{figure}
 The intersections with the horizontal axis correspond to stall forces,  
@@ -628,12 +630,18 @@ which is in good agreement with the theoretical prediction~\eqref{eq:ratchet_vs_
 }
 \end{figure}
 
+Note that while there are natural bounds on the ratchet force due to the shape of the ratchet potential, 
+see the equation~\eqref{eq:ratchet_force_bounds} in the appendix~\ref{sec:ind_velo}, 
+here we have shown that the minimal and the maximal ratchet force are comparable to these theoretical bounds. 
+We will later tie this to the maximal tension the motor is able to withstand.
+
+
 
 \subsection{Tension in the motor}
-The force-velocity relation can also be exploited to obtain the tension in the motor. 
-Since both the load and ratchet force are directly applied on the respective ends of the motor, 
-the tension applied to the motor $\tau_\text{M}$ is proportional to their difference,
-where we choose the sign of the tension in such a way 
+Since both the load and ratchet force are directly applied on the respective ends of the motor in the ``load on the motor'' setup, 
+the tension applied to the motor $\tau_\text{M}$ is proportional to their difference.
+Here we consider the contribution from the thermal force and from the drag negligible in the steady state as they are typically applied at the center of the mass of the motor. 
+We choose the sign of the tension in such a way 
 that the positive value corresponds to a pair of forces applied on each end of the motor in the direction away from the motor,
 i.e.  
 \begin{align}
@@ -762,7 +770,7 @@ Note, that due to the symmetry of the setup in the steady state the mean velocit
 \right]
 \equiv 0 , 
 \end{multline*}
-which is demonstrated in the figure~\ref{fig:tug_F_motor}.
+which is demonstrated in figure~\ref{fig:tug_F_motor}.
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{tug_F_motor}
@@ -1722,13 +1730,14 @@ This is related to the fact that the full system is moving with respect to the l
 which is proportional to both the load and the relative velocity and is zero only when $\langle v \rangle = 2 F_\text{load} / ( \gamma_\text{A} - \gamma_\text{M} )$.
 
 Also note, that the ratchet force is bounded by 
-\[
+\begin{equation}
 - \frac{ N V }{ \ell (1-a) } 
 \le 
 F_\text{r}
 \le
 \frac{ N V }{ \ell a } ,
-\]
+\label{eq:ratchet_force_bounds}
+\end{equation}
 cf. equations~\eqref{eq:ratchet_potential} and~\eqref{eq:ratchet_interaction}, 
 which means that there is a maximal portion of the load that the ratchet interaction can transmit from the motor to the polymer 
 and thus there exists an upper and lower bound for the polymer's velocity~\eqref{eq:pre_velocity_A}.   
