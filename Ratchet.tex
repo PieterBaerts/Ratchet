@@ -834,7 +834,7 @@ It is important to include the fluctuations in this stochastic model to preserve
 In mean field models, where the phenomenological force-velocity relation would be implemented deterministically, 
 the motor would essentially stall in this given setup and cease to exert a net force on the filaments. 
 Therefore mechanosensing will not occur spontaneously in those models.
-This is the main result of the first part of our study. 
+This concludes the main result of the first part of our study. 
 
 It has been shown that mechanosensing takes place on the cellular scale, 
 where the cytoskeleton is coupled to the environment through focal adhesions \cite{geiger2009environmental,etienne2015cells}.
@@ -843,8 +843,8 @@ where the cytoskeleton is coupled to the environment through focal adhesions \ci
 \label{sec:energie}
 Up to this point we have discussed a mechanical properties of the myosin II inside various setups mimicking the acto-myosin cortex. 
 Most of these mechanical properties emerge from the motor activity, 
-which is driven by a chemical energy turnover into the active tension and active movement of polymers and the motor itself inside the network, 
-there is a natural question: ``How efficient the motor is?''. 
+which is driven by a chemical energy turnover into the active tension and active movement of polymers and the motor itself inside the network. 
+This leads to a natural question: ``How efficient the motor is?''. 
 
 Before we discuss an efficiency of the myosin II motor in various setups,
 we need to introduce the basic notions of energy, heat and work. 
@@ -889,7 +889,7 @@ where we use the fact that the external load $F_\text{load}$ is constant.
 
 The last term in the energy balance \eqref{eq:energy_balance} is the contribution from the chemical cycle. 
 The chemical cycle of a motor head, in the most basic form \cite{astumian1996mechanochemical,Bierbaum2011,Bierbaum2013,Albert2014}, is a sequence of binding an ATP molecule, it's hydrolysis, release of phosphor and finally release of ADP.
-The first step provides the chemical energy to the system, stored in ATP, while the next steps are associated with dissipation of the remaining energy to surroundings.
+The first step provides the chemical energy to the system, stored in ATP, while the next steps are associated with dissipation of the remaining energy to the surroundings.
 Thus the total chemical energy consists of two parts ${\mathcal Q}^\text{chem} = {\mathcal Q}^\text{chem}_\text{in} + {\mathcal Q}^\text{chem}_\text{out}$,
 \begin{align}
 {\mathcal Q}_\text{in}^\text{chem} 
@@ -919,26 +919,30 @@ without any additional information it is impossible to distinguish which part of
 For non-zero load, the heat dissipated to the heat bath will contain the work of the external forces as well,
 which makes the separation in individual components even more difficult.
 
+Also note, that while expressions~\eqref{eq:heat_hb_M}, \eqref{eq:heat_hb_A}, \eqref{eq:q_in} and~\eqref{eq:q_out} are model agnostic, 
+the total energy balance~\eqref{eq:energy_balance} and the internal energy itself~\eqref{eq:internal_energy} are not. 
+
 \subsection{Load on the motor}
-If we restrict the discussion only to the simplest setup, i.e. a single loaded motor with a single actin filament,
-and we use the equation of motion~\eqref{eq:eom_M}, 
-the heat exchange with the surrounding~\eqref{eq:heat_hb_M} can be rewritten as 
+In the ``load on the motor'' setup, we can further simplify general expressions~\eqref{eq:q_in} and~\eqref{eq:q_out} 
+by using the equation of motion~\eqref{eq:eom_M}, 
+which will later allow us to interpret the excess chemical heat in terms of the ratchet force~\eqref{eq:ratchet_force} and thus link it to the tension.  
+We start with the heat exchange of the molecular motor with the surrounding~\eqref{eq:heat_hb_M} expressed as 
 \begin{multline}
 {\mathcal Q}_\text{M}^\text{hb} 
 = \int \rmd x_\text{M} \circ \left[ \nabla_\text{M} V_t(x_\text{M} - x_\text{A} ) + F_\text{load} \right] 
 \\
-= \int \rmd x_\text{M} \circ \nabla_\text{M} V_t(x_\text{M} - x_\text{A} ) - {\mathcal W}_\text{M}^\text{ext} .
+= \int \rmd x_\text{M} \circ \nabla_\text{M} V_t(x_\text{M} - x_\text{A} ) - {\mathcal W}_\text{M}^\text{ext} ,
 \label{eq:heat_hb_M_expl}
 \end{multline}
+where we recognize two terms, the first one is the work done by the ratchet potential, while the second one is the work done by an external load~\eqref{eq:work_load}. 
 Similarly for the heat dissipated by actin's interaction with the environment we get 
 \begin{multline}
 {\mathcal Q}_\text{A}^\text{hb} 
 = \int \rmd x_\text{A} \circ \nabla_\text{A} V_t(x_\text{M} - x_\text{A} )
 \\
-= - \int \rmd x_\text{A} \circ \nabla_\text{M} V_t(x_\text{M} - x_\text{A} ) ,
+= - \int \rmd x_\text{A} \circ \nabla_\text{M} V_t(x_\text{M} - x_\text{A} ) .
 \label{eq:heat_hb_A_expl}
 \end{multline}
-thus the heat dissipated to the heath bath can be expressed in terms of the work done by the ratchet potential and external load. 
 Consequently, the total energy balance equation~\eqref{eq:energy_balance} simplifies to 
 \[
 \rmd E 
@@ -947,7 +951,8 @@ Consequently, the total energy balance equation~\eqref{eq:energy_balance} simpli
 + {\mathcal Q}_\text{in}^\text{chem}
 + {\mathcal Q}_\text{out}^\text{chem} , 
 \]
-which does not explicitly depend on the load $F_\text{load}$. 
+which does not explicitly depend on the load $F_\text{load}$ anymore. 
+Note that the total differential here is taken in the Stratonowich sense. 
 
 Lastly, in the steady state, 
 we can see that the excess of the chemical cycle in the steady state is dissipated as the work of ratchet potential~\eqref{eq:ratchet_potential} over the separation of motor and filament 
@@ -962,7 +967,7 @@ we can see that the excess of the chemical cycle in the steady state is dissipat
 \right\rangle ,
 \label{eq:chemical_excess}
 \end{multline} 
-which can be further interpreted in terms of tension on the polymer $\tau_\text{A}$, cf.~\eqref{eq:tension_on_polymer}, and the relative velocity $v$, cf.~\eqref{eq:mean_velocity}, 
+which can be further interpreted in terms of tension on the polymer $\tau_\text{A}$, cf.~\eqref{eq:tension_on_polymer}, and the relative velocity $v$, see~\eqref{eq:mean_velocity}, 
 \begin{equation}
 \left\langle 
 {\mathcal Q}_\text{in}^\text{chem} + {\mathcal Q}_\text{out}^\text{chem} 
@@ -970,6 +975,31 @@ which can be further interpreted in terms of tension on the polymer $\tau_\text{
 = \left\langle \int \rmd t \; v \, \tau_\text{A} \right\rangle .
 \label{eq:excess_heat} 
 \end{equation}
+
+If we further assume that both the relative velocity and the tension are random Gaussian variables with standard deviation $\sigma_v$ and $\sigma_{\tau_\text{A}}$ respectively, 
+we obtain the following bounds on the excess chemical energy in the steady state  
+\begin{multline*}
+T \left[ \left\langle v \right\rangle \left\langle \tau_\text{A} \right\rangle - \sigma_v \sigma_{\tau_\text{A}} \right]
+\le 
+\left\langle 
+{\mathcal Q}_\text{in}^\text{chem} + {\mathcal Q}_\text{out}^\text{chem} 
+\right\rangle 
+\\
+\le T \left[ \left\langle v \right\rangle \left\langle \tau_\text{A} \right\rangle + \sigma_v \sigma_{\tau_\text{A}} \right] ,
+\end{multline*}
+where $T$ denotes the total duration of the process. 
+This is an important result, as we have shown in section~\ref{sec:velocity}, 
+the relative velocity is well localized around its mean value in many scenarios. 
+Similarly, the tension on the motor is well centered around its mean value, see section~\ref{sec:tension_motor}.
+The same conclusion as for the tension on the motor can also be drawn even for the tension on the actin or equivalently for the ratchet force, see appendix~\ref{sec:mean_ratchet_force}. 
+Thus the excess chemical energy can be approximated as 
+\[
+\left\langle 
+{\mathcal Q}_\text{in}^\text{chem} + {\mathcal Q}_\text{out}^\text{chem} 
+\right\rangle 
+\approx T \left\langle v \right\rangle \left\langle \tau_\text{A} \right\rangle 
+\equiv T \left\langle v \right\rangle \left\langle F_\text{r} \right\rangle .
+\]
 
 
 \subsection{Heat fluxes}
@@ -988,16 +1018,13 @@ for arbitrary initial condition.
 Such equality is trivially true for arbitrarily small times when the initial condition corresponds to the steady state.
 
 
-\subsection{Other setups} 
+\subsection{Alternative setups} 
 In section \ref{sec:ratchet} we introduced three alternative models, 
 more suitable for capturing the behavior of myosin motors inside the polymer network known as the actomyosin cortex.
 
 \subsubsection{Load on the polymer}
-The ``load on the polymer'' setup is a variation to the ``load on the motor'' setup, cf. section~\ref{sec:load_on_polymer}. 
-From the mathematical perspective, it is almost identical to the ``load on the motor'' setup although differently interpreted. 
-What was called motor in the basic setup, is now called polymer and visa versa
-and the x-axis is reversed.
-This means that energy balance~\eqref{eq:energy_balance} is preserved 
+As the ``load on the polymer'' setup is a variation to the ``load on the motor'' setup, cf. section~\ref{sec:load_on_polymer}, 
+the energy balance~\eqref{eq:energy_balance} is preserved 
 with basic expressions for heat dissipated to the heat bath~\eqref{eq:heat_hb_M} and~\eqref{eq:heat_hb_A} kept intact 
 and external work on the motor ${\mathcal W}_\text{M}^\text{ext}$ replaced by the external work on the polymer
 \[
@@ -1013,7 +1040,7 @@ Similarly expressions~\eqref{eq:heat_hb_M_expl} and~\eqref{eq:heat_hb_A_expl} ar
 {\mathcal Q}_\text{A}^\text{hb} 
 &= - \int \rmd x_\text{A} \circ \nabla_\text{M} V_t(x_\text{M} - x_\text{A} ) - {\mathcal W}_\text{A}^\text{ext} .
 \end{align*} 
-Consequently the excess of the chemical cycle~\eqref{eq:chemical_excess} changes to 
+Consequently the excess of the chemical cycle~\eqref{eq:chemical_excess} changes to, cf.~\eqref{eq:excess_heat}, 
 \begin{multline*}
 \left\langle 
 {\mathcal Q}_\text{in}^\text{chem} + {\mathcal Q}_\text{out}^\text{chem} 
@@ -1033,6 +1060,9 @@ and the tension on the motor $\tau_\text{M}$, cf.~\eqref{eq:tension_load_on_poly
 = \left\langle \int \rmd t \; v \, \tau_\text{M} \right\rangle .
 \label{eq:chemical_excess_poly}
 \end{equation}
+A similar argumentation as for the previous setup can be also made here. 
+
+
 
 \subsubsection{Tug of war}
 In the ``tug of war'' setup, see section~\ref{sec:tug_of_war} and figure~\ref{fig:tug_F_illustration},
@@ -1091,8 +1121,25 @@ Similarly to the ``load on the motor'' setup, we can express the excess from the
 \right\rangle .
 \label{eq:excess_heat_tug}
 \end{multline} 
-If we assume that displacements in the respective integrals are typically anti-symmetric, due to the anti-symmetry of the setup, 
-we can interpret the excess chemical heat as a covariance of the tension on the motor~\eqref{eq:tension_tug} with the relative velocity of the motor with respect to a single polymer \eqref{eq:mean_velocity_Fr_Fl} integrated over the time, 
+If we can again assume that relative velocities and ratchet force are well localized random Gaussian variables, 
+we can further approximate the excess chemical heat as 
+\begin{multline*}
+\left\langle 
+{\mathcal Q}_\text{in}^\text{chem} + {\mathcal Q}_\text{out}^\text{chem} 
+\right\rangle 
+\approx T \left[ 
+\left\langle v_1 \right\rangle \left\langle F_{\text{r}_1} \right\rangle  
++
+\left\langle v_2 \right\rangle \left\langle F_{\text{r}_2} \right\rangle  
+\right]
+\\
+= \frac{T}{2} \left\langle v \right\rangle \left\langle \tau_\text{M} \right\rangle
+, 
+\end{multline*}
+where the last equality follows from the anti-symmetry of the mean relative velocities of the motor with respect to individual polymers in the steady state. 
+
+More generally, if we assume that displacements in the respective integrals are typically anti-symmetric, due to the anti-symmetry of the setup, 
+we can interpret the excess chemical heat as a covariance of the tension on the motor~\eqref{eq:tension_tug} with the relative velocity of the motor with respect to a single polymer \eqref{eq:mean_velocity} integrated over the time, 
 as in the equation~\eqref{eq:excess_heat}. 
 Note, that in this particular setup the interpretation in terms of the tension is not so straightforward as in the case of the setup with either ``load on the motor'' or ``load on the polymer'', 
 because the individual displacements $x_\text{M} - x_{\text{A}_1}$ and $x_\text{M} - x_{\text{A}_2}$ are subjected to thermal fluctuations on short time scale. 
@@ -1595,6 +1642,13 @@ Note that a similar discussion for the ``elastic environment'' setup is highly n
 However, the dependency of the efficiency on the tension follows a common pattern and agrees with the results of the other setups. 
 
 In the end, we can conclude that the additional tension caused by the ratchet potential, or in other setups representing the tension in the motor itself, is the true intrinsic quantity that determines the chemical efficiency of the molecular motor
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=.45\textwidth,height=!]{ratchet_eta}
+\caption{\label{fig:ratchet_force_efficiency}
+}
+\end{figure}
 
 
 \section{Conclusions}
