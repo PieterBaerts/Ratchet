@@ -1018,7 +1018,7 @@ for arbitrary initial condition.
 Such equality is trivially true for arbitrarily small times when the initial condition corresponds to the steady state.
 
 
-\subsection{Other setups} 
+\subsection{Alternative setups} 
 In section \ref{sec:ratchet} we introduced three alternative models, 
 more suitable for capturing the behavior of myosin motors inside the polymer network known as the actomyosin cortex.
 
@@ -1121,8 +1121,25 @@ Similarly to the ``load on the motor'' setup, we can express the excess from the
 \right\rangle .
 \label{eq:excess_heat_tug}
 \end{multline} 
-If we assume that displacements in the respective integrals are typically anti-symmetric, due to the anti-symmetry of the setup, 
-we can interpret the excess chemical heat as a covariance of the tension on the motor~\eqref{eq:tension_tug} with the relative velocity of the motor with respect to a single polymer \eqref{eq:mean_velocity_Fr_Fl} integrated over the time, 
+If we can again assume that relative velocities and ratchet force are well localized random Gaussian variables, 
+we can further approximate the excess chemical heat as 
+\begin{multline*}
+\left\langle 
+{\mathcal Q}_\text{in}^\text{chem} + {\mathcal Q}_\text{out}^\text{chem} 
+\right\rangle 
+\approx T \left[ 
+\left\langle v_1 \right\rangle \left\langle F_{\text{r}_1} \right\rangle  
++
+\left\langle v_2 \right\rangle \left\langle F_{\text{r}_2} \right\rangle  
+\right]
+\\
+= \frac{T}{2} \left\langle v \right\rangle \left\langle \tau_\text{M} \right\rangle
+, 
+\end{multline*}
+where the last equality follows from the anti-symmetry of the mean relative velocities of the motor with respect to individual polymers in the steady state. 
+
+More generally, if we assume that displacements in the respective integrals are typically anti-symmetric, due to the anti-symmetry of the setup, 
+we can interpret the excess chemical heat as a covariance of the tension on the motor~\eqref{eq:tension_tug} with the relative velocity of the motor with respect to a single polymer \eqref{eq:mean_velocity} integrated over the time, 
 as in the equation~\eqref{eq:excess_heat}. 
 Note, that in this particular setup the interpretation in terms of the tension is not so straightforward as in the case of the setup with either ``load on the motor'' or ``load on the polymer'', 
 because the individual displacements $x_\text{M} - x_{\text{A}_1}$ and $x_\text{M} - x_{\text{A}_2}$ are subjected to thermal fluctuations on short time scale. 
