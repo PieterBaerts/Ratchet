@@ -1267,11 +1267,12 @@ Note that this particular definition of the efficiency has several shortcomings.
 First, the output work has two components, one from the chemical source and the second from the external driving, 
 thus in principle the efficiency can be greater than one. 
 Second, 
-only for long times in situations where the motor displacement and ratchet force are to great extend uncorrelated one can relate the output work to the heat dissipated by the drag force to the medium,
-which means that in systems, where the motor is frustrated and does not move on average, 
-like in the ``tug of war'' and the ``elastic environment'' setups,
+only for long times, in situations where the motor displacement and ratchet force are to a great extend uncorrelated, 
+one can relate the output work to the heat dissipated by the drag force to the medium.
+This means that in systems where the motor is frustrated and does not move on average, 
+like in the ``tug of war'' and ``elastic environment'' setups,
 one cannot distinguish between various sources of the output work. 
-Lastly, as the output work depend on knowledge of the details of the ratchet interaction it renders it practically immeasurable.
+Lastly, as the output work depends on knowledge of the details of the ratchet interaction, which renders it practically immeasurable.
 
 
 \subsection{Chemical efficiency} 
@@ -1283,11 +1284,11 @@ This consideration leads to a novel chemical efficiency defined as
 \eta_\text{chem} = \frac{\langle\mathcal Q^\text{chem}_\text{in}\rangle+\langle\mathcal Q^\text{chem}_\text{out}\rangle}{\langle\mathcal Q^\text{chem}_\text{in}\rangle} .
 \label{eq:efficiency}
 \end{equation}
-Note that in the steady state all the excess chemical energy is dissipated to the environment, see section~\ref{sec:heat_flux}, 
-and thus can be in principle measured by calorimetric techniques~\cite{}. %TODO 
+Note that in the steady state all excess chemical energy is dissipated to the environment, see section~\ref{sec:heat_flux}, 
+and thus can in principle be measured by calorimetric techniques~\cite{}. %TODO 
 
 \subsubsection{Load on the motor}
-We start our discussion again with ``load on the motor'' setup with a four headed motor, see figure~\ref{fig:chem}.
+We start our discussion again with the ``load on the motor'' setup with a four headed motor, see figure~\ref{fig:chem}.
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{chemical_cycle}
@@ -1295,12 +1296,12 @@ We start our discussion again with ``load on the motor'' setup with a four heade
 \label{fig:chem}
 Chemical efficiency $\eta_\text{chem}$ as a function of load force $F_\text{load}$.
 Solid lines are plotted at the level of $1\sigma$. 
-By increasing the $k_\text{bind}$ the local maximums of chemical efficiencies are getting closer to the origin,
+By increasing the $k_\text{bind}$ the local maxima of chemical efficiencies are getting closer to the origin,
 and their fluctuations decrease. 
 }
 \end{figure}
-We observe that the chemical efficiency has two local maximums. 
-We will later show that these two maximums correspond to a frustrated system, 
+We observe that the chemical efficiency has two local maxima. 
+We will later show that these two maxima correspond to a frustrated system, 
 where the load is close to the point where it is able to overcome any force induced by the ratchet potential. 
 Another observation, which we will discuss in depth later, is that the efficiency reaches negative values for large loads, 
 which we interpret as work done by the load $F_\text{load}$ that is converted back to chemical energy. 
@@ -1344,7 +1345,7 @@ where
 \]
 
 Another consequence of the independence of the individual heads 
-is that we can express total mean heats produced in the chemical cycle as a sum of contributions from individual heads
+is that we can express the total mean heat, produced in the chemical cycle, as a sum of contributions from individual heads
 \begin{align*}
 \langle \mathcal Q_\text{in}^\text{chem} \rangle 
 =& \sum\limits_{i=0}^{N-1} \left\langle \mathcal Q_\text{in}^\text{chem}(i) \right\rangle 
@@ -1449,7 +1450,7 @@ We observe that the optimal output is achieved when there is the biggest discrep
 we can see that a major contribution to the chemical efficiency actually comes from the region around the ratchet potential's maximum.
 This discrepancy can be interpreted in the following sense: 
 While most transitions occur close to the ratchet potential's minimum due to the large probability density, thus providing a large flux, 
-those particles after a transition do not diffuse far before next transition, 
+those particles do not diffuse far before the next transition, 
 hence the contribution to the chemical efficiency, associated with the discrepancy between chemical input and output, is relatively small. 
 On the other hand, a particle that switched its internal state close to the potential maximum relaxes relatively fast, compared to the transition rates, 
 to the vicinity of the ratchet potential's minimum and thus creates a larger discrepancy leading to high contribution to the efficiency. 
@@ -1482,7 +1483,7 @@ This is due to the effective friction caused by the potential.
 As the particle gets slower when dragged along the potential gradient, 
  they spend more time on the up-slope than on the down-slope of the potential.
 Such behavior is associated with a negative efficiency. 
-In the appendix~\ref{sec:perturb} we have proven this hypothesis on a system with a single head and have shown that the efficiency decay with the force 
+In the appendix~\ref{sec:perturb} we have proven this hypothesis on a system with a single head and we have shown that the efficiency decays with the force 
 \[
 \eta \asymp - \frac{1}{ F_\text{load}^2 } \qquad \text{for} \quad F_\text{load} \to \pm \infty .
 \]
@@ -1499,14 +1500,14 @@ This is confirmed by figure~\ref{fig:chem_eff_1head}, where indeed the distribut
 Chemical efficiency of a motor under load with variable number of motor's heads.
 The ``solid'' lines are drawn on the level of one sigma. 
 We observe that with increasing number of heads the efficiency \eqref{eq:efficiency} distribution gets broader and it's variance decreases.
-Moreover, for sixteen heads it became centered without two local maximums.
+Moreover, for sixteen heads it became centered without two local maxima.
 }
 \end{figure}
 It is also apparent that there is no qualitative difference in chemical efficiency between the system with four heads and one head.
-Moreover we can see that the empirical efficiency has a smaller variance with the increasing number of heads. 
-From these we can conclude that there is a significant qualitative difference between motors with low and high numbers of heads.
-While the motors with high number of heads perform the best without any external load, motors with low number heads perform the best when they are frustrated.
-Thus experiments in vitro with large myosin II motors \cite{brown2009cross-correlated} do not necessarily capture the behavior of the motors inside a cytoskeleton.
+Moreover we can see that the empirical efficiency has a smaller variance with an increasing number of heads. 
+From these, we can conclude that there is a significant qualitative difference between motors with low and high numbers of heads.
+While the motors with a high number of heads perform better without any external load, motors with a low number of heads perform the best when they are frustrated.
+Thus in-vitro experiments with large myosin II motors \cite{brown2009cross-correlated} do not necessarily capture the behavior of the motors inside a cytoskeleton.
 This is a first major result of the second part of this study.  
 
 
@@ -1550,15 +1551,15 @@ means that the mean ratchet potential in the ATP bound state $\left\langle V_\te
 
 This argument can be further supported by Jensen's inequality.
 The ratchet potential is convex close to its minimum. 
-Moreover, we have seen in the figure~\ref{fig:pos_distr} that the probability distribution for small loads is well localized around it's mean value,
-hence we can concur that the Jensen's inequality will hold for sufficiently small loads  
+Moreover, we have seen in figure~\ref{fig:pos_distr} that the probability distribution for small loads is well localized around it's mean value.
+Hence we can concur that the Jensen's inequality will hold for sufficiently small loads  
 \begin{equation*}
 V_\text{r}(\langle x | \zeta \rangle) \leq \langle V_\text{r}(x) | \zeta \rangle , 
 \end{equation*} 
 where the lower bound on the expectation value of the ratchet potential~\eqref{eq:ratchet_potential} is given by the value of the ratchet potential at the mean position of the heads in a given state. 
 Consequently, any shift in the mean position of the heads due to the external force shifts the lower bound for the mean value of the ratchet potential itself.
 Furthermore, in the ATP bound state the mean position will be further away from the minimum of the ratchet \eqref{eq:mean_position_shift} so the lower bound is higher than in the ATP unbound state.
-Moreover as the distribution is well localized around the minimum, the shift in the lower bound for the potential represent a shift in the mean value as well. 
+Therefore, as the distribution is well localized around the minimum, the shift in the lower bound for the potential represents a shift in the mean value as well. 
 
 For a four headed motor, the distributions of the heads at zero load are not exactly peaked around the minimum of the potential. 
 This is due to the fixed distance between each head, which does not correspond to the period of the ratchet. 
@@ -1614,7 +1615,7 @@ We will discuss this connection later, see figure~\ref{fig:tension_efficiency}.
 
 
 \subsubsection{Elastic environment}
-In the case of elastic environment, see figure~\ref{fig:stiffness_efficiency}, we observe that the chemical efficiency~\eqref{eq:eta} is practically independent of the stiffness of the environment, $k_\text{sp}$. 
+In the case of the  ``elastic environment'' setup, see figure~\ref{fig:stiffness_efficiency}, we observe that the chemical efficiency~\eqref{eq:eta} is practically independent of the stiffness of the environment, $k_\text{sp}$. 
 \begin{figure}[t]
 \centering
 \includegraphics[width=.45\textwidth,height=!]{k_eta.pdf}
@@ -1628,7 +1629,8 @@ Unfortunately, here we cannot use the same reasoning as for the ``tug of war'' s
 \subsubsection{Tension and chemical efficiency}
 During the investigation of the chemical efficiency dependency on the external load $F_\text{load}$ for the ``tug of war'' setup, 
 we discovered that rather than the load, the tension on the motor $\tau_\text{M}$ might be the intrinsic parameter. 
-However, if we take into account results of section~\ref{sec:energie}, namely equations~\eqref{eq:chemical_excess}, \eqref{eq:chemical_excess_poly} and \eqref{eq:excess_heat_tug},the mean ratchet force~\eqref{eq:ratchet_force} might be a better candidate.
+However, if we take the results of section~\ref{sec:energie} into account, namely equations~\eqref{eq:chemical_excess}, \eqref{eq:chemical_excess_poly} and \eqref{eq:excess_heat_tug}, 
+the mean ratchet force~\eqref{eq:ratchet_force} might be a better candidate.
 Indeed, as we can see in the figure~\ref{fig:ratchet_force_efficiency}, the chemical efficiency has a universal dependency on the mean ratchet force across all setups. 
 \begin{figure}[t]
 \centering
@@ -1639,17 +1641,17 @@ We observe a universal dependency of the efficiency on the mean ratchet force ac
 }
 \end{figure}
 
-For small mean ratchet force, caused either by small external load $F_\text{load}$ or small stiffness of the surrounding network $k_\text{sp}$, 
+For a small mean ratchet force, caused either by a small external load $F_\text{load}$ or a small stiffness of the surrounding network $k_\text{sp}$, 
 the chemical efficiency has relatively flat profile with weak positive response to an increase in tension.
 This can be explained by perturbations in the steady state average probability density for the motor's heads 
-and was discussed in more details in the section~\ref{sec:chemical_efficiency}, 
-cf. equations~\eqref{eq:eta} and~\eqref{eq:heat_flux_explicit}, and figures~\ref{fig:pos_distr} and~\ref{fig:chem_energy_distr}.  
+and was discussed in more details in  section~\ref{sec:chemical_efficiency}, 
+see equations~\eqref{eq:eta} and~\eqref{eq:heat_flux_explicit}, and figures~\ref{fig:pos_distr} and~\ref{fig:chem_energy_distr}.  
 
 With increasing load, both positive and negative, the mean ratchet force on the motor in the ``load on the polymer'', ``load on the motor'' and ``tug of war'' setups increase up to a certain threshold.
-There, the polymers start to slip with respect to the motor and a further increase in the driving leads only to a decrease in the tension~\eqref{eq:tension_load_on_polymer_large} and~\eqref{eq:tension_tug} and thus to decrease in the mean ratchet force as well.
+There, the polymers start to slip with respect to the motor and a further increase in the driving leads only to a decrease in the mean ratchet force and thus to a decrease in the tension~\eqref{eq:tension_load_on_polymer_large} and~\eqref{eq:tension_tug} as well.
 This creates a second branch of the dependency for the slipping motor. 
 For the ``tug of war'' setup the threshold value is lower than for the ``load on the polymer'' setup due to the interaction mediated by two ratchet potentials, 
-as for the complete motor to slip it is sufficient if only one of ratchet interactions on either side of the motor give up. 
+as for the complete motor to slip it is sufficient if only one of ratchet interactions on either side of the motor gives up. 
 
 Note that a similar discussion for the ``elastic environment'' setup is highly non-trivial, as shown in section~\ref{sec:power_elastic}.
 However, the dependency of the efficiency on the mean ratchet force follows a common pattern and agrees with the results of the other setups. 
@@ -1669,7 +1671,7 @@ The discrepancy lies in the different amplitudes of the tension, cf. figure \ref
 \end{figure}
 Here we can see that we deviate from a universal behavior, 
 most notably for the ``load on the motor'' setup, where there is always a residual tension from the load alone~\eqref{eq:tension_large_load}.
-Note also, that in the ``tug of war'' setup the threshold for motor to slip is larger than in other setups due to two contributions from the mean ratchet force to the tension, one at each respective side of the motor.
+Also note, that in the ``tug of war'' setup the threshold for motor to slip is larger than in other setups due to two contributions from the mean ratchet force to the tension, one at each respective side of the motor.
 These considerations complement the discussion that related the excess chemical energy with the build up tension in the motor, 
 or more precisely with the additional tension created by the ratchet interaction, see discussion related to equations~\eqref{eq:excess_heat},~\eqref{eq:chemical_excess_poly} and~\eqref{eq:excess_heat_tug}. 
 
