@@ -993,32 +993,6 @@ which can be further interpreted in terms of tension on the polymer $\tau_\text{
 \label{eq:excess_heat} 
 \end{equation}
 
-If we further assume that both the relative velocity and the tension are random Gaussian variables with standard deviation $\sigma_v$ and $\sigma_{\tau_\text{A}}$ respectively, 
-we obtain the following bounds on the excess chemical energy in the steady state 
-\begin{multline*}
-T \left[ \left\langle v \right\rangle \left\langle \tau_\text{A} \right\rangle - \sigma_v \sigma_{\tau_\text{A}} \right]
-\le 
-\left\langle 
-{\mathcal Q}_\text{in}^\text{chem} + {\mathcal Q}_\text{out}^\text{chem} 
-\right\rangle 
-\\
-\le T \left[ \left\langle v \right\rangle \left\langle \tau_\text{A} \right\rangle + \sigma_v \sigma_{\tau_\text{A}} \right] ,
-\end{multline*}
-where $T$ denotes the total duration of the process. 
-This is an important result, as we have shown in section~\ref{sec:velocity} 
-that the relative velocity is well localized around its mean value in many scenarios. 
-Similarly, the tension on the motor is well centered around its mean value, see section~\ref{sec:tension_motor}.
-The same conclusion as for the tension on the motor can also be drawn  for the tension on the polymer or equivalently for the ratchet force, see appendix~\ref{sec:mean_ratchet_force}. 
-Thus the excess chemical energy can be approximated as 
-\[
-\left\langle 
-{\mathcal Q}_\text{in}^\text{chem} + {\mathcal Q}_\text{out}^\text{chem} 
-\right\rangle 
-\approx T \left\langle v \right\rangle \left\langle \tau_\text{A} \right\rangle 
-\equiv T \left\langle v \right\rangle \left\langle F_\text{r} \right\rangle .
-\]
-
-
 \subsection{Heat fluxes}
 \label{sec:heat_flux}
 Furthermore, note that the internal energy of the system~\eqref{eq:internal_energy} is bounded.
@@ -1138,8 +1112,9 @@ Similarly to the ``load on the motor'' setup, we can express the excess from the
 \int \rmd \left( x_\text{M} - x_{\text{A}_2} \right) \circ \left[ - \nabla_\text{M} V_t( x_\text{M} - x_{\text{A}_2} ) \right]
 \right\rangle .
 \label{eq:excess_heat_tug}
-\end{multline} 
-If we can again assume that relative velocities and ratchet force are well localized random Gaussian variables, 
+\end{multline}
+ 
+If we na\"{\i}vely assume that relative velocities and ratchet force are well localized random Gaussian variables, 
 we can further approximate the excess chemical heat as 
 \begin{multline*}
 \left\langle 
@@ -1156,10 +1131,11 @@ we can further approximate the excess chemical heat as
 \end{multline*}
 where the last equality follows from the anti-symmetry of the mean relative velocities of the motor with respect to individual polymers in the steady state. 
 
-More generally, if we assume that the displacements in the respective integrals are typically anti-symmetric, due to the anti-symmetry of the setup, 
+As the previous assumption is far from reality, such straightforward interpretation of the excess heat is invalid. 
+However, if we assume that the displacements in the respective integrals are typically anti-symmetric, due to the anti-symmetry of the setup, 
 we can interpret the excess chemical heat as a covariance of the tension on the motor~\eqref{eq:tension_tug} with the relative velocity of the motor with respect to a single polymer \eqref{eq:mean_velocity} integrated over the time, 
 as in the equation~\eqref{eq:excess_heat}. 
-Note, that in this particular setup the interpretation in terms of the tension is not so straightforward as in the case of the setup with either ``load on the motor'' or ``load on the polymer'', 
+Note, that in this particular setup the interpretation in terms of the tension is also less straightforward in comparison with the ``load on the motor'' or the ``load on the polymer'' setup, 
 because the individual displacements $x_\text{M} - x_{\text{A}_1}$ and $x_\text{M} - x_{\text{A}_2}$ are subjected to thermal fluctuations on short time scale. 
 Only on the long time scale they are anti-symmetric and the tension relaxes to a steady value.  
 
@@ -1527,62 +1503,6 @@ Thus in-vitro experiments with large myosin II motors \cite{brown2009cross-corre
 This is a first major result of the second part of this study.  
 
 
-\subsubsection{Local minimum}
-Another trait of the chemical efficiency curves are the local minima around $F_\text{load}=0$. 
-This can be understood from equation \eqref{eq:eta}, which is determined by the ratchet potential averaged with the heads' distribution in the attached and detached state. 
-For a one headed motor, these distribution will both be peaked around the minimum of the ratchet potential. 
-In fact, these distributions will be given by the Boltzmann distribution
-\begin{equation}
-\rho_0(x,\zeta) = \frac{1}{Z(\zeta)} e^{-\beta \zeta V_\text{r}(x)}
-\end{equation} 
-in the lowest order of approximation, as the binding and unbinding rates operate on much longer time scale than the relaxation governed by the diffusion. 
-From this point of view, ATP binding is effectively equivalent to an increasing of the temperature of the heat bath $T\rightarrow\frac{T}{c}$. 
-Hence the distributions for the ATP bound state are broader and the expectation value of $V_\text{r}$ will be bigger than in the attached state and $\eta$ will be positive. 
-
-Now if we apply a small external force, those distributions will be slightly perturbed. 
-Following the McLennan formula~\cite{Maes2010} we obtain  
-\begin{align*}
-\rho^*(x) 
-&\sim e^{-\beta \left[V_\text{r}(x) + F_\text{load} \left( x - x_\text{min} \right) \right]} \\
-&\approx \rho_0(x) \left[1 - \beta F_\text{load} \left( x - x_\text{min} \right) \right]
-\end{align*}
-close to the potential minimum $x_\text{min}$, i.e. $V(x) \ge V(x_\text{min})$. 
-This leads, for small $F_\text{load}$, to a shift of the distribution $\rho$ in the opposite direction of the load
-as can be seen from 
-\begin{multline}
-\left\langle x \right\rangle_{\rho^*} 
-= x_\text{min} + \left\langle x - x_\text{min} \right\rangle_{\rho^*}
-\\
-\approx x_\text{min} + \left\langle x - x_\text{min} \right\rangle_{\rho_0} 
-- \beta F_\text{load} \left\langle \left( x - x_\text{min} \right)^2 \right\rangle_{\rho_0} 
-\\
-= \left\langle x \right\rangle_{\rho_0}
-- \beta F_\text{load} \left\langle \left( x - x_\text{min} \right)^2 \right\rangle_{\rho_0} .
-\label{eq:mean_position_shift}
-\end{multline}
-From the previous equation it follows that a more spread-out distribution will be affected more by the force.
-This means that in our case the ATP bound state will be more affected.
-A larger displacement of the distribution, away from the potential's minimum, 
-means that the mean ratchet potential in the ATP bound state $\left\langle V_\text{r} \middle| \zeta = c \right\rangle$ will increase more than the mean ratchet potential in the ATP unbound state $\left\langle V_\text{r} \middle| \zeta = 1 \right\rangle$ and hence the chemical efficiency \eqref{eq:eta} has to increase. 
-
-This argument can be further supported by Jensen's inequality.
-The ratchet potential is convex close to its minimum. 
-Moreover, we have seen in figure~\ref{fig:pos_distr} that the probability distribution for small loads is well localized around it's mean value.
-Hence we can concur that the Jensen's inequality will hold for sufficiently small loads  
-\begin{equation*}
-V_\text{r}(\langle x | \zeta \rangle) \leq \langle V_\text{r}(x) | \zeta \rangle , 
-\end{equation*} 
-where the lower bound on the expectation value of the ratchet potential~\eqref{eq:ratchet_potential} is given by the value of the ratchet potential at the mean position of the heads in a given state. 
-Consequently, any shift in the mean position of the heads due to the external force shifts the lower bound for the mean value of the ratchet potential itself.
-Furthermore, in the ATP bound state the mean position will be further away from the minimum of the ratchet \eqref{eq:mean_position_shift} so the lower bound is higher than in the ATP unbound state.
-Therefore, as the distribution is well localized around the minimum, the shift in the lower bound for the potential represents a shift in the mean value as well. 
-
-For a four headed motor, the distributions of the heads at zero load are not exactly peaked around the minimum of the potential. 
-This is due to the fixed distance between each head, which does not correspond to the period of the ratchet. 
-Therefore the local minimum of $\eta_\text{chem}$ lies not exactly at, but close to, $F_\text{load} =0$, see figure ~\ref{fig:chem}.
-
-
-
 \subsubsection{Load on the polymer}
 As was already discussed, the situation with the load on the polymer is almost identical to the one with the load on the motor.
 The main difference is in the notion of what we perceive as motor or as polymer, cf. section~\ref{sec:load_on_polymer}.
@@ -1907,6 +1827,63 @@ Note that while there are natural bounds on the ratchet force due to the shape o
 see equation~\eqref{eq:ratchet_force_bounds} in the appendix~\ref{sec:ind_velo}, 
 here we have shown that the minimal and the maximal ratchet force are comparable to these theoretical bounds. 
 Compare this to the maximal tension the motor is able to withstand before it start to slip in section~\ref{sec:tension_motor}. 
+
+
+\section{Local minimum of the chemical efficiency}
+\label{sec:local_minimum}
+Another trait of the chemical efficiency curves are the local minima around $F_\text{load}=0$. 
+This can be understood from equation \eqref{eq:eta}, which is determined by the ratchet potential averaged with the heads' distribution in the attached and detached state. 
+For a one headed motor, these distribution will both be peaked around the minimum of the ratchet potential. 
+In fact, these distributions will be given by the Boltzmann distribution
+\begin{equation*}
+\rho_0(x,\zeta) = \frac{1}{Z(\zeta)} e^{-\beta \zeta V_\text{r}(x)}
+\end{equation*} 
+in the lowest order of approximation, as the binding and unbinding rates operate on much longer time scale than the relaxation governed by the diffusion. 
+From this point of view, ATP binding is effectively equivalent to an increasing of the temperature of the heat bath $T\rightarrow\frac{T}{c}$. 
+Hence the distributions for the ATP bound state are broader and the expectation value of $V_\text{r}$ will be bigger than in the attached state and $\eta$ will be positive. 
+
+Now if we apply a small external force, those distributions will be slightly perturbed. 
+Following the McLennan formula~\cite{Maes2010} we obtain  
+\begin{align*}
+\rho^*(x) 
+&\sim e^{-\beta \left[V_\text{r}(x) + F_\text{load} \left( x - x_\text{min} \right) \right]} \\
+&\approx \rho_0(x) \left[1 - \beta F_\text{load} \left( x - x_\text{min} \right) \right]
+\end{align*}
+close to the potential minimum $x_\text{min}$, i.e. $V(x) \ge V(x_\text{min})$. 
+This leads, for small $F_\text{load}$, to a shift of the distribution $\rho$ in the opposite direction of the load
+as can be seen from 
+\begin{multline}
+\left\langle x \right\rangle_{\rho^*} 
+= x_\text{min} + \left\langle x - x_\text{min} \right\rangle_{\rho^*}
+\\
+\approx x_\text{min} + \left\langle x - x_\text{min} \right\rangle_{\rho_0} 
+- \beta F_\text{load} \left\langle \left( x - x_\text{min} \right)^2 \right\rangle_{\rho_0} 
+\\
+= \left\langle x \right\rangle_{\rho_0}
+- \beta F_\text{load} \left\langle \left( x - x_\text{min} \right)^2 \right\rangle_{\rho_0} .
+\label{eq:mean_position_shift}
+\end{multline}
+From the previous equation it follows that a more spread-out distribution will be affected more by the force.
+This means that in our case the ATP bound state will be more affected.
+A larger displacement of the distribution, away from the potential's minimum, 
+means that the mean ratchet potential in the ATP bound state $\left\langle V_\text{r} \middle| \zeta = c \right\rangle$ will increase more than the mean ratchet potential in the ATP unbound state $\left\langle V_\text{r} \middle| \zeta = 1 \right\rangle$ and hence the chemical efficiency \eqref{eq:eta} has to increase. 
+
+This argument can be further supported by Jensen's inequality.
+The ratchet potential is convex close to its minimum. 
+Moreover, we have seen in figure~\ref{fig:pos_distr} that the probability distribution for small loads is well localized around it's mean value.
+Hence we can concur that the Jensen's inequality will hold for sufficiently small loads  
+\begin{equation*}
+V_\text{r}(\langle x | \zeta \rangle) \leq \langle V_\text{r}(x) | \zeta \rangle , 
+\end{equation*} 
+where the lower bound on the expectation value of the ratchet potential~\eqref{eq:ratchet_potential} is given by the value of the ratchet potential at the mean position of the heads in a given state. 
+Consequently, any shift in the mean position of the heads due to the external force shifts the lower bound for the mean value of the ratchet potential itself.
+Furthermore, in the ATP bound state the mean position will be further away from the minimum of the ratchet \eqref{eq:mean_position_shift} so the lower bound is higher than in the ATP unbound state.
+Therefore, as the distribution is well localized around the minimum, the shift in the lower bound for the potential represents a shift in the mean value as well. 
+
+For a four headed motor, the distributions of the heads at zero load are not exactly peaked around the minimum of the potential. 
+This is due to the fixed distance between each head, which does not correspond to the period of the ratchet. 
+Therefore the local minimum of $\eta_\text{chem}$ lies not exactly at, but close to, $F_\text{load} =0$, see figure ~\ref{fig:chem}.
+
 
 
 \section{Perturbative treatment}
