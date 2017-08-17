@@ -22,14 +22,14 @@ set y2zeroaxis
 
 plot [-150:150][:] \
     "Data/F_q_k=8.dat" u ($1/0.66):(-$2*0.66*0.97/(0.66+0.97)*($2+$1/0.66)) w points ls 8 title "Load on motor"\
-  , "Data/F_q_k=8.dat" u ($1/0.66):(-$2*0.66*0.97/(0.66+0.97)*($2+$1/0.66+2.*$3)) w lines ls 8 notitle\
-  , "Data/F_q_k=8.dat" u ($1/0.66):(-$2*0.66*0.97/(0.66+0.97)*($2+$1/0.66-2.*$3)) w lines ls 8 notitle\
+  , "Data/F_q_k=8.dat" u ($1/0.66):(-$2*0.66*0.97/(0.66+0.97)*($2+$1/0.66)+0.66*0.97/(0.66+0.97)*$3**2) w lines ls 7 notitle\
+  , "Data/F_q_k=8.dat" u ($1/0.66):(-$2*0.66*0.97/(0.66+0.97)*($2+$1/0.66)-0.66*0.97/(0.66+0.97)*$3**2) w lines ls 7 notitle\
   , "Data/F_q_fil.dat" u (-$1/0.97):($2*0.66*0.97/(0.66+0.97)*(-$2-$1/0.97)) w points ls 3 title "Load on polymer"\
-  , "Data/F_q_fil.dat" u (-$1/0.97):($2*0.66*0.97/(0.66+0.97)*(-$2-$1/0.97+2.*$3)) w lines ls 3 notitle\
-  , "Data/F_q_fil.dat" u (-$1/0.97):($2*0.66*0.97/(0.66+0.97)*(-$2-$1/0.97-2.*$3)) w lines ls 3 notitle \
+  , "Data/F_q_fil.dat" u (-$1/0.97):($2*0.66*0.97/(0.66+0.97)*(-$2-$1/0.97)+0.66*0.97/(0.66+0.97)*$3**2) w lines ls 4 notitle\
+  , "Data/F_q_fil.dat" u (-$1/0.97):($2*0.66*0.97/(0.66+0.97)*(-$2-$1/0.97)-0.66*0.97/(0.66+0.97)*$3**2) w lines ls 4 notitle \
   , "Data/tug_F.dat" u (-$1/0.97):($2*(-$2*0.97-$1)) w points ls 6 title "Tug-of-war"\
-  , "Data/tug_F.dat" u (-$1/0.97):($2*(-$2*0.97-$1+2.*$3)) w lines ls 6 notitle\
-  , "Data/tug_F.dat" u (-$1/0.97):($2*(-$2*0.97-$1-2.*$3)) w lines ls 6 notitle\
+  , "Data/tug_F.dat" u (-$1/0.97):($2*(-$2*0.97-$1)+0.97*$3**2) w lines ls 5 notitle\
+  , "Data/tug_F.dat" u (-$1/0.97):($2*(-$2*0.97-$1)-0.97*$3**2) w lines ls 5 notitle\
   , "Data/F_q_k=8.dat" u ($1/0.66):(1+$5/$4)*2500 w errorlines ls 7 title "Load on motor"\
   , "Data/F_q_fil.dat" u (-$1/0.97):(1+$5/$4)*2500 w errorlines ls 4 title "Load on polymer"\
   , "Data/tug_F.dat" u (-$1/0.97):(1+$9/$8)*2500 w errorlines ls 5 title "Tug-of-war"\
