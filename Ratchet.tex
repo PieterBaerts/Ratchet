@@ -31,10 +31,10 @@
 
 \title{Tension and chemical efficiency of Myosin-II motors}
 \author{Pieter Baerts}
-%\author{Christian Maes}
-\affiliation{KU Leuven, Instituut voor Theoretishe Fysica, Celestijnenlaan 200D, B-3001 Leuven, Belgium}
-\author{Jiří Pešek}
+\author{Christian Maes}
+\affiliation{KU Leuven, Instituut voor Theoretische Fysica, Celestijnenlaan 200D, B-3001 Leuven, Belgium}
 \author{Herman Ramon}
+\author{Jiří Pešek}
 \affiliation{KU Leuven, BIOSYST-MeBioS, Kasteelpark Arenberg 30, B-3001 Leuven, Belgium}
 
 \pacs{05.70.Ln, 87.16.A-, 87.16.Nn}
@@ -133,7 +133,7 @@ Simultaneously, we will show that the chemical efficiency relates the chemical i
 to its active tension, rather than to its displacement.
 We investigate how this efficiency depends on the external load, number of heads of the motor and ATP concentration. 
 Consequently, we find that motors with a low number of heads, contrary to those with a high number of heads, achieve maximal chemical efficiency when they are frustrated, i.e. close to maximal tension.
-This is in contrast with the observation that from the mechanical perspective there is a no qualitative difference between them. 
+This is in contrast with the observation that from the mechanical perspective there is no qualitative difference between them. 
 
 
 \section{The Ratchet model}
@@ -223,11 +223,11 @@ which we use to account for changes in the free energy landscape \cite{Nie2014,n
 
 This choice is justified by multiple considerations: 
 First, in our model the internal state represents whether ATP (or one of its products) is \emph{bound} or \emph{unbound} to the myosin head,
-rather than the binding the myosin motor to the actin filament itself.
+rather than the binding of the myosin motor to the actin filament itself.
 In other words, the internal state characterizes the electrochemical properties of the head, 
 which further determine the magnitude of the interaction potential with the actin filament.
 
-Second, we assume that whether the head is bounded or not has no influence on the binding site of the ATP molecule,
+Second, we assume that whether the head itself is bound or not has no influence on the binding site of the ATP molecule,
 thus we don't impose any effective dependency of the dynamics of the chemical cycle on the relative position of myosin and actin. 
 
 Similarly, we assume that an external load does not influence the binding site of ATP, 
@@ -243,10 +243,13 @@ Note that while the rates $k_\text{bind}$, $k_\text{unbind}$ are independent of 
 they depend on the concentrations of the relevant chemical species involved in ATP hydrolysis. 
 More specifically $k_\text{bind}$ is proportional to $[\text{ATP}]$ while $k_\text{unbind}$ is inversely proportional to $[\text{ADP}]$ and $[\text{P}_\text{i}]$.
 
-In order to obtain these transition rates between these to two states, we start from the three state model introduced by Albert et al. \cite{Albert2014},
-which we further simplify by unifying the states corresponding to the hydrolized ATP (i.e. ADP+P) and ADP with P released, as this process occurs on much shorter time-scale than other transitions.
+In order to obtain transition rates between these two states, we start from the three state model introduced by Albert et al. \cite{Albert2014},
+which we further simplify by unifying the states corresponding to the hydrolized ATP (i.e. ADP+P) and ADP with P released, 
+as this process occurs on a much shorter time-scale than other transitions.
 
-While both the diffusion and the jump process are separately in equilibrium, the mechanism of the flashing ratchet brings the combined system out of equilibrium, leading to the movement of the motor in a preferred direction, given by the asymmetry of the filament \cite{Reimann2002introduction,de2007symmetries}.
+While both the diffusion and the jump process are in equilibrium separately, 
+the mechanism of the flashing ratchet brings the combined system out of equilibrium, \
+leading to the movement of the motor in a preferred direction, given by the asymmetry of the filament \cite{Reimann2002introduction,de2007symmetries}.
 
 Figure~\ref{fig:ratchet_setup} depicts the whole setup of the system
 and figure~\ref{fig:energy} depicts the dynamics involved in flashing ratchet. 
@@ -286,7 +289,7 @@ its aim is to characterize the transport induced by molecular motors.
 However, recent experiments show that myosin~II motors' role is mainly to cross-link the cytoskeleton \cite{ma2012nonmuscle}
 and consequently producing an active tension inside the network \cite{chugh2017actin,monier2010actomyosin}.
 As one of the aims of this paper is to investigate the validity of such a model in these situations, 
-we present a couple of natural extensions of this setup, more faithfully capturing the behavior of myosin~II motors inside these networks.
+we present a couple of natural extensions to this setup, more faithfully capturing the behavior of myosin~II motors inside these networks.
 The original setup will be further referred to as ``load on the motor''.
 
 \subsubsection{Load on the polymer}
@@ -294,7 +297,7 @@ The original setup will be further referred to as ``load on the motor''.
 The first setup that we introduce is very similar to ``load on the motor'', 
 but now with the external load applied to the polymer instead of the molecular motor. 
 This correspond to a situation where the motor is attached to the polymer, which itself is under the tension due to the action of other motors and complex interactions in a larger network.
-As we will show later, in this setup the tension on the motor will vanish for large loads, which will be relevant for our discussion of the chemical efficiency. 
+As we will show later, in this setup the tension on the motor vanishes for large loads, which will be relevant for our discussion of the chemical efficiency. 
 The basic scheme of this setup is depicted in the figure~\ref{fig:load_on_polymer setup}.
 \begin{figure}[t]
 \centering
@@ -345,7 +348,7 @@ Setup of a motor interacting with two actin filaments that experience equal but 
 }
 \end{figure}
 This corresponds to a situation where the motor is actively cross-linking two polymers, which are subjected to the tension caused by other motors and other external influences.  
-Hence equations of motion read
+Hence the equations of motion read
 \begin{equation}
 \begin{gathered}
 \begin{multlined}[b][.45\textwidth]
@@ -372,8 +375,8 @@ V_t(x_{\text{A}_1}(t) - x_\text{M}(t))
 \end{gathered}
 \label{eq:eom_two_actins}
 \end{equation}
-where we denoted by subscript ${\text{A}_1}$ the first and by ${\text{A}_2}$ the second actin filament respectively
-and where the anti-alignment of polymers is represented by substitution of $x$ by $-x$ in the argument of the ratchet potential~\eqref{eq:ratchet_interaction} for the first polymer $\text{A}_1$.
+where we denoted by subscript ${\text{A}_1}$ the first and by ${\text{A}_2}$ the second actin filament 
+and where the anti-alignment of polymers is represented by the change of the sign in the argument of the ratchet potential~\eqref{eq:ratchet_interaction} for the first polymer $\text{A}_1$.
 Note, that the actin filament from the ``load on the polymer'' setup corresponds to the polymer denoted by $\text{A}_2$ in this setup. 
 
 
@@ -381,12 +384,12 @@ Note, that the actin filament from the ``load on the polymer'' setup corresponds
 \label{sec:environment}
 As polymers inside the cytoskeleton are usually thoroughly interconnected rather than freely diffusing \cite{blanchoin2014actin,ennomani2016architecture},
 we can opt for an alternative approach.
-Rather than applying an external load we attach filaments to fixed points by a spring with a constant stiffness $k_\text{sp}$, 
+Rather than applying an external load we attach filaments to fixed points by a spring with constant stiffness $k_\text{sp}$, 
 similarly to the approach discussed in \cite{Albert2014}. 
 These points represent points of interaction with the rest of the network while the spring stiffness $k_\text{sp}$ represents the elastic properties of the full network. 
 The myosin motor is again interacting with two filaments that are arranged in an anti-parallel fashion. 
-Hence, similar to the previous case, it will no longer have a preferred direction to move in and 
-it eventually reaches a steady state where its mean velocity will be zero. 
+Hence, similar to the previous case, it will no longer have a preferred direction of motion 
+and it eventually reaches a steady state where its mean velocity will be zero. 
 The observable of interest is now the mean force that the motor applies to the filaments, 
 which is obtained via the extension of the springs attached to the filaments,
 and which represent the active tension in the network produced by the single myosin minifilament. 
@@ -400,7 +403,7 @@ Illustration of a motor pulling on two actin filament that are each connect to a
 }
 \end{figure}
 
-The equations of motion are than just a modification of \eqref{eq:eom_two_actins}, i.e.,   
+The equations of motion are then just a modification of \eqref{eq:eom_two_actins}, i.e.,   
 \begin{equation}
 \begin{gathered}
 \begin{multlined}[b][.45\textwidth]
@@ -441,7 +444,7 @@ data was gathered by sampling every $0.5\;\mathrm{ms}$ for a total time of $1\;\
 
 \section{Model verification}
 \label{sec:model_verification}
-As our model deviates from traditionally used ratchet model, as discussed in section~\ref{sec:ratchet},  
+As our model deviates from the traditionally used ratchet model, as discussed in section~\ref{sec:ratchet},  
 we need to verify that we can reproduce the behavior reported in the literature for flashing ratchet models and myosin II motors. 
 The mean velocity, force -- velocity relation and stall force are numerically obtained for our model.
 
@@ -485,7 +488,7 @@ The resulting dependency is shown in the figure~\ref{fig:v_k}.
 \label{fig:v_k} 
 Mean velocity of the motor relative to the actin filament $\langle v \rangle$ for varying $k_\text{bind}$.
 The velocity decreases to $0$ for large discrepancies between binding and unbinding rate and reaches maximum when they are comparable.
-Note that the ATP binding rate $k_\text{bind}$ is show in units of $k_\text{unbind}$ on a logarithmic scale.
+Note that the ATP binding rate $k_\text{bind}$ is shown in units of $k_\text{unbind}$ on a logarithmic scale.
 }
 \end{figure}
 We observe that the maximal velocity is reached for rates close to $k_\text{bind} = k_\text{unbound}$. 
@@ -519,7 +522,7 @@ The larger the load, the more the velocity will approach the velocity of a non-i
 \[
 \langle v \rangle \asymp - \frac{1}{\gamma_\text{M}} F_\text{load}.
 \]
-We prove this dependency in the appendix~\ref{sec:ind_velo}. 
+We prove this dependency in appendix~\ref{sec:ind_velo}. 
 Curves for higher ATP binding rates are closer to the curve for the completely unbound motor.
 As the motor is more loosely bound to the polymer, it is more submissive to the external load.
 Such a force-velocity relation was already presented in 2002 by Reimann \cite{reimann2002brownian} for a flashing ratchet, representing a motor with a single head.
@@ -539,7 +542,7 @@ On the other hand, the motors with four and sixteen heads have almost identical 
 However, it would be na\"{\i}ve to consider these motors identical as they behave very differently regarding their energetics,  
 which we will discuss in the section~\ref{sec:efficiency}.
 
-A comparison of the force -- velocity relation for alternative setups with the ``load on the motor'' setup is provided in the appendix~\ref{sec:force_velocity_other}.
+A comparison of the force -- velocity relation for alternative setups with the ``load on the motor'' setup is provided in appendix~\ref{sec:force_velocity_other}.
 
 \subsection{Stall force}
 From figure~\ref{fig:F_v} it is apparent that when applying a force against the preferred direction of the motor, 
@@ -558,7 +561,7 @@ Mean velocity of the motor $\langle v \rangle$ with a small load force $F_\text{
 Intersections with the $x$ axis correspond to stall forces $F_\text{stall}$ for given detach rates. 
 We can see that with increasing $k_\text{bind}/k_\text{unbind}$ ratio the slope increases as well as the full curve shifts in the low force region, 
 causing a persistent decrease in stall force. 
-Note that both $k_\text{bind} = 0 $ and $k_\text{bind} = \infty$ correspond to equilibrium and thus the mean velocity for zero load is zero as well as is the stall force.  
+Note that both $k_\text{bind} = 0 $ and $k_\text{bind} = \infty$ correspond to equilibrium and thus the mean velocity for zero load as well as the stall force is zero. 
 }
 \end{figure}
 The intersections with the horizontal axis correspond to stall forces,  
@@ -602,14 +605,14 @@ F_\text{r} = - \nabla_\text{M} V_t( x_\text{M} - x_\text{A} ) = \nabla_\text{A} 
 \end{equation}
 Without the ratchet interaction, the motion of the myosin relatively to the actin filament would satisfy $ \gamma_\text{M}\langle v \rangle = -F_\text{load}$. 
 The discrepancy in this relation, up to a pre-factor, equals the mean force exerted via the flashing ratchet $\langle F_\text{r}\rangle$, 
-see also the equation~\eqref{eq:mean_velocity_Fr_Fl} in appendix~\ref{sec:ind_velo},
+see also equation~\eqref{eq:mean_velocity_Fr_Fl} in appendix~\ref{sec:ind_velo},
 thus we can extract the mean ratchet force in terms of external load and mean relative velocity as 
 \begin{equation}
 \langle F_\text{r} \rangle = \frac{\gamma_\text{A}\gamma_\text{M}}{\gamma_\text{A} + \gamma_\text{M} } \left(\langle v \rangle + \frac{F_\text{load}}{\gamma_\text{M}}\right) .
 \label{eq:mean_ratchet_force}
 \end{equation}
 Note that this is the same, up to a scaling factor, as the distance between the force-velocity curves and the ratchet-free curve in figure~\ref{fig:F_v}. 
-Also note that, using the re-scaled parameters \eqref{eq:rescale_parameters} introduced in the appendix~\ref{sec:perturb}, 
+Also note that, using the re-scaled parameters \eqref{eq:rescale_parameters} introduced in appendix~\ref{sec:perturb}, 
 we can write the mean ratchet force as $\langle F_\text{r} \rangle = \gamma^* \langle v \rangle - F^*$.
 We will discuss the ratchet force in other setups later on in the context of the tension for those setups.
 The typical behavior of the mean ratchet force in the ``load on the polymer'' setup is discussed in the appendix~\ref{sec:mean_ratchet_force}.
@@ -632,7 +635,7 @@ i.e.
 + \left(1 + \frac{\gamma_\text{A}}{\gamma_\text{A}+\gamma_\text{M}} \right) F_\text{load},
 \label{eq:tension}
 \end{align}
-where the first term we will consider as an active component of the tension, i.e. $\tau_\text{M}^\text{(A)} \equiv F_\text{r}$, in this particular setup. 
+where the contribution from the ratchet potential we will consider as an active component of the tension, i.e. $\tau_\text{M}^\text{(A)} \equiv F_\text{r}$, in this particular setup. 
 Note, that we omit the normalization by the length of the motor as it is just a division by a constant due to the infinite rigidity of the motor in our model.   
 In a similar fashion we can as well define the tension on the polymer as
 \begin{align}
@@ -682,7 +685,7 @@ Hence, the large force asymptotic is given solely by the load
 \qquad \text{for} \qquad F_\text{load} \to \pm \infty. 
 \label{eq:tension_large_load}
 \end{equation}
-This is further supported by calculations of the mean velocity for a motor with a single head, provided in the appendix~\ref{sec:perturb}, cf. equation~\eqref{eq:mean_velocity_large}.
+This is further supported by calculations of the mean velocity for a motor with a single head, provided in appendix~\ref{sec:perturb}, cf. equation~\eqref{eq:mean_velocity_large}.
 
 
 \subsubsection{Load on the polymer}
@@ -792,11 +795,11 @@ For small loads, ratchet forces balance the load applied on both filaments, thus
 This behavior is similar to the tension in the previously discussed setups  ``load on the motor'' and ``load on the polymer'' setup, cf. equations~\eqref{eq:tension_low_load} and~\eqref{eq:tension_load_on_polymer}, 
 where the proportionality constants are $ 1 + \gamma_\text{A} / (\gamma_\text{A} + \gamma_\text{M} )$ and $\gamma_\text{M} / (\gamma_\text{A} + \gamma_\text{M} )$ respectively. 
 Note that the proportionality constant for the ``load on the motor'' setup, which lies in the closed interval $[1,2]$, 
-is always bigger or equal than the one in the ``load on the polymer'', which is in the interval $[0,1]$, and smaller or equal than in the ``tug of war'' setup. 
+is always bigger than or equal to the one in the ``load on the polymer'', which is in the interval $[0,1]$, and smaller than or equal to the one in the ``tug of war'' setup. 
 In the ``load on the polymer'' setup, the tension in the motor does not build up as fast with increasing load because the motor experiences a ratchet force only from one actin filament.
 The initial tension there is less than half of the tension in the setup with two loaded filaments.
 This suggests that the ratchet force, per motor head, is better transmitted to the motor in the ``tug of war'' setup.
-This is confirmed by figure~\ref{fig:tug_F} and represent our first result.
+This is confirmed by figure~\ref{fig:tug_F} and represents our first result.
 
 As described earlier, the motor starts to slip when the load is increased.
 Consequently, the mean ratchet force decreases, cf. figure~\ref{fig:ratchet_force} and~\ref{fig:ratchet_force_decay}, and the increase in tension diminishes, 
@@ -837,7 +840,7 @@ Lower stiffness enables the polymers to find a local minimum of the ratchet pote
 thus the exerted force is lower as the contribution of ratchet potential is minimized. 
 On the other hand, high stiffness leads to saturation of the exerted force as the main contribution is given by ratchet potential. 
 Inset depicts the mean tension as a function of the spring stiffness on semi-log scale. 
-Note that it is hard to determine the exact trend for large stiffness due to the exponentially growing variance of the tension. 
+Note that it is hard to determine the exact trend for large stiffness due to the quickly growing variance of the tension. 
 }
 \end{figure}
 The tension that the motor generates depends strongly on this elasticity $k_\text{sp}$ and saturates for large $k_\text{sp}$. 
@@ -857,9 +860,9 @@ where the cytoskeleton is coupled to the environment through focal adhesions \ci
 
 \section{Energy balance}
 \label{sec:energie}
-Up to this point we have discussed a mechanical properties of the myosin II inside various setups mimicking the acto-myosin cortex. 
+Up to this point we have discussed mechanical properties of the myosin II inside various setups mimicking the acto-myosin cortex. 
 Most of these mechanical properties emerge from the motor activity, 
-which is driven by a chemical energy turnover into the active tension and active movement of polymers and the motor itself inside the network. 
+which is driven by chemical energy turnover into the active tension and active movement of polymers and the motor itself inside the network. 
 This leads to a natural question: ``How efficient is the motor?''. 
 
 Before we discuss an efficiency of the myosin II motor in various setups,
@@ -935,7 +938,7 @@ without any additional information it is impossible to distinguish which part of
 For non-zero load, the heat dissipated to the heat bath will contain the work of the external forces as well,
 which makes the separation in individual components even more difficult.
 
-Also note, that while expressions~\eqref{eq:heat_hb_M}, \eqref{eq:heat_hb_A}, \eqref{eq:q_in} and~\eqref{eq:q_out} are model agnostic, 
+Also note that while expressions~\eqref{eq:heat_hb_M}, \eqref{eq:heat_hb_A}, \eqref{eq:q_in} and~\eqref{eq:q_out} are setup agnostic, 
 the total energy balance~\eqref{eq:energy_balance} and the internal energy itself~\eqref{eq:internal_energy} are not. 
 
 \subsection{Load on the motor}
@@ -1052,7 +1055,7 @@ and the tension on the motor $\tau_\text{M}$, cf.~\eqref{eq:tension_load_on_poly
 = \left\langle \int \rmd t \; v \, \tau_\text{M} \right\rangle .
 \label{eq:chemical_excess_poly}
 \end{equation}
-A similar argumentation as for the previous setup can be also made here. 
+An argumentation similar to the one used in the previous setup can be also made here. 
 
 
 
@@ -1135,7 +1138,7 @@ As the previous assumption is far from reality, such straightforward interpretat
 However, if we assume that the displacements in the respective integrals are typically anti-symmetric, due to the anti-symmetry of the setup, 
 we can interpret the excess chemical heat as a covariance of the tension on the motor~\eqref{eq:tension_tug} with the relative velocity of the motor with respect to a single polymer \eqref{eq:mean_velocity} integrated over the time, 
 as in the equation~\eqref{eq:excess_heat}. 
-Note, that in this particular setup the interpretation in terms of the tension is also less straightforward in comparison with the ``load on the motor'' or the ``load on the polymer'' setup, 
+Note, that in this particular setup the interpretation in terms of the tension is less straightforward in comparison with the ``load on the motor'' or the ``load on the polymer'' setup, 
 because the individual displacements $x_\text{M} - x_{\text{A}_1}$ and $x_\text{M} - x_{\text{A}_2}$ are subjected to thermal fluctuations on short time scale. 
 Only on the long time scale they are anti-symmetric and the tension relaxes to a steady value.  
 
@@ -1259,12 +1262,12 @@ Note that this particular definition of the efficiency has several shortcomings.
 First, the output work has two components, one from the chemical source and the second from the external driving, 
 thus in principle the efficiency can be greater than one. 
 Second, 
-only for long times, in situations where the motor displacement and ratchet force are to a great extend uncorrelated, 
+only for long times, in situations where the motor displacement and ratchet force are to a great extent uncorrelated, 
 one can relate the output work to the heat dissipated by the drag force to the medium.
 This means that in systems where the motor is frustrated and does not move on average, 
 like in the ``tug of war'' and ``elastic environment'' setups,
 one cannot distinguish between various sources of the output work. 
-Lastly, as the output work depends on knowledge of the details of the ratchet interaction, which renders it practically immeasurable.
+Lastly, the output work depends on the details of the ratchet interaction, which renders it practically immeasurable.
 
 
 \subsection{Chemical efficiency} 
@@ -1475,7 +1478,7 @@ This is due to the effective friction caused by the potential.
 As the particle gets slower when dragged along the potential gradient, 
  they spend more time on the up-slope than on the down-slope of the potential.
 Such behavior is associated with a negative efficiency. 
-In the appendix~\ref{sec:perturb} we have proven this hypothesis on a system with a single head and we have shown that the efficiency decays with the force 
+In appendix~\ref{sec:perturb} we have proven this hypothesis on a system with a single head and we have shown that the efficiency decays with the force 
 \[
 \eta \asymp - \frac{1}{ F_\text{load}^2 } \qquad \text{for} \quad F_\text{load} \to \pm \infty .
 \]
@@ -1519,7 +1522,7 @@ We observe that these efficiency profiles differ in the width of the distributio
 The main difference between the curve for the ``load on the motor'' and ``load on the polymer'' setup is the width of the distribution. 
 This can be understood from equations~\eqref{eq:chemical_excess} and~\eqref{eq:chemical_excess_poly}, 
 where we see that the excess of the chemical energy entering the system is proportional to the relative velocity.
-In the figure~\ref{fig:F_v_setups} we observe a different asymptotic behavior of the relative velocity by factor $\gamma_\text{M} / \gamma_\text{A}$,
+In figure~\ref{fig:F_v_setups} we observe a different asymptotic behavior of the relative velocity by factor $\gamma_\text{M} / \gamma_\text{A}$,
 hence we expect that the same factor applies in the steady state for the rate of the excess chemical heat production. 
 This hypothesis is further confirmed in figure~\ref{fig:load_efficiency_setups_rescaled},
 where we plot the chemical efficiency $\eta_\text{chem}$ with respect to re-scaled load. 
@@ -1567,7 +1570,7 @@ During the investigation of the chemical efficiency dependency on the external l
 we discovered that rather than the load, the tension on the motor $\tau_\text{M}$ might be the intrinsic parameter. 
 However, if we take the results of section~\ref{sec:energie} into account, namely equations~\eqref{eq:chemical_excess}, \eqref{eq:chemical_excess_poly} and \eqref{eq:excess_heat_tug}, 
 the mean ratchet force~\eqref{eq:ratchet_force} might be a better candidate.
-Indeed, as we can see in the figure~\ref{fig:ratchet_force_efficiency}, the chemical efficiency has a universal dependency on the mean ratchet force across all setups. 
+Indeed, as we can see in figure~\ref{fig:ratchet_force_efficiency}, the chemical efficiency has a universal dependency on the mean ratchet force across all setups. 
 \begin{figure}[t]
 \centering
 \includegraphics[width=.45\textwidth,height=!]{ratchet_eta}
@@ -1607,7 +1610,7 @@ The discrepancy lies in the different amplitudes of the tension, cf. figure \ref
 \end{figure}
 Here we can see that we deviate from a universal behavior, 
 most notably for the ``load on the motor'' setup, where there is always a residual tension from the load alone~\eqref{eq:tension_large_load}.
-Also note, that in the ``tug of war'' setup the threshold for motor to slip is larger than in other setups due to two contributions from the mean ratchet force to the tension, one at each respective side of the motor.
+Also note that in the ``tug of war'' setup the threshold value of the tension for motor to slip is larger than in other setups due to two contributions from the mean ratchet force to the tension, one at each respective side of the motor.
 These considerations complement the discussion that related the excess chemical energy with the build up tension in the motor, 
 or more precisely with the additional tension created by the ratchet interaction, see discussion related to equations~\eqref{eq:excess_heat},~\eqref{eq:chemical_excess_poly} and~\eqref{eq:excess_heat_tug}. 
 
@@ -1621,11 +1624,11 @@ We inspected the dependency of these quantities on the ATP binding rate $k_\text
 and on the scaling factor $c$, that models the screening of the interactions by ionic concentrations in the inter-cellular environment.
 We also revisited the force-velocity relation for small non-muscle myosin II motors 
 and investigated how it depends on $k_\text{bind}$ and on the number of heads of the motor $N$.
-From that, we inferred that, from mechanical point of view, there is hardly any difference between the myosin motor with as little as four heads and a motor with a large number of heads. 
+From that, we inferred that, from a mechanical point of view, there is hardly any difference between the myosin motor with as little as four heads and a motor with a large number of heads. 
 
 Recently it was found that the main role of myosin II motors is not in active transport, but rather in the generation of tension inside a large networks. 
 In order to capture the behavior of the motor in such an environment,    
-we studied mechanical quantities like the mean ratchet force and a tension in the motor for multiple setups mimicking to various degrees the motor inside such a network.
+we studied mechanical quantities like the mean ratchet force and the tension in the motor for multiple setups mimicking to various degrees the motor inside such a network.
 We observed that for large loads, the motor will slip over the filament track. 
 Consequently, the force from the ratchet, and the tension generated by it, will vanish.
 The decay of the ratchet force corresponds to the theoretical result, obtained by a perturbative expansion around infinitely large loads.
@@ -1633,8 +1636,8 @@ The decay of the ratchet force corresponds to the theoretical result, obtained b
 Furthermore, the motor's ability of mechanosensing naturally emerges from the model without imposing a load-dependence on the chemical rates.
 With the main result being, that all dynamical aspects follow solely from the continuous, mechanical ratchet interaction between the motor and actin filament.
 
-The traditional way how to evaluate the efficiency of molecular motors is with respect to the efficiency of the transport along the actin filament,
-however such a quantity is unsuitable for motors inside large polymer networks where there is little to no mean displacement of the motor. 
+The traditional way how to evaluate the efficiency of molecular motors is with respect to the efficiency of the transport along the actin filament.
+However, such a quantity is unsuitable for motors inside large polymer networks where there is little to no mean displacement of the motor. 
 Here we propose an alternative which we call chemical efficiency, that quantifies the fraction of energy, supplied by ATP hydrolysis, 
 that is consumed in the diffusion processes of the myosin II motor and actin filament.
 This energy is partially used in the movement of the motor along the actin filament or in the build-up of tension in the motor, depending on the setup. 
@@ -1643,15 +1646,17 @@ The main conclusion is that motors with a small amount of heads perform most eff
 
 We further observed, that for large loads, the chemical efficiency becomes negative, 
 which can be interpreted as the energy that is being drained from the external driving to the chemical cycle.
-This behavior was also confirmed by perturbative calculations, that also predict that the efficiency will decay to zero for even bigger loads.
+This behavior was confirmed by perturbative calculations, that also predict that the efficiency will decay to zero for even bigger loads.
 
-Lastly, we have shown that this chemical efficiency seems to have a universal dependency on the mean ratchet force, independently of the considered setup,
+Lastly, it seems that this chemical efficiency have a universal dependency on the mean ratchet force, independently of the considered setup,
 which can be directly related to the tension the motor experiences. 
 
-To conclude, we have shown that the scaled ratchet model, introduced in this paper, is naturally capable of covering various biologically relevant treats like the non-liner force velocity relation,  its mechanosensing ability and the fact that the motor's chemical efficiency reaches a maximal value when under load. 
+In summary, we have shown that the scaled ratchet model, introduced in this paper, is naturally capable of covering various biologically relevant treats like the non-liner force velocity relation,  its mechanosensing ability and the fact that the motor's chemical efficiency reaches a maximal value when under load. 
 
 \begin{acknowledgments}
-The authors are grateful to Christian Maes for many valuable discussions and to Bart Smeets and Maxim Cuvelier for proofreading of the manuscript.
+The authors are grateful 
+%to Christian Maes for many valuable discussions and 
+to Bart Smeets and Maxim Cuvelier for proofreading of the manuscript.
 \end{acknowledgments}
 
 \appendix 
