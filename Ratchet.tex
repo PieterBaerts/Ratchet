@@ -47,7 +47,7 @@ which was previously studied in the context of active transport along the polyme
 In the traditional model, we replaced the flashing ratchet by a scaling ratchet potential, which captures the effect of electrostatic changes in the motor heads. 
 We show that such a model is capable of capturing mechanosensing behavior, which emerges naturally from the ratchet interaction.
 We identify important mechanical quantities and explore their dependency on external loads, ATP concentration and number of heads of the motor.
-Lastly, we introduce a novel efficiency that is based on excess heat production by the chemical cycle and directly related to the active tension the motor exerts. 
+Lastly, we introduce a novel efficiency that is based on excess heat production by the chemical cycle and is directly related to the active tension the motor exerts. 
 The chemical efficiencies differ considerably for motors with a different number of heads, while their mechanical properties remain qualitatively similar. 
 For motors with a small number of heads, the chemical efficiency is maximal when they are frustrated, a trait that is not found in larger motors. 
 \end{abstract}
@@ -287,7 +287,7 @@ Table of all parameter values and a reference to their source.
 While the previously introduced setup, shown in figure~\ref{fig:ratchet_setup}, is studied the most \cite{reimann2002brownian,astumian1994fluctuation,finer1994single,julicher1997modeling,kishino1988force,peskin1995correlation,saito1994movement},
 its aim is to characterize the transport induced by molecular motors.
 However, recent experiments show that myosin~II motors' role is mainly to cross-link the cytoskeleton \cite{ma2012nonmuscle}
-and consequently producing an active tension inside the network \cite{chugh2017actin,monier2010actomyosin}.
+and consequently produce an active tension inside the network \cite{chugh2017actin,monier2010actomyosin}.
 As one of the aims of this paper is to investigate the validity of such a model in these situations, 
 we present a couple of natural extensions to this setup, more faithfully capturing the behavior of myosin~II motors inside these networks.
 The original setup will be further referred to as ``load on the motor''.
@@ -375,7 +375,7 @@ V_t(x_{\text{A}_1}(t) - x_\text{M}(t))
 \end{gathered}
 \label{eq:eom_two_actins}
 \end{equation}
-where we denoted by subscript ${\text{A}_1}$ the first and by ${\text{A}_2}$ the second actin filament 
+where subscripts ${\text{A}_1}$ and ${\text{A}_2}$ respectively denote the first and second actin filament 
 and where the anti-alignment of polymers is represented by the change of the sign in the argument of the ratchet potential~\eqref{eq:ratchet_interaction} for the first polymer $\text{A}_1$.
 Note, that the actin filament from the ``load on the polymer'' setup corresponds to the polymer denoted by $\text{A}_2$ in this setup. 
 
@@ -603,7 +603,7 @@ one can interpret the equation of motion for the myosin \eqref{eq:eom_M} as a ba
 F_\text{r} = - \nabla_\text{M} V_t( x_\text{M} - x_\text{A} ) = \nabla_\text{A} V_t(x_\text{M} - x_\text{A} ) . 
 \label{eq:ratchet_force}
 \end{equation}
-Without the ratchet interaction, the motion of the myosin relatively to the actin filament would satisfy $ \gamma_\text{M}\langle v \rangle = -F_\text{load}$. 
+Without the ratchet interaction the motion of the myosin, relative to the actin filament, would satisfy $ \gamma_\text{M}\langle v \rangle = -F_\text{load}$. 
 The discrepancy in this relation, up to a pre-factor, equals the mean force exerted via the flashing ratchet $\langle F_\text{r}\rangle$, 
 see also equation~\eqref{eq:mean_velocity_Fr_Fl} in appendix~\ref{sec:ind_velo},
 thus we can extract the mean ratchet force in terms of external load and mean relative velocity as 
@@ -637,7 +637,7 @@ i.e.
 \end{align}
 where the contribution from the ratchet potential we will consider as an active component of the tension, i.e. $\tau_\text{M}^\text{(A)} \equiv F_\text{r}$, in this particular setup. 
 Note, that we omit the normalization by the length of the motor as it is just a division by a constant due to the infinite rigidity of the motor in our model.   
-In a similar fashion we can as well define the tension on the polymer as
+In a similar fashion we can define the tension on the polymer as
 \begin{align}
 \left\langle \tau_\text{A} \right\rangle 
 &= - \langle F_\text{r} \rangle \nonumber \\
@@ -665,7 +665,7 @@ We observe a similar behavior as in figure~\ref{fig:tension} for the motor with 
 while the motor with a single head departs very rapidly from the low force regime. 
 }
 \end{figure}
-We observe that for small loads the tension is linear in load, this is in good agreement with the observation of the plateau in force velocity relation, 
+We observe that for small loads the tension is linear in load, this is in good agreement with the observation of the plateau in the force velocity relation, 
 see figure~\ref{fig:F_v}.
 In this regime, the velocity is small compared to the initial load as most of the load is countered by the ratchet interaction, 
 hence only the second term in~\eqref{eq:tension} contributes, 
@@ -676,7 +676,7 @@ hence only the second term in~\eqref{eq:tension} contributes,
 \label{eq:tension_low_load} 
 \end{equation}
 
-For large force, the motor slips over the potential and thus the mean ratchet force $\langle F_\text{r}$ approaches zero,
+For large forces, the motor slips over the potential and thus the mean ratchet force $\langle F_\text{r}$ approaches zero,
 as can be seen in figures~\ref{fig:ratchet_force} and~\ref{fig:ratchet_force_decay}.
 Hence, the large force asymptotic is given solely by the load
 \begin{equation}
@@ -865,7 +865,7 @@ Most of these mechanical properties emerge from the motor activity,
 which is driven by a chemical energy turnover into active tension and active movement of polymers and the motor itself inside the network. 
 This leads to a natural question: ``How efficient is the motor?''. 
 
-Before we discuss an efficiency of the myosin II motor in various setups,
+Before we discuss the efficiency of the myosin II motor in various setups,
 we need to introduce the basic notions of energy, heat and work. 
 In this section, we will formulate a relation for the excess heat produced by the ATP cycle, that demonstrates its dependency on tension in the system.
 This relation will be important in our interpretation of the efficiency in section~\ref{sec:chemical_efficiency}.
@@ -1262,7 +1262,7 @@ Note that this particular definition of the efficiency has several shortcomings.
 First, the output work has two components, one from the chemical source and the second from the external driving, 
 thus in principle the efficiency can be greater than one. 
 Second, 
-only for long times, in situations where the motor displacement and ratchet force are to a great extent uncorrelated, 
+only for long time scales, in situations where the motor displacement and ratchet force are to a great extent uncorrelated, 
 one can relate the output work to the heat dissipated by the drag force to the medium.
 This means that in systems where the motor is frustrated and does not move on average, 
 like in the ``tug of war'' and ``elastic environment'' setups,
@@ -1507,7 +1507,7 @@ This is a first major result of the second part of this study.
 
 
 \subsubsection{Load on the polymer}
-As was already discussed, the situation with the load on the polymer is almost identical to the one with the load on the motor.
+As was already discussed, the situation with the load on the polymer is almost identical to the ``load on the motor'' setup.
 The main difference is in the notion of what we perceive as motor or as polymer, cf. section~\ref{sec:load_on_polymer}.
 Hence, it is not surprising that the chemical efficiency \eqref{eq:eta} as a function of the load $F_\text{load}$ 
 resembles the one with the load on the motor, see figure~\ref{fig:load_efficiency_setups}. 
@@ -1581,7 +1581,7 @@ We observe a universal dependency of the efficiency on the mean ratchet force ac
 \end{figure}
 
 For a small mean ratchet force, caused either by a small external load $F_\text{load}$ or a small stiffness of the surrounding network $k_\text{sp}$, 
-the chemical efficiency has relatively flat profile with weak positive response to an increase in tension.
+the chemical efficiency has a relatively flat profile with weak positive response to an increase in tension.
 This can be explained by perturbations in the steady state average probability density for the motor's heads 
 and was discussed in more details in  section~\ref{sec:chemical_efficiency}, 
 see equations~\eqref{eq:eta} and~\eqref{eq:heat_flux_explicit}, and figures~\ref{fig:pos_distr} and~\ref{fig:chem_energy_distr}.  
