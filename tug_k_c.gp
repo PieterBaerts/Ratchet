@@ -18,7 +18,8 @@ set format x "10^{%L}"
 set format y "10^{%L}"
 
 plot [:][0.025:10] \
-    "Data/tug_k.dat" u 1:($1*(-$2+$4)):($1*sqrt($3**2+$5**2)) w errorlines ls 8 lw 1.25 notitle 
+    "Data/tug_k.dat" u 1:($1*(-$2+$4)):($1*sqrt($3**2+$5**2)) w errorlines ls 8 lw 1.25 title "c=0.3" \
+  , "Data/tug_k_c=0.dat" u 1:($1*(-$2+$4)):($1*sqrt($3**2+$5**2)) w errorlines ls 6 lw 1.25 title "c=0"
 
 set tmargin at screen 0.9
 set bmargin at screen 0.66
@@ -38,6 +39,6 @@ set format y "%g"
 
 plot [:][0:] \
     "Data/tug_k.dat" u 1:($1*(-$2+$4)):($1*sqrt($3**2+$5**2)) w lines ls 8 lw 1.25 title "c=0.3" \
-  , "Data/tug_k_c=0.dat" u 1:($1*(-$2+$4)):($1*sqrt($3**2+$5**2)) w lines ls 3 lw 6.25 title "c=0" 
+  , "Data/tug_k_c=0.dat" u 1:($1*(-$2+$4)):($1*sqrt($3**2+$5**2)) w lines ls 6 lw 1.25 title "c=0" 
 
 unset multiplot
