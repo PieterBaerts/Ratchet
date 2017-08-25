@@ -1,6 +1,6 @@
 #!/usr/bin/gnuplot
 set term pdfcairo enhanced linewidth 1.75 font ",14"
-set output "tug_k.pdf"
+set output "tug_k_c.pdf"
 
 load "Data/my.pal"
 
