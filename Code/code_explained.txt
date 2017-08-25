@@ -1,0 +1,21 @@
+Source code description:
+
+double_ratchet_*_gillespie.cpp
+
+F:
+"Load on motor" setup
+
+fil:
+"Load on filament" setup
+
+E:
+Output positions and internal states for fixed chemical cycle protocol, in order to obtain internal energy versus time.
+
+pos:
+Output position to obtain empirical distributions
+
+tug:
+"Elastic environment" setup
+
+tug_F:
+"Tug of war" setup
