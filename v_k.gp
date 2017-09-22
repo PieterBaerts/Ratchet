@@ -11,7 +11,7 @@ unset lmargin
 unset rmargin
 set key off
 
-set xlabel "k_{bind} (k_{unbind})"
+set xlabel "{/Symbol l}_{b} ({/Symbol l}_{u})"
 set ylabel "{/Symbol \341}v{/Symbol \361} (µm/s)"
 
 set xzeroaxis

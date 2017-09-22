@@ -192,7 +192,7 @@ and $V_\text{r}$ is the periodical ratchet potential; see Fig.~\ref{fig:energy},
 \caption{
 \label{fig:energy}
 Ratchet model: the interaction between a myosin head and the actin polymer is given via a sawtooth potential with height $V$, period $\ell$ and skewness parameter $a$.
-The transition between ATP \emph{bound} and \emph{unbound} state is governed by rates $k_\text{B}$, $k_\text{U}$ respectively, 
+The transition between ATP \emph{bound} and \emph{unbound} state is governed by rates $\lambda_\text{b}$, $\lambda_\text{u}$ respectively, 
 and is associated with the chemical energy $\Delta E$.
 In the \emph{bound} state the ratchet potential is scaled down by factor $c$. 
 }
@@ -212,7 +212,7 @@ and skewness parameter $a \in [0,1]$.
 
 The dynamics of the internal state of heads is governed by a continuous time Markov proces on two states with constant rates,
 \begin{equation}
-\zeta_t = 1 \overset{k_\text{B}}{\underset{k_\text{U}}{\rightleftarrows}} \zeta_t = c ,
+\zeta_t = 1 \overset{\lambda_\text{b}}{\underset{\lambda_\text{u}}{\rightleftarrows}} \zeta_t = c ,
 \label{eq:transition}
 \end{equation}
 where $c\in\left[0,1\right]$ determines the amplitude of the ratchet potential when the motor is weakly interacting with the filament, 
@@ -236,9 +236,9 @@ Namely, we look at states where either ATP is bound or ADP  is bound to the myos
 as escape rates from those states are small with respect to other transitions \cite{Bierbaum2011}. 
 For these states, the estimated free energy landscapes \cite{Nie2014,nie2014conformational} very well reflect the changes in conformation and electric charge of the myosin head \cite{barterls1993myosin}.
 
-Note that while the rates $k_\text{B}$, $k_\text{U}$ are independent of the load, 
+Note that while the rates $\lambda_\text{b}$, $\lambda_\text{u}$ are independent of the load, 
 they depend on the concentrations of the relevant chemical species involved in ATP hydrolysis. 
-More specifically $k_\text{B}$ is proportional to $[\text{ATP}]$ while $k_\text{U}$ is inversely proportional to $[\text{ADP}]$ and $[\text{P}_\text{i}]$.
+More specifically $\lambda_\text{b}$ is proportional to $[\text{ATP}]$ while $\lambda_\text{u}$ is inversely proportional to $[\text{ADP}]$ and $[\text{P}_\text{i}]$.
 
 In order to obtain transition rates between these two states, we start from the three state model introduced by Albert et al. \cite{Albert2014},
 which we further simplify by unifying the states corresponding to the hydrolized ATP (i.e. ADP+P) and ADP with P released, 
@@ -263,8 +263,8 @@ Thermal energy& $k_B T$ & 4.28 & pN nm & --- \\
 Number of heads& $N$ & 4 & --- & \cite{pollard1982structure}\\
 Head's spacing& $d$ & 15 & nm & \cite{pollard1982structure}\\
 Step length& $\ell$ & 8 & nm & \cite{vilfan2003instabilities}\\
-Binding rate& $k_\text{U}$ & 40 & s$^{-1}$ & \cite{Albert2014} \\
-Detaching rate& $k_\text{B}$ & 80 & s$^{-1}$ & \cite{Albert2014} \\
+Binding rate& $\lambda_\text{u}$ & 40 & s$^{-1}$ & \cite{Albert2014} \\
+Detaching rate& $\lambda_\text{b}$ & 80 & s$^{-1}$ & \cite{Albert2014} \\
 Skewness& $a$ & 0.25 & --- & ---\\
 Potential amplitude& $V$ & 40 & pN nm & ---\\
 Potential scaling& $c$ & 0.3 & --- & \cite{Nie2014, nie2014conformational}\\
@@ -475,22 +475,22 @@ That is expected since $c=1$ corresponds to equilibrium, where there is no diffe
 On the other hand, for $c=0$ we have the biggest discrepancy between the two internal states of each head. 
 
 
-Secondly, the mean velocity~\eqref{eq:mean_velocity} also depends on the concentration of ATP through the binding rate $k_\text{B}$. 
-In this setup, we fix the ATP unbinding rate $k_\text{U}$ and scaling factor $c$, cf. table~\ref{tab:parameters}, and vary the ATP binding rate $k_\text{B}$. 
+Secondly, the mean velocity~\eqref{eq:mean_velocity} also depends on the concentration of ATP through the binding rate $\lambda_\text{b}$. 
+In this setup, we fix the ATP unbinding rate $\lambda_\text{u}$ and scaling factor $c$, cf. table~\ref{tab:parameters}, and vary the ATP binding rate $\lambda_\text{b}$. 
 The resulting dependency is shown in the figure~\ref{fig:v_k}. 
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{v_k}
 \caption{
 \label{fig:v_k} 
-Mean velocity of the motor relative to the actin filament $\langle v \rangle$ for varying $k_\text{B}$.
+Mean velocity of the motor relative to the actin filament $\langle v \rangle$ for varying $\lambda_\text{b}$.
 The velocity decreases to $0$ for large discrepancies between binding and unbinding rate and reaches maximum when they are comparable.
-Note that the ATP binding rate $k_\text{B}$ is shown in units of $k_\text{U}$ on a logarithmic scale.
+Note that the ATP binding rate $\lambda_\text{b}$ is shown in units of $\lambda_\text{u}$ on a logarithmic scale.
 }
 \end{figure}
-We observe that the maximal velocity is reached for rates close to $k_\text{B} = k_\text{unbound}$. 
+We observe that the maximal velocity is reached for rates close to $\lambda_\text{b} = \lambda_\text{u}$. 
 Deviating far from this ratio means that one of the states become dominant and thus the system effectively approaches equilibrium.  
-The main difference between $k_\text{B}/k_\text{U}$ being low or high is the mean amplitude of the interaction with actin. 
+The main difference between $\lambda_\text{b}/\lambda_\text{u}$ being low or high is the mean amplitude of the interaction with actin. 
 In the ATP bound state the interaction is weaker, 
 which is reflected in the fact that the system is trapped for shorter times close to the local minima and diffuses more. 
 Hence, the variance of the relative velocity is higher when compared to the ATP unbound state. 
@@ -502,13 +502,13 @@ In the previous section, we reported on the mean relative velocity for a motor i
 Here we focus on the dependence of the mean relative velocity \eqref{eq:mean_velocity} on an external load force $F_\text{load}$ applied on the motor anti-parallel to the preferred direction, 
 cf. figure~\ref{fig:ratchet_setup}.
 
-Figure~\ref{fig:F_v} shows the typical force -- mean velocity relations for various ATP binding rates $k_\text{U}$, which represents the dependency on ATP concentration.
+Figure~\ref{fig:F_v} shows the typical force -- mean velocity relations for various ATP binding rates $\lambda_\text{u}$, which represents the dependency on ATP concentration.
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{F_v}
 \caption{
 \label{fig:F_v} 
-Mean velocity $\langle v \rangle$ of the motor as a function of the load force $F_\text{load}$ for $c=0.3$ and for various ATP binding rate $k_\text{B}$.
+Mean velocity $\langle v \rangle$ of the motor as a function of the load force $F_\text{load}$ for $c=0.3$ and for various ATP binding rate $\lambda_\text{b}$.
 The solid black line corresponds to a situation where there will be no interaction with the actin filament, i.e. $\langle v \rangle = - F_\text{load} / \gamma_\text{M}$. 
 }
 \end{figure}
@@ -525,7 +525,7 @@ As the motor is more loosely bound to the polymer, it is more submissive to the 
 Such a force-velocity relation was already presented in % 2002 by Reimann
  \cite{reimann2002brownian} for a flashing ratchet, representing a motor with a single head.
 
-A similar plot is shown in figure \ref{fig:F_v_heads}, where instead of varying ATP binding rate $k_\text{B}$ we look at motors with different numbers of heads $N$. 
+A similar plot is shown in figure \ref{fig:F_v_heads}, where instead of varying ATP binding rate $\lambda_\text{b}$ we look at motors with different numbers of heads $N$. 
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{F_v_heads}
@@ -555,26 +555,26 @@ Figure~\ref{fig:F_v_zoom} shows a zoomed in version of figure~\ref{fig:F_v} for 
 \includegraphics[width=0.45\textwidth,height=!]{F_v_zoom}
 \caption{
 \label{fig:F_v_zoom} 
-Mean velocity of the motor $\langle v \rangle$ with a small load force $F_\text{load}$ applied in the direction opposing the movement for different ATP binding rates $k_\text{B}$.
+Mean velocity of the motor $\langle v \rangle$ with a small load force $F_\text{load}$ applied in the direction opposing the movement for different ATP binding rates $\lambda_\text{b}$.
 Intersections with the $x$ axis correspond to stall forces $F_\text{stall}$ for given detach rates. 
-With increasing $k_\text{B}/k_\text{U}$  the slope increases and the full curve shifts in the low force region, 
+With increasing $\lambda_\text{b}/\lambda_\text{u}$  the slope increases and the full curve shifts in the low force region, 
 causing a persistent decrease in stall force. 
-Note that both $k_\text{B} = 0 $ and $k_\text{B} = \infty$ correspond to equilibrium where the mean velocity for zero load and the stall force are zero. 
+Note that both $\lambda_\text{b} = 0 $ and $\lambda_\text{b} = \infty$ correspond to equilibrium where the mean velocity for zero load and the stall force are zero. 
 }
 \end{figure}
 The intersections with the horizontal axis correspond to stall forces,  
 while intersections of the curves with the vertical axis correspond to the mean velocities for system without any external load, compare figure~\ref{fig:v_k}. 
 We see that for small loads the mean velocity decreases linearly with increasing load. 
-Moreover, the slope of the force -- mean velocity relation increases with the binding rate $k_\text{B}$. 
-That is responsible for the monotonous decrease of the stall force $F_\text{stall}$ with respect to the ATP binding rate $k_\text{B}$, see Fig.~\ref{fig:k_Fstall}.
+Moreover, the slope of the force -- mean velocity relation increases with the binding rate $\lambda_\text{b}$. 
+That is responsible for the monotonous decrease of the stall force $F_\text{stall}$ with respect to the ATP binding rate $\lambda_\text{b}$, see Fig.~\ref{fig:k_Fstall}.
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth,height=!]{k_Fstall}
 \caption{
 \label{fig:k_Fstall} 
-Stall force $F_\text{stall}$ for different ATP binding rates $k_\text{B}$.
-The power-law decay $F_\text{stall} \propto k_\text{B}^{-\alpha}$ with exponent $\alpha = 1.002 \pm 0.014$,
-which is in good agreement with the dependence $F_\text{stall} \propto 1 / k_\text{B}$ in the simple ratchet model of~\cite{astumian1996mechanochemical}. 
+Stall force $F_\text{stall}$ for different ATP binding rates $\lambda_\text{b}$.
+The power-law decay $F_\text{stall} \propto \lambda_\text{b}^{-\alpha}$ with exponent $\alpha = 1.002 \pm 0.014$,
+which is in good agreement with the dependence $F_\text{stall} \propto 1 / \lambda_\text{b}$ in the simple ratchet model of~\cite{astumian1996mechanochemical}. 
 }
 \end{figure}
 When the ATP binding rate increases, so does the fraction of time in which the motor is weakly interacting with the actin filament. 
@@ -649,7 +649,7 @@ We plot the tension on the motor as a function of the load $F_\text{load}$ in Fi
 \centering
 \includegraphics[width=.45\textwidth,height=!]{tension.pdf}
 \caption{\label{fig:tension}
-The dependence of the tension~\eqref{eq:tension} $\langle \tau_\text{M}\rangle$ on the load force $F_\text{load}$ for different ATP binding rates $k_\text{B}$.
+The dependence of the tension~\eqref{eq:tension} $\langle \tau_\text{M}\rangle$ on the load force $F_\text{load}$ for different ATP binding rates $\lambda_\text{b}$.
 We can see that with increasing ATP binding rate there is a faster departure from the small load regime towards the large load asymptotic behavior. 
 }
 \end{figure}
@@ -1289,7 +1289,7 @@ We start our discussion again with the ``load on the motor'' setup with a four h
 \label{fig:chem}
 Chemical efficiency $\eta_\text{chem}$ as a function of load force $F_\text{load}$.
 Solid lines are plotted at the level of $1\sigma$. 
-By increasing the $k_\text{B}$ the local maxima of chemical efficiencies are getting closer to the origin,
+By increasing the $\lambda_\text{b}$ the local maxima of chemical efficiencies are getting closer to the origin,
 and their fluctuations decrease. 
 }
 \end{figure}
@@ -1306,7 +1306,7 @@ by transitions of a single head $i$ displaced with respect to the end of the mot
 \begin{gather*}
 \begin{multlined}[b][.42\textwidth]
 \langle \mathcal Q^\text{chem}_\text{in}(i) \rangle 
-= \Delta t \, k_\text{U} 
+= \Delta t \, \lambda_\text{u} 
 \\ \times 
 \!\!\!\! \sum\limits_{\{\zeta_j\} : \zeta_i = 1 } \!\!\!\! \rho(\{ \zeta_j \} ) 
 \left[ \Delta E - (1-c) \left\langle V_\text{r}(x - i \, d ) \middle| \{ \zeta_j \} \right\rangle \right] 
@@ -1315,7 +1315,7 @@ by transitions of a single head $i$ displaced with respect to the end of the mot
 \\
 \begin{multlined}[b][.42\textwidth]
 \langle \mathcal Q^\text{chem}_\text{out}(i) \rangle 
-= - \Delta t \, k_\text{B} 
+= - \Delta t \, \lambda_\text{b} 
 \\ \times 
 \!\!\!\! \sum\limits_{\{\zeta_j\} : \zeta_i = c } \!\!\!\! \rho(\{ \zeta_j \} ) 
 \left[ \Delta E - (1-c) \left\langle V_\text{r}(x - i \, d ) \middle| \{ \zeta_j \} \right\rangle \right] 
@@ -1332,8 +1332,8 @@ Moreover, due to the independence of individual heads the probability occupation
 where 
 \[
 \rho_1(\zeta) = \begin{cases} 
-\frac{ k_\text{B} }{ k_\text{B} + k_\text{U} } & \zeta = 1 , \\
-\frac{ k_\text{U} }{ k_\text{B} + k_\text{U} } & \zeta = c . 
+\frac{ \lambda_\text{b} }{ \lambda_\text{b} + \lambda_\text{u} } & \zeta = 1 , \\
+\frac{ \lambda_\text{u} }{ \lambda_\text{b} + \lambda_\text{u} } & \zeta = c . 
 \end{cases} 
 \]
 
@@ -1342,7 +1342,7 @@ is that we can express the total mean heat, produced in the chemical cycle, as a
 \begin{align*}
 \langle \mathcal Q_\text{in}^\text{chem} \rangle 
 =& \sum\limits_{i=0}^{N-1} \left\langle \mathcal Q_\text{in}^\text{chem}(i) \right\rangle 
-= \Delta t \frac{ k_\text{B} k_\text{U} }{ k_\text{B} + k_\text{U} } 
+= \Delta t \frac{ \lambda_\text{b} \lambda_\text{u} }{ \lambda_\text{b} + \lambda_\text{u} } 
 \\ &\times
 \left[ N \, \Delta E 
 - (1-c) \sum\limits_{i=0}^{N-1} \left\langle V_\text{r}(x - i d ) \middle| \zeta_i = 1 \right\rangle 
@@ -1350,7 +1350,7 @@ is that we can express the total mean heat, produced in the chemical cycle, as a
 \\
 \langle \mathcal Q^\text{chem}_\text{out} \rangle 
 =& \sum\limits_{i=0}^{N-1} \left\langle \mathcal Q_\text{out}^\text{chem}(i) \right\rangle 
-= - \Delta t \frac{ k_\text{B} k_\text{U} }{ k_\text{B} + k_\text{U} } 
+= - \Delta t \frac{ \lambda_\text{b} \lambda_\text{u} }{ \lambda_\text{b} + \lambda_\text{u} } 
 \\ &\times
 \left[ N \, \Delta E 
 - (1-c) \sum\limits_{i=0}^{N-1} \left\langle V_\text{r}(x - i d ) \middle| \zeta_i = c \right\rangle  
@@ -1410,7 +1410,7 @@ Also by increasing the external load, all distributions universally become flat.
 The difference between the average distribution \eqref{eq:eff_distribution} in the ATP bound state and ATP unbound state is directly translated to the mean heat flux \eqref{eq:heat_flux} out of the chemical system
 \begin{multline}
 q_\text{in}^\text{chem} + q_\text{out}^\text{chem} 
-= (1-c) \frac{ k_\text{B} k_\text{U} }{ k_\text{B} + k_\text{U} } 
+= (1-c) \frac{ \lambda_\text{b} \lambda_\text{u} }{ \lambda_\text{b} + \lambda_\text{u} } 
 \\ \times
 \left[ \left\langle V_\text{r}(x) \middle| \zeta = c \right\rangle_{\bar{\rho}} - \left\langle V_\text{r}(x) \middle| \zeta = 1 \right\rangle_{\bar{\rho}} \right] ,
 \label{eq:heat_flux_explicit}
@@ -1617,10 +1617,10 @@ In the end, we can conclude that the additional tension caused by the ratchet po
 \section{Conclusions}
 In this paper we introduced a scaled-ratchet model, which is a variant of a Brownian ratchet.
 With this model, we were able to reproduce experimental values for  velocities and stall-forces of the myosin II molecular motor. 
-We inspected the dependency of these quantities on the ATP binding rate $k_\text{B}$, which can be linked to the ATP concentration itself, 
+We inspected the dependency of these quantities on the ATP binding rate $\lambda_\text{b}$, which can be linked to the ATP concentration itself, 
 and on the scaling factor $c$, that models the screening of the interactions by ionic concentrations in the inter-cellular environment.
 We also revisited the force-velocity relation for small non-muscle myosin II motors 
-and investigated how it depends on $k_\text{B}$ and on the number of heads of the motor $N$.
+and investigated how it depends on $\lambda_\text{b}$ and on the number of heads of the motor $N$.
 From that, we inferred that, from a mechanical point of view, there is hardly any difference between the myosin motor with as little as four heads and a motor with a large number of heads. 
 
 Recently it was found that the main role of myosin II motors is not in active transport, but rather in the generation of tension inside a large networks. 
@@ -1756,7 +1756,7 @@ That is seen in Fig.~\ref{fig:ind_v} depicting the individual velocities as a fu
 \includegraphics[width=0.45\textwidth,height=!]{individual_velocities}
 \caption{
 \label{fig:ind_v} 
-Mean velocities of the motor and actin filament with respect to an inertial frame of reference for $k_\text{B}/k_\text{U} = 2$.
+Mean velocities of the motor and actin filament with respect to an inertial frame of reference for $\lambda_\text{b}/\lambda_\text{u} = 2$.
 We observe that only the myosin is moving while the velocity of the dragged actin filament decreases as we increase the load on the myosin motor.
 Inset: Zoomed to the linear regime around the origin.
 }
@@ -1801,7 +1801,7 @@ that the mean ratchet force in the ``load on the polymer'' setup for small loads
 \includegraphics[width=0.45\textwidth,height=!]{ratchet_force}
 \caption{
 \label{fig:ratchet_force}
-Mean force from the ratchet interaction depending on the load force on the motor for several values of $k_\text{B}$. 
+Mean force from the ratchet interaction depending on the load force on the motor for several values of $\lambda_\text{b}$. 
 For small loads, the ratchet force completely counter to load, hence the linear regime around $F_\text{load}=0$ goes like
 }
 \end{figure}
