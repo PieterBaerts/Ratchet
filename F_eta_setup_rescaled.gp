@@ -13,7 +13,7 @@ set yzeroaxis
 set key top right Right width -1
 
 set ylabel "{/Symbol h}_{chem}"
-set xlabel "F^* (nm/{/Symbol u}s)"
+set xlabel "F^* (nm/{/Symbol m}s)"
 
 plot [-150:150][-0.2:0.35] \
       "Data/F_q_k=8.dat" u ($1/gamma_M):(($4+$5)/$4):(sqrt($7**2/$4**2+$5**2/$4**4*$6**2)) w linespoint ls 3 lw 1.25 pt 2 dashtype 1 title "Load on motor" \
