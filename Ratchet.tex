@@ -93,10 +93,10 @@ It has the important trait that the chemical rates do not depend on spatial degr
 the sawtooth potential has a non-zero amplitude in all states 
 and motor heads can attach and detach anywhere along the polymer filament.
 Furthermore, the rates in our model do not depend on external forces acting on the motor but solely on concentrations of chemicals involved in ATP hydrolysis. 
+We assume that constant concentrations are maintained in the environment at all times.
+While for discrete models force depended rates are deemed necessary to reproduce experimental results \cite{sung2017chapter}, 
+in the scope of this study, constant rates will prove to suffice.
 %CM: Is that really true in nature?  I doubt it.
-We assume that constant concentrations are maintained in the environment at all times. 
-Although, for discrete models, force depended rates do seem necessary to reproduce experimental results \cite{sung2017chapter}, 
-however, as we will show later, they are unnecessary for the reproduction of experimental results for continuous models.
 The type of motor that we study is non-muscle myosin~II, which has a small number of heads \cite{pollard1982structure}. 
 These non-muscle myosin~II motors are crucial to the motility of most eukaryotic cells \cite{vicente2009non}.
 
@@ -123,7 +123,7 @@ The chemical cycle of ATP hydrolysis consists of many consecutive reactions and 
 However, often this cycle is represented by only two states \cite{julicher1997modeling,Reimann2002introduction}, e.g. ATP bound and ADP bound, 
 in which case a stochastic process on these states always satisfies detailed balance and no chemical energy can be extracted. 
 In other words, the energetic gain of one reaction is canceled by the cost of the following reaction.
-However, in our model we do break detailed balance, as the energy gain per transition varies while the rates remain constant.
+We do break detailed balance however, as the energy gain per transition varies while the rates in our model remain constant.
 
 In section~\ref{sec:energie}, we look at the energy balances in various setups of a myosin~II motor interacting with actin filaments.
 We link the excess heat for the chemical cycle to the ratchet force and consequently to the active tension produced by the motor.
@@ -230,7 +230,7 @@ Secondly, we assume that whether the head itself is bound or not has no influenc
  there is no effective dependence of the dynamics of the chemical cycle on the relative position of myosin and actin. 
 
 Similarly, we assume that an external load does not influence the binding site of ATP on the motor head. 
-It only acts on the motor backbone and opposes forces originating from the underlying free energy landscape of the ratchet. %CM: i do not understand this.
+It only acts on the motor backbone and opposes forces originating from the ratchet. %CM: i do not understand this.
 
 Finally, we simplify the full chemical network governing the internal states of myosin~II \cite{Bierbaum2011,Bierbaum2013} to only two states,  
 which represent the long lasting states that significantly change the motor's head physical properties.
