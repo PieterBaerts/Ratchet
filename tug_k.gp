@@ -17,8 +17,8 @@ set logscale x
 set format x "10^{%L}"
 set format y "10^{%L}"
 
-plot [:][0.025:10] \
-    "Data/tug_k.dat" u 1:($1*(-$2+$4)):($1*sqrt($3**2+$5**2)) w errorlines ls 8 lw 1.25 notitle 
+plot [:][0.01:5] \
+    "Data/tug_k.dat" u 1:(0.5*$1*(-$2+$4)):(0.5*$1*sqrt($3**2+$5**2)) w errorlines ls 8 lw 1.25 notitle 
 
 set tmargin at screen 0.9
 set bmargin at screen 0.66
@@ -37,6 +37,6 @@ unset logscale y
 set format y "%g"
 
 plot [:][0:] \
-    "Data/tug_k.dat" u 1:($1*(-$2+$4)):($1*sqrt($3**2+$5**2)) w lines ls 8 lw 1.25 notitle 
+    "Data/tug_k.dat" u 1:(0.5*$1*(-$2+$4)):(0.5*$1*sqrt($3**2+$5**2)) w lines ls 8 lw 1.25 notitle 
 
 unset multiplot
