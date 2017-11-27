@@ -635,19 +635,18 @@ that a positive value corresponds to a pair of forces applied on each end of the
 i.e.,  
 \begin{align}
 \left\langle \tau_\text{M} \right\rangle 
-&= \langle F_\text{r} \rangle + F_\text{load} \nonumber \\
-&= \frac{\gamma_\text{A}\gamma_\text{M}}{\gamma_\text{A}+\gamma_\text{M}}\langle v\rangle 
-+ \left(1 + \frac{\gamma_\text{A}}{\gamma_\text{A}+\gamma_\text{M}} \right) F_\text{load},
+&= \frac{1}{2} \left( \langle F_\text{r} \rangle + F_\text{load} \right) \nonumber \\
+&= \frac{1}{2} \left[ \frac{\gamma_\text{A}\gamma_\text{M}}{\gamma_\text{A}+\gamma_\text{M}}\langle v\rangle 
++ \left(1 + \frac{\gamma_\text{A}}{\gamma_\text{A}+\gamma_\text{M}} \right) F_\text{load} \right],
 \label{eq:tension}
 \end{align}
-where we will consider the contribution from the ratchet potential as an active component of the tension, i.e. $\tau_\text{M}^\text{(A)} \equiv F_\text{r}$, in this particular setup. 
+where we will consider the contribution from the ratchet potential as an active component of the tension, i.e. $\tau_\text{M}^\text{(A)} \equiv \frac{1}{2} F_\text{r}$, in this particular setup. 
 Note, that we omit the normalization by the length of the motor as it is just a division by a constant due to the infinite rigidity of the motor in our model.   
 In a similar fashion we can define the tension on the polymer as
 \begin{align}
 \left\langle \tau_\text{A} \right\rangle 
-&= - \langle F_\text{r} \rangle \nonumber \\
-&= - \frac{\gamma_\text{A}\gamma_\text{M}}{\gamma_\text{A}+\gamma_\text{M}}\langle v\rangle 
-- \frac{\gamma_\text{A}}{\gamma_\text{A}+\gamma_\text{M}} F_\text{load}.
+&= - \frac{1}{2} \langle F_\text{r} \rangle \nonumber \\
+&= - \frac{\gamma_\text{A}}{2 \left( \gamma_\text{A}+\gamma_\text{M} \right)} \left[ \gamma_\text{M} \langle v\rangle + F_\text{load} \right].
 \label{eq:tension_on_polymer}
 \end{align}
 
@@ -676,7 +675,8 @@ In that regime, the velocity is small compared to the initial load as most of th
 Hence only the second term in~\eqref{eq:tension} contributes to the tension, 
 \begin{equation}
 \left\langle \tau_\text{M} \right\rangle
-\approx
+\approx 
+\frac{1}{2}
 \left(1 + \frac{\gamma_\text{A}}{\gamma_\text{A}+\gamma_\text{M}} \right) F_\text{load}.
 \label{eq:tension_low_load} 
 \end{equation}
@@ -686,7 +686,7 @@ as can be seen in Figs.~\ref{fig:ratchet_force} and~\ref{fig:ratchet_force_decay
 Hence, the large force asymptotic is given solely by the load
 \begin{equation}
 \left\langle \tau_\text{M} \right\rangle
-\asymp F_\text{load} 
+\asymp \frac{1}{2} F_\text{load} 
 \qquad \text{for} \qquad F_\text{load} \to \pm \infty. 
 \label{eq:tension_large_load}
 \end{equation}
@@ -703,14 +703,14 @@ where the load must be divided by $\gamma_\text{A}$ since the load is exerted on
 i.e.
 \begin{equation}
 \left\langle \tau_\text{M} \right\rangle 
-= \langle F_\text{r} \rangle 
-= \frac{\gamma_\text{A}\gamma_\text{M}}{\gamma_\text{A} + \gamma_\text{M} } \left(\langle v \rangle + \frac{F_\text{load}}{\gamma_\text{A}}\right) . 
+= \frac{1}{2} \langle F_\text{r} \rangle 
+= \frac{\gamma_\text{A}\gamma_\text{M}}{2 \left( \gamma_\text{A} + \gamma_\text{M} \right) } \left(\langle v \rangle + \frac{F_\text{load}}{\gamma_\text{A}}\right) . 
 \label{eq:tension_load_on_polymer}
 \end{equation}
 Following the same argumentation as in the ``load on the motor'' setup, for small loads, the tension is given by
 \begin{equation}
 \left\langle \tau_\text{M} \right\rangle
-\approx \frac{\gamma_\text{M}}{\gamma_\text{A}+\gamma_\text{M}} F_\text{load}.
+\approx \frac{\gamma_\text{M}}{ 2 \left( \gamma_\text{A}+\gamma_\text{M} \right) } F_\text{load}.
 \label{eq:tension_low_load_on_polymer}
 \end{equation}
 This is similar to~\eqref{eq:tension_low_load}, where the motor experiences the load directly, up to an exchange of friction coefficients of the motor and actin filament. 
@@ -774,12 +774,12 @@ For even larger loads the motor and filaments start slipping and the variance de
 Although the load is not applied to the motor directly, 
 the motor is subjected to a tension due to interaction with both actin filaments. 
 This tension is again given by the difference in the forces applied to the respective ends of the motor,
-\begin{equation}
+\begin{align}
 \langle \tau_\text{M} \rangle
-= \langle F_{\text{r}_2}\rangle - \langle F_{\text{r}_1}\rangle 
-= 2 F_\text{load} - \gamma_\text{A} \left(\langle v_{\text{A}_2}\rangle - \langle v_{\text{A}_1}\rangle \right) .
+&= \frac{1}{2} \left( \langle F_{\text{r}_2}\rangle - \langle F_{\text{r}_1}\rangle \right) \nonumber \\
+&= F_\text{load} - \frac{\gamma_\text{A}}{2} \left(\langle v_{\text{A}_2}\rangle - \langle v_{\text{A}_1}\rangle \right) .
 \label{eq:tension_tug}
-\end{equation}
+\end{align}
 The tension in the motor for the different setups is shown in Fig.~\ref{fig:tug_F}, 
 \begin{figure}[t]
 \centering
@@ -795,12 +795,12 @@ compared to the tension in the setups with only one actin filament.
 
 For small loads, ratchet forces balance the load applied on both filaments.  The tension is thus approximately proportional to twice the load 
 \[
-\langle \tau_\text{M} \rangle \approx 2 F_\text{load} .
+\langle \tau_\text{M} \rangle \approx F_\text{load} .
 \] 
 This behavior is similar to the tension in the previously discussed setups  ``load on the motor'' and ``load on the polymer'' setup; cf. equations~\eqref{eq:tension_low_load} and~\eqref{eq:tension_load_on_polymer}, 
-where the proportionality constants are $ 1 + \gamma_\text{A} / (\gamma_\text{A} + \gamma_\text{M} )$ and $\gamma_\text{M} / (\gamma_\text{A} + \gamma_\text{M} )$ respectively. 
-Note that the proportionality constant for the ``load on the motor'' setup, which lies in the closed interval $[1,2]$, 
-is always bigger than or equal to the one in the ``load on the polymer'', which is in the interval $[0,1]$, and smaller than or equal to the one in the ``tug of war'' setup. 
+where the proportionality constants are $ \frac{1}{2} [ 1 + \gamma_\text{A} / (\gamma_\text{A} + \gamma_\text{M} ) ] $ and $\gamma_\text{M} / [ 2 (\gamma_\text{A} + \gamma_\text{M} ) ]$ respectively. 
+Note that the proportionality constant for the ``load on the motor'' setup, which lies in the closed interval $[\frac{1}{2},1]$, 
+is always bigger than or equal to the one in the ``load on the polymer'', which is in the interval $[0,\frac{1}{2}]$, and smaller than or equal to the one in the ``tug of war'' setup. 
 In the ``load on the polymer'' setup, the tension in the motor does not build up as fast with increasing load because the motor experiences a ratchet force only from one actin filament.
 The initial tension there is less than half of the tension in the setup with two loaded filaments.
 This suggests that the ratchet force, per motor head, is better transmitted to the motor in the ``tug of war'' setup.
@@ -829,8 +829,8 @@ However, in this setup, there is no external load on actin polymers and thus in 
 That means that the tension on the motor is given by
 \[
 \tau_\text{M} 
-= \langle F_{\text{r}_2}\rangle - \langle F_{\text{r}_1} \rangle 
-= k_\text{sp} \left( \left\langle \Delta x_2 \right\rangle - \left\langle \Delta x_1 \right\rangle \right) ,
+= \frac{1}{2} \left(  \langle F_{\text{r}_2}\rangle - \langle F_{\text{r}_1} \rangle \right)
+= \frac{k_\text{sp}}{2} \left( \left\langle \Delta x_2 \right\rangle - \left\langle \Delta x_1 \right\rangle \right) ,
 \]
 where $k_\text{sp}$ is the spring stiffness and $\Delta x_1 = x_1(t) - x_1(0)$ ($\Delta x_2 = x_2(t) - x_2(0)$) is the extension of the spring attached to first (second) actin. 
 The tension is plotted in Fig.~\ref{fig:tug_k} for different stiffnesses $k_\text{sp}$ that represent the varying elasticity of the surrounding network, 
@@ -997,7 +997,7 @@ which can be further interpreted in terms of tension on the polymer $\tau_\text{
 \left\langle 
 {\mathcal Q}_\text{in}^\text{chem} + {\mathcal Q}_\text{out}^\text{chem} 
 \right\rangle 
-= \left\langle \int \rmd t \; v \, \tau_\text{A} \right\rangle .
+= 2 \left\langle \int \rmd t \; v \, \tau_\text{A} \right\rangle .
 \label{eq:excess_heat} 
 \end{equation}
 
@@ -1057,7 +1057,7 @@ and the tension on the motor $\tau_\text{M}$, cf.~\eqref{eq:tension_load_on_poly
 \left\langle 
 {\mathcal Q}_\text{in}^\text{chem} + {\mathcal Q}_\text{out}^\text{chem} 
 \right\rangle 
-= \left\langle \int \rmd t \; v \, \tau_\text{M} \right\rangle .
+= 2 \left\langle \int \rmd t \; v \, \tau_\text{M} \right\rangle .
 \label{eq:chemical_excess_poly}
 \end{equation}
 An argumentation similar to the one used in the previous setup can be also made here. 
@@ -1134,7 +1134,7 @@ we can further approximate the excess chemical heat as
 \left\langle v_2 \right\rangle \left\langle F_{\text{r}_2} \right\rangle  
 \right]
 \\
-= \frac{T}{2} \left\langle v \right\rangle \left\langle \tau_\text{M} \right\rangle
+= T \left\langle v \right\rangle \left\langle \tau_\text{M} \right\rangle
 , 
 \end{multline*}
 where the last equality follows from the anti-symmetry of the mean relative velocities of the motor with respect to individual polymers in the steady state. 
