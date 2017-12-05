@@ -589,6 +589,19 @@ Ultimately, when the system is found only in the ATP unbound state the relative 
 and thus the stall force reaches zero as well, $F_\text{stall} \to 0$.
 
 
+\subsection{Temperature influence}
+%TODO 
+\begin{figure}[t]
+\centering
+\includegraphics[width=.45\textwidth,height=!]{F_v_temp}
+\caption{
+\label{fig:F_v_temp}
+The mean relative velocity $\langle v \rangle$ as a function of the external load $F_\text{load}$ for various temperatures of the thermal bath.
+The effect of the environmental temperature for large loads is relatively small compared to the influence of ATP binding and unbinding rates.  
+}
+\end{figure}
+
+
 \section{Tension}
 \label{sec:tension}
 While the force--velocity relation captures the non-linear nature of the motor's transport, 
@@ -887,9 +900,9 @@ and the energy stored in the ATP molecules that are bound to the motor heads,
 E( x_\text{M}, x_\text{A}, \{ \zeta_i \}) = V_t( x_\text{M} - x_\text{A} ) + \Delta E \sum\limits_{i=0}^{N-1} \chi( \zeta_i = c ) ,
 \label{eq:internal_energy}
 \end{equation}
-where $\Delta E$ represents the actual internal energy stored by in a single ATP and $\chi$ is a characteristic function \footnote{
-$\chi(\text{condition}) = 1$ if condition is fulfilled otherwise $0$.
-}.
+where $\Delta E$ represents the actual internal energy stored by in a single ATP and $\chi$ is a characteristic function, 
+i.e. $\chi(\text{condition}) \equiv 1$ if \emph{condition} is fulfilled and is $0$ otherwise. 
+
 
 The energy of the system is subject to changes driven by the interaction with the environment.
 In the case of overdamped diffusion, the environment represents a heath bath
@@ -1618,16 +1631,61 @@ Also note that in the ``tug of war'' setup the threshold value of the tension fo
 These considerations complement the discussion that related the excess chemical energy with the build up tension in the motor, 
 or more precisely with the additional tension created by the ratchet interaction, see discussion related to equations~\eqref{eq:excess_heat},~\eqref{eq:chemical_excess_poly} and~\eqref{eq:excess_heat_tug}. 
 
+In the end, we can conclude that the additional tension caused by the ratchet potential, or in other setups representing the tension in the motor itself, 
+is the true intrinsic quantity that determines the chemical efficiency of the molecular motor for a given set of parameters independently of the setup in which the motor operates.
+
+However, the universal behavior does not hold if we change the parameters of the model. 
+Fig.~\ref{fig:rates_efficiencty} shows the dependency of the chemical efficiency on the mean ratchet force for various ATP binding rates $k_\text{b}$. 
+As we have seen in Fig.~\ref{fig:F_v}, the change in the binding rate considerably affects the slip force, 
+which is translated here to variations in the range of ratchet forces the motor can exert.
 \begin{figure}[t]
 \centering
 \includegraphics[width=.45\textwidth,height=!]{lambda_eta.pdf}
 \caption{\label{fig:rates_efficiencty}
 The chemical efficiency~\eqref{eq:eta} as a function of ATP binding rate $\lambda_\text{b}$.
+The change in ATP binding rate influences a threshold, where the motor slips over polymer, which is reflected in the range of ratchet forces the motor can achieve. 
 The errorbars are omitted. 
 }
 \end{figure}
 
-In the end, we can conclude that the additional tension caused by the ratchet potential, or in other setups representing the tension in the motor itself, is the true intrinsic quantity that determines the chemical efficiency of the molecular motor.
+\subsubsection{Temperature influence}
+At last, we investigate the influence of the chemical efficiency on the temperature. 
+Fig.~\ref{fig:F_q_temp} depicts the dependency of the chemical efficiency on the external load for various temperatures,
+\begin{figure}[t]
+\centering
+\includegraphics[width=.45\textwidth,height=!]{F_q_temp}
+\caption{
+\label{fig:F_q_temp}
+The dependency of the chemical efficiency $\eta_\text{chem}$ on the external load $F_\text{load}$ for various temperatures of the thermal bath. 
+While the variance remains mostly the same, the mean value is affected close to the local maximums. 
+}
+\end{figure}
+where we observe small variation around local maximums,
+while for large external forces the changes in the chemical efficiency are negligible. 
+
+We also observe that the global maximum increases with lower temperatures while the local maximum is slowly diminished.
+This effect is even more pronounced if we look at the dependency of the chemical efficiency on the ratchet force, see Fig.~\ref{fig:T_eta},
+where we can see the local minimum vanishing with increasing temperature. 
+\begin{figure}[t]
+\centering
+\includegraphics[width=.45\textwidth,height=!]{T_eta}
+\caption{
+\label{fig:T_eta}
+The chemical efficiency as a function of the mean ratchet force for various temperatures of the thermal bath. 
+Error bars are omitted in order to clearly show the trend. 
+}
+\end{figure}
+
+Similarly, the absolute maximum as well as maximal ratchet forces are decreasing.
+This can be explained by the probability distributions in each chemical state, see Fig.~\ref{fig:pos_distr}, 
+are getting broader around potential minimums due to the thermally increased diffusion coefficient of both motor and filament.  
+Moreover, it further support the discussion in the section~\ref{sec:chemical_efficiency}, 
+where we have shown clear relation between the maximal dissipation and localization of the individual chemical states, 
+see Fig.~\ref{fig:pos_distr} and Fig.~\ref{fig:chem_energy_distr}.
+
+Note, that the erratic behavior in case the environment is at absolute zero in Fig.~\ref{fig:T_eta} is most likely due to the instability of the numerical algorithms. 
+
+
 
 
 \section{Conclusions}
