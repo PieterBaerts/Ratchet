@@ -17,7 +17,7 @@ set ylabel "{/Symbol \341}v{/Symbol \361} (µm/s)"
 set xzeroaxis
 set yzeroaxis
 
-plot [0:0.1][0:0.5] \
+plot [0:0.1][0:1.1] \
       "Data/short_F_v_kBT=0.dat" u 1:($2*1e3):($3*1e3) w errorlines ls 1 lw 1.25 dashtype 1 title "T = 0 K" \
     , "Data/short_F_v_kBT=1.dat" u 1:($2*1e3):($3*1e3) w errorlines ls 3 lw 1.25 dashtype 2 title "T = -200 {/Symbol \260}C" \
     , "Data/short_F_v_kBT=2.39.dat" u 1:($2*1e3):($3*1e3) w errorlines ls 6 lw 1.25 dashtype 4 title "T = -100 {/Symbol \260}C" \
