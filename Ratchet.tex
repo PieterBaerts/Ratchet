@@ -10,6 +10,7 @@
 \usepackage{amssymb}
 \usepackage{amscd}
 \usepackage{mathtools}
+\usepackage{esint}
 
 \usepackage{color}
 \usepackage{graphicx}
@@ -88,6 +89,7 @@ Due to the asymmetry of the ratchet potential, the motor will be biased to explo
 Therefore, the motor will more likely jump to an adjacent period of the sawtooth in the preferred direction, indicated by the asymmetry of the ratchet potential \cite{reimann2002brownian}.
 This will eventually lead to directed motion of the motor on long timescales \cite{hoffmann2016molecular,Reimann2002introduction,de2007symmetries}. 
 
+
 Ratchet models have already been studied extensively in the context of molecular motors \cite{reimann2002brownian,astumian1994fluctuation,astumian1996mechanochemical,julicher1997modeling,Reimann2002introduction,julicher1997spontaneous,peskin1995correlation,huxley1969mechanism,huxley1971proposed}.
 The models, used in these studies, are very similar to each other but often differ in some basic assumptions.
 The specific model that we have studied is presented in section~\ref{sec:ratchet}. 
@@ -99,6 +101,8 @@ We assume that constant concentrations are maintained in the environment at all 
 While for discrete models force depended rates are deemed necessary to reproduce experimental results \cite{sung2017chapter}, 
 in the scope of this study, constant rates will prove to suffice.
 %CM: Is that really true in nature?  I doubt it.
+This and the potential nature of the interaction allow an easy and without additional tuning transition towards full scale 3D simulations with explicit dynamics for both myosin and actin, 
+while preserving a key features of mechanical response of the motor to external environment. 
 The type of motor that we study is non-muscle myosin~II, which has a small number of heads \cite{pollard1982structure}. 
 These non-muscle myosin~II motors are crucial to the motility of most eukaryotic cells \cite{vicente2009non}.
 
@@ -1972,6 +1976,7 @@ Therefore the local minimum of $\eta_\text{chem}$ lies not exactly at, but close
 
 \section{Perturbative treatment}
 \label{sec:perturb}
+\subsection{Large external force}
 Here we show that the chemical cycle must extract energy from the ratchet potential in the system with one head for large load forces, 
 i.e. the chemical efficiency \eqref{eq:eta} must be negative. 
 We show this by calculating the perturbative corrections to the probability density of the position of the motor with respect to the actin filament in the regime of large load $F_\text{load} \to \infty$, both in the ATP bound and ATP unbound state. 
@@ -2177,7 +2182,136 @@ which exposes the first correction to the mean velocity, cf. equation~\eqref{eq:
 As there is no fundamental difference in the Fokker-Planck equation for one head and for four heads regarding the currents for large driving forces, 
 the result obtained for a one-headed motor also holds for the simulations of motors with four heads. 
 
-\bibliography{ratchet}
 
+\subsection{Small transition rates}
+While in the previous section we have investigated the behavior of mean relative velocity in the limit of large external force, 
+here we focus on the case when the diffusion dominates the dynamics and the dichotomic process present only a perturbation. 
+
+As we are interested only in the marginal distribution of the relative displacement in the steady state, we start again from \eqref{eq:FP_ss} 
+\begin{equation}
+\begin{aligned}
+0 =& \frac{1}{\gamma^*} \partial_x \left[ \left( F^* - \partial_x V_\text{r}(x) \right) \rho(x,1) - k_B T \partial_x \rho(x,1) \right] \\
+&+ \lambda_\text{u} \rho(x,c) - \lambda_\text{b} \rho(x,1) , \\
+0 =& \frac{1}{\gamma^*} \partial_x \left[ \left( F^* - c \partial_x V_\text{r}(x) \right) \rho(x,c) - k_B T \partial_x \rho(x,c) \right] \\
+&+ \lambda_\text{b} \rho(x,1) - \lambda_\text{u} \rho(x,c) ,
+\end{aligned}
+\label{eq:diffusion_on_ring}
+\end{equation}
+which we have extended by the generator for the jump process dynamics.
+
+Note, that due to the periodicity of the ratchet potential $V_\text{r}$, 
+the marginal distribution for the displacement in the steady state is equivalent to a steady state of a single particle diffusing on the ring of length $\ell$. 
+This means that we will further restrict ourselves on the domain $x \in [ 0 , \ell )$ and impose periodic boundary conditions. 
+
+Furthermore, we simplify the analysis by removing any external load $F^* = 0$ and use the following ansatz
+\begin{equation}
+\begin{aligned}
+\rho(x,1) &= \frac{p_1}{Z(\beta)} \rme^{- \beta V_\text{r}(x) } \left[ 1 + \delta \rho(x|1) \right] , \\
+\rho(x,c) &= \frac{p_c}{Z(\beta c)} \rme^{- \beta c V_\text{r}(x) } \left[ 1 + \delta \rho(x|c) \right] , 
+\end{aligned}
+\label{eq:ring_ansatz}
+\end{equation}
+where $\delta \rho(x|\cdot)$ are perturbations, 
+the partition function is defined as usual,  
+\[
+Z(\beta) = \ointctrclockwise \rmd x \; \rme^{-\beta V_\text{r} },
+\]
+with the integration in the positive direction, i.e., from $0$ to $\ell$. 
+And $p_1$ and $p_c$ are given by the global detailed balance 
+\begin{align*}
+\lambda_\text{u} p_c = \lambda_\text{b} p_1 , && p_1 + p_c = 1 , 
+\end{align*}
+which leads to
+\begin{align*}
+p_1 &= \frac{\lambda_\text{u}}{ \lambda_\text{u} + \lambda_\text{b} } , &
+p_c &= \frac{\lambda_\text{b}}{ \lambda_\text{u} + \lambda_\text{b} } . 
+\end{align*}
+
+Using the ansatz \eqref{eq:ring_ansatz} in equations~\eqref{eq:diffusion_on_ring} leads to 
+\begin{equation}
+\begin{aligned}
+\partial_x \left[ \frac{ \rme^{-\beta V_\text{r}(x) } }{ Z(\beta) } \partial_x \delta \rho(x|1) \right] 
+&=
+\gamma^* \beta \lambda_\text{b} 
+\left[ \frac{ \rme^{ - \beta c V_\text{r}(x) } }{Z(\beta c)} - \frac{ \rme^{ - \beta V_\text{r}(x) } }{ Z(\beta) } \right] , \\
+\partial_x \left[ \frac{ \rme^{-\beta c V_\text{r}(x) } }{ Z(\beta c) } \partial_x \delta \rho(x|c) \right] 
+&=
+\gamma^* \beta \lambda_\text{u}
+\left[ \frac{ \rme^{ - \beta V_\text{r}(x) } }{Z(\beta)} - \frac{ \rme^{ - \beta c V_\text{r}(x) } }{ Z(\beta c ) } \right] , 
+\end{aligned}
+\label{eq:diffusion_on_ring_ans}
+\end{equation}
+in the lowest order of the perturbation series. 
+
+Let us define a green function $g(x,y)$ as \cite{Boksenbojm2012} 
+\[
+g(x,y) = \frac{1}{\ell} \ointctrclockwise\limits_x^y \rmd z 
+= \begin{cases} 
+\frac{ y - x }{\ell} & y \ge x, \\
+1 + \frac{ y - x }{\ell} & y < x ,
+\end{cases} 
+\]
+where the integral is taken in the positive direction over the circle. 
+Note that the green function has following properties \cite{Boksenbojm2012}
+\begin{gather}
+g(x,y) + g(y,x) = 1 , \label{eq:green_asym} \\ 
+\frac{1}{\ell} \ointctrclockwise \rmd x \; g(x,y) = \frac{1}{2} , \label{eq:green_int} \\ 
+\partial_x g(x,y) = \delta(x-y) - \frac{1}{\ell} , \label{eq:green_der} 
+\end{gather}
+where the last condition~\eqref{eq:green_der} implies
+\[
+\partial_x \ointctrclockwise \rmd y \; g(x,y) \, f(y) = f(x) - \frac{1}{\ell} \ointctrclockwise \rmd y \; f(y) . 
+\]
+Thus with $C$ as an arbitrary constant 
+\[
+h(x) = \ointctrclockwise \rmd y \; g(x,y) \, f(y) + C , 
+\]
+is the general solution of $ \partial_x h(x) = f(x) $ if 
+\[
+\ointctrclockwise \rmd y \; f(y) = 0 . 
+\] 
+Note also, that consequently due to the equation~\eqref{eq:green_int} 
+\[
+\frac{1}{\ell} \ointctrclockwise \rmd x \; h(x) = C . 
+\]
+
+In equations \eqref{eq:diffusion_on_ring_ans} the integrals of right hand sides is, zero thus we get the solution 
+\begin{gather*}
+\begin{multlined}[c][.4\textwidth]
+\frac{ \rme^{-\beta V_\text{r}(x) } }{ Z(\beta) } \partial_x \delta \rho(x|1)  
+= \gamma^* \beta j_1 \\
++ \gamma^* \beta \lambda_\text{b} 
+\ointctrclockwise \rmd y \; g(x,y) \, \left[ \frac{ \rme^{ - \beta c V_\text{r}(y) } }{Z(\beta c)} - \frac{ \rme^{ - \beta V_\text{r}(y) } }{ Z(\beta) } \right] , \\
+\end{multlined}
+\\
+\begin{multlined}[c][.4\textwidth]
+\frac{ \rme^{-\beta c V_\text{r}(x) } }{ Z(\beta c) } \partial_x \delta \rho(x|c)  
+= \gamma^* \beta j_c \\
++ \gamma^* \beta \lambda_\text{u}
+\ointctrclockwise \rmd y \; g(x,y) \, \left[ \frac{ \rme^{ - \beta V_\text{r}(y) } }{Z(\beta)} - \frac{ \rme^{ - \beta c V_\text{r}(y) } }{ Z(\beta c ) } \right] , 
+\end{multlined}
+\end{gather*}
+where the currents $j_c$ and $j_1$ are given by condition on the further integrability of the solution 
+\begin{align*}
+\ointctrclockwise \rmd x \; \partial_x \delta \rho(x|1) &= 0, &
+\ointctrclockwise \rmd x \; \partial_x \delta \rho(x|c) &= 0, 
+\end{align*}
+which leads to 
+\begin{gather*}
+\begin{multlined}[c][.4\textwidth]
+j_1 = \lambda_\text{b} \frac{ Z(\beta) }{ Z(-\beta) } 
+\times \\
+\ointctrclockwise \ointctrclockwise \rmd x \, \rmd y \; g(x,y) \, \left[ \frac{ \rme^{ \beta ( V_\text{r}(x) -  c V_\text{r}(y) ) } }{Z(\beta c)} - \frac{ \rme^{ \beta ( V_\text{r}(x) - V_\text{r}(y) ) } }{ Z(\beta) } \right] , \\
+\end{multlined}
+\\
+\begin{multlined}[c][.4\textwidth]
+j_c = \lambda_\text{u} \frac{ Z(\beta c) }{ Z( - \beta c ) } 
+\times \\
+\ointctrclockwise \ointctrclockwise \rmd x \, \rmd y \; g(x,y) \, \left[ \frac{ \rme^{ \beta (c V_\text{r}(x) - V_\text{r}(y) ) } }{Z(\beta)} - \frac{ \rme^{ \beta c ( V_\text{r}(x) - V_\text{r}(y) ) } }{ Z(\beta c ) } \right] , 
+\end{multlined}
+\end{gather*}
+
+
+\bibliography{ratchet}
 
 \end{document}
