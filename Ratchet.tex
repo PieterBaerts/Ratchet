@@ -2277,14 +2277,14 @@ Note also, that consequently due to the equation~\eqref{eq:green_int}
 
 In equations \eqref{eq:diffusion_on_ring_ans} the integrals of right hand sides is, zero thus we get the solution 
 \begin{gather*}
-\begin{multlined}[c][.4\textwidth]
+\begin{multlined}[c][.45\textwidth]
 \frac{ \rme^{-\beta V_\text{r}(x) } }{ Z(\beta) } \partial_x \delta \rho(x|1)  
 = \gamma^* \beta j_1 \\
 + \gamma^* \beta \lambda_\text{b} 
 \ointctrclockwise \rmd y \; g(x,y) \, \left[ \frac{ \rme^{ - \beta c V_\text{r}(y) } }{Z(\beta c)} - \frac{ \rme^{ - \beta V_\text{r}(y) } }{ Z(\beta) } \right] , \\
 \end{multlined}
 \\
-\begin{multlined}[c][.4\textwidth]
+\begin{multlined}[c][.45\textwidth]
 \frac{ \rme^{-\beta c V_\text{r}(x) } }{ Z(\beta c) } \partial_x \delta \rho(x|c)  
 = \gamma^* \beta j_c \\
 + \gamma^* \beta \lambda_\text{u}
@@ -2299,17 +2299,18 @@ where the currents $j_c$ and $j_1$ are given by condition on the further integra
 which leads to 
 \begin{gather*}
 \begin{multlined}[c][.4\textwidth]
-j_1 = \lambda_\text{b} \frac{ Z(\beta) }{ Z(-\beta) } 
+j_1 = \frac{ \lambda_\text{b} }{ Z(-\beta) } 
 \times \\
 \ointctrclockwise \ointctrclockwise \rmd x \, \rmd y \; g(x,y) \, \left[ \frac{ \rme^{ \beta ( V_\text{r}(x) -  c V_\text{r}(y) ) } }{Z(\beta c)} - \frac{ \rme^{ \beta ( V_\text{r}(x) - V_\text{r}(y) ) } }{ Z(\beta) } \right] , \\
 \end{multlined}
 \\
 \begin{multlined}[c][.4\textwidth]
-j_c = \lambda_\text{u} \frac{ Z(\beta c) }{ Z( - \beta c ) } 
+j_c = \frac{ \lambda_\text{u} }{ Z( - \beta c ) } 
 \times \\
 \ointctrclockwise \ointctrclockwise \rmd x \, \rmd y \; g(x,y) \, \left[ \frac{ \rme^{ \beta (c V_\text{r}(x) - V_\text{r}(y) ) } }{Z(\beta)} - \frac{ \rme^{ \beta c ( V_\text{r}(x) - V_\text{r}(y) ) } }{ Z(\beta c ) } \right] , 
 \end{multlined}
 \end{gather*}
+in the linear order of lambdas. 
 
 
 \bibliography{ratchet}
