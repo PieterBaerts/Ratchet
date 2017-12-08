@@ -2251,8 +2251,13 @@ g(x,y) = \frac{1}{\ell} \ointctrclockwise\limits_x^y \rmd z
 1 + \frac{ y - x }{\ell} & y < x ,
 \end{cases} 
 \]
-where the integral is taken in the positive direction over the circle. 
-Note that the green function has following properties \cite{Boksenbojm2012}
+where the integral is taken in the positive direction over the circle.
+We can write the green function as well in more compact form 
+\[
+g(x,y) = \frac{ y - x }{\ell} + \Theta( x - y ) ,
+\] 
+where $\Theta(x)$ denotes Heaviside theta function. 
+Note, that the green function has following properties \cite{Boksenbojm2012}
 \begin{gather}
 g(x,y) + g(y,x) = 1 , \label{eq:green_asym} \\ 
 \frac{1}{\ell} \ointctrclockwise \rmd x \; g(x,y) = \frac{1}{2} , \label{eq:green_int} \\ 
@@ -2275,7 +2280,7 @@ Note also, that consequently due to the equation~\eqref{eq:green_int}
 \frac{1}{\ell} \ointctrclockwise \rmd x \; h(x) = C . 
 \]
 
-In equations \eqref{eq:diffusion_on_ring_ans} the integrals of right hand sides is, zero thus we get the solution 
+In equations \eqref{eq:diffusion_on_ring_ans} the right hand sides integrals is zero, thus the solution is given by 
 \begin{gather*}
 \begin{multlined}[c][.45\textwidth]
 \frac{ \rme^{-\beta V_\text{r}(x) } }{ Z(\beta) } \partial_x \delta \rho(x|1)  
@@ -2291,13 +2296,15 @@ In equations \eqref{eq:diffusion_on_ring_ans} the integrals of right hand sides 
 \ointctrclockwise \rmd y \; g(x,y) \, \left[ \frac{ \rme^{ - \beta V_\text{r}(y) } }{Z(\beta)} - \frac{ \rme^{ - \beta c V_\text{r}(y) } }{ Z(\beta c ) } \right] , 
 \end{multlined}
 \end{gather*}
-where the currents $j_c$ and $j_1$ are given by condition on the further integrability of the solution 
+where the free constants $j_c$ and $j_1$, representing the steady state probability currents, 
+are further determined by a condition on the existence of the steady state probability density 
 \begin{align*}
 \ointctrclockwise \rmd x \; \partial_x \delta \rho(x|1) &= 0, &
 \ointctrclockwise \rmd x \; \partial_x \delta \rho(x|c) &= 0, 
 \end{align*}
-which leads to 
-\begin{gather*}
+which is equivalent to 
+\begin{equation}
+\begin{gathered}
 \begin{multlined}[c][.4\textwidth]
 j_1 = \frac{ \lambda_\text{b} }{ Z(-\beta) } 
 \times \\
@@ -2307,11 +2314,72 @@ j_1 = \frac{ \lambda_\text{b} }{ Z(-\beta) }
 \begin{multlined}[c][.4\textwidth]
 j_c = \frac{ \lambda_\text{u} }{ Z( - \beta c ) } 
 \times \\
-\ointctrclockwise \ointctrclockwise \rmd x \, \rmd y \; g(x,y) \, \left[ \frac{ \rme^{ \beta (c V_\text{r}(x) - V_\text{r}(y) ) } }{Z(\beta)} - \frac{ \rme^{ \beta c ( V_\text{r}(x) - V_\text{r}(y) ) } }{ Z(\beta c ) } \right] , 
+\ointctrclockwise \ointctrclockwise \rmd x \, \rmd y \; g(x,y) \, \left[ \frac{ \rme^{ \beta (c V_\text{r}(x) - V_\text{r}(y) ) } }{Z(\beta)} - \frac{ \rme^{ \beta c ( V_\text{r}(x) - V_\text{r}(y) ) } }{ Z(\beta c ) } \right] . 
 \end{multlined}
-\end{gather*}
-in the linear order of lambdas. 
+\end{gathered}
+\label{eq:steady_currents}
+\end{equation}
 
+Note, that the mean relative velocity is a function of steady state probability currents only 
+\begin{multline*}
+\langle v \rangle = 
+\frac{1}{\gamma^*} \ointctrclockwise \rmd x \; \bigl[ \partial_x V_\text{r}(x) \left( \rho(x,1) + c \, \rho(x,c) \right) \\
++ k_B T \partial_x \left( \rho(x,1) + \rho(x,c) \right) \bigr] 
+= 
+\ell ( j_1 + j_c ) . 
+\end{multline*} 
+
+\subsubsection{Large gap ($c = 0$)}
+The first limiting case is when the gap between attached and detached state has the maximal amplitude. 
+In this case the steady currents simplify to  
+\begin{align*}
+j_1 &= \lambda_\text{b} \left[ \frac{1}{2} -  
+\ointctrclockwise \ointctrclockwise \rmd x \, \rmd y \; g(x,y) \, \frac{ \rme^{ \beta ( V_\text{r}(x) - V_\text{r}(y) ) } }{ Z( - \beta ) Z(\beta) } \right] \\
+&= \lambda_\text{b} \left( a - \frac{1}{2} \right) \frac{ 1 - 2 \beta V \rme^{-\beta V } - \rme^{-2 \beta V} }{ \left( 1 - \rme^{-\beta V} \right)^2 } ,
+\\
+j_0 &= 0 .  
+\end{align*}
+Where we can see that in the ATP bound state there is no steady current, which agrees with fact for $c=0$ in the given state the motor is subjected to a free diffusion,
+and all the net velocity comes from the ATP unbound state due the relaxation in an asymmetric potential. 
+Also note, that for perfectly symmetric potential $a = \frac{1}{2}$ the steady state in the ATP unbound state is zero, $j_1 = 0$. 
+
+\subsubsection{Small gap ($ c \to 1 $ ) }
+Another extreme is when $c$ is close to $1$. 
+For $c=1$ both steady currents vanish as the integrands in equations \eqref{eq:steady_currents} are identically zero.
+This corresponds to equilibrium situation where the dynamics of the internal state does not break a detailed balance. 
+
+In linear order the partition function is given by
+\begin{multline*}
+Z(\beta c ) 
+= Z(\beta) + (1-c) \beta \ointctrclockwise \rmd x \; V_\text{r}(x) \rme^{-\beta V_\text{r}(x) } 
+\\
+= Z(\beta) \left[ 1 - (1-c) \beta \partial_\beta \ln Z(\beta) \right] ,
+\end{multline*}
+which leads to 
+\begin{gather*}
+\begin{multlined}[c][.4\textwidth]
+j_1 = (1-c) \beta \lambda_\text{b}  
+\Biggl[ \ointctrclockwise \ointctrclockwise \rmd x \, \rmd y \; g(x,y) \, V_\text{r}(y) \frac{ \rme^{ \beta ( V_\text{r}(x) -  V_\text{r}(y) ) } }{Z(\beta) \, Z(-\beta) } \\
++ \partial_\beta \ln Z(\beta) \ointctrclockwise \ointctrclockwise \rmd x \, \rmd y \; g(x,y) \frac{ \rme^{ \beta ( V_\text{r}(x) -  V_\text{r}(y) ) } }{Z(\beta) \, Z(-\beta) } \Biggr] ,
+\end{multlined}
+\\
+j_c = - \frac{ \lambda_\text{u} }{ \lambda_\text{b} } j_1 . 
+\end{gather*}
+These integrals can be further evaluated 
+\begin{align*}
+j_1 &=  \lambda_\text{b}  (1 - c ) \left(a - \frac{1}{2} \right)  \beta V  \frac{ 2 - \beta V - \left( 2 + \beta V \right) \rme^{-\beta V} }{\left(1 - \rme^{-\beta V} \right)^3 } \rme^{-\beta V }, \\
+j_c &= - \lambda_\text{u}  (1 - c ) \left(a - \frac{1}{2} \right)  \beta V  \frac{ 2 - \beta V - \left( 2 + \beta V \right) \rme^{-\beta V} }{\left(1 - \rme^{-\beta V} \right)^3 } \rme^{-\beta V }.
+\end{align*}
+
+Note, that in the regime of small gap, the mean relative velocity 
+\begin{multline*}
+\langle v \rangle = \ell \left( \lambda_\text{b} - \lambda_\text{u} \right) (1 - c ) \left(a - \frac{1}{2} \right)  \beta V  
+\\ \times
+\frac{ 2 - \beta V - \left( 2 + \beta V \right) \rme^{-\beta V} }{\left(1 - \rme^{-\beta V} \right)^3 } \rme^{-\beta V }
+\end{multline*}
+can be reversed just by a change of transition rates. 
+
+\subsubsection{High temperatures} 
 
 \bibliography{ratchet}
 
