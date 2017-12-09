@@ -149,7 +149,7 @@ At first, we assume that the rigidity of the actin polymer and myosin backbone i
 Secondly, we assume that all myosin heads are attached directly to the myosin backbone at fixed equidistant positions; see Fig.~\ref{fig:ratchet_setup}.
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.45\textwidth,height=!]{ratchet_illustration}
+\includegraphics[width=0.9\linewidth,height=!]{ratchet_illustration}
 \caption{
 \label{fig:ratchet_setup}
 Basic setup:
@@ -171,7 +171,7 @@ The dynamics of the positions is described by coupled overdamped Langevin equati
 + \sqrt{ \frac{2 k_B T}{\gamma_\text{M}} } \; \rmd W_\text{M} ,
 \end{multlined}
 \label{eq:eom_M} \\
-&\begin{multlined}[b][.42\textwidth]
+&\begin{multlined}[b][.9\linewidth]
 \rmd x_\text{A} = 
 - \frac{1}{\gamma_\text{A}} \nabla_\text{A} V_t(x_\text{M}(t) - x_\text{A}(t)) \; \rmd t 
 \\
@@ -197,7 +197,7 @@ $\zeta_t(i)$ represents the internal state,
 and $V_\text{r}$ is the periodical ratchet potential; see Fig.~\ref{fig:energy},
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.45\textwidth,height=!]{energy}
+\includegraphics[width=0.9\linewidth,height=!]{energy}
 \caption{
 \label{fig:energy}
 Ratchet model: the interaction between a myosin head and the actin polymer is given via a sawtooth potential with height $V$, period $\ell$ and skewness parameter $a$.
@@ -307,7 +307,7 @@ As we  show later, in this setup the tension on the motor vanishes for large loa
 The basic scheme of this setup is depicted in Fig.~\ref{fig:load_on_polymer setup}.
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.45\textwidth,height=!]{load_on_polymer_illustration}
+\includegraphics[width=0.9\linewidth,height=!]{load_on_polymer_illustration}
 \caption{
 \label{fig:load_on_polymer setup}
 In this illustration, a variation of the basic setup is shown.  
@@ -316,16 +316,16 @@ Also the orientation of the ratchet potential along the polymer is reversed.
 } 
 \end{figure}
 
-As was advertised, the equations of motion are very similar to those of the ``load on the motor'', i.e. \eqref{eq:eom_M} and \eqref{eq:eom_A}.
+As was advertised, the equations of motion are very similar to those of the ``load on the motor'', i.e.~\eqref{eq:eom_M} and~\eqref{eq:eom_A}.
 \begin{align}
-&\begin{multlined}[b][.42\textwidth]
+&\begin{multlined}[b][.9\linewidth]
 \rmd x_\text{M} = 
 - \frac{1}{\gamma_\text{M}} \nabla_\text{M} V_t(x_\text{M}(t) - x_\text{A}(t)) \; \rmd t 
 \\ 
 + \sqrt{ \frac{2 k_B T}{\gamma_\text{M}} } \; \rmd W_\text{M} ,
 \end{multlined}
 \label{eq:eom_M_lp} \\
-&\begin{multlined}[b][.42\textwidth]
+&\begin{multlined}[b][.9\linewidth]
 \rmd x_\text{A} = 
 \frac{1}{\gamma_\text{A}} \left[ F_\text{load} - \nabla_\text{A} V_t(x_\text{M}(t) - x_\text{A}(t)) \right] \; \rmd t 
 \\
@@ -348,7 +348,7 @@ anti-parallel actin filaments.
 The external load is again applied directly to the filaments instead of to the motor, as demonstrated in Fig.~\ref{fig:tug_F_illustration}. 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.45\textwidth,height=!]{tug_F_illustration}
+\includegraphics[width=0.9\linewidth,height=!]{tug_F_illustration}
 \caption{
 \label{fig:tug_F_illustration}
 Setup of a motor interacting with two actin filaments that experience equal but opposite loads.
@@ -358,7 +358,7 @@ This corresponds to a situation where the motor is actively cross-linking two po
 Hence the equations of motion read
 \begin{equation}
 \begin{gathered}
-\begin{multlined}[b][.45\textwidth]
+\begin{multlined}[b][.9\linewidth]
 \rmd x_\text{M} = 
 - \frac{1}{\gamma_\text{M}} \nabla_\text{M} \bigl[ 
 V_t(x_{\text{A}_1}(t) - x_\text{M}(t)) 
@@ -367,13 +367,13 @@ V_t(x_{\text{A}_1}(t) - x_\text{M}(t))
 \bigr] \; \rmd t 
 + \sqrt{ \frac{2 k_B T}{\gamma_\text{M}} } \; \rmd W_\text{M} ,
 \end{multlined}\\
-\begin{multlined}[b][.45\textwidth]
+\begin{multlined}[b][.9\linewidth]
 \rmd x_{\text{A}_1} = 
 - \frac{1}{\gamma_\text{A}} \left[ F_\text{load} + \nabla_{\text{A}_1} V_t(x_{\text{A}_1}(t) - x_\text{M}(t)) \right] \; \rmd t 
 \\
 + \sqrt{ \frac{2 k_B T}{\gamma_\text{A}} } \; \rmd W_{\text{A}_1} ,
 \end{multlined}\\
-\begin{multlined}[b][.45\textwidth]
+\begin{multlined}[b][.9\linewidth]
 \rmd x_{\text{A}_2} = 
 \frac{1}{\gamma_\text{A}} \left[ F_\text{load} - \nabla_{\text{A}_2} V_t(x_\text{M}(t) - x_{\text{A}_2}(t)) \right] \; \rmd t 
 \\
@@ -403,7 +403,7 @@ and which represent the active tension in the network produced by the single myo
 The corresponding setup is sketched in Fig. \ref{fig:tug}. 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.45\textwidth,height=!]{tug}
+\includegraphics[width=0.9\linewidth,height=!]{tug}
 \caption{
 \label{fig:tug}
 Illustration of a motor pulling on two actin filament that are each connect to a wall by a spring.
@@ -413,7 +413,7 @@ Illustration of a motor pulling on two actin filament that are each connect to a
 The equations of motion are just a modification of \eqref{eq:eom_two_actins}, i.e.,   
 \begin{equation}
 \begin{gathered}
-\begin{multlined}[b][.45\textwidth]
+\begin{multlined}[b][.85\linewidth]
 \rmd x_\text{M} = 
 - \frac{1}{\gamma_\text{M}} \nabla_\text{M} \bigl[ 
 V_t(x_{\text{A}_1}(t) - x_\text{M}(t)) 
@@ -422,14 +422,14 @@ V_t(x_{\text{A}_1}(t) - x_\text{M}(t))
 \bigr] \; \rmd t 
 + \sqrt{ \frac{2 k_B T}{\gamma_\text{M}} } \; \rmd W_\text{M} ,
 \end{multlined}\\
-\begin{multlined}[b][.45\textwidth]
+\begin{multlined}[b][.85\linewidth]
 \rmd x_{\text{A}_1} = 
 - \frac{1}{\gamma_\text{A}} \bigl[ \nabla_{\text{A}_1} V_t( x_{\text{A}_1}(t) - x_\text{M}(t) ) 
 \\
 + k_\text{sp} \left( x_{\text{A}_1}(t) - x_{\text{A}_1}(0) \right) \bigr] \; \rmd t 
 + \sqrt{ \frac{2 k_B T}{\gamma_\text{A}} } \; \rmd W_{\text{A}_1} ,
 \end{multlined}\\
-\begin{multlined}[b][.45\textwidth]
+\begin{multlined}[b][.85\linewidth]
 \rmd x_{\text{A}_2} = 
 - \frac{1}{\gamma_\text{A}} \bigl[ \nabla_{\text{A}_2} V_t( x_\text{M}(t) - x_{\text{A}_2}(t) )
 \\
@@ -471,7 +471,7 @@ Note that in this particular case, where there is no external load, setups ``loa
 From Fig.~\ref{fig:c_v}
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.45\textwidth,height=!]{c_v_4heads}
+\includegraphics[width=0.9\linewidth,height=!]{c_v_4heads}
 \caption{
 \label{fig:c_v}
 Mean velocity $\langle v \rangle$ of the motor relative to the actin filament for $c \in [0,1]$.
@@ -489,7 +489,7 @@ In this setup, we fix the ATP unbinding rate $\lambda_\text{u}$ and scaling fact
 The resulting dependency is shown in Fig.~\ref{fig:v_k}. 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.45\textwidth,height=!]{v_k}
+\includegraphics[width=0.9\linewidth,height=!]{v_k}
 \caption{
 \label{fig:v_k} 
 Mean velocity of the motor relative to the actin filament $\langle v \rangle$ for varying $\lambda_\text{b}$.
@@ -514,7 +514,7 @@ cf. Fig.~\ref{fig:ratchet_setup}.
 Fig.~\ref{fig:F_v} shows a typical force -- mean velocity relations for various ATP binding rates $\lambda_\text{u}$, which represents the dependency on ATP concentration.
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.45\textwidth,height=!]{F_v}
+\includegraphics[width=0.9\linewidth,height=!]{F_v}
 \caption{
 \label{fig:F_v} 
 Mean velocity $\langle v \rangle$ of the motor as a function of the load force $F_\text{load}$ for $c=0.3$ and for various ATP binding rate $\lambda_\text{b}$.
@@ -537,7 +537,7 @@ Such a force-velocity relation was already presented in % 2002 by Reimann
 A similar plot is shown in Fig. \ref{fig:F_v_heads}, where instead of varying ATP binding rate $\lambda_\text{b}$ we look at motors with different numbers of heads $N$. 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.45\textwidth,height=!]{F_v_heads}
+\includegraphics[width=0.9\linewidth,height=!]{F_v_heads}
 \caption{
 \label{fig:F_v_heads} 
 Mean velocity $\langle v \rangle$ of the motor as a function of the load force $F_\text{load}$ for $c=0.3$ and for motors with different number of heads $N$.
@@ -561,7 +561,7 @@ The force magnitude that is needed to stop the motor's movement relative to the 
 Fig.~\ref{fig:F_v_zoom} shows a zoomed in version of Fig.~\ref{fig:F_v} for small loads, opposite to the motor's preferred direction of motion. 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.45\textwidth,height=!]{F_v_zoom}
+\includegraphics[width=0.9\linewidth,height=!]{F_v_zoom}
 \caption{
 \label{fig:F_v_zoom} 
 Mean velocity of the motor $\langle v \rangle$ with a small load force $F_\text{load}$ applied in the direction opposing the movement for different ATP binding rates $\lambda_\text{b}$.
@@ -578,7 +578,7 @@ Moreover, the slope of the force -- mean velocity relation increases with the bi
 that is responsible for the monotonous decrease of the stall force $F_\text{stall}$ with respect to the ATP binding rate $\lambda_\text{b}$, see Fig.~\ref{fig:k_Fstall}.
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.45\textwidth,height=!]{k_Fstall}
+\includegraphics[width=0.9\linewidth,height=!]{k_Fstall}
 \caption{
 \label{fig:k_Fstall} 
 Stall force $F_\text{stall}$ for different ATP binding rates $\lambda_\text{b}$.
@@ -596,7 +596,7 @@ and thus the stall force reaches zero as well, $F_\text{stall} \to 0$.
 %TODO 
 \begin{figure}[t]
 \centering
-\includegraphics[width=.45\textwidth,height=!]{F_v_temp}
+\includegraphics[width=.9\linewidth,height=!]{F_v_temp}
 \caption{
 \label{fig:F_v_temp}
 The mean relative velocity $\langle v \rangle$ as a function of the external load $F_\text{load}$ for various temperatures of the thermal bath.
@@ -606,7 +606,7 @@ The effect of the environmental temperature for large loads is relatively small 
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=.45\textwidth,height=!]{F_v_temp_zoom}
+\includegraphics[width=.9\linewidth,height=!]{F_v_temp_zoom}
 \caption{
 \label{fig:F_v_temp_zoom}
 The stall force and mean velocity at zero load shown as the inset of the force-velocity dependency for various temperatures of the thermal bath.
@@ -677,7 +677,7 @@ In a similar fashion we can define the tension on the polymer as
 We plot the tension on the motor as a function of the load $F_\text{load}$ in Fig.~\ref{fig:tension} for various ATP binding rates 
 \begin{figure}
 \centering
-\includegraphics[width=.45\textwidth,height=!]{tension.pdf}
+\includegraphics[width=.9\linewidth,height=!]{tension.pdf}
 \caption{\label{fig:tension}
 The dependency of the tension~\eqref{eq:tension} $\langle \tau_\text{M}\rangle$ on the load force $F_\text{load}$ for different ATP binding rates $\lambda_\text{b}$.
 We can see that with increasing ATP binding rate there is a faster departure from the small load regime towards the large load asymptotic behavior. 
@@ -686,7 +686,7 @@ We can see that with increasing ATP binding rate there is a faster departure fro
 and in Fig.~\ref{fig:tension_heads} as a function of the amount of heads on a motor $N$. 
 \begin{figure}
 \centering
-\includegraphics[width=.45\textwidth,height=!]{tension_heads.pdf}
+\includegraphics[width=.9\linewidth,height=!]{tension_heads.pdf}
 \caption{\label{fig:tension_heads}
 The dependency of the tension~\eqref{eq:tension} $\langle \tau_\text{M}\rangle$ on the load force $F_\text{load}$ for different number of heads. 
 We observe a similar behavior as in Fig.~\ref{fig:tension} for the motor with four and sixteen heads which seems to be indistinguishable, 
@@ -787,7 +787,7 @@ Note, that due to the symmetry of the setup in the steady state the mean velocit
 which is demonstrated in Fig.~\ref{fig:tug_F_motor}.
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.45\textwidth,height=!]{tug_F_motor}
+\includegraphics[width=0.9\linewidth,height=!]{tug_F_motor}
 \caption{\label{fig:tug_F_motor}
 Mean velocity of the frustrated motor  between the two filaments under load. 
 The variance of the motor's velocity grows as the load increases. 
@@ -807,7 +807,7 @@ This tension is again given by the difference in the forces applied to the respe
 The tension in the motor for the different setups is shown in Fig.~\ref{fig:tug_F}, 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.45\textwidth,height=!]{tug_F}
+\includegraphics[width=0.9\linewidth,height=!]{tug_F}
 \caption{
 \label{fig:tug_F}
 Tension in the motor $\langle \tau_\text{M}\rangle$, comparison between setup \ref{sec:tug_of_war} with two loaded filaments, setup \ref{sec:load_on_polymer} with one loaded filament and the basic setup with the load on the motor. 
@@ -861,7 +861,7 @@ The tension is plotted in Fig.~\ref{fig:tug_k} for different stiffnesses $k_\tex
 over a biologically relevant range \cite{schwarz2006focal,prager2011fibroblast}.
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.45\textwidth,height=!]{tug_k}
+\includegraphics[width=0.9\linewidth,height=!]{tug_k}
 \caption{
 \label{fig:tug_k}
 Mean tension $\langle \tau_\text{M} \rangle$ on the motor for varying spring stiffness $k_\text{sp}$.
@@ -953,7 +953,7 @@ $t_\text{fin}$ denotes the duration of the process.
 Fig.~\ref{fig:energy_evolution} depicts a time evolution of the internal energy~\eqref{eq:internal_energy} for a single trajectory of the system without any external load, $F_\text{load} = 0$.
 \begin{figure}
 \centering
-\includegraphics[width=.45\textwidth,height=!]{energy_1head.pdf}
+\includegraphics[width=.9\linewidth,height=!]{energy_1head.pdf}
 \caption{\label{fig:energy_evolution}
 Illustration of the time-evolution of the energy of the system over a single trajectory for $F_\text{load} = 0$.
 The red line depicts the internal energy $E$ of the system over the time~\eqref{eq:internal_energy},
@@ -1315,7 +1315,7 @@ and thus can in principle be measured by calorimetric techniques~\cite{Maskow201
 We start our discussion again with the ``load on the motor'' setup with a four headed motor, see Fig.~\ref{fig:chem}.
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.45\textwidth,height=!]{chemical_cycle}
+\includegraphics[width=0.9\linewidth,height=!]{chemical_cycle}
 \caption{
 \label{fig:chem}
 Chemical efficiency $\eta_\text{chem}$ as a function of load force $F_\text{load}$.
@@ -1335,7 +1335,7 @@ we try to evaluate the chemical efficiency \eqref{eq:efficiency} in a steady sta
 We start by evaluating the mean heat \eqref{eq:q_in} and \eqref{eq:q_out} produced over a time interval of length $\Delta t$ 
 by transitions of a single head $i$ displaced with respect to the end of the motor by $i d$,  
 \begin{gather*}
-\begin{multlined}[b][.42\textwidth]
+\begin{multlined}[b][.9\linewidth]
 \langle \mathcal Q^\text{chem}_\text{in}(i) \rangle 
 = \Delta t \, \lambda_\text{u} 
 \\ \times 
@@ -1344,7 +1344,7 @@ by transitions of a single head $i$ displaced with respect to the end of the mot
 \end{multlined}
 %\label{eq:mean_q_in} 
 \\
-\begin{multlined}[b][.42\textwidth]
+\begin{multlined}[b][.9\linewidth]
 \langle \mathcal Q^\text{chem}_\text{out}(i) \rangle 
 = - \Delta t \, \lambda_\text{b} 
 \\ \times 
@@ -1422,12 +1422,12 @@ They are shown in Fig.~\ref{fig:pos_distr} for different load forces.
 \centering
 \subfigure[ATP unbound state]{ 
 \centering
-\includegraphics[width=.45\textwidth,height=!]{pos_distr_a_F}
+\includegraphics[width=.9\linewidth,height=!]{pos_distr_a_F}
 }
 \\
 \subfigure[ATP bound state]{
 \centering
-\includegraphics[width=.45\textwidth,height=!]{pos_distr_d_F}
+\includegraphics[width=.9\linewidth,height=!]{pos_distr_d_F}
 }
 \caption{
 \label{fig:pos_distr}
@@ -1449,7 +1449,7 @@ q_\text{in}^\text{chem} + q_\text{out}^\text{chem}
 which is depicted in Fig.~\ref{fig:chem_energy_distr}, 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.45\textwidth,height=!]{chem_energy_distr_all_F}
+\includegraphics[width=0.9\linewidth,height=!]{chem_energy_distr_all_F}
 \caption{
 \label{fig:chem_energy_distr}
 Heat flux~\eqref{eq:heat_flux_explicit} density, i.e. $\int \rmd x \; q(x) = q$, for various loads.  
@@ -1464,7 +1464,7 @@ On the other hand, close to the ratchet potential's maximum the heat flux is clo
 However, if we compare it to the numerator of the chemical efficiency~\eqref{eq:eta}; see Fig.~\ref{fig:chem_efficiency_distr}, 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.45\textwidth,height=!]{chem_efficiency_distr_all_F}
+\includegraphics[width=0.9\linewidth,height=!]{chem_efficiency_distr_all_F}
 \caption{
 \label{fig:chem_efficiency_distr}
 Space resolved numerator of the efficiency \eqref{eq:eta} for various load forces $F_\text{load}$. 
@@ -1518,7 +1518,7 @@ by the central limit theorem the efficiency-load dependency approached a Gaussia
 This is confirmed by Fig.~\ref{fig:chem_eff_1head}, where indeed the distribution is broadening with an increasing number of heads and has only a single maximum.
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.45\textwidth,height=!]{chemical_cycle_1head}
+\includegraphics[width=0.9\linewidth,height=!]{chemical_cycle_1head}
 \caption{
 \label{fig:chem_eff_1head}
 Chemical efficiency of a motor under load with a variable number of motor heads.
@@ -1542,7 +1542,7 @@ Hence, it is not surprising that the chemical efficiency \eqref{eq:eta} as a fun
 resembles the situation with the load on the motor, see Fig.~\ref{fig:load_efficiency_setups}. 
 \begin{figure}[t]
 \centering
-\includegraphics[width=.45\textwidth,height=!]{F_eta_setup.pdf}
+\includegraphics[width=.9\linewidth,height=!]{F_eta_setup.pdf}
 \caption{\label{fig:load_efficiency_setups}
 Comparison of the chemical efficiency~\eqref{eq:eta} as a function of the load $F_\text{load}$ for the ``load on the motor'', ``load on the polymer'' and the ``tug of war'' setups.
 We observe that these efficiency profiles differ in the width of the distribution, while it's general shape remains the same.   
@@ -1556,7 +1556,7 @@ That hypothesis is further confirmed in Fig.~\ref{fig:load_efficiency_setups_res
 where we plot the chemical efficiency $\eta_\text{chem}$ with respect to re-scaled load. 
 \begin{figure}[t]
 \centering
-\includegraphics[width=.45\textwidth,height=!]{F_eta_setup_rescaled.pdf}
+\includegraphics[width=.9\linewidth,height=!]{F_eta_setup_rescaled.pdf}
 \caption{\label{fig:load_efficiency_setups_rescaled}
 Comparison of the chemical efficiency~\eqref{eq:eta} as a function of the re-scaled load $F^*$ for the ``load on the motor'', ``load on the polymer'' and the ``tug of war'' setups.
 For the ``load on the motor'' setup the re-scaled load is $F^* = F_\text{load} / \gamma_\text{M}$, 
@@ -1585,7 +1585,7 @@ We discuss this connection later, see Fig~\ref{fig:tension_efficiency}.
 In the case of the  ``elastic environment'' setup; see Fig.~\ref{fig:stiffness_efficiency}, we observe that the chemical efficiency~\eqref{eq:eta} is practically independent of the stiffness of the environment, $k_\text{sp}$. 
 \begin{figure}[t]
 \centering
-\includegraphics[width=.45\textwidth,height=!]{k_eta.pdf}
+\includegraphics[width=.9\linewidth,height=!]{k_eta.pdf}
 \caption{\label{fig:stiffness_efficiency}
 The chemical efficiency~\eqref{eq:eta} as a function of the spring constant $k_\text{sp}$.
 We observe a flat profile.
@@ -1601,7 +1601,7 @@ the mean ratchet force~\eqref{eq:ratchet_force} might be a better candidate.
 Indeed, as seen in Fig.~\ref{fig:ratchet_force_efficiency}, the chemical efficiency has a universal dependency on the mean ratchet force across all setups. 
 \begin{figure}[t]
 \centering
-\includegraphics[width=.45\textwidth,height=!]{ratchet_eta}
+\includegraphics[width=.9\linewidth,height=!]{ratchet_eta}
 \caption{\label{fig:ratchet_force_efficiency}
 The chemical efficiency $\eta_\text{chem}$ as a function of the mean ratchet force $\langle F_\text{r} \rangle$ (resp. $\langle F_{\text{r}_1} \rangle$ and $-\langle F_{\text{r}_2} \rangle$).
 We observe a universal dependency of the efficiency on the mean ratchet force across all setups. 
@@ -1628,7 +1628,7 @@ we plot the chemical efficiency as a function of the tension in the motor for al
 see Fig.~\ref{fig:tension_efficiency}. 
 \begin{figure}[t]
 \centering
-\includegraphics[width=.45\textwidth,height=!]{tension_eta.pdf}
+\includegraphics[width=.9\linewidth,height=!]{tension_eta.pdf}
 \caption{\label{fig:tension_efficiency}
 The chemical efficiency \eqref{eq:eta} as a function of the tension in the motor $\langle \tau_\text{M} \rangle$.
 The efficiencies in all setups agree for small tensions.
@@ -1651,7 +1651,7 @@ As we have seen in Fig.~\ref{fig:F_v}, the change in the binding rate considerab
 which is translated here to variations in the range of ratchet forces the motor can exert.
 \begin{figure}[t]
 \centering
-\includegraphics[width=.45\textwidth,height=!]{lambda_eta.pdf}
+\includegraphics[width=.9\linewidth,height=!]{lambda_eta.pdf}
 \caption{\label{fig:rates_efficiencty}
 The chemical efficiency~\eqref{eq:eta} as a function of ATP binding rate $\lambda_\text{b}$.
 The change in ATP binding rate influences a threshold, where the motor slips over polymer, which is reflected in the range of ratchet forces the motor can achieve. 
@@ -1664,7 +1664,7 @@ At last, we investigate the influence of the chemical efficiency on the temperat
 Fig.~\ref{fig:F_q_temp} depicts the dependency of the chemical efficiency on the external load for various temperatures,
 \begin{figure}[t]
 \centering
-\includegraphics[width=.45\textwidth,height=!]{F_q_temp}
+\includegraphics[width=.9\linewidth,height=!]{F_q_temp}
 \caption{
 \label{fig:F_q_temp}
 The dependency of the chemical efficiency $\eta_\text{chem}$ on the external load $F_\text{load}$ for various temperatures of the thermal bath. 
@@ -1679,7 +1679,7 @@ This effect is even more pronounced if we look at the dependency of the chemical
 where we can see the local minimum vanishing with increasing temperature. 
 \begin{figure}[t]
 \centering
-\includegraphics[width=.45\textwidth,height=!]{T_eta}
+\includegraphics[width=.9\linewidth,height=!]{T_eta}
 \caption{
 \label{fig:T_eta}
 The chemical efficiency as a function of the mean ratchet force for various temperatures of the thermal bath. 
@@ -1748,7 +1748,7 @@ In Fig.~\ref{fig:F_v_setups} we compare the force-velocity relation of the ``loa
 namely with the ``load on the polymer'', cf. Section~\ref{sec:load_on_polymer} and the ``tug of war'', cf. Section~\ref{sec:tug_of_war}.
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.45\textwidth,height=!]{F_v_setups}
+\includegraphics[width=0.9\linewidth,height=!]{F_v_setups}
 \caption{
 \label{fig:F_v_setups} 
 Mean velocity $\langle v \rangle$ of the motor with respect to the filament, as a function of the load force $F_\text{load}$ for different various setups.
@@ -1838,7 +1838,7 @@ and thus there exists an upper and lower bound for the polymer's velocity~\eqref
 That is seen in Fig.~\ref{fig:ind_v} depicting the individual velocities as a function of the external load $F_\text{load}$,  
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.45\textwidth,height=!]{individual_velocities}
+\includegraphics[width=0.9\linewidth,height=!]{individual_velocities}
 \caption{
 \label{fig:ind_v} 
 Mean velocities of the motor and actin filament with respect to an inertial frame of reference for $\lambda_\text{b}/\lambda_\text{u} = 2$.
@@ -1883,7 +1883,7 @@ In Fig.~\ref{fig:ratchet_force} we show,
 that the mean ratchet force in the ``load on the polymer'' setup for small loads is linear and independent of the chemical rates and hence of the ATP concentration. 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.45\textwidth,height=!]{ratchet_force}
+\includegraphics[width=0.9\linewidth,height=!]{ratchet_force}
 \caption{
 \label{fig:ratchet_force}
 Mean force from the ratchet interaction depending on the load force on the motor for several values of $\lambda_\text{b}$. 
@@ -1900,7 +1900,7 @@ In appendix~\ref{sec:perturb}, cf. equation~\eqref{eq:mean_velocity_large}, we s
 which is depicted in Fig.~\ref{fig:ratchet_force_decay}. 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.45\textwidth,height=!]{ratchet_force_decay}
+\includegraphics[width=0.9\linewidth,height=!]{ratchet_force_decay}
 \caption{
 \label{fig:ratchet_force_decay}
 The ratchet force, depending on the load, is shown in a logarithmic plot. 
@@ -2000,7 +2000,7 @@ x_C &= \frac{1}{2} ( x_\text{M} + x_\text{A} ) , \\
 \end{align*}
 a more convenient version of the Fokker-Planck is obtained
 \begin{align*}
-0 &= \begin{multlined}[t][.4\textwidth]
+0 =& \begin{multlined}[t][.85\linewidth]
 - \partial_\Delta \Biggl[ 
 \left( \frac{1}{\gamma_\text{M}} F_\text{load} + \left( \frac{1}{\gamma_\text{M}} + \frac{1}{\gamma_\text{A}} \right) \zeta \partial V_\text{r}( \Delta x ) \right) \mu
 \\ 
@@ -2008,7 +2008,7 @@ a more convenient version of the Fokker-Planck is obtained
 \Biggr] 
 \end{multlined}
 \\
-&- \begin{multlined}[t][.4\textwidth]
+&- \begin{multlined}[t][.85\linewidth]
 \frac{1}{2} \partial_C \Biggl[
 \left( \frac{1}{\gamma_\text{M}} F_\text{load} + \left( \frac{1}{\gamma_\text{M}} - \frac{1}{\gamma_\text{A}} \right) \zeta \partial V_\text{r}( \Delta x ) \right) \mu
 \\
@@ -2025,7 +2025,7 @@ we obtain a reduced Fokker-Planck equation just for the aforementioned displacem
 \end{equation}
 where $V_\text{r}$ is the ratchet potential \eqref{eq:ratchet_potential} and 
 \begin{equation}
-\begin{aligned}[.4\textwidth] 
+\begin{aligned}[.8\linewidth] 
 \gamma^* &= \frac{ \gamma_\text{M} \gamma_\text{A} }{ \gamma_\text{M} + \gamma_\text{A} } , \\ 
 F^* &= - \frac{ \gamma_\text{A} }{ \gamma_\text{M} + \gamma_\text{A} } F_\text{load} . 
 \end{aligned} 
@@ -2099,7 +2099,7 @@ This trend can already be seen in the empirical density obtained from simulation
 and is further demonstrated on motor with a single head in Fig.~\ref{fig:prob_density_large}. 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.45\textwidth,height=!]{pos_compare.pdf}
+\includegraphics[width=0.9\linewidth,height=!]{pos_compare.pdf}
 \caption{\label{fig:prob_density_large}
 Empirical probability density for large loads for motor with single head in an ATP unbound state compared with the theoretical prediction \eqref{eq:prob_density_large}.
 }
@@ -2107,10 +2107,10 @@ Empirical probability density for large loads for motor with single head in an A
 %\begin{figure*}[t]
 %\centering
 %\subfigure[Positive load]{
-%\includegraphics[width=0.45\textwidth,height=!]{pos_multiplot_p}
+%\includegraphics[width=0.9\linewidth,height=!]{pos_multiplot_p}
 %}
 %\subfigure[Negative load]{
-%\includegraphics[width=0.45\textwidth,height=!]{pos_multiplot_m}
+%\includegraphics[width=0.9\linewidth,height=!]{pos_multiplot_m}
 %}
 %\caption{
 %\label{fig:pos_multiplot}
@@ -2282,14 +2282,14 @@ Note also, that consequently due to equation~\eqref{eq:green_int}
 
 In equations \eqref{eq:diffusion_on_ring_ans}, integrals over the right hand side are zero, thus the solution is given by 
 \begin{gather*}
-\begin{multlined}[c][.45\textwidth]
+\begin{multlined}[.95\linewidth]
 \frac{ \rme^{-\beta V_\text{r}(x) } }{ Z(\beta) } \partial_x \delta \rho(x|1)  
 = \gamma^* \beta j_1 \\
 + \gamma^* \beta \lambda_\text{b} 
-\ointctrclockwise \rmd y \; g(x,y) \, \left[ \frac{ \rme^{ - \beta c V_\text{r}(y) } }{Z(\beta c)} - \frac{ \rme^{ - \beta V_\text{r}(y) } }{ Z(\beta) } \right] , \\
-\end{multlined}
+\ointctrclockwise \rmd y \; g(x,y) \, \left[ \frac{ \rme^{ - \beta c V_\text{r}(y) } }{Z(\beta c)} - \frac{ \rme^{ - \beta V_\text{r}(y) } }{ Z(\beta) } \right] , 
+\end{multlined} 
 \\
-\begin{multlined}[c][.45\textwidth]
+\begin{multlined}[.95\linewidth]
 \frac{ \rme^{-\beta c V_\text{r}(x) } }{ Z(\beta c) } \partial_x \delta \rho(x|c)  
 = \gamma^* \beta j_c \\
 + \gamma^* \beta \lambda_\text{u}
@@ -2305,16 +2305,16 @@ are further determined by a condition on the existence of the steady state proba
 which is equivalent to 
 \begin{equation}
 \begin{gathered}
-\begin{multlined}[c][.4\textwidth]
-j_1 = \frac{ \lambda_\text{b} }{ Z(-\beta) } 
-\times \\
-\ointctrclockwise \ointctrclockwise \rmd x \, \rmd y \; g(x,y) \, \left[ \frac{ \rme^{ \beta ( V_\text{r}(x) -  c V_\text{r}(y) ) } }{Z(\beta c)} - \frac{ \rme^{ \beta ( V_\text{r}(x) - V_\text{r}(y) ) } }{ Z(\beta) } \right] , \\
+\begin{multlined}[c][.8\linewidth]
+j_1 = \frac{ \lambda_\text{b} }{ Z(-\beta) } \ointctrclockwise \ointctrclockwise \rmd x \, \rmd y \; g(x,y) 
+\\ \times 
+\left[ \frac{ \rme^{ \beta ( V_\text{r}(x) -  c V_\text{r}(y) ) } }{Z(\beta c)} - \frac{ \rme^{ \beta ( V_\text{r}(x) - V_\text{r}(y) ) } }{ Z(\beta) } \right] , 
 \end{multlined}
 \\
-\begin{multlined}[c][.4\textwidth]
-j_c = \frac{ \lambda_\text{u} }{ Z( - \beta c ) } 
-\times \\
-\ointctrclockwise \ointctrclockwise \rmd x \, \rmd y \; g(x,y) \, \left[ \frac{ \rme^{ \beta (c V_\text{r}(x) - V_\text{r}(y) ) } }{Z(\beta)} - \frac{ \rme^{ \beta c ( V_\text{r}(x) - V_\text{r}(y) ) } }{ Z(\beta c ) } \right] . 
+\begin{multlined}[c][.8\linewidth]
+j_c = \frac{ \lambda_\text{u} }{ Z( - \beta c ) } \ointctrclockwise \ointctrclockwise \rmd x \, \rmd y \; g(x,y)  
+\\ \times 
+\left[ \frac{ \rme^{ \beta (c V_\text{r}(x) - V_\text{r}(y) ) } }{Z(\beta)} - \frac{ \rme^{ \beta c ( V_\text{r}(x) - V_\text{r}(y) ) } }{ Z(\beta c ) } \right] . 
 \end{multlined}
 \end{gathered}
 \label{eq:steady_currents}
@@ -2357,8 +2357,9 @@ Z(\beta c )
 \end{multline*}
 which leads to 
 \begin{gather*}
-\begin{multlined}[c][.4\textwidth]
-j_1 = (1-c) \beta \lambda_\text{b}  
+\begin{multlined}[c][.9\linewidth]
+j_1 = (1-c) \beta \lambda_\text{b} 
+\\ \times 
 \Biggl[ \ointctrclockwise \ointctrclockwise \rmd x \, \rmd y \; g(x,y) \, V_\text{r}(y) \frac{ \rme^{ \beta ( V_\text{r}(x) -  V_\text{r}(y) ) } }{Z(\beta) \, Z(-\beta) } \\
 + \partial_\beta \ln Z(\beta) \ointctrclockwise \ointctrclockwise \rmd x \, \rmd y \; g(x,y) \frac{ \rme^{ \beta ( V_\text{r}(x) -  V_\text{r}(y) ) } }{Z(\beta) \, Z(-\beta) } \Biggr] ,
 \end{multlined}
@@ -2367,8 +2368,18 @@ j_c = - \frac{ \lambda_\text{u} }{ \lambda_\text{b} } j_1 .
 \end{gather*}
 These integrals can be further evaluated 
 \begin{align*}
-j_1 &=  \lambda_\text{b}  (1 - c ) \left(a - \frac{1}{2} \right)  \beta V  \frac{ 2 - \beta V - \left( 2 + \beta V \right) \rme^{-\beta V} }{\left(1 - \rme^{-\beta V} \right)^3 } \rme^{-\beta V }, \\
-j_c &= - \lambda_\text{u}  (1 - c ) \left(a - \frac{1}{2} \right)  \beta V  \frac{ 2 - \beta V - \left( 2 + \beta V \right) \rme^{-\beta V} }{\left(1 - \rme^{-\beta V} \right)^3 } \rme^{-\beta V }.
+j_1 =& 
+\begin{multlined}[t][.8\linewidth]
+\lambda_\text{b}  (1 - c ) \left(a - \frac{1}{2} \right)  \beta V  
+\\\times 
+\frac{ 2 - \beta V - \left( 2 + \beta V \right) \rme^{-\beta V} }{\left(1 - \rme^{-\beta V} \right)^3 } \rme^{-\beta V }, 
+\end{multlined}\\
+j_c =& 
+\begin{multlined}[t][.8\linewidth]
+- \lambda_\text{u}  (1 - c ) \left(a - \frac{1}{2} \right)  \beta V 
+\\\times 
+\frac{ 2 - \beta V - \left( 2 + \beta V \right) \rme^{-\beta V} }{\left(1 - \rme^{-\beta V} \right)^3 } \rme^{-\beta V }.
+\end{multlined}
 \end{align*}
 
 Note, that in the regime of a small gap, the mean relative velocity 
