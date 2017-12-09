@@ -2184,8 +2184,8 @@ the result obtained for a one-headed motor also holds for the simulations of mot
 
 \subsection{Small transition rates}
 \label{ap:low_rates}
-While in the previous section we have investigated the behavior of mean relative velocity in the limit of large external force, 
-here we focus on the case when the diffusion dominates the dynamics and the dichotomic process present only a perturbation. 
+While in the previous section we investigated the behavior of mean relative velocity in the limit of large external force, 
+we will focus here on the case where the diffusion dominates the dynamics and the dichotomic process is present only as a perturbation. 
 
 As we are interested only in the marginal distribution of the relative displacement in the steady state, we start again from \eqref{eq:FP_ss} 
 \begin{equation}
@@ -2197,7 +2197,7 @@ As we are interested only in the marginal distribution of the relative displacem
 \end{aligned}
 \label{eq:diffusion_on_ring}
 \end{equation}
-which we have extended by the generator for the jump process dynamics.
+which we have supplemented with the generator for the jump process dynamics.
 
 Note, that due to the periodicity of the ratchet potential $V_\text{r}$, 
 the marginal distribution for the displacement in the steady state is equivalent to a steady state of a single particle diffusing on the ring of length $\ell$. 
@@ -2211,8 +2211,8 @@ Furthermore, we simplify the analysis by removing any external load $F^* = 0$ an
 \end{aligned}
 \label{eq:ring_ansatz}
 \end{equation}
-where $\delta \rho(x|\cdot)$ are perturbations, 
-the partition function is defined as usual,  
+where $\delta \rho(x|\cdot)$ are perturbations.
+The partition function is defined as usual,  
 \[
 Z(\beta) = \ointctrclockwise \rmd x \; \rme^{-\beta V_\text{r} },
 \]
@@ -2243,7 +2243,7 @@ Using the ansatz \eqref{eq:ring_ansatz} in equations~\eqref{eq:diffusion_on_ring
 \end{equation}
 in the lowest order of the perturbation series. 
 
-Let us define a green function $g(x,y)$ as \cite{Boksenbojm2012} 
+Let us define a Green's function $g(x,y)$ as \cite{Boksenbojm2012} 
 \[
 g(x,y) = \frac{1}{\ell} \ointctrclockwise\limits_x^y \rmd z 
 = \begin{cases} 
@@ -2252,12 +2252,12 @@ g(x,y) = \frac{1}{\ell} \ointctrclockwise\limits_x^y \rmd z
 \end{cases} 
 \]
 where the integral is taken in the positive direction over the circle.
-We can write the green function as well in more compact form 
+We can write the Green's function as well in more compact form 
 \[
 g(x,y) = \frac{ y - x }{\ell} + \Theta( x - y ) ,
 \] 
-where $\Theta(x)$ denotes Heaviside theta function. 
-Note, that the green function has following properties \cite{Boksenbojm2012}
+where $\Theta(x)$ denotes the Heaviside theta function. 
+Note, that the Green's function has following properties \cite{Boksenbojm2012}
 \begin{gather}
 g(x,y) + g(y,x) = 1 , \label{eq:green_asym} \\ 
 \frac{1}{\ell} \ointctrclockwise \rmd x \; g(x,y) = \frac{1}{2} , \label{eq:green_int} \\ 
@@ -2275,12 +2275,12 @@ is the general solution of $ \partial_x h(x) = f(x) $ if
 \[
 \ointctrclockwise \rmd y \; f(y) = 0 . 
 \] 
-Note also, that consequently due to the equation~\eqref{eq:green_int} 
+Note also, that consequently due to equation~\eqref{eq:green_int} 
 \[
 \frac{1}{\ell} \ointctrclockwise \rmd x \; h(x) = C . 
 \]
 
-In equations \eqref{eq:diffusion_on_ring_ans} the right hand sides integrals is zero, thus the solution is given by 
+In equations \eqref{eq:diffusion_on_ring_ans}, integrals over the right hand side are zero, thus the solution is given by 
 \begin{gather*}
 \begin{multlined}[c][.45\textwidth]
 \frac{ \rme^{-\beta V_\text{r}(x) } }{ Z(\beta) } \partial_x \delta \rho(x|1)  
@@ -2320,7 +2320,7 @@ j_c = \frac{ \lambda_\text{u} }{ Z( - \beta c ) }
 \label{eq:steady_currents}
 \end{equation}
 
-Note, that the mean relative velocity is a function of steady state probability currents only 
+Note, that the mean relative velocity is a function only of the steady state probability currents
 \begin{multline*}
 \langle v \rangle = 
 \frac{1}{\gamma^*} \ointctrclockwise \rmd x \; \bigl[ \partial_x V_\text{r}(x) \left( \rho(x,1) + c \, \rho(x,c) \right) \\
@@ -2330,7 +2330,7 @@ Note, that the mean relative velocity is a function of steady state probability 
 \end{multline*} 
 
 \subsubsection{Large gap ($c = 0$)}
-The first limiting case is when the gap between attached and detached state has the maximal amplitude. 
+The first limiting case is where the gap between attached and detached state has a maximal amplitude. 
 In this case the steady currents simplify to  
 \begin{align*}
 j_1 &= \lambda_\text{b} \left[ \frac{1}{2} -  
@@ -2339,16 +2339,16 @@ j_1 &= \lambda_\text{b} \left[ \frac{1}{2} -
 \\
 j_0 &= 0 .  
 \end{align*}
-Where we can see that in the ATP bound state there is no steady current, which agrees with fact for $c=0$ in the given state the motor is subjected to a free diffusion,
-and all the net velocity comes from the ATP unbound state due the relaxation in an asymmetric potential. 
-Also note, that for perfectly symmetric potential $a = \frac{1}{2}$ the steady state in the ATP unbound state is zero, $j_1 = 0$. 
+Where we can see that in the ATP bound state there is no steady current, which agrees with fact that for $c=0$ in the given state the motor is subjected to a free diffusion,
+and all the net velocity comes from the ATP unbound state due relaxation in an asymmetric potential. 
+Also note, that for a perfectly symmetric potential $a = \frac{1}{2}$ the steady state in the ATP unbound state is also zero, $j_1 = 0$. 
 
 \subsubsection{Small gap ($ c \to 1 $ ) }
-Another extreme is when $c$ is close to $1$. 
+Another extreme case is where $c$ is close to $1$. 
 For $c=1$ both steady currents vanish as the integrands in equations \eqref{eq:steady_currents} are identically zero.
-This corresponds to equilibrium situation where the dynamics of the internal state does not break a detailed balance. 
+This corresponds to equilibrium, where the dynamics of the internal state does not break detailed balance. 
 
-In linear order the partition function is given by
+For $c$ close to $1$, the partition function is given in linear order by
 \begin{multline*}
 Z(\beta c ) 
 = Z(\beta) + (1-c) \beta \ointctrclockwise \rmd x \; V_\text{r}(x) \rme^{-\beta V_\text{r}(x) } 
@@ -2371,7 +2371,7 @@ j_1 &=  \lambda_\text{b}  (1 - c ) \left(a - \frac{1}{2} \right)  \beta V  \frac
 j_c &= - \lambda_\text{u}  (1 - c ) \left(a - \frac{1}{2} \right)  \beta V  \frac{ 2 - \beta V - \left( 2 + \beta V \right) \rme^{-\beta V} }{\left(1 - \rme^{-\beta V} \right)^3 } \rme^{-\beta V }.
 \end{align*}
 
-Note, that in the regime of small gap, the mean relative velocity 
+Note, that in the regime of a small gap, the mean relative velocity 
 \begin{multline*}
 \langle v \rangle = \ell \left( \lambda_\text{b} - \lambda_\text{u} \right) (1 - c ) \left(a - \frac{1}{2} \right)  \beta V  
 \\ \times
@@ -2380,13 +2380,13 @@ Note, that in the regime of small gap, the mean relative velocity
 can be reversed just by a change of transition rates. 
 
 \subsubsection{High temperatures} 
-In the last part we investigate the high temperature regime.
-While it is quite easy to show that both first and zeroth order in $\beta$ vanish, for higher order it is quite tedious work, thus we present here only the results
+In this last part we investigate the high temperature regime.
+While it is quite easy to show that both the first and zeroth order in $\beta$ vanish, for higher order it is quite tedious work, thus we present here only the results
 \begin{align*}
 j_1 &= - \lambda_\text{b} \frac{\left( \beta V \right)^3 }{180} (1-c) \left(a - \frac{1}{2} \right) \left( 1 + \frac{c}{2} \right), \\
 j_c &= \lambda_\text{u} \frac{\left( \beta V \right)^3 }{180} (1-c) \left(a - \frac{1}{2} \right) \left( c + \frac{1}{2} \right) c.
 \end{align*}
-We observe, that for high temperatures the overall current vanishes with third power of temperature and that for fully symmetric potential the current is again zero. 
+We observe, that for high temperatures the overall current vanishes with third power of temperature and that for a fully symmetric potential the current is again zero. 
 
 \bibliography{ratchet}
 

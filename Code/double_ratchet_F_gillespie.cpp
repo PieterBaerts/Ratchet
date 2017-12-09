@@ -17,7 +17,7 @@ const int N = 1e2; /*Number of copies in ensemble to average over*/
 
 const double l = 8.;
 
-const int N_heads = 256;
+const int N_heads = 4;
 const double l_heads = 15.;
 
 const double a = 0.25;
