@@ -2284,14 +2284,14 @@ In equations \eqref{eq:diffusion_on_ring_ans}, integrals over the right hand sid
 \begin{gather*}
 \begin{multlined}[.95\linewidth]
 \frac{ \rme^{-\beta V_\text{r}(x) } }{ Z(\beta) } \partial_x \delta \rho(x|1)  
-= \gamma^* \beta j_1 \\
+= \gamma^* \beta \frac{ j_1 }{ p_1 } \\
 + \gamma^* \beta \lambda_\text{b} 
 \ointctrclockwise \rmd y \; g(x,y) \, \left[ \frac{ \rme^{ - \beta c V_\text{r}(y) } }{Z(\beta c)} - \frac{ \rme^{ - \beta V_\text{r}(y) } }{ Z(\beta) } \right] , 
 \end{multlined} 
 \\
 \begin{multlined}[.95\linewidth]
 \frac{ \rme^{-\beta c V_\text{r}(x) } }{ Z(\beta c) } \partial_x \delta \rho(x|c)  
-= \gamma^* \beta j_c \\
+= \gamma^* \beta \frac{ j_c }{ p_c } \\
 + \gamma^* \beta \lambda_\text{u}
 \ointctrclockwise \rmd y \; g(x,y) \, \left[ \frac{ \rme^{ - \beta V_\text{r}(y) } }{Z(\beta)} - \frac{ \rme^{ - \beta c V_\text{r}(y) } }{ Z(\beta c ) } \right] , 
 \end{multlined}
@@ -2306,13 +2306,13 @@ which is equivalent to
 \begin{equation}
 \begin{gathered}
 \begin{multlined}[c][.8\linewidth]
-j_1 = \frac{ \lambda_\text{b} }{ Z(-\beta) } \ointctrclockwise \ointctrclockwise \rmd x \, \rmd y \; g(x,y) 
+j_1 = \frac{ \lambda_\text{u} \lambda_\text{b} }{ \left( \lambda_\text{u} + \lambda_\text{b} \right) Z(-\beta) } \ointctrclockwise \ointctrclockwise \rmd x \, \rmd y \; g(x,y) 
 \\ \times 
 \left[ \frac{ \rme^{ \beta ( V_\text{r}(x) -  c V_\text{r}(y) ) } }{Z(\beta c)} - \frac{ \rme^{ \beta ( V_\text{r}(x) - V_\text{r}(y) ) } }{ Z(\beta) } \right] , 
 \end{multlined}
 \\
 \begin{multlined}[c][.8\linewidth]
-j_c = \frac{ \lambda_\text{u} }{ Z( - \beta c ) } \ointctrclockwise \ointctrclockwise \rmd x \, \rmd y \; g(x,y)  
+j_c = \frac{ \lambda_\text{u} \lambda_\text{b} }{ \left( \lambda_\text{u} + \lambda_\text{b} \right) Z( - \beta c ) } \ointctrclockwise \ointctrclockwise \rmd x \, \rmd y \; g(x,y)  
 \\ \times 
 \left[ \frac{ \rme^{ \beta (c V_\text{r}(x) - V_\text{r}(y) ) } }{Z(\beta)} - \frac{ \rme^{ \beta c ( V_\text{r}(x) - V_\text{r}(y) ) } }{ Z(\beta c ) } \right] . 
 \end{multlined}
@@ -2333,9 +2333,9 @@ Note, that the mean relative velocity is a function only of the steady state pro
 The first limiting case is where the gap between attached and detached state has a maximal amplitude. 
 In this case the steady currents simplify to  
 \begin{align*}
-j_1 &= \lambda_\text{b} \left[ \frac{1}{2} -  
+j_1 &= \frac{ \lambda_\text{u} \lambda_\text{b} }{ \lambda_\text{u} + \lambda_\text{b} } \left[ \frac{1}{2} -  
 \ointctrclockwise \ointctrclockwise \rmd x \, \rmd y \; g(x,y) \, \frac{ \rme^{ \beta ( V_\text{r}(x) - V_\text{r}(y) ) } }{ Z( - \beta ) Z(\beta) } \right] \\
-&= \lambda_\text{b} \left( a - \frac{1}{2} \right) \frac{ 1 - 2 \beta V \rme^{-\beta V } - \rme^{-2 \beta V} }{ \left( 1 - \rme^{-\beta V} \right)^2 } ,
+&= \frac{ \lambda_\text{u} \lambda_\text{b} }{ \lambda_\text{u} + \lambda_\text{b} } \left( a - \frac{1}{2} \right) \frac{ 1 - 2 \beta V \rme^{-\beta V } - \rme^{-2 \beta V} }{ \left( 1 - \rme^{-\beta V} \right)^2 } ,
 \\
 j_0 &= 0 .  
 \end{align*}
@@ -2358,46 +2358,47 @@ Z(\beta c )
 which leads to 
 \begin{gather*}
 \begin{multlined}[c][.9\linewidth]
-j_1 = (1-c) \beta \lambda_\text{b} 
+j_1 = \frac{ (1-c) \beta \lambda_\text{u} \lambda_\text{b} }{ \lambda_\text{u} + \lambda_\text{b} }
 \\ \times 
 \Biggl[ \ointctrclockwise \ointctrclockwise \rmd x \, \rmd y \; g(x,y) \, V_\text{r}(y) \frac{ \rme^{ \beta ( V_\text{r}(x) -  V_\text{r}(y) ) } }{Z(\beta) \, Z(-\beta) } \\
 + \partial_\beta \ln Z(\beta) \ointctrclockwise \ointctrclockwise \rmd x \, \rmd y \; g(x,y) \frac{ \rme^{ \beta ( V_\text{r}(x) -  V_\text{r}(y) ) } }{Z(\beta) \, Z(-\beta) } \Biggr] ,
 \end{multlined}
 \\
-j_c = - \frac{ \lambda_\text{u} }{ \lambda_\text{b} } j_1 . 
+j_c = - j_1 . 
 \end{gather*}
 These integrals can be further evaluated 
 \begin{align*}
 j_1 =& 
 \begin{multlined}[t][.8\linewidth]
-\lambda_\text{b}  (1 - c ) \left(a - \frac{1}{2} \right)  \beta V  
+\frac{ \lambda_\text{u} \lambda_\text{b} }{ \lambda_\text{u} + \lambda_\text{b} } (1 - c ) \left(a - \frac{1}{2} \right)  \beta V  
 \\\times 
 \frac{ 2 - \beta V - \left( 2 + \beta V \right) \rme^{-\beta V} }{\left(1 - \rme^{-\beta V} \right)^3 } \rme^{-\beta V }, 
 \end{multlined}\\
 j_c =& 
 \begin{multlined}[t][.8\linewidth]
-- \lambda_\text{u}  (1 - c ) \left(a - \frac{1}{2} \right)  \beta V 
+- \frac{ \lambda_\text{u} \lambda_\text{b} }{ \lambda_\text{u} + \lambda_\text{b} } (1 - c ) \left(a - \frac{1}{2} \right)  \beta V 
 \\\times 
 \frac{ 2 - \beta V - \left( 2 + \beta V \right) \rme^{-\beta V} }{\left(1 - \rme^{-\beta V} \right)^3 } \rme^{-\beta V }.
 \end{multlined}
 \end{align*}
 
-Note, that in the regime of a small gap, the mean relative velocity 
-\begin{multline*}
-\langle v \rangle = \ell \left( \lambda_\text{b} - \lambda_\text{u} \right) (1 - c ) \left(a - \frac{1}{2} \right)  \beta V  
-\\ \times
-\frac{ 2 - \beta V - \left( 2 + \beta V \right) \rme^{-\beta V} }{\left(1 - \rme^{-\beta V} \right)^3 } \rme^{-\beta V }
-\end{multline*}
-can be reversed just by a change of transition rates. 
+Note, that in the regime of a small gap, the mean relative velocity vanishes in the linear order of the gap $(1-c)$
+\begin{equation*}
+\langle v \rangle = \ell ( j_1 + j_c ) \equiv 0.
+\end{equation*}
 
 \subsubsection{High temperatures} 
 In this last part we investigate the high temperature regime.
 While it is quite easy to show that both the first and zeroth order in $\beta$ vanish, for higher order it is quite tedious work, thus we present here only the results
 \begin{align*}
-j_1 &= - \lambda_\text{b} \frac{\left( \beta V \right)^3 }{180} (1-c) \left(a - \frac{1}{2} \right) \left( 1 + \frac{c}{2} \right), \\
-j_c &= \lambda_\text{u} \frac{\left( \beta V \right)^3 }{180} (1-c) \left(a - \frac{1}{2} \right) \left( c + \frac{1}{2} \right) c.
+j_1 &= - \frac{ \lambda_\text{u} \lambda_\text{b} }{ \lambda_\text{u} + \lambda_\text{b} } \frac{\left( \beta V \right)^3 }{180} (1-c) \left(a - \frac{1}{2} \right) \left( 1 + \frac{c}{2} \right), \\
+j_c &= \frac{ \lambda_\text{u} \lambda_\text{b} }{ \lambda_\text{u} + \lambda_\text{b} } \frac{\left( \beta V \right)^3 }{180} (1-c) \left(a - \frac{1}{2} \right) \left( c + \frac{1}{2} \right) c.
 \end{align*}
 We observe, that for high temperatures the overall current vanishes with third power of temperature and that for a fully symmetric potential the current is again zero. 
+Moreover, the mean relative velocity is given by 
+\[
+\langle v \rangle = - \ell \frac{ \lambda_\text{u} \lambda_\text{b} }{ \lambda_\text{u} + \lambda_\text{b} } \frac{\left( \beta V \right)^3 }{180} (1-c)^2 (1+c) \left(a - \frac{1}{2} \right) . 
+\]
 
 \bibliography{ratchet}
 
