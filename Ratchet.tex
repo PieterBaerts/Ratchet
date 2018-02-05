@@ -2312,19 +2312,26 @@ which is equivalent to
 \begin{equation}
 \begin{gathered}
 \begin{multlined}[c][.8\linewidth]
-j_1 = \frac{ \lambda_\text{u} \lambda_\text{b} }{ \lambda_\text{u} + \lambda_\text{b} } \ointctrclockwise \ointctrclockwise \rmd x \, \rmd y \; g(x,y) 
+j_1 = - \frac{ \lambda_\text{u} \lambda_\text{b} }{ \lambda_\text{u} + \lambda_\text{b} } \ointctrclockwise \ointctrclockwise \rmd x \, \rmd y \; g(x,y) 
 \\ \times 
 \left[ \frac{ \rme^{ \beta ( V_\text{r}(x) -  c V_\text{r}(y) ) } }{Z(-\beta) Z(\beta c)} - \frac{ \rme^{ \beta ( V_\text{r}(x) - V_\text{r}(y) ) } }{ Z(-\beta) Z(\beta) } \right] , 
 \end{multlined}
 \\
 \begin{multlined}[c][.8\linewidth]
-j_c = \frac{ \lambda_\text{u} \lambda_\text{b} }{ \lambda_\text{u} + \lambda_\text{b} } \ointctrclockwise \ointctrclockwise \rmd x \, \rmd y \; g(x,y)  
+j_c = - \frac{ \lambda_\text{u} \lambda_\text{b} }{ \lambda_\text{u} + \lambda_\text{b} } \ointctrclockwise \ointctrclockwise \rmd x \, \rmd y \; g(x,y)  
 \\ \times 
 \left[ \frac{ \rme^{ \beta (c V_\text{r}(x) - V_\text{r}(y) ) } }{Z( - \beta c ) Z(\beta)} - \frac{ \rme^{ \beta c ( V_\text{r}(x) - V_\text{r}(y) ) } }{ Z( - \beta c ) Z(\beta c ) } \right] . 
 \end{multlined}
 \end{gathered}
 \label{eq:steady_currents}
 \end{equation}
+
+These expressions also provide a lower and upper bound on the probability currents 
+\begin{align*}
+|j_1| &\le \frac{ \lambda_\text{u} \lambda_\text{b} }{ \lambda_\text{u} + \lambda_\text{b} }, &
+|j_c| &\le \frac{ \lambda_\text{u} \lambda_\text{b} }{ \lambda_\text{u} + \lambda_\text{b} }, 
+\end{align*}
+where we used $0 \le g(x,y) \le 1$. 
 
 Note, that the mean relative velocity is a function only of the steady state probability currents
 \begin{multline*}
@@ -2334,16 +2341,23 @@ Note, that the mean relative velocity is a function only of the steady state pro
 = 
 \ell ( j_1 + j_c ) . 
 \end{multline*} 
+Thus the up to first order in transition rates the mean relative velocity for motor with a single head and without any external load is bounded by 
+\[
+|\langle v \rangle| \le 2 \ell \frac{ \lambda_\text{u} \lambda_\text{b} }{ \lambda_\text{u} + \lambda_\text{b} } \approx 0.42 \; {\mathrm{ \upmu m \, s^{-1}}} .
+\]
 
 \subsubsection{Large gap ($c = 0$)}
 The first limiting case is where the gap between attached and detached state has a maximal amplitude. 
 In this case the steady currents simplify to  
 \begin{align*}
-j_1^{(0)} &= \frac{ \lambda_\text{u} \lambda_\text{b} }{ \lambda_\text{u} + \lambda_\text{b} } \left[ \frac{1}{2} -  
+j_1^{(0)} =& - \frac{ \lambda_\text{u} \lambda_\text{b} }{ \lambda_\text{u} + \lambda_\text{b} } \left[ \frac{1}{2} -  
 \ointctrclockwise \ointctrclockwise \rmd x \, \rmd y \; g(x,y) \, \frac{ \rme^{ \beta ( V_\text{r}(x) - V_\text{r}(y) ) } }{ Z( - \beta ) Z(\beta) } \right] \\
-&= \frac{ \lambda_\text{u} \lambda_\text{b} }{ \lambda_\text{u} + \lambda_\text{b} } \left( a - \frac{1}{2} \right) \frac{ 1 - 2 \beta V \rme^{-\beta V } - \rme^{-2 \beta V} }{ \left( 1 - \rme^{-\beta V} \right)^2 } ,
+=& \frac{ \lambda_\text{u} \lambda_\text{b} }{ \lambda_\text{u} + \lambda_\text{b} } \left( a - \frac{1}{2} \right) 
+\left( 1 - \rme^{-\beta V} \right)^{-2} \\
+&\times
+\frac{ \beta V - 4 + 2 ( 4 + \beta^2 V^2 ) \rme^{-\beta V } - ( \beta V + 4 ) \rme^{-2 \beta V} }{\beta V} , \\
 \\
-j_0^{(0)} &= 0 .  
+j_0^{(0)} =& 0 .  
 \end{align*}
 Where we can see that in the ATP bound state there is no steady current, which agrees with fact that for $c=0$ in the given state the motor is subjected to a free diffusion,
 and all the net velocity comes from the ATP unbound state due relaxation in an asymmetric potential. 
@@ -2364,7 +2378,7 @@ Z(\beta c )
 which leads to 
 \begin{gather*}
 \begin{multlined}[c][.9\linewidth]
-j_1^{(0+1)} = \frac{ (1-c) \beta \lambda_\text{u} \lambda_\text{b} }{ \lambda_\text{u} + \lambda_\text{b} }
+j_1^{(0+1)} = - \frac{ (1-c) \beta \lambda_\text{u} \lambda_\text{b} }{ \lambda_\text{u} + \lambda_\text{b} }
 \\ \times 
 \Biggl[ \ointctrclockwise \ointctrclockwise \rmd x \, \rmd y \; g(x,y) \, V_\text{r}(y) \frac{ \rme^{ \beta ( V_\text{r}(x) -  V_\text{r}(y) ) } }{Z(\beta) \, Z(-\beta) } \\
 + \partial_\beta \ln Z(\beta) \ointctrclockwise \ointctrclockwise \rmd x \, \rmd y \; g(x,y) \frac{ \rme^{ \beta ( V_\text{r}(x) -  V_\text{r}(y) ) } }{Z(\beta) \, Z(-\beta) } \Biggr] ,
@@ -2372,21 +2386,13 @@ j_1^{(0+1)} = \frac{ (1-c) \beta \lambda_\text{u} \lambda_\text{b} }{ \lambda_\t
 \\
 j_c^{(0+1)} = - j_1^{(0+1)} . 
 \end{gather*}
-These integrals can be further evaluated 
-\begin{align*}
-j_1^{(0+1)} =& 
-\begin{multlined}[t][.8\linewidth]
-\frac{ \lambda_\text{u} \lambda_\text{b} }{ \lambda_\text{u} + \lambda_\text{b} } (1 - c ) \left(a - \frac{1}{2} \right)  \beta V  
+This integral can be further evaluated 
+\begin{multline*}
+j_1^{(0+1)} = 
+- \frac{ \lambda_\text{u} \lambda_\text{b} }{ \lambda_\text{u} + \lambda_\text{b} } (1 - c ) \left(a - \frac{1}{2} \right)   
 \\\times 
-\frac{ 2 - \beta V - \left( 2 + \beta V \right) \rme^{-\beta V} }{\left(1 - \rme^{-\beta V} \right)^3 } \rme^{-\beta V }, 
-\end{multlined}\\
-j_c^{(0+1)} =& 
-\begin{multlined}[t][.8\linewidth]
-- \frac{ \lambda_\text{u} \lambda_\text{b} }{ \lambda_\text{u} + \lambda_\text{b} } (1 - c ) \left(a - \frac{1}{2} \right)  \beta V 
-\\\times 
-\frac{ 2 - \beta V - \left( 2 + \beta V \right) \rme^{-\beta V} }{\left(1 - \rme^{-\beta V} \right)^3 } \rme^{-\beta V }.
-\end{multlined}
-\end{align*}
+\left[ \frac{2}{ \beta V } - \frac{ \beta^2 V^2 \cosh \frac{\beta V}{2} }{ 4 \sinh^3 \frac{\beta V}{2} } \right] . 
+\end{multline*}
 
 Note, that in the regime of a small gap, the mean relative velocity vanishes in the linear order of the gap $(1-c)$
 \begin{equation*}
