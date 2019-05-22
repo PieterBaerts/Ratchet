@@ -20,5 +20,5 @@ j(c) = 1./((-1. + c)*(-1. + exp(9.34579*c))**2)*(-0.500452 + 0.500904*exp(9.3457
 
 v0 = 8e-3 * 40.* 80. / ( 40. + 80. ) 
 
-plot [0:1] v0 * j(x) w lines lc 7
+plot [0:1] v0 * j(x) w lines lc 7, "Data/c_v_1head.dat" u 1:($2*1e3):($3*1e3) w errorlines lc 1
 

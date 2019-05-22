@@ -10,17 +10,18 @@
 
 const double KbT = 4.278;
 
+/*
 const double dt = 0.01;
 const int N_timesteps = 1e8;
 const int printevery = 1e6;
 
-const int N = 1e2; /*Number of copies in ensemble to average over*/
+const int N = 1e2; Number of copies in ensemble to average over
 
 const double l = 8.;
 
-const int N_heads = 2;
+const int N_heads = 4;
 const double l_heads = 15.;
-const double l_motor = 200.; /*total motor length*/
+const double l_motor = 200.; total motor length
 
 const double a = 0.25;
 const int N_a = 1;
@@ -42,6 +43,41 @@ const double k_unbind = 8e-5;
       
 const double gamma_fil = 0.97;
 const double gamma_motor = 0.66;
+*/
+
+const double dt = 0.0005;
+const long int N_timesteps = 2e10;
+const int printevery = 2e7;
+
+const int N = 1e2; /*Number of copies in ensemble to average over*/
+
+const double l = 8.;
+
+const int N_heads = 4;
+const double l_heads = 12.;
+const double l_motor = 200.; /*total motor length*/
+
+const double a = 0.25;
+const int N_a = 1;
+
+const double V = 40;
+const int N_V = 1;
+
+const double dE = 30.4;
+const double c = 0.3;
+const int N_c = 1;
+
+const double F_min = -150;
+const double F_max = 150.;
+const double N_F = 51;
+
+
+const double k_bind = 4e-4; 
+const double k_unbind = 8e-4;
+      
+const double gamma_fil = 20.;
+const double gamma_motor = 13.33;
+
 
 boost::random::mt19937 rng;   
 boost::random::uniform_real_distribution<> uniform;
@@ -174,7 +210,7 @@ double speed_sim(const int N_heads, const double a, const double Vmax, const dou
     xm_2 = 0;
 
         
-	for(int i=0; i < N_timesteps; i++, t+=dt){
+	for(long int i=0; i < N_timesteps; i++, t+=dt){
 		
 		double F1 = 0, F2 = 0;
 		
