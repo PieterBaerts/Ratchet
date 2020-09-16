@@ -1,0 +1,992 @@
+@article{adelstein1980regulation,
+    author = {Adelstein, Robert S. and Eisenberg, Evan},
+    doi = {10.1146/annurev.bi.49.070180.004421},
+    issn = {0066-4154},
+    journal = {Annual Review of Biochemistry},
+    month = {jun},
+    number = {1},
+    pages = {921--956},
+    pmid = {6447472},
+    publisher = {Annual Reviews 4139 El Camino Way, PO Box 10139, Palo Alto, CA 94303-0139, USA},
+    title = {{Regulation and Kinetics of the Actin-Myosin-ATP Interaction}},
+    url = {http://www.annualreviews.org/doi/10.1146/annurev.bi.49.070180.004421 http://www.ncbi.nlm.nih.gov/pubmed/6447472},
+    volume = {49},
+    year = {1980}
+}
+
+
+@article{Albert2014,
+    abstract = {Tissue cells are in a state of permanent mechanical tension that is maintained mainly by myosin II minifilaments, which are bipolar assemblies of tens of myosin II molecular motors contracting actin networks and bundles. Here we introduce a stochastic model for myosin II minifilaments as two small myosin II motor ensembles engaging in a stochastic tug-of-war. Each of the two ensembles is described by the parallel cluster model that allows us to use exact stochastic simulations and at the same time to keep important molecular details of the myosin II cross-bridge cycle. Our simulation and analytical results reveal a strong dependence of myosin II minifilament dynamics on environmental stiffness that is reminiscent of the cellular response to substrate stiffness. For small stiffness, minifilaments form transient crosslinks exerting short spikes of force with negligible mean. For large stiffness, minifilaments form near permanent crosslinks exerting a mean force which hardly depends on environmental elasticity. This functional switch arises because dissociation after the power stroke is suppressed by force (catch bonding) and because ensembles can no longer perform the power stroke at large forces. Symmetric myosin II minifilaments perform a random walk with an effective diffusion constant which decreases with increasing ensemble size, as demonstrated for rigid substrates with an analytical treatment.},
+    archivePrefix = {arXiv},
+    arxivId = {1404.1587},
+    author = {Albert, Philipp J and Erdmann, Thorsten and Schwarz, Ulrich S.},
+    doi = {10.1088/1367-2630/16/9/093019},
+    eprint = {1404.1587},
+    issn = {1367-2630},
+    journal = {New Journal of Physics},
+    month = {sep},
+    number = {9},
+    pages = {093019},
+    publisher = {IOP Publishing},
+    title = {{Stochastic dynamics and mechanosensitivity of myosin II minifilaments}},
+    url = {http://stacks.iop.org/1367-2630/16/i=9/a=093019?key=crossref.ee6e09815dda323cd07886cead076c6a},
+    volume = {16},
+    year = {2014}
+}
+
+
+@article{astumian1994fluctuation,
+    author = {Astumian, R. Dean and Bier, Martin},
+    doi = {10.1103/PhysRevLett.72.1766},
+    issn = {0031-9007},
+    journal = {Physical Review Letters},
+    month = {mar},
+    number = {11},
+    pages = {1766--1769},
+    publisher = {American Physical Society},
+    title = {{Fluctuation driven ratchets: Molecular motors}},
+    url = {https://link.aps.org/doi/10.1103/PhysRevLett.72.1766},
+    volume = {72},
+    year = {1994}
+}
+
+
+@article{astumian1996mechanochemical,
+    author = {Astumian, R. Dean and Bier, Martin},
+    doi = {10.1016/S0006-3495(96)79605-4},
+    issn = {00063495},
+    journal = {Biophysical Journal},
+    month = {feb},
+    number = {2},
+    pages = {637--653},
+    title = {{Mechanochemical coupling of the motion of molecular motors to ATP hydrolysis}},
+    url = {http://www.sciencedirect.com/science/article/pii/S0006349596796054 http://linkinghub.elsevier.com/retrieve/pii/S0006349596796054},
+    volume = {70},
+    year = {1996}
+}
+
+
+@article{barterls1993myosin,
+    abstract = {A decrease in the net fixed electric charge in the A-bands of cross-striated muscle was observed by Bartels and Elliott [2,10] when the muscle went from the rigor to the relaxed condition. The current work localises the source of the charge decrease by following the net charge on myosin (in the form of concentrated gels) and also myosin rod and light meromyosin gels when the gels are exposed to different concentrations of ATP. The work includes a study of muscle A-bands when the muscle is exposed to the same variations in ATP concentrations as the protein gels. The work shows that (i) Only 100-200 microns ATP is needed to initiate the charge decrease between the rigor and relaxed conditions; (ii) the effect of ATP is seen in the muscle A-band and the myosin and myosin rod gels, but not in LMM gels; (iii) pyrophosphate (PPi) shows a similar charge effect to ATP. ADP does not affect the charge on myosin gels, on the other hand. The results suggest that the charge decrease caused by ATP or PPi is due to ligand interaction with one or more sites on the myosin molecule. This interaction causes a disseminated effect in the protein, and a consequent loss in net negative charge either by a decrease in the absorption, of anions to Saroff sites on the protein, or, less probably, by an increase in the absorption of cations at those sites.},
+    author = {Barterls, Else M. and Cooke, Peter H and Elliott, Gerald F and Hughes, Rosemary A},
+    doi = {10.1016/0304-4165(93)90079-N},
+    issn = {03044165},
+    journal = {Biochimica et Biophysica Acta (BBA) - General Subjects},
+    month = {may},
+    number = {1},
+    pages = {63--73},
+    pmid = {8388733},
+    publisher = {Elsevier},
+    title = {{The myosin molecule — charge response to nucleotide binding}},
+    url = {http://www.ncbi.nlm.nih.gov/pubmed/8388733 http://linkinghub.elsevier.com/retrieve/pii/030441659390079N},
+    volume = {1157},
+    year = {1993}
+}
+
+
+@article{Bierbaum2013,
+    abstract = {The dwell times between two successive steps of the two-headed molecular motor myosin V are governed by non-exponential distributions. These distributions have been determined experimentally for various control parameters such as nucleotide concentrations and external load force. First, we use a simplified network representation to determine the dwell time distributions of myosin V, with the associated dynamics described by a Markov process on networks with absorbing boundaries. Our approach provides a direct relation between the motor's chemical kinetics and its stepping properties. In the absence of an external load, the theoretical distributions quantitatively agree with experimental findings for various nucleotide concentrations. Second, using a more complex branched network, which includes ADP release from the leading head, we are able to elucidate the motor's gating effect. This effect is caused by an asymmetry in the chemical properties of the leading and the trailing head of the motor molecule. In the case of an external load acting on the motor, the corresponding dwell time distributions reveal details about the motor's backsteps.},
+    author = {Bierbaum, Veronika and Lipowsky, Reinhard},
+    doi = {10.1371/journal.pone.0055366},
+    editor = {Salsbury, Freddie Jr.},
+    isbn = {1932-6203},
+    issn = {1932-6203},
+    journal = {PLoS ONE},
+    month = {feb},
+    number = {2},
+    pages = {e55366},
+    pmid = {23418440},
+    title = {{Dwell Time Distributions of the Molecular Motor Myosin V}},
+    url = {http://dx.plos.org/10.1371/journal.pone.0055366},
+    volume = {8},
+    year = {2013}
+}
+
+
+@article{Bierbaum2011,
+    abstract = {The molecular motor myosin V has been studied extensively both in bulk and single molecule experiments. Based on the chemical states of the motor, we construct a systematic network theory that includes experimental observations about the stepping behavior of myosin V. We utilize constraints arising from nonequilibrium thermodynamics to determine motor parameters and demonstrate that the motor behavior is governed by three chemomechanical motor cycles. The competition between these cycles can be understood via the influence of external load forces onto the chemical transition rates for the binding of adenosine triphosphate and adenosine diphosphate. In addition, we also investigate the functional dependence of the mechanical stepping rates on these forces. For substall forces, the dominant pathway of the motor network is profoundly different from the one for superstall forces, which leads to a stepping behavior that is in agreement with the experimental observations. Our theory provides a unified description of the experimental data as obtained for myosin V in single motor experiments. ?? 2011 by the Biophysical Society.},
+    author = {Bierbaum, Veronika and Lipowsky, Reinhard},
+    doi = {10.1016/j.bpj.2011.02.012},
+    isbn = {0006-3495},
+    issn = {00063495},
+    journal = {Biophysical Journal},
+    month = {apr},
+    number = {7},
+    pages = {1747--1755},
+    pmid = {21463588},
+    publisher = {Biophysical Society},
+    title = {{Chemomechanical Coupling and Motor Cycles of Myosin V}},
+    url = {http://dx.doi.org/10.1016/j.bpj.2011.02.012 http://linkinghub.elsevier.com/retrieve/pii/S0006349511002025},
+    volume = {100},
+    year = {2011}
+}
+
+
+@article{blanchoin2014actin,
+    abstract = {Tight coupling between biochemical and mechanical properties of the actin cytoskeleton drives a large range of cellular processes including polarity establishment, morphogenesis, and motility. This is possible because actin filaments are semi-flexible polymers that, in conjunction with the molecular motor myosin, can act as biological active springs or "dashpots" (in laymen's terms, shock absorbers or fluidizers) able to exert or resist against force in a cellular environment. To modulate their mechanical properties, actin filaments can organize into a variety of architectures generating a diversity of cellular organizations including branched or crosslinked networks in the lamellipodium, parallel bundles in filopodia, and antiparallel structures in contractile fibers. In this review we describe the feedback loop between biochemical and mechanical properties of actin organization at the molecular level in vitro, then we integrate this knowledge into our current understanding of cellular actin organization and its physiological roles.},
+    author = {Blanchoin, Laurent and Boujemaa-Paterski, Rajaa and Sykes, C{\'{e}}cile and Plastino, Julie},
+    doi = {10.1152/physrev.00018.2013},
+    issn = {0031-9333},
+    journal = {Physiological Reviews},
+    month = {jan},
+    number = {1},
+    pages = {235--263},
+    pmid = {24382887},
+    publisher = {Am Physiological Soc},
+    title = {{Actin Dynamics, Architecture, and Mechanics in Cell Motility}},
+    url = {http://www.ncbi.nlm.nih.gov/pubmed/24382887 http://physrev.physiology.org/cgi/doi/10.1152/physrev.00018.2013},
+    volume = {94},
+    year = {2014}
+}
+
+
+@article{boksenbojm2009entropy,
+    abstract = {In this paper we investigate the use of path-integral formalism and the concepts of entropy and traffic in the context of molecular motors. We show that together with time-reversal symmetry breaking arguments one can find bounds on efficiencies of such motors. To clarify this techinque we use it on one specific model to find both the thermodynamic and the Stokes efficiencies, although the arguments themselves are more general and can be used on a wide class of models. We also show that by considering the molecular motor as a ratchet, one can find additional bounds on the thermodynamic efficiency.},
+    archivePrefix = {arXiv},
+    arxivId = {0906.4222},
+    author = {Boksenbojm, Eliran and Wynants, Bram},
+    doi = {10.1088/1751-8113/42/44/445003},
+    eprint = {0906.4222},
+    issn = {1751-8113},
+    journal = {Journal of Physics A: Mathematical and Theoretical},
+    month = {nov},
+    number = {44},
+    pages = {445003},
+    publisher = {IOP Publishing},
+    title = {{The entropy and efficiency of a molecular motor model}},
+    url = {http://stacks.iop.org/1751-8121/42/i=44/a=445003?key=crossref.51b2e28dcbadbce154420e73356011e1 http://arxiv.org/abs/0906.4222 http://dx.doi.org/10.1088/1751-8113/42/44/445003},
+    volume = {42},
+    year = {2009}
+}
+
+
+@article{Broersma1981,
+    abstract = {The effect of the forces, added at the end of a cylinder, upon the velocity of the wall of the cylinder was not taken into account in a previous calculation [J. Chem. Phys. 32, 1626 (1960)]. We correct for this. The purely theoretical result is contained in Table I.},
+    author = {Broersma, S.},
+    doi = {10.1063/1.441071},
+    issn = {0021-9606},
+    journal = {The Journal of Chemical Physics},
+    month = {jun},
+    number = {12},
+    pages = {6989--6990},
+    title = {{Viscous force and torque constants for a cylinder}},
+    url = {http://link.aip.org/link/?JCP/74/6989/1{\%}7B{\&}{\%}7DAgg=doi http://link.aip.org/link/?JCP/74/6989/1{\&}Agg=doi http://aip.scitation.org/doi/10.1063/1.441071},
+    volume = {74},
+    year = {1981}
+}
+
+
+@article{Broersma1960,
+    abstract = {The viscous force constant of a moving cylinder closed at the ends has been calculated including first-order effects in width (2b)/length (2a). Experimental results, obtained for macroscopic models, are in essential agreement with this. For a/b{\textgreater}20 the discrepancy is about 8{\%}, for shorter cylinders near 20{\%}. With the force on a cylinder moving sideways given by F=8av/(-), where =log2a/b, it is found that ({\textgreater}2)=0.35-4(1/-0.43)2±0.25. For a translation lengthwise, with F=4av/(-), the relation ({\textgreater}2)=1.30-8(1/-0.30)2±0.25 holds.},
+    author = {Broersma, S.},
+    doi = {10.1063/1.1730995},
+    issn = {0021-9606},
+    journal = {The Journal of Chemical Physics},
+    month = {jun},
+    number = {6},
+    pages = {1632--1635},
+    title = {{Viscous Force Constant for a Closed Cylinder}},
+    url = {http://scitation.aip.org/content/aip/journal/jcp/32/6/10.1063/1.1730995 http://aip.scitation.org/doi/10.1063/1.1730995},
+    volume = {32},
+    year = {1960}
+}
+
+
+@article{brown2009cross-correlated,
+    author = {Brown, Andr{\'{e}} E.X. and Hategan, Alina and Safer, Daniel and Goldman, Yale E. and Discher, Dennis E.},
+    doi = {10.1016/j.bpj.2008.11.032},
+    issn = {00063495},
+    journal = {Biophysical Journal},
+    month = {mar},
+    number = {5},
+    pages = {1952--1960},
+    title = {{Cross-Correlated TIRF/AFM Reveals Asymmetric Distribution of Force-Generating Heads along Self-Assembled, “Synthetic” Myosin Filaments}},
+    url = {http://www.sciencedirect.com/science/article/pii/S0006349509000137 http://linkinghub.elsevier.com/retrieve/pii/S0006349509000137 http://www.ncbi.nlm.nih.gov/pubmed/2717282},
+    volume = {96},
+    year = {2009}
+}
+
+
+@article{chugh2017actin,
+    abstract = {Animal cell shape is largely determined by the cortex, a thin actin network underlying the plasma membrane in which myosin-driven stresses generate contractile tension. Tension gradients result in local contractions and drive cell deformations. Previous cortical tension regulation studies have focused on myosin motors. Here, we show that cortical actin network architecture is equally important. First, we observe that actin cortex thickness and tension are inversely correlated during cell-cycle progression. We then show that the actin filament length regulators CFL1, CAPZB and DIAPH1 regulate mitotic cortex thickness and find that both increasing and decreasing thickness decreases tension in mitosis. This suggests that the mitotic cortex is poised close to a tension maximum. Finally, using a computational model, we identify a physical mechanism by which maximum tension is achieved at intermediate actin filament lengths. Our results indicate that actin network architecture, alongside myosin activity, is key to cell surface tension regulation.},
+    author = {Chugh, Priyamvada and Clark, Andrew G and Smith, Matthew B and Cassani, Davide A D and Dierkes, Kai and Ragab, Anan and Roux, Philippe P and Charras, Guillaume and Salbreux, Guillaume and Paluch, Ewa K},
+    doi = {10.1038/ncb3525},
+    issn = {1465-7392},
+    journal = {Nature Cell Biology},
+    month = {may},
+    number = {6},
+    pages = {689--697},
+    pmid = {28530659},
+    publisher = {Nature Research},
+    title = {{Actin cortex architecture regulates cell surface tension}},
+    url = {http://www.ncbi.nlm.nih.gov/pubmed/28530659 http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=PMC5536221 http://www.nature.com/doifinder/10.1038/ncb3525},
+    volume = {19},
+    year = {2017}
+}
+
+
+@article{de2007symmetries,
+    abstract = {Recent advances in nonequilibrium statistical mechanics shed new light on the ratchet effect. The ratchet motion can thus be understood in terms of symmetry (breaking) considerations. We introduce an additional symmetry operation besides time-reversal, that effectively reverses the nonequilibrium driving. That operation of field-reversal combined with time-reversal decomposes the nonequilibrium action so to clarify under what circumstances the ratchet current is a second order effect around equilibrium, what is the direction of the ratchet current and what are possibly the symmetries in its fluctuations.},
+    archivePrefix = {arXiv},
+    arxivId = {cond-mat/0610369},
+    author = {{De Roeck}, Wojciech and Maes, Christian},
+    doi = {10.1103/PhysRevE.76.051117},
+    eprint = {0610369},
+    issn = {1539-3755},
+    journal = {Physical Review E},
+    month = {nov},
+    number = {5},
+    pages = {051117},
+    primaryClass = {cond-mat},
+    publisher = {APS},
+    title = {{Symmetries of the ratchet current}},
+    url = {https://link.aps.org/doi/10.1103/PhysRevE.76.051117 http://arxiv.org/abs/cond-mat/0610369 http://dx.doi.org/10.1103/PhysRevE.76.051117},
+    volume = {76},
+    year = {2007}
+}
+
+
+@article{ennomani2016architecture,
+    author = {Ennomani, Hajer and Letort, Ga{\"{e}}lle and Gu{\'{e}}rin, Christophe and Martiel, Jean-Louis and Cao, Wenxiang and N{\'{e}}d{\'{e}}lec, Fran{\c{c}}ois and {De La Cruz}, Enrique M. and Th{\'{e}}ry, Manuel and Blanchoin, Laurent},
+    doi = {10.1016/j.cub.2015.12.069},
+    issn = {09609822},
+    journal = {Current Biology},
+    month = {mar},
+    number = {5},
+    pages = {616--626},
+    publisher = {Elsevier},
+    title = {{Architecture and Connectivity Govern Actin Network Contractility}},
+    url = {http://linkinghub.elsevier.com/retrieve/pii/S0960982216000543},
+    volume = {26},
+    year = {2016}
+}
+
+
+@article{finer1994single,
+    abstract = {A new in vitro assay using a feedback enhanced laser trap system allows direct measurement of force and displacement that results from the interaction of a single myosin molecule with a single suspended actin filament. Discrete stepwise movements averaging 11 nm were seen under conditions of low load, and single force transients averaging 3-4 pN were measured under isometric conditions. The magnitudes of the single forces and displacements are consistent with predictions of the conventional swinging-crossbridge model of muscle contraction.},
+    author = {Finer, Jeffrey T. and Simmons, Robert M. and Spudich, James A.},
+    doi = {10.1038/368113a0},
+    isbn = {0028-0836},
+    issn = {0028-0836},
+    journal = {Nature},
+    month = {mar},
+    number = {6467},
+    pages = {113--119},
+    pmid = {8139653},
+    title = {{Single myosin molecule mechanics: piconewton forces and nanometre steps}},
+    url = {http://www.nature.com/doifinder/10.1038/368113a0},
+    volume = {368},
+    year = {1994}
+}
+
+
+@article{gajewski1986thermodynamics,
+    abstract = {The enthalpy of hydrolysis of the enzyme-catalyzed (heavy meromyosin) conversion of adenosine 5'-triphosphate (ATP) to adenosine 5'-diphosphate (ADP) and inorganic phosphate has been investigated using heat-conduction microcalorimetry. Enthalpies of reaction were measured as a function of ionic strength (0.05-0.66 mol kg-1), pH (6.4-8.8), and temperature (25-37 degrees C) in Tris/HCl buffer. The measured enthalpies were adjusted for the effects of proton ionization and metal ion binding, protonation and interaction with the Tris buffer, and ionic strength effects to obtain a value of delta H0 = -20.5 +/- 0.4 kJ mol-1 at 25 degrees C for the process, ATP4-(aq) + H2O(l) = ADP3-(aq) + HPO2-4(aq) + H+(aq) where aq is aqueous and l is liquid. Heat measurements carried out at different temperatures lead to a value of delta C0p = -237 +/- 30 J mol-1 K-1 for the above process.},
+    author = {Gajewski, Ewa and Steckler, David K and Goldberg, Robert N},
+    issn = {0021-9258},
+    journal = {The Journal of biological chemistry},
+    month = {sep},
+    number = {27},
+    pages = {12733--7},
+    pmid = {3528161},
+    publisher = {ASBMB},
+    title = {{Thermodynamics of the hydrolysis of adenosine 5'-triphosphate to adenosine 5'-diphosphate.}},
+    url = {http://www.ncbi.nlm.nih.gov/pubmed/3528161},
+    volume = {261},
+    year = {1986}
+}
+
+
+@article{garrigos1992structure,
+    author = {Garrigos, M and Mallam, S and Vachette, P and Bordas, J},
+    doi = {10.1016/S0006-3495(92)81743-5},
+    issn = {00063495},
+    journal = {Biophysical Journal},
+    month = {dec},
+    number = {6},
+    pages = {1462--1470},
+    publisher = {Elsevier},
+    title = {{Structure of the myosin head in solution and the effect of light chain 2 removal}},
+    url = {http://linkinghub.elsevier.com/retrieve/pii/S0006349592817435},
+    volume = {63},
+    year = {1992}
+}
+
+
+@article{geiger2009environmental,
+    abstract = {Recent progress in the design and application of artificial cellular microenvironments and nanoenvironments has revealed the extraordinary ability of cells to adjust their cytoskeletal organization, and hence their shape and motility, to minute changes in their immediate surroundings. Integrin-based adhesion complexes, which are tightly associated with the actin cytoskeleton, comprise the cellular machinery that recognizes not only the biochemical diversity of the extracellular neighbourhood, but also its physical and topographical characteristics, such as pliability, dimensionality and ligand spacing. Here, we discuss the mechanisms of such environmental sensing, based on the finely tuned crosstalk between the assembly of one type of integrin-based adhesion complex, namely focal adhesions, and the forces that are at work in the associated cytoskeletal network owing to actin polymerization and actomyosin contraction.},
+    author = {Geiger, Benjamin and Spatz, Joachim P and Bershadsky, Alexander D},
+    doi = {10.1038/nrm2593},
+    issn = {1471-0072},
+    journal = {Nature Reviews Molecular Cell Biology},
+    month = {jan},
+    number = {1},
+    pages = {21--33},
+    pmid = {19197329},
+    publisher = {Nature Publishing Group},
+    title = {{Environmental sensing through focal adhesions}},
+    url = {http://www.nature.com/doifinder/10.1038/nrm2593 http://www.ncbi.nlm.nih.gov/pubmed/19197329},
+    volume = {10},
+    year = {2009}
+}
+
+
+@article{hoffmann2016molecular,
+    author = {Hoffmann, Peter M},
+    doi = {10.1088/0034-4885/79/3/032601},
+    issn = {0034-4885},
+    journal = {Reports on Progress in Physics},
+    month = {mar},
+    number = {3},
+    pages = {032601},
+    publisher = {IOP Publishing},
+    title = {{How molecular motors extract order from chaos (a key issues review)}},
+    url = {http://stacks.iop.org/0034-4885/79/i=3/a=032601?key=crossref.fcd6555a982a42d9aa951d006dcaea4f},
+    volume = {79},
+    year = {2016}
+}
+
+
+@article{huxley1971proposed,
+    author = {Huxley, A. F. and Simmons, Robert M.},
+    doi = {10.1038/233533a0},
+    issn = {0028-0836},
+    journal = {Nature},
+    month = {oct},
+    number = {5321},
+    pages = {533--538},
+    title = {{Proposed Mechanism of Force Generation in Striated Muscle}},
+    url = {http://www.nature.com/doifinder/10.1038/233533a0},
+    volume = {233},
+    year = {1971}
+}
+
+
+@inproceedings{huxley1973structural,
+    author = {Huxley, Hugh Esmor},
+    booktitle = {Cold Spring Harbor Symposia on Quantitative Biology},
+    doi = {10.1101/SQB.1973.037.01.046},
+    issn = {0091-7451},
+    month = {jan},
+    organization = {Cold Spring Harbor Laboratory Press},
+    pages = {361--376},
+    title = {{Structural Changes in the Actin- and Myosin-eontaining Filaments during Contraction}},
+    url = {http://symposium.cshlp.org/cgi/doi/10.1101/SQB.1973.037.01.046},
+    volume = {37},
+    year = {1973}
+}
+
+
+@article{huxley1969mechanism,
+    author = {Huxley, Hugh Esmor},
+    doi = {10.1126/science.164.3886.1356},
+    issn = {0036-8075},
+    journal = {Science},
+    month = {jun},
+    number = {3886},
+    pages = {1356--1366},
+    pmid = {4181952},
+    title = {{The Mechanism of Muscular Contraction}},
+    url = {http://www.ncbi.nlm.nih.gov/pubmed/4181952 http://www.sciencemag.org/cgi/doi/10.1126/science.164.3886.1356},
+    volume = {164},
+    year = {1969}
+}
+
+
+@article{julicher1997modeling,
+    author = {J{\"{u}}licher, Frank and Ajdari, Armand and Prost, Jacques},
+    doi = {10.1103/RevModPhys.69.1269},
+    issn = {0034-6861},
+    journal = {Reviews of Modern Physics},
+    month = {oct},
+    number = {4},
+    pages = {1269--1282},
+    publisher = {American Physical Society},
+    title = {{Modeling molecular motors}},
+    url = {https://link.aps.org/doi/10.1103/RevModPhys.69.1269},
+    volume = {69},
+    year = {1997}
+}
+
+
+@article{julicher1997spontaneous,
+    author = {J{\"{u}}licher, Frank and Prost, Jacques},
+    doi = {10.1103/PhysRevLett.78.4510},
+    issn = {0031-9007},
+    journal = {Physical Review Letters},
+    month = {jun},
+    number = {23},
+    pages = {4510--4513},
+    publisher = {American Physical Society},
+    title = {{Spontaneous Oscillations of Collective Molecular Motors}},
+    url = {https://link.aps.org/doi/10.1103/PhysRevLett.78.4510},
+    volume = {78},
+    year = {1997}
+}
+
+
+@article{kishino1988force,
+    abstract = {Single actin filaments (approximately 7 nm in diameter) labelled with fluorescent phalloidin can be clearly seen by video-fluorescence microscopy. This technique has been used to observe motions of single filaments in solution and in several in vitro movement assays. In a further development of the technique, we report here a method to catch and manipulate a single actin filament (F-actin) by glass microneedles under conditions in which external force on the filament can be applied and measured. Using this method, we directly measured the tensile strength of a filament (the force necessary to break the bond between two actin monomers) and the force required for a filament to be moved by myosin or its proteolytic fragment bound to a glass surface in the presence of ATP. The first result shows that the tensile strength of the F-actin-phalloidin complex is comparable with the average force exerted on a single thin filament in muscle fibres during isometric contraction. This force is increased only slightly by tropomyosin. The second measurement shows that the myosin head (subfragment-1) can produce the same ATP-dependent force as intact myosin. The magnitude of this force is comparable with that produced by each head of myosin in muscle during isometric contraction.},
+    author = {Kishino, Akiyoshi and Yanagida, Toshio},
+    doi = {10.1038/334074a0},
+    isbn = {0028-0836},
+    issn = {0028-0836},
+    journal = {Nature},
+    month = {jul},
+    number = {6177},
+    pages = {74--76},
+    pmid = {3386748},
+    publisher = {Springer},
+    title = {{Force measurements by micromanipulation of a single actin filament by glass needles}},
+    url = {http://www.nature.com/doifinder/10.1038/334074a0},
+    volume = {334},
+    year = {1988}
+}
+
+
+@article{kloeden1989survey,
+    author = {Kloeden, Peter E and Platen, Eckhard},
+    doi = {10.1007/BF01543857},
+    issn = {0931-1955},
+    journal = {Stochastic Hydrology and Hydraulics},
+    month = {sep},
+    number = {3},
+    pages = {155--178},
+    publisher = {Springer},
+    title = {{A survey of numerical methods for stochastic differential equations}},
+    url = {http://link.springer.com/10.1007/BF01543857},
+    volume = {3},
+    year = {1989}
+}
+
+
+@article{li2004diffusion,
+    abstract = {Diffusion of the protein filaments F -actin confined in a thin layer between two walls is studied using the methods of single filament fluorescence imaging and particle tracking. The translational and rotational diffusion coefficients are measured for F -actin of lengths in the range of 1.5-5 microm. The length dependence of the measured diffusion coefficients is consistent with the predicted two-dimensional projection of the diffusion of a cylinder in an unbounded fluid. Fits based on the formulas for diffusion in the bulk fluid yield higher apparent viscosity values than that of the buffer solution by a factor of 2 for a layer thickness between 0.7 and 1.6 microm. We show that the measured results can be accounted for by correction based on the hydrodynamic theory of a long cylinder between confining walls.},
+    author = {Li, Guanglai and Tang, Jay X.},
+    doi = {10.1103/PhysRevE.69.061921},
+    issn = {1539-3755},
+    journal = {Physical Review E},
+    month = {jun},
+    number = {6},
+    pages = {061921},
+    pmid = {15244631},
+    publisher = {APS},
+    title = {{Diffusion of actin filaments within a thin layer between two walls}},
+    url = {https://link.aps.org/doi/10.1103/PhysRevE.69.061921},
+    volume = {69},
+    year = {2004}
+}
+
+
+@article{ma2012nonmuscle,
+    abstract = {During vertebrate cytokinesis it is thought that contractile ring constriction is driven by nonmuscle myosin II (NM II) translocation of antiparallel actin filaments. Here we report in situ, in vitro, and in vivo observations that challenge this hypothesis. Graded knockdown of NM II in cultured COS-7 cells reveals that the amount of NM II limits ring constriction. Restoration of the constriction rate with motor-impaired NM II mutants shows that the ability of NM II to translocate actin is not required for cytokinesis. Blebbistatin inhibition of cytokinesis indicates the importance of myosin strongly binding to actin and exerting tension during cytokinesis. This role is substantiated by transient kinetic experiments showing that the load-dependent mechanochemical properties of mutant NM II support efficient tension maintenance despite the inability to translocate actin. Under loaded conditions, mutant NM II exhibits a prolonged actin attachment in which a single mechanoenzymatic cycle spans most of the time of cytokinesis. This prolonged attachment promotes simultaneous binding of NM II heads to actin, thereby increasing tension and resisting expansion of the ring. The detachment of mutant NM II heads from actin is enhanced by assisting loads, which prevent mutant NM II from hampering furrow ingression during cytokinesis. In the 3D context of mouse hearts, mutant NM II-B R709C that cannot translocate actin filaments can rescue multinucleation in NM II-B ablated cardiomyocytes. We propose that the major roles of NM II in vertebrate cell cytokinesis are to bind and cross-link actin filaments and to exert tension on actin during contractile ring constriction.},
+    author = {Ma, Xuefei and Kovacs, M. and Conti, M. A. and Wang, Aibing and Zhang, Yingfan and Sellers, James R. and Adelstein, Robert S.},
+    doi = {10.1073/pnas.1116268109},
+    isbn = {1091-6490 (Electronic)$\backslash$r0027-8424 (Linking)},
+    issn = {0027-8424},
+    journal = {Proceedings of the National Academy of Sciences},
+    month = {mar},
+    number = {12},
+    pages = {4509--4514},
+    pmid = {22393000},
+    publisher = {National Acad Sciences},
+    title = {{Nonmuscle myosin II exerts tension but does not translocate actin in vertebrate cytokinesis}},
+    url = {http://www.pnas.org/cgi/doi/10.1073/pnas.1116268109},
+    volume = {109},
+    year = {2012}
+}
+
+
+@article{Maes2010,
+    author = {Maes, Christian and Neto{\v{c}}n{\'{y}}, Karel},
+    doi = {10.1063/1.3274819},
+    issn = {0022-2488},
+    journal = {Journal of Mathematical Physics},
+    month = {jan},
+    number = {1},
+    pages = {015219},
+    title = {{Rigorous meaning of McLennan ensembles}},
+    url = {http://link.aip.org/link/JMAPAQ/v51/i1/p015219/s1{\%}7B{\&}{\%}7DAgg=doi http://aip.scitation.org/doi/10.1063/1.3274819 http://link.aip.org/link/JMAPAQ/v51/i1/p015219/s1{\&}Agg=doi},
+    volume = {51},
+    year = {2010}
+}
+
+
+@article{maruyama1955continuous,
+    author = {Maruyama, Gisiro},
+    doi = {10.1007/BF02846028},
+    issn = {0009-725X},
+    journal = {Rendiconti del Circolo Matematico di Palermo},
+    month = {jan},
+    number = {1},
+    pages = {48--90},
+    publisher = {Springer},
+    title = {{Continuous Markov processes and stochastic equations}},
+    url = {http://link.springer.com/10.1007/BF02846028},
+    volume = {4},
+    year = {1955}
+}
+
+
+@article{mitchison1996actin,
+    author = {Mitchison, T.J and Cramer, Louise P},
+    doi = {10.1016/S0092-8674(00)81281-7},
+    issn = {00928674},
+    journal = {Cell},
+    month = {feb},
+    number = {3},
+    pages = {371--379},
+    pmid = {8608590},
+    publisher = {Elsevier},
+    title = {{Actin-Based Cell Motility and Cell Locomotion}},
+    url = {http://www.ncbi.nlm.nih.gov/pubmed/8608590 http://linkinghub.elsevier.com/retrieve/pii/S0092867400812817},
+    volume = {84},
+    year = {1996}
+}
+
+
+@article{monier2010actomyosin,
+    abstract = {Partitioning tissues into compartments that do not intermix is essential for the correct morphogenesis of animal embryos and organs. Several hypotheses have been proposed to explain compartmental cell sorting, mainly differential adhesion, but also regulation of the cytoskeleton or of cell proliferation. Nevertheless, the molecular and cellular mechanisms that keep cells apart at boundaries remain unclear. Here we demonstrate, in early Drosophila melanogaster embryos, that actomyosin-based barriers stop cells from invading neighbouring compartments. Our analysis shows that cells can transiently invade neighbouring compartments, especially when they divide, but are then pushed back into their compartment of origin. Actomyosin cytoskeletal components are enriched at compartmental boundaries, forming cable-like structures when the epidermis is mitotically active. When MyoII (non-muscle myosin II) function is inhibited, including locally at the cable by chromophore-assisted laser inactivation (CALI), in live embryos, dividing cells are no longer pushed back, leading to compartmental cell mixing. We propose that local regulation of actomyosin contractibility, rather than differential adhesion, is the primary mechanism sorting cells at compartmental boundaries.},
+    author = {Monier, Bruno and P{\'{e}}lissier-Monier, Anne and Brand, Andrea H and Sanson, B{\'{e}}n{\'{e}}dicte},
+    doi = {10.1038/ncb2005},
+    issn = {1465-7392},
+    journal = {Nature Cell Biology},
+    month = {jan},
+    number = {1},
+    pages = {60--65},
+    pmid = {19966783},
+    publisher = {Europe PMC Funders},
+    title = {{An actomyosin-based barrier inhibits cell mixing at compartmental boundaries in Drosophila embryos}},
+    url = {http://www.ncbi.nlm.nih.gov/pubmed/19966783 http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=PMC4016768 http://www.nature.com/doifinder/10.1038/ncb2005},
+    volume = {12},
+    year = {2010}
+}
+
+
+@article{nie2014conformational,
+    abstract = {A long-standing controversy on the mechanism of an actomyosin motor is the role of the Brownian motion of the myosin head in force generation. In order to shed light on this problem, we calculate free-energy landscapes of interaction between an actin filament and the head (S1) of myosin II by using a coarse-grained model of actomyosin. The results show that the free-energy landscape has a global gradient toward the strong-binding site on actin filament, which explains the biased Brownian motion of myosin S1 observed in a single-molecule experiment [Kitamura et al., Nature, 1999, 397, 129 and Biophysics, 2005, 1, 1]. The distinct global gradient in the landscape is brought about only when the conformation of loop 2 at the actin interface of myosin S1 is flexible. The conformational flexibility of loop 3 also contributes to the gradient in the landscape by compensating the role of loop 2. Though the structure of loop 2 is expanded in the weak-binding state, loop 2 shows the larger fluctuation of compaction and expansion due to the actin-myosin interactions as myosin S1 moves toward the strong-binding site on actin filament. Hence, the increase in the compaction-expansion fluctuation of loop 2, the stronger binding of myosin to actin, and the biased Brownian motion of myosin S1 are coupled with each other and should take place in a concurrent way. This predicted coupling should provide opportunities to further test the hypothesis of the biased Brownian motion in actomyosin.},
+    author = {Nie, Qing-Miao and Sasai, Masaki and Terada, Tomoki P.},
+    doi = {10.1039/c3cp54464h},
+    isbn = {1463-9076},
+    issn = {1463-9076},
+    journal = {Physical Chemistry Chemical Physics},
+    month = {apr},
+    number = {14},
+    pages = {6441},
+    pmid = {24513657},
+    publisher = {Royal Society of Chemistry},
+    title = {{Conformational flexibility of loops of myosin enhances the global bias in the actin–myosin interaction landscape}},
+    url = {http://www.ncbi.nlm.nih.gov/pubmed/24513657 http://xlink.rsc.org/?DOI=c3cp54464h},
+    volume = {16},
+    year = {2014}
+}
+
+
+@article{Nie2014,
+    abstract = {An important unresolved problem associated with actomyosin motors is the role of Brownian motion in the process of force generation. On the basis of structural observations of myosins and actins, the widely held lever-arm hypothesis has been proposed, in which proteins are assumed to show sequential structural changes among observed and hypothesized structures to exert mechanical force. An alternative hypothesis, the Brownian motion hypothesis, has been supported by single-molecule experiments and emphasizes more on the roles of fluctuating protein movement. In this study, we address the long-standing controversy between the lever-arm hypothesis and the Brownian motion hypothesis through in silico observations of an actomyosin system. We study a system composed of myosin II and actin filament by calculating free-energy landscapes of actin-myosin interactions using the molecular dynamics method and by simulating transitions among dynamically changing free-energy landscapes using the Monte Carlo method. The results obtained by this combined multi-scale calculation show that myosin with inorganic phosphate (Pi) and ADP weakly binds to actin and that after releasing Pi and ADP, myosin moves along the actin filament toward the strong-binding site by exhibiting the biased Brownian motion, a behavior consistent with the observed single-molecular behavior of myosin. Conformational flexibility of loops at the actin-interface of myosin and the N-terminus of actin subunit is necessary for the distinct bias in the Brownian motion. Both the 5.5-11 nm displacement due to the biased Brownian motion and the 3-5 nm displacement due to lever-arm swing contribute to the net displacement of myosin. The calculated results further suggest that the recovery stroke of the lever arm plays an important role in enhancing the displacement of myosin through multiple cycles of ATP hydrolysis, suggesting a unified movement mechanism for various members of the myosin family.},
+    author = {Nie, Qing-Miao and Togashi, Akio and Sasaki, Takeshi N. and Takano, Mitsunori and Sasai, Masaki and Terada, Tomoki P.},
+    doi = {10.1371/journal.pcbi.1003552},
+    editor = {Atzberger, Paul J.},
+    issn = {1553-7358},
+    journal = {PLoS Computational Biology},
+    month = {apr},
+    number = {4},
+    pages = {e1003552},
+    pmid = {24762409},
+    title = {{Coupling of Lever Arm Swing and Biased Brownian Motion in Actomyosin}},
+    url = {http://www.ncbi.nlm.nih.gov/pubmed/24762409 http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=PMC3998885 http://dx.plos.org/10.1371/journal.pcbi.1003552},
+    volume = {10},
+    year = {2014}
+}
+
+
+@article{parmeggiani1999energy,
+    author = {Parmeggiani, Andrea and J{\"{u}}licher, Frank and Ajdari, Armand and Prost, Jacques},
+    doi = {10.1103/PhysRevE.60.2127},
+    issn = {1063-651X},
+    journal = {Physical Review E},
+    month = {aug},
+    number = {2},
+    pages = {2127--2140},
+    publisher = {APS},
+    title = {{Energy transduction of isothermal ratchets: Generic aspects and specific examples close to and far from equilibrium}},
+    url = {https://link.aps.org/doi/10.1103/PhysRevE.60.2127},
+    volume = {60},
+    year = {1999}
+}
+
+
+@article{parrondo1998efficiency,
+    archivePrefix = {arXiv},
+    arxivId = {43303},
+    author = {Parrondo, Juan M. R. and Blanco, J M and Cao, Francisco J. and Brito, R},
+    doi = {10.1209/epl/i1998-00348-5},
+    eprint = {43303},
+    issn = {0295-5075},
+    journal = {Europhysics Letters (EPL)},
+    month = {aug},
+    number = {3},
+    pages = {248--254},
+    publisher = {IOP Publishing},
+    title = {{Efficiency of Brownian motors}},
+    url = {http://stacks.iop.org/0295-5075/43/i=3/a=248?key=crossref.76ef22fd950336b9ea3175c30c5ae2a3},
+    volume = {43},
+    year = {1998}
+}
+
+
+@phdthesis{Pesek2013,
+    abstract = {This thesis is devoted to the theoretical study of slow thermodynamic processes in non-equilibrium stochastic systems. Its main result is a physically and mathemati- cally consistent construction of relevant thermodynamic quantities in the quasistatic limit for a large class of non-equilibrium models. As an application of general meth- ods a natural non-equilibrium generalization of heat capacity is introduced and its properties are analyzed in detail, including an anomalous far-from-equilibrium behavior. The developed methods are further applied to the related problem of time-scale separation where they enable to describe the effective dynamics of both slow and fast degrees of freedom in a more precise way.},
+    archivePrefix = {arXiv},
+    arxivId = {1407.7434},
+    author = {Pe{\v{s}}ek, Jiř{\'{i}}},
+    eprint = {1407.7434},
+    keywords = {quasistatic process,steady state,stochastic thermodynamics},
+    month = {jul},
+    pages = {178},
+    school = {Faculty of Mathematics and Physics, Charles University in Prague},
+    title = {{Heat processes in non-equilibrium stochastic systems}},
+    type = {PHD Thesis},
+    url = {http://arxiv.org/abs/1407.7434},
+    year = {2013}
+}
+
+
+@incollection{peskin1995correlation,
+    address = {New York, NY},
+    author = {Peskin, C S and Ermentrout, G B and Oster, G F},
+    doi = {10.1007/978-1-4613-8425-0_26},
+    journal = {Cell Mechanics and Cellular Engineering},
+    pages = {479--489},
+    publisher = {Springer New York},
+    title = {{The Correlation Ratchet: A Novel Mechanism for Generating Directed Motion by ATP Hydrolysis}},
+    url = {http://link.springer.com/10.1007/978-1-4613-8425-0{\_}26},
+    year = {1994}
+}
+
+
+@article{placcais2009spontaneous,
+    abstract = {Spontaneous mechanical oscillations occur in various types of biological systems where groups of motor molecules are elastically coupled to their environment. By using an optical trap to oppose the gliding motion of a single bead-tailed actin filament over a substrate densely coated with myosin motors, we mimicked this condition in vitro. We show that this minimal actomyosin system can oscillate spontaneously. Our finding accords quantitatively with a general theoretical framework where oscillatory instabilities emerge generically from the collective dynamics of molecular motors under load.},
+    author = {Pla{\c{c}}ais, P-Y and Balland, M. and Gu{\'{e}}rin, T. and Joanny, J.-F. and Martin, P.},
+    doi = {10.1103/PhysRevLett.103.158102},
+    isbn = {1079-7114 (Electronic)$\backslash$r0031-9007 (Linking)},
+    issn = {0031-9007},
+    journal = {Physical Review Letters},
+    month = {oct},
+    number = {15},
+    pages = {158102},
+    pmid = {19905668},
+    publisher = {APS},
+    title = {{Spontaneous Oscillations of a Minimal Actomyosin System under Elastic Loading}},
+    url = {http://link.aps.org/doi/10.1103/PhysRevLett.103.158102 http://www.ncbi.nlm.nih.gov/pubmed/19905668 https://link.aps.org/doi/10.1103/PhysRevLett.103.158102},
+    volume = {103},
+    year = {2009}
+}
+
+
+@article{pollard1982structure,
+    abstract = {Acanthamoeba myosin-II forms filaments of two different sizes. Thin bipolar filaments 7 nm wide and 200 nm long consist of 16 myosin-II molecules. Thick bipolar filaments of variable width (14-19 nm) consist of 40 or more myosin-II molecules. Both have a central bare zone 90 nm long and myosin heads projecting laterally at the ends. The heads are arranged in rows spaced 15 nm apart. In the case of the thin myosin-II filaments there are two molecules per row. The thick filaments are formed rapidly and reversibly in the presence of 6-10 mM MgCl2 (or any of five other different divalent cations tested) by the lateral aggregation of thin myosin-II filaments. Acid pH also favors thick filament formation. Neither the myosin-II concentration (50-1,000 micrograms/ml) nor ATP has an effect on the morphology of the filaments. The polymerization mechanism was studied quantitatively by measuring the amount of polymer formed (Cp) under various conditions as a function of total myosin-II concentration (Ct). Above a critical concentration of 15-40 micrograms/ml, Cp was proportional to Ct with a slope of 0.5-0.95 depending on conditions. In the range of 0.8-4.9 heavy chain phosphates per molecule, phosphorylation has no effect on the morphology of either the thin or thick myosin-II filaments and only a small effect on the extent of polymerization.},
+    author = {Pollard, Thomas D.},
+    doi = {10.1083/jcb.95.3.816},
+    isbn = {0021-9525 (Print)},
+    issn = {0021-9525},
+    journal = {The Journal of Cell Biology},
+    month = {dec},
+    number = {3},
+    pages = {816--825},
+    pmid = {7153247},
+    publisher = {Rockefeller University Press},
+    title = {{Structure and polymerization of Acanthamoeba myosin-II filaments}},
+    url = {http://www.ncbi.nlm.nih.gov/pubmed/7153247 http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=PMC2112911 http://www.jcb.org/cgi/doi/10.1083/jcb.95.3.816},
+    volume = {95},
+    year = {1982}
+}
+
+
+@article{reimann2002brownian,
+    abstract = {Transport phenomena in spatially periodic systems far from thermal equilibrium are considered. The main emphasize is put on directed transport in so-called Brownian motors (ratchets), i.e. a dissipative dynamics in the presence of thermal noise and some prototypical perturbation that drives the system out of equilibrium without introducing a priori an obvious bias into one or the other direction of motion. Symmetry conditions for the appearance (or not) of directed current, its inversion upon variation of certain parameters, and quantitative theoretical predictions for specific models are reviewed as well as a wide variety of experimental realizations and biological applications, especially the modeling of molecular motors. Extensions include quantum mechanical and collective effects, Hamiltonian ratchets, the influence of spatial disorder, and diffusive transport.},
+    archivePrefix = {arXiv},
+    arxivId = {cond-mat/0010237},
+    author = {Reimann, Peter},
+    doi = {10.1016/S0370-1573(01)00081-3},
+    eprint = {0010237},
+    issn = {03701573},
+    journal = {Physics Reports},
+    month = {apr},
+    number = {2-4},
+    pages = {57--265},
+    primaryClass = {cond-mat},
+    publisher = {Elsevier},
+    title = {{Brownian motors: noisy transport far from equilibrium}},
+    url = {http://linkinghub.elsevier.com/retrieve/pii/S0370157301000813 http://arxiv.org/abs/cond-mat/0010237 http://dx.doi.org/10.1016/S0370-1573(01)00081-3},
+    volume = {361},
+    year = {2002}
+}
+
+
+@article{Reimann2002introduction,
+    abstract = {A detailed introduction to directed transport in Brownian motors occurring in spatially periodic systems far from equilibrium is presented. We elucidate the prominent physical concepts and novel phenomena with a representative dissipative Brownian motor dynamics. Its main ingredient is a thermal noise with time-dependent temperature modulations that drive the system out of thermal equilibrium in a spatially asymmetric (ratchet-) potential. Yet, this asymmetric setup does not exhibit a concomitant obvious bias into one or the other direction of motion. Symmetry conditions for the appearance (or not) of directed current, its reversal upon variation of certain parameters, and various other generic features and applications are discussed. In addition, we provide a systematic classification scheme for Brownian motor models and review historical landmark contributions to the field.},
+    author = {Reimann, Peter and H{\"{a}}nggi, Peter},
+    doi = {10.1007/s003390201331},
+    issn = {0947-8396},
+    journal = {Applied Physics A},
+    month = {aug},
+    number = {2},
+    pages = {169--178},
+    title = {{Introduction to the physics of Brownian motors}},
+    url = {http://dx.doi.org/10.1007/s003390201331 http://link.springer.com/10.1007/s003390201331},
+    volume = {75},
+    year = {2002}
+}
+
+
+@article{rosenblatt2004myosin,
+    abstract = {The role of myosin II in mitosis is generally thought to be restricted to cytokinesis. We present surprising new evidence that cortical myosin II is also required for spindle assembly in cells. Drug- or RNAi-mediated disruption of myosin II in cells interferes with normal spindle assembly and positioning. Time-lapse movies reveal that these treatments block the separation and positioning of duplicated centrosomes after nuclear envelope breakdown (NEBD), thereby preventing the migration of the microtubule asters to opposite sides of chromosomes. Immobilization of cortical movement with tetravalent lectins produces similar spindle defects to myosin II disruption and suggests that myosin II activity is required within the cortex. Latex beads bound to the cell surface move in a myosin II-dependent manner in the direction of the separating asters. We propose that after NEBD, completion of centrosome separation and positioning around chromosomes depends on astral microtubule connections to a moving cell cortex.},
+    author = {Rosenblatt, Jody and Cramer, Louise P and Baum, Buzz and McGee, Karen M},
+    doi = {10.1016/S0092-8674(04)00341-1},
+    issn = {00928674},
+    journal = {Cell},
+    month = {apr},
+    number = {3},
+    pages = {361--372},
+    pmid = {15109496},
+    publisher = {Elsevier},
+    title = {{Myosin II-Dependent Cortical Movement Is Required for Centrosome Separation and Positioning during Mitotic Spindle Assembly}},
+    url = {http://www.ncbi.nlm.nih.gov/pubmed/15109496 http://linkinghub.elsevier.com/retrieve/pii/S0092867404003411},
+    volume = {117},
+    year = {2004}
+}
+
+
+@article{ross2008cargo,
+    abstract = {Intracellular cargo transport requires microtubule-based motors, kinesin and cytoplasmic dynein, and the actin-based myosin motors to maneuver through the challenges presented by the filamentous meshwork that comprises the cytoskeleton. Recent in vitro single molecule biophysical studies have begun to explore this process by characterizing what occurs as these tiny molecular motors happen upon an intersection between two cytoskeletal filaments. These studies, in combination with in vivo work, define the mechanism by which molecular motors exchange cargo while traveling between filamentous tracks and deliver it to its destination when going from the cell center to the periphery and back again.},
+    author = {Ross, Jennifer L and Ali, M Yusuf and Warshaw, David M},
+    doi = {10.1016/j.ceb.2007.11.006},
+    issn = {09550674},
+    journal = {Current Opinion in Cell Biology},
+    month = {feb},
+    number = {1},
+    pages = {41--47},
+    pmid = {18226515},
+    publisher = {Elsevier},
+    title = {{Cargo transport: molecular motors navigate a complex cytoskeleton}},
+    url = {http://linkinghub.elsevier.com/retrieve/pii/S0955067407001743 http://www.ncbi.nlm.nih.gov/pubmed/18226515 http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=PMC2688467},
+    volume = {20},
+    year = {2008}
+}
+
+
+@article{saito1994movement,
+    abstract = {Movement of single myosin filaments, synthesized by copolymerization of intact myosin and fluorescently labeled light meromyosin, were observed along a single actin filament suspended in solution by a dual laser trap in a fluorescence microscope. The sliding velocity of the myosin filaments was 11.0 +/- 0.2 micron/s at 27 degrees C. This is similar to that of actin moving toward the center from the tip (the physiological direction) of myosin filaments bound to a glass surface but several times larger than that in the opposite direction (Ishijima and Yanagida, 1991; Yanagida, 1993). This indicates that the movement of myosin filaments is dominated by the myosin heads on one side of the myosin filament, which are correctly oriented relative to the actin filament. The incorrectly oriented myosin heads on the other side do not interfere with the fast movement. The step size (displacement produced during one ATPase cycle) of correctly oriented myosin was estimated from the minimum number of myosin heads necessary to produce the maximum velocity. This was determined by measuring the velocities of various lengths of myosin filaments. The minimum length of the myosin filaments moving near the maximum velocity was 0.30-0.40 microns, which contains 20 +/- 5 correctly oriented myosin heads. This number leads to a myosin step size of 71 +/- 22 nm. This value probably represents the lower limit, because all of the myosin heads on the filament would not always interact with the actin filament. Thus, the myosin step size is considerably larger than the length of a power stroke expected from the physical size of a myosin head, 10-20 nm (Huxley, 1957, 1969).},
+    author = {Saito, K and Aoki, Takaaki and Aoki, Takaaki and Yanagida, T},
+    doi = {10.1016/S0006-3495(94)80853-7},
+    issn = {00063495},
+    journal = {Biophysical Journal},
+    month = {mar},
+    number = {3},
+    pages = {769--777},
+    pmid = {8011909},
+    publisher = {Elsevier},
+    title = {{Movement of single myosin filaments and myosin step size on an actin filament suspended in solution by a laser trap}},
+    url = {http://www.ncbi.nlm.nih.gov/pubmed/8011909 http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=PMC1275775 http://linkinghub.elsevier.com/retrieve/pii/S0006349594808537},
+    volume = {66},
+    year = {1994}
+}
+
+
+@article{Schmiedl2008,
+    abstract = {Molecular motors transduce chemical energy obtained from hydrolizing ATP into mechanical work exerted against an external force. We calculate their efficiency at maximum power output for two simple generic models and show that the qualitative behaviour depends crucially on the position of the transition state. Specifically, we find a transition state near the initial state (sometimes characterized as a "power stroke") to be most favorable with respect to both high power output and high efficiency at maximum power. In this regime, driving the motor further out of equilibrium by applying higher chemical potential differences can even, counter-intuitively, increase the efficiency.},
+    archivePrefix = {arXiv},
+    arxivId = {0801.3743},
+    author = {Schmiedl, Tim and Seifert, Udo},
+    doi = {10.1209/0295-5075/83/30005},
+    eprint = {0801.3743},
+    isbn = {0295-5075},
+    issn = {0295-5075},
+    journal = {EPL (Europhysics Letters)},
+    month = {aug},
+    number = {3},
+    pages = {30005},
+    title = {{Efficiency of molecular motors at maximum power}},
+    url = {http://stacks.iop.org/0295-5075/83/i=3/a=30005 http://stacks.iop.org/0295-5075/83/i=3/a=30005?key=crossref.15e7818d26e5602b399b380efd2b12a7 http://arxiv.org/abs/0801.3743 http://dx.doi.org/10.1209/0295-5075/83/30005},
+    volume = {83},
+    year = {2008}
+}
+
+
+@article{stam2015isoforms,
+    abstract = {Myosin II isoforms with varying mechanochemistry and filament size interact with filamentous actin (F-actin) arrays to generate contractile forces in muscle and nonmuscle cells. How myosin II force production is shaped by isoform-specific motor properties and environmental stiffness remains poorly understood. Here, we used computer simulations to analyze force production by an ensemble of myosin motors against an elastically tethered actin filament. We found that force output depends on two timescales: the duration of F-actin attachment, which varies sharply with the ensemble size, motor duty ratio, and external load; and the time to build force, which scales with the ensemble stall force, gliding speed, and environmental stiffness. Although force-dependent kinetics were not required to sense changes in stiffness, the myosin catch bond produced positive feedback between the attachment time and force to trigger switch-like transitions from transient attachments, generating small forces, to high-force-generating runs. Using parameters representative of skeletal muscle myosin, nonmuscle myosin IIB, and nonmuscle myosin IIA revealed three distinct regimes of behavior, respectively: 1) large assemblies of fast, low-duty ratio motors rapidly build stable forces over a large range of environmental stiffness; 2) ensembles of slow, high-duty ratio motors serve as high-affinity cross-links with force buildup times that exceed physiological timescales; and 3) small assemblies of low-duty ratio motors operating at intermediate speeds are poised to respond sharply to changes in mechanical context—at low force or stiffness, they serve as low-affinity cross-links, but they can transition to force production via the positive-feedback mechanism described above. Together, these results reveal how myosin isoform properties may be tuned to produce force and respond to mechanical cues in their environment.},
+    author = {Stam, Samantha and Alberts, Jon and Gardel, Margaret Lise and Munro, Edwin},
+    doi = {10.1016/j.bpj.2015.03.030},
+    issn = {00063495},
+    journal = {Biophysical Journal},
+    month = {apr},
+    number = {8},
+    pages = {1997--2006},
+    publisher = {Elsevier},
+    title = {{Isoforms Confer Characteristic Force Generation and Mechanosensation by Myosin II Filaments}},
+    url = {http://www.cell.com.sire.ub.edu/article/S000634951500291X/fulltext http://linkinghub.elsevier.com/retrieve/pii/S000634951500291X},
+    volume = {108},
+    year = {2015}
+}
+
+
+@book{vanKampen1981stochastic,
+    address = {Amsterdam},
+    author = {van Kampen, N. G.},
+    isbn = {9780444529657},
+    pages = {464},
+    publisher = {Elsevier - North Holland},
+    title = {{Stochastic processes in chemistry and physics}},
+    year = {1981}
+}
+
+
+@article{vicente2009non,
+    abstract = {Non-muscle myosin II (NM II) is an actin-binding protein that has actin cross-linking and contractile properties and is regulated by the phosphorylation of its light and heavy chains. The three mammalian NM II isoforms have both overlapping and unique properties. Owing to its position downstream of convergent signalling pathways, NM II is central in the control of cell adhesion, cell migration and tissue architecture. Recent insight into the role of NM II in these processes has been gained from loss-of-function and mutant approaches, methods that quantitatively measure actin and adhesion dynamics and the discovery of NM II mutations that cause monogenic diseases.},
+    author = {Vicente-Manzanares, Miguel and Ma, Xuefei and Adelstein, Robert S. and Horwitz, Alan Rick},
+    doi = {10.1038/nrm2786},
+    isbn = {1471-0080 (Electronic)$\backslash$n1471-0072 (Linking)},
+    issn = {1471-0072},
+    journal = {Nature Reviews Molecular Cell Biology},
+    keywords = {Animals,Cell Adhesion,Cell Adhesion: physiology,Cell Movement,Cell Movement: physiology,Humans,Myosin Type II,Myosin Type II: metabolism},
+    month = {nov},
+    number = {11},
+    pages = {778--790},
+    pmid = {19851336},
+    publisher = {Nature Publishing Group},
+    title = {{Non-muscle myosin II takes centre stage in cell adhesion and migration}},
+    url = {http://www.nature.com/doifinder/10.1038/nrm2786 http://dx.doi.org/10.1038/nrm2786 http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=2834236{\&}tool=pmcentrez{\&}rendertype=abstract http://www.ncbi.nlm.nih.gov/pubmed/19851336 http://www.pubmedcentral.nih},
+    volume = {10},
+    year = {2009}
+}
+
+
+@article{vilfan2003instabilities,
+    author = {Vilfan, Andrej and Duke, Thomas},
+    doi = {10.1016/S0006-3495(03)74522-6},
+    issn = {00063495},
+    journal = {Biophysical Journal},
+    month = {aug},
+    number = {2},
+    pages = {818--827},
+    publisher = {Elsevier},
+    title = {{Instabilities in the Transient Response of Muscle}},
+    url = {http://linkinghub.elsevier.com/retrieve/pii/S0006349503745226},
+    volume = {85},
+    year = {2003}
+}
+
+
+@article{yogurtcu2012mechanochemical,
+    abstract = {In eukaryotic cells, actin filaments are involved in important processes such as motility, division, cell shape regulation, contractility, and mechanosensation. Actin filaments are polymerized chains of monomers, which themselves undergo a range of chemical events such as ATP hydrolysis, polymerization, and depolymerization. When forces are applied to F-actin, in addition to filament mechanical deformations, the applied force must also influence chemical events in the filament. We develop an intermediate-scale model of actin filaments that combines actin chemistry with filament-level deformations. The model is able to compute mechanical responses of F-actin during bending and stretching. The model also describes the interplay between ATP hydrolysis and filament deformations, including possible force-induced chemical state changes of actin monomers in the filament. The model can also be used to model the action of several actin-associated proteins, and for large-scale simulation of F-actin networks. All together, our model shows that mechanics and chemistry must be considered together to understand cytoskeletal dynamics in living cells.},
+    author = {Yogurtcu, Osman N. and Kim, Jin Seob and Sun, Sean X.},
+    doi = {10.1016/j.bpj.2012.07.020},
+    issn = {00063495},
+    journal = {Biophysical Journal},
+    keywords = {Actin Cytoskeleton,Actin Cytoskeleton: chemistry,Actin Cytoskeleton: metabolism,Actins,Actins: chemistry,Actins: metabolism,Biomechanical Phenomena,Mechanical Processes,Microfilament Proteins,Microfilament Proteins: chemistry,Microfilament Proteins: metabolism,Models,Molecular,Protein Conformation,Stochastic Processes},
+    month = {aug},
+    number = {4},
+    pages = {719--727},
+    pmid = {22947933},
+    publisher = {Elsevier},
+    title = {{A Mechanochemical Model of Actin Filaments}},
+    url = {http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=3443790{\&}tool=pmcentrez{\&}rendertype=abstract http://linkinghub.elsevier.com/retrieve/pii/S0006349512007953},
+    volume = {103},
+    year = {2012}
+}
+
+
+@article{zhang2009efficiency,
+    author = {Zhang, Yunxin},
+    doi = {10.1007/s10955-009-9695-3},
+    issn = {0022-4715},
+    journal = {Journal of Statistical Physics},
+    month = {feb},
+    number = {4},
+    pages = {669--679},
+    publisher = {Springer},
+    title = {{The Efficiency of Molecular Motors}},
+    url = {http://link.springer.com/10.1007/s10955-009-9695-3},
+    volume = {134},
+    year = {2009}
+}
+
+
+@article{etienne2015cells,
+    title={Cells as liquid motors: Mechanosensitivity emerges from collective dynamics of actomyosin cortex},
+    author={{\'E}tienne, Jocelyn and Fouchard, Jonathan and Mitrossilis, D{\'e}mosth{\`e}ne and Bufi, Nathalie and Durand-Smet, Pauline and Asnacios, Atef},
+    doi = {10.1073/pnas.1417113112},
+    issn = {1091-6490},
+    journal={Proceedings of the National Academy of Sciences},
+    volume={112},
+    number={9},
+    pages={2740--2745},
+    url = {http://www.pnas.org/content/112/9/2740.abstract},
+    year={2015},
+    publisher={National Acad Sciences}
+}
+
+
+@article{Maskow2015,
+    abstract = {This article presents and compares several thermodynamic methods for the quantitative interpretation of data from calorimetric measurements. Heat generation and absorption are universal features of microbial growth and product formation as well as of cell cultures from animals, plants and insects. The heat production rate reflects metabolic changes in real time and is measurable on-line. The detection limit of commercially available calorimetric instruments can be low enough to measure the heat of 100,000 aerobically growing bacteria or of 100 myocardial cells. Heat can be monitored in reaction vessels ranging from a few nanoliters up to many cubic meters. Most important the heat flux measurement does not interfere with the biological process under investigation. The practical advantages of calorimetry include the waiver of labeling and reactants. It is further possible to assemble the thermal transducer in a protected way that reduces aging and thereby signal drifts. Calorimetry works with optically opaque solutions. All of these advantages make calorimetry an interesting method for many applications in medicine, environmental sciences, ecology, biochemistry and biotechnology, just to mention a few. However, in many cases the heat signal is merely used to monitor biological processes but only rarely to quantitatively interpret the data. Therefore, a significant proportion of the information potential of calorimetry remains unutilized. To fill this information gap and to motivate the reader using the full information potential of calorimetry, various methods for quantitative data interpretations are presented, evaluated and compared with each other. Possible errors of interpretation and limitations of quantitative data analysis are also discussed.},
+    author = {Maskow, Thomas and Paufler, Sven},
+    doi = {10.1016/j.ymeth.2014.10.035},
+    file = {:home/luinar/Odborna literatura/Clanky/Biofyzika/Maskow, T.$\backslash$; Paufler, S. - What does calorimetry and thermodynamics of living cells tell us.pdf:pdf},
+    issn = {10462023},
+    journal = {Methods},
+    keywords = {Bioprocess control,Biothermodynamic,Calorimetry,Enthalpy balances,Law of Hess,Oxycaloric equivalent},
+    mendeley-groups = {Citace/Ratchet},
+    month = {apr},
+    pages = {3--10},
+    pmid = {25461814},
+    publisher = {Elsevier Inc.},
+    title = {{What does calorimetry and thermodynamics of living cells tell us?}},
+    url = {http://dx.doi.org/10.1016/j.ymeth.2014.10.035 http://www.ncbi.nlm.nih.gov/pubmed/25461814 http://linkinghub.elsevier.com/retrieve/pii/S1046202314003685},
+    volume = {76},
+    year = {2015}
+}
+
+
+@article{prager2011fibroblast,
+    title={Fibroblast polarization is a matrix-rigidity-dependent process controlled by focal adhesion mechanosensing},
+    author={Prager-Khoutorsky, Masha and Lichtenstein, Alexandra and Krishnan, Ramaswamy and Rajendran, Kavitha and Mayo, Avi and Kam, Zvi and Geiger, Benjamin and Bershadsky, Alexander D},
+    doi = {10.1038/ncb2370},
+    issn = {1465-7392},
+    journal={Nature cell biology},
+    volume={13},
+    number={12},
+    pages={1457},
+    year={2011},
+    url = {https://www.nature.com/ncb/journal/v13/n12/full/ncb2370.html},
+    publisher={Nature Publishing Group}
+}
+
+
+@article{schwarz2006focal,
+    title={Focal adhesions as mechanosensors: the two-spring model},
+    author={Schwarz, Ulrich S and Erdmann, Thorsten and Bischofs, Ilka B},
+    doi = {10.1016/j.biosystems.2005.05.019},
+    issn = {03032647},
+    journal={Biosystems},
+    volume={83},
+    number={2},
+    pages={225--232},
+    year={2006},
+    url = {https://doi.org/10.1016/j.biosystems.2005.05.019},
+    publisher={Elsevier}
+}
+
+
+@article{sung2017chapter,
+    title={Chapter One-How to Measure Load-Dependent Kinetics of Individual Motor Molecules Without a Force-Clamp},
+    author={Sung, J and Mortensen, KI and Spudich, JA and Flyvbjerg, Henrik},
+    doi = {10.1016/bs.mie.2016.08.002},
+    issn = {0076-6879},
+    journal={Methods in enzymology},
+    volume={582},
+    pages={1--29},
+    year={2017},
+    url = {https://doi.org/10.1016/bs.mie.2016.08.002},
+    publisher={Elsevier}
+}
